@@ -1,11 +1,6 @@
 var router = require('koa-router')();
+var indexController=require('../app/controllers/index');
 
-router.get('/', async function (ctx, next) {
-  ctx.state = {
-    title: 'koa2 title'
-  };
+router.get('/', indexController.index);
 
-  await ctx.render('index', {
-  });
-})
 module.exports = router;

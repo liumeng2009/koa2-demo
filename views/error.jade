@@ -1,6 +1,28 @@
-extends layout
+extends back/layout
 
 block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+  .container
+    h1
+      | #{error.status}，
+    h2
+      | #{error.message}
+    h3
+      a(href="javascript:window.history.go(-1);")
+        | 请点击返回，或者在
+        span#second
+          | 5
+        | 秒后自动返回
+    pre #{error.stack}
+block bottomJavascript
+  script.
+    $(document).ready(function(){
+      let second=5;
+      setInterval(function(){
+        $('#second').text(second);
+        if(second==0){
+          window.history.go(-1);
+        }
+        second--;
+      },1000)
+
+    });

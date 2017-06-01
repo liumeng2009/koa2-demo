@@ -7,16 +7,17 @@ const convert = require('koa-convert');
 const json = require('koa-json');
 const onerror = require('koa-onerror');
 const bodyparser = require('koa-bodyparser')();
-const logger = require('koa-logger');
+const Keygrip = require("keygrip");
 
 const index = require('./routes/index');
 const users = require('./routes/users');
-const api=require('./routes/api');
+const api=require('./routes/api/index');
+const admin=require('./routes/admin');
 
 // middlewares
 app.use(convert(bodyparser));
 app.use(convert(json()));
-app.use(convert(logger()));
+//app.use(convert(logger()));
 app.use(convert(require('koa-static')(__dirname + '/public')));
 
 app.use(views(__dirname + '/views', {
@@ -59,11 +60,28 @@ app.use(async (ctx, next) => {
 //  console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
 //});
 
+//middlewares
+const response_formatter=require('./middlewares/response_formatter');
+const logger_add=require('./middlewares/logger');
+const isLogin=require('./middlewares/back/isLogin');
+const errorPage=require('./middlewares/back/error')
+
+app.keys = ['im a newer secret', 'i like turtle'];
+app.keys = new Keygrip(['im a newer secret', 'i like turtle'], 'sha256');
+
+//app.use(response_formatter);
+//app.use(response_formatter('^/api'));
+app.use(isLogin);
+app.use(logger_add);
+app.use(errorPage);
+
 router.use('/', index.routes(), index.allowedMethods());
 router.use('/users', users.routes(), users.allowedMethods());
 router.use('/api', api.routes(), api.allowedMethods());
+router.use('/admin', admin.routes(), admin.allowedMethods());
 
 app.use(router.routes(), router.allowedMethods());
+
 // response
 
 app.on('error', function(err, ctx){

@@ -1,0 +1,35 @@
+[2017-06-01 16:04:46.957] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /admin/login
+request client ip:  ::1
+request body: 
+{"username":"123","password":"123"}
+response time: 128
+err name: TypeError
+err message: F:\koa2\koa2-demo\views\error.jade:5
+    3| block content
+    4|   h1= message
+  > 5|   h2= error.status
+    6|   pre #{error.stack}
+    7| 
+
+Cannot read property 'status' of undefined
+err stack: TypeError: F:\koa2\koa2-demo\views\error.jade:5
+    3| block content
+    4|   h1= message
+  > 5|   h2= error.status
+    6|   pre #{error.stack}
+    7| 
+
+Cannot read property 'status' of undefined
+    at eval (eval at exports.compile (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:218:8), <anonymous>:69:60)
+    at eval (eval at exports.compile (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:218:8), <anonymous>:125:22)
+    at res (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:219:38)
+    at F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:309:16
+    at F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:144:5
+    at promisify (F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:137:10)
+    at exports.jade (F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:293:10)
+    at F:\koa2\koa2-demo\node_modules\koa-views\lib\index.js:53:20
+*************** error log end ***************
+

@@ -1,0 +1,600 @@
+[2017-05-31 15:34:42.205] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /admin/admin
+request client ip:  ::1
+request query:  {}
+response time: 470
+err name: Error
+err message: ENOENT: no such file or directory, open 'F:\koa2\koa2-demo\views\back\back\main\back\main\index.jade'
+err stack: Error: ENOENT: no such file or directory, open 'F:\koa2\koa2-demo\views\back\back\main\back\main\index.jade'
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.fs.readFileSync (fs.js:491:33)
+    at handleTemplateCache (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:173:37)
+    at Object.exports.compileFile (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:309:10)
+    at F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:308:58
+    at F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:144:5
+    at Promise._execute (F:\koa2\koa2-demo\node_modules\bluebird\js\release\debuggability.js:300:9)
+    at Promise._resolveFromExecutor (F:\koa2\koa2-demo\node_modules\bluebird\js\release\promise.js:483:18)
+    at new Promise (F:\koa2\koa2-demo\node_modules\bluebird\js\release\promise.js:79:10)
+    at promisify (F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:137:10)
+    at exports.jade (F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:293:10)
+    at F:\koa2\koa2-demo\node_modules\koa-views\lib\index.js:53:20
+*************** error log end ***************
+
+[2017-05-31 15:35:06.681] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /admin/admin
+request client ip:  ::1
+request query:  {}
+response time: 338
+err name: Error
+err message: ENOENT: no such file or directory, open 'F:\koa2\koa2-demo\views\back\back\main\back\main\index.jade'
+err stack: Error: ENOENT: no such file or directory, open 'F:\koa2\koa2-demo\views\back\back\main\back\main\index.jade'
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.fs.readFileSync (fs.js:491:33)
+    at handleTemplateCache (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:173:37)
+    at Object.exports.compileFile (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:309:10)
+    at F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:308:58
+    at F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:144:5
+    at Promise._execute (F:\koa2\koa2-demo\node_modules\bluebird\js\release\debuggability.js:300:9)
+    at Promise._resolveFromExecutor (F:\koa2\koa2-demo\node_modules\bluebird\js\release\promise.js:483:18)
+    at new Promise (F:\koa2\koa2-demo\node_modules\bluebird\js\release\promise.js:79:10)
+    at promisify (F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:137:10)
+    at exports.jade (F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:293:10)
+    at F:\koa2\koa2-demo\node_modules\koa-views\lib\index.js:53:20
+*************** error log end ***************
+
+[2017-05-31 15:35:47.619] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /admin/admin
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 393
+err name: Error
+err message: F:\koa2\koa2-demo\views\back\main\main.jade:2
+    1| extends ../../layout
+  > 2|     #wrapper
+    3|         include ../includes/header
+    4|         include ../includes/sidebar
+    5|         .main
+
+unexpected token "indent"
+err stack: Error: F:\koa2\koa2-demo\views\back\main\main.jade:2
+    1| extends ../../layout
+  > 2|     #wrapper
+    3|         include ../includes/header
+    4|         include ../includes/sidebar
+    5|         .main
+
+unexpected token "indent"
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:254:15)
+    at Parser.parse (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:122:25)
+    at parse (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:104:21)
+    at Object.exports.compile (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:205:16)
+    at handleTemplateCache (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:174:25)
+    at Object.exports.compileFile (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:309:10)
+    at F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:308:58
+    at F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:144:5
+    at Promise._execute (F:\koa2\koa2-demo\node_modules\bluebird\js\release\debuggability.js:300:9)
+    at Promise._resolveFromExecutor (F:\koa2\koa2-demo\node_modules\bluebird\js\release\promise.js:483:18)
+    at new Promise (F:\koa2\koa2-demo\node_modules\bluebird\js\release\promise.js:79:10)
+    at promisify (F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:137:10)
+    at exports.jade (F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:293:10)
+    at F:\koa2\koa2-demo\node_modules\koa-views\lib\index.js:53:20
+*************** error log end ***************
+
+[2017-05-31 15:36:06.748] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /admin/admin
+request client ip:  ::1
+request query:  {}
+response time: 355
+err name: Error
+err message: F:\koa2\koa2-demo\views\back\main\main.jade:2
+    1| extends ../../layout
+  > 2|     #wrapper
+    3|         include ../includes/header
+    4|         include ../includes/sidebar
+    5|         .main
+
+unexpected token "indent"
+err stack: Error: F:\koa2\koa2-demo\views\back\main\main.jade:2
+    1| extends ../../layout
+  > 2|     #wrapper
+    3|         include ../includes/header
+    4|         include ../includes/sidebar
+    5|         .main
+
+unexpected token "indent"
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:254:15)
+    at Parser.parse (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:122:25)
+    at parse (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:104:21)
+    at Object.exports.compile (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:205:16)
+    at handleTemplateCache (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:174:25)
+    at Object.exports.compileFile (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:309:10)
+    at F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:308:58
+    at F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:144:5
+    at Promise._execute (F:\koa2\koa2-demo\node_modules\bluebird\js\release\debuggability.js:300:9)
+    at Promise._resolveFromExecutor (F:\koa2\koa2-demo\node_modules\bluebird\js\release\promise.js:483:18)
+    at new Promise (F:\koa2\koa2-demo\node_modules\bluebird\js\release\promise.js:79:10)
+    at promisify (F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:137:10)
+    at exports.jade (F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:293:10)
+    at F:\koa2\koa2-demo\node_modules\koa-views\lib\index.js:53:20
+*************** error log end ***************
+
+[2017-05-31 15:36:44.187] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /admin/admin
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 344
+err name: Error
+err message: F:\koa2\koa2-demo\views\back\main\login.jade:1
+  > 1| extends ../layout
+    2| block content
+    3|     #wrapper
+    4|         .vertical-align-wrap
+
+ENOENT: no such file or directory, open 'F:\koa2\koa2-demo\views\back\layout.jade'
+err stack: Error: F:\koa2\koa2-demo\views\back\main\login.jade:1
+  > 1| extends ../layout
+    2| block content
+    3|     #wrapper
+    4|         .vertical-align-wrap
+
+ENOENT: no such file or directory, open 'F:\koa2\koa2-demo\views\back\layout.jade'
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.fs.readFileSync (fs.js:491:33)
+    at Parser.parseExtends (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:509:18)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:221:21)
+    at Parser.parse (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:122:25)
+    at parse (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:104:21)
+    at Object.exports.compile (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:205:16)
+    at handleTemplateCache (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:174:25)
+    at Object.exports.compileFile (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:309:10)
+    at F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:308:58
+    at F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:144:5
+    at Promise._execute (F:\koa2\koa2-demo\node_modules\bluebird\js\release\debuggability.js:300:9)
+    at Promise._resolveFromExecutor (F:\koa2\koa2-demo\node_modules\bluebird\js\release\promise.js:483:18)
+    at new Promise (F:\koa2\koa2-demo\node_modules\bluebird\js\release\promise.js:79:10)
+    at promisify (F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:137:10)
+    at exports.jade (F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:293:10)
+*************** error log end ***************
+
+[2017-05-31 15:39:04.624] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /admin/admin
+request client ip:  ::1
+request query:  {}
+response time: 9
+err name: Error
+err message: F:\koa2\koa2-demo\views\back\main\main.jade:2
+    1| extends ../../layout
+  > 2|     #wrapper
+    3|         include ../includes/header
+    4|         include ../includes/sidebar
+    5|         .main
+
+unexpected token "indent"
+err stack: Error: F:\koa2\koa2-demo\views\back\main\main.jade:2
+    1| extends ../../layout
+  > 2|     #wrapper
+    3|         include ../includes/header
+    4|         include ../includes/sidebar
+    5|         .main
+
+unexpected token "indent"
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:254:15)
+    at Parser.parse (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:122:25)
+    at parse (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:104:21)
+    at Object.exports.compile (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:205:16)
+    at handleTemplateCache (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:174:25)
+    at Object.exports.compileFile (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:309:10)
+    at F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:308:58
+    at F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:144:5
+    at Promise._execute (F:\koa2\koa2-demo\node_modules\bluebird\js\release\debuggability.js:300:9)
+    at Promise._resolveFromExecutor (F:\koa2\koa2-demo\node_modules\bluebird\js\release\promise.js:483:18)
+    at new Promise (F:\koa2\koa2-demo\node_modules\bluebird\js\release\promise.js:79:10)
+    at promisify (F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:137:10)
+    at exports.jade (F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:293:10)
+    at F:\koa2\koa2-demo\node_modules\koa-views\lib\index.js:53:20
+*************** error log end ***************
+
+[2017-05-31 15:40:31.325] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /admin/admin
+request client ip:  ::1
+request query:  {}
+response time: 435
+err name: Error
+err message: F:\koa2\koa2-demo\views\back\main\main.jade:2
+    1| extends ../../layout
+  > 2|     #wrapper
+    3|         include ../includes/header
+    4|         include ../includes/sidebar
+    5|         .main
+
+unexpected token "indent"
+err stack: Error: F:\koa2\koa2-demo\views\back\main\main.jade:2
+    1| extends ../../layout
+  > 2|     #wrapper
+    3|         include ../includes/header
+    4|         include ../includes/sidebar
+    5|         .main
+
+unexpected token "indent"
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:254:15)
+    at Parser.parse (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:122:25)
+    at parse (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:104:21)
+    at Object.exports.compile (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:205:16)
+    at handleTemplateCache (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:174:25)
+    at Object.exports.compileFile (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:309:10)
+    at F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:308:58
+    at F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:144:5
+    at Promise._execute (F:\koa2\koa2-demo\node_modules\bluebird\js\release\debuggability.js:300:9)
+    at Promise._resolveFromExecutor (F:\koa2\koa2-demo\node_modules\bluebird\js\release\promise.js:483:18)
+    at new Promise (F:\koa2\koa2-demo\node_modules\bluebird\js\release\promise.js:79:10)
+    at promisify (F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:137:10)
+    at exports.jade (F:\koa2\koa2-demo\node_modules\consolidate\lib\consolidate.js:293:10)
+    at F:\koa2\koa2-demo\node_modules\koa-views\lib\index.js:53:20
+*************** error log end ***************
+
+[2017-05-31 15:41:14.715] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /admin/admin
+request client ip:  ::1
+request query:  {}
+response time: 21
+err name: Error
+err message: F:\koa2\koa2-demo\views\back\includes\header.jade:18
+    16|             a.btn.btn-success.update-pro(href="#")
+    17|         #navbar-menu
+  > 18|             ul..nav.navbar-nav.navbar-right
+    19|                 li.dropdown
+    20|                     a.dropdown-toggle.icon-menu(href="#",data-toggle="dropdown")
+    21|                         i.lnr.lnr-alarm
+
+Unexpected token `class` expected `text`, `code`, `:`, `newline` or `eos`
+err stack: Error: F:\koa2\koa2-demo\views\back\includes\header.jade:18
+    16|             a.btn.btn-success.update-pro(href="#")
+    17|         #navbar-menu
+  > 18|             ul..nav.navbar-nav.navbar-right
+    19|                 li.dropdown
+    20|                     a.dropdown-toggle.icon-menu(href="#",data-toggle="dropdown")
+    21|                         i.lnr.lnr-alarm
+
+Unexpected token `class` expected `text`, `code`, `:`, `newline` or `eos`
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:828:15)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:252:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:252:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+*************** error log end ***************
+
+[2017-05-31 15:41:15.440] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /admin/admin
+request client ip:  ::1
+request query:  {}
+response time: 19
+err name: Error
+err message: F:\koa2\koa2-demo\views\back\includes\header.jade:18
+    16|             a.btn.btn-success.update-pro(href="#")
+    17|         #navbar-menu
+  > 18|             ul..nav.navbar-nav.navbar-right
+    19|                 li.dropdown
+    20|                     a.dropdown-toggle.icon-menu(href="#",data-toggle="dropdown")
+    21|                         i.lnr.lnr-alarm
+
+Unexpected token `class` expected `text`, `code`, `:`, `newline` or `eos`
+err stack: Error: F:\koa2\koa2-demo\views\back\includes\header.jade:18
+    16|             a.btn.btn-success.update-pro(href="#")
+    17|         #navbar-menu
+  > 18|             ul..nav.navbar-nav.navbar-right
+    19|                 li.dropdown
+    20|                     a.dropdown-toggle.icon-menu(href="#",data-toggle="dropdown")
+    21|                         i.lnr.lnr-alarm
+
+Unexpected token `class` expected `text`, `code`, `:`, `newline` or `eos`
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:828:15)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:252:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:252:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+*************** error log end ***************
+
+[2017-05-31 15:41:27.258] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /admin/admin
+request client ip:  ::1
+request query:  {}
+response time: 360
+err name: Error
+err message: F:\koa2\koa2-demo\views\back\includes\header.jade:18
+    16|             a.btn.btn-success.update-pro(href="#")
+    17|         #navbar-menu
+  > 18|             ul..nav.navbar-nav.navbar-right
+    19|                 li.dropdown
+    20|                     a.dropdown-toggle.icon-menu(href="#",data-toggle="dropdown")
+    21|                         i.lnr.lnr-alarm
+
+Unexpected token `class` expected `text`, `code`, `:`, `newline` or `eos`
+err stack: Error: F:\koa2\koa2-demo\views\back\includes\header.jade:18
+    16|             a.btn.btn-success.update-pro(href="#")
+    17|         #navbar-menu
+  > 18|             ul..nav.navbar-nav.navbar-right
+    19|                 li.dropdown
+    20|                     a.dropdown-toggle.icon-menu(href="#",data-toggle="dropdown")
+    21|                         i.lnr.lnr-alarm
+
+Unexpected token `class` expected `text`, `code`, `:`, `newline` or `eos`
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:828:15)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:252:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:252:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+*************** error log end ***************
+
+[2017-05-31 15:43:04.399] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /admin/admin
+request client ip:  ::1
+request query:  {}
+response time: 387
+err name: Error
+err message: F:\koa2\koa2-demo\views\back\includes\header.jade:18
+    16|             a.btn.btn-success.update-pro(href="#")
+    17|         #navbar-menu
+  > 18|             ul..nav.navbar-nav.navbar-right
+    19|                 li.dropdown
+    20|                     a.dropdown-toggle.icon-menu(href="#",data-toggle="dropdown")
+    21|                         i.lnr.lnr-alarm
+
+Unexpected token `class` expected `text`, `code`, `:`, `newline` or `eos`
+err stack: Error: F:\koa2\koa2-demo\views\back\includes\header.jade:18
+    16|             a.btn.btn-success.update-pro(href="#")
+    17|         #navbar-menu
+  > 18|             ul..nav.navbar-nav.navbar-right
+    19|                 li.dropdown
+    20|                     a.dropdown-toggle.icon-menu(href="#",data-toggle="dropdown")
+    21|                         i.lnr.lnr-alarm
+
+Unexpected token `class` expected `text`, `code`, `:`, `newline` or `eos`
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:828:15)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:252:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:252:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+*************** error log end ***************
+
+[2017-05-31 15:56:33.441] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /admin/admin
+request client ip:  ::1
+request query:  {}
+response time: 17
+err name: Error
+err message: F:\koa2\koa2-demo\views\back\includes\header.jade:18
+    16|             a.btn.btn-success.update-pro(href="#")
+    17|         #navbar-menu
+  > 18|             ul..nav.navbar-nav.navbar-right
+    19|                 li.dropdown
+    20|                     a.dropdown-toggle.icon-menu(href="#",data-toggle="dropdown")
+    21|                         i.lnr.lnr-alarm
+
+Unexpected token `class` expected `text`, `code`, `:`, `newline` or `eos`
+err stack: Error: F:\koa2\koa2-demo\views\back\includes\header.jade:18
+    16|             a.btn.btn-success.update-pro(href="#")
+    17|         #navbar-menu
+  > 18|             ul..nav.navbar-nav.navbar-right
+    19|                 li.dropdown
+    20|                     a.dropdown-toggle.icon-menu(href="#",data-toggle="dropdown")
+    21|                         i.lnr.lnr-alarm
+
+Unexpected token `class` expected `text`, `code`, `:`, `newline` or `eos`
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:828:15)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:252:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:252:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+*************** error log end ***************
+
+[2017-05-31 15:58:04.613] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /admin/admin
+request client ip:  ::1
+request query:  {}
+response time: 7
+err name: Error
+err message: F:\koa2\koa2-demo\views\back\main\main.jade:4
+    2| block content
+    3|     #wrapper
+  > 4|         include ./back/includes/header
+    5|         include ./back/includes/sidebar
+    6|         .main
+    7|         .clearfix
+
+ENOENT: no such file or directory, open 'F:\koa2\koa2-demo\views\back\main\back\includes\header.jade'
+err stack: Error: F:\koa2\koa2-demo\views\back\main\main.jade:4
+    2| block content
+    3|     #wrapper
+  > 4|         include ./back/includes/header
+    5|         include ./back/includes/sidebar
+    6|         .main
+    7|         .clearfix
+
+ENOENT: no such file or directory, open 'F:\koa2\koa2-demo\views\back\main\back\includes\header.jade'
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.fs.readFileSync (fs.js:491:33)
+    at Parser.parseInclude (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:606:18)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:223:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:252:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.parseBlock (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:535:14)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:215:21)
+    at Parser.parse (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:122:25)
+    at parse (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:104:21)
+    at Object.exports.compile (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:205:16)
+    at handleTemplateCache (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:174:25)
+*************** error log end ***************
+
+[2017-05-31 15:58:05.337] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /admin/admin
+request client ip:  ::1
+request query:  {}
+response time: 9
+err name: Error
+err message: F:\koa2\koa2-demo\views\back\main\main.jade:4
+    2| block content
+    3|     #wrapper
+  > 4|         include ./back/includes/header
+    5|         include ./back/includes/sidebar
+    6|         .main
+    7|         .clearfix
+
+ENOENT: no such file or directory, open 'F:\koa2\koa2-demo\views\back\main\back\includes\header.jade'
+err stack: Error: F:\koa2\koa2-demo\views\back\main\main.jade:4
+    2| block content
+    3|     #wrapper
+  > 4|         include ./back/includes/header
+    5|         include ./back/includes/sidebar
+    6|         .main
+    7|         .clearfix
+
+ENOENT: no such file or directory, open 'F:\koa2\koa2-demo\views\back\main\back\includes\header.jade'
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.fs.readFileSync (fs.js:491:33)
+    at Parser.parseInclude (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:606:18)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:223:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:252:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.parseBlock (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:535:14)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:215:21)
+    at Parser.parse (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:122:25)
+    at parse (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:104:21)
+    at Object.exports.compile (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:205:16)
+    at handleTemplateCache (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:174:25)
+*************** error log end ***************
+
+[2017-05-31 15:58:13.494] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /admin/admin
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 342
+err name: Error
+err message: F:\koa2\koa2-demo\views\back\main\main.jade:4
+    2| block content
+    3|     #wrapper
+  > 4|         include ./back/includes/header
+    5|         include ./back/includes/sidebar
+    6|         .main
+    7|         .clearfix
+
+ENOENT: no such file or directory, open 'F:\koa2\koa2-demo\views\back\main\back\includes\header.jade'
+err stack: Error: F:\koa2\koa2-demo\views\back\main\main.jade:4
+    2| block content
+    3|     #wrapper
+  > 4|         include ./back/includes/header
+    5|         include ./back/includes/sidebar
+    6|         .main
+    7|         .clearfix
+
+ENOENT: no such file or directory, open 'F:\koa2\koa2-demo\views\back\main\back\includes\header.jade'
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.fs.readFileSync (fs.js:491:33)
+    at Parser.parseInclude (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:606:18)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:223:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:252:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.parseBlock (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:535:14)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:215:21)
+    at Parser.parse (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:122:25)
+    at parse (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:104:21)
+    at Object.exports.compile (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:205:16)
+    at handleTemplateCache (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:174:25)
+*************** error log end ***************
+

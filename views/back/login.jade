@@ -1,0 +1,35 @@
+extends layout
+block content
+    #wrapper
+        .vertical-align-wrap
+            .vertical-align-middle
+                .auth-box
+                    .left
+                        .content
+                            .header
+                                p.lead
+                                    | 登录账户
+                            form#signinForm.form-auth-small(action="/admin/login",method="POST")
+                                .form-group
+                                    label.control-label.sr-only(for="username" sr-only)
+                                        | 用户名
+                                    input#username.form-control(type="text" value="123" placeholder="用户名" name="username")
+                                .form-group
+                                    label.control-label.sr-only(for="password" sr-only)
+                                        | 密码
+                                    input#password.form-control(type="password" class="form-control" value="123" placeholder="密码" name="password")
+                                .form-group.clearfix
+                                    label.fancy-checkbox.element-left
+                                        input(type="checkbox",name="rememberme")
+                                        span
+                                            | 记住我
+                                button.btn.btn-primary.btn-lg.btn-block(type="submit")
+                                    | 登录
+                                .bottom
+                                    span.helper-text
+                                        i.fa.fa-lock
+                                        a(href="#")
+                                            | 忘记密码？
+                    .right
+                        .overlay
+                    .clearfix
