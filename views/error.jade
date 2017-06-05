@@ -3,7 +3,7 @@ extends back/layout
 block content
   .container
     h1
-      | #{error.status}，
+      | #{error.status}
     h2
       | #{error.message}
     h3
@@ -12,7 +12,8 @@ block content
         span#second
           | 5
         | 秒后自动返回
-    pre #{error.stack}
+    if showAll
+      pre #{error.stack}
 block bottomJavascript
   script.
     $(document).ready(function(){

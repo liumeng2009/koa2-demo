@@ -1,0 +1,48 @@
+extends ../layout
+block content
+    #wrapper
+        include ../includes/header
+        include ../includes/sidebar
+        .main
+            .main-content
+                .container-fluid
+                    .row
+                        .col-md-12
+                            .panel
+                                .panel-heading
+                                    h3.panel-title
+                                        | #{title}
+                                    .right
+                                        button.btn-toggle-collapse
+                                            i.lnr.lnr-chevron-up
+                                        button.btn-remove
+                                            i.lnr.lnr-cross
+                                .panel-body
+                                    p
+                                        button.btn.btn-default(type="button")
+                                            | 新建
+                                    table.table
+                                        thead
+                                            tr
+                                                th
+                                                    | #
+                                                th
+                                                    | 操作名称
+                                                th
+                                                    | 标识码
+                                                th
+                                                    | 描述
+                                        tbody
+                                            each op in operations
+                                                tr
+                                                    td
+                                                        | 1
+                                                    td
+                                                        | #{op.name}
+                                                    td
+                                                        | #{op.code}
+                                                    td
+                                                        | #{op.discription}
+
+        .clearfix
+        include ../includes/footer
