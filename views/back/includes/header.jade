@@ -1,90 +1,126 @@
-nav.navbar.navbar-default.navbar-fixed-top
-    .brand
-        a(href="#")
-            img.img-responsive.logo(src="../assets/img/logo-dark.png",alt="Klorofil Logo")
-    .container-fluid
-        .navbar-btn
-            button.btn-toggle-fullwidth(type="button")
-                i.lnr.lnr-arrow-left-circle
-        form.navbar-form.navbar-left
-            .input-group
-                input.form-control(type="text",value="",placeholder="Search dashboard")
-                span.input-group-btn
-                    button.btn.btn-primary(type="button")
-                        | go
-        #navbar-menu
-            ul.nav.navbar-nav.navbar-right
-                li.dropdown
-                    a.dropdown-toggle.icon-menu(href="#",data-toggle="dropdown")
-                        i.lnr.lnr-alarm
-                        span.badge.bg-danger
-                            | 5
-                    ul.dropdown-menu.notifications
-                        li
-                            a.notification-item(href="#")
-                                span.dot.bg-warning
-                                    | System space is almost full
-                        li
-                            a.notification-item(href="#")
-                                span.dot.bg-danger
-                                    | You have 9 unfinished tasks
-                        li
-                            a.notification-item(href="#")
-                                span.dot.bg-success
-                                    | Monthly report is available
-                        li
-                            a.notification-item(href="#")
-                                span.dot.bg-warning
-                                    | Weekly meeting in 1 hour
-                        li
-                            a.notification-item(href="#")
-                                span.dot.bg-success
-                                    | Your request has been approved
-                        li
-                            a.notification-item.more(href="#")
-                                | See all notifications
-                li.dropdown
-                    a.dropdown-toggle(href="#",data-toggle="dropdown")
-                        i.lnr.lnr-question-circle
-                            span
-                                | Help
-                    ul.dropdown-menu
+nav.navbar.user-info-navbar(role="navigation")
+    ul.user-info-menu.left-links.list-inline.list-unstyled
+        li.hidden-sm.hidden-xs
+            a(href="#",data-toggle="sidebar")
+                i.fa-bars
+        li.dropdown.hover-line
+            a(href="#",data-toggle="dropdown")
+                i.fa-envelope-o
+                span.badge.badge-green
+                    | 15
+            ul.dropdown-menu.messages
+                li
+                    ul.dropdown-menu-list.list-unstyled.ps-scrollbar
+                        li.active
+                            a(href="#")
+                                span.line
+                                    strong
+                                        | Luc Chartier
+                                    span.light.small
+                                        | - yesterday
+                                span.line.desc.small
+                                    | This ain't our first item,it is the best of the rest.
+                        li.active
+                            a(href="#")
+                                span.line
+                                    strong
+                                        | Salma Nyberg
+                                    span.light.small
+                                        | - 2 days ago
+                                span.line.desc.small
+                                    | This ain't our first item,it is the best of the rest.
                         li
                             a(href="#")
-                                | Basic Use
-                        li
-                            a(href="#")
-                                | Working With Data
-                        li
-                            a(href="#")
-                                | Security
-                        li
-                            a(href="#")
-                                | Troubleshooting
-                li.dropdown
-                    a.dropdown-toggle(href="#",data-toggle="dropdown")
-                        img.img-circle(src="../assets/img/user.png",alt="Avatar")
+                                span.line
+                                    strong
+                                        | Salma Nyberg
+                                    span.light.small
+                                        | - 2 days ago
+                                span.line.desc.small
+                                    | This ain't our first item,it is the best of the rest.
+                li.external
+                    a(href="blank-sidebar.html")
                         span
-                            | Samuel
-                        i.icon-submenu.lnr.lnr-chevron-down
-                    ul.dropdown-menu
-                        li
+                            | All Messages
+                        i.fa-link-ext
+        li.dropdown.hover-line
+            a(href="#",data-toggle="dropdown")
+                i.fa-bell-o
+                span.badge.badge0purple
+                    | 7
+            ul.dropdown-menu.notifications
+                li.top
+                    p.small
+                        a.pull-right(href="#")
+                            | Mark all Read
+                        | You have
+                        strong
+                            | 3
+                        | new notifications
+                li
+                    ul.dropdown-menu-list.list-unstyled.ps-scrollbar
+                        li.active.notification-success
                             a(href="#")
-                                i.lnr.lnr-user
-                                span
-                                    | My Profile
-                        li
+                                i.fa-user
+                                span.line
+                                    strong
+                                        | New user registered
+                                span.line.small.time
+                                    | 30 seconds ago
+                        li.active.notification-secondary
                             a(href="#")
-                                i.lnr.lnr-envelope
-                                span
-                                    | Message
-                        li
+                                i.fa-lock
+                                span.line
+                                    strong
+                                        | Privacy settings have been changed
+                                span.line.small.time
+                                    | 3 hours ago
+                        li.active.notification-primary
                             a(href="#")
-                                i.lnr.lnr-cog
-                                span
-                                    | Settings
-                        li
+                                i.fa-thumbs-up
+                                span.line
+                                    strong
+                                        | Someone special liked this
+                                span.line.small.time
+                                    | 2 minutes ago
+                        li.external
                             a(href="#")
-                                i.lnr.lnr-exit
                                 span
-                                    | Logout
+                                    | View all notifications
+                                i.fa-link-ext
+    ul.user-info-menu.right-links.list-inline.list-unstyled
+                li.search-form
+                    form(method="get",action="extra-search.html")
+                        input.form-control.search-field(type="text",name="s",placeholder="type to search")
+                        button.btn.btn-link(type="submit")
+                            i.linecons-search
+                li.dropdown.user-profile
+                    a(href="#",data-toggle="dropdown")
+                        img.img-circle.img-inline.userpic-32(src="../xenon/assets/images/user-4.png",alt="user-image",width="28")
+                        span
+                            | Arlind Nushi
+                            i.fa-angle-down
+                    ul.dropdown-menu.user-profile-menu.list-unstyled
+                        li
+                            a(href="#edit-profile")
+                                i.fa-edit
+                                | New Post
+                        li
+                            a(href="#settings")
+                                i.fa-wrench
+                                | Settings
+                        li
+                            a(href="#profile")
+                                i.fa-user
+                                | Profile
+                        li
+                            a(href="#help")
+                                i.fa-info
+                                | Help
+                        li.last
+                            a(href="extra-lockscreen.html")
+                                i.fa-lock
+                                | Logout
+                li
+                    a(href="#",data-toggle="chat")
+                        i.fa-comments-o

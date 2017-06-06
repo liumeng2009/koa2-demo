@@ -1,66 +1,67 @@
-#sidebar-nav.sidebar
-    .sidebar-scroll
-        nav
-            ul.nav
-                li
-                    a.active(href="#")
-                        i.lnr.lnr-home
-                        span
-                            | Dashboard
-                li
-                    a(href="#")
-                        i.lnr.lnr-code
-                        span
-                            | Elements
-                li
-                    a(href="#")
-                        i.lnr.lnr-chart-bars
-                        span
-                            | Chats
-                li
-                    a(href="#")
-                        i.lnr.lnr-cog
-                        span
-                            | Panels
-                li
-                    a(href="#")
-                        i.lnr.lnr-alarm
-                        span
-                            | Notifications
-                li
-                    a.collapsed(href="#subPages",data-toggle="collapse")
-                        i.lnr.lnr-file-empty
-                        span
-                            | Pages
-                        i.icon-submenu.lnr.lnr-chevron-left
-                    #subPages.collapse
-                        ul.nav
-                            li
-                                a(href="#")
-                                    | Profile
-                            li
-                                a(href="#")
-                                    | Login
-                            li
-                                a(href="#")
-                                    | Lockscreen
-                li
-                    a(href="#")
-                        i.lnr.lnr-dice
-                        span
-                            | Tables
-                li
-                    a(href="#")
-                        i.lnr.lnr-text-format
-                        span
-                            | Typography
-                li
-                    a(href="#")
-                        i.lnr.lnr-text-format
-                        span
-                            | Typography
-                li
-                    a(href="#")
-                        i.lnr.lnr-linearicons
-                        span
-                            | Icons
+.sidebar-menu.toggle-others.fixed
+    .sidebar-menu-inner
+        header.logo-env
+            .logo
+                a.logo-expanded(href="dashboard-1.html")
+                    img(src="../xenon/assets/images/logo@2x.png",with="80",alt="")
+                a.logo-collapsed(href="dashboard-1.html")
+                    img(src="../xenon/assets/images/logo-collapsed@2x.png",with="40",alt="")
+            .mobile-menu-toggle.visible-xs
+                a(href="#",data-toggle="user-info-menu")
+                    i.fa-bell-o
+                    span.badge.badge-success
+                        | 7
+                a(href="#",data-toggle="mobile-menu")
+                    i.fa-bars
+            .settings-icon
+                a(href="#",data-toggle="settings-pane",data-animate="true")
+                    i.linecons-cog
+        ul#main-menu.main-menu
+            li
+                a(href="dashboard-1.html")
+                    i.linecons-cog
+                    span.title
+                        | Dashboard
+                ul
+                    li
+                        a(href="dashboard-1.html")
+                            span.title
+                                | Dashboard 1
+                    li
+                        a(href="dashboard-2.html")
+                            span.title
+                                | Dashboard 2
+                    li
+                        a(href="dashboard-3.html")
+                            span.title
+                                | Dashboard 3
+                    li
+                        a(href="dashboard-4.html")
+                            span.title
+                                | Dashboard 4
+                    li
+                        a(href="skin-generator.html")
+                            span.title
+                                | Skin Generator
+            li
+                a(href="layout-variants.html")
+                    i.linecons-desktop
+                    span.title
+                        | Layouts
+                ul
+                    li
+                        a(href="layout-variants.html")
+                            span.title
+                                | Layout Vaiants &amp; API
+                    li
+                        a(href="layout-collapsed-sidebar.html")
+                            span.title
+                                | Collapsed Sidebar
+                    li
+                        a(href="layout-static-sidebar.html")
+                            span.title
+                                | Static Sidebar
+                    li
+                        a(href="layout-horizontal-menu.html")
+                            span.title
+                                | Horizontal Menu

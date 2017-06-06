@@ -1,35 +1,86 @@
-extends layout
+extends layout_login
 block content
-    #wrapper
-        .vertical-align-wrap
-            .vertical-align-middle
-                .auth-box
-                    .left
-                        .content
-                            .header
-                                p.lead
-                                    | 登录账户
-                            form#signinForm.form-auth-small(action="/admin/login",method="POST")
-                                .form-group
-                                    label.control-label.sr-only(for="username" sr-only)
-                                        | 用户名
-                                    input#username.form-control(type="text" value="123" placeholder="用户名" name="username")
-                                .form-group
-                                    label.control-label.sr-only(for="password" sr-only)
-                                        | 密码
-                                    input#password.form-control(type="password" class="form-control" value="123" placeholder="密码" name="password")
-                                .form-group.clearfix
-                                    label.fancy-checkbox.element-left
-                                        input(type="checkbox",name="rememberme")
-                                        span
-                                            | 记住我
-                                button.btn.btn-primary.btn-lg.btn-block(type="submit")
+    .login-container
+        .row
+            .col-sm-6
+                script.
+                    jQuery(document).ready(function ($) {
+                        // Reveal Login form
+                        setTimeout(function () {
+                            $(".fade-in-effect").addClass('in');
+                        }, 1);
+
+
+                        // Validation and Ajax action
+                        $("form#login").validate({
+                            rules: {
+                                username: {
+                                    required: true
+                                },
+
+                                password: {
+                                    required: true
+                                }
+                            },
+
+                            messages: {
+                                username: {
+                                    required: '请输入用户名'
+                                },
+
+                                password: {
+                                    required: '请输入密码'
+                                }
+                            },
+
+                            // Form Processing via AJAX
+                            submitHandler: function (form) {
+                                show_loading_bar(70); // Fill progress bar to 70% (just a given value)
+
+                                var opts = {
+                                    "closeButton": true,
+                                    "debug": false,
+                                    "positionClass": "toast-top-full-width",
+                                    "onclick": null,
+                                    "showDuration": "300",
+                                    "hideDuration": "1000",
+                                    "timeOut": "5000",
+                                    "extendedTimeOut": "1000",
+                                    "showEasing": "swing",
+                                    "hideEasing": "linear",
+                                    "showMethod": "fadeIn",
+                                    "hideMethod": "fadeOut"
+                                };
+                                //alert(123);
+                                form.submit();
+                            }
+                        });
+
+                        // Set Form focus
+                        $("form#login .form-group:has(.form-control):first .form-control").focus();
+                    });
+                .errors-container
+                form.login-form.fade-in-effect(method="post",role="form",id="login",action="/admin/login")
+                    .login-header
+                        //
+                            a.logo(href="dashboard-1.html")
+                                img(src="../xenon/assets/images/logo-white-bg@2x.png",alt="",width="80")
+                                span
                                     | 登录
-                                .bottom
-                                    span.helper-text
-                                        i.fa.fa-lock
-                                        a(href="#")
-                                            | 忘记密码？
-                    .right
-                        .overlay
-                    .clearfix
+                        p
+                            | 亲爱的用户，请登录进入管理员界面
+                    .form-group
+                        label.control-label(for="username")
+                            | 用户名
+                        input#username.form-control.input-dark(type="text",name="username",autocomplete="off")
+                    .form-group
+                        label.control-label(for="password")
+                            | 密码
+                        input#password.form-control.input-dark(type="password",name="password",autocomplete="off")
+                    .form-group
+                        button.btn.btn-dark.btn-block.text-left(type="submit")
+                            i.fa-lock
+                            | 点击登录
+                    .login-footer
+                        a(href="#")
+                            | 忘记密码？

@@ -1,0 +1,98 @@
+#chat.fixed
+    .chat-inner
+        h2.chat-header
+            a.chat-close(href="#",data-toggle="chat")
+                i.fa-plus-circle.rotate-45deg
+            | Chat
+            span.badge.badge-success.is-hidden
+                | 0
+        script.
+            jQuery(document).ready(function ($) {
+                var $chat_conversation = $(".chat-conversation");
+
+                $(".chat-group a").on('click', function (ev) {
+                    ev.preventDefault();
+
+                    $chat_conversation.toggleClass('is-open');
+
+                    $(".chat-conversation textarea").trigger('autosize.resize').focus();
+                });
+
+                $(".conversation-close").on('click', function (ev) {
+                    ev.preventDefault();
+                    $chat_conversation.removeClass('is-open');
+                });
+            });
+        .chat-group
+            strong
+                | Favorites
+                a(href="#")
+                    span.user-status.is-online
+                    em
+                        | Catherine J. Watkins
+                a(href="#")
+                    span.user-status.is-busy
+                    em
+                        | Susan J. Best
+        .chat-group
+            strong
+                | Work
+            a(href="#")
+                span.user-status.is-online
+                em
+                    | Catherine J. Watkins
+        .chat-group
+            strong
+                | Other
+            a(href="#")
+                span.user-status.is-online
+                em
+                    | Catherine J. Watkins
+            a(href="#")
+                span.user-status.is-online
+                em
+                    | Catherine J. Watkins
+            a(href="#")
+                span.user-status.is-online
+                em
+                    | Catherine J. Watkins
+    .chat-conversation
+        .conversation-header
+            a.conversation-close(href="#")
+                | &times;
+            span.user-status.is-online
+            span.display-name
+                | Arlind Nushi
+            small
+                | Online
+        ul.conversation-body
+            li
+                span.user
+                    | Arlind Nushi
+                span.time
+                    | 09:00
+                p
+                    | Are you here?
+            li.odd
+                span.user
+                    | Brandon S. Young
+                span.time
+                    | 09:25
+                p
+                    | This message is pre-queued.
+            li
+                span.user
+                    | Arlind Nushi
+                span.time
+                    | 09:00
+                p
+                    | Are you here?
+            li.odd
+                span.user
+                    | Brandon S. Young
+                span.time
+                    | 09:25
+                p
+                    | This message is pre-queued.
+        .chat-textarea
+            textarea.form-control.autogrow(placeholder="Type your message")

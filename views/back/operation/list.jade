@@ -1,48 +1,69 @@
 extends ../layout
 block content
-    #wrapper
-        include ../includes/header
+    include ../includes/setting-pane
+    .page-container
         include ../includes/sidebar
-        .main
-            .main-content
-                .container-fluid
-                    .row
-                        .col-md-12
-                            .panel
-                                .panel-heading
-                                    h3.panel-title
-                                        | #{title}
-                                    .right
-                                        button.btn-toggle-collapse
-                                            i.lnr.lnr-chevron-up
-                                        button.btn-remove
-                                            i.lnr.lnr-cross
-                                .panel-body
-                                    p
-                                        button.btn.btn-default(type="button")
-                                            | 新建
-                                    table.table
-                                        thead
-                                            tr
-                                                th
-                                                    | #
-                                                th
-                                                    | 操作名称
-                                                th
-                                                    | 标识码
-                                                th
-                                                    | 描述
-                                        tbody
-                                            each op in operations
-                                                tr
-                                                    td
-                                                        | 1
-                                                    td
-                                                        | #{op.name}
-                                                    td
-                                                        | #{op.code}
-                                                    td
-                                                        | #{op.discription}
+        .main-content
+            include ../includes/header
+            .page-title
+                .title-env
+                    h1.title
+                        | Respinsive Table
+                    p.description
+                        | An example of responsive table with fixed header
+                .breadcrumb-env
+                    ol.breadcrumb.bc-1
+                        li
+                            a(href="#")
+                                i.fa-home
+                                    | Home
+                        li
+                            a(href="#")
+                                | Tables
+                        li.active
+                            strong
+                                | Responsive Table
+            .row
+                .main
+                    .main-content
+                        .container-fluid
+                            .row
+                                .col-md-12
+                                    .panel
+                                        .panel-heading
+                                            h3.panel-title
+                                                | #{title}
+                                            .right
+                                                button.btn-toggle-collapse
+                                                    i.lnr.lnr-chevron-up
+                                                button.btn-remove
+                                                    i.lnr.lnr-cross
+                                        .panel-body
+                                            p
+                                                button.btn.btn-default(type="button")
+                                                    | 新建
+                                            table.table
+                                                thead
+                                                    tr
+                                                        th
+                                                            | #
+                                                        th
+                                                            | 操作名称
+                                                        th
+                                                            | 标识码
+                                                        th
+                                                            | 描述
+                                                tbody
+                                                    each op in operations
+                                                        tr
+                                                            td
+                                                                | 1
+                                                            td
+                                                                | #{op.name}
+                                                            td
+                                                                | #{op.code}
+                                                            td
+                                                                | #{op.discription}
 
-        .clearfix
-        include ../includes/footer
+            include ../includes/footer
+        include ../includes/chat
