@@ -9,6 +9,7 @@ exports.loginIndex=async(ctx,next)=>{
 
 exports.adminIndex=async(ctx,next)=>{
     await ctx.render('./back/main/main',{
-        title:'欢迎'
+        title:'欢迎',
+        staticPath:'../'
     })
 }

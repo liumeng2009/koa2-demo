@@ -43,7 +43,7 @@ block content
                         .panel-body
                             .row
                                 .col-xs-6
-                                    button.btn.btn-primary
+                                    a.btn.btn-primary(href="/admin/operation/add")
                                         | 新增
                             table.table.table-small-font.table-bordered.table-striped
                                 thead
@@ -72,4 +72,4 @@ block content
             include ../includes/footer
         include ../includes/chat
 block bottomJavascript
-    script(src="../xenon/assets/js/rwd-table/js/rwd-table.min.js")
+    script(src="#{staticPath}xenon/assets/js/rwd-table/js/rwd-table.min.js")

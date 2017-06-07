@@ -1,6 +1,7 @@
 /**
  * Created by liumeng on 2017/5/26.
  */
+"use strict"
 require('babel-core/register')({
     presets: ['stage-3']
 });
