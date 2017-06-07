@@ -33,7 +33,7 @@ exports.login=async(ctx,next)=>{
                     dateExpires.setDate(dateExpires.getDate()+1);
                 }
                 ctx.cookies.set("name",username,{signed:true,expires:dateExpires});
-                ctx.redirect('/admin/admin');
+                ctx.redirect('/admin/main');
             }
             else{
                 throw new ApiError(ApiErrorNames.NAME_PSW_ERROR);

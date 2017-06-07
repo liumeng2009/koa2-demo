@@ -13,6 +13,19 @@ exports.list=async(ctx,next)=>{
 
     await ctx.render('./back/operation/list',{
         title:'功能操作列表',
-        operations:op
+        operations:[{
+            name:'liumeng',
+            code:'hu',
+            description:'你好'
+        },{
+            name:'liumeng',
+            code:'hu',
+            description:'你好111111111'
+        }]
+    });
+}
+exports.add=async(ctx,next)=>{
+    await ctx.render('./back/operation/add',{
+        title:'新增功能操作'
     });
 }

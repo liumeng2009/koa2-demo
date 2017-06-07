@@ -11,6 +11,7 @@ ApiErrorNames.USER_NOT_EXIST = 'userNotExist';
 ApiErrorNames.NAME_PSW_ERROR='namePswError';
 ApiErrorNames.MYSQL_ERROR='SequelizeDatabaseError';
 
+
 /**
  * API错误名称对应的错误信息
  */
