@@ -11,5 +11,8 @@ module.exports = db.defineModel('operations', {
         type: db.STRING(100),
         unique: true
     },
-    discription: db.TEXT
+    discription:{
+        type:db.TEXT,
+        allowNull:true
+    }
 });

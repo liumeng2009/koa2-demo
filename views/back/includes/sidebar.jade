@@ -17,51 +17,27 @@
                 a(href="#",data-toggle="settings-pane",data-animate="true")
                     i.linecons-cog
         ul#main-menu.main-menu
-            li
-                a(href="dashboard-1.html")
+            li.has-sub.opened.expanded.active
+                a(href="/admin/users/list")
                     i.linecons-cog
                     span.title
-                        | Dashboard
+                        | 用户设置
                 ul
-                    li
-                        a(href="dashboard-1.html")
+                    li.active
+                        a(href="/admin/operation/list")
                             span.title
-                                | Dashboard 1
+                                | 权限操作
                     li
-                        a(href="dashboard-2.html")
+                        a(href="/admin/funcs/list")
                             span.title
-                                | Dashboard 2
-                    li
-                        a(href="dashboard-3.html")
-                            span.title
-                                | Dashboard 3
-                    li
-                        a(href="dashboard-4.html")
-                            span.title
-                                | Dashboard 4
-                    li
-                        a(href="skin-generator.html")
-                            span.title
-                                | Skin Generator
-            li
-                a(href="layout-variants.html")
+                                | 功能项
+            li.has-sub
+                a(href="javascript:void(0);")
                     i.linecons-desktop
                     span.title
-                        | Layouts
+                        | 基本信息设置
                 ul
                     li
-                        a(href="layout-variants.html")
+                        a(href="/admin/positions/list")
                             span.title
-                                | Layout Vaiants &amp; API
-                    li
-                        a(href="layout-collapsed-sidebar.html")
-                            span.title
-                                | Collapsed Sidebar
-                    li
-                        a(href="layout-static-sidebar.html")
-                            span.title
-                                | Static Sidebar
-                    li
-                        a(href="layout-horizontal-menu.html")
-                            span.title
-                                | Horizontal Menu
+                                | 地点设置

@@ -31,7 +31,9 @@ block bottomJavascript
           let directToUrl='#{directTo}';
           if (directToUrl!='')
             window.location.href='#{directTo}';
+            //console.log('回指定页面');
           else
+            //console.log('回前一页面');
             window.history.go(-1);
         }
         second--;

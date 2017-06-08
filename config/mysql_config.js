@@ -16,7 +16,7 @@ config = require(defaultConfig);
 if (process.env.NODE_ENV === 'development') {
     try {
         if (fs.statSync(testConfig).isFile()) {
-            console.log(`Load ${testConfig}...`);
+            //console.log(`Load ${testConfig}...`);
             config = Object.assign(config, require(testConfig));
         }
     } catch (err) {
@@ -27,7 +27,7 @@ if (process.env.NODE_ENV === 'development') {
 } else if(process.env.NODE_ENV === 'production') {
     try {
         if (fs.statSync(overrideConfig).isFile()) {
-            console.log(`Load ${overrideConfig}...`);
+            //console.log(`Load ${overrideConfig}...`);
             config = Object.assign(config, require(overrideConfig));
         }
     } catch (err) {

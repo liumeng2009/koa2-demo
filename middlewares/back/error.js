@@ -3,7 +3,8 @@
  */
 var errorPage=async(ctx,next)=>{
     try{
-        //console.log('let it go'+ctx.method+ctx.status);
+        await next();
+        console.log('let it go'+ctx.url+ctx.method+ctx.status);
         if(ctx.status=='404'){
             let status = 404;
             let message = '页面未找到';
@@ -18,10 +19,10 @@ var errorPage=async(ctx,next)=>{
             await ctx.render('error',{
                 error:e,
                 showAll:showAll,
-                directTo:'/admin'
+                directTo:'/admin',
+                staticPath:'../../'
             });
         }
-        await next();
     }
     catch(e){
         console.log('显示错误页面'+JSON.stringify(e));
@@ -33,9 +34,23 @@ var errorPage=async(ctx,next)=>{
         if(process.env.NODE_ENV=='development'){
             showAll=true;
         }
+
+        //确定路径层次
+
+        let url=ctx.url;
+        let regTest=new RegExp('/','g');
+        let result=url.match(regTest);
+        console.log(url+'的层次是：'+result.length);
+        let staticPath='';
+        for(var i=0;i<result.length;i++){
+            staticPath=staticPath+'../';
+        }
+        console.log(staticPath);
+
         await ctx.render('error',{
             error:e,
-            showAll:showAll
+            showAll:showAll,
+            staticPath:staticPath
         });
     }
 }
