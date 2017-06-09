@@ -32,7 +32,7 @@ exports.editIndex=async(ctx,next)=>{
         }
     });
     console.log('heieheieheihieihi'+operation)
-    await ctx.render('./back/operation/add',{
+    await ctx.render('./back/operation/edit',{
         title:'编辑功能操作',
         staticPath:'../../../',
         operation:operation[0]
@@ -55,38 +55,27 @@ exports.save=async(ctx,next)=>{
             where: {
                 id: id
             }
-        }).then(function(p) {
-            console.log('found' + JSON.stringify(p));
-            if(p.length>0){
-                let operationObj=p[0];
-                operationObj.name=name;
-                operationObj.code=code;
-                operationObj.discription=discription;
-                operationObj.save().then(function(p){
-                    console.log('update success'+JSON.stringify(p));
-                    ctx.redirect('/admin/operation/list');
-                });
-            }
-
-        }).catch(function (err) {
-            //console.log('hahahahahahahah'+JSON.stringify(err));
-            throw new ApiError(err);
         });
+        console.log('found' + JSON.stringify(operation));
+        let operationObj=operation[0];
+        operationObj.name=name;
+        operationObj.code=code;
+        operationObj.discription=discription;
+
+        let saveResult= await operationObj.save();
+        console.log('update success'+JSON.stringify(saveResult));
+        await ctx.redirect('/admin/operation/list');
     }
     //id不存在，说明是新增模式
     else{
         //promise
-        await Operation.create({
+        let createResult=await Operation.create({
             name:name,
             code:code,
             discription:discription
-        }).then(function(p){
-            console.log('created'+JSON.stringify(p)+'test the password');
-            ctx.redirect('/admin/operation/list');
-        }).catch(function(err){
-            console.log('failed'+err)
-            throw new ApiError(err);
         });
+        console.log('created'+JSON.stringify(createResult)+'test the password');
+        await ctx.redirect('/admin/operation/list');
     }
 }
 
@@ -98,8 +87,8 @@ exports.delete=async(ctx,next)=>{
         where: {
             id: id
         }
-    }).then(function(p){
-        console.log('delete success'+JSON.stringify(p));
-        ctx.redirect('/admin/operation/list');
     })
+    let deleteResult=await operation[0].destroy();
+    console.log('delete success'+JSON.stringify(deleteResult));
+    ctx.redirect('/admin/operation/list');
 }

@@ -3,7 +3,8 @@
  */
 exports.loginIndex=async(ctx,next)=>{
     await ctx.render('./back/login', {
-        title: '登录'
+        title: '登录',
+        staticPath:'/',
     });
 }
 

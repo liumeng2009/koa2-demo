@@ -1,0 +1,264 @@
+[2017-06-09 11:00:06.703] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /admin/main
+request client ip:  ::1
+request query:  {}
+response time: 21
+err name: Error
+err message: F:\koa2\koa2-demo\views\back\layout.jade:25
+    23|       script(src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js")
+    24|   body.page-body
+  > 25|     include ../includes/setting-pane
+    26|     .page-container
+    27|       include ../includes/sidebar
+    28|       .main-content
+
+ENOENT: no such file or directory, open 'F:\koa2\koa2-demo\views\includes\setting-pane.jade'
+err stack: Error: F:\koa2\koa2-demo\views\back\layout.jade:25
+    23|       script(src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js")
+    24|   body.page-body
+  > 25|     include ../includes/setting-pane
+    26|     .page-container
+    27|       include ../includes/sidebar
+    28|       .main-content
+
+ENOENT: no such file or directory, open 'F:\koa2\koa2-demo\views\includes\setting-pane.jade'
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.fs.readFileSync (fs.js:491:33)
+    at Parser.parseInclude (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:606:18)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:223:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.parse (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:122:25)
+    at Parser.parse (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:131:24)
+    at parse (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:104:21)
+    at Object.exports.compile (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:205:16)
+*************** error log end ***************
+
+[2017-06-09 11:01:28.845] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /admin/main
+request client ip:  ::1
+request query:  {}
+response time: 16
+err name: Error
+err message: F:\koa2\koa2-demo\views\back\layout.jade:25
+    23|       script(src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js")
+    24|   body.page-body
+  > 25|     include ../includes/setting-pane
+    26|     .page-container
+    27|       include ../includes/sidebar
+    28|       .main-content
+
+ENOENT: no such file or directory, open 'F:\koa2\koa2-demo\views\includes\setting-pane.jade'
+err stack: Error: F:\koa2\koa2-demo\views\back\layout.jade:25
+    23|       script(src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js")
+    24|   body.page-body
+  > 25|     include ../includes/setting-pane
+    26|     .page-container
+    27|       include ../includes/sidebar
+    28|       .main-content
+
+ENOENT: no such file or directory, open 'F:\koa2\koa2-demo\views\includes\setting-pane.jade'
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.fs.readFileSync (fs.js:491:33)
+    at Parser.parseInclude (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:606:18)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:223:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.parse (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:122:25)
+    at Parser.parse (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:131:24)
+    at parse (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:104:21)
+    at Object.exports.compile (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:205:16)
+*************** error log end ***************
+
+[2017-06-09 11:01:29.396] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /admin/main
+request client ip:  ::1
+request query:  {}
+response time: 16
+err name: Error
+err message: F:\koa2\koa2-demo\views\back\layout.jade:25
+    23|       script(src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js")
+    24|   body.page-body
+  > 25|     include ../includes/setting-pane
+    26|     .page-container
+    27|       include ../includes/sidebar
+    28|       .main-content
+
+ENOENT: no such file or directory, open 'F:\koa2\koa2-demo\views\includes\setting-pane.jade'
+err stack: Error: F:\koa2\koa2-demo\views\back\layout.jade:25
+    23|       script(src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js")
+    24|   body.page-body
+  > 25|     include ../includes/setting-pane
+    26|     .page-container
+    27|       include ../includes/sidebar
+    28|       .main-content
+
+ENOENT: no such file or directory, open 'F:\koa2\koa2-demo\views\includes\setting-pane.jade'
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.fs.readFileSync (fs.js:491:33)
+    at Parser.parseInclude (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:606:18)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:223:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.parse (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:122:25)
+    at Parser.parse (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:131:24)
+    at parse (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:104:21)
+    at Object.exports.compile (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:205:16)
+*************** error log end ***************
+
+[2017-06-09 11:02:42.467] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /admin/main
+request client ip:  ::1
+request query:  {}
+response time: 22
+err name: Error
+err message: F:\koa2\koa2-demo\views\back\layout.jade:25
+    23|       script(src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js")
+    24|   body.page-body
+  > 25|     include ../includes/setting-pane
+    26|     .page-container
+    27|       include ../includes/sidebar
+    28|       .main-content
+
+ENOENT: no such file or directory, open 'F:\koa2\koa2-demo\views\includes\setting-pane.jade'
+err stack: Error: F:\koa2\koa2-demo\views\back\layout.jade:25
+    23|       script(src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js")
+    24|   body.page-body
+  > 25|     include ../includes/setting-pane
+    26|     .page-container
+    27|       include ../includes/sidebar
+    28|       .main-content
+
+ENOENT: no such file or directory, open 'F:\koa2\koa2-demo\views\includes\setting-pane.jade'
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.fs.readFileSync (fs.js:491:33)
+    at Parser.parseInclude (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:606:18)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:223:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.parse (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:122:25)
+    at Parser.parse (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:131:24)
+    at parse (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:104:21)
+    at Object.exports.compile (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:205:16)
+*************** error log end ***************
+
+[2017-06-09 11:02:47.858] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /admin/main
+request client ip:  ::1
+request query:  {}
+response time: 17
+err name: Error
+err message: F:\koa2\koa2-demo\views\back\layout.jade:25
+    23|       script(src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js")
+    24|   body.page-body
+  > 25|     include ../includes/setting-pane
+    26|     .page-container
+    27|       include ../includes/sidebar
+    28|       .main-content
+
+ENOENT: no such file or directory, open 'F:\koa2\koa2-demo\views\includes\setting-pane.jade'
+err stack: Error: F:\koa2\koa2-demo\views\back\layout.jade:25
+    23|       script(src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js")
+    24|   body.page-body
+  > 25|     include ../includes/setting-pane
+    26|     .page-container
+    27|       include ../includes/sidebar
+    28|       .main-content
+
+ENOENT: no such file or directory, open 'F:\koa2\koa2-demo\views\includes\setting-pane.jade'
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.fs.readFileSync (fs.js:491:33)
+    at Parser.parseInclude (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:606:18)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:223:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.parse (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:122:25)
+    at Parser.parse (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:131:24)
+    at parse (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:104:21)
+    at Object.exports.compile (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:205:16)
+*************** error log end ***************
+
+[2017-06-09 11:03:12.070] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /admin/main
+request client ip:  ::1
+request query:  {}
+response time: 18
+err name: Error
+err message: F:\koa2\koa2-demo\views\back\layout.jade:26
+    24|   body.page-body
+    25|     block content
+  > 26|     include ../includes/footer
+    27|     script(src="#{staticPath}xenon/assets/js/bootstrap.min.js")
+    28|     script(src="#{staticPath}xenon/assets/js/TweenMax.min.js")
+    29|     script(src="#{staticPath}xenon/assets/js/resizeable.js")
+
+ENOENT: no such file or directory, open 'F:\koa2\koa2-demo\views\includes\footer.jade'
+err stack: Error: F:\koa2\koa2-demo\views\back\layout.jade:26
+    24|   body.page-body
+    25|     block content
+  > 26|     include ../includes/footer
+    27|     script(src="#{staticPath}xenon/assets/js/bootstrap.min.js")
+    28|     script(src="#{staticPath}xenon/assets/js/TweenMax.min.js")
+    29|     script(src="#{staticPath}xenon/assets/js/resizeable.js")
+
+ENOENT: no such file or directory, open 'F:\koa2\koa2-demo\views\includes\footer.jade'
+    at Object.fs.openSync (fs.js:584:18)
+    at Object.fs.readFileSync (fs.js:491:33)
+    at Parser.parseInclude (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:606:18)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:223:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.block (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:211:21)
+    at Parser.parse (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:122:25)
+    at Parser.parse (F:\koa2\koa2-demo\node_modules\jade\lib\parser.js:131:24)
+    at parse (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:104:21)
+    at Object.exports.compile (F:\koa2\koa2-demo\node_modules\jade\lib\index.js:205:16)
+*************** error log end ***************
+

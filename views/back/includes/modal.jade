@@ -1,0 +1,26 @@
+#modal-askDelete.modal.fade
+    .modal-dialog
+        .modal-content
+            .modal-header
+                button.close(type="button",data-dismiss="modal",aria-hidden="true")
+                    | &times;
+                h4.modal-title
+                    | Basic Modal
+            .modal-body
+                | 确定要删除吗？
+            .modal-footer
+                button.btn.btn-white(type="button",data-dismiss="modal")
+                    | 取消
+                button.btn.btn-info(type="button")
+                    | 确定
+script.
+    var openDeleteModal=function(url){
+        jQuery('#modal-askDelete').modal('show', {backdrop: 'fade'});
+        $('#modal-askDelete').on('hidden.bs.modal', function (e) {
+
+        })
+        $('#modal-askDelete .btn-info').on('click', function (e) {
+            window.location.href=url;
+        })
+        return false;
+    }
