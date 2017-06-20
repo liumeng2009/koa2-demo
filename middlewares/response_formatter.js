@@ -6,17 +6,14 @@ var ApiError = require('../app/error/ApiError');
 
 var response_formatter =  (ctx) => {
     //如果有返回数据，将返回数据添加到data中
-    console.log('not api');
     if (ctx.body) {
         ctx.body = {
-            code: 0,
-            message: 'success',
+            success:true,
             data: ctx.body
         }
     } else {
         ctx.body = {
-            code: 0,
-            message: 'success'
+            success: true
         }
     }
 }
@@ -28,7 +25,7 @@ var url_filter = function(pattern){
             await next();
         }
         catch(error){
-
+            console.log('i am error object'+error+JSON.stringify(ApiError));
             //如果异常类型是API异常并且通过正则验证的url，将错误信息添加到响应体中返回。
             if(error instanceof ApiError && reg.test(ctx.originalUrl)){
                 console.log('error url');
@@ -47,6 +44,4 @@ var url_filter = function(pattern){
         }
     }
 }
-
-//module.exports = response_formatter;
 module.exports = url_filter;

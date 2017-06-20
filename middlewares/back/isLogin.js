@@ -3,7 +3,7 @@
  */
 var isLogin=async(ctx,next)=>{
     console.log(ctx.url+ctx.cookies.get('name',{signed:true}));
-    if(ctx.url=='/admin'||ctx.url=='/admin/login'){
+    if(ctx.url=='/admin'||ctx.url=='/admin/login'||ctx.url.indexOf('/api/user/login')>-1){
         await next()
     }
     else{

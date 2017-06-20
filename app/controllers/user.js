@@ -5,6 +5,7 @@ const ApiError=require('../error/ApiError');
 const ApiErrorNames=require('../error/ApiErrorNames');
 const model = require('../model');
 const sys_config=require('../../config/sys_config');
+const response_config=require('../../config/response_config');
 const bcrypt=require('bcrypt');
 
 exports.login=async(ctx,next)=>{
@@ -14,40 +15,44 @@ exports.login=async(ctx,next)=>{
 
     let User = model.user;
 
-
-    var user=await User.findAll({
+    let userObj=await User.findAll({
         where:{
             name:username
         }
-    }).then(function (p) {
-        console.log('found.' + JSON.stringify(p));
-        if(p.length>0){
-            let isRealPassword=bcrypt.compareSync(password, p[0].password);
-            console.log('密码对比结果是：'+isRealPassword);
-            if(isRealPassword){
-                let dateExpires=new Date();
-                if(rememberme){
-                    dateExpires.setDate(dateExpires.getDate()+7);
-                }
-                else{
-                    dateExpires.setDate(dateExpires.getDate()+1);
-                }
-                ctx.cookies.set("name",username,{signed:true,expires:dateExpires});
-                ctx.redirect('/admin/main');
+    });
+
+    if(userObj[0]&&userObj[0].password){
+        let isRealPassword=bcrypt.compareSync(password, userObj[0].password);
+        console.log('密码对比结果是：'+isRealPassword);
+        if(isRealPassword){
+            let dateExpires=new Date();
+            if(rememberme){
+                dateExpires.setDate(dateExpires.getDate()+7);
             }
             else{
-                throw new ApiError(ApiErrorNames.NAME_PSW_ERROR);
+                dateExpires.setDate(dateExpires.getDate()+1);
             }
-
+            ctx.cookies.set("name",username,{signed:true,expires:dateExpires});
+            ctx.body={
+                success:true,
+                user:userObj[0]
+            }
         }
         else{
-            //console.log('db not exist')
-            throw new ApiError(ApiErrorNames.USER_NOT_EXIST);
+            ctx.body={
+                success:true,
+                user:[],
+                message:response_config.password_error
+            }
         }
-    }).catch(function (err) {
-        //console.log('hahahahahahahah'+JSON.stringify(err));
-        throw new ApiError(err);
-    });
+    }
+    else{
+        ctx.body= {
+            success: true,
+            user: [],
+            message:response_config.user_not_exist
+        }
+    }
 }
 
 exports.registerUser=async(ctx,next)=>{

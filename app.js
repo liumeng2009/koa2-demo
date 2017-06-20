@@ -64,16 +64,17 @@ app.use(async (ctx, next) => {
 const response_formatter=require('./middlewares/response_formatter');
 const logger_add=require('./middlewares/logger');
 const isLogin=require('./middlewares/back/isLogin');
-const errorPage=require('./middlewares/back/error')
+const errorApi=require('./middlewares/error');
 
 app.keys = ['im a newer secret', 'i like turtle'];
 app.keys = new Keygrip(['im a newer secret', 'i like turtle'], 'sha256');
 
 //app.use(response_formatter);
-//app.use(response_formatter('^/api'));
-app.use(isLogin);
+//app.use(isLogin);
 app.use(logger_add);
-app.use(errorPage);
+//app.use(response_formatter('^/api'));
+app.use(errorApi);
+
 
 router.use('/', index.routes(), index.allowedMethods());
 router.use('/users', users.routes(), users.allowedMethods());

@@ -1,0 +1,25 @@
+[2017-06-19 10:42:06.888] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/login/liumeng/123456
+request client ip:  ::1
+request query:  {}
+response time: 239
+err name: SequelizeDatabaseError
+err message: ER_NO_SUCH_TABLE: Table 'lg.users' doesn't exist
+err stack: SequelizeBaseError: ER_NO_SUCH_TABLE: Table 'lg.users' doesn't exist
+    at Query.formatError (F:\koa2\koa2-demo\node_modules\sequelize\lib\dialects\mysql\query.js:175:14)
+    at Query._callback (F:\koa2\koa2-demo\node_modules\sequelize\lib\dialects\mysql\query.js:49:21)
+    at Query.Sequence.end (F:\koa2\koa2-demo\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24)
+    at Query.ErrorPacket (F:\koa2\koa2-demo\node_modules\mysql\lib\protocol\sequences\Query.js:94:8)
+    at Protocol._parsePacket (F:\koa2\koa2-demo\node_modules\mysql\lib\protocol\Protocol.js:280:23)
+    at Parser.write (F:\koa2\koa2-demo\node_modules\mysql\lib\protocol\Parser.js:74:12)
+    at Protocol.write (F:\koa2\koa2-demo\node_modules\mysql\lib\protocol\Protocol.js:39:16)
+    at Socket.<anonymous> (F:\koa2\koa2-demo\node_modules\mysql\lib\Connection.js:109:28)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:191:7)
+    at readableAddChunk (_stream_readable.js:178:18)
+    at Socket.Readable.push (_stream_readable.js:136:10)
+    at TCP.onread (net.js:561:20)
+*************** error log end ***************
+
