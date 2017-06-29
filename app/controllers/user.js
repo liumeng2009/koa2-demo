@@ -7,11 +7,15 @@ const model = require('../model');
 const sys_config=require('../../config/sys_config');
 const response_config=require('../../config/response_config');
 const bcrypt=require('bcrypt');
+const jwt=require('jsonwebtoken');
 
 exports.login=async(ctx,next)=>{
     let username=ctx.request.body.username;
     let password=ctx.request.body.password;
     let rememberme=ctx.request.body.rememberme;
+
+    //let username=ctx.query.username;
+    //let password=ctx.query.password;
 
     let User = model.user;
 
@@ -25,6 +29,7 @@ exports.login=async(ctx,next)=>{
         let isRealPassword=bcrypt.compareSync(password, userObj[0].password);
         console.log('密码对比结果是：'+isRealPassword);
         if(isRealPassword){
+            console.log(111);
             let dateExpires=new Date();
             if(rememberme){
                 dateExpires.setDate(dateExpires.getDate()+7);
@@ -32,26 +37,42 @@ exports.login=async(ctx,next)=>{
             else{
                 dateExpires.setDate(dateExpires.getDate()+1);
             }
-            ctx.cookies.set("name",username,{signed:true,expires:dateExpires});
+            //ctx.cookies.set("name",username,{signed:true,expires:dateExpires});
+            //console.log(555+userObj);
+            delete userObj[0].token;
+            let token=jwt.sign({
+                data:userObj[0]
+            },sys_config.jwtSecret,{expiresIn:'1 days'});
+            userObj[0].token=token;
+            console.log('jwt:'+token+userObj[0]);
+            await userObj[0].save();
+
             ctx.body={
-                success:true,
-                user:userObj[0]
+                status:0,
+                data:userObj[0]
             }
         }
         else{
+            /*
             ctx.body={
                 success:true,
-                user:[],
+                data: {},
                 message:response_config.password_error
             }
+            */
+            console.log('heheheheh');
+            throw new ApiError(ApiErrorNames.USER_PSW_ERROR);
         }
     }
     else{
+        /*
         ctx.body= {
             success: true,
-            user: [],
+            data: {},
             message:response_config.user_not_exist
         }
+        */
+        throw new ApiError(ApiErrorNames.USER_NOT_EXIST);
     }
 }
 
@@ -68,4 +89,36 @@ exports.registerUser=async(ctx,next)=>{
         console.log('failed:'+err);
     });
     console.log('registerUser',ctx.request.body);
+}
+
+exports.getUserData=async(ctx,next)=>{
+    let token=ctx.query.token;
+
+    if(token==''||token=='undefined'){
+        throw new ApiError(ApiErrorNames.JWT_ERROR);
+    }
+
+    let userObj=await User.findAll({
+        where:{
+            token:token
+        }
+    });
+    if(userObj[0]){
+        jwt.verify(token,sys_config.jwtSecret,function(error,decoded){
+            if(error){
+                throw new ApiError(ApiErrorNames.USER_NOT_EXIST);
+            }
+            else{
+                ctx.body={
+                    status:0,
+                    data:userObj[0]
+                }
+            }
+        });
+
+    }
+    else{
+        throw new ApiError(ApiErrorNames.USER_NOT_EXIST);
+    }
+
 }

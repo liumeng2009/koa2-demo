@@ -3,7 +3,8 @@
  */
 var sys_config = {
     //bcrypt
-    saltRounds: 10
+    saltRounds: 10,
+    jwtSecret:'liumeng'
 };
 
 module.exports = sys_config;

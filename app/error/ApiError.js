@@ -10,8 +10,10 @@ class ApiError extends Error{
 
         var error_info = ApiErrorNames.getErrorInfo(error_name);
 
+        console.log('9999999999'+JSON.stringify(error_info));
+
         this.name = error_name;
-        this.code = error_info.code;
+        this.status = error_info.code;
         this.message = error_info.message;
     }
 }

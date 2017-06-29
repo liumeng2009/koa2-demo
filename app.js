@@ -8,6 +8,7 @@ const json = require('koa-json');
 const onerror = require('koa-onerror');
 const bodyparser = require('koa-bodyparser')();
 const Keygrip = require("keygrip");
+const cors=require('koa-cors');
 
 const index = require('./routes/index');
 const users = require('./routes/users');
@@ -74,7 +75,10 @@ app.keys = new Keygrip(['im a newer secret', 'i like turtle'], 'sha256');
 app.use(logger_add);
 //app.use(response_formatter('^/api'));
 app.use(errorApi);
-
+var corsOptions = {
+  origin: '*'
+};
+app.use(cors(corsOptions));
 
 router.use('/', index.routes(), index.allowedMethods());
 router.use('/users', users.routes(), users.allowedMethods());

@@ -8,7 +8,7 @@ var operationController=require('../app/controllers/operation');
 
 router.get('/', adminLoginController.loginIndex);
 router.get('/main', adminLoginController.adminIndex);
-router.post('/login/:username/:password', userController.login);
+router.post('/login', userController.login);
 router.get('/reg',userController.registerUser);
 
 router.get('/operation/list',operationController.list);
