@@ -1,0 +1,51 @@
+[2017-07-02 14:11:44.204] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=undefined
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"undefined"}
+response time: 13
+response status: 200
+response body: 
+{"name":"jwtError","status":10003,"message":"身份验证错误"}
+*************** response log end ***************
+
+[2017-07-02 14:11:46.096] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 3
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-02 14:11:46.940] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"","password":""}
+response time: 671
+response status: 200
+response body: 
+{"name":"userNotExist","status":10001,"message":"用户不存在"}
+*************** response log end ***************
+
+[2017-07-02 14:11:49.332] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"","password":""}
+response time: 7
+response status: 200
+response body: 
+{"name":"userNotExist","status":10001,"message":"用户不存在"}
+*************** response log end ***************
+

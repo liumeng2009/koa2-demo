@@ -5,6 +5,7 @@ var errorPage=async(ctx,next)=>{
     try{
         await next();
         console.log('let it go'+ctx.url+ctx.method+ctx.status);
+        /*
         if(ctx.status=='404'){
             let status = 404;
             let message = '页面未找到';
@@ -16,6 +17,7 @@ var errorPage=async(ctx,next)=>{
             e.name='page not found'
             ctx.body=e;
         }
+        */
     }
     catch(e){
         let status = e.status || 500;

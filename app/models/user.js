@@ -13,5 +13,8 @@ module.exports = db.defineModel('users', {
     },
     password: db.STRING(100),
     gender: db.BOOLEAN,
-    token:db.TEXT
+    token:{
+        type:db.TEXT,
+        allowNull:true
+    }
 });

@@ -92,33 +92,80 @@ exports.registerUser=async(ctx,next)=>{
 }
 
 exports.getUserData=async(ctx,next)=>{
-    let token=ctx.query.token;
+    let token=ctx.params.token;
 
     if(token==''||token=='undefined'){
         throw new ApiError(ApiErrorNames.JWT_ERROR);
     }
 
+    let User = model.user;
     let userObj=await User.findAll({
         where:{
             token:token
         }
     });
+    console.log('user is'+userObj);
     if(userObj[0]){
-        jwt.verify(token,sys_config.jwtSecret,function(error,decoded){
-            if(error){
-                throw new ApiError(ApiErrorNames.USER_NOT_EXIST);
-            }
-            else{
-                ctx.body={
-                    status:0,
-                    data:userObj[0]
+        return new Promise((resolve, reject) => {
+            jwt.verify(token,sys_config.jwtSecret,function(error,decoded){
+                if(error){
+                    console.log(888888888888);
+                    return reject(function(){
+                        throw new ApiError(ApiErrorNames.JWT_ERROR);
+                    })
                 }
-            }
+                else{
+                    ctx.body={
+                        status:0,
+                        data:userObj[0]
+
+                    }
+                    resolve();
+                }
+            })
         });
+
+
+        /*
+        ctx.body = {
+            status: 0,
+            data: userObj[0]
+        }
+*/
+        /*
+        await jwt.verify(token,sys_config.jwtSecret,function(error,decoded){
+            return new Promise(function(resolve,reject){
+                if(error){
+                    console.log(888888888888);
+                    return resolve(function(){
+                        throw new ApiError(ApiErrorNames.JWT_ERROR);
+                    })
+                }
+                else{
+                    console.log(777777777+userObj[0]+decoded);
+                    ctx.body={
+                        status:0,
+                        data:userObj[0]
+
+                    }
+                    resolve();
+
+                    return resolve({
+
+                        }
+                    )
+
+                }
+            })
+        });
+
+*/
+        /*
+
+        */
 
     }
     else{
         throw new ApiError(ApiErrorNames.USER_NOT_EXIST);
     }
-
 }
