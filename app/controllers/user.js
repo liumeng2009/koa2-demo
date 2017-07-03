@@ -110,9 +110,11 @@ exports.getUserData=async(ctx,next)=>{
             jwt.verify(token,sys_config.jwtSecret,function(error,decoded){
                 if(error){
                     console.log(888888888888);
-                    return reject(function(){
-                        throw new ApiError(ApiErrorNames.JWT_ERROR);
-                    })
+                    //return reject(function(){
+
+                    //})
+                    reject(new ApiError(ApiErrorNames.JWT_ERROR));
+
                 }
                 else{
                     ctx.body={
