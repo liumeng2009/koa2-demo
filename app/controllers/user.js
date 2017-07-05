@@ -39,9 +39,18 @@ exports.login=async(ctx,next)=>{
             }
             //ctx.cookies.set("name",username,{signed:true,expires:dateExpires});
             //console.log(555+userObj);
-            delete userObj[0].token;
+            //delete userObj[0].token;
+            let user={
+                id:userObj[0].id,
+                name:userObj[0].name,
+                gender:userObj[0].gender,
+                email:userObj[0].email
+            }
+
+
+            //console.log('加密前的user是：'+JSON.stringify(userObj[0]));
             let token=jwt.sign({
-                data:userObj[0]
+                data:user
             },sys_config.jwtSecret,{expiresIn:'1 days'});
             userObj[0].token=token;
             console.log('jwt:'+token+userObj[0]);
