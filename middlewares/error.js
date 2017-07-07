@@ -23,6 +23,8 @@ var errorPage=async(ctx,next)=>{
         let status = e.status || 500;
         let message = e.message || '服务器错误';
 
+        console.log(e);
+
         e.status=status;
         e.message=message;
 
