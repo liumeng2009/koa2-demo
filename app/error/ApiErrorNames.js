@@ -7,6 +7,7 @@ ApiErrorNames.UNKNOW_ERROR = "unknowError";
 ApiErrorNames.USER_NOT_EXIST = "userNotExist";
 ApiErrorNames.USER_PSW_ERROR = "userPswError";
 ApiErrorNames.JWT_ERROR="jwtError";
+ApiErrorNames.NEED_LOGIN="needLogin";
 
 /**
  * API错误名称对应的错误信息
@@ -17,6 +18,7 @@ error_map.set(ApiErrorNames.UNKNOW_ERROR, { code: -1, message: '未知错误' })
 error_map.set(ApiErrorNames.USER_NOT_EXIST, { code: 10001, message: '用户不存在' });
 error_map.set(ApiErrorNames.USER_PSW_ERROR, { code: 10002, message: '密码错误' });
 error_map.set(ApiErrorNames.JWT_ERROR, { code: 10003, message: '身份验证错误' });
+error_map.set(ApiErrorNames.NEED_LOGIN, { code: 10004, message: '请先登录' });
 
 //根据错误名称获取错误信息
 ApiErrorNames.getErrorInfo = (error_name) => {

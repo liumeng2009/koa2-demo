@@ -101,7 +101,7 @@ exports.registerUser=async(ctx,next)=>{
 }
 
 exports.getUserData=async(ctx,next)=>{
-    let token=ctx.params.token;
+    let token=ctx.query.token;
 
     if(token==''||token=='undefined'){
         throw new ApiError(ApiErrorNames.JWT_ERROR);
@@ -115,7 +115,13 @@ exports.getUserData=async(ctx,next)=>{
     });
     console.log('user is'+userObj);
     if(userObj[0]){
-        return new Promise((resolve, reject) => {
+        console.log(123);
+        ctx.body={
+            status:0,
+            data:userObj[0]
+
+        }
+/*        return new Promise((resolve, reject) => {
             jwt.verify(token,sys_config.jwtSecret,function(error,decoded){
                 if(error){
                     console.log(888888888888);
@@ -126,57 +132,15 @@ exports.getUserData=async(ctx,next)=>{
 
                 }
                 else{
-                    ctx.body={
-                        status:0,
-                        data:userObj[0]
+                    console.log(2222222222222+userObj[0]);
 
-                    }
                     resolve();
                 }
             })
-        });
-
-
-        /*
-        ctx.body = {
-            status: 0,
-            data: userObj[0]
-        }
-*/
-        /*
-        await jwt.verify(token,sys_config.jwtSecret,function(error,decoded){
-            return new Promise(function(resolve,reject){
-                if(error){
-                    console.log(888888888888);
-                    return resolve(function(){
-                        throw new ApiError(ApiErrorNames.JWT_ERROR);
-                    })
-                }
-                else{
-                    console.log(777777777+userObj[0]+decoded);
-                    ctx.body={
-                        status:0,
-                        data:userObj[0]
-
-                    }
-                    resolve();
-
-                    return resolve({
-
-                        }
-                    )
-
-                }
-            })
-        });
-
-*/
-        /*
-
-        */
-
+        });*/
     }
     else{
+        console.log(567);
         throw new ApiError(ApiErrorNames.USER_NOT_EXIST);
     }
 }

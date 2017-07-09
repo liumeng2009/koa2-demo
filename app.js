@@ -71,14 +71,18 @@ app.keys = ['im a newer secret', 'i like turtle'];
 app.keys = new Keygrip(['im a newer secret', 'i like turtle'], 'sha256');
 
 //app.use(response_formatter);
-//app.use(isLogin);
 app.use(logger_add);
 //app.use(response_formatter('^/api'));
 app.use(errorApi);
+
 var corsOptions = {
   origin: '*'
 };
 app.use(cors(corsOptions));
+
+app.use(isLogin);
+
+
 
 router.use('/', index.routes(), index.allowedMethods());
 router.use('/users', users.routes(), users.allowedMethods());

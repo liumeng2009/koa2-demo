@@ -6,6 +6,6 @@ var user_controller = require('../../app/controllers/user');
 
 router.post('/login', user_controller.login);
 router.post('/registerUser', user_controller.registerUser);
-router.get('/:token',user_controller.getUserData);
+router.get('/',user_controller.getUserData);
 
 module.exports = router;
