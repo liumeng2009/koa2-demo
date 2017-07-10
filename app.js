@@ -83,7 +83,6 @@ app.use(cors(corsOptions));
 app.use(isLogin);
 
 
-
 router.use('/', index.routes(), index.allowedMethods());
 router.use('/users', users.routes(), users.allowedMethods());
 router.use('/api', api.routes(), api.allowedMethods());

@@ -19,11 +19,9 @@ var isLogin=async(ctx,next)=>{
         return new Promise((resolve, reject) => {
             jwt.verify(token, sys_config.jwtSecret, function (error, decoded) {
                 if (error) {
-                    return reject(function(){
-                        new ApiError(ApiErrorNames.JWT_ERROR);
-                    })
-
-
+                    reject(
+                        new ApiError(ApiErrorNames.JWT_ERROR)
+                    );
                 }
                 else {
                     resolve(next());

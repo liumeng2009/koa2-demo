@@ -13,7 +13,7 @@ exports.list=async(ctx,next)=>{
 
     let Building = model.buildings;
 
-    console.log(Building);
+    console.log('7878787'+Building);
 
     let buildingObj=await Building.findAll({
 
