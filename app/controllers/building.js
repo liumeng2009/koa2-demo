@@ -57,13 +57,13 @@ exports.save=async(ctx,next)=>{
     //id不存在，说明是新增模式
     else{
         //promise
-        let createResult=await Operation.create({
+        let createResult=await Buildings.create({
             name:name,
-            address:code,
+            address:address,
             minfloor:minfloor,
             maxfloor:maxfloor
         });
-        console.log('created'+JSON.stringify(createResult)+'test the password');
+        console.log('created'+JSON.stringify(createResult));
         ctx.body={
             status:0,
             data:createResult

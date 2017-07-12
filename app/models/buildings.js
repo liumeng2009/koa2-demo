@@ -10,7 +10,7 @@ module.exports = db.defineModel('buildings', {
     address: {
         type: db.STRING(200)
     },
-    minflooor:{
+    minfloor:{
         type:db.INTEGER
     },
     maxfloor:{
