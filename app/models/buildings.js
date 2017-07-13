@@ -15,5 +15,8 @@ module.exports = db.defineModel('buildings', {
     },
     maxfloor:{
         type:db.INTEGER
+    },
+    status:{
+        type:db.INTEGER
     }
 });

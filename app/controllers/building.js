@@ -8,15 +8,15 @@ const sys_config=require('../../config/sys_config');
 const response_config=require('../../config/response_config');
 
 exports.list=async(ctx,next)=>{
-
-    console.log(111);
-
     let Building = model.buildings;
 
-    console.log('7878787'+Building);
-
     let buildingObj=await Building.findAll({
-
+        where:{
+            status:1
+        },
+        order:[
+            ['updatedAt','DESC']
+        ],
     });
     ctx.body={
         status:0,
@@ -32,6 +32,25 @@ exports.save=async(ctx,next)=>{
     let id=ctx.request.body.id;
 
     let Buildings=model.buildings;
+
+    if(name!=''&address!=''&minfloor!=''&minfloor!=0&maxfloor!=''&maxfloor!=0){
+
+    }
+    else{
+        throw new ApiError(ApiErrorNames.BUILDING_NOT_NULL);
+    }
+
+    try{
+        let testMinFloor=parseInt(minfloor);
+        let testMaxFloor=parseInt(maxfloor);
+    }
+    catch(e){
+        throw new ApiError(ApiErrorNames.INPUT_ERROR_TYPE)
+    }
+
+    if(parseInt(minfloor)>parseInt(maxfloor)){
+        throw new ApiError(ApiErrorNames.MAX_AND_MIN)
+    }
 
     //id存在，说明是编辑模式
     if(id){
@@ -56,12 +75,22 @@ exports.save=async(ctx,next)=>{
     }
     //id不存在，说明是新增模式
     else{
-        //promise
+        let buildingObj=await Buildings.findAll({
+            where:{
+                name:name
+            }
+        })
+
+        if(buildingObj.length>0){
+            throw new ApiError(ApiErrorNames.NEED_UNIQUE_BUILDING_NAME);
+        }
+
         let createResult=await Buildings.create({
             name:name,
             address:address,
             minfloor:minfloor,
-            maxfloor:maxfloor
+            maxfloor:maxfloor,
+            status:1
         });
         console.log('created'+JSON.stringify(createResult));
         ctx.body={
