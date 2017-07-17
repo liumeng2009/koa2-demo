@@ -6,21 +6,62 @@ const ApiErrorNames=require('../error/ApiErrorNames');
 const model = require('../model');
 const sys_config=require('../../config/sys_config');
 const response_config=require('../../config/response_config');
+const Sequelize = require('sequelize');
 
 exports.list=async(ctx,next)=>{
     let Building = model.buildings;
 
-    let buildingObj=await Building.findAll({
+    let pageid=ctx.params.pageid;
+
+
+    let count=await Building.count({
         where:{
             status:1
-        },
-        order:[
-            ['updatedAt','DESC']
-        ],
+        }
     });
+    //let count=buildingCountObj.get('count');
+
+    let buildingObj;
+
+    if(pageid&&pageid!=0){
+        try{
+            let pageidnow=parseInt(pageid);
+            buildingObj=await Building.findAll({
+                where:{
+                    status:1
+                },
+                order:[
+                    ['updatedAt','DESC']
+                ],
+                offset: (pageidnow-1)*sys_config.pageSize,
+                limit: sys_config.pageSize
+            });
+        }
+        catch(e){
+            buildingObj=await Building.findAll({
+                where:{
+                    status:1
+                },
+                order:[
+                    ['updatedAt','DESC']
+                ]
+            });
+        }
+    }
+    else{
+        buildingObj=await Building.findAll({
+            where:{
+                status:1
+            },
+            order:[
+                ['updatedAt','DESC']
+            ]
+        });
+    }
     ctx.body={
         status:0,
-        data:buildingObj
+        data:buildingObj,
+        total:count
     }
 }
 
@@ -97,5 +138,27 @@ exports.save=async(ctx,next)=>{
             status:0,
             data:createResult
         }
+    }
+}
+
+exports.delete=async(ctx,next)=>{
+    let id=ctx.params.id;
+    let Building=model.buildings;
+    let buildingObj=await Building.findOne({
+        where:{
+            status:1,
+            id:id
+        }
+    })
+    if(buildingObj){
+        buildingObj.status=0;
+        let deleteResult=await buildingObj.save();
+        ctx.body={
+            status:0,
+            data:deleteResult
+        }
+    }
+    else{
+        throw new ApiError(ApiErrorNames.BUILDING_NOT_EXIST);
     }
 }

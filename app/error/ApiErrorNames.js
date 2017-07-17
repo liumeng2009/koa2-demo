@@ -14,6 +14,7 @@ ApiErrorNames.INPUT_ERROR_TYPE='inputErrorType';
 ApiErrorNames.NEED_UNIQUE_BUILDING_NAME="needUniqueBuildingName";
 ApiErrorNames.MAX_AND_MIN="maxAndMin";
 ApiErrorNames.BUILDING_NOT_NULL="buildingNotNull";
+ApiErrorNames.BUILDING_NOT_EXIST="buildingNotExist";
 
 /**
  * API错误名称对应的错误信息
@@ -32,6 +33,7 @@ error_map.set(ApiErrorNames.INPUT_ERROR_TYPE, { code: 20001, message: '输入数
 error_map.set(ApiErrorNames.NEED_UNIQUE_BUILDING_NAME, { code: 90001, message: '办公楼名称重复' });
 error_map.set(ApiErrorNames.MAX_AND_MIN, { code: 90002, message: '最大楼层数不能小于最小楼层数'});
 error_map.set(ApiErrorNames.BUILDING_NOT_NULL, { code: 90003, message: '必填的输入值不能为空'});
+error_map.set(ApiErrorNames.BUILDING_NOT_EXIST, { code: 90004, message: '办公楼信息不存在'});
 
 
 //根据错误名称获取错误信息

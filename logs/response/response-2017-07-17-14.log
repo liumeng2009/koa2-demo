@@ -1,0 +1,130 @@
+[2017-07-17 14:40:01.185] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 5
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-17 14:40:02.510] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin1","password":"admin"}
+response time: 1254
+response status: 200
+response body: 
+{"name":"userNotExist","status":10001,"message":"用户不存在"}
+*************** response log end ***************
+
+[2017-07-17 14:40:12.676] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 8
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-17 14:40:13.012] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin","password":"admin1"}
+response time: 328
+response status: 200
+response body: 
+{"name":"userPswError","status":10002,"message":"密码错误"}
+*************** response log end ***************
+
+[2017-07-17 14:43:24.085] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 5
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-17 14:43:24.393] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin","password":"admin11"}
+response time: 285
+response status: 200
+response body: 
+{"name":"userPswError","status":10002,"message":"密码错误"}
+*************** response log end ***************
+
+[2017-07-17 14:46:27.279] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 16
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-17 14:46:27.492] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin1","password":"admin"}
+response time: 205
+response status: 200
+response body: 
+{"name":"userNotExist","status":10001,"message":"用户不存在"}
+*************** response log end ***************
+
+[2017-07-17 14:46:44.246] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 10
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-17 14:46:44.468] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin","password":"admin1"}
+response time: 216
+response status: 200
+response body: 
+{"name":"userPswError","status":10002,"message":"密码错误"}
+*************** response log end ***************
+

@@ -4,7 +4,8 @@
 var sys_config = {
     //bcrypt
     saltRounds: 10,
-    jwtSecret:'liumeng'
+    jwtSecret:'liumeng',
+    pageSize:10
 };
 
 module.exports = sys_config;
