@@ -100,7 +100,7 @@ exports.save=async(ctx,next)=>{
                 id: id
             }
         });
-        console.log('found' + JSON.stringify(operation));
+        console.log('found' + JSON.stringify(buildings));
         let buildingsObj=buildings[0];
         buildingsObj.name=name;
         buildingsObj.address=address;
@@ -161,4 +161,27 @@ exports.delete=async(ctx,next)=>{
     else{
         throw new ApiError(ApiErrorNames.BUILDING_NOT_EXIST);
     }
+}
+
+exports.getData=async(ctx,next)=>{
+    let Building = model.buildings;
+
+    let id=ctx.params.id;
+
+    let buildingObj=await Building.findOne({
+        where:{
+            status:1,
+            id:id
+        }
+    });
+    if(buildingObj){
+        ctx.body={
+            status:0,
+            data:buildingObj
+        }
+    }
+    else{
+        throw new ApiError(ApiErrorNames.BUILDING_NOT_EXIST);
+    }
+
 }

@@ -7,6 +7,7 @@ var buildings_controller = require('../../app/controllers/building');
 router.get('/list', buildings_controller.list);
 router.get('/list/page/:pageid', buildings_controller.list);
 router.get('/delete/:id', buildings_controller.delete);
+router.get('/:id', buildings_controller.getData);
 
 router.post('/save',buildings_controller.save);
 
