@@ -1,0 +1,1037 @@
+[2017-07-20 18:13:36.370] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 126
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-20 18:13:41.973] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin","password":"admin"}
+response time: 4989
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$xmgJzl6FH05MXqtHAwT8ieXHc.8A.B.PBX.cv16LPt.5q9w08CrhK","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ1NjIwLCJleHAiOjE1MDA2MzIwMjB9.e2uxHmblY5oOQxgR77eSJ3kBv_7Rfvxkf7yNDgM5JLw","id":"a8615203-b42f-48c1-97c4-c7793def64b1","createdAt":1499934432149,"updatedAt":1500545621089,"version":2}}
+*************** response log end ***************
+
+[2017-07-20 18:13:42.529] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ1NjIwLCJleHAiOjE1MDA2MzIwMjB9.e2uxHmblY5oOQxgR77eSJ3kBv_7Rfvxkf7yNDgM5JLw
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ1NjIwLCJleHAiOjE1MDA2MzIwMjB9.e2uxHmblY5oOQxgR77eSJ3kBv_7Rfvxkf7yNDgM5JLw"}
+response time: 182
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$xmgJzl6FH05MXqtHAwT8ieXHc.8A.B.PBX.cv16LPt.5q9w08CrhK","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ1NjIwLCJleHAiOjE1MDA2MzIwMjB9.e2uxHmblY5oOQxgR77eSJ3kBv_7Rfvxkf7yNDgM5JLw","id":"a8615203-b42f-48c1-97c4-c7793def64b1","createdAt":1499934432149,"updatedAt":1499934432149,"version":0}}
+*************** response log end ***************
+
+[2017-07-20 18:13:46.372] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ1NjIwLCJleHAiOjE1MDA2MzIwMjB9.e2uxHmblY5oOQxgR77eSJ3kBv_7Rfvxkf7yNDgM5JLw
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ1NjIwLCJleHAiOjE1MDA2MzIwMjB9.e2uxHmblY5oOQxgR77eSJ3kBv_7Rfvxkf7yNDgM5JLw"}
+response time: 103
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$xmgJzl6FH05MXqtHAwT8ieXHc.8A.B.PBX.cv16LPt.5q9w08CrhK","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ1NjIwLCJleHAiOjE1MDA2MzIwMjB9.e2uxHmblY5oOQxgR77eSJ3kBv_7Rfvxkf7yNDgM5JLw","id":"a8615203-b42f-48c1-97c4-c7793def64b1","createdAt":1499934432149,"updatedAt":1499934432149,"version":0}}
+*************** response log end ***************
+
+[2017-07-20 18:13:47.609] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ1NjIwLCJleHAiOjE1MDA2MzIwMjB9.e2uxHmblY5oOQxgR77eSJ3kBv_7Rfvxkf7yNDgM5JLw
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ1NjIwLCJleHAiOjE1MDA2MzIwMjB9.e2uxHmblY5oOQxgR77eSJ3kBv_7Rfvxkf7yNDgM5JLw"}
+response time: 183
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$xmgJzl6FH05MXqtHAwT8ieXHc.8A.B.PBX.cv16LPt.5q9w08CrhK","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ1NjIwLCJleHAiOjE1MDA2MzIwMjB9.e2uxHmblY5oOQxgR77eSJ3kBv_7Rfvxkf7yNDgM5JLw","id":"a8615203-b42f-48c1-97c4-c7793def64b1","createdAt":1499934432149,"updatedAt":1499934432149,"version":0}}
+*************** response log end ***************
+
+[2017-07-20 18:13:47.926] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/groups/list/page/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ1NjIwLCJleHAiOjE1MDA2MzIwMjB9.e2uxHmblY5oOQxgR77eSJ3kBv_7Rfvxkf7yNDgM5JLw
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ1NjIwLCJleHAiOjE1MDA2MzIwMjB9.e2uxHmblY5oOQxgR77eSJ3kBv_7Rfvxkf7yNDgM5JLw"}
+response time: 177
+response status: 200
+response body: 
+{"name":"SequelizeDatabaseError","message":"ER_NO_SUCH_TABLE: Table 'test.groups' doesn't exist","parent":{"code":"ER_NO_SUCH_TABLE","errno":1146,"sqlState":"42S02","index":0,"sql":"SELECT count(*) AS `count` FROM `groups` AS `groups` WHERE `groups`.`status` = 1;"},"original":{"code":"ER_NO_SUCH_TABLE","errno":1146,"sqlState":"42S02","index":0,"sql":"SELECT count(*) AS `count` FROM `groups` AS `groups` WHERE `groups`.`status` = 1;"},"sql":"SELECT count(*) AS `count` FROM `groups` AS `groups` WHERE `groups`.`status` = 1;","status":500}
+*************** response log end ***************
+
+[2017-07-20 18:14:00.539] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 45
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-20 18:14:00.871] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin1","password":"admin"}
+response time: 325
+response status: 200
+response body: 
+{"name":"userNotExist","status":10001,"message":"用户不存在"}
+*************** response log end ***************
+
+[2017-07-20 18:16:26.452] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 23
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-20 18:16:27.169] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin1","password":"admin"}
+response time: 706
+response status: 200
+response body: 
+{"name":"userNotExist","status":10001,"message":"用户不存在"}
+*************** response log end ***************
+
+[2017-07-20 18:17:52.348] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 16
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-20 18:17:53.340] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin1","password":"admin"}
+response time: 851
+response status: 200
+response body: 
+{"name":"userNotExist","status":10001,"message":"用户不存在"}
+*************** response log end ***************
+
+[2017-07-20 18:21:02.733] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 2
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-20 18:21:03.230] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin1","password":"admin"}
+response time: 371
+response status: 200
+response body: 
+{"name":"userNotExist","status":10001,"message":"用户不存在"}
+*************** response log end ***************
+
+[2017-07-20 18:24:56.959] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 15
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-20 18:24:57.525] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin1","password":"admin"}
+response time: 559
+response status: 200
+response body: 
+{"name":"userNotExist","status":10001,"message":"用户不存在"}
+*************** response log end ***************
+
+[2017-07-20 18:26:29.010] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 5
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-20 18:26:29.335] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin1","password":"admin"}
+response time: 312
+response status: 200
+response body: 
+{"name":"userNotExist","status":10001,"message":"用户不存在"}
+*************** response log end ***************
+
+[2017-07-20 18:27:02.972] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 17
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-20 18:27:03.238] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin1","password":"admin"}
+response time: 260
+response status: 200
+response body: 
+{"name":"userNotExist","status":10001,"message":"用户不存在"}
+*************** response log end ***************
+
+[2017-07-20 18:28:16.356] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 4
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-20 18:28:16.607] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin1","password":"admin"}
+response time: 140
+response status: 200
+response body: 
+{"name":"userNotExist","status":10001,"message":"用户不存在"}
+*************** response log end ***************
+
+[2017-07-20 18:29:23.639] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 7
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-20 18:29:23.937] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin1","password":"admin"}
+response time: 290
+response status: 200
+response body: 
+{"name":"userNotExist","status":10001,"message":"用户不存在"}
+*************** response log end ***************
+
+[2017-07-20 18:29:30.524] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 12
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-20 18:29:30.591] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin1","password":"admin"}
+response time: 61
+response status: 200
+response body: 
+{"name":"userNotExist","status":10001,"message":"用户不存在"}
+*************** response log end ***************
+
+[2017-07-20 18:33:29.638] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 8
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-20 18:33:29.942] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin1","password":"admin"}
+response time: 298
+response status: 200
+response body: 
+{"name":"userNotExist","status":10001,"message":"用户不存在"}
+*************** response log end ***************
+
+[2017-07-20 18:37:44.826] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 11
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-20 18:37:44.977] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin1","password":"admin"}
+response time: 145
+response status: 200
+response body: 
+{"name":"userNotExist","status":10001,"message":"用户不存在"}
+*************** response log end ***************
+
+[2017-07-20 18:38:26.284] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 36
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-20 18:38:27.315] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin1","password":"admin"}
+response time: 1026
+response status: 200
+response body: 
+{"name":"userNotExist","status":10001,"message":"用户不存在"}
+*************** response log end ***************
+
+[2017-07-20 18:39:18.602] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 7
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-20 18:39:18.826] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin1","password":"admin"}
+response time: 218
+response status: 200
+response body: 
+{"name":"userNotExist","status":10001,"message":"用户不存在"}
+*************** response log end ***************
+
+[2017-07-20 18:39:28.144] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 15
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-20 18:39:28.210] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin1","password":"admin"}
+response time: 62
+response status: 200
+response body: 
+{"name":"userNotExist","status":10001,"message":"用户不存在"}
+*************** response log end ***************
+
+[2017-07-20 18:39:40.726] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 20
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-20 18:39:40.900] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin1","password":"admin"}
+response time: 167
+response status: 200
+response body: 
+{"name":"userNotExist","status":10001,"message":"用户不存在"}
+*************** response log end ***************
+
+[2017-07-20 18:39:55.105] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 6
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-20 18:39:55.230] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin1","password":"admin"}
+response time: 119
+response status: 200
+response body: 
+{"name":"userNotExist","status":10001,"message":"用户不存在"}
+*************** response log end ***************
+
+[2017-07-20 18:40:03.496] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 17
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-20 18:40:03.584] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin1","password":"admin"}
+response time: 79
+response status: 200
+response body: 
+{"name":"userNotExist","status":10001,"message":"用户不存在"}
+*************** response log end ***************
+
+[2017-07-20 18:45:01.132] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 15
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-20 18:45:01.279] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin1","password":"admin"}
+response time: 142
+response status: 200
+response body: 
+{"name":"userNotExist","status":10001,"message":"用户不存在"}
+*************** response log end ***************
+
+[2017-07-20 18:45:54.377] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 11
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-20 18:45:54.953] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin1","password":"admin"}
+response time: 56
+response status: 200
+response body: 
+{"name":"userNotExist","status":10001,"message":"用户不存在"}
+*************** response log end ***************
+
+[2017-07-20 18:46:01.210] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 13
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-20 18:46:01.370] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin","password":"admin11"}
+response time: 156
+response status: 200
+response body: 
+{"name":"userPswError","status":10002,"message":"密码错误"}
+*************** response log end ***************
+
+[2017-07-20 18:46:09.879] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 8
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-20 18:46:10.052] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin","password":"bisheng"}
+response time: 167
+response status: 200
+response body: 
+{"name":"userPswError","status":10002,"message":"密码错误"}
+*************** response log end ***************
+
+[2017-07-20 18:46:13.087] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin","password":"admin"}
+response time: 480
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$xmgJzl6FH05MXqtHAwT8ieXHc.8A.B.PBX.cv16LPt.5q9w08CrhK","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NTcyLCJleHAiOjE1MDA2MzM5NzJ9.ZxW1AF3rSF6R_XF5ivgdE-EABcUYhA7S9AwF0XKyNwE","id":"a8615203-b42f-48c1-97c4-c7793def64b1","createdAt":1499934432149,"updatedAt":1500547572797,"version":2}}
+*************** response log end ***************
+
+[2017-07-20 18:46:13.419] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NTcyLCJleHAiOjE1MDA2MzM5NzJ9.ZxW1AF3rSF6R_XF5ivgdE-EABcUYhA7S9AwF0XKyNwE
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NTcyLCJleHAiOjE1MDA2MzM5NzJ9.ZxW1AF3rSF6R_XF5ivgdE-EABcUYhA7S9AwF0XKyNwE"}
+response time: 157
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$xmgJzl6FH05MXqtHAwT8ieXHc.8A.B.PBX.cv16LPt.5q9w08CrhK","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NTcyLCJleHAiOjE1MDA2MzM5NzJ9.ZxW1AF3rSF6R_XF5ivgdE-EABcUYhA7S9AwF0XKyNwE","id":"a8615203-b42f-48c1-97c4-c7793def64b1","createdAt":1499934432149,"updatedAt":1499934432149,"version":0}}
+*************** response log end ***************
+
+[2017-07-20 18:46:51.807] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NTcyLCJleHAiOjE1MDA2MzM5NzJ9.ZxW1AF3rSF6R_XF5ivgdE-EABcUYhA7S9AwF0XKyNwE
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NTcyLCJleHAiOjE1MDA2MzM5NzJ9.ZxW1AF3rSF6R_XF5ivgdE-EABcUYhA7S9AwF0XKyNwE"}
+response time: 139
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$xmgJzl6FH05MXqtHAwT8ieXHc.8A.B.PBX.cv16LPt.5q9w08CrhK","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NTcyLCJleHAiOjE1MDA2MzM5NzJ9.ZxW1AF3rSF6R_XF5ivgdE-EABcUYhA7S9AwF0XKyNwE","id":"a8615203-b42f-48c1-97c4-c7793def64b1","createdAt":1499934432149,"updatedAt":1499934432149,"version":0}}
+*************** response log end ***************
+
+[2017-07-20 18:47:28.843] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NTcyLCJleHAiOjE1MDA2MzM5NzJ9.ZxW1AF3rSF6R_XF5ivgdE-EABcUYhA7S9AwF0XKyNwE
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NTcyLCJleHAiOjE1MDA2MzM5NzJ9.ZxW1AF3rSF6R_XF5ivgdE-EABcUYhA7S9AwF0XKyNwE"}
+response time: 217
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$xmgJzl6FH05MXqtHAwT8ieXHc.8A.B.PBX.cv16LPt.5q9w08CrhK","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NTcyLCJleHAiOjE1MDA2MzM5NzJ9.ZxW1AF3rSF6R_XF5ivgdE-EABcUYhA7S9AwF0XKyNwE","id":"a8615203-b42f-48c1-97c4-c7793def64b1","createdAt":1499934432149,"updatedAt":1499934432149,"version":0}}
+*************** response log end ***************
+
+[2017-07-20 18:47:34.811] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 5
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-20 18:47:35.513] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin","password":"admin"}
+response time: 684
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$xmgJzl6FH05MXqtHAwT8ieXHc.8A.B.PBX.cv16LPt.5q9w08CrhK","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NjU0LCJleHAiOjE1MDA2MzQwNTR9.z_yIbs0sYmC6XOOcPlbs1ynB1q4PwufYnFnSBJZF9jw","id":"a8615203-b42f-48c1-97c4-c7793def64b1","createdAt":1499934432149,"updatedAt":1500547655029,"version":2}}
+*************** response log end ***************
+
+[2017-07-20 18:47:35.755] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NjU0LCJleHAiOjE1MDA2MzQwNTR9.z_yIbs0sYmC6XOOcPlbs1ynB1q4PwufYnFnSBJZF9jw
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NjU0LCJleHAiOjE1MDA2MzQwNTR9.z_yIbs0sYmC6XOOcPlbs1ynB1q4PwufYnFnSBJZF9jw"}
+response time: 67
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$xmgJzl6FH05MXqtHAwT8ieXHc.8A.B.PBX.cv16LPt.5q9w08CrhK","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NjU0LCJleHAiOjE1MDA2MzQwNTR9.z_yIbs0sYmC6XOOcPlbs1ynB1q4PwufYnFnSBJZF9jw","id":"a8615203-b42f-48c1-97c4-c7793def64b1","createdAt":1499934432149,"updatedAt":1499934432149,"version":0}}
+*************** response log end ***************
+
+[2017-07-20 18:48:00.267] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 8
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-20 18:48:00.766] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin","password":"admin"}
+response time: 485
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$xmgJzl6FH05MXqtHAwT8ieXHc.8A.B.PBX.cv16LPt.5q9w08CrhK","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NjgwLCJleHAiOjE1MDA2MzQwODB9.E_w98ICrOlo29aNZ8Xng38ZBnxLUuQjUUvG1d_MHdBY","id":"a8615203-b42f-48c1-97c4-c7793def64b1","createdAt":1499934432149,"updatedAt":1500547680656,"version":2}}
+*************** response log end ***************
+
+[2017-07-20 18:48:45.656] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 11
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-20 18:48:46.301] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin","password":"admin"}
+response time: 639
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$xmgJzl6FH05MXqtHAwT8ieXHc.8A.B.PBX.cv16LPt.5q9w08CrhK","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw","id":"a8615203-b42f-48c1-97c4-c7793def64b1","createdAt":1499934432149,"updatedAt":1500547726106,"version":2}}
+*************** response log end ***************
+
+[2017-07-20 18:48:48.476] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw"}
+response time: 71
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$xmgJzl6FH05MXqtHAwT8ieXHc.8A.B.PBX.cv16LPt.5q9w08CrhK","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw","id":"a8615203-b42f-48c1-97c4-c7793def64b1","createdAt":1499934432149,"updatedAt":1499934432149,"version":0}}
+*************** response log end ***************
+
+[2017-07-20 18:48:52.711] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw"}
+response time: 56
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$xmgJzl6FH05MXqtHAwT8ieXHc.8A.B.PBX.cv16LPt.5q9w08CrhK","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw","id":"a8615203-b42f-48c1-97c4-c7793def64b1","createdAt":1499934432149,"updatedAt":1499934432149,"version":0}}
+*************** response log end ***************
+
+[2017-07-20 18:48:53.618] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw"}
+response time: 149
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$xmgJzl6FH05MXqtHAwT8ieXHc.8A.B.PBX.cv16LPt.5q9w08CrhK","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw","id":"a8615203-b42f-48c1-97c4-c7793def64b1","createdAt":1499934432149,"updatedAt":1499934432149,"version":0}}
+*************** response log end ***************
+
+[2017-07-20 18:48:53.859] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/groups/list/page/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw"}
+response time: 223
+response status: 200
+response body: 
+{"name":"SequelizeDatabaseError","message":"ER_NO_SUCH_TABLE: Table 'test.groups' doesn't exist","parent":{"code":"ER_NO_SUCH_TABLE","errno":1146,"sqlState":"42S02","index":0,"sql":"SELECT count(*) AS `count` FROM `groups` AS `groups` WHERE `groups`.`status` = 1;"},"original":{"code":"ER_NO_SUCH_TABLE","errno":1146,"sqlState":"42S02","index":0,"sql":"SELECT count(*) AS `count` FROM `groups` AS `groups` WHERE `groups`.`status` = 1;"},"sql":"SELECT count(*) AS `count` FROM `groups` AS `groups` WHERE `groups`.`status` = 1;","status":500}
+*************** response log end ***************
+
+[2017-07-20 18:49:36.572] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw"}
+response time: 285
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$xmgJzl6FH05MXqtHAwT8ieXHc.8A.B.PBX.cv16LPt.5q9w08CrhK","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw","id":"a8615203-b42f-48c1-97c4-c7793def64b1","createdAt":1499934432149,"updatedAt":1499934432149,"version":0}}
+*************** response log end ***************
+
+[2017-07-20 18:49:36.963] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/buildings/list/page/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw"}
+response time: 389
+response status: 200
+response body: 
+{"status":0,"data":[{"name":"西瓜瓜呱呱","address":"中文呱呱呱","minfloor":2,"maxfloor":100,"status":1,"id":"27fe1bdb-bf59-44f7-a657-c0c52b89b387","createdAt":1500455286577,"updatedAt":1500455286577,"version":0},{"name":"你好啊","address":"你在哪呢","minfloor":1,"maxfloor":19,"status":1,"id":"bbc09c60-b3a8-478d-b6e5-406c04bd9774","createdAt":1500451493197,"updatedAt":1500451493197,"version":0}],"total":2}
+*************** response log end ***************
+
+[2017-07-20 18:49:37.948] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw"}
+response time: 74
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$xmgJzl6FH05MXqtHAwT8ieXHc.8A.B.PBX.cv16LPt.5q9w08CrhK","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw","id":"a8615203-b42f-48c1-97c4-c7793def64b1","createdAt":1499934432149,"updatedAt":1499934432149,"version":0}}
+*************** response log end ***************
+
+[2017-07-20 18:49:39.293] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw"}
+response time: 549
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$xmgJzl6FH05MXqtHAwT8ieXHc.8A.B.PBX.cv16LPt.5q9w08CrhK","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw","id":"a8615203-b42f-48c1-97c4-c7793def64b1","createdAt":1499934432149,"updatedAt":1499934432149,"version":0}}
+*************** response log end ***************
+
+[2017-07-20 18:49:39.833] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/groups/list/page/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw"}
+response time: 522
+response status: 200
+response body: 
+{"name":"SequelizeDatabaseError","message":"ER_NO_SUCH_TABLE: Table 'test.groups' doesn't exist","parent":{"code":"ER_NO_SUCH_TABLE","errno":1146,"sqlState":"42S02","index":0,"sql":"SELECT count(*) AS `count` FROM `groups` AS `groups` WHERE `groups`.`status` = 1;"},"original":{"code":"ER_NO_SUCH_TABLE","errno":1146,"sqlState":"42S02","index":0,"sql":"SELECT count(*) AS `count` FROM `groups` AS `groups` WHERE `groups`.`status` = 1;"},"sql":"SELECT count(*) AS `count` FROM `groups` AS `groups` WHERE `groups`.`status` = 1;","status":500}
+*************** response log end ***************
+
+[2017-07-20 18:49:40.262] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw"}
+response time: 407
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$xmgJzl6FH05MXqtHAwT8ieXHc.8A.B.PBX.cv16LPt.5q9w08CrhK","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw","id":"a8615203-b42f-48c1-97c4-c7793def64b1","createdAt":1499934432149,"updatedAt":1499934432149,"version":0}}
+*************** response log end ***************
+
+[2017-07-20 18:49:40.496] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/buildings/list/page/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw"}
+response time: 218
+response status: 200
+response body: 
+{"status":0,"data":[{"name":"西瓜瓜呱呱","address":"中文呱呱呱","minfloor":2,"maxfloor":100,"status":1,"id":"27fe1bdb-bf59-44f7-a657-c0c52b89b387","createdAt":1500455286577,"updatedAt":1500455286577,"version":0},{"name":"你好啊","address":"你在哪呢","minfloor":1,"maxfloor":19,"status":1,"id":"bbc09c60-b3a8-478d-b6e5-406c04bd9774","createdAt":1500451493197,"updatedAt":1500451493197,"version":0}],"total":2}
+*************** response log end ***************
+
+[2017-07-20 18:49:44.879] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw"}
+response time: 101
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$xmgJzl6FH05MXqtHAwT8ieXHc.8A.B.PBX.cv16LPt.5q9w08CrhK","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw","id":"a8615203-b42f-48c1-97c4-c7793def64b1","createdAt":1499934432149,"updatedAt":1499934432149,"version":0}}
+*************** response log end ***************
+
+[2017-07-20 18:49:45.043] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/groups/list/page/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw"}
+response time: 151
+response status: 200
+response body: 
+{"name":"SequelizeDatabaseError","message":"ER_NO_SUCH_TABLE: Table 'test.groups' doesn't exist","parent":{"code":"ER_NO_SUCH_TABLE","errno":1146,"sqlState":"42S02","index":0,"sql":"SELECT count(*) AS `count` FROM `groups` AS `groups` WHERE `groups`.`status` = 1;"},"original":{"code":"ER_NO_SUCH_TABLE","errno":1146,"sqlState":"42S02","index":0,"sql":"SELECT count(*) AS `count` FROM `groups` AS `groups` WHERE `groups`.`status` = 1;"},"sql":"SELECT count(*) AS `count` FROM `groups` AS `groups` WHERE `groups`.`status` = 1;","status":500}
+*************** response log end ***************
+
+[2017-07-20 18:49:50.530] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw"}
+response time: 134
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$xmgJzl6FH05MXqtHAwT8ieXHc.8A.B.PBX.cv16LPt.5q9w08CrhK","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw","id":"a8615203-b42f-48c1-97c4-c7793def64b1","createdAt":1499934432149,"updatedAt":1499934432149,"version":0}}
+*************** response log end ***************
+
+[2017-07-20 18:49:51.049] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/buildings/list/page/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw"}
+response time: 511
+response status: 200
+response body: 
+{"status":0,"data":[{"name":"西瓜瓜呱呱","address":"中文呱呱呱","minfloor":2,"maxfloor":100,"status":1,"id":"27fe1bdb-bf59-44f7-a657-c0c52b89b387","createdAt":1500455286577,"updatedAt":1500455286577,"version":0},{"name":"你好啊","address":"你在哪呢","minfloor":1,"maxfloor":19,"status":1,"id":"bbc09c60-b3a8-478d-b6e5-406c04bd9774","createdAt":1500451493197,"updatedAt":1500451493197,"version":0}],"total":2}
+*************** response log end ***************
+
+[2017-07-20 18:49:53.490] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw"}
+response time: 76
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$xmgJzl6FH05MXqtHAwT8ieXHc.8A.B.PBX.cv16LPt.5q9w08CrhK","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw","id":"a8615203-b42f-48c1-97c4-c7793def64b1","createdAt":1499934432149,"updatedAt":1499934432149,"version":0}}
+*************** response log end ***************
+
+[2017-07-20 18:49:55.124] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw"}
+response time: 358
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$xmgJzl6FH05MXqtHAwT8ieXHc.8A.B.PBX.cv16LPt.5q9w08CrhK","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw","id":"a8615203-b42f-48c1-97c4-c7793def64b1","createdAt":1499934432149,"updatedAt":1499934432149,"version":0}}
+*************** response log end ***************
+
+[2017-07-20 18:49:55.295] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/groups/list/page/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw"}
+response time: 155
+response status: 200
+response body: 
+{"name":"SequelizeDatabaseError","message":"ER_NO_SUCH_TABLE: Table 'test.groups' doesn't exist","parent":{"code":"ER_NO_SUCH_TABLE","errno":1146,"sqlState":"42S02","index":0,"sql":"SELECT count(*) AS `count` FROM `groups` AS `groups` WHERE `groups`.`status` = 1;"},"original":{"code":"ER_NO_SUCH_TABLE","errno":1146,"sqlState":"42S02","index":0,"sql":"SELECT count(*) AS `count` FROM `groups` AS `groups` WHERE `groups`.`status` = 1;"},"sql":"SELECT count(*) AS `count` FROM `groups` AS `groups` WHERE `groups`.`status` = 1;","status":500}
+*************** response log end ***************
+
+[2017-07-20 18:49:58.392] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/groups/list?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw"}
+response time: 182
+response status: 200
+response body: 
+{"name":"SequelizeDatabaseError","message":"ER_NO_SUCH_TABLE: Table 'test.groups' doesn't exist","parent":{"code":"ER_NO_SUCH_TABLE","errno":1146,"sqlState":"42S02","index":0,"sql":"SELECT count(*) AS `count` FROM `groups` AS `groups` WHERE `groups`.`status` = 1;"},"original":{"code":"ER_NO_SUCH_TABLE","errno":1146,"sqlState":"42S02","index":0,"sql":"SELECT count(*) AS `count` FROM `groups` AS `groups` WHERE `groups`.`status` = 1;"},"sql":"SELECT count(*) AS `count` FROM `groups` AS `groups` WHERE `groups`.`status` = 1;","status":500}
+*************** response log end ***************
+
+[2017-07-20 18:49:59.412] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/groups/list?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw"}
+response time: 116
+response status: 200
+response body: 
+{"name":"SequelizeDatabaseError","message":"ER_NO_SUCH_TABLE: Table 'test.groups' doesn't exist","parent":{"code":"ER_NO_SUCH_TABLE","errno":1146,"sqlState":"42S02","index":0,"sql":"SELECT count(*) AS `count` FROM `groups` AS `groups` WHERE `groups`.`status` = 1;"},"original":{"code":"ER_NO_SUCH_TABLE","errno":1146,"sqlState":"42S02","index":0,"sql":"SELECT count(*) AS `count` FROM `groups` AS `groups` WHERE `groups`.`status` = 1;"},"sql":"SELECT count(*) AS `count` FROM `groups` AS `groups` WHERE `groups`.`status` = 1;","status":500}
+*************** response log end ***************
+
+[2017-07-20 18:50:00.293] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/groups/list?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYTg2MTUyMDMtYjQyZi00OGMxLTk3YzQtYzc3OTNkZWY2NGIxIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNTQ3NzI2LCJleHAiOjE1MDA2MzQxMjZ9.wa81HT8QPdkdWGcJDxYkLkIXsiik9xUNjllKcMQWzJw"}
+response time: 129
+response status: 200
+response body: 
+{"name":"SequelizeDatabaseError","message":"ER_NO_SUCH_TABLE: Table 'test.groups' doesn't exist","parent":{"code":"ER_NO_SUCH_TABLE","errno":1146,"sqlState":"42S02","index":0,"sql":"SELECT count(*) AS `count` FROM `groups` AS `groups` WHERE `groups`.`status` = 1;"},"original":{"code":"ER_NO_SUCH_TABLE","errno":1146,"sqlState":"42S02","index":0,"sql":"SELECT count(*) AS `count` FROM `groups` AS `groups` WHERE `groups`.`status` = 1;"},"sql":"SELECT count(*) AS `count` FROM `groups` AS `groups` WHERE `groups`.`status` = 1;","status":500}
+*************** response log end ***************
+

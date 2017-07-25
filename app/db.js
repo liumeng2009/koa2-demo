@@ -83,9 +83,10 @@ function defineModel(name, attributes) {
         timestamps: false,
         hooks: {
             beforeValidate: function (obj) {
+                console.log('你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊');
                 let now = Date.now();
                 if (obj.isNewRecord) {
-                    console.log('will create entity...' + obj);
+                    console.log('新增啦...' + obj);
                     if (!obj.id) {
                         obj.id = generateId();
                     }
@@ -93,10 +94,15 @@ function defineModel(name, attributes) {
                     obj.updatedAt = now;
                     obj.version = 0;
                 } else {
-                    console.log('will update entity...');
-                    obj.updatedAt = now;
+/*                    console.log('will update entity...'+JSON.stringify(obj));
+                    obj.updatedAt = Date.now();;
                     obj.version++;
+                    console.log(JSON.stringify(obj));*/
                 }
+            },
+            beforeUpdate:function(obj){
+                obj.updatedAt = Date.now();;
+                obj.version++;
             }
         }
     });
@@ -109,7 +115,6 @@ var exp = {
     sync: () => {
         // only allow create ddl in non-production environment:
         if (process.env.NODE_ENV !== 'production') {
-            console.log('123');
             return sequelize.sync({ force: true });
         } else {
             //console.log('456');

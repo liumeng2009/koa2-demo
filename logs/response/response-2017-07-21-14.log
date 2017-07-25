@@ -1,0 +1,160 @@
+[2017-07-21 14:37:02.807] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 10
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-21 14:37:04.186] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin","password":"admin"}
+response time: 1282
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$ceQ8BVQBwWAyeejtOZ1UZOlS3thdh3Es1X70vOnqLg9/8cZL38MZW","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjk0NjJhZjAtYTNkZi00NTI1LTk5NDEtYWJhNWE5Mjc2MmUzIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNjE5MDIzLCJleHAiOjE1MDA3MDU0MjN9.fLhwTeX7dZij4vKoz6Fk5yWlfPygxiWCU1T3NACKrY0","id":"b9462af0-a3df-4525-9941-aba5a92762e3","createdAt":1500607008557,"updatedAt":1500619023760,"version":2}}
+*************** response log end ***************
+
+[2017-07-21 14:37:07.004] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjk0NjJhZjAtYTNkZi00NTI1LTk5NDEtYWJhNWE5Mjc2MmUzIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNjE5MDIzLCJleHAiOjE1MDA3MDU0MjN9.fLhwTeX7dZij4vKoz6Fk5yWlfPygxiWCU1T3NACKrY0
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjk0NjJhZjAtYTNkZi00NTI1LTk5NDEtYWJhNWE5Mjc2MmUzIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNjE5MDIzLCJleHAiOjE1MDA3MDU0MjN9.fLhwTeX7dZij4vKoz6Fk5yWlfPygxiWCU1T3NACKrY0"}
+response time: 96
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$ceQ8BVQBwWAyeejtOZ1UZOlS3thdh3Es1X70vOnqLg9/8cZL38MZW","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjk0NjJhZjAtYTNkZi00NTI1LTk5NDEtYWJhNWE5Mjc2MmUzIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNjE5MDIzLCJleHAiOjE1MDA3MDU0MjN9.fLhwTeX7dZij4vKoz6Fk5yWlfPygxiWCU1T3NACKrY0","id":"b9462af0-a3df-4525-9941-aba5a92762e3","createdAt":1500607008557,"updatedAt":1500619023760,"version":2}}
+*************** response log end ***************
+
+[2017-07-21 14:37:10.252] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjk0NjJhZjAtYTNkZi00NTI1LTk5NDEtYWJhNWE5Mjc2MmUzIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNjE5MDIzLCJleHAiOjE1MDA3MDU0MjN9.fLhwTeX7dZij4vKoz6Fk5yWlfPygxiWCU1T3NACKrY0
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjk0NjJhZjAtYTNkZi00NTI1LTk5NDEtYWJhNWE5Mjc2MmUzIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNjE5MDIzLCJleHAiOjE1MDA3MDU0MjN9.fLhwTeX7dZij4vKoz6Fk5yWlfPygxiWCU1T3NACKrY0"}
+response time: 98
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$ceQ8BVQBwWAyeejtOZ1UZOlS3thdh3Es1X70vOnqLg9/8cZL38MZW","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjk0NjJhZjAtYTNkZi00NTI1LTk5NDEtYWJhNWE5Mjc2MmUzIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNjE5MDIzLCJleHAiOjE1MDA3MDU0MjN9.fLhwTeX7dZij4vKoz6Fk5yWlfPygxiWCU1T3NACKrY0","id":"b9462af0-a3df-4525-9941-aba5a92762e3","createdAt":1500607008557,"updatedAt":1500619023760,"version":2}}
+*************** response log end ***************
+
+[2017-07-21 14:37:11.357] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjk0NjJhZjAtYTNkZi00NTI1LTk5NDEtYWJhNWE5Mjc2MmUzIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNjE5MDIzLCJleHAiOjE1MDA3MDU0MjN9.fLhwTeX7dZij4vKoz6Fk5yWlfPygxiWCU1T3NACKrY0
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjk0NjJhZjAtYTNkZi00NTI1LTk5NDEtYWJhNWE5Mjc2MmUzIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNjE5MDIzLCJleHAiOjE1MDA3MDU0MjN9.fLhwTeX7dZij4vKoz6Fk5yWlfPygxiWCU1T3NACKrY0"}
+response time: 111
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$ceQ8BVQBwWAyeejtOZ1UZOlS3thdh3Es1X70vOnqLg9/8cZL38MZW","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjk0NjJhZjAtYTNkZi00NTI1LTk5NDEtYWJhNWE5Mjc2MmUzIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNjE5MDIzLCJleHAiOjE1MDA3MDU0MjN9.fLhwTeX7dZij4vKoz6Fk5yWlfPygxiWCU1T3NACKrY0","id":"b9462af0-a3df-4525-9941-aba5a92762e3","createdAt":1500607008557,"updatedAt":1500619023760,"version":2}}
+*************** response log end ***************
+
+[2017-07-21 14:37:11.998] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/buildings/list/page/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjk0NjJhZjAtYTNkZi00NTI1LTk5NDEtYWJhNWE5Mjc2MmUzIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNjE5MDIzLCJleHAiOjE1MDA3MDU0MjN9.fLhwTeX7dZij4vKoz6Fk5yWlfPygxiWCU1T3NACKrY0
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjk0NjJhZjAtYTNkZi00NTI1LTk5NDEtYWJhNWE5Mjc2MmUzIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNjE5MDIzLCJleHAiOjE1MDA3MDU0MjN9.fLhwTeX7dZij4vKoz6Fk5yWlfPygxiWCU1T3NACKrY0"}
+response time: 324
+response status: 200
+response body: 
+{"status":0,"data":[],"total":0}
+*************** response log end ***************
+
+[2017-07-21 14:37:13.771] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjk0NjJhZjAtYTNkZi00NTI1LTk5NDEtYWJhNWE5Mjc2MmUzIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNjE5MDIzLCJleHAiOjE1MDA3MDU0MjN9.fLhwTeX7dZij4vKoz6Fk5yWlfPygxiWCU1T3NACKrY0
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjk0NjJhZjAtYTNkZi00NTI1LTk5NDEtYWJhNWE5Mjc2MmUzIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNjE5MDIzLCJleHAiOjE1MDA3MDU0MjN9.fLhwTeX7dZij4vKoz6Fk5yWlfPygxiWCU1T3NACKrY0"}
+response time: 219
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$ceQ8BVQBwWAyeejtOZ1UZOlS3thdh3Es1X70vOnqLg9/8cZL38MZW","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjk0NjJhZjAtYTNkZi00NTI1LTk5NDEtYWJhNWE5Mjc2MmUzIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNjE5MDIzLCJleHAiOjE1MDA3MDU0MjN9.fLhwTeX7dZij4vKoz6Fk5yWlfPygxiWCU1T3NACKrY0","id":"b9462af0-a3df-4525-9941-aba5a92762e3","createdAt":1500607008557,"updatedAt":1500619023760,"version":2}}
+*************** response log end ***************
+
+[2017-07-21 14:37:14.420] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/groups/list/page/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjk0NjJhZjAtYTNkZi00NTI1LTk5NDEtYWJhNWE5Mjc2MmUzIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNjE5MDIzLCJleHAiOjE1MDA3MDU0MjN9.fLhwTeX7dZij4vKoz6Fk5yWlfPygxiWCU1T3NACKrY0
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjk0NjJhZjAtYTNkZi00NTI1LTk5NDEtYWJhNWE5Mjc2MmUzIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNjE5MDIzLCJleHAiOjE1MDA3MDU0MjN9.fLhwTeX7dZij4vKoz6Fk5yWlfPygxiWCU1T3NACKrY0"}
+response time: 363
+response status: 200
+response body: 
+{"status":0,"data":[{"name":"1","description":"1","status":1,"id":"51d573a5-cc92-494b-a478-b5f0f4e1eb0d","createdAt":1500608544222,"updatedAt":1500608544222,"version":0}],"total":1}
+*************** response log end ***************
+
+[2017-07-21 14:37:16.649] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjk0NjJhZjAtYTNkZi00NTI1LTk5NDEtYWJhNWE5Mjc2MmUzIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNjE5MDIzLCJleHAiOjE1MDA3MDU0MjN9.fLhwTeX7dZij4vKoz6Fk5yWlfPygxiWCU1T3NACKrY0
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjk0NjJhZjAtYTNkZi00NTI1LTk5NDEtYWJhNWE5Mjc2MmUzIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNjE5MDIzLCJleHAiOjE1MDA3MDU0MjN9.fLhwTeX7dZij4vKoz6Fk5yWlfPygxiWCU1T3NACKrY0"}
+response time: 109
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","password":"$2a$10$ceQ8BVQBwWAyeejtOZ1UZOlS3thdh3Es1X70vOnqLg9/8cZL38MZW","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjk0NjJhZjAtYTNkZi00NTI1LTk5NDEtYWJhNWE5Mjc2MmUzIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNjE5MDIzLCJleHAiOjE1MDA3MDU0MjN9.fLhwTeX7dZij4vKoz6Fk5yWlfPygxiWCU1T3NACKrY0","id":"b9462af0-a3df-4525-9941-aba5a92762e3","createdAt":1500607008557,"updatedAt":1500619023760,"version":2}}
+*************** response log end ***************
+
+[2017-07-21 14:37:17.167] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/buildings/list/page/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjk0NjJhZjAtYTNkZi00NTI1LTk5NDEtYWJhNWE5Mjc2MmUzIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNjE5MDIzLCJleHAiOjE1MDA3MDU0MjN9.fLhwTeX7dZij4vKoz6Fk5yWlfPygxiWCU1T3NACKrY0
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjk0NjJhZjAtYTNkZi00NTI1LTk5NDEtYWJhNWE5Mjc2MmUzIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNjE5MDIzLCJleHAiOjE1MDA3MDU0MjN9.fLhwTeX7dZij4vKoz6Fk5yWlfPygxiWCU1T3NACKrY0"}
+response time: 134
+response status: 200
+response body: 
+{"status":0,"data":[],"total":0}
+*************** response log end ***************
+
+[2017-07-21 14:37:24.645] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/buildings/save?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjk0NjJhZjAtYTNkZi00NTI1LTk5NDEtYWJhNWE5Mjc2MmUzIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNjE5MDIzLCJleHAiOjE1MDA3MDU0MjN9.fLhwTeX7dZij4vKoz6Fk5yWlfPygxiWCU1T3NACKrY0
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 6
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-07-21 14:37:24.891] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/buildings/save?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjk0NjJhZjAtYTNkZi00NTI1LTk5NDEtYWJhNWE5Mjc2MmUzIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNjE5MDIzLCJleHAiOjE1MDA3MDU0MjN9.fLhwTeX7dZij4vKoz6Fk5yWlfPygxiWCU1T3NACKrY0
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"id":"","name":"1","address":"1","minfloor":1,"maxfloor":5,"status":1}
+response time: 240
+response status: 200
+response body: 
+{"status":0,"data":{"id":"ae345f74-eb4a-4859-8692-ac53f0e5142e","name":"1","address":"1","minfloor":1,"maxfloor":5,"status":1,"createdAt":1500619044733,"updatedAt":1500619044733,"version":0}}
+*************** response log end ***************
+
+[2017-07-21 14:37:25.502] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/buildings/list/page/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjk0NjJhZjAtYTNkZi00NTI1LTk5NDEtYWJhNWE5Mjc2MmUzIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNjE5MDIzLCJleHAiOjE1MDA3MDU0MjN9.fLhwTeX7dZij4vKoz6Fk5yWlfPygxiWCU1T3NACKrY0
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjk0NjJhZjAtYTNkZi00NTI1LTk5NDEtYWJhNWE5Mjc2MmUzIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTAwNjE5MDIzLCJleHAiOjE1MDA3MDU0MjN9.fLhwTeX7dZij4vKoz6Fk5yWlfPygxiWCU1T3NACKrY0"}
+response time: 165
+response status: 200
+response body: 
+{"status":0,"data":[{"name":"1","address":"1","minfloor":1,"maxfloor":5,"status":1,"id":"ae345f74-eb4a-4859-8692-ac53f0e5142e","createdAt":1500619044733,"updatedAt":1500619044733,"version":0}],"total":1}
+*************** response log end ***************
+
