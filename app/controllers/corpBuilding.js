@@ -80,7 +80,7 @@ exports.save=async(ctx,next)=>{
     else{
         let corpBuildingObj=await CorpBuilding.findAll({
             where:{
-                name:name
+                corporationId:corporationId
             }
         })
 
