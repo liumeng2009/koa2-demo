@@ -110,7 +110,8 @@ exports.save=async(ctx,next)=>{
         console.log('update success'+JSON.stringify(saveResult));
         ctx.body={
             status:0,
-            data:saveResult
+            data:saveResult,
+            message:response_config.updatedSuccess
         }
     }
     //id不存在，说明是新增模式
@@ -134,7 +135,8 @@ exports.save=async(ctx,next)=>{
         console.log('created'+JSON.stringify(createResult));
         ctx.body={
             status:0,
-            data:createResult
+            data:createResult,
+            message:response_config.createdSuccess
         }
     }
 }
@@ -153,7 +155,8 @@ exports.delete=async(ctx,next)=>{
         let deleteResult=await corporationObj.save();
         ctx.body={
             status:0,
-            data:deleteResult
+            data:deleteResult,
+            message:response_config.deleteSucess
         }
     }
     else{

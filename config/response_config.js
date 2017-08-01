@@ -1,6 +1,7 @@
 var response_config = {
-    password_error:'密码错误！',
-    user_not_exist:'用户不存在！'
+    updatedSuccess:'更新成功！',
+    createdSuccess:'新增成功！',
+    deleteSucess:'删除成功！'
 };
 
 module.exports = response_config;

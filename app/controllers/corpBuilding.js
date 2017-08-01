@@ -27,7 +27,7 @@ exports.list=async(ctx,next)=>{
             model:Building
         }],
         order:[
-            ['updatedAt','DESC']
+            ['createdAt','DESC']
         ]
     });
 
@@ -40,18 +40,26 @@ exports.list=async(ctx,next)=>{
 
 exports.save=async(ctx,next)=>{
     let corporationId=ctx.request.body.corporationId;
-    let buildingId=ctx.request.body.buildingId;
-    let floor=ctx.request.body.floor;
-    let position=ctx.request.body.position;
+    let buildingId=ctx.request.body.buildingId.id;
+    let floor=ctx.request.body.floor.value;
+    let position=ctx.request.body.position.value;
     let id=ctx.request.body.id;
+
 
     let CorpBuilding=model.corpBuildings;
 
-    if(corporationId!=''&buildingId!=''&floor!=''&position!=''){
+    if(corporationId!=''&buildingId!=''&position!=''){
 
     }
     else{
-        throw new ApiError(ApiErrorNames.CORPORATION_NOT_NULL);
+        throw new ApiError(ApiErrorNames.CORPBUILDING_NOT_NULL);
+    }
+
+    try{
+        parseInt(floor);
+    }
+    catch(e){
+        throw new ApiError(ApiErrorNames.INPUT_ERROR_TYPE);
     }
 
 
@@ -62,25 +70,36 @@ exports.save=async(ctx,next)=>{
                 id: id
             }
         });
-        console.log('found' + JSON.stringify(corporations));
-        let corpBuildingsObj=corpBuildings;
-        corpBuildingsObj.corporationId=corporationId;
-        corpBuildingsObj.buildingId=buildingId;
-        corpBuildingsObj.floor=floor;
-        corpBuildingsObj.position=position;
+        console.log('found' + JSON.stringify(corpBuildings));
+        if(corpBuildings){
+            let corpBuildingsObj=corpBuildings;
+            corpBuildingsObj.corporationId=corporationId;
+            corpBuildingsObj.buildingId=buildingId;
+            corpBuildingsObj.floor=floor;
+            corpBuildingsObj.position=position;
 
-        let saveResult= await corpBuildingsObj.save();
-        console.log('update success'+JSON.stringify(saveResult));
-        ctx.body={
-            status:0,
-            data:saveResult
+            let saveResult= await corpBuildingsObj.save();
+            console.log('update success'+JSON.stringify(saveResult));
+            ctx.body={
+                status:0,
+                data:saveResult,
+                message:response_config.updatedSuccess
+            }
         }
+        else{
+            throw new ApiError(ApiErrorNames.CORP_BUILDING_NOT_EXIST);
+        }
+
     }
     //id不存在，说明是新增模式
     else{
+        console.log(corporationId+'和'+buildingId+'和'+JSON.stringify(floor)+'和'+position);
         let corpBuildingObj=await CorpBuilding.findAll({
             where:{
-                corporationId:corporationId
+                corporationId:corporationId,
+                buildingId:buildingId,
+                floor:floor,
+                position:position
             }
         })
 
@@ -98,7 +117,8 @@ exports.save=async(ctx,next)=>{
         console.log('created'+JSON.stringify(createResult));
         ctx.body={
             status:0,
-            data:createResult
+            data:createResult,
+            message:response_config.createdSuccess
         }
     }
 }
@@ -117,7 +137,8 @@ exports.delete=async(ctx,next)=>{
         let deleteResult=await corpBuildingObj.save();
         ctx.body={
             status:0,
-            data:deleteResult
+            data:deleteResult,
+            message:response_config.deleteSucess
         }
     }
     else{
