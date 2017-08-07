@@ -9,12 +9,18 @@ module.exports = db.defineModel('users', {
     },
     email: {
         type: db.STRING(100),
-        unique: true
+        allowNull:true
     },
     password: db.STRING(100),
-    gender: db.BOOLEAN,
+    gender:{
+        type:db.BOOLEAN,
+        allowNull:true
+    },
     token:{
         type:db.TEXT,
         allowNull:true
+    },
+    canLogin:{
+        type:db.BOOLEAN
     }
 });

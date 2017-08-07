@@ -8,6 +8,7 @@ ApiErrorNames.USER_NOT_EXIST = "userNotExist";
 ApiErrorNames.USER_PSW_ERROR = "userPswError";
 ApiErrorNames.JWT_ERROR="jwtError";
 ApiErrorNames.NEED_LOGIN="needLogin";
+ApiErrorNames.USER_NAME_EXIST='userNameExist';
 
 ApiErrorNames.INPUT_ERROR_TYPE='inputErrorType';
 
@@ -28,6 +29,9 @@ ApiErrorNames.CORPBUILDING_NOT_NULL="corpBuildingNotNull";
 ApiErrorNames.NEED_UNIQUE_CORP_BUILDING="needUniqueCorpBuilding";
 ApiErrorNames.CORP_BUILDING_NOT_EXIST="cropBuildingNotExist";
 
+ApiErrorNames.WORKER_NOT_EXIST="workerNotExist";
+ApiErrorNames.WORKER_EXIST="workerExist";
+
 /**
  * API错误名称对应的错误信息
  */
@@ -38,6 +42,7 @@ error_map.set(ApiErrorNames.USER_NOT_EXIST, { code: 10001, message: '用户不�
 error_map.set(ApiErrorNames.USER_PSW_ERROR, { code: 10002, message: '密码错误！' });
 error_map.set(ApiErrorNames.JWT_ERROR, { code: 10003, message: '身份验证错误！' });
 error_map.set(ApiErrorNames.NEED_LOGIN, { code: 10004, message: '请先登录！' });
+error_map.set(ApiErrorNames.USER_NAME_EXIST, { code: 10005, message: '用户名已存在！' });
 
 error_map.set(ApiErrorNames.INPUT_ERROR_TYPE, { code: 20001, message: '输入数值格式错误！' });
 
@@ -59,6 +64,11 @@ error_map.set(ApiErrorNames.CORPORATION_NOT_EXIST, { code: 92003, message: '公�
 error_map.set(ApiErrorNames.CORPBUILDING_NOT_NULL, { code: 93001, message: '必填的输入值不能为空！'});
 error_map.set(ApiErrorNames.NEED_UNIQUE_CORP_BUILDING, { code: 93002, message: '公司所处楼层的信息重复！' });
 error_map.set(ApiErrorNames.CORP_BUILDING_NOT_EXIST, { code: 93003, message: '公司所处楼层的信息不存在！'});
+
+//worker模块错误
+error_map.set(ApiErrorNames.WORKER_EXIST, { code: 94002, message: '工程师信息已存在！'});
+error_map.set(ApiErrorNames.WORKER_NOT_EXIST, { code: 94001, message: '该条工程师信息不存在！'});
+
 
 //根据错误名称获取错误信息
 ApiErrorNames.getErrorInfo = (error_name) => {

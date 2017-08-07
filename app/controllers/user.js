@@ -14,19 +14,16 @@ exports.login=async(ctx,next)=>{
     let password=ctx.request.body.password;
     let rememberme=ctx.request.body.rememberme;
 
-    //let username=ctx.query.username;
-    //let password=ctx.query.password;
-
     let User = model.user;
 
-    let userObj=await User.findAll({
+    let userObj=await User.findOne({
         where:{
             name:username
         }
     });
 
-    if(userObj[0]&&userObj[0].password){
-        let isRealPassword=bcrypt.compareSync(password, userObj[0].password);
+    if(userObj&&userObj.password){
+        let isRealPassword=bcrypt.compareSync(password, userObj.password);
         console.log('密码对比结果是：'+isRealPassword);
         if(isRealPassword){
             console.log(111);
@@ -37,67 +34,67 @@ exports.login=async(ctx,next)=>{
             else{
                 dateExpires.setDate(dateExpires.getDate()+1);
             }
-            //ctx.cookies.set("name",username,{signed:true,expires:dateExpires});
-            //console.log(555+userObj);
-            //delete userObj[0].token;
             let user={
-                id:userObj[0].id,
-                name:userObj[0].name,
-                gender:userObj[0].gender,
-                email:userObj[0].email
+                id:userObj.id,
+                name:userObj.name,
+                gender:userObj.gender,
+                email:userObj.email
             }
-
-
-            //console.log('加密前的user是：'+JSON.stringify(userObj[0]));
             let token=jwt.sign({
                 data:user
             },sys_config.jwtSecret,{expiresIn:'1 days'});
-            userObj[0].token=token;
-            console.log('jwt:'+token+userObj[0]);
-            await userObj[0].save();
+            userObj.token=token;
+            console.log('jwt:'+token+userObj);
+            await userObj.save();
 
             ctx.body={
                 status:0,
-                data:userObj[0]
+                data:userObj,
+                message:response_config.loginSuccess
             }
         }
         else{
-            /*
-            ctx.body={
-                success:true,
-                data: {},
-                message:response_config.password_error
-            }
-            */
-            console.log('heheheheh');
             throw new ApiError(ApiErrorNames.USER_PSW_ERROR);
         }
     }
     else{
-        /*
-        ctx.body= {
-            success: true,
-            data: {},
-            message:response_config.user_not_exist
-        }
-        */
         throw new ApiError(ApiErrorNames.USER_NOT_EXIST);
     }
 }
 
 exports.registerUser=async(ctx,next)=>{
-    let User = model.user;
-    User.create({
-        name:'admin',
-        email:'378338627@qq.com',
-        password:'123456',
-        gender:true
-    }).then(function(p){
-        console.log('created'+JSON.stringify(p)+'test the password');
-    }).catch(function(err){
-        console.log('failed:'+err);
+    let username=ctx.request.body.username;
+    let password=ctx.request.body.password;
+
+    let User=model.user;
+    //加密密码
+    var salt = bcrypt.genSaltSync(sys_config.saltRounds);
+    var hash = bcrypt.hashSync(password, salt);
+    console.log('加密密码是：'+hash);
+
+    let userObj=await User.findOne({
+        where:{
+            name:username
+        }
     });
-    console.log('registerUser',ctx.request.body);
+    if(userObj){
+        //说明重复
+        throw new ApiError(ApiErrorNames.USER_NAME_EXIST);
+    }
+    else{
+        let createResult=await User.create({
+            name:username,
+            password:hash,
+            canLogin:true,
+            status:1
+        });
+
+        ctx.body={
+            status:0,
+            data:createResult,
+            message:response_config.regSuccess
+        }
+    }
 }
 
 exports.getUserData=async(ctx,next)=>{
@@ -121,26 +118,8 @@ exports.getUserData=async(ctx,next)=>{
             data:userObj[0]
 
         }
-/*        return new Promise((resolve, reject) => {
-            jwt.verify(token,sys_config.jwtSecret,function(error,decoded){
-                if(error){
-                    console.log(888888888888);
-                    //return reject(function(){
-
-                    //})
-                    reject(new ApiError(ApiErrorNames.JWT_ERROR));
-
-                }
-                else{
-                    console.log(2222222222222+userObj[0]);
-
-                    resolve();
-                }
-            })
-        });*/
     }
     else{
-        console.log(567);
         throw new ApiError(ApiErrorNames.USER_NOT_EXIST);
     }
 }

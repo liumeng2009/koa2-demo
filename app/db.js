@@ -121,7 +121,8 @@ var exp = {
             //throw new Error('Cannot sync() when NODE_ENV is set to \'production\'.');
             return sequelize.sync({ force: true });
         }
-    }
+    },
+    sequelize:sequelize
 };
 
 for (let type of TYPES) {

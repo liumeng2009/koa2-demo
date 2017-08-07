@@ -10,7 +10,7 @@ const jwt=require('jsonwebtoken');
 
 var isLogin=async(ctx,next)=>{
     //console.log(ctx.url+ctx.cookies.get('name',{signed:true}));
-    if(ctx.url.indexOf('/api/user/login')>-1){
+    if(ctx.url.indexOf('/api/user/login')>-1||ctx.url.indexOf('/api/user/reg')>-1){
         await next()
     }
     else{

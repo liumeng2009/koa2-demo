@@ -20,16 +20,13 @@ model.sync().then(()=>{
     var salt = bcrypt.genSaltSync(sys_config.saltRounds);
     var hash = bcrypt.hashSync(adminPassword, salt);
     console.log('加密密码是：'+hash);
-    //验证密码
-    //let isRealPassword=bcrypt.compareSync(adminPassword, hash);
-    //console.log('结果是:'+isRealPassword);
-
     //插入管理员身份
     User.create({
         name:'admin',
         email:'378338627@qq.com',
         password:hash,
-        gender:true
+        gender:true,
+        canLogin:true
     }).then(function(p){
         console.log('created'+JSON.stringify(p)+'test the password');
         process.exit(0);
