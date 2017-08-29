@@ -11,6 +11,10 @@ module.exports = db.defineModel('users', {
         type: db.STRING(100),
         allowNull:true
     },
+    phone:{
+        type: db.STRING(100),
+        allowNull:true
+    },
     password: db.STRING(100),
     gender:{
         type:db.BOOLEAN,
@@ -22,5 +26,8 @@ module.exports = db.defineModel('users', {
     },
     canLogin:{
         type:db.BOOLEAN
+    },
+    status:{
+        type:db.INTEGER
     }
 });

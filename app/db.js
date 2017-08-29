@@ -93,11 +93,6 @@ function defineModel(name, attributes) {
                     obj.createdAt = now;
                     obj.updatedAt = now;
                     obj.version = 0;
-                } else {
-/*                    console.log('will update entity...'+JSON.stringify(obj));
-                    obj.updatedAt = Date.now();;
-                    obj.version++;
-                    console.log(JSON.stringify(obj));*/
                 }
             },
             beforeUpdate:function(obj){

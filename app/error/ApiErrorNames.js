@@ -9,6 +9,8 @@ ApiErrorNames.USER_PSW_ERROR = "userPswError";
 ApiErrorNames.JWT_ERROR="jwtError";
 ApiErrorNames.NEED_LOGIN="needLogin";
 ApiErrorNames.USER_NAME_EXIST='userNameExist';
+ApiErrorNames.USER_NAME_NOT_EXIST='userNameNotExist';
+ApiErrorNames.ADMIN_CAN_NOT_DELETE='adminCanNotDelete';
 
 ApiErrorNames.INPUT_ERROR_TYPE='inputErrorType';
 
@@ -32,6 +34,11 @@ ApiErrorNames.CORP_BUILDING_NOT_EXIST="cropBuildingNotExist";
 ApiErrorNames.WORKER_NOT_EXIST="workerNotExist";
 ApiErrorNames.WORKER_EXIST="workerExist";
 
+ApiErrorNames.BUSINESS_OPERATION_NULL="businessOperationNull";
+ApiErrorNames.BUSINESS_EQUIPMENT_NULL="businessEquipmentNull";
+ApiErrorNames.BUSINESS_EQUIPMENT_EXIST="businessEquipmentExist";
+ApiErrorNames.BUSINESS_NOT_EXIST="businessNotExist";
+
 /**
  * API错误名称对应的错误信息
  */
@@ -43,6 +50,8 @@ error_map.set(ApiErrorNames.USER_PSW_ERROR, { code: 10002, message: '密码错�
 error_map.set(ApiErrorNames.JWT_ERROR, { code: 10003, message: '身份验证错误！' });
 error_map.set(ApiErrorNames.NEED_LOGIN, { code: 10004, message: '请先登录！' });
 error_map.set(ApiErrorNames.USER_NAME_EXIST, { code: 10005, message: '用户名已存在！' });
+error_map.set(ApiErrorNames.USER_NAME_NOT_EXIST, { code: 10006, message: '用户名不存在！' });
+error_map.set(ApiErrorNames.ADMIN_CAN_NOT_DELETE, { code: 10007, message: '最高管理员账户不能被删除！' });
 
 error_map.set(ApiErrorNames.INPUT_ERROR_TYPE, { code: 20001, message: '输入数值格式错误！' });
 
@@ -66,8 +75,14 @@ error_map.set(ApiErrorNames.NEED_UNIQUE_CORP_BUILDING, { code: 93002, message: '
 error_map.set(ApiErrorNames.CORP_BUILDING_NOT_EXIST, { code: 93003, message: '公司所处楼层的信息不存在！'});
 
 //worker模块错误
-error_map.set(ApiErrorNames.WORKER_EXIST, { code: 94002, message: '工程师信息已存在！'});
-error_map.set(ApiErrorNames.WORKER_NOT_EXIST, { code: 94001, message: '该条工程师信息不存在！'});
+error_map.set(ApiErrorNames.WORKER_EXIST, { code: 80002, message: '工程师信息已存在！'});
+error_map.set(ApiErrorNames.WORKER_NOT_EXIST, { code: 80001, message: '该条工程师信息不存在！'});
+
+//业务内容模块错误
+error_map.set(ApiErrorNames.BUSINESS_OPERATION_NULL, { code: 70001, message: '业务的操作项不能为空！'})
+error_map.set(ApiErrorNames.BUSINESS_EQUIPMENT_NULL, { code: 70002, message: '业务的操作设备不能为空！'})
+error_map.set(ApiErrorNames.BUSINESS_NOT_EXIST, { code: 70003, message: '业务内容不存在！'})
+error_map.set(ApiErrorNames.BUSINESS_EQUIPMENT_EXIST,{ code: 70004, message: '业务主体已经存在！'});
 
 
 //根据错误名称获取错误信息

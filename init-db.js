@@ -24,9 +24,11 @@ model.sync().then(()=>{
     User.create({
         name:'admin',
         email:'378338627@qq.com',
+        phone:'15822927208',
         password:hash,
         gender:true,
-        canLogin:true
+        canLogin:true,
+        status:1
     }).then(function(p){
         console.log('created'+JSON.stringify(p)+'test the password');
         process.exit(0);
