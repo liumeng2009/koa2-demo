@@ -6,7 +6,6 @@ const ApiErrorNames=require('../error/ApiErrorNames');
 const model = require('../model');
 const sys_config=require('../../config/sys_config');
 const response_config=require('../../config/response_config');
-const Sequelize = require('sequelize');
 
 exports.list=async(ctx,next)=>{
     let Group = model.groups;

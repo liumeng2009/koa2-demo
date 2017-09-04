@@ -39,6 +39,8 @@ ApiErrorNames.BUSINESS_EQUIPMENT_NULL="businessEquipmentNull";
 ApiErrorNames.BUSINESS_EQUIPMENT_EXIST="businessEquipmentExist";
 ApiErrorNames.BUSINESS_NOT_EXIST="businessNotExist";
 
+ApiErrorNames.ORDER_ATTRIBUTE_NOT_NULL="orderAttributeNotNull";
+
 /**
  * API错误名称对应的错误信息
  */
@@ -83,6 +85,9 @@ error_map.set(ApiErrorNames.BUSINESS_OPERATION_NULL, { code: 70001, message: '�
 error_map.set(ApiErrorNames.BUSINESS_EQUIPMENT_NULL, { code: 70002, message: '业务的操作设备不能为空！'})
 error_map.set(ApiErrorNames.BUSINESS_NOT_EXIST, { code: 70003, message: '业务内容不存在！'})
 error_map.set(ApiErrorNames.BUSINESS_EQUIPMENT_EXIST,{ code: 70004, message: '业务主体已经存在！'});
+
+//需求
+error_map.set(ApiErrorNames.ORDER_ATTRIBUTE_NOT_NULL, { code: 60001, message: '必填的输入值不能为空！'});
 
 
 //根据错误名称获取错误信息
