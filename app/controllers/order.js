@@ -18,10 +18,15 @@ exports.list=async(ctx,next)=>{
         }
     });
 
-    let sequelize:db.sequelize;
-    let sqlStr='select orders.id as id,corporations.name as corporationname,corpBuildings.floor as floor,corpBuildings.position as corpostion,buildings.name as buildingname' +
-        ' from orders inner join corpBuildings on orders.custom_position=corpBuildings.id,corpBuildings inner join corporations on.corporationId=corporation.id,corpBuildings inner join Buildings on corpBuildings.buildingId=buildings.id ' +
-        'where orders.status=1 ';
+    let sequelize=db.sequelize;
+    let sqlStr=`select
+    orders.id as id,
+    corporations.name as corporationname,
+    corpbuildings.floor as floor,
+    corpbuildings.position as corpostion,
+    buildings.name as buildingname
+    from orders inner join corpbuildings on orders.custom_position=corpbuildings.id INNER JOIN corporations on corporationId=corporations.id inner join Buildings on corpbuildings.buildingId=buildings.id
+    where orders.status=1 order by orders.updatedAt desc `
     let orders;
 
     if(pageid&&pageid!=0){
@@ -38,7 +43,7 @@ exports.list=async(ctx,next)=>{
     else{
 
     }
-    sqlStr=sqlStr+' order by updatedAt desc;';
+    sqlStr=sqlStr+';';
 
     orders=await sequelize.query(sqlStr,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
 
@@ -115,12 +120,16 @@ exports.save=async(ctx,next)=>{
     }
 }
 
+exports.delete=async(ctx,next)=>{
+
+}
+
 exports.getOrderNo=async(ctx,next)=>{
     let incoming_time=ctx.params.intime;
     return getOrderNo(incoming_time);
 }
 
-var getOrderNo=async(incoming_time:number)=>{
+var getOrderNo=async(incoming_time)=>{
     let date=new Date(incoming_time);
     let year=date.getYear().toString();
     let month=('0'+(date.getMonth()+1)).slice(2);

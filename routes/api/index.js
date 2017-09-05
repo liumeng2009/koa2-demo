@@ -9,6 +9,7 @@ var corporations_router = require('./corporation');
 var corpBuildings_router = require('./corpBuilding');
 var workers_router = require('./workers');
 var businessContent_router=require('./businessContent');
+var order_router=require('./order');
 
 router.use('/user', user_router.routes(), user_router.allowedMethods());
 router.use('/buildings', buildings_router.routes(), buildings_router.allowedMethods());
@@ -17,5 +18,6 @@ router.use('/corporations', corporations_router.routes(), corporations_router.al
 router.use('/corpbuildings', corpBuildings_router.routes(), corpBuildings_router.allowedMethods());
 router.use('/workers', workers_router.routes(), workers_router.allowedMethods());
 router.use('/business', businessContent_router.routes(), businessContent_router.allowedMethods());
+router.use('/order', order_router.routes(), order_router.allowedMethods());
 
 module.exports = router;
