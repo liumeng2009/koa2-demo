@@ -10,6 +10,8 @@ var corpBuildings_router = require('./corpBuilding');
 var workers_router = require('./workers');
 var businessContent_router=require('./businessContent');
 var order_router=require('./order');
+var equipType_router=require('./equipType');
+var equipOp_router=require('./equipOp');
 
 router.use('/user', user_router.routes(), user_router.allowedMethods());
 router.use('/buildings', buildings_router.routes(), buildings_router.allowedMethods());
@@ -19,5 +21,7 @@ router.use('/corpbuildings', corpBuildings_router.routes(), corpBuildings_router
 router.use('/workers', workers_router.routes(), workers_router.allowedMethods());
 router.use('/business', businessContent_router.routes(), businessContent_router.allowedMethods());
 router.use('/order', order_router.routes(), order_router.allowedMethods());
+router.use('/equipType', equipType_router.routes(), equipType_router.allowedMethods());
+router.use('/equipOp', equipOp_router.routes(), equipOp_router.allowedMethods());
 
 module.exports = router;

@@ -12,7 +12,7 @@ exports.list=async(ctx,next)=>{
     let pageid=ctx.params.pageid;
     let Order=model.orders;
 
-    let count=Order.count({
+    let count=await Order.count({
         where:{
             status:1
         }

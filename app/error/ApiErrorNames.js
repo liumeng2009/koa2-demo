@@ -38,6 +38,14 @@ ApiErrorNames.BUSINESS_OPERATION_NULL="businessOperationNull";
 ApiErrorNames.BUSINESS_EQUIPMENT_NULL="businessEquipmentNull";
 ApiErrorNames.BUSINESS_EQUIPMENT_EXIST="businessEquipmentExist";
 ApiErrorNames.BUSINESS_NOT_EXIST="businessNotExist";
+ApiErrorNames.EQUIP_TPYE_FIELD_NOT_NULL="equipTypeFieldNotNull";
+ApiErrorNames.EQUIP_TPYE_NAME_EXIST="equipTypeNameExist";
+ApiErrorNames.EQUIP_TPYE_CODE_EXIST="equipTypeCodeExist";
+ApiErrorNames.EQUIP_TPYE_NULL="equipTypeNull";
+ApiErrorNames.EQUIP_OP_FIELD_NOT_NULL="equipOpFieldNotNull";
+ApiErrorNames.EQUIP_OP_NAME_EXIST="equipOpNameExist";
+ApiErrorNames.EQUIP_OP_CODE_EXIST="equipOpCodeExist";
+ApiErrorNames.EQUIP_OP_NULL="equipOpNull";
 
 ApiErrorNames.ORDER_ATTRIBUTE_NOT_NULL="orderAttributeNotNull";
 
@@ -85,9 +93,16 @@ error_map.set(ApiErrorNames.BUSINESS_OPERATION_NULL, { code: 70001, message: '�
 error_map.set(ApiErrorNames.BUSINESS_EQUIPMENT_NULL, { code: 70002, message: '业务的操作设备不能为空！'})
 error_map.set(ApiErrorNames.BUSINESS_NOT_EXIST, { code: 70003, message: '业务内容不存在！'})
 error_map.set(ApiErrorNames.BUSINESS_EQUIPMENT_EXIST,{ code: 70004, message: '业务主体已经存在！'});
+//                  设备类型
+error_map.set(ApiErrorNames.EQUIP_TPYE_FIELD_NOT_NULL,{code:71001,message:'设备类型的输入值不能为空'});
+error_map.set(ApiErrorNames.EQUIP_TPYE_NAME_EXIST,{code:71002,message:'设备类型名称已存在'});
+error_map.set(ApiErrorNames.EQUIP_TPYE_CODE_EXIST,{code:71003,message:'设备类型代码已存在'});
+error_map.set(ApiErrorNames.EQUIP_TPYE_NULL,{code:71004,message:'设备类型不存在'});
 
 //需求
 error_map.set(ApiErrorNames.ORDER_ATTRIBUTE_NOT_NULL, { code: 60001, message: '必填的输入值不能为空！'});
+
+
 
 
 //根据错误名称获取错误信息
