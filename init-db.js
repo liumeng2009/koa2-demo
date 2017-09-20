@@ -263,11 +263,63 @@ model.sync().then(async ()=>{
         status:1
     });
 
+    let EquipType=model.equipTypes;
+
+    let equipTypeH=await EquipType.create({
+        name:'硬件',
+        code:'HARDWARE'
+    });
+    let equipTypeS=await EquipType.create({
+        name:'软件',
+        code:'SOFTWARE'
+    });
+
+    let EquipOp=model.equipOps;
+
+    let equipOpS=await EquipOp.create({
+        name:'安装',
+        code:'SETUP'
+    });
+    let equipOpF=await EquipOp.create({
+        name:'修复',
+        code:'FIX'
+    });
+
+
+
     let BusinessContent=model.businessContents;
-    let busiContent=await BusinessContent.create({
-        type:'HARDWARE',
+
+    let busiContent1=await BusinessContent.create({
+        type:equipTypeH.code,
         equipment:'电话',
-        operation:'',
+        operation:equipOpS.code,
+        weight:5,
+        remark:'',
+        status:1
+    });
+    let busiContent2=await BusinessContent.create({
+        type:equipTypeH.code,
+        equipment:'电话',
+        operation:equipOpF.code,
+        weight:5,
+        remark:'',
+        status:1
+    });
+    let busiContent3=await BusinessContent.create({
+        type:equipTypeS.code,
+        equipment:'浏览器',
+        operation:equipOpS.code,
+        weight:5,
+        remark:'',
+        status:1
+    });
+    let busiContent4=await BusinessContent.create({
+        type:equipTypeS.code,
+        equipment:'浏览器',
+        operation:equipOpF.code,
+        weight:5,
+        remark:'',
+        status:1
     });
 
 

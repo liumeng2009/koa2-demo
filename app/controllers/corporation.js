@@ -16,11 +16,21 @@ exports.list=async(ctx,next)=>{
 
     let pageid=ctx.params.pageid;
 
+    let groupId=ctx.query.group;
+
+    let searchObj={
+        status:1
+    };
+
+    if(groupId){
+        searchObj.groupId=groupId
+    }
+
+    console.log(groupId+searchObj);
+
 
     let count=await Corporation.count({
-        where:{
-            status:1
-        }
+        where:searchObj
     });
 
     let corporationObj;
@@ -29,9 +39,7 @@ exports.list=async(ctx,next)=>{
         try{
             let pageidnow=parseInt(pageid);
             corporationObj=await Corporation.findAll({
-                where:{
-                    status:1
-                },
+                where:searchObj,
                 include:[{
                     model:Group
                 }],
@@ -44,9 +52,7 @@ exports.list=async(ctx,next)=>{
         }
         catch(e){
             corporationObj=await Corporation.findAll({
-                where:{
-                    status:1
-                },
+                where:searchObj,
                 include:[{
                     model:Group
                 }],
@@ -58,9 +64,7 @@ exports.list=async(ctx,next)=>{
     }
     else{
         corporationObj=await Corporation.findAll({
-            where:{
-                status:1
-            },
+            where:searchObj,
             include:[{
                 model:Group
             }],

@@ -10,9 +10,6 @@ const response_config=require('../../config/response_config');
 exports.list=async(ctx,next)=>{
     let EquipType = model.equipTypes;
     let groupObj =await EquipType.findAll({
-                where:{
-                    status:1
-                },
                 order:[
                     ['updatedAt','DESC']
                 ]

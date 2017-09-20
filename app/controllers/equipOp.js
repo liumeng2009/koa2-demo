@@ -13,9 +13,6 @@ const response_config=require('../../config/response_config');
 exports.list=async(ctx,next)=>{
     let EquipOp = model.equipOps;
     let groupObj =await EquipOp.findAll({
-        where:{
-            status:1
-        },
         order:[
             ['updatedAt','DESC']
         ]
@@ -75,7 +72,7 @@ exports.save=async(ctx,next)=>{
 
 exports.delete=async(ctx,next)=>{
     let id=ctx.params.id;
-    let EquipOp=model.EquipOps;
+    let EquipOp=model.equipOps;
     let equipOpObj=await EquipOp.findOne({
         where:{
             id:id

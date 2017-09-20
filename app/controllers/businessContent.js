@@ -10,17 +10,22 @@ const db=require('../db');
 
 exports.list=async(ctx,next)=>{
     let BusinessContent=model.businessContents;
+
     let pageid=ctx.params.pageid;
     let type=ctx.query.type;
     let equipment=ctx.query.equipment;
+
+    let strWhere=' where status=1 ';
 
     let searchObj={
         status:1
     }
     if(type&&type!=''){
         searchObj.type=type;
+        strWhere+=" and equiptypes.code='"+type+"'";
     }
     if(equipment&&equipment!=''){
+        strWhere+=" and businessContents.equipment='"+equipment+"'";
         searchObj.equipment=equipment;
     }
 
@@ -30,36 +35,25 @@ exports.list=async(ctx,next)=>{
 
     let contents;
 
+    let strSql='select businessContents.*,equiptypes.name as equiptypesname,equipops.name as equipopsname from businessContents inner join equiptypes on businessContents.type=equiptypes.code inner join equipops on businessContents.operation=equipops.code'+strWhere;
+    let orderStr='order by businessContents.updatedAt desc';
+
+    let sequelize=db.sequelize;
+
     if(pageid&&pageid!=0){
         try{
             let pageidnow=parseInt(pageid);
-            contents=await BusinessContent.findAll({
-                where: searchObj,
-                order:[
-                    ['updatedAt','DESC']
-                ],
-                offset: (pageidnow-1)*sys_config.pageSize,
-                limit: sys_config.pageSize
-            });
+
+            let limitStr='limit '+sys_config.pageSize+' offset '+(pageidnow-1)*sys_config.pageSize;
+
+            contents=await sequelize.query(strSql+limitStr+orderStr,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
         }
         catch(e){
-            contents=await BusinessContent.findAll({
-                where:searchObj,
-                order:[
-                    ['updatedAt','DESC']
-                ]
-            });
+            contents=await sequelize.query(strSql+orderStr,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
         }
     }
     else{
-        contents=await BusinessContent.findAll({
-            where:{
-                searchObj
-            },
-            order:[
-                ['updatedAt','DESC']
-            ]
-        });
+        contents=await sequelize.query(strSql+orderStr,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
     }
     ctx.body={
         status:0,

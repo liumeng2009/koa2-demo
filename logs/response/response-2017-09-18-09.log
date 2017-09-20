@@ -1,0 +1,146 @@
+[2017-09-18 09:21:50.749] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjAxZjA2NTgtOGQ1Ni00ZjkxLWIwZmUtNmE3YThhOWUzOWUwIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTA1NTU4MDM1LCJleHAiOjE1MDU2NDQ0MzV9.XD1qaJTPaKyMsThrt3dbIRoaJMenP46pitCWXBr2g90
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjAxZjA2NTgtOGQ1Ni00ZjkxLWIwZmUtNmE3YThhOWUzOWUwIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTA1NTU4MDM1LCJleHAiOjE1MDU2NDQ0MzV9.XD1qaJTPaKyMsThrt3dbIRoaJMenP46pitCWXBr2g90"}
+response time: 18
+response status: 200
+response body: 
+{"name":"jwtError","status":10003,"message":"身份验证错误！"}
+*************** response log end ***************
+
+[2017-09-18 09:22:56.421] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-09-18 09:22:58.022] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin","password":"admin"}
+response time: 1325
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$Funs5j34qBz5uZiVfrHNcu1vMnzZmYj8sxzYXeTCikOx0Fus2/n.O","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjAxZjA2NTgtOGQ1Ni00ZjkxLWIwZmUtNmE3YThhOWUzOWUwIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTA1Njk3Nzc3LCJleHAiOjE1MDU3ODQxNzd9.krSNjml7cBzvcIdHCFNpu9jNR1v8-JI-xOZFB5Xe08w","canLogin":true,"status":1,"id":"b01f0658-8d56-4f91-b0fe-6a7a8a9e39e0","createdAt":1505557906169,"updatedAt":1505697777909,"version":2},"message":"登录成功！"}
+*************** response log end ***************
+
+[2017-09-18 09:23:00.091] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjAxZjA2NTgtOGQ1Ni00ZjkxLWIwZmUtNmE3YThhOWUzOWUwIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTA1Njk3Nzc3LCJleHAiOjE1MDU3ODQxNzd9.krSNjml7cBzvcIdHCFNpu9jNR1v8-JI-xOZFB5Xe08w
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjAxZjA2NTgtOGQ1Ni00ZjkxLWIwZmUtNmE3YThhOWUzOWUwIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTA1Njk3Nzc3LCJleHAiOjE1MDU3ODQxNzd9.krSNjml7cBzvcIdHCFNpu9jNR1v8-JI-xOZFB5Xe08w"}
+response time: 35
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$Funs5j34qBz5uZiVfrHNcu1vMnzZmYj8sxzYXeTCikOx0Fus2/n.O","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjAxZjA2NTgtOGQ1Ni00ZjkxLWIwZmUtNmE3YThhOWUzOWUwIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTA1Njk3Nzc3LCJleHAiOjE1MDU3ODQxNzd9.krSNjml7cBzvcIdHCFNpu9jNR1v8-JI-xOZFB5Xe08w","canLogin":true,"status":1,"id":"b01f0658-8d56-4f91-b0fe-6a7a8a9e39e0","createdAt":1505557906169,"updatedAt":1505697777909,"version":2}}
+*************** response log end ***************
+
+[2017-09-18 09:24:13.909] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjAxZjA2NTgtOGQ1Ni00ZjkxLWIwZmUtNmE3YThhOWUzOWUwIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTA1Njk3Nzc3LCJleHAiOjE1MDU3ODQxNzd9.krSNjml7cBzvcIdHCFNpu9jNR1v8-JI-xOZFB5Xe08w
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjAxZjA2NTgtOGQ1Ni00ZjkxLWIwZmUtNmE3YThhOWUzOWUwIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTA1Njk3Nzc3LCJleHAiOjE1MDU3ODQxNzd9.krSNjml7cBzvcIdHCFNpu9jNR1v8-JI-xOZFB5Xe08w"}
+response time: 102
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$Funs5j34qBz5uZiVfrHNcu1vMnzZmYj8sxzYXeTCikOx0Fus2/n.O","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjAxZjA2NTgtOGQ1Ni00ZjkxLWIwZmUtNmE3YThhOWUzOWUwIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTA1Njk3Nzc3LCJleHAiOjE1MDU3ODQxNzd9.krSNjml7cBzvcIdHCFNpu9jNR1v8-JI-xOZFB5Xe08w","canLogin":true,"status":1,"id":"b01f0658-8d56-4f91-b0fe-6a7a8a9e39e0","createdAt":1505557906169,"updatedAt":1505697777909,"version":2}}
+*************** response log end ***************
+
+[2017-09-18 09:24:14.870] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjAxZjA2NTgtOGQ1Ni00ZjkxLWIwZmUtNmE3YThhOWUzOWUwIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTA1Njk3Nzc3LCJleHAiOjE1MDU3ODQxNzd9.krSNjml7cBzvcIdHCFNpu9jNR1v8-JI-xOZFB5Xe08w
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjAxZjA2NTgtOGQ1Ni00ZjkxLWIwZmUtNmE3YThhOWUzOWUwIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTA1Njk3Nzc3LCJleHAiOjE1MDU3ODQxNzd9.krSNjml7cBzvcIdHCFNpu9jNR1v8-JI-xOZFB5Xe08w"}
+response time: 54
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$Funs5j34qBz5uZiVfrHNcu1vMnzZmYj8sxzYXeTCikOx0Fus2/n.O","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjAxZjA2NTgtOGQ1Ni00ZjkxLWIwZmUtNmE3YThhOWUzOWUwIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTA1Njk3Nzc3LCJleHAiOjE1MDU3ODQxNzd9.krSNjml7cBzvcIdHCFNpu9jNR1v8-JI-xOZFB5Xe08w","canLogin":true,"status":1,"id":"b01f0658-8d56-4f91-b0fe-6a7a8a9e39e0","createdAt":1505557906169,"updatedAt":1505697777909,"version":2}}
+*************** response log end ***************
+
+[2017-09-18 09:24:15.201] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/business/getequip/get?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjAxZjA2NTgtOGQ1Ni00ZjkxLWIwZmUtNmE3YThhOWUzOWUwIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTA1Njk3Nzc3LCJleHAiOjE1MDU3ODQxNzd9.krSNjml7cBzvcIdHCFNpu9jNR1v8-JI-xOZFB5Xe08w
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjAxZjA2NTgtOGQ1Ni00ZjkxLWIwZmUtNmE3YThhOWUzOWUwIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTA1Njk3Nzc3LCJleHAiOjE1MDU3ODQxNzd9.krSNjml7cBzvcIdHCFNpu9jNR1v8-JI-xOZFB5Xe08w"}
+response time: 199
+response status: 200
+response body: 
+{"status":0,"data":[{"equipment":"浏览器"},{"equipment":"电话"}]}
+*************** response log end ***************
+
+[2017-09-18 09:24:15.229] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/equipType/list?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjAxZjA2NTgtOGQ1Ni00ZjkxLWIwZmUtNmE3YThhOWUzOWUwIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTA1Njk3Nzc3LCJleHAiOjE1MDU3ODQxNzd9.krSNjml7cBzvcIdHCFNpu9jNR1v8-JI-xOZFB5Xe08w
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjAxZjA2NTgtOGQ1Ni00ZjkxLWIwZmUtNmE3YThhOWUzOWUwIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTA1Njk3Nzc3LCJleHAiOjE1MDU3ODQxNzd9.krSNjml7cBzvcIdHCFNpu9jNR1v8-JI-xOZFB5Xe08w"}
+response time: 150
+response status: 200
+response body: 
+{"status":0,"data":[{"name":"1","code":"1","id":"2aab5ffb-e90d-4318-b7f3-dabc090fa4ec","createdAt":1505587810755,"updatedAt":1505587810755,"version":0},{"name":"软件","code":"SOFTWARE","id":"6bd52d77-5f19-482c-a9a2-41de65a5fee7","createdAt":1505557908819,"updatedAt":1505557908819,"version":0},{"name":"硬件","code":"HARDWARE","id":"e177f378-89a5-4363-bde2-1bfe807f1955","createdAt":1505557908740,"updatedAt":1505557908740,"version":0}]}
+*************** response log end ***************
+
+[2017-09-18 09:24:15.241] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/equipOp/list?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjAxZjA2NTgtOGQ1Ni00ZjkxLWIwZmUtNmE3YThhOWUzOWUwIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTA1Njk3Nzc3LCJleHAiOjE1MDU3ODQxNzd9.krSNjml7cBzvcIdHCFNpu9jNR1v8-JI-xOZFB5Xe08w
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjAxZjA2NTgtOGQ1Ni00ZjkxLWIwZmUtNmE3YThhOWUzOWUwIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTA1Njk3Nzc3LCJleHAiOjE1MDU3ODQxNzd9.krSNjml7cBzvcIdHCFNpu9jNR1v8-JI-xOZFB5Xe08w"}
+response time: 153
+response status: 200
+response body: 
+{"status":0,"data":[{"name":"修复","code":"FIX","id":"8acc94f8-8819-4ae6-83f7-590f4841a779","createdAt":1505557908952,"updatedAt":1505557908952,"version":0},{"name":"安装","code":"SETUP","id":"dc1b8319-0486-4394-8fa3-6392aeb29e16","createdAt":1505557908883,"updatedAt":1505557908883,"version":0}]}
+*************** response log end ***************
+
+[2017-09-18 09:24:15.299] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/business/list/page/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjAxZjA2NTgtOGQ1Ni00ZjkxLWIwZmUtNmE3YThhOWUzOWUwIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTA1Njk3Nzc3LCJleHAiOjE1MDU3ODQxNzd9.krSNjml7cBzvcIdHCFNpu9jNR1v8-JI-xOZFB5Xe08w
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjAxZjA2NTgtOGQ1Ni00ZjkxLWIwZmUtNmE3YThhOWUzOWUwIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTA1Njk3Nzc3LCJleHAiOjE1MDU3ODQxNzd9.krSNjml7cBzvcIdHCFNpu9jNR1v8-JI-xOZFB5Xe08w"}
+response time: 316
+response status: 200
+response body: 
+{"status":0,"data":[{"type":"SOFTWARE","equipment":"浏览器","operation":"FIX","weight":5,"remark":"","status":1,"id":"8acc94f8-8819-4ae6-83f7-590f4841a779","createdAt":1505557908952,"updatedAt":1505557908952,"version":0,"name":"修复","code":"FIX","equiptypesname":"软件","equipopsname":"修复"},{"type":"SOFTWARE","equipment":"浏览器","operation":"SETUP","weight":5,"remark":"","status":1,"id":"dc1b8319-0486-4394-8fa3-6392aeb29e16","createdAt":1505557908883,"updatedAt":1505557908883,"version":0,"name":"安装","code":"SETUP","equiptypesname":"软件","equipopsname":"安装"},{"type":"HARDWARE","equipment":"电话","operation":"FIX","weight":5,"remark":"","status":1,"id":"8acc94f8-8819-4ae6-83f7-590f4841a779","createdAt":1505557908952,"updatedAt":1505557908952,"version":0,"name":"修复","code":"FIX","equiptypesname":"硬件","equipopsname":"修复"},{"type":"HARDWARE","equipment":"电话","operation":"SETUP","weight":5,"remark":"","status":1,"id":"dc1b8319-0486-4394-8fa3-6392aeb29e16","createdAt":1505557908883,"updatedAt":1505557908883,"version":0,"name":"安装","code":"SETUP","equiptypesname":"硬件","equipopsname":"安装"}],"total":4}
+*************** response log end ***************
+
+[2017-09-18 09:24:19.668] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/business/getequip/get/SOFTWARE?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjAxZjA2NTgtOGQ1Ni00ZjkxLWIwZmUtNmE3YThhOWUzOWUwIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTA1Njk3Nzc3LCJleHAiOjE1MDU3ODQxNzd9.krSNjml7cBzvcIdHCFNpu9jNR1v8-JI-xOZFB5Xe08w
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjAxZjA2NTgtOGQ1Ni00ZjkxLWIwZmUtNmE3YThhOWUzOWUwIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTA1Njk3Nzc3LCJleHAiOjE1MDU3ODQxNzd9.krSNjml7cBzvcIdHCFNpu9jNR1v8-JI-xOZFB5Xe08w"}
+response time: 32
+response status: 200
+response body: 
+{"status":0,"data":[{"equipment":"浏览器"}]}
+*************** response log end ***************
+
+[2017-09-18 09:24:19.715] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/business/list/page/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjAxZjA2NTgtOGQ1Ni00ZjkxLWIwZmUtNmE3YThhOWUzOWUwIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTA1Njk3Nzc3LCJleHAiOjE1MDU3ODQxNzd9.krSNjml7cBzvcIdHCFNpu9jNR1v8-JI-xOZFB5Xe08w&type=SOFTWARE
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiYjAxZjA2NTgtOGQ1Ni00ZjkxLWIwZmUtNmE3YThhOWUzOWUwIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTA1Njk3Nzc3LCJleHAiOjE1MDU3ODQxNzd9.krSNjml7cBzvcIdHCFNpu9jNR1v8-JI-xOZFB5Xe08w","type":"SOFTWARE"}
+response time: 44
+response status: 200
+response body: 
+{"name":"SequelizeDatabaseError","message":"ER_BAD_FIELD_ERROR: Unknown column 'EquipType.type' in 'where clause'","parent":{"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","index":0,"sql":"select *,equiptypes.name as equiptypesname,equipops.name as equipopsname from businessContents inner join equiptypes on businessContents.type=EquipTypes.code inner join equipops on businessContents.operation=equipops.code where status=1  and EquipType.type='SOFTWARE'order by businessContents.updatedAt desc"},"original":{"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","index":0,"sql":"select *,equiptypes.name as equiptypesname,equipops.name as equipopsname from businessContents inner join equiptypes on businessContents.type=EquipTypes.code inner join equipops on businessContents.operation=equipops.code where status=1  and EquipType.type='SOFTWARE'order by businessContents.updatedAt desc"},"sql":"select *,equiptypes.name as equiptypesname,equipops.name as equipopsname from businessContents inner join equiptypes on businessContents.type=EquipTypes.code inner join equipops on businessContents.operation=equipops.code where status=1  and EquipType.type='SOFTWARE'order by businessContents.updatedAt desc","status":500}
+*************** response log end ***************
+
