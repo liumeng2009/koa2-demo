@@ -8,5 +8,6 @@ router.get('/list', order_controller.list);
 router.get('/list/page/:pageid', order_controller.list);
 router.post('/add', order_controller.save);
 router.get('/delete/:userid',order_controller.delete);
+router.get('/getorderno/get/:year/:month/:day',order_controller.getOrderNo)
 
 module.exports = router;

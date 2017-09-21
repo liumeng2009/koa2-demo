@@ -21,7 +21,7 @@ exports.list=async(ctx,next)=>{
     let sequelize=db.sequelize;
     let sqlStr=`select
     orders.id as id,
-    corporations.name as corporationname,
+    orders.custom_corporation as corporationname,
     corpbuildings.floor as floor,
     corpbuildings.position as corpostion,
     buildings.name as buildingname
@@ -60,6 +60,7 @@ exports.save=async(ctx,next)=>{
     let custom_phone=ctx.request.body.custom_phone;
     let incoming_time=ctx.request.body.incoming_time;
     let custom_position=ctx.request.body.custom_position;
+    let custom_corporation=ctx.request.body.custom_corporation;
     let business_description=ctx.request.body.business_description;
     let remark=ctx.request.body.remark;
 
@@ -86,6 +87,7 @@ exports.save=async(ctx,next)=>{
 
         orderObj.custom_name=custom_name;
         orderObj.custom_phone=custom_phone;
+        orderObj.custom_corporation=custom_corporation;
         orderObj.incoming_time=incoming_time;
         orderObj.custom_position=custom_position;
         orderObj.remark=remark;
@@ -106,6 +108,7 @@ exports.save=async(ctx,next)=>{
             custom_phone:custom_phone,
             incoming_time:incoming_time,
             custom_position:custom_position,
+            custom_corporation:custom_corporation,
             remark:remark,
             business_description:business_description,
             no:getOrderNo(incoming_time),
@@ -125,15 +128,23 @@ exports.delete=async(ctx,next)=>{
 }
 
 exports.getOrderNo=async(ctx,next)=>{
-    let incoming_time=ctx.params.intime;
-    return getOrderNo(incoming_time);
+    let year=ctx.params.year;
+    let month=ctx.params.month;
+    let day=ctx.params.day;
+
+    let no=await getOrderNo(year,month,day);
+
+    ctx.body={
+        status:0,
+        data:no
+    }
 }
 
-var getOrderNo=async(incoming_time)=>{
-    let date=new Date(incoming_time);
-    let year=date.getYear().toString();
-    let month=('0'+(date.getMonth()+1)).slice(2);
-    let day=('0'+date.getDay()).slice(2);
+var getOrderNo=async(_year,_month,_day)=>{
+    let date=new Date(_year,_month-1,_day);
+    let year=date.getFullYear().toString();
+    let month=('0'+(date.getMonth()+1)).slice(('0'+(date.getMonth()+1)).length-2,('0'+(date.getMonth()+1)).length);
+    let day=('0'+date.getDate()).slice(('0'+date.getDate()).length-2,('0'+date.getDate()).length);
     console.log(year+'年'+month+'月'+day+'日');
     let dayStartTime=Date.parse(new Date(date.getYear(),date.getMonth(),date.getDay(),0,0,0).toString());
     let dayEndTime=new Date(dayStartTime+24*60*60*1000);
@@ -146,7 +157,7 @@ var getOrderNo=async(incoming_time)=>{
             }
         }
     });
-    let noLast=('000'+count).slice(3);
+    let noLast=('000'+count).slice(('000'+count).length-3,('000'+count).length);
     return year+month+day+noLast;
 
 }

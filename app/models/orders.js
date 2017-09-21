@@ -17,6 +17,9 @@ module.exports = db.defineModel('orders', {
     incoming_time:{
         type: db.INTEGER
     },
+    custom_corporation:{
+        type:db.STRING(100)
+    },
     custom_position:{
         type:db.BOOLEAN
     },
