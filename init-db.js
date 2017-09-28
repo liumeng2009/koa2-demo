@@ -273,6 +273,10 @@ model.sync().then(async ()=>{
         name:'软件',
         code:'SOFTWARE'
     });
+    let equipTypeN=await EquipType.create({
+        name:'网络',
+        code:'NETWORK'
+    });
 
     let EquipOp=model.equipOps;
 
@@ -281,8 +285,24 @@ model.sync().then(async ()=>{
         code:'SETUP'
     });
     let equipOpF=await EquipOp.create({
-        name:'修复',
+        name:'故障',
         code:'FIX'
+    });
+    let equipOpU=await EquipOp.create({
+        name:'卸载',
+        code:'UNINSTALL'
+    });
+    let equipOpN=await EquipOp.create({
+        name:'无法开机',
+        code:'NOTSTART'
+    });
+    let equipOpC=await EquipOp.create({
+        name:'冲突',
+        code:'CT'
+    });
+    let equipOpSET=await EquipOp.create({
+        name:'设置',
+        code:'SET'
     });
 
 
@@ -305,17 +325,18 @@ model.sync().then(async ()=>{
         remark:'',
         status:1
     });
+
     let busiContent3=await BusinessContent.create({
-        type:equipTypeS.code,
-        equipment:'浏览器',
+        type:equipTypeH.code,
+        equipment:'打印机',
         operation:equipOpS.code,
         weight:5,
         remark:'',
         status:1
     });
     let busiContent4=await BusinessContent.create({
-        type:equipTypeS.code,
-        equipment:'浏览器',
+        type:equipTypeH.code,
+        equipment:'打印机',
         operation:equipOpF.code,
         weight:5,
         remark:'',
@@ -325,39 +346,97 @@ model.sync().then(async ()=>{
 
 
 
-
-
-
-
-    //}
-
-/*    Group.create({
-        name:'管委会',
-        description:'group1',
+    let busiContent5=await BusinessContent.create({
+        type:equipTypeS.code,
+        equipment:'浏览器',
+        operation:equipOpS.code,
+        weight:5,
+        remark:'',
         status:1
-    }).then(function(result){
-        console.log('group1 initital success'+result.id);
-
-    }).catch(function(err){
-        console.log('group1 failed:'+err);
+    });
+    let busiContent6=await BusinessContent.create({
+        type:equipTypeS.code,
+        equipment:'浏览器',
+        operation:equipOpF.code,
+        weight:5,
+        remark:'',
+        status:1
     });
 
-    Group.create({
-        name:'控股公司',
-        description:'group2',
+    let busiContent7=await BusinessContent.create({
+        type:equipTypeN.code,
+        equipment:'IP地址',
+        operation:equipOpC.code,
+        weight:5,
+        remark:'',
         status:1
-    }).then(function(result){
-        console.log('group2 initital success'+result);
-    }).catch(function(err){
-        console.log('group2 failed:'+err);
-    });*/
+    });
+    let busiContent8=await BusinessContent.create({
+        type:equipTypeN.code,
+        equipment:'IP地址',
+        operation:equipOpSET.code,
+        weight:5,
+        remark:'',
+        status:1
+    });
 
+    let busiContent9=await BusinessContent.create({
+        type:equipTypeS.code,
+        equipment:'WORD',
+        operation:equipOpS.code,
+        weight:5,
+        remark:'',
+        status:1
+    });
+    let busiContent10=await BusinessContent.create({
+        type:equipTypeS.code,
+        equipment:'WORD',
+        operation:equipOpF.code,
+        weight:5,
+        remark:'',
+        status:1
+    });
 
-
-
-
-
-
+    let busiContent11=await BusinessContent.create({
+        type:equipTypeH.code,
+        equipment:'电脑',
+        operation:equipOpN.code,
+        weight:5,
+        remark:'',
+        status:1
+    });
+    let busiContent12=await BusinessContent.create({
+        type:equipTypeH.code,
+        equipment:'电脑',
+        operation:equipOpS.code,
+        weight:5,
+        remark:'',
+        status:1
+    });
+    let busiContent13=await BusinessContent.create({
+        type:equipTypeH.code,
+        equipment:'笔记本电脑',
+        operation:equipOpN.code,
+        weight:5,
+        remark:'',
+        status:1
+    });
+    let busiContent14=await BusinessContent.create({
+        type:equipTypeH.code,
+        equipment:'笔记本电脑',
+        operation:equipOpS.code,
+        weight:5,
+        remark:'',
+        status:1
+    });
+    let busiContent15=await BusinessContent.create({
+        type:equipTypeH.code,
+        equipment:'笔记本电脑',
+        operation:equipOpF.code,
+        weight:5,
+        remark:'',
+        status:1
+    });
 }).catch((e)=>{
     console.log('failed with: '+e);
     process.exit(0);});

@@ -36,7 +36,7 @@ exports.list=async(ctx,next)=>{
     let contents;
 
     let strSql='select businessContents.*,equiptypes.name as equiptypesname,equipops.name as equipopsname from businessContents inner join equiptypes on businessContents.type=equiptypes.code inner join equipops on businessContents.operation=equipops.code'+strWhere;
-    let orderStr='order by businessContents.updatedAt desc';
+    let orderStr=' order by businessContents.updatedAt desc ';
 
     let sequelize=db.sequelize;
 
@@ -46,7 +46,7 @@ exports.list=async(ctx,next)=>{
 
             let limitStr='limit '+sys_config.pageSize+' offset '+(pageidnow-1)*sys_config.pageSize;
 
-            contents=await sequelize.query(strSql+limitStr+orderStr,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
+            contents=await sequelize.query(strSql+orderStr+limitStr,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
         }
         catch(e){
             contents=await sequelize.query(strSql+orderStr,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
