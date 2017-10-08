@@ -21,6 +21,9 @@ module.exports = db.defineModel('orders', {
         type:db.STRING(100)
     },
     custom_position:{
+        type:db.STRING(100)
+    },
+    important:{
         type:db.BOOLEAN
     },
     business_description:{
