@@ -1,0 +1,26 @@
+[2017-10-08 23:15:43.503] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/order/save?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiODQzMzE1MjAtMTgyNy00MTFjLWE4YjEtMmY3ZjEzZDRlYzQyIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTA3NDU2MzYzLCJleHAiOjE1MDc1NDI3NjN9.BuVKEYoFfA_vbD_JD_iASlG2rI7ZHee6WDjdk2hNvDQ
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 13
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-10-08 23:15:44.006] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/order/save?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiODQzMzE1MjAtMTgyNy00MTFjLWE4YjEtMmY3ZjEzZDRlYzQyIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTA3NDU2MzYzLCJleHAiOjE1MDc1NDI3NjN9.BuVKEYoFfA_vbD_JD_iASlG2rI7ZHee6WDjdk2hNvDQ
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"id":null,"no":"20171008000","custom_name":"3","custom_phone":"3","incoming_date":"Sun Oct 08 2017","hour":23,"minute":15,"second":42,"custom_position":"1e0b5031-0597-4d52-b7fa-3ff4d741106b","business_description":null,"remark":null,"group":"ad4a1595-8ef9-427f-96ef-aa0772437991","corporation":"87bee33b-72c6-4609-a4d0-b88c513c55ed","needs":[],"important":false}
+response time: 423
+response status: 200
+response body: 
+{"name":"SequelizeValidationError","message":"string violation: no cannot be an array or an object,\nnotNull Violation: incoming_time cannot be null,\nnotNull Violation: custom_corporation cannot be null,\nnotNull Violation: important cannot be null","errors":[{"message":"no cannot be an array or an object","type":"string violation","path":"no","value":{}},{"message":"incoming_time cannot be null","type":"notNull Violation","path":"incoming_time","value":null},{"message":"custom_corporation cannot be null","type":"notNull Violation","path":"custom_corporation","value":null},{"message":"important cannot be null","type":"notNull Violation","path":"important","value":null}],"status":500}
+*************** response log end ***************
+

@@ -13,6 +13,7 @@ ApiErrorNames.USER_NAME_NOT_EXIST='userNameNotExist';
 ApiErrorNames.ADMIN_CAN_NOT_DELETE='adminCanNotDelete';
 
 ApiErrorNames.INPUT_ERROR_TYPE='inputErrorType';
+ApiErrorNames.INPUT_DATE_ERROR_TYPE='inputDateErrorType';
 
 ApiErrorNames.NEED_UNIQUE_BUILDING_NAME="needUniqueBuildingName";
 ApiErrorNames.MAX_AND_MIN="maxAndMin";
@@ -64,6 +65,7 @@ error_map.set(ApiErrorNames.USER_NAME_NOT_EXIST, { code: 10006, message: '用户
 error_map.set(ApiErrorNames.ADMIN_CAN_NOT_DELETE, { code: 10007, message: '最高管理员账户不能被删除！' });
 
 error_map.set(ApiErrorNames.INPUT_ERROR_TYPE, { code: 20001, message: '输入数值格式错误！' });
+error_map.set(ApiErrorNames.INPUT_DATE_ERROR_TYPE, { code: 20002, message: '输入日期格式错误！' });
 
 //building模块错误
 error_map.set(ApiErrorNames.NEED_UNIQUE_BUILDING_NAME, { code: 90001, message: '办公楼名称重复！' });

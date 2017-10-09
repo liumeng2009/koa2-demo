@@ -15,7 +15,7 @@ module.exports = db.defineModel('orders', {
         allowNull:true
     },
     incoming_time:{
-        type: db.INTEGER
+        type: db.BIGINT
     },
     custom_corporation:{
         type:db.STRING(100)
@@ -27,7 +27,8 @@ module.exports = db.defineModel('orders', {
         type:db.BOOLEAN
     },
     business_description:{
-        type:db.STRING(1000)
+        type:db.STRING(1000),
+        allowNull:true
     },
     remark:{
         type:db.STRING(100),
@@ -35,5 +36,9 @@ module.exports = db.defineModel('orders', {
     },
     status:{
         type:db.INTEGER
+    },
+    needs:{
+        type:db.TEXT,
+        allowNull:true
     }
 });

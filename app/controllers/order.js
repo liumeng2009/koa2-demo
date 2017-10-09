@@ -21,10 +21,13 @@ exports.list=async(ctx,next)=>{
     let sequelize=db.sequelize;
     let sqlStr=`select
     orders.id as id,
-    orders.custom_corporation as corporationname,
+    corporations.name as corporationname,
     corpbuildings.floor as floor,
     corpbuildings.position as corpostion,
-    buildings.name as buildingname
+    buildings.name as buildingname,
+    orders.custom_phone,
+    orders.important,
+    orders.no
     from orders inner join corpbuildings on orders.custom_position=corpbuildings.id INNER JOIN corporations on corporationId=corporations.id inner join Buildings on corpbuildings.buildingId=buildings.id
     where orders.status=1 order by orders.updatedAt desc `
     let orders;
@@ -58,21 +61,34 @@ exports.list=async(ctx,next)=>{
 exports.save=async(ctx,next)=>{
     let custom_name=ctx.request.body.custom_name;
     let custom_phone=ctx.request.body.custom_phone;
-    let incoming_time=ctx.request.body.incoming_time;
+    let incoming_date_timestamp=ctx.request.body.incoming_date_timestamp;
     let custom_position=ctx.request.body.custom_position;
-    let custom_corporation=ctx.request.body.custom_corporation;
+    let custom_corporation=ctx.request.body.corporation;
     let business_description=ctx.request.body.business_description;
     let remark=ctx.request.body.remark;
+    let important=ctx.request.body.important;
+    let needs=ctx.request.body.needs;
 
     let id=ctx.request.body.id;
 
     let Order=model.orders;
 
-    if(custom_phone!=''&incoming_time!=''&custom_position!=''&business_description!=''){
+    if(custom_phone!=''&incoming_date_timestamp!=''&custom_position!=''){
 
     }
     else{
         throw new ApiError(ApiErrorNames.ORDER_ATTRIBUTE_NOT_NULL);
+    }
+
+    console.log('表单提交成功了吗'+incoming_date_timestamp);
+
+    let incomingDate;
+
+    try {
+        incomingDate= new Date(incoming_date_timestamp);
+    }
+    catch(e){
+        throw new ApiError(ApiErrorNames.INPUT_DATE_ERROR_TYPE);
     }
 
 
@@ -88,9 +104,10 @@ exports.save=async(ctx,next)=>{
         orderObj.custom_name=custom_name;
         orderObj.custom_phone=custom_phone;
         orderObj.custom_corporation=custom_corporation;
-        orderObj.incoming_time=incoming_time;
+        orderObj.incoming_time=incoming_date_timestamp;
         orderObj.custom_position=custom_position;
         orderObj.remark=remark;
+        orderObj.important=important;
 
 
         let saveResult= await orderObj.save();
@@ -106,13 +123,15 @@ exports.save=async(ctx,next)=>{
         let createResult=await Order.create({
             custom_name:custom_name,
             custom_phone:custom_phone,
-            incoming_time:incoming_time,
+            incoming_time:incoming_date_timestamp,
             custom_position:custom_position,
             custom_corporation:custom_corporation,
             remark:remark,
             business_description:business_description,
-            no:getOrderNo(incoming_time),
-            status:1
+            no:await getOrderNoFun(incomingDate.getFullYear(),incomingDate.getMonth()+1,incomingDate.getDate()),
+            status:1,
+            important:important,
+            needs:needs.toString()
         });
         console.log('created'+JSON.stringify(createResult));
         ctx.body={
@@ -132,7 +151,7 @@ exports.getOrderNo=async(ctx,next)=>{
     let month=ctx.params.month;
     let day=ctx.params.day;
 
-    let no=await getOrderNo(year,month,day);
+    let no=await getOrderNoFun(year,month,day);
 
     ctx.body={
         status:0,
@@ -140,7 +159,8 @@ exports.getOrderNo=async(ctx,next)=>{
     }
 }
 
-var getOrderNo=async(_year,_month,_day)=>{
+var getOrderNoFun=async(_year,_month,_day)=>{
+    console.log(_year+' '+_month+' '+_day);
     let date=new Date(_year,_month-1,_day);
     let year=date.getFullYear().toString();
     let month=('0'+(date.getMonth()+1)).slice(('0'+(date.getMonth()+1)).length-2,('0'+(date.getMonth()+1)).length);
