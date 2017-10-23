@@ -81,20 +81,27 @@ exports.list=async(ctx,next)=>{
 }
 
 exports.save=async(ctx,next)=>{
+
+    console.log(111111111111111111111);
+
+    console.log('hehehehehe'+ctx.request.body.group);
+
     let name=ctx.request.body.name;
     let description=ctx.request.body.description;
-    let groupId=ctx.request.body.groupId;
+    let groupId=ctx.request.body.group.id;
     let id=ctx.request.body.id;
 
     let Corporation=model.corporations;
 
-    if(name!=''&description!=''&groupId!=''){
+    /*
+
+    if(name!=''&description!=''&groupId){
 
     }
     else{
         throw new ApiError(ApiErrorNames.CORPORATION_NOT_NULL);
     }
-
+*/
 
     //id存在，说明是编辑模式
     if(id){
@@ -120,6 +127,7 @@ exports.save=async(ctx,next)=>{
     }
     //id不存在，说明是新增模式
     else{
+        console.log('addddddddddddd');
         let corporationObj=await Corporation.findAll({
             where:{
                 name:name
@@ -170,14 +178,19 @@ exports.delete=async(ctx,next)=>{
 
 exports.getData=async(ctx,next)=>{
     let Corporation = model.corporations;
+    let Group=model.groups;
 
+    Corporation.belongsTo(Group);
     let id=ctx.params.id;
 
     let corporationObj=await Corporation.findOne({
         where:{
             status:1,
             id:id
-        }
+        },
+        include:[{
+            model:Group
+        }],
     });
     if(corporationObj){
         ctx.body={

@@ -1,27 +1,21 @@
 const db=require('../db');
 module.exports = db.defineModel('businessContents', {
-    /*
-    * NET 网络
-    * HARDWARE 硬件
-    * SOFTWARE 软件
-    * SYSTEM 系统
-    * OTHER 其他
-    * */
     type: {
-        type: db.STRING(100)
+        type:db.STRING(100),
+        references:{
+            model:'equipTypes',
+            key:'code'
+        }
     },
     equipment:{
         type: db.STRING(100)
     },
-    /*
-    * SETUP 安装
-    * DEBUG 调试
-    * FIX 修复
-    * ADVICE 咨询
-    * SUPPORT 现场技术支持
-    * */
     operation:{
-        type:db.STRING(100)
+        type:db.STRING(100),
+        references:{
+            model:'equipOps',
+            key:'code'
+        }
     },
     weight:{
         type:db.INTEGER

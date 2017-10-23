@@ -9,33 +9,29 @@ const response_config=require('../../config/response_config');
 const db=require('../db');
 
 exports.list=async(ctx,next)=>{
-    let BusinessContent=model.businessContents;
+    //let BusinessContent=model.businessContents;
 
     let pageid=ctx.params.pageid;
     let type=ctx.query.type;
     let equipment=ctx.query.equipment;
 
-    let strWhere=' where status=1 ';
+    //let strWhere=' where status=1 ';
 
     let searchObj={
         status:1
     }
     if(type&&type!=''){
         searchObj.type=type;
-        strWhere+=" and equiptypes.code='"+type+"'";
+        //strWhere+=" and equiptypes.code='"+type+"'";
     }
     if(equipment&&equipment!=''){
-        strWhere+=" and businessContents.equipment='"+equipment+"'";
+        //strWhere+=" and businessContents.equipment='"+equipment+"'";
         searchObj.equipment=equipment;
     }
 
-    let count=await BusinessContent.count({
-        where:searchObj
-    });
-
     let contents;
 
-    let strSql='select businessContents.*,equiptypes.name as equiptypesname,equipops.name as equipopsname from businessContents inner join equiptypes on businessContents.type=equiptypes.code inner join equipops on businessContents.operation=equipops.code'+strWhere;
+/*    let strSql='select businessContents.*,equiptypes.name as equiptypesname,equipops.name as equipopsname from businessContents inner join equiptypes on businessContents.type=equiptypes.code inner join equipops on businessContents.operation=equipops.code'+strWhere;
     let orderStr=' order by businessContents.updatedAt desc ';
 
     let sequelize=db.sequelize;
@@ -54,6 +50,47 @@ exports.list=async(ctx,next)=>{
     }
     else{
         contents=await sequelize.query(strSql+orderStr,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
+    }*/
+
+    let BusinessContent=model.businessContents;
+    let EquipType=model.equipTypes;
+    let EquipOps=model.equipOps;
+
+    BusinessContent.belongsTo(EquipType,{foreignKey:'type',targetKey:'code'});
+    BusinessContent.belongsTo(EquipOps,{foreignKey:'operation',targetKey:'code'});
+
+    let count=await BusinessContent.count({
+        where:searchObj
+    });
+
+    if(pageid&&pageid!=0){
+        let pageidnow=parseInt(pageid);
+        contents=await BusinessContent.findAll({
+            where:searchObj,
+            include:[{
+                model:EquipType
+            },{
+                model:EquipOps
+            }],
+            order:[
+                ['updatedAt','DESC']
+            ],
+            offset: (pageidnow-1)*sys_config.pageSize,
+            limit: sys_config.pageSize
+        });
+    }
+    else{
+        contents=await BusinessContent.findAll({
+            where:searchObj,
+            include:[{
+                model:EquipType
+            },{
+                model:EquipOps
+            }],
+            order:[
+                ['updatedAt','DESC']
+            ]
+        });
     }
     ctx.body={
         status:0,
