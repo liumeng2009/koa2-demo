@@ -4,7 +4,8 @@
 const db=require('../db');
 module.exports = db.defineModel('orders', {
     no:{
-        type:db.STRING(50)
+        type:db.STRING(100),
+        unique:true
     },
     custom_name:{
         type:db.STRING(100),
@@ -22,13 +23,6 @@ module.exports = db.defineModel('orders', {
     },
     custom_position:{
         type:db.STRING(100)
-    },
-    important:{
-        type:db.BOOLEAN
-    },
-    business_description:{
-        type:db.STRING(1000),
-        allowNull:true
     },
     remark:{
         type:db.STRING(100),

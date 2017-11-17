@@ -83,10 +83,8 @@ function defineModel(name, attributes) {
         timestamps: false,
         hooks: {
             beforeValidate: function (obj) {
-                console.log('你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊');
                 let now = Date.now();
                 if (obj.isNewRecord) {
-                    console.log('新增啦...' + obj);
                     if (!obj.id) {
                         obj.id = generateId();
                     }
@@ -98,6 +96,17 @@ function defineModel(name, attributes) {
             beforeUpdate:function(obj){
                 obj.updatedAt = Date.now();;
                 obj.version++;
+            },
+            beforeBulkCreate:function(objs){
+                for(let i=0;i<objs.length;i++){
+                    let now = Date.now();
+                    if (!objs[i].id) {
+                        objs[i].id = generateId();
+                    }
+                    objs[i].createdAt = now;
+                    objs[i].updatedAt = now;
+                    objs[i].version = 0;
+                }
             }
         }
     });

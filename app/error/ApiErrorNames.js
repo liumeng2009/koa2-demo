@@ -49,6 +49,10 @@ ApiErrorNames.EQUIP_OP_CODE_EXIST="equipOpCodeExist";
 ApiErrorNames.EQUIP_OP_NULL="equipOpNull";
 
 ApiErrorNames.ORDER_ATTRIBUTE_NOT_NULL="orderAttributeNotNull";
+ApiErrorNames.ORDER_NOT_EXIST="orderNotExist";
+
+ApiErrorNames.OPERATION_NOT_EXIST="operationNotExist";
+
 
 /**
  * API错误名称对应的错误信息
@@ -103,6 +107,10 @@ error_map.set(ApiErrorNames.EQUIP_TPYE_NULL,{code:71004,message:'设备类型不
 
 //需求
 error_map.set(ApiErrorNames.ORDER_ATTRIBUTE_NOT_NULL, { code: 60001, message: '必填的输入值不能为空！'});
+error_map.set(ApiErrorNames.ORDER_NOT_EXIST, { code: 60002, message: '客户订单信息不存在！'});
+
+//工单
+error_map.set(ApiErrorNames.OPERATION_NOT_EXIST, { code: 50001, message: '工单信息不存在！'});
 
 
 
@@ -111,6 +119,8 @@ error_map.set(ApiErrorNames.ORDER_ATTRIBUTE_NOT_NULL, { code: 60001, message: '�
 ApiErrorNames.getErrorInfo = (error_name) => {
 
     var error_info;
+
+    var UNKNOW_ERROR='未知错误'
 
     if (error_name) {
         error_info = error_map.get(error_name);

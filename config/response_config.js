@@ -1,7 +1,10 @@
 var response_config = {
     updatedSuccess:'更新成功！',
+    updatedFailed:'更新失败！',
     createdSuccess:'新增成功！',
-    deleteSucess:'删除成功！',
+    createdFailed:'新增失败！',
+    deleteSuccess:'删除成功！',
+    deleteFailed:'删除失败！',
     loginSuccess:'登录成功！',
     regSuccess:'注册成功！',
 

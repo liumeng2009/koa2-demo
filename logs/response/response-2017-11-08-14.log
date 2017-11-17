@@ -1,0 +1,257 @@
+[2017-11-08 14:56:48.648] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/workers/list?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q"}
+response time: 523
+response status: 200
+response body: 
+{"status":0,"data":[{"name":"admin","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$NES6BkxXGw0t4HzHlRcD8udYwvlvafE2hbNEyjvKourdEy8QnukIi","gender":true,"token":null,"canLogin":true,"status":1,"id":"4ae01e8a-464c-4b1d-87bb-114df1bada30","createdAt":1510124133709,"updatedAt":1510124133709,"version":0,"worker":null}]}
+*************** response log end ***************
+
+[2017-11-08 14:56:49.750] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/workers/add?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 4
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-11-08 14:56:49.978] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/workers/add?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"userId":"4ae01e8a-464c-4b1d-87bb-114df1bada30"}
+response time: 199
+response status: 200
+response body: 
+{"status":0,"data":{"id":"38cd6cc2-25b2-471d-95bb-40042b731f58","userId":"4ae01e8a-464c-4b1d-87bb-114df1bada30","createdAt":1510124209893,"updatedAt":1510124209893,"version":0},"message":"新增成功！"}
+*************** response log end ***************
+
+[2017-11-08 14:56:50.109] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/workers/list?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q"}
+response time: 112
+response status: 200
+response body: 
+{"status":0,"data":[{"name":"admin","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$NES6BkxXGw0t4HzHlRcD8udYwvlvafE2hbNEyjvKourdEy8QnukIi","gender":true,"token":null,"canLogin":true,"status":1,"id":"4ae01e8a-464c-4b1d-87bb-114df1bada30","createdAt":1510124133709,"updatedAt":1510124133709,"version":0,"worker":{"userId":"4ae01e8a-464c-4b1d-87bb-114df1bada30","id":"38cd6cc2-25b2-471d-95bb-40042b731f58","createdAt":1510124209893,"updatedAt":1510124209893,"version":0}}]}
+*************** response log end ***************
+
+[2017-11-08 14:56:54.185] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/order/list/page/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q"}
+response time: 190
+response status: 200
+response body: 
+{"status":0,"data":[],"total":0}
+*************** response log end ***************
+
+[2017-11-08 14:56:55.684] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/workers/list?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q"}
+response time: 159
+response status: 200
+response body: 
+{"status":0,"data":[{"name":"admin","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$NES6BkxXGw0t4HzHlRcD8udYwvlvafE2hbNEyjvKourdEy8QnukIi","gender":true,"token":null,"canLogin":true,"status":1,"id":"4ae01e8a-464c-4b1d-87bb-114df1bada30","createdAt":1510124133709,"updatedAt":1510124133709,"version":0,"worker":{"userId":"4ae01e8a-464c-4b1d-87bb-114df1bada30","id":"38cd6cc2-25b2-471d-95bb-40042b731f58","createdAt":1510124209893,"updatedAt":1510124209893,"version":0}}]}
+*************** response log end ***************
+
+[2017-11-08 14:56:55.883] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/groups/list?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q"}
+response time: 196
+response status: 200
+response body: 
+{"status":0,"data":[{"name":"控股","description":"group2","status":1,"id":"ec68bee2-3654-4ffc-8433-d544a32acda4","createdAt":1510124133871,"updatedAt":1510124133871,"version":0},{"name":"管委会","description":"group1","status":1,"id":"d3c6e0ac-77de-40de-baac-4c576d5bc8af","createdAt":1510124133710,"updatedAt":1510124133710,"version":0}],"total":2}
+*************** response log end ***************
+
+[2017-11-08 14:56:56.036] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/corporations/list?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q&group=ec68bee2-3654-4ffc-8433-d544a32acda4
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q","group":"ec68bee2-3654-4ffc-8433-d544a32acda4"}
+response time: 121
+response status: 200
+response body: 
+{"status":0,"data":[{"name":"控股公司","description":"控股公司","status":1,"groupId":"ec68bee2-3654-4ffc-8433-d544a32acda4","id":"8f9da4eb-e6c9-494e-8a41-300892e40e2e","createdAt":1510124135106,"updatedAt":1510124135106,"version":0,"group":{"name":"控股","description":"group2","status":1,"id":"ec68bee2-3654-4ffc-8433-d544a32acda4","createdAt":1510124133871,"updatedAt":1510124133871,"version":0}}],"total":1}
+*************** response log end ***************
+
+[2017-11-08 14:56:56.196] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/corpBuildings/list/8f9da4eb-e6c9-494e-8a41-300892e40e2e?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q"}
+response time: 131
+response status: 200
+response body: 
+{"status":0,"data":[{"corporationId":"8f9da4eb-e6c9-494e-8a41-300892e40e2e","buildingId":"fe570081-1329-46a0-b9bc-e0c67b926a18","floor":7,"position":"A","status":1,"id":"4fcf7360-5783-462e-9e8c-5b05b79164c1","createdAt":1510124135260,"updatedAt":1510124135260,"version":0,"building":{"name":"商务大厦南楼","address":"南","minfloor":1,"maxfloor":15,"status":1,"id":"fe570081-1329-46a0-b9bc-e0c67b926a18","createdAt":1510124133965,"updatedAt":1510124133965,"version":0}},{"corporationId":"8f9da4eb-e6c9-494e-8a41-300892e40e2e","buildingId":"fe570081-1329-46a0-b9bc-e0c67b926a18","floor":6,"position":"A","status":1,"id":"2c8ff9d7-b2c9-48cf-b82c-5849ea6dd94b","createdAt":1510124135193,"updatedAt":1510124135193,"version":0,"building":{"name":"商务大厦南楼","address":"南","minfloor":1,"maxfloor":15,"status":1,"id":"fe570081-1329-46a0-b9bc-e0c67b926a18","createdAt":1510124133965,"updatedAt":1510124133965,"version":0}}],"total":0}
+*************** response log end ***************
+
+[2017-11-08 14:57:11.815] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/order/saveOrder?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 10
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2017-11-08 14:57:12.515] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/order/saveOrder?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"id":null,"no":null,"custom_name":"刘孟","custom_phone":"15822927208","incoming_date":"Wed Nov 08 2017","incoming_date_timestamp":1510124215000,"hour":null,"minute":null,"second":null,"custom_position":{"id":"4fcf7360-5783-462e-9e8c-5b05b79164c1","corporationId":"8f9da4eb-e6c9-494e-8a41-300892e40e2e","building":{"name":"商务大厦南楼","address":"南","minfloor":1,"maxfloor":15,"status":1,"id":"fe570081-1329-46a0-b9bc-e0c67b926a18","createdAt":1510124133965,"updatedAt":1510124133965,"version":0},"floor":7,"position":"全部","status":1,"union":"商务大厦南楼7层全部"},"business_description":null,"remark":null,"group":"ec68bee2-3654-4ffc-8433-d544a32acda4","corporation":{"id":"8f9da4eb-e6c9-494e-8a41-300892e40e2e","name":"控股公司","description":"控股公司","group":{"name":"控股","description":"group2","status":1,"id":"ec68bee2-3654-4ffc-8433-d544a32acda4","createdAt":1510124133871,"updatedAt":1510124133871,"version":0},"status":1},"needs":[{"type":{"id":"a417b140-4b72-4a11-9b99-5cc42bf1a772","name":"网络","code":"NETWORK"},"equipment":{"name":"IP地址","value":"IP地址"},"op":{"id":"149b1875-e7d6-4814-a64e-14e2faa96e1f","name":"冲突","code":"CT"},"no":2},{"type":{"id":"a417b140-4b72-4a11-9b99-5cc42bf1a772","name":"网络","code":"NETWORK"},"equipment":{"name":"IP地址","value":"IP地址"},"op":{"id":"50e30a3a-934a-4e94-bf9d-03797fdf3130","name":"设置","code":"SET"},"no":1}],"workerOrders":[{"id":"","no":"","custom_name":"刘孟","custom_phone":"15822927208","incoming_date_timestamp":1510124215000,"incomig_date":"2017-11-08T06:56:55.000Z","custom_position":{"id":"4fcf7360-5783-462e-9e8c-5b05b79164c1","corporationId":"8f9da4eb-e6c9-494e-8a41-300892e40e2e","building":{"name":"商务大厦南楼","address":"南","minfloor":1,"maxfloor":15,"status":1,"id":"fe570081-1329-46a0-b9bc-e0c67b926a18","createdAt":1510124133965,"updatedAt":1510124133965,"version":0},"floor":7,"position":"全部","status":1,"union":"商务大厦南楼7层全部"},"corporation":{"id":"8f9da4eb-e6c9-494e-8a41-300892e40e2e","name":"控股公司","description":"控股公司","group":{"name":"控股","description":"group2","status":1,"id":"ec68bee2-3654-4ffc-8433-d544a32acda4","createdAt":1510124133871,"updatedAt":1510124133871,"version":0},"status":1},"important":false,"arrive_date_timestamp":1510124215000,"arrive_date":"2017-11-08T06:56:55.000Z","arrive_date_time":{"hour":14,"minute":56,"second":55},"finish_date_timestamp":1510124215000,"finish_date":"2017-11-08T06:56:55.000Z","finish_date_time":{"hour":14,"minute":56,"second":55},"worker":"4ae01e8a-464c-4b1d-87bb-114df1bada30","type":{"id":"a417b140-4b72-4a11-9b99-5cc42bf1a772","name":"网络","code":"NETWORK"},"equipment":{"name":"IP地址","value":"IP地址"},"op":{"id":"149b1875-e7d6-4814-a64e-14e2faa96e1f","name":"冲突","code":"CT"},"checked":true,"showArriveDate":true,"showFinishDate":true,"showWorker":true,"remark":"1"},{"id":"","no":"","custom_name":"刘孟","custom_phone":"15822927208","incoming_date_timestamp":1510124215000,"incomig_date":"2017-11-08T06:56:55.000Z","custom_position":{"id":"4fcf7360-5783-462e-9e8c-5b05b79164c1","corporationId":"8f9da4eb-e6c9-494e-8a41-300892e40e2e","building":{"name":"商务大厦南楼","address":"南","minfloor":1,"maxfloor":15,"status":1,"id":"fe570081-1329-46a0-b9bc-e0c67b926a18","createdAt":1510124133965,"updatedAt":1510124133965,"version":0},"floor":7,"position":"全部","status":1,"union":"商务大厦南楼7层全部"},"corporation":{"id":"8f9da4eb-e6c9-494e-8a41-300892e40e2e","name":"控股公司","description":"控股公司","group":{"name":"控股","description":"group2","status":1,"id":"ec68bee2-3654-4ffc-8433-d544a32acda4","createdAt":1510124133871,"updatedAt":1510124133871,"version":0},"status":1},"important":false,"arrive_date_timestamp":1510124215000,"arrive_date":"2017-11-08T06:56:55.000Z","arrive_date_time":{"hour":14,"minute":56,"second":55},"finish_date_timestamp":1510124215000,"finish_date":"2017-11-08T06:56:55.000Z","finish_date_time":{"hour":14,"minute":56,"second":55},"worker":"4ae01e8a-464c-4b1d-87bb-114df1bada30","type":{"id":"a417b140-4b72-4a11-9b99-5cc42bf1a772","name":"网络","code":"NETWORK"},"equipment":{"name":"IP地址","value":"IP地址"},"op":{"id":"149b1875-e7d6-4814-a64e-14e2faa96e1f","name":"冲突","code":"CT"},"checked":true,"showArriveDate":true,"showFinishDate":true,"showWorker":true,"remark":"2"},{"id":"","no":"","custom_name":"刘孟","custom_phone":"15822927208","incoming_date_timestamp":1510124215000,"incomig_date":"2017-11-08T06:56:55.000Z","custom_position":{"id":"4fcf7360-5783-462e-9e8c-5b05b79164c1","corporationId":"8f9da4eb-e6c9-494e-8a41-300892e40e2e","building":{"name":"商务大厦南楼","address":"南","minfloor":1,"maxfloor":15,"status":1,"id":"fe570081-1329-46a0-b9bc-e0c67b926a18","createdAt":1510124133965,"updatedAt":1510124133965,"version":0},"floor":7,"position":"全部","status":1,"union":"商务大厦南楼7层全部"},"corporation":{"id":"8f9da4eb-e6c9-494e-8a41-300892e40e2e","name":"控股公司","description":"控股公司","group":{"name":"控股","description":"group2","status":1,"id":"ec68bee2-3654-4ffc-8433-d544a32acda4","createdAt":1510124133871,"updatedAt":1510124133871,"version":0},"status":1},"important":false,"arrive_date_timestamp":1510124215000,"arrive_date":"2017-11-08T06:56:55.000Z","arrive_date_time":{"hour":14,"minute":56,"second":55},"finish_date_timestamp":1510124215000,"finish_date":"2017-11-08T06:56:55.000Z","finish_date_time":{"hour":14,"minute":56,"second":55},"worker":"4ae01e8a-464c-4b1d-87bb-114df1bada30","type":{"id":"a417b140-4b72-4a11-9b99-5cc42bf1a772","name":"网络","code":"NETWORK"},"equipment":{"name":"IP地址","value":"IP地址"},"op":{"id":"50e30a3a-934a-4e94-bf9d-03797fdf3130","name":"设置","code":"SET"},"checked":true,"showArriveDate":true,"showFinishDate":true,"showWorker":true,"remark":"3"}]}
+response time: 647
+response status: 200
+response body: 
+{"status":0,"message":"新增成功！"}
+*************** response log end ***************
+
+[2017-11-08 14:57:42.516] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/corporations/list?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q&group=d3c6e0ac-77de-40de-baac-4c576d5bc8af
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q","group":"d3c6e0ac-77de-40de-baac-4c576d5bc8af"}
+response time: 196
+response status: 200
+response body: 
+{"status":0,"data":[{"name":"管委会办公室","description":"管委会办公室","status":1,"groupId":"d3c6e0ac-77de-40de-baac-4c576d5bc8af","id":"b041bc02-e2da-4b6c-8ccd-3bac5fffa1e3","createdAt":1510124136012,"updatedAt":1510124136012,"version":0,"group":{"name":"管委会","description":"group1","status":1,"id":"d3c6e0ac-77de-40de-baac-4c576d5bc8af","createdAt":1510124133710,"updatedAt":1510124133710,"version":0}},{"name":"社发局","description":"社发局","status":1,"groupId":"d3c6e0ac-77de-40de-baac-4c576d5bc8af","id":"6f6c6f9f-de55-454b-aa74-9b744aff2262","createdAt":1510124135847,"updatedAt":1510124135847,"version":0,"group":{"name":"管委会","description":"group1","status":1,"id":"d3c6e0ac-77de-40de-baac-4c576d5bc8af","createdAt":1510124133710,"updatedAt":1510124133710,"version":0}},{"name":"人社局","description":"人社局","status":1,"groupId":"d3c6e0ac-77de-40de-baac-4c576d5bc8af","id":"54864a30-6f55-4685-a14a-1066cd289b85","createdAt":1510124135637,"updatedAt":1510124135637,"version":0,"group":{"name":"管委会","description":"group1","status":1,"id":"d3c6e0ac-77de-40de-baac-4c576d5bc8af","createdAt":1510124133710,"updatedAt":1510124133710,"version":0}},{"name":"经发局","description":"经发局","status":1,"groupId":"d3c6e0ac-77de-40de-baac-4c576d5bc8af","id":"3dab478e-0110-4df4-a5f6-e49e48cd5015","createdAt":1510124135484,"updatedAt":1510124135484,"version":0,"group":{"name":"管委会","description":"group1","status":1,"id":"d3c6e0ac-77de-40de-baac-4c576d5bc8af","createdAt":1510124133710,"updatedAt":1510124133710,"version":0}},{"name":"财政局","description":"财政局","status":1,"groupId":"d3c6e0ac-77de-40de-baac-4c576d5bc8af","id":"194e865b-f2e5-494f-82b0-a35b6d29bd69","createdAt":1510124135336,"updatedAt":1510124135336,"version":0,"group":{"name":"管委会","description":"group1","status":1,"id":"d3c6e0ac-77de-40de-baac-4c576d5bc8af","createdAt":1510124133710,"updatedAt":1510124133710,"version":0}},{"name":"安环局","description":"安环局","status":1,"groupId":"d3c6e0ac-77de-40de-baac-4c576d5bc8af","id":"38bacc27-ee18-4c5b-a665-283c68814b25","createdAt":1510124134965,"updatedAt":1510124134965,"version":0,"group":{"name":"管委会","description":"group1","status":1,"id":"d3c6e0ac-77de-40de-baac-4c576d5bc8af","createdAt":1510124133710,"updatedAt":1510124133710,"version":0}},{"name":"建规局","description":"建规局","status":1,"groupId":"d3c6e0ac-77de-40de-baac-4c576d5bc8af","id":"206f3d01-4295-4647-8c84-a1b31800baa1","createdAt":1510124134773,"updatedAt":1510124134773,"version":0,"group":{"name":"管委会","description":"group1","status":1,"id":"d3c6e0ac-77de-40de-baac-4c576d5bc8af","createdAt":1510124133710,"updatedAt":1510124133710,"version":0}},{"name":"投促局","description":"投促局","status":1,"groupId":"d3c6e0ac-77de-40de-baac-4c576d5bc8af","id":"1c4dce8f-910b-4014-a291-7ba2d4108e2e","createdAt":1510124134476,"updatedAt":1510124134476,"version":0,"group":{"name":"管委会","description":"group1","status":1,"id":"d3c6e0ac-77de-40de-baac-4c576d5bc8af","createdAt":1510124133710,"updatedAt":1510124133710,"version":0}},{"name":"审批服务大厅","description":"审批中心","status":1,"groupId":"d3c6e0ac-77de-40de-baac-4c576d5bc8af","id":"8b06c896-610d-4f1e-8a05-78f11f8933dc","createdAt":1510124134330,"updatedAt":1510124134330,"version":0,"group":{"name":"管委会","description":"group1","status":1,"id":"d3c6e0ac-77de-40de-baac-4c576d5bc8af","createdAt":1510124133710,"updatedAt":1510124133710,"version":0}}],"total":9}
+*************** response log end ***************
+
+[2017-11-08 14:57:42.784] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/corpBuildings/list/b041bc02-e2da-4b6c-8ccd-3bac5fffa1e3?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q"}
+response time: 236
+response status: 200
+response body: 
+{"status":0,"data":[{"corporationId":"b041bc02-e2da-4b6c-8ccd-3bac5fffa1e3","buildingId":"fe570081-1329-46a0-b9bc-e0c67b926a18","floor":12,"position":"A","status":1,"id":"bb05c917-f7a8-4ba5-9350-cc669c4b2cd7","createdAt":1510124136323,"updatedAt":1510124136323,"version":0,"building":{"name":"商务大厦南楼","address":"南","minfloor":1,"maxfloor":15,"status":1,"id":"fe570081-1329-46a0-b9bc-e0c67b926a18","createdAt":1510124133965,"updatedAt":1510124133965,"version":0}},{"corporationId":"b041bc02-e2da-4b6c-8ccd-3bac5fffa1e3","buildingId":"fe570081-1329-46a0-b9bc-e0c67b926a18","floor":11,"position":"A","status":1,"id":"b41fe3ba-19da-452b-9972-1a6b671633da","createdAt":1510124136195,"updatedAt":1510124136195,"version":0,"building":{"name":"商务大厦南楼","address":"南","minfloor":1,"maxfloor":15,"status":1,"id":"fe570081-1329-46a0-b9bc-e0c67b926a18","createdAt":1510124133965,"updatedAt":1510124133965,"version":0}},{"corporationId":"b041bc02-e2da-4b6c-8ccd-3bac5fffa1e3","buildingId":"fe570081-1329-46a0-b9bc-e0c67b926a18","floor":10,"position":"A","status":1,"id":"7aba5467-538c-424b-8e53-d5b0224c4350","createdAt":1510124136082,"updatedAt":1510124136082,"version":0,"building":{"name":"商务大厦南楼","address":"南","minfloor":1,"maxfloor":15,"status":1,"id":"fe570081-1329-46a0-b9bc-e0c67b926a18","createdAt":1510124133965,"updatedAt":1510124133965,"version":0}}],"total":0}
+*************** response log end ***************
+
+[2017-11-08 14:57:44.462] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/corpBuildings/list/54864a30-6f55-4685-a14a-1066cd289b85?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q"}
+response time: 93
+response status: 200
+response body: 
+{"status":0,"data":[{"corporationId":"54864a30-6f55-4685-a14a-1066cd289b85","buildingId":"fe570081-1329-46a0-b9bc-e0c67b926a18","floor":9,"position":"W","status":1,"id":"66495a24-b1bc-492b-909c-cb6d747c6607","createdAt":1510124135743,"updatedAt":1510124135743,"version":0,"building":{"name":"商务大厦南楼","address":"南","minfloor":1,"maxfloor":15,"status":1,"id":"fe570081-1329-46a0-b9bc-e0c67b926a18","createdAt":1510124133965,"updatedAt":1510124133965,"version":0}}],"total":0}
+*************** response log end ***************
+
+[2017-11-08 14:57:49.061] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/equipType/list?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q"}
+response time: 85
+response status: 200
+response body: 
+{"status":0,"data":[{"name":"网络","code":"NETWORK","id":"6527ef25-43ce-4372-a0b5-c0b0a0576b8c","createdAt":1510124136541,"updatedAt":1510124136541,"version":0},{"name":"软件","code":"SOFTWARE","id":"e40e03f3-95e9-4da9-bce4-3b72208cadd9","createdAt":1510124136466,"updatedAt":1510124136466,"version":0},{"name":"硬件","code":"HARDWARE","id":"6a04effc-0a82-48e8-bc79-f709dd1c46db","createdAt":1510124136402,"updatedAt":1510124136402,"version":0}]}
+*************** response log end ***************
+
+[2017-11-08 14:57:49.228] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/business/getequip/get/NETWORK?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q"}
+response time: 85
+response status: 200
+response body: 
+{"status":0,"data":[{"equipment":"IP地址"}]}
+*************** response log end ***************
+
+[2017-11-08 14:57:49.364] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/business/list?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q&type=NETWORK&equipment=IP%E5%9C%B0%E5%9D%80
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q","type":"NETWORK","equipment":"IP地址"}
+response time: 116
+response status: 200
+response body: 
+{"status":0,"data":[{"type":"NETWORK","equipment":"IP地址","operation":"SET","weight":5,"remark":"","status":1,"id":"e21ecdd4-9043-4f02-8fc1-594f1a8ccfc6","createdAt":1510124137842,"updatedAt":1510124137842,"version":0,"equipType":{"name":"网络","code":"NETWORK","id":"6527ef25-43ce-4372-a0b5-c0b0a0576b8c","createdAt":1510124136541,"updatedAt":1510124136541,"version":0},"equipOp":{"name":"设置","code":"SET","id":"58a0bfad-bea0-4d9b-a3fb-247768019fee","createdAt":1510124136981,"updatedAt":1510124136981,"version":0}},{"type":"NETWORK","equipment":"IP地址","operation":"CT","weight":5,"remark":"","status":1,"id":"860ba7b6-05a8-4ff1-b6c0-3b880cbb546b","createdAt":1510124137775,"updatedAt":1510124137775,"version":0,"equipType":{"name":"网络","code":"NETWORK","id":"6527ef25-43ce-4372-a0b5-c0b0a0576b8c","createdAt":1510124136541,"updatedAt":1510124136541,"version":0},"equipOp":{"name":"冲突","code":"CT","id":"0b4e1033-c635-4c5e-9add-bbfbcd3a75a2","createdAt":1510124136901,"updatedAt":1510124136901,"version":0}}],"total":2}
+*************** response log end ***************
+
+[2017-11-08 14:57:52.584] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/business/getequip/get/HARDWARE?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q"}
+response time: 65
+response status: 200
+response body: 
+{"status":0,"data":[{"equipment":"打印机"},{"equipment":"电脑"},{"equipment":"电话"},{"equipment":"笔记本电脑"}]}
+*************** response log end ***************
+
+[2017-11-08 14:57:52.779] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/business/list?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q&type=HARDWARE&equipment=%E6%89%93%E5%8D%B0%E6%9C%BA
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q","type":"HARDWARE","equipment":"打印机"}
+response time: 169
+response status: 200
+response body: 
+{"status":0,"data":[{"type":"HARDWARE","equipment":"打印机","operation":"FIX","weight":5,"remark":"","status":1,"id":"b12bbf81-bcdb-4aa8-9a54-3526df5c8090","createdAt":1510124137363,"updatedAt":1510124137363,"version":0,"equipType":{"name":"硬件","code":"HARDWARE","id":"6a04effc-0a82-48e8-bc79-f709dd1c46db","createdAt":1510124136402,"updatedAt":1510124136402,"version":0},"equipOp":{"name":"故障","code":"FIX","id":"e39c7dd8-9184-49b2-ab2c-56f6eabde138","createdAt":1510124136689,"updatedAt":1510124136689,"version":0}},{"type":"HARDWARE","equipment":"打印机","operation":"SETUP","weight":5,"remark":"","status":1,"id":"c32eb412-b6c6-4751-80e8-55f6aad9cc40","createdAt":1510124137209,"updatedAt":1510124137209,"version":0,"equipType":{"name":"硬件","code":"HARDWARE","id":"6a04effc-0a82-48e8-bc79-f709dd1c46db","createdAt":1510124136402,"updatedAt":1510124136402,"version":0},"equipOp":{"name":"安装","code":"SETUP","id":"144bfb5a-21c3-48f9-b7e8-f3740cac7975","createdAt":1510124136613,"updatedAt":1510124136613,"version":0}}],"total":2}
+*************** response log end ***************
+
+[2017-11-08 14:57:54.544] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/business/list?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q&type=HARDWARE&equipment=%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%94%B5%E8%84%91
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q","type":"HARDWARE","equipment":"笔记本电脑"}
+response time: 114
+response status: 200
+response body: 
+{"status":0,"data":[{"type":"HARDWARE","equipment":"笔记本电脑","operation":"FIX","weight":5,"remark":"","status":1,"id":"6803439f-8c23-4cea-8c2a-97729f3a8d9b","createdAt":1510124138415,"updatedAt":1510124138415,"version":0,"equipType":{"name":"硬件","code":"HARDWARE","id":"6a04effc-0a82-48e8-bc79-f709dd1c46db","createdAt":1510124136402,"updatedAt":1510124136402,"version":0},"equipOp":{"name":"故障","code":"FIX","id":"e39c7dd8-9184-49b2-ab2c-56f6eabde138","createdAt":1510124136689,"updatedAt":1510124136689,"version":0}},{"type":"HARDWARE","equipment":"笔记本电脑","operation":"SETUP","weight":5,"remark":"","status":1,"id":"71cc1e4f-3c07-40c3-964b-c10b0ec54111","createdAt":1510124138316,"updatedAt":1510124138316,"version":0,"equipType":{"name":"硬件","code":"HARDWARE","id":"6a04effc-0a82-48e8-bc79-f709dd1c46db","createdAt":1510124136402,"updatedAt":1510124136402,"version":0},"equipOp":{"name":"安装","code":"SETUP","id":"144bfb5a-21c3-48f9-b7e8-f3740cac7975","createdAt":1510124136613,"updatedAt":1510124136613,"version":0}},{"type":"HARDWARE","equipment":"笔记本电脑","operation":"NOTSTART","weight":5,"remark":"","status":1,"id":"cbfefc57-1664-4a9a-a559-fe18ac2af805","createdAt":1510124138248,"updatedAt":1510124138248,"version":0,"equipType":{"name":"硬件","code":"HARDWARE","id":"6a04effc-0a82-48e8-bc79-f709dd1c46db","createdAt":1510124136402,"updatedAt":1510124136402,"version":0},"equipOp":{"name":"无法开机","code":"NOTSTART","id":"7512e82a-56b7-4a6e-94a4-a8814c6c72a2","createdAt":1510124136831,"updatedAt":1510124136831,"version":0}}],"total":3}
+*************** response log end ***************
+
+[2017-11-08 14:58:26.432] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/order/saveOrder?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTI3ZDBhMjgtMDhiOS00YzhmLWIwZGMtZDljNjU1ZGUyMjExIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTEwMTEyMDIxLCJleHAiOjE1MTAxOTg0MjF9.en_cbnA8XLXDX0HfSBjxojX4ruqcFIN0iSiACdspQ0Q
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 14
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+

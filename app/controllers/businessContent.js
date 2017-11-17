@@ -178,7 +178,7 @@ exports.getEquipment=async(ctx,next)=>{
     let type=ctx.params.typename;
     if(type&&type!=''){
         let obj=await BusinessContent.findAll({
-            attributes:['equipment'],
+            attributes:['equipment',['equipment','name']],
             where:{
                 type:type
             },
@@ -191,7 +191,7 @@ exports.getEquipment=async(ctx,next)=>{
     }
     else{
         let obj=await BusinessContent.findAll({
-            attributes:['equipment'],
+            attributes:['equipment',['equipment','name']],
             group: ['equipment']
         })
         ctx.body={

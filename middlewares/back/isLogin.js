@@ -14,16 +14,19 @@ var isLogin=async(ctx,next)=>{
         await next()
     }
     else{
+        console.log('验证接口合法性');
         //根据token参数，确定是否登录状态
         var token=ctx.query.token;
         return new Promise((resolve, reject) => {
             jwt.verify(token, sys_config.jwtSecret, function (error, decoded) {
                 if (error) {
+                    console.log('验证接口合法性：失败');
                     reject(
                         new ApiError(ApiErrorNames.JWT_ERROR)
                     );
                 }
                 else {
+                    console.log('验证接口合法性：成功');
                     resolve(next());
                 }
             })
