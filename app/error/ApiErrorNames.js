@@ -34,6 +34,7 @@ ApiErrorNames.CORP_BUILDING_NOT_EXIST="cropBuildingNotExist";
 
 ApiErrorNames.WORKER_NOT_EXIST="workerNotExist";
 ApiErrorNames.WORKER_EXIST="workerExist";
+ApiErrorNames.WORKER_BUSY="workerBusy";
 
 ApiErrorNames.BUSINESS_OPERATION_NULL="businessOperationNull";
 ApiErrorNames.BUSINESS_EQUIPMENT_NULL="businessEquipmentNull";
@@ -52,6 +53,10 @@ ApiErrorNames.ORDER_ATTRIBUTE_NOT_NULL="orderAttributeNotNull";
 ApiErrorNames.ORDER_NOT_EXIST="orderNotExist";
 
 ApiErrorNames.OPERATION_NOT_EXIST="operationNotExist";
+ApiErrorNames.OPERATION_CALL_MORE_THAN_CREATE="operationCallMoreThanCreate";
+ApiErrorNames.OPERATION_ARRIVE_MORE_THAN_CALL="operationArriveMoreThanCall";
+ApiErrorNames.OPERATION_FINISH_MORE_THAN_ARRIVE="operationFinishMoreThanArrive";
+ApiErrorNames.OPERATION_COMPLETE_MUST_UNIQUE="operationCompleteMustUnique";
 
 
 /**
@@ -93,6 +98,7 @@ error_map.set(ApiErrorNames.CORP_BUILDING_NOT_EXIST, { code: 93003, message: '�
 //worker模块错误
 error_map.set(ApiErrorNames.WORKER_EXIST, { code: 80002, message: '工程师信息已存在！'});
 error_map.set(ApiErrorNames.WORKER_NOT_EXIST, { code: 80001, message: '该条工程师信息不存在！'});
+error_map.set(ApiErrorNames.WORKER_BUSY, { code: 80003, message: '该工程师不会影分身术哦！'});
 
 //业务内容模块错误
 error_map.set(ApiErrorNames.BUSINESS_OPERATION_NULL, { code: 70001, message: '业务的操作项不能为空！'})
@@ -111,6 +117,10 @@ error_map.set(ApiErrorNames.ORDER_NOT_EXIST, { code: 60002, message: '客户订�
 
 //工单
 error_map.set(ApiErrorNames.OPERATION_NOT_EXIST, { code: 50001, message: '工单信息不存在！'});
+error_map.set(ApiErrorNames.OPERATION_CALL_MORE_THAN_CREATE, { code: 50002, message: '指派工程师的时间应该大于工单的建立时间！'});
+error_map.set(ApiErrorNames.OPERATION_ARRIVE_MORE_THAN_CALL, { code: 50003, message: '工程师开始工作时间应该大于工程师被指派的时间！'});
+error_map.set(ApiErrorNames.OPERATION_FINISH_MORE_THAN_ARRIVE, { code: 50004, message: '工程师完成工作的时间应该大于工程师开始工作的时间！'});
+error_map.set(ApiErrorNames.OPERATION_COMPLETE_MUST_UNIQUE,{code:50005,message:'工单完成的时刻，只能由一个工程师来标记！'});
 
 
 
