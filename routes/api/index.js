@@ -13,6 +13,7 @@ var order_router=require('./order');
 var equipType_router=require('./equipType');
 var equipOp_router=require('./equipOp');
 var operation_router=require('./operation');
+var action_router=require('./actions');
 
 router.use('/user', user_router.routes(), user_router.allowedMethods());
 router.use('/buildings', buildings_router.routes(), buildings_router.allowedMethods());
@@ -25,5 +26,6 @@ router.use('/order', order_router.routes(), order_router.allowedMethods());
 router.use('/equipType', equipType_router.routes(), equipType_router.allowedMethods());
 router.use('/equipOp', equipOp_router.routes(), equipOp_router.allowedMethods());
 router.use('/operation', operation_router.routes(), operation_router.allowedMethods());
+router.use('/action', action_router.routes(), action_router.allowedMethods());
 
 module.exports = router;

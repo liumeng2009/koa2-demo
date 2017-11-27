@@ -35,6 +35,7 @@ ApiErrorNames.CORP_BUILDING_NOT_EXIST="cropBuildingNotExist";
 ApiErrorNames.WORKER_NOT_EXIST="workerNotExist";
 ApiErrorNames.WORKER_EXIST="workerExist";
 ApiErrorNames.WORKER_BUSY="workerBusy";
+ApiErrorNames.WORKER_BUSY_1="workerBusy1";
 
 ApiErrorNames.BUSINESS_OPERATION_NULL="businessOperationNull";
 ApiErrorNames.BUSINESS_EQUIPMENT_NULL="businessEquipmentNull";
@@ -57,6 +58,8 @@ ApiErrorNames.OPERATION_CALL_MORE_THAN_CREATE="operationCallMoreThanCreate";
 ApiErrorNames.OPERATION_ARRIVE_MORE_THAN_CALL="operationArriveMoreThanCall";
 ApiErrorNames.OPERATION_FINISH_MORE_THAN_ARRIVE="operationFinishMoreThanArrive";
 ApiErrorNames.OPERATION_COMPLETE_MUST_UNIQUE="operationCompleteMustUnique";
+ApiErrorNames.FINISHTIME_MORE_THAN_AN_ARRIVETIME="finishTimeMoreThanAnArriveTime";
+ApiErrorNames.ACTIONS_MUST_ALL_COMPLETE="actionsMustAllComplete";
 
 
 /**
@@ -99,6 +102,7 @@ error_map.set(ApiErrorNames.CORP_BUILDING_NOT_EXIST, { code: 93003, message: '�
 error_map.set(ApiErrorNames.WORKER_EXIST, { code: 80002, message: '工程师信息已存在！'});
 error_map.set(ApiErrorNames.WORKER_NOT_EXIST, { code: 80001, message: '该条工程师信息不存在！'});
 error_map.set(ApiErrorNames.WORKER_BUSY, { code: 80003, message: '该工程师不会影分身术哦！'});
+error_map.set(ApiErrorNames.WORKER_BUSY_1, { code: 80004, message: '该工程师在此工单中被重复指派了！'});
 
 //业务内容模块错误
 error_map.set(ApiErrorNames.BUSINESS_OPERATION_NULL, { code: 70001, message: '业务的操作项不能为空！'})
@@ -121,6 +125,8 @@ error_map.set(ApiErrorNames.OPERATION_CALL_MORE_THAN_CREATE, { code: 50002, mess
 error_map.set(ApiErrorNames.OPERATION_ARRIVE_MORE_THAN_CALL, { code: 50003, message: '工程师开始工作时间应该大于工程师被指派的时间！'});
 error_map.set(ApiErrorNames.OPERATION_FINISH_MORE_THAN_ARRIVE, { code: 50004, message: '工程师完成工作的时间应该大于工程师开始工作的时间！'});
 error_map.set(ApiErrorNames.OPERATION_COMPLETE_MUST_UNIQUE,{code:50005,message:'工单完成的时刻，只能由一个工程师来标记！'});
+error_map.set(ApiErrorNames.FINISHTIME_MORE_THAN_AN_ARRIVETIME,{code:50006,message:'完成时间不能小于已存在进程的到达时间！'});
+error_map.set(ApiErrorNames.ACTIONS_MUST_ALL_COMPLETE,{code:50007,message:'有的工作没有完成，所以还不能完成这个工单！'});
 
 
 

@@ -40,10 +40,10 @@ exports.list=async(ctx,next)=>{
 exports.save=async(ctx,next)=>{
     let userid=ctx.request.body.userId;
     let operationId=ctx.request.body.id;
-    let workerId=ctx.request.body.worker;
+    let workerId=ctx.request.body.worker.id;
     let callTimeStamp=ctx.request.body.call_date_timestamp;
     let showArriveDate=ctx.request.body.showArriveDate;
-    let arriveTimeStamp=ctx.request.body.arrive_data_timestamp;
+    let arriveTimeStamp=ctx.request.body.arrive_date_timestamp;
     let showFinishDate=ctx.request.body.showFinishDate;
     let finishTimeStamp=ctx.request.body.finish_date_timestamp;
     let completeOperation=ctx.request.body.isCompleteOperation;
@@ -72,6 +72,10 @@ exports.save=async(ctx,next)=>{
 
     //各个时间点是否合理 建立<指派<工作开始<工作结束
     let operation_create_time_stamp=operation.create_time;
+    console.log(operation_create_time_stamp);
+    console.log(callTimeStamp);
+    console.log(arriveTimeStamp);
+    console.log(finishTimeStamp);
     if(callTimeStamp<operation_create_time_stamp){
         //指派小于工单建立 不合理
         throw new ApiError(ApiErrorNames.OPERATION_CALL_MORE_THAN_CREATE);
@@ -86,14 +90,14 @@ exports.save=async(ctx,next)=>{
     }
 
     //验证工程师信息是否存在
-    let worker=Worker.findOne({
+    console.log(workerId);
+    let workerObj=await Worker.findOne({
         where:{
-            status:1,
             userId:workerId
         }
     })
 
-    if(worker){
+    if(workerObj){
 
     }
     else{
@@ -140,11 +144,28 @@ exports.save=async(ctx,next)=>{
 
     }
 
+
+    //如果指派一个工程师，他在这个工单中已经被指派了，并且没有完成，则不能指派
+    let actionObj2=await ActionModel.findOne({
+        where:{
+            operationId:operationId,
+            worker:workerId,
+            end_time:null
+        }
+    })
+
+    if(actionObj2){
+        //说明这个人，在此工单中，已经被指派，并且还没有完成工作。重复指派了。
+        throw new ApiError(ApiErrorNames.WORKER_BUSY_1);
+    }
+
+
+
     Operation.hasMany(ActionModel,{foreignKey:'operationId',as:'actions'});
-    //验证operationComplete标记的合理性
+    //验证operationComplete标记的合理性 唯一性
     let operationObj=await Operation.findOne({
         where:{
-            id:id,
+            id:operationId,
             status:1
         },
         include:[
@@ -161,8 +182,38 @@ exports.save=async(ctx,next)=>{
                 throw new ApiError(ApiErrorNames.OPERATION_COMPLETE_MUST_UNIQUE);
                 break;
             }
+            if(!_ac.end_time){
+                //说明没有完成
+                throw new ApiError(ApiErrorNames.ACTIONS_MUST_ALL_COMPLETE);
+            }
+
+
         }
     }
+
+
+
+
+
+
+    //如果加的完成标记，竟然在某个人开始工作的标记之前，也是不合理的
+    if(completeOperation){
+        let actionObj3=await ActionModel.findOne({
+            where:{
+                operationId:operationId,
+                start_time:{
+                    '$gt':{
+                        finishTimeStamp
+                    }
+                },
+                status:1
+            }
+        });
+        if(actionObj3){
+            throw new ApiError(ApiErrorNames.OPERATION_COMPLETE_MUST_UNIQUE);
+        }
+    }
+
 
 
 
@@ -171,7 +222,7 @@ exports.save=async(ctx,next)=>{
     }
     else{
         //新增
-        let createResult=await Action.create({
+        let createResult=await ActionModel.create({
             operationId:operationId,
             call_time:callTimeStamp,
             start_time:showArriveDate?arriveTimeStamp:null,
