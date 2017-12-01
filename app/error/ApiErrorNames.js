@@ -60,6 +60,11 @@ ApiErrorNames.OPERATION_FINISH_MORE_THAN_ARRIVE="operationFinishMoreThanArrive";
 ApiErrorNames.OPERATION_COMPLETE_MUST_UNIQUE="operationCompleteMustUnique";
 ApiErrorNames.FINISHTIME_MORE_THAN_AN_ARRIVETIME="finishTimeMoreThanAnArriveTime";
 ApiErrorNames.ACTIONS_MUST_ALL_COMPLETE="actionsMustAllComplete";
+ApiErrorNames.ACTIONS_NOT_EXIST="actionsNotExist";
+ApiErrorNames.OPERATION_COMPLETE_TIME_MUST_LAST="operationCompleteTimeMustLast";
+ApiErrorNames.ACTION_CALL_LESS_THAN_COMPLETE="actionCallLessThanComplete";
+ApiErrorNames.ACTION_START_LESS_THAN_COMPLETE="actionStartLessThanComplete";
+ApiErrorNames.ACTION_END_LESS_THAN_COMPLETE="actionEndLessThanComplete";
 
 
 /**
@@ -127,7 +132,11 @@ error_map.set(ApiErrorNames.OPERATION_FINISH_MORE_THAN_ARRIVE, { code: 50004, me
 error_map.set(ApiErrorNames.OPERATION_COMPLETE_MUST_UNIQUE,{code:50005,message:'工单完成的时刻，只能由一个工程师来标记！'});
 error_map.set(ApiErrorNames.FINISHTIME_MORE_THAN_AN_ARRIVETIME,{code:50006,message:'完成时间不能小于已存在进程的到达时间！'});
 error_map.set(ApiErrorNames.ACTIONS_MUST_ALL_COMPLETE,{code:50007,message:'有的工作没有完成，所以还不能完成这个工单！'});
-
+error_map.set(ApiErrorNames.ACTIONS_NOT_EXIST,{code:50008,message:'此工作进程不存在！'});
+error_map.set(ApiErrorNames.OPERATION_COMPLETE_TIME_MUST_LAST,{code:50009,message:'工单完成的时刻必须是最晚的一个工作完成时刻！'});
+error_map.set(ApiErrorNames.ACTION_CALL_LESS_THAN_COMPLETE, { code: 50010, message: '指派工程师的时间应该小于工单的完成时间！'});
+error_map.set(ApiErrorNames.ACTION_START_LESS_THAN_COMPLETE, { code: 50011, message: '工作开始时间应该小于工单的完成时间！'});
+error_map.set(ApiErrorNames.ACTION_END_LESS_THAN_COMPLETE, { code: 50012, message: '工作完成时间应该小于等于工单的完成时间！'});
 
 
 

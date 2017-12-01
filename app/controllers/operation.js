@@ -22,6 +22,8 @@ exports.list=async(ctx,next)=>{
     Order.belongsTo(CorpBuilding,{foreignKey:'custom_position'});
     CorpBuilding.belongsTo(Building,{foreignKey:'buildingId'});
     Operation.hasMany(ActionModel,{foreignKey:'operationId',as:'actions'});
+    //ActionModel.belongsTo(Operation,{foreignKey:'operationId',as:'actions'})
+
     ActionModel.belongsTo(User,{foreignKey:'worker'});
 
     let pageid=ctx.params.pageid;
@@ -58,6 +60,10 @@ exports.list=async(ctx,next)=>{
             },{
                 model:ActionModel,
                 as:'actions',
+                required:false,
+                where:{
+                    status:1
+                },
                 include:[
                     {
                         model:User
@@ -171,12 +177,19 @@ exports.getOperation=async(ctx,next)=>{
         },{
             model:ActionModel,
             as:'actions',
+            where:{
+                status:1
+            },
+            required:false,
             include:[
                 {
                     model:User
                 }
-            ]
-        }]
+            ],
+        }],
+        order:[
+            [{model: ActionModel, as: 'actions'},'updatedAt','desc']
+        ]
     })
 
     if(operation){
