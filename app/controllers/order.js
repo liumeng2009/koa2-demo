@@ -11,6 +11,7 @@ const workerController=require('./worker');
 
 exports.list=async(ctx,next)=>{
     let pageid=ctx.params.pageid;
+    let createtime=ctx.params.time;
     let Order=model.orders;
 
     let count=await Order.count({
@@ -30,13 +31,31 @@ exports.list=async(ctx,next)=>{
     Order.belongsTo(CorpBuilding,{foreignKey:'custom_position'});
     CorpBuilding.belongsTo(Building,{foreignKey:'buildingId'});
 
+    let searchObj={
+        status:1
+    }
+
+    if(createtime&&Date(createtime)){
+        let startDate=new Date();
+        startDate.setTime(createtime);
+        let startDateStamp=Date.parse(startDate.toDateString());
+        let endDateStamp=startDateStamp+1000*60*60*24-1;
+
+        searchObj.$and=[
+            {incoming_time:{'$gte':startDateStamp}},
+            {incoming_time:{'$lte':endDateStamp}}
+        ];
+    }
+
+    console.log('搜索条件是：'+JSON.stringify(searchObj));
+
     if(pageid&&pageid!=0){
+
+
         try{
             let pageidnow=parseInt(pageid);
             orders=await Order.findAll({
-                where:{
-                    status:1
-                },
+                where:searchObj,
                 include:[{
                     model:Corporation
                 },{
@@ -56,9 +75,7 @@ exports.list=async(ctx,next)=>{
         }
         catch(e){
             orders=await Order.findAll({
-                where:{
-                    status:1
-                },
+                where:searchObj,
                 include:[{
                     model:Corporation
                 },{
@@ -77,9 +94,7 @@ exports.list=async(ctx,next)=>{
     }
     else{
         orders=await Order.findAll({
-            where:{
-                status:1
-            },
+            where:searchObj,
             include:[{
                 model:Corporation
             },{
@@ -142,6 +157,9 @@ exports.getOrder=async(ctx,next)=>{
             ]
         },{
             model:Operation,
+            where:{
+                status:1
+            },
             as:'operations',
             include:[
                 {
@@ -170,6 +188,28 @@ exports.getOrder=async(ctx,next)=>{
 
 
 
+}
+
+exports.getOrderSimple=async(ctx,next)=>{
+    let id=ctx.params.id;
+
+    let Order=model.orders;
+
+    let order=await Order.findOne({
+        where:{
+            status:1,
+            id:id
+        }
+    });
+    if(order){
+        ctx.body={
+            status:0,
+            data:order
+        }
+    }
+    else{
+        throw new ApiError(ApiErrorNames.ORDER_NOT_EXIST);
+    }
 }
 
 exports.save=async(ctx,next)=>{
@@ -243,7 +283,7 @@ exports.save=async(ctx,next)=>{
             remark:remark,
             no:await getOrderNoFun(incomingDate.getFullYear(),incomingDate.getMonth()+1,incomingDate.getDate()),
             status:1,
-            needs:needs.toString()
+            needs:needs?needs.toString():''
         });
         console.log('created'+JSON.stringify(createResult));
         ctx.body={
@@ -435,7 +475,7 @@ var getOrderNoFun=async(_year,_month,_day)=>{
     return year+month+day+noLast;
 }
 
-var getOperationNoSFun=async(_year,_month,_day,requestCount)=>{
+exports.getOperationNoSFun=async(_year,_month,_day,requestCount)=>{
     console.log(_year+' '+_month+' '+_day);
     let date=new Date(_year,_month-1,_day);
     let year=date.getFullYear().toString();

@@ -6,7 +6,10 @@ var order_controller = require('../../app/controllers/order');
 
 router.get('/list', order_controller.list);
 router.get('/list/page/:pageid', order_controller.list);
+router.get('/list/page/:pageid/time/:time', order_controller.list);
+router.get('/list/time/:time', order_controller.list);
 router.get('/:id', order_controller.getOrder);
+router.get('/simple/:id', order_controller.getOrderSimple);
 router.post('/save', order_controller.save);
 
 router.post('/saveOrder', order_controller.saveAndSaveOperation);

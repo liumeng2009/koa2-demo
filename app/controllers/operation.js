@@ -6,6 +6,7 @@ const ApiErrorNames=require('../error/ApiErrorNames');
 const model = require('../model');
 const sys_config=require('../../config/sys_config');
 const response_config=require('../../config/response_config');
+const orderController=require('./order');
 
 exports.list=async(ctx,next)=>{
     let Operation=model.operations;
@@ -120,10 +121,7 @@ exports.list=async(ctx,next)=>{
 }
 
 exports.getOperation=async(ctx,next)=>{
-
-    console.log(132222222222222);
     let id=ctx.params.id;
-
     let Operation=model.operations;
     let Action=model.actions;
     let Order=model.orders;
@@ -205,30 +203,101 @@ exports.getOperation=async(ctx,next)=>{
 }
 
 
-exports.addIndex=async(ctx,next)=>{
-    await ctx.render('./back/operation/add',{
-        title:'新增功能操作',
-        staticPath:'../'
-    });
-}
-exports.editIndex=async(ctx,next)=>{
-    let id=ctx.params.id;
-    console.log('请求的id是：'+id);
+exports.add=async(ctx,next)=>{
     let Operation=model.operations;
-    let operation=await Operation.findAll({
-        where: {
-            id: id
+    let Order=model.orders;
+
+    let orderId=ctx.request.body.order.id;
+    let op=ctx.request.body.businessContent.id;
+    let remark=ctx.request.body.remark;
+    let important=ctx.request.body.important;
+    let create_time=ctx.request.body.order.incoming_time;
+
+    console.log(create_time);
+
+    let orderIncomingDate=new Date();
+    orderIncomingDate.setTime(create_time);
+
+
+    let orderObj=await Order.findOne({
+        where:{
+            status:1,
+            id:orderId
         }
-    });
-    console.log('heieheieheihieihi'+operation)
-    await ctx.render('./back/operation/edit',{
-        title:'编辑功能操作',
-        staticPath:'../../../',
-        operation:operation[0]
-    });
+    })
+
+    if(orderObj){
+        let operationNoArray=await orderController.getOperationNoSFun(orderIncomingDate.getFullYear(),orderIncomingDate.getMonth()+1,orderIncomingDate.getDate(),1);
+        let saveResult=await Operation.create({
+            orderId:orderId,
+            important:important,
+            op:op,
+            no:operationNoArray[0],
+            create_time:create_time,
+            remark:remark,
+            status:1
+        })
+        ctx.body={
+            status:0,
+            data:saveResult,
+            message:response_config.createdSuccess
+        }
+    }
+    else{
+        throw new ApiError(ApiErrorNames.ORDER_NOT_EXIST);
+    }
+
+
+}
+exports.edit=async(ctx,next)=>{
+
+    let Operation=model.operations;
+    let ActionModel=model.actions;
+    let operationId=ctx.request.body.id;
+    let op=ctx.request.body.businessContent.id;
+    let remark=ctx.request.body.remark;
+    let important=ctx.request.important;
+
+    let operation=await Operation.findOne({
+        where:{
+            status:1,
+            id:operationId
+        }
+    })
+
+    if(operation){
+        let actionObj=await ActionModel.findOne({
+            where:{
+                status:1,
+                operationId:operationId
+            }
+        });
+        if(actionObj){
+            throw new ApiError(ApiErrorNames.OPERATION_CAN_NOT_EDIT);
+        }
+        else{
+            //存在这个信息，并且没有工程师进行工作和指派，才可以进行编辑
+            operation.op=op;
+            operation.remark=remark;
+            operation.imporant=important;
+
+            let saveResult=await operation.save();
+
+            ctx.body={
+                status:0,
+                data:saveResult,
+                message:response_config.updatedSuccess
+            }
+
+        }
+
+    }
+    else{
+        throw new ApiError(ApiErrorNames.OPERATION_NOT_EXIST);
+    }
 }
 
-
+//废弃，没用
 exports.save=async(ctx,next)=>{
     let name=ctx.request.body.name;
     let code=ctx.request.body.code;
@@ -270,14 +339,37 @@ exports.save=async(ctx,next)=>{
 
 exports.delete=async(ctx,next)=>{
     let id=ctx.params.id;
-    console.log(id);
+
     let Operation=model.operations;
-    let operation=await Operation.findAll({
+    let ActionModel=model.actions;
+
+    let operation=await Operation.findOne({
         where: {
-            id: id
+            id: id,
+            status:1
         }
     })
-    let deleteResult=await operation[0].destroy();
-    console.log('delete success'+JSON.stringify(deleteResult));
-    ctx.redirect('/admin/operation/list');
+    if(operation){
+        let action=await ActionModel.findOne({
+            where:{
+                status:1,
+                operationId:id
+            }
+        })
+        if(action){
+            throw new ApiError(ApiErrorNames.OPERATION_CAN_NOT_DELETE);
+        }
+        else{
+            operation.status=0;
+            let saveResult=await operation.save();
+            ctx.body={
+                status:0,
+                data:saveResult,
+                message:response_config.deleteSuccess
+            }
+        }
+    }
+    else{
+        throw new ApiError(ApiErrorNames.OPERATION_NOT_EXIST);
+    }
 }

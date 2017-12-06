@@ -65,7 +65,8 @@ ApiErrorNames.OPERATION_COMPLETE_TIME_MUST_LAST="operationCompleteTimeMustLast";
 ApiErrorNames.ACTION_CALL_LESS_THAN_COMPLETE="actionCallLessThanComplete";
 ApiErrorNames.ACTION_START_LESS_THAN_COMPLETE="actionStartLessThanComplete";
 ApiErrorNames.ACTION_END_LESS_THAN_COMPLETE="actionEndLessThanComplete";
-
+ApiErrorNames.OPERATION_CAN_NOT_EDIT="operationCanNotEdit";
+ApiErrorNames.OPERATION_CAN_NOT_DELETE="operationCanNotDelete";
 
 /**
  * API错误名称对应的错误信息
@@ -137,7 +138,8 @@ error_map.set(ApiErrorNames.OPERATION_COMPLETE_TIME_MUST_LAST,{code:50009,messag
 error_map.set(ApiErrorNames.ACTION_CALL_LESS_THAN_COMPLETE, { code: 50010, message: '指派工程师的时间应该小于工单的完成时间！'});
 error_map.set(ApiErrorNames.ACTION_START_LESS_THAN_COMPLETE, { code: 50011, message: '工作开始时间应该小于工单的完成时间！'});
 error_map.set(ApiErrorNames.ACTION_END_LESS_THAN_COMPLETE, { code: 50012, message: '工作完成时间应该小于等于工单的完成时间！'});
-
+error_map.set(ApiErrorNames.OPERATION_CAN_NOT_EDIT, { code: 50013, message: '工程师已经进行处理了，所以工单信息不能进行修改！'});
+error_map.set(ApiErrorNames.OPERATION_CAN_NOT_DELETE, { code: 50014, message: '工程师已经进行处理了，所以工单信息不能进行删除！'});
 
 
 //根据错误名称获取错误信息
