@@ -124,35 +124,43 @@ exports.save=async(ctx,next)=>{
     }
 
 
+    //验证指派时间 指派时，这个工程师也不可以处于被指派和工作状态
+    let actionCheckZhipai=await ActionModel.findOne({
+        where:{
+            status:1,
+            worker:workerId,
+            '$or':[
+                {
+                    call_time:{'$lte':callTimeStamp},
+                    end_time:null
+                },
+                {
+                    call_time:{'$lte':callTimeStamp},
+                    end_time:{'$gte':callTimeStamp}
+                }
+            ]
+        }
+    })
+
+    if(actionCheckZhipai){
+        throw new ApiError(ApiErrorNames.WORKER_BUSY);
+    }
+
     //验证工程师现在的状态，如果工程师在工作中，就不能开始另一项工作了
     if(showArriveDate){
         let actionObj=await ActionModel.findOne({
             where:{
                 status:1,
-                '$and':[
-                    {worker:workerId},
-                    {'$or':[
-                        {
-                            '$and':[
-                                {
-                                    start_time:{'$lt':arriveTimeStamp}
-                                },
-                                {
-                                    end_time:{'$gt':arriveTimeStamp}
-                                }
-                            ]
-                        },
-                        {
-                            '$and':[
-                                {
-                                    start_time:{'$lt':arriveTimeStamp}
-                                },
-                                {
-                                    end_time:null
-                                }
-                            ]
-                        }
-                    ]}
+                worker:workerId,
+                '$or':[
+                    {
+                        call_time:{'$lte':arriveTimeStamp},
+                        end_time:null
+                    },
+                    {
+                        call_time:{'$lte':arriveTimeStamp},
+                        end_time:{'$gte':arriveTimeStamp}
+                    }
                 ]
             }
         });
@@ -161,11 +169,34 @@ exports.save=async(ctx,next)=>{
             //说明这个worker在忙碌
             throw new ApiError(ApiErrorNames.WORKER_BUSY);
         }
+    }
 
+    if(showFinishDate){
+        let actionEndObj=await ActionModel.findOne({
+            where:{
+                status:1,
+                worker:workerId,
+                '$or':[
+                    {
+                        call_time:{'$lte':finishTimeStamp},
+                        end_time:null
+                    },
+                    {
+                        call_time:{'$lte':finishTimeStamp},
+                        end_time:{'$gte':finishTimeStamp}
+                    }
+                ]
+            }
+        });
+
+        if(actionEndObj){
+            //说明这个worker在忙碌
+            throw new ApiError(ApiErrorNames.WORKER_BUSY);
+        }
     }
 
 
-    //如果指派一个工程师，他在这个工单中已经被指派了，并且没有完成，则不能指派
+/*    //如果指派一个工程师，他在这个工单中已经被指派了，并且没有完成，则不能指派
     let actionObj2=await ActionModel.findOne({
         where:{
             operationId:operationId,
@@ -178,7 +209,7 @@ exports.save=async(ctx,next)=>{
     if(actionObj2){
         //说明这个人，在此工单中，已经被指派，并且还没有完成工作。重复指派了。
         throw new ApiError(ApiErrorNames.WORKER_BUSY_1);
-    }
+    }*/
 
 
 

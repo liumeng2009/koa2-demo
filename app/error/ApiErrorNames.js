@@ -107,8 +107,8 @@ error_map.set(ApiErrorNames.CORP_BUILDING_NOT_EXIST, { code: 93003, message: '�
 //worker模块错误
 error_map.set(ApiErrorNames.WORKER_EXIST, { code: 80002, message: '工程师信息已存在！'});
 error_map.set(ApiErrorNames.WORKER_NOT_EXIST, { code: 80001, message: '该条工程师信息不存在！'});
-error_map.set(ApiErrorNames.WORKER_BUSY, { code: 80003, message: '该工程师不会影分身术哦！'});
-error_map.set(ApiErrorNames.WORKER_BUSY_1, { code: 80004, message: '该工程师在此工单中被重复指派了！'});
+error_map.set(ApiErrorNames.WORKER_BUSY, { code: 80003, message: '该工程师忙碌中！'});
+error_map.set(ApiErrorNames.WORKER_BUSY_1, { code: 80004, message: '该工程师忙碌中！'});
 
 //业务内容模块错误
 error_map.set(ApiErrorNames.BUSINESS_OPERATION_NULL, { code: 70001, message: '业务的操作项不能为空！'})

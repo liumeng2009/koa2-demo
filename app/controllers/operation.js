@@ -219,6 +219,24 @@ exports.add=async(ctx,next)=>{
     orderIncomingDate.setTime(create_time);
 
 
+    //验证op存在性
+    let BusinessContent=model.businessContents;
+
+    let businessContentObj=await BusinessContent.findOne({
+        where:{
+            status:1,
+            id:op
+        }
+    });
+
+    if(businessContentObj){
+
+    }
+    else{
+        throw new ApiError(ApiErrorNames.BUSINESS_NOT_EXIST);
+    }
+
+    //验证订单存在性
     let orderObj=await Order.findOne({
         where:{
             status:1,
@@ -244,6 +262,7 @@ exports.add=async(ctx,next)=>{
         }
     }
     else{
+        console.log('错误发生了');
         throw new ApiError(ApiErrorNames.ORDER_NOT_EXIST);
     }
 

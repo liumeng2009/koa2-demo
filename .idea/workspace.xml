@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06b038a3-a860-4808-922b-35fe0d2b4b09" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/action.js" afterPath="$PROJECT_DIR$/app/controllers/action.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/operation.js" afterPath="$PROJECT_DIR$/app/controllers/operation.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/order.js" afterPath="$PROJECT_DIR$/app/controllers/order.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/error/ApiErrorNames.js" afterPath="$PROJECT_DIR$/app/error/ApiErrorNames.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/admin.js" afterPath="$PROJECT_DIR$/routes/admin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/api/operation.js" afterPath="$PROJECT_DIR$/routes/api/operation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/api/order.js" afterPath="$PROJECT_DIR$/routes/api/order.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/init-db.js" afterPath="$PROJECT_DIR$/init-db.js" />
     </list>
     <ignored path="koa2-demo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,21 +33,32 @@
             <entry file="file://$PROJECT_DIR$/app/controllers/action.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="270" column="30" selection-start-line="270" selection-start-column="30" selection-end-line="270" selection-end-column="30" />
+                  <caret line="64" column="0" selection-start-line="55" selection-start-column="3" selection-end-line="195" selection-end-column="5" />
                   <folding>
                     <element signature="e#309#1036#0" expanded="false" />
-                    <element signature="e#1068#7351#0" expanded="false" />
-                    <element signature="e#7383#14472#0" expanded="false" />
+                    <element signature="e#8084#15173#0" expanded="false" />
+                    <element signature="e#15207#15697#0" expanded="false" />
+                    <element signature="e#15723#16086#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="actions.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/routes/api/actions.js">
+          <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="init-db.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/init-db.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="67" column="24" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="24" />
                   <folding />
                 </state>
               </provider>
@@ -59,36 +68,37 @@
             <entry file="file://$PROJECT_DIR$/app/controllers/operation.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="256" column="47" selection-start-line="256" selection-start-column="47" selection-end-line="256" selection-end-column="47" />
+                  <caret line="264" column="28" selection-start-line="264" selection-start-column="28" selection-end-line="264" selection-end-column="28" />
                   <folding>
                     <element signature="e#3371#5609#0" expanded="false" />
-                    <element signature="e#5641#6836#0" expanded="false" />
-                    <element signature="e#8031#9131#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="order.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/controllers/order.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="201" column="9" selection-start-line="201" selection-start-column="9" selection-end-line="201" selection-end-column="9" />
-                  <folding>
-                    <element signature="e#397#3063#0" expanded="false" />
-                    <element signature="e#5303#7744#0" expanded="false" />
-                    <element signature="e#7792#13569#0" expanded="false" />
-                    <element signature="e#13645#13843#0" expanded="false" />
-                    <element signature="e#13889#14792#0" expanded="false" />
+                    <element signature="e#7222#8346#0" expanded="false" />
+                    <element signature="e#8386#9486#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file leaf-file-name="order.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/controllers/order.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.41369334">
+                  <caret line="444" column="4" selection-start-line="444" selection-start-column="4" selection-end-line="444" selection-end-column="4" />
+                  <folding>
+                    <element signature="e#397#3063#0" expanded="false" />
+                    <element signature="e#4932#5271#0" expanded="false" />
+                    <element signature="e#5303#7744#0" expanded="false" />
+                    <element signature="e#17862#18060#0" expanded="false" />
+                    <element signature="e#18106#19009#0" expanded="false" />
+                    <element signature="e#19077#20000#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="order.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/routes/api/order.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.20154291">
+                <state vertical-scroll-proportion="0.0">
                   <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
                   <folding />
                 </state>
@@ -125,21 +135,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="db.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/db.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="0" column="36" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="36" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="ApiErrorNames.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/error/ApiErrorNames.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="68" column="63" selection-start-line="68" selection-start-column="63" selection-end-line="68" selection-end-column="63" />
+                  <caret line="110" column="75" selection-start-line="110" selection-start-column="75" selection-end-line="110" selection-end-column="75" />
                   <folding />
                 </state>
               </provider>
@@ -149,11 +149,21 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="actions.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="actions.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/models/actions.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
                   <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="corporation.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/controllers/corporation.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.018322082">
+                  <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="49" selection-end-column="42" />
                   <folding />
                 </state>
               </provider>
@@ -206,7 +216,6 @@
         <option value="$PROJECT_DIR$/app/controllers/equipOp.js" />
         <option value="$PROJECT_DIR$/routes/api/equipType.js" />
         <option value="$PROJECT_DIR$/routes/api/equipOp.js" />
-        <option value="$PROJECT_DIR$/init-db.js" />
         <option value="$PROJECT_DIR$/app/controllers/corporation.js" />
         <option value="$PROJECT_DIR$/app/models/businessContents.js" />
         <option value="$PROJECT_DIR$/app/models/workers.js" />
@@ -221,13 +230,14 @@
         <option value="$PROJECT_DIR$/process.json" />
         <option value="$PROJECT_DIR$/routes/api/index.js" />
         <option value="$PROJECT_DIR$/routes/api/actions.js" />
-        <option value="$PROJECT_DIR$/app/controllers/action.js" />
         <option value="$PROJECT_DIR$/routes/admin.js" />
-        <option value="$PROJECT_DIR$/app/error/ApiErrorNames.js" />
         <option value="$PROJECT_DIR$/routes/api/operation.js" />
-        <option value="$PROJECT_DIR$/app/controllers/operation.js" />
-        <option value="$PROJECT_DIR$/app/controllers/order.js" />
         <option value="$PROJECT_DIR$/routes/api/order.js" />
+        <option value="$PROJECT_DIR$/app/controllers/operation.js" />
+        <option value="$PROJECT_DIR$/app/error/ApiErrorNames.js" />
+        <option value="$PROJECT_DIR$/app/controllers/action.js" />
+        <option value="$PROJECT_DIR$/init-db.js" />
+        <option value="$PROJECT_DIR$/app/controllers/order.js" />
       </list>
     </option>
   </component>
@@ -269,7 +279,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -405,6 +414,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -524,7 +534,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="1176" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20375" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -563,13 +573,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/buildings.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/group.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -616,13 +619,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/init-db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -714,13 +710,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="46" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/corporation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="49" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -883,52 +872,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/action.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="270" column="30" selection-start-line="270" selection-start-column="30" selection-end-line="270" selection-end-column="30" />
-          <folding>
-            <element signature="e#309#1036#0" expanded="false" />
-            <element signature="e#1068#7351#0" expanded="false" />
-            <element signature="e#7383#14472#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/error/ApiErrorNames.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="68" column="63" selection-start-line="68" selection-start-column="63" selection-end-line="68" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/operation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="256" column="47" selection-start-line="256" selection-start-column="47" selection-end-line="256" selection-end-column="47" />
-          <folding>
-            <element signature="e#3371#5609#0" expanded="false" />
-            <element signature="e#5641#6836#0" expanded="false" />
-            <element signature="e#8031#9131#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/order.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="201" column="9" selection-start-line="201" selection-start-column="9" selection-end-line="201" selection-end-column="9" />
-          <folding>
-            <element signature="e#397#3063#0" expanded="false" />
-            <element signature="e#5303#7744#0" expanded="false" />
-            <element signature="e#7792#13569#0" expanded="false" />
-            <element signature="e#13645#13843#0" expanded="false" />
-            <element signature="e#13889#14792#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/api/operation.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -937,11 +880,83 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/corporation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.018322082">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="49" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/api/order.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20154291">
+        <state vertical-scroll-proportion="0.0">
           <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/operation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="264" column="28" selection-start-line="264" selection-start-column="28" selection-end-line="264" selection-end-column="28" />
+          <folding>
+            <element signature="e#3371#5609#0" expanded="false" />
+            <element signature="e#7222#8346#0" expanded="false" />
+            <element signature="e#8386#9486#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/error/ApiErrorNames.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="110" column="75" selection-start-line="110" selection-start-column="75" selection-end-line="110" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/init-db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="67" column="24" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/action.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="64" column="0" selection-start-line="55" selection-start-column="3" selection-end-line="195" selection-end-column="5" />
+          <folding>
+            <element signature="e#309#1036#0" expanded="false" />
+            <element signature="e#8084#15173#0" expanded="false" />
+            <element signature="e#15207#15697#0" expanded="false" />
+            <element signature="e#15723#16086#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/order.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41369334">
+          <caret line="444" column="4" selection-start-line="444" selection-start-column="4" selection-end-line="444" selection-end-column="4" />
+          <folding>
+            <element signature="e#397#3063#0" expanded="false" />
+            <element signature="e#4932#5271#0" expanded="false" />
+            <element signature="e#5303#7744#0" expanded="false" />
+            <element signature="e#17862#18060#0" expanded="false" />
+            <element signature="e#18106#19009#0" expanded="false" />
+            <element signature="e#19077#20000#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

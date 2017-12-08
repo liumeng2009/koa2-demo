@@ -35,6 +35,46 @@ model.sync().then(async ()=>{
         console.log('failed:'+err);
     });
 
+    let zhanghePassword='123456';
+    //加密密码
+    var saltZ = bcrypt.genSaltSync(sys_config.saltRounds);
+    var hashZ = bcrypt.hashSync(zhanghePassword, saltZ);
+    console.log('加密密码是：'+hashZ);
+    //插入管理员身份
+    User.create({
+        name:'张赫',
+        email:'378338627@qq.com',
+        phone:'15822927208',
+        password:hashZ,
+        gender:true,
+        canLogin:true,
+        status:1
+    }).then(function(p){
+        console.log('created'+JSON.stringify(p)+'test the password');
+    }).catch(function(err){
+        console.log('failed:'+err);
+    });
+
+    let zhuPassword='123456';
+    //加密密码
+    var saltZu = bcrypt.genSaltSync(sys_config.saltRounds);
+    var hashZu = bcrypt.hashSync(zhanghePassword, saltZu);
+    console.log('加密密码是：'+hashZu);
+    //插入管理员身份
+    User.create({
+        name:'朱亚亮',
+        email:'378338627@qq.com',
+        phone:'15822927208',
+        password:hashZu,
+        gender:true,
+        canLogin:true,
+        status:1
+    }).then(function(p){
+        console.log('created'+JSON.stringify(p)+'test the password');
+    }).catch(function(err){
+        console.log('failed:'+err);
+    });
+
 
 
     //插入初始化的组织信息

@@ -433,6 +433,147 @@ exports.delete=async(ctx,next)=>{
 
 }
 
+var checkActionTime=async(_operation,_action)=>{
+        operationId:operations[i].id,
+        start_time:(workerOrders[i].arrive_date_timestamp&&workerOrders[i].showArriveDate)?workerOrders[i].arrive_date_timestamp:null,
+        call_time:(workerOrders[i].call_date_timestamp&&workerOrders[i].showWorker)?workerOrders[i].call_date_timestamp:null,
+        end_time:(workerOrders[i].finish_date_timestamp&&workerOrders[i].showFinishDate)?workerOrders[i].finish_date_timestamp:null,
+        operationStart:workerOrders[i].showArriveDate?1:0,
+        operationComplete:workerOrders[i].showFinishDate?1:0,
+        status:1,
+        worker:workerOrders[i].worker
+
+
+    //各个时间点是否合理 建立<指派<工作开始<工作结束
+    let operation_create_time_stamp=operation.create_time;
+    console.log(operation_create_time_stamp);
+    console.log(callTimeStamp);
+    console.log(arriveTimeStamp);
+    console.log(finishTimeStamp);
+    if(callTimeStamp<operation_create_time_stamp){
+        //指派小于工单建立 不合理
+        throw new ApiError(ApiErrorNames.OPERATION_CALL_MORE_THAN_CREATE);
+    }
+
+    if(showArriveDate&&arriveTimeStamp<callTimeStamp){
+        throw new ApiError(ApiErrorNames.OPERATION_ARRIVE_MORE_THAN_CALL);
+    }
+
+    if(showFinishDate&&finishTimeStamp<arriveTimeStamp){
+        throw new ApiError(ApiErrorNames.OPERATION_FINISH_MORE_THAN_ARRIVE);
+    }
+
+    //如果有工单完成时间的这个标记，那么三个时间都不能晚于这个时间了
+    let actionObj4=await ActionModel.findOne({
+        where:{
+            status:1,
+            operationId:operationId,
+            operationComplete:1
+        }
+    });
+    if(actionObj4){
+        let operationCompleteTime=actionObj4.end_time;
+        if(callTimeStamp>operationCompleteTime){
+            throw new ApiError(ApiErrorNames.ACTION_CALL_LESS_THAN_COMPLETE);
+        }
+        if(arriveTimeStamp>operationCompleteTime){
+            throw new ApiError(ApiErrorNames.ACTION_START_LESS_THAN_COMPLETE);
+        }
+        if(finishTimeStamp>operationCompleteTime){
+            throw new ApiError(ApiErrorNames.ACTION_END_LESS_THAN_COMPLETE);
+        }
+    }
+
+    //验证工程师信息是否存在
+    console.log(workerId);
+    let workerObj=await Worker.findOne({
+        where:{
+            userId:workerId
+        }
+    })
+
+    if(workerObj){
+
+    }
+    else{
+        throw new ApiError(ApiErrorNames.WORKER_NOT_EXIST);
+    }
+
+
+    //验证指派时间 指派时，这个工程师也不可以处于被指派和工作状态
+    let actionCheckZhipai=await ActionModel.findOne({
+        where:{
+            status:1,
+            worker:workerId,
+            '$or':[
+                {
+                    call_time:{'$lte':callTimeStamp},
+                    end_time:null
+                },
+                {
+                    call_time:{'$lte':callTimeStamp},
+                    end_time:{'$gte':callTimeStamp}
+                }
+            ]
+        }
+    })
+
+    if(actionCheckZhipai){
+        throw new ApiError(ApiErrorNames.WORKER_BUSY);
+    }
+
+    //验证工程师现在的状态，如果工程师在工作中，就不能开始另一项工作了
+    if(showArriveDate){
+        let actionObj=await ActionModel.findOne({
+            where:{
+                status:1,
+                worker:workerId,
+                '$or':[
+                    {
+                        call_time:{'$lte':arriveTimeStamp},
+                        end_time:null
+                    },
+                    {
+                        call_time:{'$lte':arriveTimeStamp},
+                        end_time:{'$gte':arriveTimeStamp}
+                    }
+                ]
+            }
+        });
+
+        if(actionObj){
+            //说明这个worker在忙碌
+            throw new ApiError(ApiErrorNames.WORKER_BUSY);
+        }
+    }
+
+    if(showFinishDate){
+        let actionEndObj=await ActionModel.findOne({
+            where:{
+                status:1,
+                worker:workerId,
+                '$or':[
+                    {
+                        call_time:{'$lte':finishTimeStamp},
+                        end_time:null
+                    },
+                    {
+                        call_time:{'$lte':finishTimeStamp},
+                        end_time:{'$gte':finishTimeStamp}
+                    }
+                ]
+            }
+        });
+
+        if(actionEndObj){
+            //说明这个worker在忙碌
+            throw new ApiError(ApiErrorNames.WORKER_BUSY);
+        }
+    }
+
+}
+
+
 exports.getOrderNo=async(ctx,next)=>{
     let year=ctx.params.year;
     let month=ctx.params.month;
