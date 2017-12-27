@@ -52,6 +52,8 @@ exports.save=async(ctx,next)=>{
     let Operation=model.operations;
     let Worker=model.workers;
     let ActionModel=model.actions;
+    let User=model.user;
+    ActionModel.belongsTo(User,{foreignKey:'worker'});
 
     //工单是否存在
     let operation=await Operation.findOne({
@@ -123,9 +125,13 @@ exports.save=async(ctx,next)=>{
         throw new ApiError(ApiErrorNames.WORKER_NOT_EXIST);
     }
 
-
     //验证指派时间 指派时，这个工程师也不可以处于被指派和工作状态
     let actionCheckZhipai=await ActionModel.findOne({
+        include:[
+            {
+                model:User
+            }
+        ],
         where:{
             status:1,
             worker:workerId,
@@ -142,8 +148,10 @@ exports.save=async(ctx,next)=>{
         }
     })
 
+    console.log(JSON.stringify(actionCheckZhipai));
+
     if(actionCheckZhipai){
-        throw new ApiError(ApiErrorNames.WORKER_BUSY);
+        throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionCheckZhipai.user.name]);
     }
 
     //验证工程师现在的状态，如果工程师在工作中，就不能开始另一项工作了
