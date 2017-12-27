@@ -434,14 +434,14 @@ exports.delete=async(ctx,next)=>{
 }
 
 var checkActionTime=async(_operation,_action)=>{
-        operationId:operations[i].id,
+/*        operationId:operations[i].id,
         start_time:(workerOrders[i].arrive_date_timestamp&&workerOrders[i].showArriveDate)?workerOrders[i].arrive_date_timestamp:null,
         call_time:(workerOrders[i].call_date_timestamp&&workerOrders[i].showWorker)?workerOrders[i].call_date_timestamp:null,
         end_time:(workerOrders[i].finish_date_timestamp&&workerOrders[i].showFinishDate)?workerOrders[i].finish_date_timestamp:null,
         operationStart:workerOrders[i].showArriveDate?1:0,
         operationComplete:workerOrders[i].showFinishDate?1:0,
         status:1,
-        worker:workerOrders[i].worker
+        worker:workerOrders[i].worker*/
 
 
     //各个时间点是否合理 建立<指派<工作开始<工作结束
