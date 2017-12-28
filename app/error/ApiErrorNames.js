@@ -36,6 +36,7 @@ ApiErrorNames.WORKER_NOT_EXIST="workerNotExist";
 ApiErrorNames.WORKER_EXIST="workerExist";
 ApiErrorNames.WORKER_BUSY="workerBusy";
 ApiErrorNames.WORKER_BUSY_1="workerBusy1";
+ApiErrorNames.WORKER_BUSY_ARRAY="workerBusyArray";
 
 ApiErrorNames.BUSINESS_OPERATION_NULL="businessOperationNull";
 ApiErrorNames.BUSINESS_EQUIPMENT_NULL="businessEquipmentNull";
@@ -107,8 +108,9 @@ error_map.set(ApiErrorNames.CORP_BUILDING_NOT_EXIST, { code: 93003, message: '�
 //worker模块错误
 error_map.set(ApiErrorNames.WORKER_EXIST, { code: 80002, message: '工程师信息已存在！'});
 error_map.set(ApiErrorNames.WORKER_NOT_EXIST, { code: 80001, message: '该条工程师信息不存在！'});
-error_map.set(ApiErrorNames.WORKER_BUSY, { code: 80003, message: '该工程师：{1}忙碌中！'});
+error_map.set(ApiErrorNames.WORKER_BUSY, { code: 80003, message: '工程师：{1} 忙碌中！'});
 error_map.set(ApiErrorNames.WORKER_BUSY_1, { code: 80004, message: '该工程师忙碌中！'});
+error_map.set(ApiErrorNames.WORKER_BUSY_ARRAY, { code: 80005, message: '批量录入的工作时间信息有冲突！'});
 
 //业务内容模块错误
 error_map.set(ApiErrorNames.BUSINESS_OPERATION_NULL, { code: 70001, message: '业务的操作项不能为空！'})

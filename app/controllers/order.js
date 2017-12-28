@@ -340,7 +340,29 @@ exports.saveAndSaveOperation=async(ctx,next)=>{
     let orderNo=await getOrderNoFun(incomingDate.getFullYear(),incomingDate.getMonth()+1,incomingDate.getDate());
     let operationNos=await getOperationNoSFun(incomingDate.getFullYear(),incomingDate.getMonth()+1,incomingDate.getDate(),workerOrders.length);
 
+    //检查时间点数据的合理性
+    let actionsCheck=[];
+    for(let i=0;i<workerOrders.length;i++){
+        console.log('到底有没有行为呢？'+workerOrders[i].showWorker);
+        if(workerOrders[i].showWorker){
+            let actionObj={
+                start_time:(workerOrders[i].arrive_date_timestamp&&workerOrders[i].showArriveDate)?workerOrders[i].arrive_date_timestamp:null,
+                call_time:(workerOrders[i].call_date_timestamp&&workerOrders[i].showWorker)?workerOrders[i].call_date_timestamp:null,
+                end_time:(workerOrders[i].finish_date_timestamp&&workerOrders[i].showFinishDate)?workerOrders[i].finish_date_timestamp:null,
+                operationComplete:workerOrders[i].showFinishDate?1:0,
+                status:1,
+                worker:workerOrders[i].worker
+            }
+            actionsCheck.push(actionObj)
+        }
+    }
+
+    await checkActionTime(incoming_date_timestamp,actionsCheck);
+
+
+
     return new Promise((resolve,reject)=>{
+        console.log('trans start');
         sequelize.transaction(
             function(t){
                 return Order.create({
@@ -354,7 +376,7 @@ exports.saveAndSaveOperation=async(ctx,next)=>{
                     status:1,
                     needs:needs.toString()
                 },{transaction:t}).then(function(order){
-
+                    console.log('trans start 1');
                     //保存工单
                     let workOrderArray=[];
                     for(let i=0;i<workerOrders.length;i++){
@@ -390,7 +412,11 @@ exports.saveAndSaveOperation=async(ctx,next)=>{
                             }
                         }
 
-                        checkActionTime(incoming_date_timestamp,actions);
+                        console.log('开始检查');
+
+
+                        checkActionTime(incoming_date_timestamp,actions,resolve,reject,t);
+
 
                         return Action.bulkCreate(actions,{transaction:t}).then(function(actionResults){
                             console.log('完成了啊啊啊啊啊啊啊啊');
@@ -401,7 +427,8 @@ exports.saveAndSaveOperation=async(ctx,next)=>{
                                 }
                             )
 
-                        }).catch(()=>{
+                        }).catch((error)=>{
+                            console.log(error);
                             reject(
                                 ctx.body={
                                     status:0,
@@ -409,7 +436,8 @@ exports.saveAndSaveOperation=async(ctx,next)=>{
                                 }
                             )
                         })
-                    }).catch(()=>{
+                    }).catch((error)=>{
+                        console.log(error);
                         reject(
                             ctx.body={
                                 status:0,
@@ -418,6 +446,7 @@ exports.saveAndSaveOperation=async(ctx,next)=>{
                         )
                     });
                 }).catch((error)=>{
+                    console.log(error);
                     reject(
                         ctx.body={
                             status:0,
@@ -435,12 +464,77 @@ exports.delete=async(ctx,next)=>{
 }
 
 var checkActionTime=async(createStamp,_actions)=>{
+
+    console.log('进入检查方法');
+
+    let Operation=model.operations;
     let ActionModel=model.actions;
     let Worker=model.workers;
-    ActionModel.belongsTo(Worker,{foreignKey:'worker'});
     let User=model.user;
-    Worker.belongsTo(User,{foreignKey:'userId'});
+    ActionModel.belongsTo(User,{foreignKey:'worker'});
+
+
     //先验证_actions自己内部有没有时间冲突的情况
+
+    for(let actSelf of _actions){
+        for(let actComp of _actions){
+            if(actSelf===actComp){
+
+            }
+            else{
+                //开始作比较
+                if(actSelf.worker==actComp.worker){
+                    console.log('错误0');
+                    //如果运维人员是一个人，就得检查时间分配的是否合理
+                    if(actSelf.call_time>actComp.call_time){
+                        if(actComp.start_time==null){
+                            //错误
+                            console.log('错误1');
+                            throw new ApiError(ApiErrorNames.WORKER_BUSY_ARRAY)
+                        }
+                        else if(actComp.end_time==null){
+                            console.log('错误2');
+                            //错误
+                            throw new ApiError(ApiErrorNames.WORKER_BUSY_ARRAY)
+                        }
+                        else if(actComp.start_time>actSelf.call_time){
+                            //错误
+                            console.log('错误3');
+                            throw new ApiError(ApiErrorNames.WORKER_BUSY_ARRAY)
+                        }
+                        else if(actComp.end_time>actSelf.call_time){
+                            //错误
+                            console.log('错误4');
+                            throw new ApiError(ApiErrorNames.WORKER_BUSY_ARRAY)
+                        }
+                        else{
+                            //正确
+                            console.log('错误5');
+                        }
+                    }
+                    else{
+                        console.log('错误6');
+                        if(actSelf.start_time==null||actSelf.end_time==null){
+                            //说明self没做完，一直占用了后续时间，错误
+                            throw new ApiError(ApiErrorNames.WORKER_BUSY_ARRAY)
+                            console.log('错误7');
+                        }
+                        else{
+                            if(actComp.call_time<actSelf.end_time){
+                                //错误
+                                throw new ApiError(ApiErrorNames.WORKER_BUSY_ARRAY)
+                                console.log('错误8');
+                            }
+                            else{
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 
 
 
@@ -456,15 +550,15 @@ var checkActionTime=async(createStamp,_actions)=>{
         //各个时间点是否合理 建立<指派<工作开始<工作结束
         if(call_time<createStamp){
             //指派小于工单建立 不合理
-            throw new ApiError(ApiErrorNames.OPERATION_CALL_MORE_THAN_CREATE);
+            throw new ApiError(ApiErrorNames.OPERATION_CALL_MORE_THAN_CREATE)
         }
 
         if(start_time&&start_time<call_time){
-            throw new ApiError(ApiErrorNames.OPERATION_ARRIVE_MORE_THAN_CALL);
+            throw new ApiError(ApiErrorNames.OPERATION_ARRIVE_MORE_THAN_CALL)
         }
 
         if(end_time&&end_time<start_time){
-            throw new ApiError(ApiErrorNames.OPERATION_FINISH_MORE_THAN_ARRIVE);
+            throw new ApiError(ApiErrorNames.OPERATION_FINISH_MORE_THAN_ARRIVE)
         }
 
         //如果有工单完成时间的这个标记，那么三个时间都不能晚于这个时间了
@@ -474,19 +568,22 @@ var checkActionTime=async(createStamp,_actions)=>{
                 operationId:operationId,
                 operationComplete:1
             }
-        });
+        })
         if(actionObj4){
             let operationCompleteTime=actionObj4.end_time;
             if(call_time>operationCompleteTime){
-                throw new ApiError(ApiErrorNames.ACTION_CALL_LESS_THAN_COMPLETE);
+                throw new ApiError(ApiErrorNames.ACTION_CALL_LESS_THAN_COMPLETE)
             }
             if(start_time>operationCompleteTime){
-                throw new ApiError(ApiErrorNames.ACTION_START_LESS_THAN_COMPLETE);
+                throw new ApiError(ApiErrorNames.ACTION_START_LESS_THAN_COMPLETE)
             }
             if(end_time>operationCompleteTime){
-                throw new ApiError(ApiErrorNames.ACTION_END_LESS_THAN_COMPLETE);
+                throw new ApiError(ApiErrorNames.ACTION_END_LESS_THAN_COMPLETE)
+
             }
         }
+
+
 
         //验证工程师信息是否存在
         let workerObj=await Worker.findOne({
@@ -494,29 +591,27 @@ var checkActionTime=async(createStamp,_actions)=>{
                 userId:workerId
             }
         })
-
         if(workerObj){
 
         }
         else{
-            throw new ApiError(ApiErrorNames.WORKER_NOT_EXIST);
+            throw new ApiError(ApiErrorNames.WORKER_NOT_EXIST)
         }
+
+
+
+
 
         //验证指派时间 指派时，这个工程师也不可以处于工作状态
         let actionCheckZhipai=await ActionModel.findOne({
+            include:[
+                {
+                    model:User
+                }
+            ],
             where:{
                 status:1,
                 worker:workerId,
-                include:[
-                    {
-                        model:Worker,
-                        include:[
-                            {
-                                model:User
-                            }
-                        ]
-                    }
-                ],
                 '$or':[
                     {
                         call_time:{'$lte':call_time},
@@ -528,75 +623,131 @@ var checkActionTime=async(createStamp,_actions)=>{
                     }
                 ]
             }
-        });
-
+        })
         if(actionCheckZhipai){
-            throw new ApiError(ApiErrorNames.WORKER_BUSY);
+            throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionCheckZhipai.user.name])
         }
 
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //验证工程师现在的状态，如果工程师在工作中，就不能开始另一项工作了
-    if(showArriveDate){
-        let actionObj=await ActionModel.findOne({
-            where:{
-                status:1,
-                worker:workerId,
-                '$or':[
+        //验证工程师现在的状态，如果工程师在工作中，就不能开始另一项工作了
+        if(start_time){
+            let actionObj=await ActionModel.findOne({
+                include:[
                     {
-                        call_time:{'$lte':arriveTimeStamp},
-                        end_time:null
-                    },
-                    {
-                        call_time:{'$lte':arriveTimeStamp},
-                        end_time:{'$gte':arriveTimeStamp}
+                        model:User
                     }
-                ]
+                ],
+                where:{
+                    status:1,
+                    worker:workerId,
+                    '$or':[
+                        {
+                            call_time:{'$lte':start_time},
+                            end_time:null
+                        },
+                        {
+                            call_time:{'$lte':start_time},
+                            end_time:{'$gte':start_time}
+                        }
+                    ]
+                }
+            })
+            if(actionObj){
+                //说明这个worker在忙碌
+                throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionObj.user.name])
             }
-        });
-
-        if(actionObj){
-            //说明这个worker在忙碌
-            throw new ApiError(ApiErrorNames.WORKER_BUSY);
         }
-    }
-
-    if(showFinishDate){
-        let actionEndObj=await ActionModel.findOne({
-            where:{
-                status:1,
-                worker:workerId,
-                '$or':[
+        //验证工程师现在的状态，如果工程师在工作中，就不能开始另一项工作了
+        if(end_time){
+            let actionEndObj=await ActionModel.findOne({
+                include:[
                     {
-                        call_time:{'$lte':finishTimeStamp},
-                        end_time:null
-                    },
-                    {
-                        call_time:{'$lte':finishTimeStamp},
-                        end_time:{'$gte':finishTimeStamp}
+                        model:User
                     }
-                ]
+                ],
+                where:{
+                    status:1,
+                    worker:workerId,
+                    '$or':[
+                        {
+                            call_time:{'$lte':end_time},
+                            end_time:null
+                        },
+                        {
+                            call_time:{'$lte':end_time},
+                            end_time:{'$gte':end_time}
+                        }
+                    ]
+                }
+            })
+            if(actionEndObj){
+                throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionEndObj.user.name])
             }
-        });
+        }
 
-        if(actionEndObj){
-            //说明这个worker在忙碌
-            throw new ApiError(ApiErrorNames.WORKER_BUSY);
+        Operation.hasMany(ActionModel,{foreignKey:'operationId',as:'actions'});
+        //验证operationComplete标记的合理性 唯一性
+        let operationObj=await Operation.findOne({
+            where:{
+                id:operationId,
+                status:1
+            },
+            include:[
+                {
+                    model:ActionModel,
+                    as:'actions'
+                }]
+        })
+        if(operationComplete){
+            if(operationObj&&operationObj.actions){
+                for(let i=0;i<operationObj.actions.length;i++){
+                    let _ac=operationObj.actions[i];
+                    if(_ac.operationComplete.toString()=='1'){
+                        throw new ApiError(ApiErrorNames.OPERATION_COMPLETE_MUST_UNIQUE);
+                        break;
+                    }
+                    if(!_ac.end_time){
+                        //说明没有完成
+                        throw new ApiError(ApiErrorNames.ACTIONS_MUST_ALL_COMPLETE)
+                    }
+
+
+                }
+            }
+        }
+
+        //全部工作都完成，才可以标记工单完成
+
+
+
+        //如果加的完成标记，竟然在某个人开始工作的标记之前，也是不合理的
+        if(operationComplete){
+            let actionObj3=ActionModel.findOne({
+                where:{
+                    operationId:operationId,
+                    '$or':[
+                        {
+                            start_time:{
+                                '$gt':{
+                                    end_time
+                                }
+                            }
+                        },
+                        {
+                            end_time:{
+                                '$gt':{
+                                    end_time
+                                }
+                            }
+                        }
+                    ],
+                    status:1
+                }
+            })
+            if(actionObj3){
+                throw new ApiError(ApiErrorNames.OPERATION_COMPLETE_TIME_MUST_LAST)
+            }
         }
     }
-
 }
 
 
@@ -642,7 +793,7 @@ var getOrderNoFun=async(_year,_month,_day)=>{
     return year+month+day+noLast;
 }
 
-exports.getOperationNoSFun=async(_year,_month,_day,requestCount)=>{
+var getOperationNoSFun=async(_year,_month,_day,requestCount)=>{
     console.log(_year+' '+_month+' '+_day);
     let date=new Date(_year,_month-1,_day);
     let year=date.getFullYear().toString();

@@ -157,6 +157,11 @@ exports.save=async(ctx,next)=>{
     //验证工程师现在的状态，如果工程师在工作中，就不能开始另一项工作了
     if(showArriveDate){
         let actionObj=await ActionModel.findOne({
+            include:[
+                {
+                    model:User
+                }
+            ],
             where:{
                 status:1,
                 worker:workerId,
@@ -175,12 +180,17 @@ exports.save=async(ctx,next)=>{
 
         if(actionObj){
             //说明这个worker在忙碌
-            throw new ApiError(ApiErrorNames.WORKER_BUSY);
+            throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionObj.user.name]);
         }
     }
 
     if(showFinishDate){
         let actionEndObj=await ActionModel.findOne({
+            include:[
+                {
+                    model:User
+                }
+            ],
             where:{
                 status:1,
                 worker:workerId,
@@ -199,27 +209,9 @@ exports.save=async(ctx,next)=>{
 
         if(actionEndObj){
             //说明这个worker在忙碌
-            throw new ApiError(ApiErrorNames.WORKER_BUSY);
+            throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionEndObj.user.name]);
         }
     }
-
-
-/*    //如果指派一个工程师，他在这个工单中已经被指派了，并且没有完成，则不能指派
-    let actionObj2=await ActionModel.findOne({
-        where:{
-            operationId:operationId,
-            worker:workerId,
-            end_time:null,
-            status:1
-        }
-    })
-
-    if(actionObj2){
-        //说明这个人，在此工单中，已经被指派，并且还没有完成工作。重复指派了。
-        throw new ApiError(ApiErrorNames.WORKER_BUSY_1);
-    }*/
-
-
 
     Operation.hasMany(ActionModel,{foreignKey:'operationId',as:'actions'});
     //验证operationComplete标记的合理性 唯一性
@@ -269,14 +261,14 @@ exports.save=async(ctx,next)=>{
                     {
                         start_time:{
                             '$gt':{
-                                end_stamp
+                                finishTimeStamp
                             }
                         }
                     },
                     {
                         end_time:{
                             '$gt':{
-                                end_stamp
+                                finishTimeStamp
                             }
                         }
                     }
