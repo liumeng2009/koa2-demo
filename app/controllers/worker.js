@@ -86,7 +86,7 @@ exports.delete=async(ctx,next)=>{
         ctx.body={
             status:0,
             data:deleteResult,
-            message:response_config.deleteSucess
+            message:response_config.deleteSuccess
         }
     }
     else{
