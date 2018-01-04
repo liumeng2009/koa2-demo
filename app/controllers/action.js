@@ -126,7 +126,7 @@ exports.save=async(ctx,next)=>{
     }
 
     //验证指派时间 指派时，这个工程师也不可以处于被指派和工作状态
-    let actionCheckZhipai=await ActionModel.findOne({
+/*    let actionCheckZhipai=await ActionModel.findOne({
         include:[
             {
                 model:User
@@ -152,7 +152,7 @@ exports.save=async(ctx,next)=>{
 
     if(actionCheckZhipai){
         throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionCheckZhipai.user.name]);
-    }
+    }*/
 
     //验证工程师现在的状态，如果工程师在工作中，就不能开始另一项工作了
     if(showArriveDate){

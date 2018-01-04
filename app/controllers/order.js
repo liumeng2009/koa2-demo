@@ -160,6 +160,7 @@ exports.getOrder=async(ctx,next)=>{
             where:{
                 status:1
             },
+            required:false,
             as:'operations',
             include:[
                 {
@@ -171,7 +172,8 @@ exports.getOrder=async(ctx,next)=>{
                     ]
                 },{
                     model:ActionModel,
-                    as:'actions'
+                    as:'actions',
+                    required:false
                 }
             ]
         }]
@@ -460,6 +462,39 @@ exports.saveAndSaveOperation=async(ctx,next)=>{
 }
 
 exports.delete=async(ctx,next)=>{
+    let id=ctx.params.id;
+
+    let Order=model.orders;
+
+    let orderObj=await Order.findOne({
+        where:{
+            id:id,
+            status:1
+        }
+    })
+    if(orderObj){
+        let Operation=model.operations;
+        let operationObj=await Operation.findOne({
+            where:{
+                status:1,
+                orderId:id
+            }
+        });
+        if(operationObj){
+            throw new ApiError(ApiErrorNames.ORDER_HAVE_OPERATION);
+        }
+        else{
+            orderObj.status=0;
+            await orderObj.save();
+            ctx.body={
+                status:0,
+                message:response_config.deleteSuccess
+            }
+        }
+    }
+    else{
+        throw new ApiError(ApiErrorNames.ORDER_NOT_EXIST);
+    }
 
 }
 
@@ -486,50 +521,48 @@ var checkActionTime=async(createStamp,_actions)=>{
                 if(actSelf.worker==actComp.worker){
                     console.log('错误0');
                     //如果运维人员是一个人，就得检查时间分配的是否合理
-                    if(actSelf.call_time>actComp.call_time){
-                        if(actComp.start_time==null){
-                            //错误
-                            console.log('错误1');
-                            throw new ApiError(ApiErrorNames.WORKER_BUSY_ARRAY)
-                        }
-                        else if(actComp.end_time==null){
-                            console.log('错误2');
-                            //错误
-                            throw new ApiError(ApiErrorNames.WORKER_BUSY_ARRAY)
-                        }
-                        else if(actComp.start_time>actSelf.call_time){
-                            //错误
-                            console.log('错误3');
-                            throw new ApiError(ApiErrorNames.WORKER_BUSY_ARRAY)
-                        }
-                        else if(actComp.end_time>actSelf.call_time){
-                            //错误
-                            console.log('错误4');
-                            throw new ApiError(ApiErrorNames.WORKER_BUSY_ARRAY)
+                    if(actSelf.start_time||actComp.start_time){
+                        if(actSelf.start_time>actComp.start_time){
+                            if(actComp.end_time==null){
+                                //错误
+                                console.log('错误1');
+                                throw new ApiError(ApiErrorNames.WORKER_BUSY_ARRAY)
+                            }
+
+                            else if(actComp.end_time>actSelf.start_time){
+                                //错误
+                                console.log('错误3');
+                                throw new ApiError(ApiErrorNames.WORKER_BUSY_ARRAY)
+                            }
+                            else{
+                                //正确
+                                console.log('错误5');
+                            }
                         }
                         else{
-                            //正确
-                            console.log('错误5');
+                            console.log('错误6');
+                            if(actSelf.end_time==null){
+                                //说明self没做完，一直占用了后续时间，错误
+                                throw new ApiError(ApiErrorNames.WORKER_BUSY_ARRAY)
+                                console.log('错误7');
+                            }
+                            else{
+                                if(actComp.start_time<actSelf.end_time){
+                                    //错误
+                                    throw new ApiError(ApiErrorNames.WORKER_BUSY_ARRAY)
+                                    console.log('错误8');
+                                }
+                                else{
+
+                                }
+                            }
                         }
                     }
                     else{
-                        console.log('错误6');
-                        if(actSelf.start_time==null||actSelf.end_time==null){
-                            //说明self没做完，一直占用了后续时间，错误
-                            throw new ApiError(ApiErrorNames.WORKER_BUSY_ARRAY)
-                            console.log('错误7');
-                        }
-                        else{
-                            if(actComp.call_time<actSelf.end_time){
-                                //错误
-                                throw new ApiError(ApiErrorNames.WORKER_BUSY_ARRAY)
-                                console.log('错误8');
-                            }
-                            else{
-
-                            }
-                        }
+                        //说明仅仅指派了，没有开始工作
+                        console.log('only zhi pai');
                     }
+
                 }
             }
         }
@@ -603,7 +636,7 @@ var checkActionTime=async(createStamp,_actions)=>{
 
 
         //验证指派时间 指派时，这个工程师也不可以处于工作状态
-        let actionCheckZhipai=await ActionModel.findOne({
+/*        let actionCheckZhipai=await ActionModel.findOne({
             include:[
                 {
                     model:User
@@ -626,7 +659,7 @@ var checkActionTime=async(createStamp,_actions)=>{
         })
         if(actionCheckZhipai){
             throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionCheckZhipai.user.name])
-        }
+        }*/
 
         //验证工程师现在的状态，如果工程师在工作中，就不能开始另一项工作了
         if(start_time){

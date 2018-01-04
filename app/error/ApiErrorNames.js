@@ -53,6 +53,7 @@ ApiErrorNames.EQUIP_OP_NULL="equipOpNull";
 
 ApiErrorNames.ORDER_ATTRIBUTE_NOT_NULL="orderAttributeNotNull";
 ApiErrorNames.ORDER_NOT_EXIST="orderNotExist";
+ApiErrorNames.ORDER_HAVE_OPERATION="orderHaveOperation";
 
 ApiErrorNames.OPERATION_NOT_EXIST="operationNotExist";
 ApiErrorNames.OPERATION_CALL_MORE_THAN_CREATE="operationCallMoreThanCreate";
@@ -117,7 +118,7 @@ error_map.set(ApiErrorNames.BUSINESS_OPERATION_NULL, { code: 70001, message: '�
 error_map.set(ApiErrorNames.BUSINESS_EQUIPMENT_NULL, { code: 70002, message: '业务的操作设备不能为空！'})
 error_map.set(ApiErrorNames.BUSINESS_NOT_EXIST, { code: 70003, message: '业务内容不存在！'})
 error_map.set(ApiErrorNames.BUSINESS_EQUIPMENT_EXIST,{ code: 70004, message: '业务主体已经存在！'});
-//                  设备类型
+//设备类型
 error_map.set(ApiErrorNames.EQUIP_TPYE_FIELD_NOT_NULL,{code:71001,message:'设备类型的输入值不能为空'});
 error_map.set(ApiErrorNames.EQUIP_TPYE_NAME_EXIST,{code:71002,message:'设备类型名称已存在'});
 error_map.set(ApiErrorNames.EQUIP_TPYE_CODE_EXIST,{code:71003,message:'设备类型代码已存在'});
@@ -126,6 +127,7 @@ error_map.set(ApiErrorNames.EQUIP_TPYE_NULL,{code:71004,message:'设备类型不
 //需求
 error_map.set(ApiErrorNames.ORDER_ATTRIBUTE_NOT_NULL, { code: 60001, message: '必填的输入值不能为空！'});
 error_map.set(ApiErrorNames.ORDER_NOT_EXIST, { code: 60002, message: '客户订单信息不存在！'});
+error_map.set(ApiErrorNames.ORDER_HAVE_OPERATION, { code: 60003, message: '订单内还有工单存在，所以不可以删除！'});
 
 //工单
 error_map.set(ApiErrorNames.OPERATION_NOT_EXIST, { code: 50001, message: '工单信息不存在！'});

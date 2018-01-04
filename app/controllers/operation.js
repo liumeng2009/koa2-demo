@@ -7,6 +7,7 @@ const model = require('../model');
 const sys_config=require('../../config/sys_config');
 const response_config=require('../../config/response_config');
 const orderController=require('./order');
+const db=require('../db');
 
 exports.list=async(ctx,next)=>{
     let Operation=model.operations;
@@ -17,6 +18,9 @@ exports.list=async(ctx,next)=>{
     let Building=model.buildings;
     let ActionModel=model.actions;
     let User=model.user;
+
+    let time=ctx.params.time;
+    let corp=ctx.params.corp;
 
     Operation.belongsTo(Order,{foreignKey:'orderId'});
     Order.belongsTo(Corporation,{foreignKey:'custom_corporation'});
@@ -37,17 +41,38 @@ exports.list=async(ctx,next)=>{
         }
     });
 
+    let searchObj={
+        status:1
+    }
+    if(time&&time!='0'&&Date(time)){
+        let startDate=new Date();
+        startDate.setTime(time);
+        let startDateStamp=Date.parse(startDate.toDateString());
+        let endDateStamp=startDateStamp+1000*60*60*24-1;
+
+        searchObj.$and=[
+            {create_time:{'$gte':startDateStamp}},
+            {create_time:{'$lte':endDateStamp}}
+        ];
+    }
+
+    let searchCorp={
+        status:1
+    }
+    if(corp&&corp!='0'){
+        searchCorp.id=corp;
+    }
+
     if(pageid&&pageid!=0){
         let pageidnow=parseInt(pageid);
         operations=await Operation.findAll({
-            where:{
-                status:1
-            },
+            where:searchObj,
             include:[{
                 model:Order,
                 include:[
                     {
-                        model:Corporation
+                        model:Corporation,
+                        where:searchCorp
                     },
                     {
                         model:CorpBuilding,
@@ -80,14 +105,13 @@ exports.list=async(ctx,next)=>{
     }
     else{
         operations=await Operation.findAll({
-            where:{
-                status:1
-            },
+            where:searchObj,
             include:[{
                 model:Order,
                 include:[
                     {
-                        model:Corporation
+                        model:Corporation,
+                        where:searchCorp
                     },
                     {
                         model:CorpBuilding,
@@ -359,6 +383,8 @@ exports.save=async(ctx,next)=>{
 exports.delete=async(ctx,next)=>{
     let id=ctx.params.id;
 
+    let sequelize=db.sequelize;
+
     let Operation=model.operations;
     let ActionModel=model.actions;
 
@@ -369,24 +395,45 @@ exports.delete=async(ctx,next)=>{
         }
     })
     if(operation){
-        let action=await ActionModel.findOne({
-            where:{
-                status:1,
-                operationId:id
-            }
-        })
-        if(action){
-            throw new ApiError(ApiErrorNames.OPERATION_CAN_NOT_DELETE);
-        }
-        else{
-            operation.status=0;
-            let saveResult=await operation.save();
-            ctx.body={
-                status:0,
-                data:saveResult,
-                message:response_config.deleteSuccess
-            }
-        }
+
+        return new Promise((resolve,reject)=>{
+            console.log('trans start');
+            sequelize.transaction(
+                function(t){
+                    return ActionModel.update({
+                        status:0
+                    },{transaction:t,where:{operationId:id}}).then(function(act){
+                        console.log('trans start 2');
+                        return Operation.update({
+                            status:0
+                        },{transaction:t,where:{id:id}}).then(function(op){
+                            console.log(op);
+                            resolve(
+                                ctx.body={
+                                    status:0,
+                                    data:op,
+                                    message:response_config.deleteSuccess
+                                }
+                            )
+                        }).catch((error)=>{
+                            console.log(error);
+                            reject(
+                                ctx.body={
+                                    status:0,
+                                    message:response_config.deleteFailed
+                                }
+                            )
+                        })
+                    }).catch((error)=>{
+                        console.log(error);
+                        ctx.body={
+                            status:0,
+                            message:response_config.deleteFailed
+                        }
+                    })
+                }
+            )
+        });
     }
     else{
         throw new ApiError(ApiErrorNames.OPERATION_NOT_EXIST);
