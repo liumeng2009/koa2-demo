@@ -21,6 +21,7 @@ exports.list=async(ctx,next)=>{
 
     let time=ctx.params.time;
     let corp=ctx.params.corp;
+    let no=ctx.params.no;
 
     Operation.belongsTo(Order,{foreignKey:'orderId'});
     Order.belongsTo(Corporation,{foreignKey:'custom_corporation'});
@@ -59,8 +60,12 @@ exports.list=async(ctx,next)=>{
     let searchCorp={
         status:1
     }
-    if(corp&&corp!='0'){
+    if(corp&&corp!='0'&&corp!=''){
         searchCorp.id=corp;
+    }
+
+    if(no&&no!='0'&&no!=''){
+        searchObj.no={'$like':no+'%'};
     }
 
     if(pageid&&pageid!=0){
