@@ -30,7 +30,7 @@ exports.list=async(ctx,next)=>{
     }
 
     let contents;
-
+    let sequelize=db.sequelize;
 /*    let strSql='select businessContents.*,equiptypes.name as equiptypesname,equipops.name as equipopsname from businessContents inner join equiptypes on businessContents.type=equiptypes.code inner join equipops on businessContents.operation=equipops.code'+strWhere;
     let orderStr=' order by businessContents.updatedAt desc ';
 
@@ -105,6 +105,63 @@ exports.save=async(ctx,next)=>{
     let equipment=ctx.request.body.equipment;
     let operations=ctx.request.body.operations;
 
+    let operationFalse=false;
+
+    for(let op of operations){
+        if(op.checked){
+            operationFalse=true
+        }
+    }
+
+
+    if(operations==null||operations.length==0||!operationFalse){
+        throw new ApiError(ApiErrorNames.BUSINESS_OPERATION_NULL);
+    }
+    if(equipment==null||equipment==''){
+        throw new ApiError(ApiErrorNames.BUSINESS_EQUIPMENT_NULL);
+    }
+
+
+    let selectEquipment=await BusinessContent.findOne({
+        where:{
+            equipment:equipment
+        }
+    })
+
+    if(selectEquipment){
+        throw new ApiError(ApiErrorNames.BUSINESS_EQUIPMENT_EXIST);
+    }
+
+    let businessArray=[];
+
+    for(let operation of operations){
+        if(operation.checked){
+            let businessObj={
+                type:type,
+                equipment:equipment,
+                operation:operation.op,
+                status:1,
+                weight:operation.weight,
+                remark:operation.remark
+            }
+            businessArray.push(businessObj);
+        }
+    }
+    let saveResult=await BusinessContent.bulkCreate(businessArray,{validate:true,returning:true,individualHooks:true});
+
+    ctx.body={
+        status:0,
+        data:saveResult,
+        message:response_config.createdSuccess
+    }
+}
+
+exports.edit=async(ctx,next)=>{
+    let BusinessContent=model.businessContents;
+    let type=ctx.request.body.type;
+    let equipment=ctx.request.body.equipment;
+    let operations=ctx.request.body.operations;
+
     if(operations==null||operations.length==0){
         throw new ApiError(ApiErrorNames.BUSINESS_OPERATION_NULL);
     }
@@ -112,13 +169,12 @@ exports.save=async(ctx,next)=>{
         throw new ApiError(ApiErrorNames.BUSINESS_EQUIPMENT_NULL);
     }
 
-    let deleteResult=await BusinessContent.destroy({
+    let deleteBusiness=await BusinessContent.destroy({
         where:{
-            equipment:equipment,
-            type:type
+            type:type,
+            equipment:equipment
         }
-    });
-    console.log(deleteResult);
+    })
 
     let businessArray=[];
 
@@ -204,11 +260,25 @@ exports.getEquipment=async(ctx,next)=>{
 exports.delete=async(ctx,next)=>{
     let id=ctx.params.id;
     let BusinessContent=model.businessContents;
+    let Operation=model.operations;
     let busiObj=await BusinessContent.findAll({
         where: {
             id: id
         }
     })
+
+
+    //如果这个业务被使用过，就不可以删除了
+    let selectResult=await Operation.findOne({
+        where:{
+            status:1,
+            op:id
+        }
+    })
+
+    if(selectResult){
+        throw new ApiError(ApiErrorNames.BUSINESS_USED);
+    }
 
     if(busiObj){
         let deleteResult=await busiObj[0].destroy();

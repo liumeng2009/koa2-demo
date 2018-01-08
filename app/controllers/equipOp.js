@@ -36,7 +36,7 @@ exports.save=async(ctx,next)=>{
         throw new ApiError(ApiErrorNames.EQUIP_OP_FIELD_NOT_NULL);
     }
 
-
+    console.log('name:'+name);
     let EquipTypeCheckName=await EquipOp.findAll({
         where:{
             name:name

@@ -9,6 +9,7 @@ router.get('/list/page/:pageid', businessContent_controller.list);
 router.get('/:id',businessContent_controller.get);
 
 router.post('/save',businessContent_controller.save);
+router.post('/edit',businessContent_controller.edit);
 
 router.get('/getequip/get/:typename',businessContent_controller.getEquipment)
 router.get('/getequip/get',businessContent_controller.getEquipment)

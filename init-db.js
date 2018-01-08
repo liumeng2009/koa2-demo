@@ -194,6 +194,26 @@ model.sync().then(async ()=>{
         groupId:groupKResult.id
     });
 
+    let rongzi=await Corporation.create({
+        name:'融资租赁公司',
+        description:'融资租赁公司',
+        status:1,
+        groupId:groupKResult.id
+    });
+
+    let gonggong=await Corporation.create({
+        name:'公共事业公司',
+        description:'公共事业公司',
+        status:1,
+        groupId:groupKResult.id
+    });
+    let jianshe=await Corporation.create({
+        name:'建设公司',
+        description:'建设公司',
+        status:1,
+        groupId:groupKResult.id
+    });
+
     let kongguBuilding1=await CorpBuilding.create({
         corporationId:konggu.id,
         buildingId:buildingNResult.id,
@@ -208,6 +228,38 @@ model.sync().then(async ()=>{
         position:'A',
         status:1
     });
+
+    let rongziBuilding=await CorpBuilding.create({
+        corporationId:rongzi.id,
+        buildingId:buildingBResult.id,
+        floor:5,
+        position:'W',
+        status:1
+    });
+
+    let gonggongBuilding=await CorpBuilding.create({
+        corporationId:gonggong.id,
+        buildingId:buildingBResult.id,
+        floor:6,
+        position:'E',
+        status:1
+    });
+
+    let jiansheBuilding=await CorpBuilding.create({
+        corporationId:jianshe.id,
+        buildingId:buildingBResult.id,
+        floor:8,
+        position:'E',
+        status:1
+    });
+    let jiansheBuilding1=await CorpBuilding.create({
+        corporationId:jianshe.id,
+        buildingId:buildingBResult.id,
+        floor:9,
+        position:'A',
+        status:1
+    });
+
 
     //财政局
     let caizhengju=await Corporation.create({

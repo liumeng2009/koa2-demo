@@ -42,6 +42,7 @@ ApiErrorNames.BUSINESS_OPERATION_NULL="businessOperationNull";
 ApiErrorNames.BUSINESS_EQUIPMENT_NULL="businessEquipmentNull";
 ApiErrorNames.BUSINESS_EQUIPMENT_EXIST="businessEquipmentExist";
 ApiErrorNames.BUSINESS_NOT_EXIST="businessNotExist";
+ApiErrorNames.BUSINESS_USED="businessUsed";
 ApiErrorNames.EQUIP_TPYE_FIELD_NOT_NULL="equipTypeFieldNotNull";
 ApiErrorNames.EQUIP_TPYE_NAME_EXIST="equipTypeNameExist";
 ApiErrorNames.EQUIP_TPYE_CODE_EXIST="equipTypeCodeExist";
@@ -114,10 +115,11 @@ error_map.set(ApiErrorNames.WORKER_BUSY_1, { code: 80004, message: '该工程师
 error_map.set(ApiErrorNames.WORKER_BUSY_ARRAY, { code: 80005, message: '批量录入的工作时间信息有冲突！'});
 
 //业务内容模块错误
-error_map.set(ApiErrorNames.BUSINESS_OPERATION_NULL, { code: 70001, message: '业务的操作项不能为空！'})
-error_map.set(ApiErrorNames.BUSINESS_EQUIPMENT_NULL, { code: 70002, message: '业务的操作设备不能为空！'})
+error_map.set(ApiErrorNames.BUSINESS_OPERATION_NULL, { code: 70001, message: '操作项不能为空！'})
+error_map.set(ApiErrorNames.BUSINESS_EQUIPMENT_NULL, { code: 70002, message: '设备不能为空！'})
 error_map.set(ApiErrorNames.BUSINESS_NOT_EXIST, { code: 70003, message: '业务内容不存在！'})
-error_map.set(ApiErrorNames.BUSINESS_EQUIPMENT_EXIST,{ code: 70004, message: '业务主体已经存在！'});
+error_map.set(ApiErrorNames.BUSINESS_EQUIPMENT_EXIST,{ code: 70004, message: '设备已经存在！'});
+error_map.set(ApiErrorNames.BUSINESS_USED,{ code: 70005, message: '该业务被使用了，所以不可以删除！'});
 //设备类型
 error_map.set(ApiErrorNames.EQUIP_TPYE_FIELD_NOT_NULL,{code:71001,message:'设备类型的输入值不能为空'});
 error_map.set(ApiErrorNames.EQUIP_TPYE_NAME_EXIST,{code:71002,message:'设备类型名称已存在'});

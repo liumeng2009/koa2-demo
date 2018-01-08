@@ -412,3 +412,27 @@ response body:
 {"status":0,"data":[{"name":"海泰创业园1号楼","address":"海泰创业园","minfloor":1,"maxfloor":4,"status":1,"id":"85fd827d-250e-4eb1-a71c-23f83ff7b6ae","createdAt":1514854705678,"updatedAt":1514854705678,"version":0},{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"4dc05293-9295-41b8-9ca8-8a3c937cf601","createdAt":1514854705585,"updatedAt":1514854705585,"version":0},{"name":"商务大厦南楼","address":"南","minfloor":1,"maxfloor":15,"status":1,"id":"6a6d805f-9b9c-421e-9b86-4ac3e128f124","createdAt":1514854705472,"updatedAt":1514854705472,"version":0}],"total":3}
 *************** response log end ***************
 
+[2018-01-05 15:07:58.601] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/buildings/list/page/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiY2I1OGE3NGMtN2Y2Yy00NjgzLTgxZmUtNGEyZWRiZDc5OGRhIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE1MTM1NjE4LCJleHAiOjE1MTUyMjIwMTh9.nQrJjJZOW1i12cRIadvzTh1M1M_Pal0l4ZkPan35FHM
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiY2I1OGE3NGMtN2Y2Yy00NjgzLTgxZmUtNGEyZWRiZDc5OGRhIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE1MTM1NjE4LCJleHAiOjE1MTUyMjIwMTh9.nQrJjJZOW1i12cRIadvzTh1M1M_Pal0l4ZkPan35FHM"}
+response time: 185
+response status: 200
+response body: 
+{"status":0,"data":[{"name":"海泰创业园1号楼","address":"海泰创业园","minfloor":1,"maxfloor":4,"status":1,"id":"85fd827d-250e-4eb1-a71c-23f83ff7b6ae","createdAt":1514854705678,"updatedAt":1514854705678,"version":0},{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"4dc05293-9295-41b8-9ca8-8a3c937cf601","createdAt":1514854705585,"updatedAt":1514854705585,"version":0},{"name":"商务大厦南楼","address":"南","minfloor":1,"maxfloor":15,"status":1,"id":"6a6d805f-9b9c-421e-9b86-4ac3e128f124","createdAt":1514854705472,"updatedAt":1514854705472,"version":0}],"total":3}
+*************** response log end ***************
+
+[2018-01-05 15:08:01.916] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/order/list/page/1/time/1514822400000?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiY2I1OGE3NGMtN2Y2Yy00NjgzLTgxZmUtNGEyZWRiZDc5OGRhIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE1MTM1NjE4LCJleHAiOjE1MTUyMjIwMTh9.nQrJjJZOW1i12cRIadvzTh1M1M_Pal0l4ZkPan35FHM
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiY2I1OGE3NGMtN2Y2Yy00NjgzLTgxZmUtNGEyZWRiZDc5OGRhIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE1MTM1NjE4LCJleHAiOjE1MTUyMjIwMTh9.nQrJjJZOW1i12cRIadvzTh1M1M_Pal0l4ZkPan35FHM"}
+response time: 236
+response status: 200
+response body: 
+{"status":0,"data":[{"no":"20180102002","custom_name":"刘孟111","custom_phone":"15822927208","incoming_time":1514854542000,"custom_corporation":"4c818c61-7b50-44f4-a434-807a20756393","custom_position":"8604b919-2c2d-4b2c-bdf6-9a822fff0010","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"baed9eb5-e2b4-4da4-9ced-901cd04bd4c2\",\"name\":\"硬件\",\"code\":\"HARDWARE\"},\"equipment\":{\"name\":\"电话\",\"value\":\"电话\"},\"op\":{\"id\":\"06b10a5f-ed6f-4ef7-8de5-300d901ac8a4\",\"name\":\"安装\",\"code\":\"SETUP\"},\"no\":2}]","id":"fde9dc85-93d2-4e21-81aa-2ef2cba3e454","createdAt":1515113759885,"updatedAt":1515117523188,"version":1,"corporation":{"name":"融资租赁","description":"1","status":1,"groupId":"11b109f1-9a6e-40db-b94a-5a9dc9d3374e","id":"4c818c61-7b50-44f4-a434-807a20756393","createdAt":1515033520930,"updatedAt":1515033683905,"version":1},"corpBuilding":{"corporationId":"4c818c61-7b50-44f4-a434-807a20756393","buildingId":"4dc05293-9295-41b8-9ca8-8a3c937cf601","floor":5,"position":"W","status":1,"id":"8604b919-2c2d-4b2c-bdf6-9a822fff0010","createdAt":1515033680475,"updatedAt":1515033680475,"version":0,"building":{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"4dc05293-9295-41b8-9ca8-8a3c937cf601","createdAt":1514854705585,"updatedAt":1514854705585,"version":0}}}],"total":2}
+*************** response log end ***************
+
