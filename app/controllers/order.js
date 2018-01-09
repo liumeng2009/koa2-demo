@@ -760,16 +760,16 @@ var checkActionTime=async(createStamp,_actions)=>{
                     '$or':[
                         {
                             start_time:{
-                                '$gt':{
+                                '$gt':
                                     end_time
-                                }
+
                             }
                         },
                         {
                             end_time:{
-                                '$gt':{
+                                '$gt':
                                     end_time
-                                }
+
                             }
                         }
                     ],

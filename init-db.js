@@ -213,6 +213,20 @@ model.sync().then(async ()=>{
         status:1,
         groupId:groupKResult.id
     });
+    let touzi=await Corporation.create({
+        name:'投资公司',
+        description:'投资公司',
+        status:1,
+        groupId:groupKResult.id
+    });
+
+    let touziBuilding=await CorpBuilding.create({
+        corporationId:touzi.id,
+        buildingId:buildingBResult.id,
+        floor:7,
+        position:'E',
+        status:1
+    });
 
     let kongguBuilding1=await CorpBuilding.create({
         corporationId:konggu.id,

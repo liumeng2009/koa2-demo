@@ -27,7 +27,7 @@ exports.list=async(ctx,next)=>{
             model:Worker
         }],
         order:[
-            ['updatedAt','DESC']
+            ['createdAt','asc']
         ]
     });
 

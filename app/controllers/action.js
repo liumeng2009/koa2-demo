@@ -125,34 +125,7 @@ exports.save=async(ctx,next)=>{
         throw new ApiError(ApiErrorNames.WORKER_NOT_EXIST);
     }
 
-    //验证指派时间 指派时，这个工程师也不可以处于被指派和工作状态
-/*    let actionCheckZhipai=await ActionModel.findOne({
-        include:[
-            {
-                model:User
-            }
-        ],
-        where:{
-            status:1,
-            worker:workerId,
-            '$or':[
-                {
-                    call_time:{'$lte':callTimeStamp},
-                    end_time:null
-                },
-                {
-                    call_time:{'$lte':callTimeStamp},
-                    end_time:{'$gte':callTimeStamp}
-                }
-            ]
-        }
-    })
 
-    console.log(JSON.stringify(actionCheckZhipai));
-
-    if(actionCheckZhipai){
-        throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionCheckZhipai.user.name]);
-    }*/
 
     //验证工程师现在的状态，如果工程师在工作中，就不能开始另一项工作了
     if(showArriveDate){
@@ -223,7 +196,10 @@ exports.save=async(ctx,next)=>{
         include:[
         {
             model:ActionModel,
-            as:'actions'
+            as:'actions',
+            where:{
+                status:1
+            }
         }]
     });
 
@@ -260,16 +236,12 @@ exports.save=async(ctx,next)=>{
                 '$or':[
                     {
                         start_time:{
-                            '$gt':{
-                                finishTimeStamp
-                            }
+                            '$gt': finishTimeStamp
                         }
                     },
                     {
                         end_time:{
-                            '$gt':{
-                                finishTimeStamp
-                            }
+                            '$gt': finishTimeStamp
                         }
                     }
                 ],
@@ -280,6 +252,8 @@ exports.save=async(ctx,next)=>{
             throw new ApiError(ApiErrorNames.OPERATION_COMPLETE_TIME_MUST_LAST);
         }
     }
+
+    console.log('验证通过');
 
     //新增
     let createResult=await ActionModel.create({

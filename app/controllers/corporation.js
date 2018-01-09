@@ -26,7 +26,6 @@ exports.list=async(ctx,next)=>{
         searchObj.groupId=groupId
     }
 
-    console.log(groupId+searchObj);
 
 
     let count=await Corporation.count({
@@ -44,7 +43,7 @@ exports.list=async(ctx,next)=>{
                     model:Group
                 }],
                 order:[
-                    ['updatedAt','DESC']
+                    ['groupId','DESC']
                 ],
                 offset: (pageidnow-1)*sys_config.pageSize,
                 limit: sys_config.pageSize
@@ -57,7 +56,7 @@ exports.list=async(ctx,next)=>{
                     model:Group
                 }],
                 order:[
-                    ['updatedAt','DESC']
+                    ['groupId','DESC']
                 ]
             });
         }
@@ -69,7 +68,7 @@ exports.list=async(ctx,next)=>{
                 model:Group
             }],
             order:[
-                ['updatedAt','DESC']
+                ['groupId','DESC']
             ]
         });
     }
@@ -82,9 +81,6 @@ exports.list=async(ctx,next)=>{
 
 exports.save=async(ctx,next)=>{
 
-    console.log(111111111111111111111);
-
-    console.log('hehehehehe'+ctx.request.body.group);
 
     let name=ctx.request.body.name;
     let description=ctx.request.body.description;
