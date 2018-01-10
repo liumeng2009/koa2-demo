@@ -55,6 +55,7 @@ ApiErrorNames.EQUIP_OP_NULL="equipOpNull";
 ApiErrorNames.ORDER_ATTRIBUTE_NOT_NULL="orderAttributeNotNull";
 ApiErrorNames.ORDER_NOT_EXIST="orderNotExist";
 ApiErrorNames.ORDER_HAVE_OPERATION="orderHaveOperation";
+ApiErrorNames.ORDER_SAVE_FAILED="orderSaveFailed";
 
 ApiErrorNames.OPERATION_NOT_EXIST="operationNotExist";
 ApiErrorNames.OPERATION_CALL_MORE_THAN_CREATE="operationCallMoreThanCreate";
@@ -110,8 +111,8 @@ error_map.set(ApiErrorNames.CORP_BUILDING_NOT_EXIST, { code: 93003, message: '�
 //worker模块错误
 error_map.set(ApiErrorNames.WORKER_EXIST, { code: 80002, message: '工程师信息已存在！'});
 error_map.set(ApiErrorNames.WORKER_NOT_EXIST, { code: 80001, message: '该条工程师信息不存在！'});
-error_map.set(ApiErrorNames.WORKER_BUSY, { code: 80003, message: '工程师：{1} 忙碌中！'});
-error_map.set(ApiErrorNames.WORKER_BUSY_1, { code: 80004, message: '该工程师忙碌中！'});
+error_map.set(ApiErrorNames.WORKER_BUSY, { code: 80003, message: '工程师：{1} 很忙！'});
+error_map.set(ApiErrorNames.WORKER_BUSY_1, { code: 80004, message: '该工程师很忙！'});
 error_map.set(ApiErrorNames.WORKER_BUSY_ARRAY, { code: 80005, message: '批量录入的工作时间信息有冲突！'});
 
 //业务内容模块错误
@@ -130,6 +131,7 @@ error_map.set(ApiErrorNames.EQUIP_TPYE_NULL,{code:71004,message:'设备类型不
 error_map.set(ApiErrorNames.ORDER_ATTRIBUTE_NOT_NULL, { code: 60001, message: '必填的输入值不能为空！'});
 error_map.set(ApiErrorNames.ORDER_NOT_EXIST, { code: 60002, message: '客户订单信息不存在！'});
 error_map.set(ApiErrorNames.ORDER_HAVE_OPERATION, { code: 60003, message: '订单内还有工单存在，所以不可以删除！'});
+error_map.set(ApiErrorNames.ORDER_SAVE_FAILED, { code: 60004, message: '订单保存失败！原因：{1}'});
 
 //工单
 error_map.set(ApiErrorNames.OPERATION_NOT_EXIST, { code: 50001, message: '工单信息不存在！'});

@@ -215,7 +215,7 @@ exports.getOperation=async(ctx,next)=>{
             ],
         }],
         order:[
-            [{model: ActionModel, as: 'actions'},'updatedAt','desc']
+            [{model: ActionModel, as: 'actions'},'createdAt','ASC']
         ]
     })
 
