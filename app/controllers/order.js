@@ -14,11 +14,7 @@ exports.list=async(ctx,next)=>{
     let createtime=ctx.params.time;
     let Order=model.orders;
 
-    let count=await Order.count({
-        where:{
-            status:1
-        }
-    });
+
 
     let orders;
 
@@ -49,9 +45,11 @@ exports.list=async(ctx,next)=>{
 
     console.log('搜索条件是：'+JSON.stringify(searchObj));
 
+    let count=await Order.count({
+        where:searchObj
+    });
+
     if(pageid&&pageid!=0){
-
-
         try{
             let pageidnow=parseInt(pageid);
             orders=await Order.findAll({
@@ -67,7 +65,7 @@ exports.list=async(ctx,next)=>{
                     ]
                 }],
                 order:[
-                    ['updatedAt','DESC']
+                    ['incoming_time','DESC']
                 ],
                 offset: (pageidnow-1)*sys_config.pageSize,
                 limit: sys_config.pageSize
@@ -87,7 +85,7 @@ exports.list=async(ctx,next)=>{
                     ]
                 }],
                 order:[
-                    ['updatedAt','DESC']
+                    ['incoming_time','DESC']
                 ]
             });
         }
@@ -106,7 +104,7 @@ exports.list=async(ctx,next)=>{
                 ]
             }],
             order:[
-                ['updatedAt','DESC']
+                ['incoming_time','DESC']
             ]
         });
     }
@@ -132,6 +130,10 @@ exports.getOrder=async(ctx,next)=>{
     let EquipOp=model.equipOps;
 
     let ActionModel=model.actions;
+
+    let User=model.user;
+
+    ActionModel.belongsTo(User,{foreignKey:'worker'});
 
     Order.belongsTo(Corporation,{foreignKey:'custom_corporation'});
     Order.belongsTo(CorpBuilding,{foreignKey:'custom_position'});
@@ -173,10 +175,21 @@ exports.getOrder=async(ctx,next)=>{
                 },{
                     model:ActionModel,
                     as:'actions',
-                    required:false
+                    required:false,
+                    where:{
+                        status:1
+                    },
+                    include:[
+                        {
+                            model:User
+                        }
+                    ]
                 }
             ]
-        }]
+        }],
+        order:[
+            [{model: Operation, as: 'operations'},'no','ASC']
+        ]
     });
     if(order){
         ctx.body={
@@ -1102,7 +1115,7 @@ var checkActionTime=async(createStamp,act)=>{
     //如果加的完成标记，竟然在某个人开始工作的标记之前，也是不合理的
     if(operationComplete){
         console.log(end_time);
-        let actionObj3=ActionModel.findOne({
+        let actionObj3=await ActionModel.findOne({
             where:{
                 operationId:operationId,
                 '$or':[

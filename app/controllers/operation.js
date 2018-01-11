@@ -36,11 +36,7 @@ exports.list=async(ctx,next)=>{
 
     let operations;
 
-    let total=await Operation.count({
-        where:{
-            status:1
-        }
-    });
+
 
     let searchObj={
         status:1
@@ -68,12 +64,28 @@ exports.list=async(ctx,next)=>{
         searchObj.no={'$like':no+'%'};
     }
 
+    let total=await Operation.count({
+        where:searchObj,
+        include:[
+            {
+                model:Order,
+                include:[
+                    {
+                        model:Corporation,
+                        where:searchCorp
+                    }
+                ]
+            }
+        ]
+    });
+
     if(pageid&&pageid!=0){
         let pageidnow=parseInt(pageid);
         operations=await Operation.findAll({
             where:searchObj,
             include:[{
                 model:Order,
+                required:true,
                 include:[
                     {
                         model:Corporation,
@@ -88,7 +100,8 @@ exports.list=async(ctx,next)=>{
                         ]
                     }
                 ]
-            },{
+            },
+            {
                 model:ActionModel,
                 as:'actions',
                 required:false,
@@ -104,7 +117,7 @@ exports.list=async(ctx,next)=>{
             offset: (pageidnow-1)*sys_config.pageSize,
             limit: sys_config.pageSize,
             order:[
-                ['updatedAt','DESC']
+                ['create_time','DESC']
             ]
         })
     }
@@ -138,7 +151,7 @@ exports.list=async(ctx,next)=>{
             }
             ],
             order:[
-                ['updatedAt','DESC']
+                ['create_time','DESC']
             ]
         })
     }
