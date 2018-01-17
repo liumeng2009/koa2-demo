@@ -37,6 +37,78 @@ exports.list=async(ctx,next)=>{
     }
 }
 
+exports.doing_list=async(ctx,next)=>{
+    let time=ctx.params.time;
+
+    let ActionModel=model.actions;
+    let User=model.user;
+    let Worker=model.workers;
+    let Operation=model.operations;
+    let Order=model.orders;
+    let BusinessContent=model.businessContents;
+    let EquipOp=model.equipOps;
+
+    User.hasMany(ActionModel,{foreignKey:'worker',as:'actions'});
+    User.belongsTo(Worker,{foreignKey:'id',targetKey:'userId'});
+    ActionModel.belongsTo(Operation,{foreignKey:'operationId'});
+    Operation.belongsTo(Order,{foreignKey:'orderId'});
+    Operation.belongsTo(BusinessContent,{foreignKey:'op'});
+    BusinessContent.belongsTo(EquipOp,{foreignKey:'operation',targetKey:'code'});
+
+    let result=await User.findAll({
+        where:{
+            status:1
+        },
+        include:[
+            {
+                model:ActionModel,
+                as:'actions',
+                required:false,
+                where:{
+                    status:1,
+                    '$or':[
+                        {
+                            start_time:{'$lte':time},
+                            end_time:null
+                        },
+                        {
+                            start_time:{'$lte':time},
+                            end_time:{'$gte':time}
+                        }
+                    ]
+                },
+                include:[
+                    {
+                        model:Operation,
+                        include:[
+                            {
+                                model:Order
+                            },{
+                                model:BusinessContent,
+                                include:[
+                                    {
+                                        model:EquipOp
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                model:Worker,
+                required:true
+            }
+        ]
+    })
+
+    ctx.body={
+        status:0,
+        data:result
+    }
+
+}
+
 exports.save=async(ctx,next)=>{
     let userid=ctx.request.body.userId;
     let User=model.user;

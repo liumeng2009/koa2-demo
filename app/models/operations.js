@@ -13,8 +13,7 @@ module.exports = db.defineModel('operations', {
         type:db.STRING(100)
     },
     no:{
-        type:db.STRING(100),
-        unique:true
+        type:db.STRING(100)
     },
 
     create_time:{

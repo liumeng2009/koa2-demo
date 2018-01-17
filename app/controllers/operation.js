@@ -47,6 +47,10 @@ exports.list=async(ctx,next)=>{
         let startDateStamp=Date.parse(startDate.toDateString());
         let endDateStamp=startDateStamp+1000*60*60*24-1;
 
+        console.log(time);
+        console.log(startDateStamp);
+        console.log(endDateStamp);
+
         searchObj.$and=[
             {create_time:{'$gte':startDateStamp}},
             {create_time:{'$lte':endDateStamp}}
@@ -117,7 +121,7 @@ exports.list=async(ctx,next)=>{
             offset: (pageidnow-1)*sys_config.pageSize,
             limit: sys_config.pageSize,
             order:[
-                ['create_time','DESC']
+                ['no','ASC']
             ]
         })
     }
@@ -151,7 +155,7 @@ exports.list=async(ctx,next)=>{
             }
             ],
             order:[
-                ['create_time','DESC']
+                ['no','ASC']
             ]
         })
     }
@@ -159,6 +163,343 @@ exports.list=async(ctx,next)=>{
         status:0,
         data:operations,
         total:total
+    }
+}
+
+exports.list_now=async(ctx,next)=>{
+    let Operation=model.operations;
+    let Action=model.actions;
+    let Order=model.orders;
+    let Corporation=model.corporations;
+    let CorpBuilding=model.corpBuildings;
+    let Building=model.buildings;
+    let ActionModel=model.actions;
+    let User=model.user;
+    let BusinessContent=model.businessContents;
+
+
+    let time=ctx.params.time;
+
+    Operation.belongsTo(Order,{foreignKey:'orderId'});
+    Order.belongsTo(Corporation,{foreignKey:'custom_corporation'});
+    Order.belongsTo(CorpBuilding,{foreignKey:'custom_position'});
+    CorpBuilding.belongsTo(Building,{foreignKey:'buildingId'});
+    Operation.hasMany(ActionModel,{foreignKey:'operationId',as:'actions'});
+    //ActionModel.belongsTo(Operation,{foreignKey:'operationId',as:'actions'})
+    Operation.belongsTo(BusinessContent,{foreignKey:'op'});
+
+    ActionModel.belongsTo(User,{foreignKey:'worker'});
+
+    let operations;
+
+
+
+    let searchObj={
+        status:1
+    }
+    if(time&&time!='0'&&Date(time)){
+        let startDate=new Date();
+        startDate.setTime(time);
+        let startDateStamp=Date.parse(startDate.toDateString());
+        let endDateStamp=time;
+
+        searchObj.$and=[
+            {create_time:{'$gte':startDateStamp}},
+            {create_time:{'$lte':endDateStamp}}
+        ];
+    }
+    operations=await Operation.findAll({
+        where:searchObj,
+        include:[{
+            model:Order,
+            include:[
+                {
+                    model:Corporation
+                },
+                {
+                    model:CorpBuilding,
+                    include:[
+                        {
+                            model:Building
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            model:BusinessContent
+        },
+        {
+            model:ActionModel,
+            as:'actions',
+            include:[
+                {
+                    model:User
+                }
+            ]
+        }
+        ],
+        order:[
+            ['no','ASC']
+        ]
+    })
+
+    ctx.body={
+        status:0,
+        data:operations
+    }
+}
+
+exports.list_week=async(ctx,next)=>{
+    let time=ctx.params.time;
+    let sequelize=db.sequelize;
+
+    let Operation=model.operations;
+
+/*    let result=await Operation.count({
+        attributes:[
+            [sequelize.fn('FROM_UNIXTIME', sequelize.col('create_time'),'%Y%m%d'), 'days']
+        ],
+        where:{
+            status:1
+        },
+        group:'days'
+    })*/
+    //找到一周的时间起始点和结束点
+
+    let timeOp=new Date();
+
+    try{
+        timeOp.setTime(time);
+        console.log(timeOp);
+        console.log(timeOp.toDateString());
+    }
+    catch(error){
+        throw new ApiError(ApiErrorNames.INPUT_DATE_ERROR_TYPE);
+    }
+
+    let weekCount=timeOp.getDay();
+
+    console.log(weekCount);
+
+    let todayStart=new Date();
+    todayStart.setFullYear(timeOp.getFullYear(),timeOp.getMonth(),timeOp.getDate());
+    todayStart.setHours(0,0,0,0);
+    console.log(todayStart.getTime());
+
+    let weekStart=todayStart-(weekCount-1)*24*60*60*1000;
+    let weekEnd=weekStart+7*24*60*60*1000;
+
+    console.log(weekStart);
+    console.log(weekEnd);
+
+
+
+    let sql="select FROM_UNIXTIME(create_time/1000,'%Y%m%d') days,count(*) count from operations inner join actions on operations.id=actions.operationId where operations.status=1 and actions.operationComplete=1 and operations.create_time>="+weekStart+" and operations.create_time<"+weekEnd+" GROUP BY days;";
+
+    let result=await sequelize.query(sql,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
+
+    //将一周数据补充完整
+
+    let dayArray=[];
+    for(let i=0;i<7;i++){
+        let thisDayStart=weekStart+i*24*60*60*1000;
+        let thisDayStartDate=new Date();
+        thisDayStartDate.setTime(thisDayStart);
+        let days=thisDayStartDate.getFullYear()+
+            ((thisDayStartDate.getMonth()+1)<10?('0'+(thisDayStartDate.getMonth()+1)):(thisDayStartDate.getMonth()+1))+
+            ((thisDayStartDate.getDate())<10?('0'+(thisDayStartDate.getDate())):(thisDayStartDate.getDate()));
+        dayArray.push(days)
+    }
+    console.log(dayArray);
+
+    for(let da of dayArray){
+        if(result.length==0){
+            result.push({days:da,count:0});
+        }
+        else{
+            let index=0;
+            for(let r of result){
+                console.log(da);
+                console.log(r.days);
+                if(da===r.days){
+                    break;
+                }
+                else{
+                    if(index==result.length-1){
+                        //新的
+                        result.push({days:da,count:0});
+                        break;
+                    }
+                }
+                index++;
+            }
+        }
+
+    }
+
+    //最终将result进行排序
+    for(let i=0;i<result.length;i++){
+        for(let j=0;j<result.length-i-1;j++){
+            if(result[j].days>result[j+1].days){
+                let temp=result[j];
+                result[j]=result[j+1];
+                result[j+1]=temp;
+            }
+        }
+    }
+
+    //增加星期名称列
+    for(let i=0;i<7;i++){
+        switch(i){
+            case 0:
+                result[i].weekname='星期一';
+                break;
+            case 1:
+                result[i].weekname='星期二';
+                break;
+            case 2:
+                result[i].weekname='星期三';
+                break;
+            case 3:
+                result[i].weekname='星期四';
+                break;
+            case 4:
+                result[i].weekname='星期五';
+                break;
+            case 5:
+                result[i].weekname='星期六';
+                break;
+            case 6:
+                result[i].weekname='星期日';
+                break;
+            default:
+                break;
+        }
+
+    }
+
+
+
+    ctx.body={
+        status:0,
+        data:result
+    }
+
+}
+
+exports.list_month=async(ctx,next)=>{
+    let time=ctx.params.time;
+    let sequelize=db.sequelize;
+
+    let Operation=model.operations;
+
+    /*    let result=await Operation.count({
+     attributes:[
+     [sequelize.fn('FROM_UNIXTIME', sequelize.col('create_time'),'%Y%m%d'), 'days']
+     ],
+     where:{
+     status:1
+     },
+     group:'days'
+     })*/
+    //找到一周的时间起始点和结束点
+
+    let timeOp=new Date();
+
+    try{
+        timeOp.setTime(time);
+        console.log(timeOp);
+        console.log(timeOp.toDateString());
+    }
+    catch(error){
+        throw new ApiError(ApiErrorNames.INPUT_DATE_ERROR_TYPE);
+    }
+
+
+    let monthStart=new Date();
+    monthStart.setFullYear(timeOp.getFullYear(),timeOp.getMonth(),1);
+    monthStart.setHours(0,0,0,0);
+
+    let monthEnd=new Date();
+    monthEnd.setFullYear(timeOp.getFullYear(),(timeOp.getMonth()+1),0);
+    monthEnd.setHours(0,0,0,0);
+
+    console.log(monthStart.toDateString());
+    console.log(monthEnd.toDateString());
+
+    let monthStartStamp=monthStart.getTime();
+    let monthEndStamp=monthEnd.getTime();
+
+    console.log(monthStartStamp);
+    console.log(monthEndStamp);
+
+
+
+    let sql="select FROM_UNIXTIME(create_time/1000,'%Y%m%d') days,count(*) count from operations inner join actions on operations.id=actions.operationId where operations.status=1 and actions.operationComplete=1 and operations.create_time>="+monthStartStamp+" and operations.create_time<"+monthEndStamp+" GROUP BY days;";
+
+    let result=await sequelize.query(sql,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
+
+    //将前面的数据补充完整
+
+    let dayArray=[];
+    for(let i=0;i<timeOp.getDate();i++){
+        let thisDayStart=monthStartStamp+i*24*60*60*1000;
+        let thisDayStartDate=new Date();
+        thisDayStartDate.setTime(thisDayStart);
+        let days=thisDayStartDate.getFullYear()+
+            ((thisDayStartDate.getMonth()+1)<10?('0'+(thisDayStartDate.getMonth()+1)):(thisDayStartDate.getMonth()+1))+
+            ((thisDayStartDate.getDate())<10?('0'+(thisDayStartDate.getDate())):(thisDayStartDate.getDate()));
+        dayArray.push(days)
+    }
+    console.log(dayArray);
+
+    for(let da of dayArray){
+        if(result.length==0){
+            result.push({days:da,count:0});
+        }
+        else{
+            let index=0;
+            for(let r of result){
+                if(da===r.days){
+                    break;
+                }
+                else{
+                    if(index==result.length-1){
+                        //新的
+                        console.log('新的'+da);
+                        result.push({days:da,count:0});
+                        break;
+                    }
+                }
+                index++;
+            }
+        }
+
+    }
+
+    console.log(JSON.stringify(result));
+
+    //最终将result进行排序
+    for(let i=0;i<result.length;i++){
+        for(let j=0;j<result.length-i-1;j++){
+            if(result[j].days>result[j+1].days){
+                console.log('交换');
+                let temp=result[j];
+                result[j]=result[j+1];
+                result[j+1]=temp;
+            }
+        }
+    }
+
+    for(let i=0;i<result.length;i++){
+        result[i].monthname=(i+1)+'号';
+
+    }
+
+    ctx.body={
+        status:0,
+        data:result
     }
 }
 
@@ -249,7 +590,8 @@ exports.add=async(ctx,next)=>{
     let Operation=model.operations;
     let Order=model.orders;
 
-    let orderId=ctx.request.body.order.id;
+    let orderId=ctx.request.body.order;
+    let noSubmit=ctx.request.body.no;
     let op=ctx.request.body.businessContent.id;
     let remark=ctx.request.body.remark;
     let important=ctx.request.body.important;
@@ -287,12 +629,20 @@ exports.add=async(ctx,next)=>{
     })
 
     if(orderObj){
-        let operationNoArray=await orderController.getOperationNoSFun(orderIncomingDate.getFullYear(),orderIncomingDate.getMonth()+1,orderIncomingDate.getDate(),1);
+        let no='';
+        if(noSubmit&&noSubmit!=''){
+            no=noSubmit;
+        }
+        else{
+            let operationNoArray=await orderController.getOperationNoSFun(orderIncomingDate.getFullYear(),orderIncomingDate.getMonth()+1,orderIncomingDate.getDate(),1);
+            no=operationNoArray[0];
+        }
+
         let saveResult=await Operation.create({
             orderId:orderId,
             important:important,
             op:op,
-            no:operationNoArray[0],
+            no:no,
             create_time:create_time,
             remark:remark,
             status:1

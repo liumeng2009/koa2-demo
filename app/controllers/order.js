@@ -8,6 +8,7 @@ const sys_config=require('../../config/sys_config');
 const response_config=require('../../config/response_config');
 const db=require('../db');
 const workerController=require('./worker');
+const t=require('./order');
 
 exports.list=async(ctx,next)=>{
     let pageid=ctx.params.pageid;
@@ -65,7 +66,7 @@ exports.list=async(ctx,next)=>{
                     ]
                 }],
                 order:[
-                    ['incoming_time','DESC']
+                    ['no','ASC']
                 ],
                 offset: (pageidnow-1)*sys_config.pageSize,
                 limit: sys_config.pageSize
@@ -85,7 +86,7 @@ exports.list=async(ctx,next)=>{
                     ]
                 }],
                 order:[
-                    ['incoming_time','DESC']
+                    ['no','ASC']
                 ]
             });
         }
@@ -104,7 +105,7 @@ exports.list=async(ctx,next)=>{
                 ]
             }],
             order:[
-                ['incoming_time','DESC']
+                ['no','ASC']
             ]
         });
     }
@@ -353,7 +354,7 @@ exports.saveAndSaveOperation=async(ctx,next)=>{
     let Action=model.actions;
 
     let orderNo=await getOrderNoFun(incomingDate.getFullYear(),incomingDate.getMonth()+1,incomingDate.getDate());
-    let operationNos=await getOperationNoSFun(incomingDate.getFullYear(),incomingDate.getMonth()+1,incomingDate.getDate(),workerOrders.length);
+    let operationNos=await t.getOperationNoSFun(incomingDate.getFullYear(),incomingDate.getMonth()+1,incomingDate.getDate(),workerOrders.length);
 
     //检查时间点数据的合理性
 /*    let actionsCheck=[];
@@ -406,6 +407,25 @@ exports.saveAndSaveOperation=async(ctx,next)=>{
                 create_time:incoming_date_timestamp,
                 status:1
             }
+
+            //验证op存在性
+            let BusinessContent=model.businessContents;
+
+            let businessContentObj=await BusinessContent.findOne({
+                where:{
+                    status:1,
+                    id:workerOrders[i].op.id
+                }
+            });
+
+            if(businessContentObj){
+
+            }
+            else{
+                throw new ApiError(ApiErrorNames.BUSINESS_NOT_EXIST);
+            }
+
+
             //workOrderArray.push(workOrderObj);
             let operationResult=await Operation.create(workOrderObj,{transaction:transaction});
 
@@ -1062,11 +1082,11 @@ var checkActionTime=async(createStamp,act)=>{
                 worker:workerId,
                 '$or':[
                     {
-                        call_time:{'$lte':end_time},
+                        start_time:{'$lte':end_time},
                         end_time:null
                     },
                     {
-                        call_time:{'$lte':end_time},
+                        start_time:{'$lte':end_time},
                         end_time:{'$gte':end_time}
                     }
                 ]
@@ -1187,7 +1207,7 @@ var getOrderNoFun=async(_year,_month,_day)=>{
     return year+month+day+noLast;
 }
 
-var getOperationNoSFun=async(_year,_month,_day,requestCount)=>{
+exports.getOperationNoSFun=async(_year,_month,_day,requestCount)=>{
     console.log(_year+' '+_month+' '+_day);
     let date=new Date(_year,_month-1,_day);
     let year=date.getFullYear().toString();

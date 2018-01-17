@@ -6,34 +6,78 @@ const config = require('../../config/mysql_config');
 const db=require('../db');
 
 exports.list=async(ctx,next)=>{
+    let time=ctx.params.time;
 
-    let Worker=model.workers;
+    let startDateStamp=0;
+    let endDateStamp=0;
+
+    if(time&&time!='0'&&Date(time)){
+        let startDate=new Date();
+        startDate.setTime(time);
+        startDateStamp=Date.parse(startDate.toDateString());
+        endDateStamp=time;
+    }
+    else{
+        throw new ApiError(ApiErrorNames.INPUT_DATE_ERROR_TYPE);
+    }
+
+    let ActionModel=model.actions;
     let User=model.user;
+    let Operation=model.operations;
+    let Order=model.orders;
+    let BusinessContent=model.businessContents;
+    let EquipOp=model.equipOps;
+    let Corporation=model.corporations;
 
-    User.belongsTo(Worker,{foreignKey:'id',targetKey:'userId'});
+    ActionModel.belongsTo(Operation,{foreignKey:'operationId'});
+    ActionModel.belongsTo(User,{foreignKey:'worker'})
+    Operation.belongsTo(Order,{foreignKey:'orderId'});
+    Operation.belongsTo(BusinessContent,{foreignKey:'op'});
+    BusinessContent.belongsTo(EquipOp,{foreignKey:'operation',targetKey:'code'});
+    Order.belongsTo(Corporation,{foreignKey:'custom_corporation'});
 
-
-
-    //var sequelize=db.sequelize;
-
-    let workerObj;
-
-    //let selectStr='select users.id,users.name,users.gender,users.phone,users.email,workers.userId from users left join workers on users.id=workers.userId where users.status=1 order by users.createdAt asc';
-
-    //workerObj=await sequelize.query(selectStr,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
-
-    workerObj=await User.findAll({
-        include:[{
-            model:Worker
-        }],
-        order:[
-            ['updatedAt','DESC']
+    let result=await ActionModel.findAll({
+        where:{
+            status:1,
+            '$and':[
+                {
+                    call_time:{'$gte':startDateStamp}
+                },{
+                    call_time:{'$lte':endDateStamp}
+                }
+            ]
+        },
+        include:[
+            {
+                model:Operation,
+                include:[
+                    {
+                        model:Order,
+                        include:[
+                            {
+                                model:Corporation
+                            }
+                        ]
+                    },
+                    {
+                        model:BusinessContent,
+                        include:[
+                            {
+                                model:EquipOp
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                model:User
+            }
         ]
-    });
+    })
 
     ctx.body={
         status:0,
-        data:workerObj
+        data:result
     }
 }
 
@@ -140,11 +184,11 @@ exports.save=async(ctx,next)=>{
                 worker:workerId,
                 '$or':[
                     {
-                        call_time:{'$lte':arriveTimeStamp},
+                        start_time:{'$lte':arriveTimeStamp},
                         end_time:null
                     },
                     {
-                        call_time:{'$lte':arriveTimeStamp},
+                        start_time:{'$lte':arriveTimeStamp},
                         end_time:{'$gte':arriveTimeStamp}
                     }
                 ]
@@ -169,11 +213,11 @@ exports.save=async(ctx,next)=>{
                 worker:workerId,
                 '$or':[
                     {
-                        call_time:{'$lte':finishTimeStamp},
+                        start_time:{'$lte':finishTimeStamp},
                         end_time:null
                     },
                     {
-                        call_time:{'$lte':finishTimeStamp},
+                        start_time:{'$lte':finishTimeStamp},
                         end_time:{'$gte':finishTimeStamp}
                     }
                 ]
@@ -222,12 +266,6 @@ exports.save=async(ctx,next)=>{
         }
     }
 
-
-
-
-
-
-
     //如果加的完成标记，竟然在某个人开始工作的标记之前，也是不合理的
     if(completeOperation){
         let actionObj3=await ActionModel.findOne({
@@ -274,6 +312,7 @@ exports.save=async(ctx,next)=>{
 }
 
 exports.edit=async(ctx,next)=>{
+    console.log(1);
     let operationId=ctx.request.body.operationId;
     let actionId=ctx.request.body.id;
     let workerId=ctx.request.body.workerId;
@@ -288,6 +327,8 @@ exports.edit=async(ctx,next)=>{
     let Operation=model.operations;
     let Worker=model.workers;
     let ActionModel=model.actions;
+    let User=model.user;
+    ActionModel.belongsTo(User,{foreignKey:'worker'});
     Operation.hasMany(ActionModel,{foreignKey:'operationId',as:'actions'});
 
     let actionObj=await ActionModel.findOne({
@@ -337,7 +378,7 @@ exports.edit=async(ctx,next)=>{
         }
 
 
-
+        console.log(2+workerId);
         //验证工程师是否存在
         let workerObj=await Worker.findOne({
             where:{
@@ -346,55 +387,82 @@ exports.edit=async(ctx,next)=>{
         })
 
         if(workerObj){
-
+            console.log(21);
         }
         else{
             throw new ApiError(ApiErrorNames.WORKER_NOT_EXIST);
         }
+        console.log(22);
 
         //验证工程师现在的状态，如果工程师在工作中，就不能开始另一项工作了
         if(showArriveDate){
-            let actionObjTest=await ActionModel.findOne({
+            let actionObj=await ActionModel.findOne({
+                include:[
+                    {
+                        model:User
+                    }
+                ],
                 where:{
+                    status:1,
+                    worker:workerId,
                     id:{
                         '$ne':actionId
                     },
-                    status:1,
-                    '$and':[
-                        {worker:workerId},
-                        {'$or':[
-                            {
-                                '$and':[
-                                    {
-                                        start_time:{'$lt':start_stamp}
-                                    },
-                                    {
-                                        end_time:{'$gt':start_stamp}
-                                    }
-                                ]
-                            },
-                            {
-                                '$and':[
-                                    {
-                                        start_time:{'$lt':start_stamp}
-                                    },
-                                    {
-                                        end_time:null
-                                    }
-                                ]
-                            }
-                        ]}
+                    '$or':[
+                        {
+                            start_time:{'$lte':start_stamp},
+                            end_time:null
+                        },
+                        {
+                            start_time:{'$lte':start_stamp},
+                            end_time:{'$gte':start_stamp}
+                        }
                     ]
                 }
             });
 
-            if(actionObjTest){
+            if(actionObj){
                 //说明这个worker在忙碌
-                throw new ApiError(ApiErrorNames.WORKER_BUSY);
+                throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionObj.user.name]);
             }
-
         }
 
+        if(showFinishDate){
+            let actionEndObj=await ActionModel.findOne({
+                include:[
+                    {
+                        model:User
+                    }
+                ],
+                where:{
+                    status:1,
+                    worker:workerId,
+                    id:{
+                        '$ne':actionId
+                    },
+                    '$or':[
+                        {
+                            start_time:{'$lte':end_stamp},
+                            end_time:null
+                        },
+                        {
+                            start_time:{'$lte':end_stamp},
+                            end_time:{'$gte':end_stamp}
+                        }
+                    ]
+                }
+            });
+
+            if(actionEndObj){
+                //说明这个worker在忙碌
+                throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionEndObj.user.name]);
+            }
+        }
+
+
+
+
+        console.log(3);
         //如果指派一个工程师，他在这个工单中已经被指派了，并且没有完成，则不能指派
         let actionObj2=await ActionModel.findOne({
             where:{
@@ -429,7 +497,7 @@ exports.edit=async(ctx,next)=>{
                     }
                 }]
         });
-
+        console.log(4);
         //全部工作都完成，才可以标记工单完成
         if(isCompleteOperation){
             if(operationObj&&operationObj.actions){
@@ -448,7 +516,7 @@ exports.edit=async(ctx,next)=>{
                 }
             }
         }
-
+        console.log(5);
         //如果加的完成标记，时间点在某个人开始工作的标记之前，或者在某个人完成工作之前，也是不合理的
         if(isCompleteOperation){
             let actionObj3=await ActionModel.findOne({
@@ -478,7 +546,7 @@ exports.edit=async(ctx,next)=>{
                 throw new ApiError(ApiErrorNames.OPERATION_COMPLETE_TIME_MUST_LAST);
             }
         }
-
+        console.log(6);
         actionObj.worker=workerId;
         actionObj.call_time=call_stamp;
         actionObj.operationComplete=isCompleteOperation?1:0;
