@@ -11,7 +11,6 @@ const db=require('../db');
 
 exports.list=async(ctx,next)=>{
     let Operation=model.operations;
-    let Action=model.actions;
     let Order=model.orders;
     let Corporation=model.corporations;
     let CorpBuilding=model.corpBuildings;
@@ -320,8 +319,6 @@ exports.list_week=async(ctx,next)=>{
         else{
             let index=0;
             for(let r of result){
-                console.log(da);
-                console.log(r.days);
                 if(da===r.days){
                     break;
                 }
@@ -378,8 +375,6 @@ exports.list_week=async(ctx,next)=>{
         }
 
     }
-
-
 
     ctx.body={
         status:0,
@@ -503,6 +498,152 @@ exports.list_month=async(ctx,next)=>{
     }
 }
 
+exports.list_month_worker=async(ctx,next)=>{
+    let time=ctx.params.time;
+    let timeOp=new Date();
+
+    try{
+        timeOp.setTime(time);
+        console.log(timeOp);
+        console.log(timeOp.toDateString());
+    }
+    catch(error){
+        throw new ApiError(ApiErrorNames.INPUT_DATE_ERROR_TYPE);
+    }
+
+
+    let monthStart=new Date();
+    monthStart.setFullYear(timeOp.getFullYear(),timeOp.getMonth(),1);
+    monthStart.setHours(0,0,0,0);
+
+    let monthEnd=new Date();
+    monthEnd.setFullYear(timeOp.getFullYear(),(timeOp.getMonth()+1),0);
+    monthEnd.setHours(0,0,0,0);
+
+    console.log(monthStart.toDateString());
+    console.log(monthEnd.toDateString());
+
+    let monthStartStamp=monthStart.getTime();
+    let monthEndStamp=time;
+
+    let User=model.user;
+    let ActionModel=model.actions;
+    User.hasMany(ActionModel,{foreignKey:'worker',as:'actions'});
+    ActionModel.belongsTo(User,{foreignKey:'worker'})
+    let Operation=model.operations;
+    ActionModel.belongsTo(Operation,{foreignKey:'operationId'});
+    Operation.hasMany(ActionModel,{foreignKey:'operationId',as:'actions'})
+
+    let sequelize=db.sequelize;
+
+
+    let result=await Operation.findAll({
+        attributes:[
+            [sequelize.col('`actions.user`.`name`'),'user'],[sequelize.fn('COUNT', sequelize.col('operations.id')), 'count']
+        ],
+        where:{
+            status:1,
+            '$and':[
+                {create_time:{'$gte':monthStartStamp}},
+                {create_time:{'$lte':monthEndStamp}}
+            ]
+        },
+        include:[
+            {
+                model:ActionModel,
+                as:'actions',
+                attributes:[],
+                where:{
+                    status:1
+                },
+                include:[
+                    {
+                        model:User,
+                        attributes:[],
+                        where:{
+                            status:1
+                        }
+                    }
+                ]
+            }
+
+        ],
+        group:['`actions.user`.`name`','operations.id']
+    })
+
+    console.log(JSON.stringify(result));
+
+    ctx.body={
+        status:0,
+        data:result
+    }
+
+}
+
+exports.list_month_worker_time=async(ctx,next)=>{
+    let time=ctx.params.time;
+    let timeOp=new Date();
+
+    try{
+        timeOp.setTime(time);
+        console.log(timeOp);
+        console.log(timeOp.toDateString());
+    }
+    catch(error){
+        throw new ApiError(ApiErrorNames.INPUT_DATE_ERROR_TYPE);
+    }
+
+
+    let monthStart=new Date();
+    monthStart.setFullYear(timeOp.getFullYear(),timeOp.getMonth(),1);
+    monthStart.setHours(0,0,0,0);
+
+    let monthEnd=new Date();
+    monthEnd.setFullYear(timeOp.getFullYear(),(timeOp.getMonth()+1),0);
+    monthEnd.setHours(0,0,0,0);
+
+    console.log(monthStart.toDateString());
+    console.log(monthEnd.toDateString());
+
+    let monthStartStamp=monthStart.getTime();
+    let monthEndStamp=time;
+
+    let ActionModel=model.actions;
+    let User=model.user;
+    ActionModel.belongsTo(User,{foreignKey:'worker'});
+
+    let sequelize=db.sequelize;
+
+/*    let result=await ActionModel.findAll({
+        attributes:{
+            include:[ [sequelize.col('`user`.`name`'),'user'],[sequelize.fn('SUM', sequelize.col('start_time')-sequelize.col('start_time')), 'count']],
+            exclude: ['operationId','call_time','start_time','end_time','worker','operationStart','operationComplete','status','id','createdAt','updatedAt','version']
+        },
+        where:{
+            status:1,
+            '$and':[
+                {start_time:{'$gte':monthStartStamp}},
+                {end_time:{'$lte':monthEndStamp}}
+            ]
+        },
+        include:[
+            {
+                model:User,
+                attributes:[]
+            }
+        ],
+        group:['`user`.`name`']
+    });*/
+    let sql='SELECT `user`.`name` AS `user`, SUM(`end_time`-`start_time`) AS `count` FROM `actions` AS `actions` LEFT OUTER JOIN `users` AS `user` ON `actions`.`worker` = `user`.`id` WHERE `actions`.`status` = 1 AND (`actions`.`start_time` >= '+monthStartStamp+' AND `actions`.`end_time` <= '+monthEndStamp+') GROUP BY `user`.`name`;';
+
+    let result=await sequelize.query(sql,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
+
+    ctx.body={
+        status:0,
+        data:result
+    }
+}
+
 exports.getOperation=async(ctx,next)=>{
     let id=ctx.params.id;
     let Operation=model.operations;
@@ -585,7 +726,6 @@ exports.getOperation=async(ctx,next)=>{
 
 }
 
-
 exports.add=async(ctx,next)=>{
     let Operation=model.operations;
     let Order=model.orders;
@@ -660,6 +800,7 @@ exports.add=async(ctx,next)=>{
 
 
 }
+
 exports.edit=async(ctx,next)=>{
 
     let Operation=model.operations;

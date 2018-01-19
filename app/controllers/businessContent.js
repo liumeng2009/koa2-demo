@@ -158,6 +158,7 @@ exports.save=async(ctx,next)=>{
 
 exports.edit=async(ctx,next)=>{
     let BusinessContent=model.businessContents;
+    let Operation=model.operations;
     let type=ctx.request.body.type;
     let equipment=ctx.request.body.equipment;
     let operations=ctx.request.body.operations;
@@ -169,34 +170,55 @@ exports.edit=async(ctx,next)=>{
         throw new ApiError(ApiErrorNames.BUSINESS_EQUIPMENT_NULL);
     }
 
-    let deleteBusiness=await BusinessContent.destroy({
+
+
+
+    //bug，不可以全部删除啊，否则事务找不到了。
+/*    let deleteBusiness=await BusinessContent.destroy({
         where:{
             type:type,
             equipment:equipment
         }
-    })
+    })*/
 
     let businessArray=[];
 
     for(let operation of operations){
         if(operation.checked){
-            let businessObj={
-                type:type,
-                equipment:equipment,
-                operation:operation.op,
-                status:1,
-                weight:operation.weight,
-                remark:operation.remark
+            if(operation.id){
+                //id存在就是编辑
+                let bc=await BusinessContent.findOne({
+                    id:operation.id
+                })
+                bc.weight=operation.weight;
+                bc.remark=operation.remark;
+
+                let r1=await bc.save();
             }
-            businessArray.push(businessObj);
+            else{
+                //id不存在，就是新增
+                let businessObj={
+                    type:type,
+                    equipment:equipment,
+                    operation:operation.op,
+                    status:1,
+                    weight:operation.weight,
+                    remark:operation.remark
+                }
+                let r2=await businessObj.save();
+            }
+        }
+        else{
+            if(operation.id){
+                //原则上不允许删除
+            }
         }
     }
-    let saveResult=await BusinessContent.bulkCreate(businessArray,{validate:true,returning:true,individualHooks:true});
 
     ctx.body={
         status:0,
-        data:saveResult,
-        message:response_config.createdSuccess
+        data:[],
+        message:response_config.updatedSuccess
     }
 }
 
