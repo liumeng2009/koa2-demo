@@ -824,7 +824,7 @@ exports.edit=async(ctx,next)=>{
                 operationId:operationId
             }
         });
-        if(actionObj){
+        if(1==0){
             throw new ApiError(ApiErrorNames.OPERATION_CAN_NOT_EDIT);
         }
         else{

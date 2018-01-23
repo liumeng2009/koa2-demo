@@ -205,7 +205,7 @@ exports.edit=async(ctx,next)=>{
                     weight:operation.weight,
                     remark:operation.remark
                 }
-                let r2=await businessObj.save();
+                let r2=await BusinessContent.create(businessObj);
             }
         }
         else{
