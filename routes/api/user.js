@@ -12,4 +12,6 @@ router.get('/list',user_controller.list);
 router.get('/list/page/:pageid',user_controller.list);
 router.get('/delete/:id',user_controller.delete);
 
+router.get('/get/urltree',user_controller.getUrlTree);
+
 module.exports = router;

@@ -269,3 +269,63 @@ exports.delete=async(ctx,next)=>{
         throw new ApiError(ApiErrorNames.USER_NAME_NOT_EXIST);
     }
 }
+
+exports.getUrlTree=async(ctx,next)=>{
+    /*
+    *
+    *     {path:'basic',component:BasicSettingsComponent,data:{name:'基本设置'},children:[
+     { path: 'address' ,component: AddressComponent,data:{name:'地址设置'},children:[
+     {path:'list',component:AddressListComponent,data:{name:'列表'}},
+     {path:'add',component:AddressAddComponent,data:{name:'新增'}},
+     {path:':id',component:AddressEditComponent,data:{name:'编辑'}}
+     ] },
+    *
+    *
+    * **/
+    let obj1={
+        path:'list',
+        component:'AddressListComponent',
+        data:{
+            name:'列表'
+        }
+    }
+    let obj2={
+        path:'list',
+        component:'AddressAddComponent',
+        data:{
+            name:'新增'
+        }
+    }
+    let obj3={
+        path:'list',
+        component:'AddressEditComponent',
+        data:{
+            name:'编辑'
+        }
+    }
+
+    let objParent={
+        path:'address',
+        component:'AddressComponent',
+        data:{
+            name:'地址设置'
+        },
+        children:[
+            obj1,
+            obj2,
+            obj3
+        ]
+    }
+    let basic={
+        path:'basic',
+        component:'BasicSettingsComponent',
+        data:'基本设置',
+        children:[
+            objParent
+        ]
+    }
+    ctx.body={
+        status:0,
+        data:basic
+    }
+}
