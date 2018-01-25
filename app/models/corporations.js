@@ -14,10 +14,6 @@ module.exports = db.defineModel('corporations', {
         type:db.INTEGER
     },
     groupId:{
-        type:db.STRING(200),
-        references:{
-            model:'groups',
-            key:'id'
-        }
+        type:db.STRING(50)
     }
 });

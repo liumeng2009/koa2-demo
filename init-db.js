@@ -543,6 +543,135 @@ model.sync().then(async ()=>{
         remark:'',
         status:1
     });
+
+    //权限部分
+    //功能项
+    let Function=model.functions;
+    let funAddress=await Function.create({
+        name:'地址设置',
+        code:'address',
+        status:1
+    });
+    let funGroup=await Function.create({
+        name:'组织设置',
+        code:'group',
+        status:1
+    });
+    let funCorporation=await Function.create({
+        name:'公司设置',
+        code:'corporation',
+        status:1
+    });
+    let funWorker=await Function.create({
+        name:'工程师设置',
+        code:'worker',
+        status:1
+    });
+
+
+    //操作项
+    let Operate=model.operates;
+    let menuOp= await Operate.create({
+        name:'菜单可见',
+        code:'menu',
+        status:1
+    });
+
+    let listOp= await Operate.create({
+        name:'查看',
+        code:'list',
+        status:1
+    });
+
+    let addOp=await Operate.create({
+        name:'新增',
+        code:'add',
+        status:1
+    })
+
+    let editOp=await Operate.create({
+        name:'编辑',
+        code:'edit',
+        status:1
+    });
+
+    let deleteOp=await Operate.create({
+        name:'删除',
+        code:'delete',
+        status:1
+    });
+
+    //关系表
+    let OpInFunc=model.opInFuncs;
+    await OpInFunc.create({
+        funcId:funAddress.id,
+        opId:menuOp.id
+    });
+    await OpInFunc.create({
+        funcId:funAddress.id,
+        opId:addOp.id
+    });
+    await OpInFunc.create({
+        funcId:funAddress.id,
+        opId:editOp.id
+    });
+    await OpInFunc.create({
+        funcId:funAddress.id,
+        opId:deleteOp.id
+    });
+
+    await OpInFunc.create({
+        funcId:funGroup.id,
+        opId:menuOp.id
+    });
+    await OpInFunc.create({
+        funcId:funGroup.id,
+        opId:addOp.id
+    });
+    await OpInFunc.create({
+        funcId:funGroup.id,
+        opId:editOp.id
+    });
+    await OpInFunc.create({
+        funcId:funGroup.id,
+        opId:deleteOp.id
+    });
+
+    await OpInFunc.create({
+        funcId:funCorporation.id,
+        opId:menuOp.id
+    });
+    await OpInFunc.create({
+        funcId:funCorporation.id,
+        opId:addOp.id
+    });
+    await OpInFunc.create({
+        funcId:funCorporation.id,
+        opId:editOp.id
+    });
+    await OpInFunc.create({
+        funcId:funCorporation.id,
+        opId:deleteOp.id
+    });
+
+    await OpInFunc.create({
+        funcId:funWorker.id,
+        opId:menuOp.id
+    });
+    await OpInFunc.create({
+        funcId:funWorker.id,
+        opId:addOp.id
+    });
+    await OpInFunc.create({
+        funcId:funWorker.id,
+        opId:editOp.id
+    });
+    await OpInFunc.create({
+        funcId:funWorker.id,
+        opId:deleteOp.id
+    });
+
+
 }).catch((e)=>{
     console.log('failed with: '+e);
     process.exit(0);});

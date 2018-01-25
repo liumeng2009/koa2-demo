@@ -1,8 +1,5 @@
-/**
- * Created by liumeng on 2017/6/2.
- */
 const db=require('../db');
-module.exports = db.defineModel('functions', {
+module.exports = db.defineModel('operates', {
     name:{
         type:db.STRING(100),
         unique:true

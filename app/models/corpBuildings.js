@@ -1,18 +1,10 @@
 const db=require('../db');
 module.exports = db.defineModel('corpBuildings', {
     corporationId:{
-        type:db.STRING(200),
-        references:{
-            model:'corporations',
-            key:'id'
-        }
+        type:db.STRING(50)
     },
     buildingId: {
-        type: db.STRING(200),
-        references:{
-            model:'buildings',
-            key:'id'
-        }
+        type: db.STRING(50)
     },
     floor:{
         type:db.INTEGER
