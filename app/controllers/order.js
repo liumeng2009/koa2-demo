@@ -1054,11 +1054,11 @@ var checkActionTime=async(createStamp,act)=>{
                 worker:workerId,
                 '$or':[
                     {
-                        call_time:{'$lte':start_time},
+                        start_time:{'$lte':start_time},
                         end_time:null
                     },
                     {
-                        call_time:{'$lte':start_time},
+                        start_time:{'$lte':start_time},
                         end_time:{'$gte':start_time}
                     }
                 ]

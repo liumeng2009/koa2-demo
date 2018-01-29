@@ -14,7 +14,6 @@ exports.list=async(ctx,next)=>{
     Function.hasMany(OpInFunc,{foreignKey:'funcId',as:'ops'});
     OpInFunc.belongsTo(Operate,{foreignKey:'opId'});
 
-
     let result=await Function.findAll({
         where:{
             status:1
@@ -25,7 +24,8 @@ exports.list=async(ctx,next)=>{
                 as:'ops',
                 include:[
                     {
-                        model:Operate
+                        model:Operate,
+                        required:true
                     }
                 ]
             }

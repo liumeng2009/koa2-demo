@@ -189,6 +189,8 @@ exports.getUser=async(ctx,next)=>{
 
 exports.list=async(ctx,next)=>{
     let User = model.user;
+    let Role=model.roles;
+    User.belongsTo(Role,{foreignKey:'roleId'})
 
     let pageid=ctx.params.pageid;
 

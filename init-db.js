@@ -13,6 +13,15 @@ const bcrypt=require('bcrypt');
 
 model.sync().then(async ()=>{
     console.log('sync done');
+    //插入系统管理员角色
+    let Role=model.roles;
+    let roleAdmin=await Role.create({
+        name:'系统管理员',
+        remark:'最高权限',
+        status:1
+    });
+
+
     //插入管理员账户
     let User=model.user;
     let adminPassword='admin';
@@ -28,7 +37,8 @@ model.sync().then(async ()=>{
         password:hash,
         gender:true,
         canLogin:true,
-        status:1
+        status:1,
+        roleId:roleAdmin.id
     }).then(function(p){
         console.log('created'+JSON.stringify(p)+'test the password');
     }).catch(function(err){
