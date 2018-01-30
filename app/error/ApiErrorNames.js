@@ -72,6 +72,9 @@ ApiErrorNames.ACTION_END_LESS_THAN_COMPLETE="actionEndLessThanComplete";
 ApiErrorNames.OPERATION_CAN_NOT_EDIT="operationCanNotEdit";
 ApiErrorNames.OPERATION_CAN_NOT_DELETE="operationCanNotDelete";
 
+ApiErrorNames.ROLE_NOT_EXIST="roleNotExist";
+ApiErrorNames.ROLE_CAN_NOT_DELETE="roleCanNotDelete";
+
 /**
  * API错误名称对应的错误信息
  */
@@ -148,6 +151,10 @@ error_map.set(ApiErrorNames.ACTION_START_LESS_THAN_COMPLETE, { code: 50011, mess
 error_map.set(ApiErrorNames.ACTION_END_LESS_THAN_COMPLETE, { code: 50012, message: '工作完成时间应该小于等于工单的完成时间！'});
 error_map.set(ApiErrorNames.OPERATION_CAN_NOT_EDIT, { code: 50013, message: '工程师已经进行处理了，所以工单信息不能进行修改！'});
 error_map.set(ApiErrorNames.OPERATION_CAN_NOT_DELETE, { code: 50014, message: '工程师已经进行处理了，所以工单信息不能进行删除！'});
+
+//角色
+error_map.set(ApiErrorNames.ROLE_NOT_EXIST, { code: 40000, message: '角色信息不存在！'});
+error_map.set(ApiErrorNames.ROLE_CAN_NOT_DELETE, { code: 40001, message: '有用户属于该角色，所以不可以删除！'});
 
 
 //根据错误名称获取错误信息

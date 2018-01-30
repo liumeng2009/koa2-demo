@@ -200,43 +200,51 @@ exports.list=async(ctx,next)=>{
             status:1
         }
     });
-    //let count=buildingCountObj.get('count');
+
+    let page=0;
+
+    try{
+        page=parseInt(pageid);
+    }catch(e){
+
+    }
 
     let userObj;
 
-    if(pageid&&pageid!=0){
-        try{
-            let pageidnow=parseInt(pageid);
-            userObj=await User.findAll({
-                where:{
-                    status:1
-                },
-                order:[
-                    ['updatedAt','DESC']
-                ],
-                offset: (pageidnow-1)*sys_config.pageSize,
-                limit: sys_config.pageSize
-            });
-        }
-        catch(e){
-            userObj=await User.findAll({
-                where:{
-                    status:1
-                },
-                order:[
-                    ['updatedAt','DESC']
-                ]
-            });
-        }
-    }
-    else{
+    if(page==0){
+
         userObj=await User.findAll({
             where:{
                 status:1
             },
+            include:[
+                {
+                    model:Role,
+                    required:false
+                }
+            ],
             order:[
                 ['updatedAt','DESC']
             ]
+        });
+    }
+    else{
+        let pageidnow=parseInt(pageid);
+        userObj=await User.findAll({
+            where:{
+                status:1
+            },
+            include:[
+                {
+                    model:Role,
+                    required:false
+                }
+            ],
+            order:[
+                ['updatedAt','DESC']
+            ],
+            offset: (pageidnow-1)*sys_config.pageSize,
+            limit: sys_config.pageSize
         });
     }
     ctx.body={

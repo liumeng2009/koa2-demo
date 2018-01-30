@@ -29,8 +29,8 @@ module.exports = db.defineModel('users', {
     },
     status:{
         type:db.INTEGER
-    }
-/*    roleId:{
+    },
+    roleId:{
         type:db.STRING(50)
-    }*/
+    }
 });
