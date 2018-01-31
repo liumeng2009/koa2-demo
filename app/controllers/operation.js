@@ -417,11 +417,11 @@ exports.list_month=async(ctx,next)=>{
     monthStart.setHours(0,0,0,0);
 
     let monthEnd=new Date();
-    monthEnd.setFullYear(timeOp.getFullYear(),(timeOp.getMonth()+1),0);
+    monthEnd.setFullYear(timeOp.getFullYear(),(timeOp.getMonth()+1),1);
     monthEnd.setHours(0,0,0,0);
 
-    console.log(monthStart.toDateString());
-    console.log(monthEnd.toDateString());
+    console.log('开始：'+monthStart.toDateString());
+    console.log('结束：'+monthEnd.toDateString());
 
     let monthStartStamp=monthStart.getTime();
     let monthEndStamp=monthEnd.getTime();
