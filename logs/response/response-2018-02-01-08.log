@@ -1,0 +1,254 @@
+[2018-02-01 08:36:24.166] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZjMwMzI3YzItNjhlZS00YzU0LWE3N2QtYjYxZDA5NWNmM2IyIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3MzYyMzA0LCJleHAiOjE1MTc0NDg3MDR9.0mqA1EGeJEhGSTXzDHuzQEL_cWG_4VXm5aXQ7XzInuE
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZjMwMzI3YzItNjhlZS00YzU0LWE3N2QtYjYxZDA5NWNmM2IyIiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3MzYyMzA0LCJleHAiOjE1MTc0NDg3MDR9.0mqA1EGeJEhGSTXzDHuzQEL_cWG_4VXm5aXQ7XzInuE"}
+response time: 1197
+response status: 200
+response body: 
+{"name":"userNotExist","status":10001,"message":"用户不存在！"}
+*************** response log end ***************
+
+[2018-02-01 08:37:46.432] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-02-01 08:37:47.179] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/login
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"username":"admin","password":"admin"}
+response time: 304
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$ZCz8FbSB13tB2jbZIaI13.kaTOEp236iyvOOtqgZf.m.RSqqgjheq","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE","canLogin":true,"status":1,"roleId":null,"id":"05720e6e-ebe3-4036-b575-ff1fa0c6cb38","createdAt":1515633151463,"updatedAt":1517445467052,"version":17},"message":"登录成功！"}
+*************** response log end ***************
+
+[2018-02-01 08:37:49.223] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE"}
+response time: 17
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$ZCz8FbSB13tB2jbZIaI13.kaTOEp236iyvOOtqgZf.m.RSqqgjheq","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE","canLogin":true,"status":1,"roleId":null,"id":"05720e6e-ebe3-4036-b575-ff1fa0c6cb38","createdAt":1515633151463,"updatedAt":1517445467052,"version":17}}
+*************** response log end ***************
+
+[2018-02-01 08:37:49.513] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/list/time/1517445469306?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE"}
+response time: 191
+response status: 200
+response body: 
+{"status":0,"data":[]}
+*************** response log end ***************
+
+[2018-02-01 08:37:49.868] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/list_week/time/1517445469322?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE"}
+response time: 90
+response status: 200
+response body: 
+{"status":0,"data":[{"days":"20180129","count":11,"weekname":"星期一"},{"days":"20180130","count":1,"weekname":"星期二"},{"days":"20180131","count":2,"weekname":"星期三"},{"days":"20180201","count":0,"weekname":"星期四"},{"days":"20180202","count":0,"weekname":"星期五"},{"days":"20180203","count":0,"weekname":"星期六"},{"days":"20180204","count":0,"weekname":"星期日"}]}
+*************** response log end ***************
+
+[2018-02-01 08:37:49.876] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/list_month_worker_time/time/1517445469352?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE"}
+response time: 70
+response status: 200
+response body: 
+{"status":0,"data":[]}
+*************** response log end ***************
+
+[2018-02-01 08:37:49.897] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/action/list/time/1517445469313?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE"}
+response time: 380
+response status: 200
+response body: 
+{"status":0,"data":[]}
+*************** response log end ***************
+
+[2018-02-01 08:37:49.993] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/list_month_worker/time/1517445469332?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE"}
+response time: 203
+response status: 200
+response body: 
+{"status":0,"data":[]}
+*************** response log end ***************
+
+[2018-02-01 08:37:51.908] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/list_month/time/1517445471887?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE"}
+response time: 10
+response status: 200
+response body: 
+{"status":0,"data":[{"days":"20180201","count":0,"monthname":"1号"}]}
+*************** response log end ***************
+
+[2018-02-01 08:37:54.300] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/list_week/time/1517445474270?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE"}
+response time: 16
+response status: 200
+response body: 
+{"status":0,"data":[{"days":"20180129","count":11,"weekname":"星期一"},{"days":"20180130","count":1,"weekname":"星期二"},{"days":"20180131","count":2,"weekname":"星期三"},{"days":"20180201","count":0,"weekname":"星期四"},{"days":"20180202","count":0,"weekname":"星期五"},{"days":"20180203","count":0,"weekname":"星期六"},{"days":"20180204","count":0,"weekname":"星期日"}]}
+*************** response log end ***************
+
+[2018-02-01 08:37:57.453] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/list_month/time/1517445477373?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE"}
+response time: 71
+response status: 200
+response body: 
+{"status":0,"data":[{"days":"20180201","count":0,"monthname":"1号"}]}
+*************** response log end ***************
+
+[2018-02-01 08:38:00.640] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/list_week/time/1517445480621?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE"}
+response time: 11
+response status: 200
+response body: 
+{"status":0,"data":[{"days":"20180129","count":11,"weekname":"星期一"},{"days":"20180130","count":1,"weekname":"星期二"},{"days":"20180131","count":2,"weekname":"星期三"},{"days":"20180201","count":0,"weekname":"星期四"},{"days":"20180202","count":0,"weekname":"星期五"},{"days":"20180203","count":0,"weekname":"星期六"},{"days":"20180204","count":0,"weekname":"星期日"}]}
+*************** response log end ***************
+
+[2018-02-01 08:38:01.720] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/list_month/time/1517445481701?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE"}
+response time: 9
+response status: 200
+response body: 
+{"status":0,"data":[{"days":"20180201","count":0,"monthname":"1号"}]}
+*************** response log end ***************
+
+[2018-02-01 08:38:03.125] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/list_week/time/1517445483069?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE"}
+response time: 6
+response status: 200
+response body: 
+{"status":0,"data":[{"days":"20180129","count":11,"weekname":"星期一"},{"days":"20180130","count":1,"weekname":"星期二"},{"days":"20180131","count":2,"weekname":"星期三"},{"days":"20180201","count":0,"weekname":"星期四"},{"days":"20180202","count":0,"weekname":"星期五"},{"days":"20180203","count":0,"weekname":"星期六"},{"days":"20180204","count":0,"weekname":"星期日"}]}
+*************** response log end ***************
+
+[2018-02-01 08:41:02.224] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE"}
+response time: 148
+response status: 200
+response body: 
+{"status":0,"data":{"name":"admin","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$ZCz8FbSB13tB2jbZIaI13.kaTOEp236iyvOOtqgZf.m.RSqqgjheq","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE","canLogin":true,"status":1,"roleId":null,"id":"05720e6e-ebe3-4036-b575-ff1fa0c6cb38","createdAt":1515633151463,"updatedAt":1517445467052,"version":17}}
+*************** response log end ***************
+
+[2018-02-01 08:41:03.444] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/list/time/1517445663353?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE"}
+response time: 62
+response status: 200
+response body: 
+{"status":0,"data":[]}
+*************** response log end ***************
+
+[2018-02-01 08:41:03.530] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/action/list/time/1517445663478?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE"}
+response time: 28
+response status: 200
+response body: 
+{"status":0,"data":[]}
+*************** response log end ***************
+
+[2018-02-01 08:41:03.540] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/list_week/time/1517445663503?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE"}
+response time: 8
+response status: 200
+response body: 
+{"status":0,"data":[{"days":"20180129","count":11,"weekname":"星期一"},{"days":"20180130","count":1,"weekname":"星期二"},{"days":"20180131","count":2,"weekname":"星期三"},{"days":"20180201","count":0,"weekname":"星期四"},{"days":"20180202","count":0,"weekname":"星期五"},{"days":"20180203","count":0,"weekname":"星期六"},{"days":"20180204","count":0,"weekname":"星期日"}]}
+*************** response log end ***************
+
+[2018-02-01 08:41:03.658] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/list_month_worker/time/1517445663512?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE"}
+response time: 30
+response status: 200
+response body: 
+{"status":0,"data":[]}
+*************** response log end ***************
+
+[2018-02-01 08:41:03.709] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/list_month_worker_time/time/1517445663647?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE
+request client ip:  ::ffff:127.0.0.1
+request query:  {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTE3NDQ1NDY3LCJleHAiOjE1MTc1MzE4Njd9.2K0g0Tid2hcjPIw0MiYL-_gUxHLIbRaq_0W_6x_2idE"}
+response time: 17
+response status: 200
+response body: 
+{"status":0,"data":[]}
+*************** response log end ***************
+

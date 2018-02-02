@@ -17,6 +17,7 @@ exports.list=async(ctx,next)=>{
     let Building=model.buildings;
     let ActionModel=model.actions;
     let User=model.user;
+    let BusinessContent=model.businessContents;
 
     let time=ctx.params.time;
     let corp=ctx.params.corp;
@@ -27,6 +28,7 @@ exports.list=async(ctx,next)=>{
     Order.belongsTo(CorpBuilding,{foreignKey:'custom_position'});
     CorpBuilding.belongsTo(Building,{foreignKey:'buildingId'});
     Operation.hasMany(ActionModel,{foreignKey:'operationId',as:'actions'});
+    Operation.belongsTo(BusinessContent,{foreignKey:'op'});
     //ActionModel.belongsTo(Operation,{foreignKey:'operationId',as:'actions'})
 
     ActionModel.belongsTo(User,{foreignKey:'worker'});
@@ -103,6 +105,9 @@ exports.list=async(ctx,next)=>{
                         ]
                     }
                 ]
+            },
+            {
+                model:BusinessContent
             },
             {
                 model:ActionModel,

@@ -9,6 +9,10 @@ module.exports = db.defineModel('businessContents', {
     operation:{
         type:db.STRING(100)
     },
+    isAdvanced:{
+        type:db.BOOLEAN,
+        allowNull:true
+    },
     weight:{
         type:db.INTEGER
     },

@@ -103,18 +103,11 @@ exports.save=async(ctx,next)=>{
     let BusinessContent=model.businessContents;
     let type=ctx.request.body.type;
     let equipment=ctx.request.body.equipment;
-    let operations=ctx.request.body.operations;
-
-    let operationFalse=false;
-
-    for(let op of operations){
-        if(op.checked){
-            operationFalse=true
-        }
-    }
+    let OperationsDesk=ctx.request.body.operationsDesk;
+    let OperationsSys=ctx.request.body.operationsSys;
 
 
-    if(operations==null||operations.length==0||!operationFalse){
+    if((OperationsDesk==null||OperationsDesk.length==0)&&(OperationsSys==null||OperationsSys.length==0)){
         throw new ApiError(ApiErrorNames.BUSINESS_OPERATION_NULL);
     }
     if(equipment==null||equipment==''){
@@ -134,7 +127,7 @@ exports.save=async(ctx,next)=>{
 
     let businessArray=[];
 
-    for(let operation of operations){
+    for(let operation of OperationsDesk){
         if(operation.checked){
             let businessObj={
                 type:type,
@@ -142,11 +135,28 @@ exports.save=async(ctx,next)=>{
                 operation:operation.op,
                 status:1,
                 weight:operation.weight,
-                remark:operation.remark
+                remark:operation.remark,
+                isAdvanced:false
             }
             businessArray.push(businessObj);
         }
     }
+
+    for(let operation of OperationsSys){
+        if(operation.checked){
+            let businessObj={
+                type:type,
+                equipment:equipment,
+                operation:operation.op,
+                status:1,
+                weight:operation.weight,
+                remark:operation.remark,
+                isAdvanced:true
+            }
+            businessArray.push(businessObj);
+        }
+    }
+
     let saveResult=await BusinessContent.bulkCreate(businessArray,{validate:true,returning:true,individualHooks:true});
 
     ctx.body={
@@ -158,12 +168,12 @@ exports.save=async(ctx,next)=>{
 
 exports.edit=async(ctx,next)=>{
     let BusinessContent=model.businessContents;
-    let Operation=model.operations;
+    let OperationsDesk=ctx.request.body.operationsDesk;
+    let OperationsSys=ctx.request.body.operationsSys;
     let type=ctx.request.body.type;
     let equipment=ctx.request.body.equipment;
-    let operations=ctx.request.body.operations;
 
-    if(operations==null||operations.length==0){
+    if((OperationsDesk==null||OperationsDesk.length==0)&&(OperationsSys==null||OperationsSys.length==0)){
         throw new ApiError(ApiErrorNames.BUSINESS_OPERATION_NULL);
     }
     if(equipment==null||equipment==''){
@@ -183,16 +193,18 @@ exports.edit=async(ctx,next)=>{
 
     let businessArray=[];
 
-    for(let operation of operations){
+    for(let operation of OperationsDesk){
         if(operation.checked){
             if(operation.id){
                 //id存在就是编辑
                 let bc=await BusinessContent.findOne({
-                    id:operation.id
+                    where:{
+                        id:operation.id
+                    }
                 })
                 bc.weight=operation.weight;
                 bc.remark=operation.remark;
-
+                console.log(operation.id+'修改：'+operation.weight+'比较'+bc.id);
                 let r1=await bc.save();
             }
             else{
@@ -203,7 +215,44 @@ exports.edit=async(ctx,next)=>{
                     operation:operation.op,
                     status:1,
                     weight:operation.weight,
-                    remark:operation.remark
+                    remark:operation.remark,
+                    isAdvanced:false
+                }
+                let r2=await BusinessContent.create(businessObj);
+            }
+        }
+        else{
+            if(operation.id){
+                //原则上不允许删除
+            }
+        }
+    }
+
+    for(let operation of OperationsSys){
+        if(operation.checked){
+            if(operation.id){
+
+                //id存在就是编辑
+                let bc=await BusinessContent.findOne({
+                    where:{
+                        id:operation.id
+                    }
+                })
+                bc.weight=operation.weight;
+                bc.remark=operation.remark;
+                console.log(operation.id+'修改：'+operation.weight+'比较'+bc.id);
+                let r1=await bc.save();
+            }
+            else{
+                //id不存在，就是新增
+                let businessObj={
+                    type:type,
+                    equipment:equipment,
+                    operation:operation.op,
+                    status:1,
+                    weight:operation.weight,
+                    remark:operation.remark,
+                    isAdvanced:true
                 }
                 let r2=await BusinessContent.create(businessObj);
             }
