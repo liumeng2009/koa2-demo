@@ -388,6 +388,7 @@ exports.list_week=async(ctx,next)=>{
 
 }
 
+//time是需要查询的最后一天 传入21日，则21日前的结果是正确的，否则会不太对
 exports.list_month=async(ctx,next)=>{
     let time=ctx.params.time;
     let sequelize=db.sequelize;
@@ -443,7 +444,12 @@ exports.list_month=async(ctx,next)=>{
     //将前面的数据补充完整
 
     let dayArray=[];
-    for(let i=0;i<timeOp.getDate();i++){
+
+    let lastDay=new Date(monthEndStamp-1);
+    console.log(lastDay);
+
+    for(let i=0;i<lastDay.getDate();i++){
+        console.log(i);
         let thisDayStart=monthStartStamp+i*24*60*60*1000;
         let thisDayStartDate=new Date();
         thisDayStartDate.setTime(thisDayStart);
@@ -452,7 +458,7 @@ exports.list_month=async(ctx,next)=>{
             ((thisDayStartDate.getDate())<10?('0'+(thisDayStartDate.getDate())):(thisDayStartDate.getDate()));
         dayArray.push(days)
     }
-    console.log(dayArray);
+    console.log('ceshi'+dayArray);
 
     for(let da of dayArray){
         if(result.length==0){
@@ -647,6 +653,137 @@ exports.list_month_worker_time=async(ctx,next)=>{
         status:0,
         data:result
     }
+}
+
+exports.list_month_corporation_count=async(ctx,next)=>{
+
+    let sequelize=db.sequelize;
+
+    let time=ctx.params.time;
+    let timeOp=new Date();
+
+    try{
+        timeOp.setTime(time);
+        console.log(timeOp);
+        console.log(timeOp.toDateString());
+    }
+    catch(error){
+        throw new ApiError(ApiErrorNames.INPUT_DATE_ERROR_TYPE);
+    }
+
+
+    let monthStart=new Date();
+    monthStart.setFullYear(timeOp.getFullYear(),timeOp.getMonth(),1);
+    monthStart.setHours(0,0,0,0);
+
+    let monthEnd=new Date();
+    monthEnd.setFullYear(timeOp.getFullYear(),(timeOp.getMonth()+1),0);
+    monthEnd.setHours(0,0,0,0);
+
+    console.log(monthStart.toDateString());
+    console.log(monthEnd.toDateString());
+
+    let monthStartStamp=monthStart.getTime();
+    let monthEndStamp=time;
+
+    let Operation=model.operations;
+    let Order=model.orders;
+    Operation.belongsTo(Order,{foreignKey:'orderId'});
+    let Corporation=model.corporations;
+    Order.belongsTo(Corporation,{foreignKey:'custom_corporation'});
+    let ActionModel=model.actions;
+    Operation.hasMany(ActionModel,{foreignKey:'operationId',as:'actions'});
+
+    Corporation.hasMany(Order,{foreignKey:'custom_corporation',as:'orders'});
+    Order.hasMany(Operation,{foreignKey:'orderId',as:'operations'});
+
+    let result=await Corporation.findAll({
+        attributes:[
+            'name',
+            [sequelize.fn('COUNT', sequelize.col('orders.operations.id')), 'count']
+        ],
+        where:{
+            status:1,
+        },
+        include:[
+            {
+                model:Order,
+                as:'orders',
+                attributes:[],
+                where:{
+                    status:1
+                },
+                include:[
+                    {
+                        model:Operation,
+                        as:'operations',
+                        where:{
+                            status:1,
+                            '$and':[
+                                {create_time:{'$gte':monthStartStamp}},
+                                {create_time:{'$lte':monthEndStamp}}
+                            ]
+                        },
+                        attributes:[],
+                        include:[
+                            {
+                                model:ActionModel,
+                                attributes:[],
+                                as:'actions',
+                                where:{
+                                    operationComplete:1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        group:['name','id']
+    })
+
+
+
+/*    let result=await Operation.findAll({
+        attributes: [
+            [sequelize.col('`order.corporation`.`name`'), 'corporation'],
+            [sequelize.fn('COUNT', sequelize.col('operations.id')), 'count']
+        ],
+        where:{
+            status:1,
+            '$and':[
+                {create_time:{'$gte':monthStartStamp}},
+                {create_time:{'$lte':monthEndStamp}}
+            ]
+        },
+        include:[
+            {
+                model:Order,
+                attributes:[],
+                include:[
+                    {
+                        model:Corporation,
+                        attributes:[]
+                    }
+                ]
+            },
+            {
+                model:ActionModel,
+                as:'actions',
+                attributes:[],
+                where:{
+                    operationComplete:1
+                }
+            }
+        ],
+        group:['`order.corporation`.`name`']
+    });*/
+
+    ctx.body={
+        status:0,
+        data:result
+    }
+
 }
 
 exports.getOperation=async(ctx,next)=>{

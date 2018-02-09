@@ -9,6 +9,7 @@ router.get('/list_week/time/:time', operation_controller.list_week);
 router.get('/list_month/time/:time', operation_controller.list_month);
 router.get('/list_month_worker/time/:time', operation_controller.list_month_worker);
 router.get('/list_month_worker_time/time/:time', operation_controller.list_month_worker_time);
+router.get('/list_month_corporation_count/time/:time', operation_controller.list_month_corporation_count);
 
 router.get('/list/page/:pageid/time/:time/corp/:corp/no/:no', operation_controller.list);
 router.get('/list/time/:time/corp/:corp/no/:no', operation_controller.list);
