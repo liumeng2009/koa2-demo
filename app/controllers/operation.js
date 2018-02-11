@@ -286,6 +286,8 @@ exports.list_week=async(ctx,next)=>{
 
     console.log(weekCount);
 
+    weekCount=weekCount==0?7:weekCount;
+
     let todayStart=new Date();
     todayStart.setFullYear(timeOp.getFullYear(),timeOp.getMonth(),timeOp.getDate());
     todayStart.setHours(0,0,0,0);
