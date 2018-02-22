@@ -75,6 +75,14 @@ ApiErrorNames.OPERATION_CAN_NOT_DELETE="operationCanNotDelete";
 
 ApiErrorNames.ROLE_NOT_EXIST="roleNotExist";
 ApiErrorNames.ROLE_CAN_NOT_DELETE="roleCanNotDelete";
+ApiErrorNames.ROLE_HAS_THE_AUTH="roleHasTheRole";
+ApiErrorNames.AUTH_NOT_EXIST="authNotExist";
+ApiErrorNames.AUTH_ADMIN_NOT_DELETE="authAdminNotDelete";
+ApiErrorNames.FUNCTION_NOT_EXIST="functionNotExist";
+ApiErrorNames.OPERATE_NOT_EXIST="operateNotExist";
+ApiErrorNames.OP_IN_FUNC_HAS_EXIST="opInFuncHasExist";
+ApiErrorNames.OP_IN_FUNC_NOT_EXIST="opInFuncNotExist";
+ApiErrorNames.OP_IN_FUNC_HAS_USED="opInFuncHasUsed";
 
 /**
  * API错误名称对应的错误信息
@@ -157,6 +165,14 @@ error_map.set(ApiErrorNames.OPERATION_CAN_NOT_DELETE, { code: 50014, message: '�
 //角色
 error_map.set(ApiErrorNames.ROLE_NOT_EXIST, { code: 40000, message: '角色信息不存在！'});
 error_map.set(ApiErrorNames.ROLE_CAN_NOT_DELETE, { code: 40001, message: '有用户属于该角色，所以不可以删除！'});
+error_map.set(ApiErrorNames.ROLE_HAS_THE_AUTH, { code: 40002, message: '角色已经有{1}权限了，不能重复添加！'});
+error_map.set(ApiErrorNames.AUTH_NOT_EXIST, { code: 40003, message: '功能项不存在！'});
+error_map.set(ApiErrorNames.AUTH_ADMIN_NOT_DELETE, { code: 40004, message: '系统管理员的权限无法删除！'});
+error_map.set(ApiErrorNames.FUNCTION_NOT_EXIST, { code: 40005, message: '功能名称不存在！'});
+error_map.set(ApiErrorNames.OPERATE_NOT_EXIST, { code: 40006, message: '功能操作不存在！'});
+error_map.set(ApiErrorNames.OP_IN_FUNC_HAS_EXIST, { code: 40007, message: '功能项已经存在，不可以重复添加！'});
+error_map.set(ApiErrorNames.OP_IN_FUNC_NOT_EXIST, { code: 40008, message: '功能项不存在！'});
+error_map.set(ApiErrorNames.OP_IN_FUNC_HAS_USED, { code: 40009, message: '功能项已经被 {1} 使用，无法删除！'});
 
 
 //根据错误名称获取错误信息

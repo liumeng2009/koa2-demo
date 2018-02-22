@@ -47,9 +47,22 @@ exports.edit=async(ctx,next)=>{
         id:id,
         status:1
     })
+
+
+    //如果是系统管理员角色，不可以修改
+
+
+
+
     if(result){
-        result.name=name;
-        result.remark=remark;
+        if(result.name=='系统管理员'){
+            result.remark=remark;
+        }
+        else{
+            result.name=name;
+            result.remark=remark;
+        }
+
     }
     else{
         throw new ApiError(ApiErrorNames.ROLE_NOT_EXIST);
@@ -80,7 +93,7 @@ exports.delete=async(ctx,next)=>{
         throw new ApiError(ApiErrorNames.ROLE_NOT_EXIST);
     }
 
-    let User=model.users;
+    let User=model.user;
     let UserResult=await User.findOne({
         where:{
             status:1,
@@ -107,7 +120,8 @@ exports.get=async(ctx,next)=>{
 
     let result=await Role.findOne({
         where:{
-            status:1
+            status:1,
+            id:id
         }
     })
     if(result){
