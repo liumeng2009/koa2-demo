@@ -4,23 +4,18 @@ const model = require('../model');
 const response_config=require('../../config/response_config');
 const config = require('../../config/mysql_config');
 const db=require('../db');
+const auth=require('./authInRole');
 
 exports.list=async(ctx,next)=>{
+
+    //await auth.checkAuth();
 
     let Worker=model.workers;
     let User=model.user;
 
     User.belongsTo(Worker,{foreignKey:'id',targetKey:'userId'});
 
-
-
-    //var sequelize=db.sequelize;
-
     let workerObj;
-
-    //let selectStr='select users.id,users.name,users.gender,users.phone,users.email,workers.userId from users left join workers on users.id=workers.userId where users.status=1 order by users.createdAt asc';
-
-    //workerObj=await sequelize.query(selectStr,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
 
     workerObj=await User.findAll({
         include:[{
@@ -110,6 +105,9 @@ exports.doing_list=async(ctx,next)=>{
 }
 
 exports.save=async(ctx,next)=>{
+
+    await auth.checkAuth(ctx.params.token,'worker','add');
+
     let userid=ctx.request.body.userId;
     let User=model.user;
     let Worker=model.workers;
@@ -146,6 +144,10 @@ exports.save=async(ctx,next)=>{
 }
 
 exports.delete=async(ctx,next)=>{
+
+    console.log('嘿嘿嘿恶化'+ctx.params.token);
+    await auth.checkAuth(ctx.params.token,'worker','delete');
+
     let userid=ctx.params.userid;
     let Worker=model.workers;
     let workerObj=await Worker.findOne({

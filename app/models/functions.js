@@ -11,6 +11,14 @@ module.exports = db.defineModel('functions', {
         type: db.STRING(100),
         unique: true
     },
+    //属于第几层
+    class:{
+        type:db.INTEGER
+    },
+    belong:{
+        type: db.STRING(50),
+        allowNull:true
+    },
     status:{
         type:db.INTEGER
     }

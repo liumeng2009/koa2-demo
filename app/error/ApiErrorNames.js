@@ -83,6 +83,7 @@ ApiErrorNames.OPERATE_NOT_EXIST="operateNotExist";
 ApiErrorNames.OP_IN_FUNC_HAS_EXIST="opInFuncHasExist";
 ApiErrorNames.OP_IN_FUNC_NOT_EXIST="opInFuncNotExist";
 ApiErrorNames.OP_IN_FUNC_HAS_USED="opInFuncHasUsed";
+ApiErrorNames.NO_AUTH="noAuth";
 
 /**
  * API错误名称对应的错误信息
@@ -173,6 +174,7 @@ error_map.set(ApiErrorNames.OPERATE_NOT_EXIST, { code: 40006, message: '功能�
 error_map.set(ApiErrorNames.OP_IN_FUNC_HAS_EXIST, { code: 40007, message: '功能项已经存在，不可以重复添加！'});
 error_map.set(ApiErrorNames.OP_IN_FUNC_NOT_EXIST, { code: 40008, message: '功能项不存在！'});
 error_map.set(ApiErrorNames.OP_IN_FUNC_HAS_USED, { code: 40009, message: '功能项已经被 {1} 使用，无法删除！'});
+error_map.set(ApiErrorNames.NO_AUTH, { code: 40010, message: '没有访问权限！'});
 
 
 //根据错误名称获取错误信息

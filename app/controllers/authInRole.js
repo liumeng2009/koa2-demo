@@ -154,3 +154,61 @@ exports.delete=async(ctx,next)=>{
     }
 }
 
+exports.checkAuth=async(token,func,op)=>{
+
+    let AuthInRoleModel=model.authInRoles;
+    let OpInFuncModel=model.opInFuncs;
+    AuthInRoleModel.belongsTo(OpInFuncModel,{foreignKey:'authId'});
+    let FuncModel=model.functions;
+    let OperateModel=model.operates;
+    OpInFuncModel.belongsTo(FuncModel,{foreignKey:'funcId'});
+    OpInFuncModel.belongsTo(OperateModel,{foreignKey:'opId'});
+    let RoleModel=model.roles;
+    AuthInRoleModel.belongsTo(RoleModel,{foreignKey:'roleId'});
+    let UserModel=model.user;
+    RoleModel.hasMany(UserModel,{foreignKey:'roleId',as:'user'});
+
+
+
+    let result=await AuthInRoleModel.findOne({
+        include:[
+            {
+                model:OpInFuncModel,
+                include:[
+                    {
+                        model:FuncModel,
+                        where:{
+                            code:func
+                        }
+                    },
+                    {
+                        model:OperateModel,
+                        where:{
+                            code:op
+                        }
+                    }
+                ]
+            },{
+                model:RoleModel,
+                include:[
+                    {
+                        model:UserModel,
+                        as:'user',
+                        where:{
+                            token:token
+                        }
+                    }
+
+                ]
+            }
+        ]
+    });
+
+    if(result){
+
+    }
+    else{
+        throw new ApiError(ApiErrorNames.NO_AUTH);
+    }
+}
+

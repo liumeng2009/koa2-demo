@@ -70,6 +70,7 @@ exports.registerUser=async(ctx,next)=>{
     let gender=ctx.request.body.gender;
     let canLogin=ctx.request.body.canLogin;
     let userid=ctx.request.body.id;
+    let roleId=ctx.request.body.roleId;
 
     let User=model.user;
     //加密密码
@@ -95,6 +96,7 @@ exports.registerUser=async(ctx,next)=>{
             userObj.email=email;
             userObj.gender=gender;
             userObj.canLogin=canLogin?canLogin:false;
+            userObj.roleId=roleId
 
             let saveResult= await userObj.save();
             console.log('update success'+JSON.stringify(saveResult));
@@ -127,7 +129,8 @@ exports.registerUser=async(ctx,next)=>{
                 phone:phone,
                 email:email,
                 canLogin:canLogin?canLogin:false,
-                status:1
+                status:1,
+                roleId:roleId
             });
 
             ctx.body={
@@ -147,16 +150,51 @@ exports.getUserData=async(ctx,next)=>{
     }
 
     let User = model.user;
-    let userObj=await User.findAll({
+    let RoleModel=model.roles;
+    User.belongsTo(RoleModel,{foreignKey:'roleId'});
+    let AuthInRoleModel=model.authInRoles;
+    RoleModel.hasMany(AuthInRoleModel,{foreignKey:'roleId',as:'auths'});
+    let OpInFuncModel=model.opInFuncs;
+    AuthInRoleModel.belongsTo(OpInFuncModel,{foreignKey:'authId'});
+    let FunctionModel=model.functions;
+    let OperateModel=model.operates;
+    OpInFuncModel.belongsTo(FunctionModel,{foreignKey:'funcId'});
+    OpInFuncModel.belongsTo(OperateModel,{foreignKey:'opId'});
+
+
+    let userObj=await User.findOne({
         where:{
             token:token
-        }
+        },
+        include:[
+            {
+                model:RoleModel,
+                include:[
+                    {
+                        model:AuthInRoleModel,
+                        as:'auths',
+                        include:[
+                            {
+                                model:OpInFuncModel,
+                                include:[
+                                    {
+                                        model:FunctionModel
+                                    },
+                                    {
+                                        model:OperateModel
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     });
-    console.log('user is'+userObj);
-    if(userObj[0]){
+    if(userObj){
         ctx.body={
             status:0,
-            data:userObj[0]
+            data:userObj
 
         }
     }
@@ -224,7 +262,7 @@ exports.list=async(ctx,next)=>{
                 }
             ],
             order:[
-                ['updatedAt','DESC']
+                ['createdAt','ASC']
             ]
         });
     }
@@ -241,7 +279,7 @@ exports.list=async(ctx,next)=>{
                 }
             ],
             order:[
-                ['updatedAt','DESC']
+                ['createdAt','ASC']
             ],
             offset: (pageidnow-1)*sys_config.pageSize,
             limit: sys_config.pageSize

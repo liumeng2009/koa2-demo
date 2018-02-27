@@ -21,6 +21,12 @@ model.sync().then(async ()=>{
         status:1
     });
 
+    let roleEngineer=await Role.create({
+        name:'运维工程师',
+        remark:'工程师权限',
+        status:1
+    });
+
 
     //插入管理员账户
     let User=model.user;
@@ -58,6 +64,7 @@ model.sync().then(async ()=>{
         password:hashZ,
         gender:true,
         canLogin:true,
+        roleId:roleEngineer.id,
         status:1
     }).then(function(p){
         console.log('created'+JSON.stringify(p)+'test the password');
@@ -78,6 +85,7 @@ model.sync().then(async ()=>{
         password:hashZu,
         gender:true,
         canLogin:true,
+        roleId:roleEngineer.id,
         status:1
     }).then(function(p){
         console.log('created'+JSON.stringify(p)+'test the password');
@@ -557,26 +565,63 @@ model.sync().then(async ()=>{
     //权限部分
     //功能项
     let Function=model.functions;
+    let funcBasic=await Function.create({
+        name:'基本设置',
+        code:'basic',
+        status:1,
+        class:0,
+        belong:null
+    });
+
     let funAddress=await Function.create({
         name:'地址设置',
         code:'address',
-        status:1
+        status:1,
+        class:1,
+        belong:funcBasic.id
     });
     let funGroup=await Function.create({
         name:'组织设置',
         code:'group',
-        status:1
+        status:1,
+        class:1,
+        belong:funcBasic.id
     });
     let funCorporation=await Function.create({
         name:'公司设置',
         code:'corporation',
-        status:1
+        status:1,
+        class:1,
+        belong:funcBasic.id
     });
     let funWorker=await Function.create({
         name:'工程师设置',
         code:'worker',
-        status:1
+        status:1,
+        class:1,
+        belong:funcBasic.id
     });
+
+
+
+
+    let funcOperations=await Function.create({
+        name:'工作管理',
+        code:'operations',
+        status:1,
+        class:0,
+        belong:null
+    });
+
+    let funcAuth=await Function.create({
+        name:'用户权限管理',
+        code:'auth',
+        status:1,
+        class:0,
+        belong:null
+    });
+
+
 
 
     //操作项
