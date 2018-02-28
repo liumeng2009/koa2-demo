@@ -565,6 +565,8 @@ model.sync().then(async ()=>{
     //权限部分
     //功能项
     let Function=model.functions;
+
+    //基本设置
     let funcBasic=await Function.create({
         name:'基本设置',
         code:'basic',
@@ -604,7 +606,7 @@ model.sync().then(async ()=>{
 
 
 
-
+    //工作管理
     let funcOperations=await Function.create({
         name:'工作管理',
         code:'operations',
@@ -613,12 +615,56 @@ model.sync().then(async ()=>{
         belong:null
     });
 
+    let funOp=await Function.create({
+        name:'工单',
+        code:'op',
+        status:1,
+        class:1,
+        belong:funcOperations.id
+    });
+    let funOrder=await Function.create({
+        name:'客户需求',
+        code:'order',
+        status:1,
+        class:1,
+        belong:funcOperations.id
+    });
+    let funBusiness=await Function.create({
+        name:'业务内容设置',
+        code:'business',
+        status:1,
+        class:1,
+        belong:funcOperations.id
+    });
+
+    //权限管理
     let funcAuth=await Function.create({
         name:'用户权限管理',
         code:'auth',
         status:1,
         class:0,
         belong:null
+    });
+    let funUser=await Function.create({
+        name:'用户管理',
+        code:'user',
+        status:1,
+        class:1,
+        belong:funcAuth.id
+    });
+    let funFunc=await Function.create({
+        name:'功能管理',
+        code:'function',
+        status:1,
+        class:1,
+        belong:funcAuth.id
+    });
+    let funRole=await Function.create({
+        name:'角色管理',
+        code:'role',
+        status:1,
+        class:1,
+        belong:funcAuth.id
     });
 
 
@@ -658,75 +704,419 @@ model.sync().then(async ()=>{
 
     //关系表
     let OpInFunc=model.opInFuncs;
-    await OpInFunc.create({
+    let AuthInRoles=model.authInRoles;
+    let basicMenu= await OpInFunc.create({
+        funcId:funcBasic.id,
+        opId:menuOp.id
+    })
+
+    await AuthInRoles.create({
+        authId:basicMenu.id,
+        roleId:roleAdmin.id
+    })
+
+
+
+    let addressMenu=await OpInFunc.create({
         funcId:funAddress.id,
         opId:menuOp.id
     });
-    await OpInFunc.create({
+    await AuthInRoles.create({
+        authId:addressMenu.id,
+        roleId:roleAdmin.id
+    })
+
+    let addressAdd=await OpInFunc.create({
         funcId:funAddress.id,
         opId:addOp.id
     });
-    await OpInFunc.create({
+    await AuthInRoles.create({
+        authId:addressAdd.id,
+        roleId:roleAdmin.id
+    })
+
+    let addressEdit=await OpInFunc.create({
         funcId:funAddress.id,
         opId:editOp.id
     });
-    await OpInFunc.create({
+    await AuthInRoles.create({
+        authId:addressEdit.id,
+        roleId:roleAdmin.id
+    })
+
+    let addressDelete=await OpInFunc.create({
         funcId:funAddress.id,
         opId:deleteOp.id
     });
+    await AuthInRoles.create({
+        authId:addressDelete.id,
+        roleId:roleAdmin.id
+    })
 
-    await OpInFunc.create({
+
+    let groupMenu=await OpInFunc.create({
         funcId:funGroup.id,
         opId:menuOp.id
     });
-    await OpInFunc.create({
+    await AuthInRoles.create({
+        authId:groupMenu.id,
+        roleId:roleAdmin.id
+    })
+
+    let groupAdd=await OpInFunc.create({
         funcId:funGroup.id,
         opId:addOp.id
     });
-    await OpInFunc.create({
+    await AuthInRoles.create({
+        authId:groupAdd.id,
+        roleId:roleAdmin.id
+    })
+
+    let groupEdit=await OpInFunc.create({
         funcId:funGroup.id,
         opId:editOp.id
     });
-    await OpInFunc.create({
+    await AuthInRoles.create({
+        authId:groupEdit.id,
+        roleId:roleAdmin.id
+    })
+
+    let groupDelete=await OpInFunc.create({
         funcId:funGroup.id,
         opId:deleteOp.id
     });
+    await AuthInRoles.create({
+        authId:groupDelete.id,
+        roleId:roleAdmin.id
+    })
 
-    await OpInFunc.create({
+
+    let corporationMenu=await OpInFunc.create({
         funcId:funCorporation.id,
         opId:menuOp.id
     });
-    await OpInFunc.create({
+    await AuthInRoles.create({
+        authId:corporationMenu.id,
+        roleId:roleAdmin.id
+    })
+
+    let corporationAdd=await OpInFunc.create({
         funcId:funCorporation.id,
         opId:addOp.id
     });
-    await OpInFunc.create({
+    await AuthInRoles.create({
+        authId:corporationAdd.id,
+        roleId:roleAdmin.id
+    })
+
+    let corporationEdit=await OpInFunc.create({
         funcId:funCorporation.id,
         opId:editOp.id
     });
-    await OpInFunc.create({
+    await AuthInRoles.create({
+        authId:corporationEdit.id,
+        roleId:roleAdmin.id
+    })
+
+    let corporationDelete=await OpInFunc.create({
         funcId:funCorporation.id,
         opId:deleteOp.id
     });
+    await AuthInRoles.create({
+        authId:corporationDelete.id,
+        roleId:roleAdmin.id
+    })
 
-    await OpInFunc.create({
+
+    let workerMenu=await OpInFunc.create({
         funcId:funWorker.id,
         opId:menuOp.id
     });
-    await OpInFunc.create({
+    await AuthInRoles.create({
+        authId:workerMenu.id,
+        roleId:roleAdmin.id
+    })
+
+
+    let workerAdd=await OpInFunc.create({
         funcId:funWorker.id,
         opId:addOp.id
     });
-    await OpInFunc.create({
-        funcId:funWorker.id,
-        opId:editOp.id
-    });
-    await OpInFunc.create({
+    await AuthInRoles.create({
+        authId:workerAdd.id,
+        roleId:roleAdmin.id
+    })
+
+
+    let workerDelete=await OpInFunc.create({
         funcId:funWorker.id,
         opId:deleteOp.id
     });
+    await AuthInRoles.create({
+        authId:workerDelete.id,
+        roleId:roleAdmin.id
+    })
 
 
+    let operationMenu=await OpInFunc.create({
+        funcId:funcOperations.id,
+        opId:menuOp.id
+    });
+    await AuthInRoles.create({
+        authId:operationMenu.id,
+        roleId:roleAdmin.id
+    })
+    await AuthInRoles.create({
+        authId:operationMenu.id,
+        roleId:roleEngineer.id
+    })
+
+
+    let opMenu=await OpInFunc.create({
+        funcId:funOp.id,
+        opId:menuOp.id
+    })
+    await AuthInRoles.create({
+        authId:opMenu.id,
+        roleId:roleAdmin.id
+    });
+    await AuthInRoles.create({
+        authId:opMenu.id,
+        roleId:roleEngineer.id
+    })
+
+
+    let opList=await OpInFunc.create({
+        funcId:funOp.id,
+        opId:listOp.id
+    })
+    await AuthInRoles.create({
+        authId:opList.id,
+        roleId:roleAdmin.id
+    });
+    await AuthInRoles.create({
+        authId:opList.id,
+        roleId:roleEngineer.id
+    })
+
+
+    let opAdd=await OpInFunc.create({
+        funcId:funOp.id,
+        opId:addOp.id
+    })
+    await AuthInRoles.create({
+        authId:opAdd.id,
+        roleId:roleAdmin.id
+    });
+    await AuthInRoles.create({
+        authId:opAdd.id,
+        roleId:roleEngineer.id
+    })
+
+
+
+    let opEdit=await OpInFunc.create({
+        funcId:funOp.id,
+        opId:editOp.id
+    })
+    await AuthInRoles.create({
+        authId:opEdit.id,
+        roleId:roleAdmin.id
+    });
+    await AuthInRoles.create({
+        authId:opEdit.id,
+        roleId:roleEngineer.id
+    })
+
+
+    let opDelete=await OpInFunc.create({
+        funcId:funOp.id,
+        opId:deleteOp.id
+    })
+    await AuthInRoles.create({
+        authId:opDelete.id,
+        roleId:roleAdmin.id
+    });
+    await AuthInRoles.create({
+        authId:opDelete.id,
+        roleId:roleEngineer.id
+    })
+
+    let businessMenu=await OpInFunc.create({
+        funcId:funBusiness.id,
+        opId:menuOp.id
+    })
+    await AuthInRoles.create({
+        authId:businessMenu.id,
+        roleId:roleAdmin.id
+    });
+
+    let businessList=await OpInFunc.create({
+        funcId:funBusiness.id,
+        opId:listOp.id
+    })
+    await AuthInRoles.create({
+        authId:businessList.id,
+        roleId:roleAdmin.id
+    });
+
+    let businessAdd=await OpInFunc.create({
+        funcId:funBusiness.id,
+        opId:addOp.id
+    })
+    await AuthInRoles.create({
+        authId:businessAdd.id,
+        roleId:roleAdmin.id
+    });
+
+    let businessEdit=await OpInFunc.create({
+        funcId:funBusiness.id,
+        opId:editOp.id
+    })
+    await AuthInRoles.create({
+        authId:businessEdit.id,
+        roleId:roleAdmin.id
+    });
+
+    let businessDelete=await OpInFunc.create({
+        funcId:funBusiness.id,
+        opId:deleteOp.id
+    })
+    await AuthInRoles.create({
+        authId:businessDelete.id,
+        roleId:roleAdmin.id
+    });
+
+
+
+
+    let authMenu=await OpInFunc.create({
+        funcId:funcAuth.id,
+        opId:menuOp.id
+    })
+    await AuthInRoles.create({
+        authId:authMenu.id,
+        roleId:roleAdmin.id
+    });
+
+    let userMenu=await OpInFunc.create({
+        funcId:funUser.id,
+        opId:menuOp.id
+    })
+    await AuthInRoles.create({
+        authId:userMenu.id,
+        roleId:roleAdmin.id
+    });
+
+    let userAdd=await OpInFunc.create({
+        funcId:funUser.id,
+        opId:addOp.id
+    })
+    await AuthInRoles.create({
+        authId:userAdd.id,
+        roleId:roleAdmin.id
+    });
+
+
+    let userEdit=await OpInFunc.create({
+        funcId:funUser.id,
+        opId:editOp.id
+    })
+    await AuthInRoles.create({
+        authId:userEdit.id,
+        roleId:roleAdmin.id
+    });
+
+    let userDelete=await OpInFunc.create({
+        funcId:funUser.id,
+        opId:deleteOp.id
+    })
+    await AuthInRoles.create({
+        authId:userDelete.id,
+        roleId:roleAdmin.id
+    });
+
+    let funcMenu=await OpInFunc.create({
+        funcId:funFunc.id,
+        opId:menuOp.id
+    })
+    await AuthInRoles.create({
+        authId:funcMenu.id,
+        roleId:roleAdmin.id
+    });
+    let funcList=await OpInFunc.create({
+        funcId:funFunc.id,
+        opId:listOp.id
+    })
+    await AuthInRoles.create({
+        authId:funcList.id,
+        roleId:roleAdmin.id
+    });
+    let funcAdd=await OpInFunc.create({
+        funcId:funFunc.id,
+        opId:addOp.id
+    })
+    await AuthInRoles.create({
+        authId:funcAdd.id,
+        roleId:roleAdmin.id
+    });
+    let funcEdit=await OpInFunc.create({
+        funcId:funFunc.id,
+        opId:editOp.id
+    })
+    await AuthInRoles.create({
+        authId:funcEdit.id,
+        roleId:roleAdmin.id
+    });
+    let funcDelete=await OpInFunc.create({
+        funcId:funFunc.id,
+        opId:deleteOp.id
+    })
+    await AuthInRoles.create({
+        authId:funcDelete.id,
+        roleId:roleAdmin.id
+    });
+
+    let roleMenu=await OpInFunc.create({
+        funcId:funRole.id,
+        opId:menuOp.id
+    })
+    await AuthInRoles.create({
+        authId:roleMenu.id,
+        roleId:roleAdmin.id
+    });
+    let roleList=await OpInFunc.create({
+        funcId:funRole.id,
+        opId:listOp.id
+    })
+    await AuthInRoles.create({
+        authId:roleList.id,
+        roleId:roleAdmin.id
+    });
+    let roleAdd=await OpInFunc.create({
+        funcId:funRole.id,
+        opId:addOp.id
+    })
+    await AuthInRoles.create({
+        authId:roleAdd.id,
+        roleId:roleAdmin.id
+    });
+    let roleEdit=await OpInFunc.create({
+        funcId:funRole.id,
+        opId:editOp.id
+    })
+    await AuthInRoles.create({
+        authId:roleEdit.id,
+        roleId:roleAdmin.id
+    });
+    let roleDelete=await OpInFunc.create({
+        funcId:funRole.id,
+        opId:deleteOp.id
+    });
+    await AuthInRoles.create({
+        authId:roleDelete.id,
+        roleId:roleAdmin.id
+    });
 }).catch((e)=>{
     console.log('failed with: '+e);
     process.exit(0);});

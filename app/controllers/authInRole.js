@@ -140,10 +140,10 @@ exports.delete=async(ctx,next)=>{
         }
     })
 
-    if(roleObj.name=='系统管理员'){
+/*    if(roleObj.name=='系统管理员'){
         throw new ApiError(ApiErrorNames.AUTH_ADMIN_NOT_DELETE);
 
-    }
+    }*/
 
     let dr=await deleteResult.destroy();
 
@@ -166,11 +166,11 @@ exports.checkAuth=async(token,func,op)=>{
     let RoleModel=model.roles;
     AuthInRoleModel.belongsTo(RoleModel,{foreignKey:'roleId'});
     let UserModel=model.user;
-    RoleModel.hasMany(UserModel,{foreignKey:'roleId',as:'user'});
+    RoleModel.hasMany(UserModel,{foreignKey:'roleId',as:'users'});
 
 
 
-    let result=await AuthInRoleModel.findOne({
+    let result=await AuthInRoleModel.findAll({
         include:[
             {
                 model:OpInFuncModel,
@@ -193,7 +193,7 @@ exports.checkAuth=async(token,func,op)=>{
                 include:[
                     {
                         model:UserModel,
-                        as:'user',
+                        as:'users',
                         where:{
                             token:token
                         }
@@ -204,7 +204,7 @@ exports.checkAuth=async(token,func,op)=>{
         ]
     });
 
-    if(result){
+    if(result.length>0){
 
     }
     else{

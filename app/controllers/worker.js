@@ -105,8 +105,7 @@ exports.doing_list=async(ctx,next)=>{
 }
 
 exports.save=async(ctx,next)=>{
-
-    await auth.checkAuth(ctx.params.token,'worker','add');
+    await auth.checkAuth(ctx.query.token,'worker','add');
 
     let userid=ctx.request.body.userId;
     let User=model.user;
@@ -144,9 +143,7 @@ exports.save=async(ctx,next)=>{
 }
 
 exports.delete=async(ctx,next)=>{
-
-    console.log('嘿嘿嘿恶化'+ctx.params.token);
-    await auth.checkAuth(ctx.params.token,'worker','delete');
+    await auth.checkAuth(ctx.query.token,'worker','delete');
 
     let userid=ctx.params.userid;
     let Worker=model.workers;
