@@ -550,10 +550,42 @@ exports.list_month_worker=async(ctx,next)=>{
     let sequelize=db.sequelize;
 
 
-    let result=await Operation.findAll({
+/*    let result=await ActionModel.findAll({
         attributes:[
-            [sequelize.col('`actions.user`.`name`'),'user'],[sequelize.fn('COUNT', sequelize.col('operations.id')), 'count']
+            [sequelize.col('`user`.`name`'),'user'],[sequelize.fn('COUNT', sequelize.col('actions.id')), 'count']
         ],
+        where:{
+            status:1
+        },
+        include:[
+            {
+                model:Operation,
+                attributes:[],
+                where:{
+                    status:1,
+                    '$and':[
+                        {create_time:{'$gte':monthStartStamp}},
+                        {create_time:{'$lte':monthEndStamp}}
+                    ]
+                }
+            },
+            {
+                model:User,
+                attributes:[],
+                where:{
+                    status:1
+                }
+            }
+        ],
+        group:['`user`.`name`','actions.id']
+    })*/
+
+
+
+    let result=await Operation.findAll({
+/*        attributes:[
+            [sequelize.col('`actions.user`.`name`'),'user'],[sequelize.fn('COUNT', sequelize.col('operations.id')), 'count']
+        ],*/
         where:{
             status:1,
             '$and':[
@@ -565,14 +597,14 @@ exports.list_month_worker=async(ctx,next)=>{
             {
                 model:ActionModel,
                 as:'actions',
-                attributes:[],
+                //attributes:[],
                 where:{
                     status:1
                 },
                 include:[
                     {
                         model:User,
-                        attributes:[],
+                        //attributes:[],
                         where:{
                             status:1
                         }
@@ -580,17 +612,67 @@ exports.list_month_worker=async(ctx,next)=>{
                 ]
             }
 
-        ],
-        group:['`actions.user`.`name`','operations.id']
+        ]
+        //group:['`actions.user`.`name`','operations.id']
     })
 
-    console.log(JSON.stringify(result));
 
+    console.log('我想看的数据是:'+JSON.stringify(result));
+
+    let newResult=[];
+    let operationArray=[];
+    for(let os of result){
+        for(let as of os.actions){
+            if(newResult.length==0){
+                newResult.push({name:as.user.name,count:1});
+                operationArray.push({opId:as.operationId,name:as.user.name})
+            }
+            else{
+                if(checkExist(as.user.name,newResult)){
+                    let r=checkExist(as.user.name,newResult);
+                    if(checkOperationArray(as.user.name,as.operationId,operationArray)){
+
+                    }
+                    else{
+                        r.count++;
+                        operationArray.push({opId:as.operationId,name:as.user.name})
+                    }
+                }
+                else{
+                    newResult.push({name:as.user.name,count:1});
+                    operationArray.push({opId:as.operationId,name:as.user.name});
+                }
+            }
+        }
+    }
     ctx.body={
         status:0,
-        data:result
+        data:newResult
     }
 
+}
+
+var checkExist=(name,array)=>{
+    if(array.length==0){
+        return false;
+    }
+    else{
+        for(let a of array){
+            if(a.name==name){
+                return a;
+            }
+        }
+    }
+    return false;
+}
+var checkOperationArray=(name,opId,opArray)=>{
+    for(let oa of opArray){
+        console.log(oa.name+name+oa.opId+' '+opId);
+        if(oa.name==name&&oa.opId==opId){
+            return true;
+        }
+    }
+    return false;
 }
 
 exports.list_month_worker_time=async(ctx,next)=>{
