@@ -152,14 +152,14 @@ exports.getUserData=async(ctx,next)=>{
     let User = model.user;
     let RoleModel=model.roles;
     User.belongsTo(RoleModel,{foreignKey:'roleId'});
-    let AuthInRoleModel=model.authInRoles;
+/*    let AuthInRoleModel=model.authInRoles;
     RoleModel.hasMany(AuthInRoleModel,{foreignKey:'roleId',as:'auths'});
     let OpInFuncModel=model.opInFuncs;
     AuthInRoleModel.belongsTo(OpInFuncModel,{foreignKey:'authId'});
     let FunctionModel=model.functions;
     let OperateModel=model.operates;
     OpInFuncModel.belongsTo(FunctionModel,{foreignKey:'funcId'});
-    OpInFuncModel.belongsTo(OperateModel,{foreignKey:'opId'});
+    OpInFuncModel.belongsTo(OperateModel,{foreignKey:'opId'});*/
 
 
     let userObj=await User.findOne({
@@ -168,8 +168,8 @@ exports.getUserData=async(ctx,next)=>{
         },
         include:[
             {
-                model:RoleModel,
-                include:[
+                model:RoleModel
+/*                include:[
                     {
                         model:AuthInRoleModel,
                         as:'auths',
@@ -187,7 +187,7 @@ exports.getUserData=async(ctx,next)=>{
                             }
                         ]
                     }
-                ]
+                ]*/
             }
         ]
     });
