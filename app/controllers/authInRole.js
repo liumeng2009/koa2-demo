@@ -4,6 +4,7 @@ const model = require('../model');
 const sys_config=require('../../config/sys_config');
 const response_config=require('../../config/response_config');
 const Sequelize = require('sequelize');
+const AuthInRole= require('./authInRole')
 
 
 exports.list=async(ctx,next)=>{
@@ -211,4 +212,17 @@ exports.checkAuth=async(token,func,op)=>{
         throw new ApiError(ApiErrorNames.NO_AUTH);
     }
 }
+
+exports.checkAuthApi=async(ctx,next)=>{
+    let token=ctx.query.token;
+    let func=ctx.request.body.func;
+    let op=ctx.request.body.op;
+
+    let result=await AuthInRole.checkAuth(token,func,op);
+
+    ctx.body={
+        status:0
+    }
+}
+
 

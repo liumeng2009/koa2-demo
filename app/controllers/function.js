@@ -5,8 +5,14 @@ const sys_config=require('../../config/sys_config');
 const response_config=require('../../config/response_config');
 const Sequelize = require('sequelize');
 
+const uuid = require('node-uuid');
+
 
 exports.list=async(ctx,next)=>{
+
+    let idd=uuid.v4();
+    console.log('新的id'+idd);
+
     let Function=model.functions;
     let Operate=model.operates;
     let OpInFunc=model.opInFuncs;
