@@ -149,6 +149,7 @@ exports.getUserData=async(ctx,next)=>{
         throw new ApiError(ApiErrorNames.JWT_ERROR);
     }
 
+
     let User = model.user;
     let RoleModel=model.roles;
     User.belongsTo(RoleModel,{foreignKey:'roleId'});
@@ -195,11 +196,16 @@ exports.getUserData=async(ctx,next)=>{
         ctx.body={
             status:0,
             data:userObj
-
         }
     }
     else{
         throw new ApiError(ApiErrorNames.USER_NOT_EXIST);
+    }
+}
+
+exports.checkToken=async(ctx,next)=>{
+    ctx.body={
+        status:0
     }
 }
 

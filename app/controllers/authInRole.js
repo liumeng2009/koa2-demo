@@ -5,6 +5,7 @@ const sys_config=require('../../config/sys_config');
 const response_config=require('../../config/response_config');
 const Sequelize = require('sequelize');
 const AuthInRole= require('./authInRole')
+const jwt=require('jsonwebtoken');
 
 
 exports.list=async(ctx,next)=>{
@@ -223,6 +224,12 @@ exports.checkAuthApi=async(ctx,next)=>{
     ctx.body={
         status:0
     }
+}
+
+//传入funccode，获得op
+exports.getOp=async(ctx,next)=>{
+    let funccode=ctx.request.body.func;
+
 }
 
 
