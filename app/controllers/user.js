@@ -148,8 +148,6 @@ exports.getUserData=async(ctx,next)=>{
     if(token==''||token=='undefined'){
         throw new ApiError(ApiErrorNames.JWT_ERROR);
     }
-
-
     let User = model.user;
     let RoleModel=model.roles;
     User.belongsTo(RoleModel,{foreignKey:'roleId'});
@@ -204,9 +202,28 @@ exports.getUserData=async(ctx,next)=>{
 }
 
 exports.checkToken=async(ctx,next)=>{
-    ctx.body={
-        status:0
+
+    let token=ctx.query.token;
+
+    let UserModel=model.user;
+
+    let user=await UserModel.findOne({
+        where:{
+            token:token,
+            status:1
+        }
+    });
+
+    if(user){
+        ctx.body={
+            status:0
+        }
     }
+    else{
+        throw new ApiError(ApiErrorNames.JWT_ERROR);
+    }
+
+
 }
 
 exports.getUser=async(ctx,next)=>{
