@@ -8,6 +8,7 @@ const sys_config=require('../../config/sys_config');
 const response_config=require('../../config/response_config');
 const bcrypt=require('bcrypt');
 const jwt=require('jsonwebtoken');
+const auth=require('./authInRole')
 
 exports.login=async(ctx,next)=>{
     let username=ctx.request.body.username;
@@ -79,6 +80,7 @@ exports.registerUser=async(ctx,next)=>{
     console.log('加密密码是：'+hash);
 
     if(userid){
+        await auth.checkAuth(ctx.query.token,'user','edit')
         let userObj=await User.findOne({
             where:{
                 id:userid
@@ -111,6 +113,7 @@ exports.registerUser=async(ctx,next)=>{
         }
     }
     else{
+        await auth.checkAuth(ctx.query.token,'user','add')
         //新增
         let userObj=await User.findOne({
             where:{
@@ -201,9 +204,9 @@ exports.getUserData=async(ctx,next)=>{
     }
 }
 
-exports.checkToken=async(ctx,next)=>{
+exports.checkToken=async(token)=>{
 
-    let token=ctx.query.token;
+
 
     let UserModel=model.user;
 
@@ -215,9 +218,7 @@ exports.checkToken=async(ctx,next)=>{
     });
 
     if(user){
-        ctx.body={
-            status:0
-        }
+
     }
     else{
         throw new ApiError(ApiErrorNames.JWT_ERROR);
@@ -316,6 +317,7 @@ exports.list=async(ctx,next)=>{
 }
 
 exports.delete=async(ctx,next)=>{
+    await auth.checkAuth(ctx.query.token,'user','delete');
     let id=ctx.params.id;
     let User=model.user;
     let userObj=await User.findOne({
@@ -327,6 +329,19 @@ exports.delete=async(ctx,next)=>{
     if(userObj.name=='admin'){
         throw new ApiError(ApiErrorNames.ADMIN_CAN_NOT_DELETE);
     }
+
+    let ActionModel=model.actions;
+    let actionResult=await ActionModel.findOne({
+        where:{
+            worker:id,
+            status:1
+        }
+    })
+    if(actionResult){
+        throw new ApiError(ApiErrorNames.USER_CAN_NOT_DELETE);
+    }
+
+
     if(userObj){
         userObj.status=0;
         let deleteResult=await userObj.save();

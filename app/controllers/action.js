@@ -4,6 +4,7 @@ const model = require('../model');
 const response_config=require('../../config/response_config');
 const config = require('../../config/mysql_config');
 const db=require('../db');
+const auth=require('./authInRole');
 
 exports.list=async(ctx,next)=>{
     let time=ctx.params.time;
@@ -82,6 +83,7 @@ exports.list=async(ctx,next)=>{
 }
 
 exports.save=async(ctx,next)=>{
+    await auth.checkAuth(ctx.query.token,'op','edit');
     let userid=ctx.request.body.userId;
     let operationId=ctx.request.body.id;
     let workerId=ctx.request.body.worker;
@@ -312,7 +314,7 @@ exports.save=async(ctx,next)=>{
 }
 
 exports.edit=async(ctx,next)=>{
-    console.log(1);
+    await auth.checkAuth(ctx.query.token,'op','edit');
     let operationId=ctx.request.body.operationId;
     let actionId=ctx.request.body.id;
     let workerId=ctx.request.body.workerId;
@@ -585,6 +587,7 @@ exports.edit=async(ctx,next)=>{
 }
 
 exports.delete=async(ctx,next)=>{
+    await auth.checkAuth(ctx.query.token,'op','edit');
     let id=ctx.params.id;
     let ActionModel=model.actions;
     let actionObj=await ActionModel.findOne({

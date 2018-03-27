@@ -9,6 +9,7 @@ const ApiErrorNames=require('../error/ApiErrorNames');
 const model = require('../model');
 const sys_config=require('../../config/sys_config');
 const response_config=require('../../config/response_config');
+const auth=require('./authInRole');
 
 exports.list=async(ctx,next)=>{
     let EquipOp = model.equipOps;
@@ -24,6 +25,7 @@ exports.list=async(ctx,next)=>{
 }
 
 exports.save=async(ctx,next)=>{
+    await auth.checkAuth(ctx.query.token,'business','edit')
     let name=ctx.request.body.name;
     let code=ctx.request.body.code;
 
@@ -71,6 +73,7 @@ exports.save=async(ctx,next)=>{
 }
 
 exports.delete=async(ctx,next)=>{
+    await auth.checkAuth(ctx.query.token,'business','edit')
     let id=ctx.params.id;
     let EquipOp=model.equipOps;
     let equipOpObj=await EquipOp.findOne({

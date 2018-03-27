@@ -7,6 +7,8 @@ const model = require('../model');
 const sys_config=require('../../config/sys_config');
 const response_config=require('../../config/response_config');
 const Sequelize = require('sequelize');
+const auth=require('./authInRole');
+
 
 exports.list=async(ctx,next)=>{
     let CorpBuilding = model.corpBuildings;
@@ -39,6 +41,9 @@ exports.list=async(ctx,next)=>{
 }
 
 exports.save=async(ctx,next)=>{
+
+    await auth.checkAuth(ctx.query.token,'corporation','edit');
+
     let corporationId=ctx.request.body.corporationId;
     let buildingId=ctx.request.body.buildingId.id;
     let floor=ctx.request.body.floor.value;
@@ -124,6 +129,9 @@ exports.save=async(ctx,next)=>{
 }
 
 exports.delete=async(ctx,next)=>{
+
+    await auth.checkAuth(ctx.query.token,'corporation','delete');
+
     let id=ctx.params.id;
     let CorpBuilding=model.corpBuildings;
     let corpBuildingObj=await CorpBuilding.findOne({
@@ -132,6 +140,20 @@ exports.delete=async(ctx,next)=>{
             id:id
         }
     })
+    let OrderModel=model.orders;
+    let orderResult=await OrderModel.findOne({
+        where:{
+            status:1,
+            custom_position:id
+        }
+    })
+    if(orderResult){
+        throw new ApiError(ApiErrorNames.CORP_BUILDING_CAN_NOT_DELETE)
+    }
+
+
+
+
     if(corpBuildingObj){
         corpBuildingObj.status=0;
         let deleteResult=await corpBuildingObj.save();

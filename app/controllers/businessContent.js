@@ -7,6 +7,7 @@ const model = require('../model');
 const sys_config=require('../../config/sys_config');
 const response_config=require('../../config/response_config');
 const db=require('../db');
+const auth=require('./authInRole');
 
 exports.list=async(ctx,next)=>{
     //let BusinessContent=model.businessContents;
@@ -100,6 +101,7 @@ exports.list=async(ctx,next)=>{
 }
 
 exports.save=async(ctx,next)=>{
+    await auth.checkAuth(ctx.query.token,'business','add')
     let BusinessContent=model.businessContents;
     let type=ctx.request.body.type;
     let equipment=ctx.request.body.equipment;
@@ -167,6 +169,7 @@ exports.save=async(ctx,next)=>{
 }
 
 exports.edit=async(ctx,next)=>{
+    await auth.checkAuth(ctx.query.token,'business','edit')
     let BusinessContent=model.businessContents;
     let OperationsDesk=ctx.request.body.operationsDesk;
     let OperationsSys=ctx.request.body.operationsSys;
@@ -329,6 +332,7 @@ exports.getEquipment=async(ctx,next)=>{
 }
 
 exports.delete=async(ctx,next)=>{
+    await auth.checkAuth(ctx.query.token,'business','delete')
     let id=ctx.params.id;
     let BusinessContent=model.businessContents;
     let Operation=model.operations;

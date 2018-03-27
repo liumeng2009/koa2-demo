@@ -4,8 +4,9 @@ const model = require('../model');
 const sys_config=require('../../config/sys_config');
 const response_config=require('../../config/response_config');
 const Sequelize = require('sequelize');
-const AuthInRole= require('./authInRole')
+const AuthInRoleClass= require('./authInRole')
 const jwt=require('jsonwebtoken');
+const user=require('./user');
 
 
 exports.list=async(ctx,next)=>{
@@ -26,6 +27,9 @@ exports.list=async(ctx,next)=>{
 }
 
 exports.add=async(ctx,next)=>{
+
+    await AuthInRoleClass.checkAuth(ctx.query.token,'role','edit')
+
     let AuthInRole=model.authInRoles;
     let OpInFuncModel=model.opInFuncs;
     let FunctionModel=model.functions;
@@ -121,6 +125,7 @@ exports.add=async(ctx,next)=>{
 }
 
 exports.delete=async(ctx,next)=>{
+    await AuthInRoleClass.checkAuth(ctx.query.token,'role','edit');
     let AuthInRole=model.authInRoles;
     let roleId=ctx.request.body.roleId;
     let authId=ctx.request.body.authId;
@@ -219,7 +224,9 @@ exports.checkAuthApi=async(ctx,next)=>{
     let func=ctx.request.body.func;
     let op=ctx.request.body.op;
 
-    let result=await AuthInRole.checkAuth(token,func,op);
+    let tokenResult=await user.checkToken(token);
+
+    let result=await AuthInRoleClass.checkAuth(token,func,op);
 
     ctx.body={
         status:0

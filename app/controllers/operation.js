@@ -8,6 +8,7 @@ const sys_config=require('../../config/sys_config');
 const response_config=require('../../config/response_config');
 const orderController=require('./order');
 const db=require('../db');
+const auth=require('./authInRole');
 
 exports.list=async(ctx,next)=>{
     let Operation=model.operations;
@@ -675,6 +676,10 @@ var checkOperationArray=(name,opId,opArray)=>{
     return false;
 }
 
+
+//查询时间段内每天某个人的工作时长
+//SELECT `user`.`name` AS `user`,FROM_UNIXTIME(start_time/1000,'%Y%m%d') days, SUM(`end_time`-`start_time`)/60000 AS `分钟` FROM `actions` AS `actions` LEFT OUTER JOIN `users` AS `user` ON `actions`.`worker` = `user`.`id` WHERE `actions`.`status` = 1 AND (`actions`.`start_time` >= 1519833600000 AND `actions`.`end_time` <= 1521820800000) and `user`.name='朱亚亮' GROUP BY `user`.`name`,days;
+
 exports.list_month_worker_time=async(ctx,next)=>{
     let time=ctx.params.time;
     let timeOp=new Date();
@@ -953,6 +958,7 @@ exports.getOperation=async(ctx,next)=>{
 }
 
 exports.add=async(ctx,next)=>{
+    await auth.checkAuth(ctx.query.token,'op','add');
     let Operation=model.operations;
     let Order=model.orders;
 
@@ -1028,7 +1034,7 @@ exports.add=async(ctx,next)=>{
 }
 
 exports.edit=async(ctx,next)=>{
-
+    await auth.checkAuth(ctx.query.token,'op','edit');
     let Operation=model.operations;
     let ActionModel=model.actions;
     let operationId=ctx.request.body.id;
@@ -1116,6 +1122,7 @@ exports.save=async(ctx,next)=>{
 }
 
 exports.delete=async(ctx,next)=>{
+    await auth.checkAuth(ctx.query.token,'op','delete');
     let id=ctx.params.id;
 
     let sequelize=db.sequelize;

@@ -7,8 +7,11 @@ const model = require('../model');
 const sys_config=require('../../config/sys_config');
 const response_config=require('../../config/response_config');
 const Sequelize = require('sequelize');
+const auth=require('./authInRole');
 
 exports.list=async(ctx,next)=>{
+    //await auth.checkAuth(ctx.query.token,'corporation','list');
+
     let Corporation = model.corporations;
     let Group=model.groups;
 
@@ -43,7 +46,8 @@ exports.list=async(ctx,next)=>{
                     model:Group
                 }],
                 order:[
-                    ['groupId','DESC']
+                    ['groupId','DESC'],
+                    ['createdAt','ASC']
                 ],
                 offset: (pageidnow-1)*sys_config.pageSize,
                 limit: sys_config.pageSize
@@ -56,7 +60,8 @@ exports.list=async(ctx,next)=>{
                     model:Group
                 }],
                 order:[
-                    ['groupId','DESC']
+                    ['groupId','DESC'],
+                    ['createdAt','ASC']
                 ]
             });
         }
@@ -68,7 +73,8 @@ exports.list=async(ctx,next)=>{
                 model:Group
             }],
             order:[
-                ['groupId','DESC']
+                ['groupId','DESC'],
+                ['createdAt','ASC']
             ]
         });
     }
@@ -101,6 +107,7 @@ exports.save=async(ctx,next)=>{
 
     //id存在，说明是编辑模式
     if(id){
+        await auth.checkAuth(ctx.query.token,'corporation','edit');
         let corporations=await Corporation.findOne({
             where: {
                 id: id
@@ -123,7 +130,7 @@ exports.save=async(ctx,next)=>{
     }
     //id不存在，说明是新增模式
     else{
-        console.log('addddddddddddd');
+        await auth.checkAuth(ctx.query.token,'corporation','add');
         let corporationObj=await Corporation.findAll({
             where:{
                 name:name
@@ -150,8 +157,23 @@ exports.save=async(ctx,next)=>{
 }
 
 exports.delete=async(ctx,next)=>{
+    await auth.checkAuth(ctx.query.token,'corporation','delete');
     let id=ctx.params.id;
     let Corporation=model.corporations;
+
+    //如果在需求表中，被使用了，则无法删除
+    let OrderModel=model.orders;
+    let orderResult=await OrderModel.findOne({
+        where:{
+            custom_corporation:id,
+            status:1
+        }
+    });
+
+    if(orderResult){
+        throw new ApiError(ApiErrorNames.CORPORATION_CAN_NOT_DELETE)
+    }
+
     let corporationObj=await Corporation.findOne({
         where:{
             status:1,
@@ -164,7 +186,7 @@ exports.delete=async(ctx,next)=>{
         ctx.body={
             status:0,
             data:deleteResult,
-            message:response_config.deleteSucess
+            message:response_config.deleteSuccess
         }
     }
     else{
@@ -173,6 +195,7 @@ exports.delete=async(ctx,next)=>{
 }
 
 exports.getData=async(ctx,next)=>{
+    await auth.checkAuth(ctx.query.token,'corporation','list');
     let Corporation = model.corporations;
     let Group=model.groups;
 

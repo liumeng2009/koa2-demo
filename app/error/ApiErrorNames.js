@@ -20,18 +20,22 @@ ApiErrorNames.NEED_UNIQUE_BUILDING_NAME="needUniqueBuildingName";
 ApiErrorNames.MAX_AND_MIN="maxAndMin";
 ApiErrorNames.BUILDING_NOT_NULL="buildingNotNull";
 ApiErrorNames.BUILDING_NOT_EXIST="buildingNotExist";
+ApiErrorNames.BUILDING_CAN_NOT_DELETE="buildingCanNotDelete";
 
 ApiErrorNames.NEED_UNIQUE_GROUP_NAME="needUniqueGroupName";
 ApiErrorNames.GROUP_NOT_NULL="groupNotNull";
 ApiErrorNames.GROUP_NOT_EXIST="groupNotExist";
+ApiErrorNames.GROUP_CAN_NOT_DELETE="groupCanNotDelete";
 
 ApiErrorNames.CORPORATION_NOT_NULL="corporationNotNull";
 ApiErrorNames.NEED_UNIQUE_CORPORATION_NAME="needUniqueCorporationName";
 ApiErrorNames.CORPORATION_NOT_EXIST="CorporationNotExist";
+ApiErrorNames.CORPORATION_CAN_NOT_DELETE="CorporationCanNotDelete";
 
 ApiErrorNames.CORPBUILDING_NOT_NULL="corpBuildingNotNull";
 ApiErrorNames.NEED_UNIQUE_CORP_BUILDING="needUniqueCorpBuilding";
 ApiErrorNames.CORP_BUILDING_NOT_EXIST="cropBuildingNotExist";
+ApiErrorNames.CORP_BUILDING_CAN_NOT_DELETE="cropBuildingCanNotDelete";
 
 ApiErrorNames.WORKER_NOT_EXIST="workerNotExist";
 ApiErrorNames.WORKER_EXIST="workerExist";
@@ -78,6 +82,7 @@ ApiErrorNames.ROLE_CAN_NOT_DELETE="roleCanNotDelete";
 ApiErrorNames.ROLE_HAS_THE_AUTH="roleHasTheRole";
 ApiErrorNames.AUTH_NOT_EXIST="authNotExist";
 ApiErrorNames.AUTH_ADMIN_NOT_DELETE="authAdminNotDelete";
+ApiErrorNames.USER_CAN_NOT_DELETE="userCanNotDelete";
 ApiErrorNames.FUNCTION_NOT_EXIST="functionNotExist";
 ApiErrorNames.OPERATE_NOT_EXIST="operateNotExist";
 ApiErrorNames.OP_IN_FUNC_HAS_EXIST="opInFuncHasExist";
@@ -98,6 +103,7 @@ error_map.set(ApiErrorNames.NEED_LOGIN, { code: 10004, message: '请先登录！
 error_map.set(ApiErrorNames.USER_NAME_EXIST, { code: 10005, message: '用户名已存在！' });
 error_map.set(ApiErrorNames.USER_NAME_NOT_EXIST, { code: 10006, message: '用户名不存在！' });
 error_map.set(ApiErrorNames.ADMIN_CAN_NOT_DELETE, { code: 10007, message: '最高管理员账户不能被删除！' });
+error_map.set(ApiErrorNames.USER_CAN_NOT_DELETE, { code: 10008, message: '该账户处理过工单，所以不能被删除！' });
 
 error_map.set(ApiErrorNames.INPUT_ERROR_TYPE, { code: 20001, message: '输入数值格式错误！' });
 error_map.set(ApiErrorNames.INPUT_DATE_ERROR_TYPE, { code: 20002, message: '输入日期格式错误！' });
@@ -108,19 +114,23 @@ error_map.set(ApiErrorNames.NEED_UNIQUE_BUILDING_NAME, { code: 90001, message: '
 error_map.set(ApiErrorNames.MAX_AND_MIN, { code: 90002, message: '最大楼层数不能小于最小楼层数！'});
 error_map.set(ApiErrorNames.BUILDING_NOT_NULL, { code: 90003, message: '必填的输入值不能为空！'});
 error_map.set(ApiErrorNames.BUILDING_NOT_EXIST, { code: 90004, message: '办公楼信息不存在！'});
+error_map.set(ApiErrorNames.BUILDING_CAN_NOT_DELETE, { code: 90005, message: '办公楼信息被 {1} 使用了，所以不可以删除！'});
 //group模块
 error_map.set(ApiErrorNames.NEED_UNIQUE_GROUP_NAME, { code: 91001, message: '组织名称名称重复！' });
 error_map.set(ApiErrorNames.GROUP_NOT_NULL, { code: 91003, message: '必填的输入值不能为空！'});
 error_map.set(ApiErrorNames.GROUP_NOT_EXIST, { code: 91004, message: '组织信息不存在！'});
+error_map.set(ApiErrorNames.GROUP_CAN_NOT_DELETE, { code: 91005, message: '组织信息被 {1} 占用了，所以不可以删除！'});
 //corporation模块错误
 error_map.set(ApiErrorNames.CORPORATION_NOT_NULL, { code: 92001, message: '必填的输入值不能为空！'});
 error_map.set(ApiErrorNames.NEED_UNIQUE_CORPORATION_NAME, { code: 92002, message: '公司名称名称重复！' });
 error_map.set(ApiErrorNames.CORPORATION_NOT_EXIST, { code: 92003, message: '公司信息不存在！'});
+error_map.set(ApiErrorNames.CORPORATION_CAN_NOT_DELETE, { code: 92004, message: '公司信息被使用过，不可以删除！'});
 
 //corpBuilding模块错误
 error_map.set(ApiErrorNames.CORPBUILDING_NOT_NULL, { code: 93001, message: '必填的输入值不能为空！'});
 error_map.set(ApiErrorNames.NEED_UNIQUE_CORP_BUILDING, { code: 93002, message: '公司所处楼层的信息重复！' });
 error_map.set(ApiErrorNames.CORP_BUILDING_NOT_EXIST, { code: 93003, message: '公司所处楼层的信息不存在！'});
+error_map.set(ApiErrorNames.CORP_BUILDING_CAN_NOT_DELETE, { code: 93004, message: '楼层信息被使用了，所以不能删除'});
 
 //worker模块错误
 error_map.set(ApiErrorNames.WORKER_EXIST, { code: 80002, message: '工程师信息已存在！'});

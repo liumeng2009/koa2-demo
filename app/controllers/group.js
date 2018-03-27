@@ -6,6 +6,7 @@ const ApiErrorNames=require('../error/ApiErrorNames');
 const model = require('../model');
 const sys_config=require('../../config/sys_config');
 const response_config=require('../../config/response_config');
+const auth=require('./authInRole');
 
 exports.list=async(ctx,next)=>{
     let Group = model.groups;
@@ -30,7 +31,7 @@ exports.list=async(ctx,next)=>{
                     status:1
                 },
                 order:[
-                    ['updatedAt','DESC']
+                    ['createdAt','ASC']
                 ],
                 offset: (pageidnow-1)*sys_config.pageSize,
                 limit: sys_config.pageSize
@@ -42,7 +43,7 @@ exports.list=async(ctx,next)=>{
                     status:1
                 },
                 order:[
-                    ['updatedAt','DESC']
+                    ['createdAt','ASC']
                 ]
             });
         }
@@ -53,7 +54,7 @@ exports.list=async(ctx,next)=>{
                 status:1
             },
             order:[
-                ['updatedAt','DESC']
+                ['createdAt','ASC']
             ]
         });
     }
@@ -81,6 +82,7 @@ exports.save=async(ctx,next)=>{
 
     //id存在，说明是编辑模式
     if(id){
+        await auth.checkAuth(ctx.query.token,'group','edit');
         let groups=await Groups.findOne({
             where: {
                 id: id
@@ -102,6 +104,7 @@ exports.save=async(ctx,next)=>{
     }
     //id不存在，说明是新增模式
     else{
+        await auth.checkAuth(ctx.query.token,'group','add');
         let groupObj=await Groups.findAll({
             where:{
                 name:name
@@ -127,6 +130,7 @@ exports.save=async(ctx,next)=>{
 }
 
 exports.delete=async(ctx,next)=>{
+    await auth.checkAuth(ctx.query.token,'group','delete');
     let id=ctx.params.id;
     let Group=model.groups;
     let groupObj=await Group.findOne({
@@ -135,6 +139,18 @@ exports.delete=async(ctx,next)=>{
             id:id
         }
     })
+
+    let CorporationModel=model.corporations;
+    let corpResult=await CorporationModel.findOne({
+        where:{
+            status:1,
+            groupId:id
+        }
+    })
+    if(corpResult){
+        throw new ApiError(ApiErrorNames.GROUP_CAN_NOT_DELETE,[corpResult.name]);
+    }
+
     if(groupObj){
         groupObj.status=0;
         let deleteResult=await groupObj.save();

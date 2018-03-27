@@ -7,3 +7,9 @@ exports.index=async(ctx,next)=>{
         name:'liumeng'
     });
 }
+
+exports.operation=async(ctx,next)=>{
+    await ctx.render('back/operation/print', {
+        title: '工单'
+    });
+}

@@ -3,6 +3,7 @@ const ApiErrorNames=require('../error/ApiErrorNames');
 const model = require('../model');
 const sys_config=require('../../config/sys_config');
 const response_config=require('../../config/response_config');
+const auth=require('./authInRole');
 
 exports.list=async(ctx,next)=>{
     let Role=model.roles;
@@ -19,6 +20,7 @@ exports.list=async(ctx,next)=>{
 }
 
 exports.add=async(ctx,next)=>{
+    await auth.checkAuth(ctx.query.token,'role','add')
     let Role=model.roles;
     let result=await Role.create({
         name:ctx.request.body.name,
@@ -33,6 +35,7 @@ exports.add=async(ctx,next)=>{
 }
 
 exports.edit=async(ctx,next)=>{
+    await auth.checkAuth(ctx.query.token,'role','edit')
     let id=ctx.request.body.id;
     let name=ctx.request.body.name;
     let remark=ctx.request.body.remark;
@@ -78,6 +81,7 @@ exports.edit=async(ctx,next)=>{
 }
 
 exports.delete=async(ctx,next)=>{
+    await auth.checkAuth(ctx.query.token,'role','delete')
     let Role=model.roles;
     let roleId=ctx.params.id;
     let result=await Role.findOne({

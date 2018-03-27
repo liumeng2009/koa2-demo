@@ -7,6 +7,7 @@ const model = require('../model');
 const sys_config=require('../../config/sys_config');
 const response_config=require('../../config/response_config');
 const Sequelize = require('sequelize');
+const auth=require('./authInRole');
 
 exports.list=async(ctx,next)=>{
     let Building = model.buildings;
@@ -95,6 +96,7 @@ exports.save=async(ctx,next)=>{
 
     //id存在，说明是编辑模式
     if(id){
+        await auth.checkAuth(ctx.query.token,'address','edit');
         let buildings=await Buildings.findAll({
             where: {
                 id: id
@@ -117,6 +119,7 @@ exports.save=async(ctx,next)=>{
     }
     //id不存在，说明是新增模式
     else{
+        await auth.checkAuth(ctx.query.token,'address','add');
         let buildingObj=await Buildings.findAll({
             where:{
                 name:name
@@ -144,8 +147,36 @@ exports.save=async(ctx,next)=>{
 }
 
 exports.delete=async(ctx,next)=>{
+    await auth.checkAuth(ctx.query.token,'address','delete');
     let id=ctx.params.id;
     let Building=model.buildings;
+
+    //如果被某公司占用了，则不可以删除
+    let CorpBuildingModel=model.corpBuildings;
+    let CorporationModel=model.corporations;
+    CorpBuildingModel.belongsTo(CorporationModel,{foreignKey:'corporationId'});
+
+    let corBuildingResult=await CorpBuildingModel.findOne({
+        where:{
+            status:1,
+            buildingId:id
+        },
+        include:[
+            {
+                model:CorporationModel,
+                where:{
+                    status:1
+                }
+            }
+        ]
+    });
+
+    if(corBuildingResult){
+        throw new ApiError(ApiErrorNames.BUILDING_CAN_NOT_DELETE,[corBuildingResult.corporation.name]);
+    }
+
+
+
     let buildingObj=await Building.findOne({
         where:{
             status:1,
