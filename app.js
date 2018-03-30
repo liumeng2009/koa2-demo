@@ -11,6 +11,7 @@ const Keygrip = require("keygrip");
 const cors=require('koa-cors');
 
 const index = require('./routes/index');
+const page = require('./routes/page');
 const users = require('./routes/users');
 const api=require('./routes/api/index');
 const admin=require('./routes/admin');
@@ -84,6 +85,7 @@ app.use(isLogin);
 
 
 router.use('/', index.routes(), index.allowedMethods());
+router.use('/page', page.routes(), page.allowedMethods());
 router.use('/users', users.routes(), users.allowedMethods());
 router.use('/api', api.routes(), api.allowedMethods());
 router.use('/admin', admin.routes(), admin.allowedMethods());
