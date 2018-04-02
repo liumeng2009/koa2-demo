@@ -1,12 +1,54 @@
-const officegen=require('officegen');
+var officegen=require('officegen');
 var fs = require('fs');
 var path = require('path');
+var {Writable} =require('stream');
 
 
 exports.operation=async(ctx,next)=>{
-    await ctx.render('back/operation/print', {
-        title: '工单'
+   ctx.res.writeHead ( 200, {
+        "Content-Type": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+        'Content-disposition': 'attachment; filename=surprise.pptx'
+   });
+    var pptx = officegen ( 'pptx' );
+
+    pptx.on ( 'finalize', function ( written ) {
+        console.log ( 'Finish to create the surprise PowerPoint stream and send it to '  + 'Total bytes created: ' + written + '\n' );
     });
+
+    pptx.on ( 'error', function ( err ) {
+        console.log ( err );
+    });
+
+    var slide = pptx.makeNewSlide();
+    slide.back = '000000';
+    slide.color = 'ffffff';
+
+    slide.addText ( 'Hello ' + '!', { y: 20, cx: '100%', font_size: 56, font_face: 'Arial', bold: true, color: 'ffff00', align: 'center' } );
+
+    slide.addText ( 'Requested URL', { y: 150, cx: '50%' } );
+    console.log(ctx.req.url)
+    slide.addText ( ctx.req.url, { y: 150, x: '50%', cx: '50%', color: '0000ff' } );
+    slide.addText ( 'Request Method', { y: 180, cx: '50%' } );
+    console.log(ctx.req.method);
+    slide.addText ( ctx.req.method, { y: 180, x: '50%', cx: '50%', color: '0000ff' } );
+    slide.addText ( 'Request Dara', { y: 210, cx: '50%' } );
+    slide.addText ( 'name', { y: 210, x: '50%', cx: '50%', color: '0000ff' } );
+
+    var out = fs.createWriteStream ( './tmp/out.pptx' );
+
+    //pptx.generate ( out );
+
+    pptx.generate ( out, {
+        'finalize': function ( written ) {
+            console.log ( 'Finish to create a PowerPoint file.\nTotal bytes created: ' + written + '\n' );
+            //ctx.body=out;
+        },
+        'error': function ( err ) {
+            console.log ( err );
+        }
+    });
+
+    //ctx.body=out;
 }
 exports.order=async(ctx,next)=>{
 
@@ -25,6 +67,9 @@ exports.order=async(ctx,next)=>{
     docx.on ( 'error', function ( err ) {
         console.log ( err );
     });
+    docx.on('onend',function(written){
+        console.log('111111111111111'+written);
+    })
 
     var pObj = docx.createP ();
 
@@ -170,29 +215,25 @@ exports.order=async(ctx,next)=>{
 
     var pObj = docx.createTable (table, tableStyle);
 
-    var out = fs.createWriteStream ( 'tmp/out.docx' );
+/*    var out = fs.createWriteStream ( 'tmp/out.docx' );
 
     out.on ( 'error', function ( err ) {
         console.log ( err );
     });
 
-    async.parallel ([
-        function ( done ) {
-            out.on ( 'close', function () {
-                console.log ( 'Finish to create a DOCX file.' );
-                done ( null );
-            });
-            docx.generate ( out );
-        }
-
-    ], function ( err ) {
-        if ( err ) {
-            console.log ( 'error: ' + err );
-        } // Endif.
-    });
 
 
-    await ctx.render('back/operation/print', {
+    out.on ( 'close', function () {
+        console.log ( 'Finish to create a DOCX file.' +docx);
+        ctx.body=docx;
+    });*/
+
+    docx.generate ( ctx.res );
+
+
+
+
+/*    await ctx.render('back/operation/print', {
         title: '需求'
-    });
+    });*/
 }
