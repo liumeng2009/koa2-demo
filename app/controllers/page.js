@@ -1,7 +1,7 @@
 var officegen=require('officegen');
 var fs = require('fs');
 var path = require('path');
-var {Writable} =require('stream');
+var stream =require('stream');
 
 
 exports.operation=async(ctx,next)=>{
@@ -34,21 +34,12 @@ exports.operation=async(ctx,next)=>{
     slide.addText ( 'Request Dara', { y: 210, cx: '50%' } );
     slide.addText ( 'name', { y: 210, x: '50%', cx: '50%', color: '0000ff' } );
 
-    var out = fs.createWriteStream ( './tmp/out.pptx' );
+    //var out = fs.createWriteStream ( './tmp/out.pptx' );
 
-    //pptx.generate ( out );
+    let r=ctx.res;
+    pptx.generate ( r);
+    ctx.body=r;
 
-    pptx.generate ( out, {
-        'finalize': function ( written ) {
-            console.log ( 'Finish to create a PowerPoint file.\nTotal bytes created: ' + written + '\n' );
-            //ctx.body=out;
-        },
-        'error': function ( err ) {
-            console.log ( err );
-        }
-    });
-
-    //ctx.body=out;
 }
 exports.order=async(ctx,next)=>{
 
