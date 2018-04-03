@@ -1,0 +1,76 @@
+[2018-04-03 16:28:39.619] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /page/operation/3
+request client ip:  ::1
+request query:  {}
+response time: 28
+err name: TypeError
+err message: Converting circular structure to JSON
+err stack: TypeError: Converting circular structure to JSON
+    at JSON.stringify (<anonymous>)
+    at formatRes (F:/koa2/koa2-demo-v1.1/koa2-demo/util/log_util.js:44:48)
+    at Object.logUtil.logResponse (F:/koa2/koa2-demo-v1.1/koa2-demo/util/log_util.js:26:24)
+    at F:/koa2/koa2-demo-v1.1/koa2-demo/app.js:47:13
+    at Generator.next (<anonymous>)
+    at step (F:\koa2\koa2-demo-v1.1\koa2-demo\app.js:3:191)
+    at F:\koa2\koa2-demo-v1.1\koa2-demo\app.js:3:361
+*************** error log end ***************
+
+[2018-04-03 16:43:05.731] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /page/operation/3
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 40
+err name: TypeError
+err message: Converting circular structure to JSON
+err stack: TypeError: Converting circular structure to JSON
+    at JSON.stringify (<anonymous>)
+    at formatRes (F:/koa2/koa2-demo-v1.1/koa2-demo/util/log_util.js:44:48)
+    at Object.logUtil.logResponse (F:/koa2/koa2-demo-v1.1/koa2-demo/util/log_util.js:26:24)
+    at F:/koa2/koa2-demo-v1.1/koa2-demo/app.js:47:13
+    at Generator.next (<anonymous>)
+    at step (F:\koa2\koa2-demo-v1.1\koa2-demo\app.js:3:191)
+    at F:\koa2\koa2-demo-v1.1\koa2-demo\app.js:3:361
+*************** error log end ***************
+
+[2018-04-03 16:44:35.351] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /page/operation/3
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 0
+err name: TypeError
+err message: Converting circular structure to JSON
+err stack: TypeError: Converting circular structure to JSON
+    at JSON.stringify (<anonymous>)
+    at formatRes (F:/koa2/koa2-demo-v1.1/koa2-demo/util/log_util.js:44:48)
+    at Object.logUtil.logResponse (F:/koa2/koa2-demo-v1.1/koa2-demo/util/log_util.js:26:24)
+    at F:/koa2/koa2-demo-v1.1/koa2-demo/app.js:47:13
+    at Generator.next (<anonymous>)
+    at step (F:\koa2\koa2-demo-v1.1\koa2-demo\app.js:3:191)
+    at F:\koa2\koa2-demo-v1.1\koa2-demo\app.js:3:361
+*************** error log end ***************
+
+[2018-04-03 16:52:07.705] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /page/operation/3
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 12
+err name: TypeError
+err message: Converting circular structure to JSON
+err stack: TypeError: Converting circular structure to JSON
+    at JSON.stringify (<anonymous>)
+    at formatRes (F:/koa2/koa2-demo-v1.1/koa2-demo/util/log_util.js:44:48)
+    at Object.logUtil.logResponse (F:/koa2/koa2-demo-v1.1/koa2-demo/util/log_util.js:26:24)
+    at F:/koa2/koa2-demo-v1.1/koa2-demo/app.js:47:13
+    at Generator.next (<anonymous>)
+    at step (F:\koa2\koa2-demo-v1.1\koa2-demo\app.js:3:191)
+    at F:\koa2\koa2-demo-v1.1\koa2-demo\app.js:3:361
+*************** error log end ***************
+
