@@ -878,7 +878,6 @@ exports.list_month_corporation_count=async(ctx,next)=>{
 exports.getOperation=async(ctx,next)=>{
     let id=ctx.params.id;
     let Operation=model.operations;
-    let Action=model.actions;
     let Order=model.orders;
     let Corporation=model.corporations;
     let CorpBuilding=model.corpBuildings;
