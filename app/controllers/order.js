@@ -233,7 +233,7 @@ exports.save=async(ctx,next)=>{
     await auth.checkAuth(ctx.query.token,'order','add');
     let custom_name=ctx.request.body.custom_name;
     let custom_phone=ctx.request.body.custom_phone;
-    let incoming_date_timestamp=ctx.request.body.incoming_date_timestamp;
+    let incoming_date_timestamp=ctx.request.body.incoming_time;
     let custom_position=ctx.request.body.custom_position.id;
     let custom_corporation=ctx.request.body.corporation.id;
     let business_description=ctx.request.body.business_description;
@@ -318,7 +318,7 @@ exports.saveAndSaveOperation=async(ctx,next)=>{
     await auth.checkAuth(ctx.query.token,'order','add');
     let custom_name=ctx.request.body.custom_name;
     let custom_phone=ctx.request.body.custom_phone;
-    let incoming_date_timestamp=ctx.request.body.incoming_date_timestamp;
+    let incoming_date_timestamp=ctx.request.body.incoming_time;
     let custom_position=ctx.request.body.custom_position.id;
     let custom_corporation=ctx.request.body.corporation.id;
     let remark=ctx.request.body.remark;

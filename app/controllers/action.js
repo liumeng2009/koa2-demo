@@ -342,6 +342,8 @@ exports.edit=async(ctx,next)=>{
 
     if(actionObj){
         //验证四个时间的合理性
+        console.log('指派时间'+call_stamp);
+        console.log('建立时间'+create_stamp);
         if(call_stamp<create_stamp){
             //指派小于工单建立 不合理
             throw new ApiError(ApiErrorNames.OPERATION_CALL_MORE_THAN_CREATE);

@@ -22,7 +22,7 @@ var isLogin=async(ctx,next)=>{
             return new Promise((resolve, reject) => {
                 jwt.verify(token, sys_config.jwtSecret, function (error, decoded) {
                     if (error) {
-                        console.log('验证接口合法性：失败');
+                        console.log('验证接口合法性：失败'+token);
                         reject(
                             new ApiError(ApiErrorNames.JWT_ERROR)
                         );

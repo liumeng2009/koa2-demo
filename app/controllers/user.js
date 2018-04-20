@@ -147,6 +147,7 @@ exports.registerUser=async(ctx,next)=>{
 
 exports.getUserData=async(ctx,next)=>{
     let token=ctx.query.token;
+    let simple=ctx.query.simple;
 
     if(token==''||token=='undefined'){
         throw new ApiError(ApiErrorNames.JWT_ERROR);
@@ -163,36 +164,49 @@ exports.getUserData=async(ctx,next)=>{
     OpInFuncModel.belongsTo(FunctionModel,{foreignKey:'funcId'});
     OpInFuncModel.belongsTo(OperateModel,{foreignKey:'opId'});
 
+    let userObj;
 
-    let userObj=await User.findOne({
-        where:{
-            token:token
-        },
-        include:[
-            {
-                model:RoleModel,
-                include:[
-                    {
-                        model:AuthInRoleModel,
-                        as:'auths',
-                        include:[
-                            {
-                                model:OpInFuncModel,
-                                include:[
-                                    {
-                                        model:FunctionModel
-                                    },
-                                    {
-                                        model:OperateModel
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
+    if(simple&&simple=='true'){
+        //简单返回数据即可
+        userObj=await User.findOne({
+            where:{
+                status:1,
+                token:token
             }
-        ]
-    });
+        })
+    }
+    else{
+        userObj=await User.findOne({
+            where:{
+                token:token
+            },
+            include:[
+                {
+                    model:RoleModel,
+                    include:[
+                        {
+                            model:AuthInRoleModel,
+                            as:'auths',
+                            include:[
+                                {
+                                    model:OpInFuncModel,
+                                    include:[
+                                        {
+                                            model:FunctionModel
+                                        },
+                                        {
+                                            model:OperateModel
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        });
+    }
+
     if(userObj){
         ctx.body={
             status:0,
