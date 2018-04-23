@@ -491,6 +491,13 @@ exports.edit=async(ctx,next)=>{
 }
 
 exports.uploadAvatar=async(ctx,next)=>{
-    console.log(ctx.request.body.files);
-    await upload.single('files')
+    //console.log(JSON.stringify(ctx.request));
+    for(let p in ctx.request){
+        console.log(p);
+    }
+    console.log(ctx.request.body);
+
+    ctx.body={
+        status:0
+    }
 }

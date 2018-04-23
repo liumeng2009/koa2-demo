@@ -7,6 +7,7 @@ const convert = require('koa-convert');
 const json = require('koa-json');
 const onerror = require('koa-onerror');
 const bodyparser = require('koa-bodyparser')();
+const koaBody = require('koa-body');
 const Keygrip = require("keygrip");
 const cors=require('koa-cors');
 
@@ -18,6 +19,7 @@ const admin=require('./routes/admin');
 
 // middlewares
 app.use(convert(bodyparser));
+app.use(koaBody({ multipart: true }));
 app.use(convert(json()));
 //app.use(convert(logger()));
 app.use(convert(require('koa-static')(__dirname + '/public')));
