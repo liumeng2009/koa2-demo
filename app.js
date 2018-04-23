@@ -22,6 +22,7 @@ app.use(convert(json()));
 //app.use(convert(logger()));
 app.use(convert(require('koa-static')(__dirname + '/public')));
 
+
 app.use(views(__dirname + '/views', {
   extension: 'jade'
 }));
@@ -91,6 +92,8 @@ router.use('/api', api.routes(), api.allowedMethods());
 router.use('/admin', admin.routes(), admin.allowedMethods());
 
 app.use(router.routes(), router.allowedMethods());
+
+
 
 // response
 

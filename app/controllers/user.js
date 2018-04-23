@@ -8,7 +8,11 @@ const sys_config=require('../../config/sys_config');
 const response_config=require('../../config/response_config');
 const bcrypt=require('bcrypt');
 const jwt=require('jsonwebtoken');
-const auth=require('./authInRole')
+const auth=require('./authInRole');
+const fs=require('fs');
+const multer = require('koa-multer');
+const upload = multer({ dest: 'uploads/' });
+
 
 exports.login=async(ctx,next)=>{
     let username=ctx.request.body.username;
@@ -428,4 +432,65 @@ exports.getUrlTree=async(ctx,next)=>{
         status:0,
         data:basic
     }
+}
+
+exports.edit=async(ctx,next)=>{
+    let token=ctx.query.token;
+    let name=ctx.request.body.name;
+    let phone=ctx.request.body.phone;
+    let email=ctx.request.body.email;
+
+
+    if(token==''||token==undefined){
+        throw new ApiError(ApiErrorNames.JWT_ERROR);
+    }
+    if(name==''||name==undefined){
+        throw new ApiError(ApiErrorNames.INPUT_FIELD_NULL,['用户名']);
+    }
+
+    let user=model.user;
+
+
+
+
+
+    let userObj=await user.findOne({
+        where:{
+            status:1,
+            token:token
+        }
+    })
+
+    let nameIsExist=await user.findOne({
+        where:{
+            name:name,
+            id:{
+                $ne:userObj.id
+            }
+        }
+    })
+
+    if(nameIsExist){
+        throw new ApiError(ApiErrorNames.USER_NAME_EXIST);
+    }
+
+    if(userObj){
+        userObj.name=name;
+        userObj.phone=phone;
+        userObj.email=email;
+        let saveResult=await userObj.save();
+        ctx.body={
+            status:0,
+            data:saveResult,
+            message:response_config.updatedSuccess
+        }
+    }
+    else{
+        throw new ApiError(ApiErrorNames.USER_NOT_EXIST);
+    }
+}
+
+exports.uploadAvatar=async(ctx,next)=>{
+    console.log(ctx.request.body.files);
+    await upload.single('files')
 }
