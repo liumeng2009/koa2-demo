@@ -10,8 +10,6 @@ const bcrypt=require('bcrypt');
 const jwt=require('jsonwebtoken');
 const auth=require('./authInRole');
 const fs=require('fs');
-const multer = require('koa-multer');
-const upload = multer({ dest: 'uploads/' });
 
 
 exports.login=async(ctx,next)=>{
@@ -491,13 +489,45 @@ exports.edit=async(ctx,next)=>{
 }
 
 exports.uploadAvatar=async(ctx,next)=>{
-    //console.log(JSON.stringify(ctx.request));
-    for(let p in ctx.request){
+    console.log(ctx.request.body.files);
+
+    for(let p in ctx.request.body.files.files){
         console.log(p);
     }
-    console.log(ctx.request.body);
 
-    ctx.body={
-        status:0
-    }
+    console.log(ctx.request.body.files.files.write);
+
+    let file=ctx.request.body.files.files;
+    let filename=file.name
+    console.log(filename);
+    let tmpPath=file.path;
+    let tmp=fs.createReadStream(tmpPath)
+
+    let targetPath='./uploads'+'/'+filename;
+    let target=fs.createWriteStream(targetPath);
+    tmp.pipe(target);
+
+    return new Promise((resolve,reject)=>{
+        tmp.on('end', ()=>{
+            console.log('end');
+            resolve(
+                ctx.body={
+                    status:1
+                }
+            )
+
+        })
+        tmp.on('error', (error)=>{
+            console.log('error');
+            reject(
+                ctx.body={
+                    message:error
+                }
+            )
+
+        })
+    })
+
+
+
 }

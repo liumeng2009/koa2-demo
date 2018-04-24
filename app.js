@@ -6,11 +6,10 @@ const co = require('co');
 const convert = require('koa-convert');
 const json = require('koa-json');
 const onerror = require('koa-onerror');
-const bodyparser = require('koa-bodyparser')();
+//const bodyparser = require('koa-bodyparser')();
 const koaBody = require('koa-body');
 const Keygrip = require("keygrip");
 const cors=require('koa-cors');
-
 const index = require('./routes/index');
 const page = require('./routes/page');
 const users = require('./routes/users');
@@ -18,12 +17,11 @@ const api=require('./routes/api/index');
 const admin=require('./routes/admin');
 
 // middlewares
-app.use(convert(bodyparser));
+//app.use(convert(bodyparser));
 app.use(koaBody({ multipart: true }));
 app.use(convert(json()));
 //app.use(convert(logger()));
 app.use(convert(require('koa-static')(__dirname + '/public')));
-
 
 app.use(views(__dirname + '/views', {
   extension: 'jade'
