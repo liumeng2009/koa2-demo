@@ -489,21 +489,20 @@ exports.edit=async(ctx,next)=>{
 }
 
 exports.uploadAvatar=async(ctx,next)=>{
-    console.log(ctx.request.body.files);
-
-    for(let p in ctx.request.body.files.files){
-        console.log(p);
-    }
-
-    console.log(ctx.request.body.files.files.write);
-
     let file=ctx.request.body.files.files;
-    let filename=file.name
-    console.log(filename);
+    let filename=file.name;
     let tmpPath=file.path;
     let tmp=fs.createReadStream(tmpPath)
+    let basePath='./pulbic/uploads/';
+    //建立日期文件夹
+    let date=new Date();
+    let folderName=date.getFullYear()+((date.getMonth()+1)>9?(date.getMonth()+1):('0'+(date.getMonth()+1)))
+        +date.getDate()>9?date.getDate():('0'+date.getDate());
+    await fs.mkdir(basePath+folderName);
 
-    let targetPath='./uploads'+'/'+filename;
+
+
+    let targetPath='./public/uploads/'+folderName+'/'+filename;
     let target=fs.createWriteStream(targetPath);
     tmp.pipe(target);
 
@@ -512,7 +511,8 @@ exports.uploadAvatar=async(ctx,next)=>{
             console.log('end');
             resolve(
                 ctx.body={
-                    status:1
+                    status:0,
+                    data:targetPath
                 }
             )
 
@@ -520,9 +520,7 @@ exports.uploadAvatar=async(ctx,next)=>{
         tmp.on('error', (error)=>{
             console.log('error');
             reject(
-                ctx.body={
-                    message:error
-                }
+                new ApiError(ApiErrorNames.UPLOAD_ERROR)
             )
 
         })

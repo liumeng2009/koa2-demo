@@ -92,6 +92,8 @@ ApiErrorNames.OP_IN_FUNC_NOT_EXIST="opInFuncNotExist";
 ApiErrorNames.OP_IN_FUNC_HAS_USED="opInFuncHasUsed";
 ApiErrorNames.NO_AUTH="noAuth";
 
+ApiErrorNames.UPLOAD_ERROR="uploadError";
+
 /**
  * API错误名称对应的错误信息
  */
@@ -189,6 +191,8 @@ error_map.set(ApiErrorNames.OP_IN_FUNC_HAS_EXIST, { code: 40007, message: '功�
 error_map.set(ApiErrorNames.OP_IN_FUNC_NOT_EXIST, { code: 40008, message: '功能项不存在！'});
 error_map.set(ApiErrorNames.OP_IN_FUNC_HAS_USED, { code: 40009, message: '功能项已经被 {1} 使用，无法删除！'});
 error_map.set(ApiErrorNames.NO_AUTH, { code: 40010, message: '没有访问权限！'});
+
+error_map.set(ApiErrorNames.UPLOAD_ERROR, { code: 10010, message: '文件上传出错！'});
 
 
 //根据错误名称获取错误信息
