@@ -493,15 +493,23 @@ exports.uploadAvatar=async(ctx,next)=>{
     let filename=file.name;
     let tmpPath=file.path;
     let tmp=fs.createReadStream(tmpPath)
-    let basePath='./pulbic/uploads/';
+    let basePath='/pulbic/uploads/';
     //建立日期文件夹
     let date=new Date();
-    let folderName=date.getFullYear()+((date.getMonth()+1)>9?(date.getMonth()+1):('0'+(date.getMonth()+1)))
-        +date.getDate()>9?date.getDate():('0'+date.getDate());
-    await fs.mkdir(basePath+folderName);
+    let folderName=(date.getFullYear())+((date.getMonth()+1)>9?(date.getMonth()+1):('0'+(date.getMonth()+1)))
+        +(date.getDate()>9?date.getDate():('0'+date.getDate()));
 
+    console.log(__dirname+ basePath+folderName);
 
-
+    if(fs.existsSync(basePath+folderName)){
+        console.log('文件夹已存在');
+    }
+    else{
+        console.log(123);
+        let result=fs.mkdirSync(basePath+folderName)
+        console.log(result);
+    }
+    console.log(456);
     let targetPath='./public/uploads/'+folderName+'/'+filename;
     let target=fs.createWriteStream(targetPath);
     tmp.pipe(target);
@@ -525,7 +533,4 @@ exports.uploadAvatar=async(ctx,next)=>{
 
         })
     })
-
-
-
 }
