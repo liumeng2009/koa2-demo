@@ -76,3 +76,16 @@ response body:
 {"errno":-4058,"code":"ENOENT","syscall":"mkdir","path":"F:\\koa2\\koa2-demo-v1.1\\koa2-demo\\pulbic\\uploads\\20180427","status":500}
 *************** response log end ***************
 
+[2018-04-27 11:23:41.959] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/user/uploadAvatar?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIiwiZ2VuZGVyIjp0cnVlLCJlbWFpbCI6IjM3ODMzODYyN0BxcS5jb20ifSwiaWF0IjoxNTI0NzEzMjI3LCJleHAiOjE1MjQ3OTk2Mjd9.YGWqMmhnAmKf5rIg2vcwcllwI7pWCse8aq4vqs8UiB0
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"fields":{},"files":{"files":{"size":17336,"path":"C:\\Users\\liumeng\\AppData\\Local\\Temp\\upload_ec42da35b2760f3f698f86520828b3dc","name":"big-brand-20e87fa0118f006e9c626a2f27ff063e3104f233b2ada34f9033fa1bc68b8b54.png","type":"image/png","mtime":"2018-04-27T03:23:41.869Z"}}}
+response time: 86
+response status: 200
+response body: 
+{"errno":-4058,"code":"ENOENT","syscall":"mkdir","path":"F:\\pulbic\\uploads\\20180427","status":500}
+*************** response log end ***************
+
