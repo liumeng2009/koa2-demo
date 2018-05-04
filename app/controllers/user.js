@@ -10,6 +10,7 @@ const bcrypt=require('bcrypt');
 const jwt=require('jsonwebtoken');
 const auth=require('./authInRole');
 const fs=require('fs');
+const path=require('path');
 
 
 exports.login=async(ctx,next)=>{
@@ -493,37 +494,58 @@ exports.uploadAvatar=async(ctx,next)=>{
     let filename=file.name;
     let tmpPath=file.path;
     let tmp=fs.createReadStream(tmpPath)
-    let basePath='/pulbic/uploads/';
+    let basePath='/public/uploads/';
     //建立日期文件夹
     let date=new Date();
     let folderName=(date.getFullYear())+((date.getMonth()+1)>9?(date.getMonth()+1):('0'+(date.getMonth()+1)))
         +(date.getDate()>9?date.getDate():('0'+date.getDate()));
 
-    console.log(__dirname+ basePath+folderName);
+    console.log(path.resolve(__dirname,'../../')+basePath+folderName);
+    let folder=path.resolve(__dirname,'../../')+basePath+folderName;
 
-    if(fs.existsSync(basePath+folderName)){
+    if(fs.existsSync(folder)){
         console.log('文件夹已存在');
     }
     else{
         console.log(123);
-        let result=fs.mkdirSync(basePath+folderName)
+        let result=fs.mkdirSync(folder)
         console.log(result);
     }
     console.log(456);
-    let targetPath='./public/uploads/'+folderName+'/'+filename;
+    let dateNow=new Date();
+    let timeStamp=dateNow.getTime();
+    let targetPath=folder+'/'+timeStamp+'-'+filename;
     let target=fs.createWriteStream(targetPath);
     tmp.pipe(target);
-
     return new Promise((resolve,reject)=>{
-        tmp.on('end', ()=>{
+        tmp.on('end', async()=>{
             console.log('end');
-            resolve(
-                ctx.body={
-                    status:0,
-                    data:targetPath
+            //将图片路径数据写入数据库
+            let UserModel=model.user;
+            let token=ctx.query.token;
+            let userObj=await UserModel.findOne({
+                where:{
+                    status:1,
+                    token:token
                 }
-            )
+            })
 
+            if(userObj){
+                userObj.avatar=folderName+'/'+timeStamp+'-'+filename;
+                userObj.avatarUseImg=1;
+                let saveObj=await userObj.save();
+                resolve(
+                    ctx.body={
+                        status:0,
+                        data:saveObj
+                    }
+                )
+            }
+            else{
+                reject(
+                    new ApiError(ApiErrorNames.JWT_ERROR)
+                )
+            }
         })
         tmp.on('error', (error)=>{
             console.log('error');

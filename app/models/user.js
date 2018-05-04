@@ -32,5 +32,11 @@ module.exports = db.defineModel('users', {
     },
     roleId:{
         type:db.STRING(50)
+    },
+    avatar:{
+        type:db.STRING(255)
+    },
+    avatarUseImg:{
+        type:db.INTEGER
     }
 });
