@@ -556,3 +556,53 @@ exports.uploadAvatar=async(ctx,next)=>{
         })
     })
 }
+
+exports.getSysAvatars=async(ctx,next)=>{
+    let sysAvatarFolder=path.resolve(__dirname,'../../')+'/public/uploads/avatar';
+    let avatarArray=[];
+    let folders=fs.readdirSync(sysAvatarFolder);
+    for(let f of folders){
+        console.log(f);
+        let perFolder=sysAvatarFolder+'/'+f;
+        let files=fs.readdirSync(perFolder);
+
+        for(let i=0;i<files.length;i++){
+            files[i]='/uploads/avatar/'+f+'/'+files[i];
+        }
+
+        let fObj={};
+        fObj.name=f;
+        fObj.imgs=files;
+        avatarArray.push(fObj)
+    }
+    ctx.body={
+        status:0,
+        data:avatarArray
+    }
+}
+
+exports.setSysAvatars=async(ctx,next)=>{
+    let token=ctx.query.token;
+    let img=ctx.request.body.img;
+    let UserModel=model.user;
+    let userObj=await UserModel.findOne({
+        where:{
+            status:1,
+            token:token
+        }
+    })
+
+    if(userObj){
+        userObj.avatarUseImg=0;
+        userObj.avatar=img;
+        let saveResult=await userObj.save();
+        ctx.body={
+            status:0,
+            data:saveResult,
+            message:response_config.updatedSuccess
+        }
+    }
+    else{
+        throw new ApiError(ApiErrorNames.USER_NOT_EXIST)
+    }
+}

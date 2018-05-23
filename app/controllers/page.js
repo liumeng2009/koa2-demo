@@ -426,9 +426,17 @@ var createOperationPDF=function(obj){
             }
         }
         if(endTime>0){
-            doc.font('Song').text(timeAll/(1000*60)+'分钟'+(renci>1?'('+renci+'人次)':''),345,357,{
+
+            let minuteCount=parseInt(timeAll/(1000*60));
+            let secondCount=parseInt( (timeAll-(1000*60*minuteCount))/1000);
+
+            doc.font('Song').text((minuteCount==0?'':(minuteCount+'分钟'))+(secondCount==0?'':(secondCount+'秒'))+(renci>1?'('+renci+'人次)':''),345,357,{
                 align:'left'
             })
+
+            //doc.font('Song').text(timeAll/(1000*60)+'分钟'+(renci>1?'('+renci+'人次)':''),345,357,{
+            //    align:'left'
+            //})
         }
     }
 
@@ -722,8 +730,15 @@ var createOperationPDFS=function(obj){
             let corporation=obj.corporation.name;
             let equipment=op.businessContent.equipment;
             let equipop=op.businessContent.equipOp.name;
-            title=corporation+equipop+'  '+equipment;
-            content=equipop+'  '+equipment;
+            if(op.businessContent.sequence){
+                title=corporation+'  '+equipop+equipment;
+                content=equipop+equipment;
+            }
+            else{
+                title=corporation+'  '+equipment+equipop;
+                content=equipment+equipop;
+            }
+
         }
         catch(e){
             console.log(e);
@@ -876,7 +891,10 @@ var createOperationPDFS=function(obj){
                 }
             }
             if(endTime>0){
-                doc.font('Song').text(timeAll/(1000*60)+'分钟'+(renci>1?'('+renci+'人次)':''),345,357,{
+                let minuteCount=parseInt(timeAll/(1000*60));
+                let secondCount=parseInt( (timeAll-(1000*60*minuteCount))/1000);
+
+                doc.font('Song').text((minuteCount==0?'':(minuteCount+'分钟'))+(secondCount==0?'':(secondCount+'秒'))+(renci>1?'('+renci+'人次)':''),345,357,{
                     align:'left'
                 })
             }

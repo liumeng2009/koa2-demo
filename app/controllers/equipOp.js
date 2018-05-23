@@ -39,23 +39,23 @@ exports.save=async(ctx,next)=>{
     }
 
     console.log('name:'+name);
-    let EquipTypeCheckName=await EquipOp.findAll({
+    let EquipTypeCheckName=await EquipOp.findOne({
         where:{
             name:name
         }
     })
 
-    if(EquipTypeCheckName.length>0){
+    if(EquipTypeCheckName){
         throw new ApiError(ApiErrorNames.EQUIP_OP_NAME_EXIST);
     }
 
-    let EquipTypeCheckCode=await EquipOp.findAll({
+    let EquipTypeCheckCode=await EquipOp.findOne({
         where:{
             code:code
         }
     })
 
-    if(EquipTypeCheckCode.length>0){
+    if(EquipTypeCheckCode){
         throw new ApiError(ApiErrorNames.EQUIP_OP_CODE_EXIST);
     }
 

@@ -15,6 +15,8 @@ router.get('/list/page/:pageid',user_controller.list);
 router.get('/delete/:id',user_controller.delete);
 
 router.post('/uploadAvatar',user_controller.uploadAvatar)
+router.get('/sysAvatar/list',user_controller.getSysAvatars)
+router.post('/sysAvatar/set',user_controller.setSysAvatars)
 
 
 router.get('/get/urltree',user_controller.getUrlTree);

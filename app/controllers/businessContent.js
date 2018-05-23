@@ -138,7 +138,8 @@ exports.save=async(ctx,next)=>{
                 status:1,
                 weight:operation.weight,
                 remark:operation.remark,
-                isAdvanced:false
+                isAdvanced:false,
+                sequence:operation.sequence
             }
             businessArray.push(businessObj);
         }
@@ -153,7 +154,8 @@ exports.save=async(ctx,next)=>{
                 status:1,
                 weight:operation.weight,
                 remark:operation.remark,
-                isAdvanced:true
+                isAdvanced:true,
+                sequence:operation.sequence
             }
             businessArray.push(businessObj);
         }
@@ -207,6 +209,7 @@ exports.edit=async(ctx,next)=>{
                 })
                 bc.weight=operation.weight;
                 bc.remark=operation.remark;
+                bc.sequence=operation.sequence;
                 console.log(operation.id+'修改：'+operation.weight+'比较'+bc.id);
                 let r1=await bc.save();
             }
@@ -219,7 +222,8 @@ exports.edit=async(ctx,next)=>{
                     status:1,
                     weight:operation.weight,
                     remark:operation.remark,
-                    isAdvanced:false
+                    isAdvanced:false,
+                    sequence:operation.sequence
                 }
                 let r2=await BusinessContent.create(businessObj);
             }
@@ -243,6 +247,7 @@ exports.edit=async(ctx,next)=>{
                 })
                 bc.weight=operation.weight;
                 bc.remark=operation.remark;
+                bc.sequence=operation.sequence
                 console.log(operation.id+'修改：'+operation.weight+'比较'+bc.id);
                 let r1=await bc.save();
             }
@@ -255,7 +260,8 @@ exports.edit=async(ctx,next)=>{
                     status:1,
                     weight:operation.weight,
                     remark:operation.remark,
-                    isAdvanced:true
+                    isAdvanced:true,
+                    sequence:operation.sequence
                 }
                 let r2=await BusinessContent.create(businessObj);
             }

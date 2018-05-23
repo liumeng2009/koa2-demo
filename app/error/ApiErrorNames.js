@@ -155,6 +155,13 @@ error_map.set(ApiErrorNames.EQUIP_TPYE_FIELD_NOT_NULL,{code:71001,message:'设�
 error_map.set(ApiErrorNames.EQUIP_TPYE_NAME_EXIST,{code:71002,message:'设备类型名称已存在'});
 error_map.set(ApiErrorNames.EQUIP_TPYE_CODE_EXIST,{code:71003,message:'设备类型代码已存在'});
 error_map.set(ApiErrorNames.EQUIP_TPYE_NULL,{code:71004,message:'设备类型不存在'});
+//设备操作
+error_map.set(ApiErrorNames.EQUIP_OP_FIELD_NOT_NULL,{code:72001,message:'故障名的输入值不能为空'});
+error_map.set(ApiErrorNames.EQUIP_OP_NAME_EXIST,{code:72002,message:'故障名称已存在'});
+error_map.set(ApiErrorNames.EQUIP_OP_CODE_EXIST,{code:72003,message:'故障代码已存在'});
+error_map.set(ApiErrorNames.EQUIP_OP_NULL,{code:72004,message:'故障名不存在'});
+
+
 
 //需求
 error_map.set(ApiErrorNames.ORDER_ATTRIBUTE_NOT_NULL, { code: 60001, message: '必填的输入值不能为空！'});

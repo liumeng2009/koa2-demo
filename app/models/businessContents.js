@@ -22,5 +22,8 @@ module.exports = db.defineModel('businessContents', {
     },
     status:{
         type:db.INTEGER
+    },
+    sequence:{
+        type:db.INTEGER
     }
 });
