@@ -1180,3 +1180,16 @@ exports.delete=async(ctx,next)=>{
         throw new ApiError(ApiErrorNames.OPERATION_NOT_EXIST);
     }
 }
+
+
+//一些sql语句
+//某时间段内，各公司的工单数
+//select COUNT(operations.id),FROM_UNIXTIME(operations.create_time/1000,'%Y%m') days,corporations.name from operations INNER JOIN orders on operations.orderId=orders.id INNER JOIN corporations on orders.custom_corporation=corporations.id where operations.status=1  and operations.create_time>='1496246400000' and operations.create_time<'1530374400000' GROUP BY days,corporations.name order by corporations.name;
+//某时间段内，各公司的工时数
+//SELECT `user`.`name` AS `user`,FROM_UNIXTIME(start_time/1000,'%Y%m') days, SUM(`end_time`-`start_time`)/60000 AS `分钟` FROM `actions` AS `actions` LEFT OUTER JOIN `users` AS `user` ON `actions`.`worker` = `user`.`id` WHERE `actions`.`status` = 1 AND (`actions`.`start_time` >= 1519833600000 AND `actions`.`end_time` <= 1521820800000) and `user`.name='朱亚亮' GROUP BY `user`.`name`,days;
+
+//select COUNT(operations.id),FROM_UNIXTIME(operations.create_time/1000,'%Y%m') days,corporations.name from operations INNER JOIN orders on operations.orderId=orders.id INNER JOIN corporations on orders.custom_corporation=corporations.id where operations.status=1  and operations.create_time>='1496246400000' and operations.create_time<'1530374400000' GROUP BY days,corporations.name order by days;
+
+//select FROM_UNIXTIME(start_time/1000,'%Y%m') days, SUM(`end_time`-`start_time`)/60000 AS `分钟`,corporations.name from actions INNER JOIN operations on actions.operationId=operations.id INNER JOIN orders on operations.orderId=orders.id INNER JOIN corporations on orders.custom_corporation=corporations.id where actions.`status`=1 and operations.status=1 group by days,corporations.name order by days;
+
+//select FROM_UNIXTIME(operations.create_time/1000,'%Y%m') days,corporations.name,COUNT(businesscontents.equipment),businesscontents.equipment from businesscontents INNER JOIN operations on businesscontents.id=operations.op inner join orders on operations.orderId=orders.id INNER JOIN corporations on orders.custom_corporation=corporations.id where operations.status=1 and corporations.name='建设公司' group by days,corporations.name,businesscontents.equipment order by days;
