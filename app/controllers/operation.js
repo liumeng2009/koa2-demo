@@ -1193,3 +1193,66 @@ exports.delete=async(ctx,next)=>{
 //select FROM_UNIXTIME(start_time/1000,'%Y%m') days, SUM(`end_time`-`start_time`)/60000 AS `分钟`,corporations.name from actions INNER JOIN operations on actions.operationId=operations.id INNER JOIN orders on operations.orderId=orders.id INNER JOIN corporations on orders.custom_corporation=corporations.id where actions.`status`=1 and operations.status=1 group by days,corporations.name order by days;
 
 //select FROM_UNIXTIME(operations.create_time/1000,'%Y%m') days,corporations.name,COUNT(businesscontents.equipment),businesscontents.equipment from businesscontents INNER JOIN operations on businesscontents.id=operations.op inner join orders on operations.orderId=orders.id INNER JOIN corporations on orders.custom_corporation=corporations.id where operations.status=1 and corporations.name='建设公司' group by days,corporations.name,businesscontents.equipment order by days;
+
+exports.workerOperationList=async(ctx,next)=>{
+    let token=ctx.query.token;
+
+    let OperationModel=model.operations;
+    let ActionModel=model.actions;
+    let OrderModel=model.orders;
+    let CorporationModel=model.corporations;
+    let UserModel=model.user;
+
+    OperationModel.hasMany(ActionModel,{foreignKey:'operationId',as:'actions'});
+    OperationModel.belongsTo(OrderModel,{foreignKey:'orderId'});
+    OrderModel.belongsTo(CorporationModel,{foreignKey:'custom_corporation'});
+    ActionModel.belongsTo(UserModel,{foreignKey:'worker'})
+
+    let array=await OperationModel.findAll({
+        where:{
+            status:1
+        }
+    })
+
+    let selectArray=[];
+
+    for(let a of array){
+        console.log(a.id);
+        selectArray.push(a.id);
+    }
+
+
+    let result=await OperationModel.findAll({
+        where:{
+            id:{
+                $notIn:selectArray
+            }
+        },
+/*        include:[
+            {
+                model:ActionModel,
+                as:'actions',
+                where:{
+                    operationComplete:1
+                },
+                include:[
+                    {
+                        model:UserModel,
+                        where:{
+                            token:token
+                        }
+                    }
+                ]
+            }
+        ],*/
+        order:[
+            ['create_time','DESC']
+        ]
+    })
+
+    ctx.body={
+        status:0,
+        data:result,
+    }
+
+}
