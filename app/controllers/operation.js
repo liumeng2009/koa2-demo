@@ -1194,8 +1194,23 @@ exports.delete=async(ctx,next)=>{
 
 //select FROM_UNIXTIME(operations.create_time/1000,'%Y%m') days,corporations.name,COUNT(businesscontents.equipment),businesscontents.equipment from businesscontents INNER JOIN operations on businesscontents.id=operations.op inner join orders on operations.orderId=orders.id INNER JOIN corporations on orders.custom_corporation=corporations.id where operations.status=1 and corporations.name='建设公司' group by days,corporations.name,businesscontents.equipment order by days;
 
+//带一个时间参数，查询当天的未完成工单，没有参数的话，就默认当天的
 exports.workerOperationList=async(ctx,next)=>{
     let token=ctx.query.token;
+    let selectStamp=ctx.query.stamp;
+
+    let startDate;
+    let endDate;
+    if(selectStamp&&selectStamp!=''){
+        let dateQuery=new Date(selectStamp*1000);
+        startDate=new Date(dateQuery.getFullYear(),dateQuery.getMonth(),dateQuery.getDate(),0,0,0);
+        endDate=new Date(dateQuery.getFullYear(),dateQuery.getMonth(),dateQuery.getDate(),23,59,59);
+    }
+    else{
+        let dateQuery=new Date();
+        startDate=new Date(dateQuery.getFullYear(),dateQuery.getMonth(),dateQuery.getDate(),0,0,0);
+        endDate=new Date(dateQuery.getFullYear(),dateQuery.getMonth(),dateQuery.getDate(),23,59,59);
+    }
 
     let OperationModel=model.operations;
     let ActionModel=model.actions;
@@ -1208,32 +1223,52 @@ exports.workerOperationList=async(ctx,next)=>{
     OrderModel.belongsTo(CorporationModel,{foreignKey:'custom_corporation'});
     ActionModel.belongsTo(UserModel,{foreignKey:'worker'})
 
-    let array=await OperationModel.findAll({
-        where:{
-            status:1
-        }
-    })
-
-    let selectArray=[];
-
-    for(let a of array){
-        console.log(a.id);
-        selectArray.push(a.id);
-    }
-
 
     let result=await OperationModel.findAll({
         where:{
-            id:{
-                $notIn:selectArray
-            }
+            status:1,
+            $and:[
+                {create_time:{'$gte':startDate.getTime()}},
+                {create_time:{'$lte':endDate.getTime()}}
+            ]
         },
-/*        include:[
+        include:[
             {
                 model:ActionModel,
                 as:'actions',
                 where:{
-                    operationComplete:1
+                    operationComplete:1,
+                    status:1
+                }
+            }
+        ]
+    })
+
+    console.log(result);
+    let otherArray=['1'];
+    for(let r of result){
+        console.log(r);
+        otherArray.push(r.id);
+    }
+    console.log(otherArray);
+
+    let operationObj=await OperationModel.findAll({
+        where:{
+            status:1,
+            id:{
+                $notIn:otherArray
+            },
+            $and:[
+                {create_time:{'$gte':startDate.getTime()}},
+                {create_time:{'$lte':endDate.getTime()}}
+            ]
+        },
+        include:[
+            {
+                model:ActionModel,
+                as:'actions',
+                where:{
+                    status:1
                 },
                 include:[
                     {
@@ -1244,15 +1279,13 @@ exports.workerOperationList=async(ctx,next)=>{
                     }
                 ]
             }
-        ],*/
-        order:[
-            ['create_time','DESC']
+
         ]
-    })
+    });
 
     ctx.body={
         status:0,
-        data:result,
+        data:operationObj
     }
 
 }
