@@ -14,7 +14,10 @@ router.get('/list_month_corporation_count/time/:time', operation_controller.list
 router.get('/list/page/:pageid/time/:time/corp/:corp/no/:no', operation_controller.list);
 router.get('/list/time/:time/corp/:corp/no/:no', operation_controller.list);
 
-router.get('/workerOperationList',operation_controller.workerOperationList)
+router.get('/workingOperationList',operation_controller.workingOperationList)
+router.get('/doneOperationList',operation_controller.doneOperationList)
+router.get('/allOperationList',operation_controller.allOperationList)
+router.get('/operationCount',operation_controller.operationCount)
 
 router.get('/:id', operation_controller.getOperation);
 router.post('/save', operation_controller.add);

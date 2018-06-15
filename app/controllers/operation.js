@@ -1195,7 +1195,7 @@ exports.delete=async(ctx,next)=>{
 //select FROM_UNIXTIME(operations.create_time/1000,'%Y%m') days,corporations.name,COUNT(businesscontents.equipment),businesscontents.equipment from businesscontents INNER JOIN operations on businesscontents.id=operations.op inner join orders on operations.orderId=orders.id INNER JOIN corporations on orders.custom_corporation=corporations.id where operations.status=1 and corporations.name='建设公司' group by days,corporations.name,businesscontents.equipment order by days;
 
 //带一个时间参数，查询当天的未完成工单，没有参数的话，就默认当天的
-exports.workerOperationList=async(ctx,next)=>{
+exports.workingOperationList=async(ctx,next)=>{
     let token=ctx.query.token;
     let selectStamp=ctx.query.stamp;
 
@@ -1285,7 +1285,336 @@ exports.workerOperationList=async(ctx,next)=>{
 
     ctx.body={
         status:0,
-        data:operationObj
+        data:operationObj,
+        total:operationObj.length
     }
+
+}
+
+exports.doneOperationList=async(ctx,next)=>{
+    let token=ctx.query.token;
+    let selectStamp=ctx.query.stamp;
+
+    let startDate;
+    let endDate;
+    if(selectStamp&&selectStamp!=''){
+        let dateQuery=new Date(selectStamp*1000);
+        startDate=new Date(dateQuery.getFullYear(),dateQuery.getMonth(),dateQuery.getDate(),0,0,0);
+        endDate=new Date(dateQuery.getFullYear(),dateQuery.getMonth(),dateQuery.getDate(),23,59,59);
+    }
+    else{
+        let dateQuery=new Date();
+        startDate=new Date(dateQuery.getFullYear(),dateQuery.getMonth(),dateQuery.getDate(),0,0,0);
+        endDate=new Date(dateQuery.getFullYear(),dateQuery.getMonth(),dateQuery.getDate(),23,59,59);
+    }
+
+    let OperationModel=model.operations;
+    let ActionModel=model.actions;
+    let OrderModel=model.orders;
+    let CorporationModel=model.corporations;
+    let UserModel=model.user;
+
+    OperationModel.hasMany(ActionModel,{foreignKey:'operationId',as:'actions'});
+    OperationModel.belongsTo(OrderModel,{foreignKey:'orderId'});
+    OrderModel.belongsTo(CorporationModel,{foreignKey:'custom_corporation'});
+    ActionModel.belongsTo(UserModel,{foreignKey:'worker'})
+
+
+    let result=await OperationModel.findAll({
+        where:{
+            status:1,
+            $and:[
+                {create_time:{'$gte':startDate.getTime()}},
+                {create_time:{'$lte':endDate.getTime()}}
+            ]
+        },
+        include:[
+            {
+                model:ActionModel,
+                as:'actions',
+                where:{
+                    operationComplete:1,
+                    status:1
+                }
+            }
+        ]
+    })
+
+    console.log(result);
+    let otherArray=['1'];
+    for(let r of result){
+        console.log(r);
+        otherArray.push(r.id);
+    }
+    console.log(otherArray);
+
+    let operationObj=await OperationModel.findAll({
+        where:{
+            status:1,
+            id:{
+                $in:otherArray
+            },
+            $and:[
+                {create_time:{'$gte':startDate.getTime()}},
+                {create_time:{'$lte':endDate.getTime()}}
+            ]
+        },
+        include:[
+            {
+                model:ActionModel,
+                as:'actions',
+                where:{
+                    status:1
+                },
+                include:[
+                    {
+                        model:UserModel,
+                        where:{
+                            token:token
+                        }
+                    }
+                ]
+            }
+
+        ]
+    });
+
+    ctx.body={
+        status:0,
+        data:operationObj,
+        total:operationObj.length
+    }
+}
+
+exports.allOperationList=async(ctx,next)=>{
+    let token=ctx.query.token;
+    let selectStamp=ctx.query.stamp;
+
+    let startDate;
+    let endDate;
+    if(selectStamp&&selectStamp!=''){
+        let dateQuery=new Date(selectStamp*1000);
+        startDate=new Date(dateQuery.getFullYear(),dateQuery.getMonth(),dateQuery.getDate(),0,0,0);
+        endDate=new Date(dateQuery.getFullYear(),dateQuery.getMonth(),dateQuery.getDate(),23,59,59);
+    }
+    else{
+        let dateQuery=new Date();
+        startDate=new Date(dateQuery.getFullYear(),dateQuery.getMonth(),dateQuery.getDate(),0,0,0);
+        endDate=new Date(dateQuery.getFullYear(),dateQuery.getMonth(),dateQuery.getDate(),23,59,59);
+    }
+
+    let OperationModel=model.operations;
+    let ActionModel=model.actions;
+    let OrderModel=model.orders;
+    let CorporationModel=model.corporations;
+    let UserModel=model.user;
+
+    OperationModel.hasMany(ActionModel,{foreignKey:'operationId',as:'actions'});
+    OperationModel.belongsTo(OrderModel,{foreignKey:'orderId'});
+    OrderModel.belongsTo(CorporationModel,{foreignKey:'custom_corporation'});
+    ActionModel.belongsTo(UserModel,{foreignKey:'worker'})
+
+
+    let result=await OperationModel.findAll({
+        where:{
+            status:1,
+            $and:[
+                {create_time:{'$gte':startDate.getTime()}},
+                {create_time:{'$lte':endDate.getTime()}}
+            ]
+        },
+        include:[
+            {
+                model:ActionModel,
+                as:'actions',
+                where:{
+                    status:1
+                },
+                include:[
+                    {
+                        model:UserModel,
+                        where:{
+                            token:token
+                        }
+                    }
+                ]
+            }
+        ]
+    })
+
+    console.log(result);
+    let otherArray=['1'];
+    for(let r of result){
+        console.log(r);
+        otherArray.push(r.id);
+    }
+    console.log(otherArray);
+
+    let operationObj=await OperationModel.findAll({
+        where:{
+            status:1,
+            id:{
+                $in:otherArray
+            },
+            $and:[
+                {create_time:{'$gte':startDate.getTime()}},
+                {create_time:{'$lte':endDate.getTime()}}
+            ]
+        },
+        include:[
+            {
+                model:ActionModel,
+                as:'actions',
+                where:{
+                    status:1
+                },
+                include:[
+                    {
+                        model:UserModel,
+                        where:{
+                            token:token
+                        }
+                    }
+                ]
+            }
+
+        ]
+    });
+
+    ctx.body={
+        status:0,
+        data:operationObj,
+        total:operationObj.length
+    }
+}
+
+exports.operationCount=async(ctx,next)=>{
+    let token=ctx.query.token;
+    let selectStamp=ctx.query.stamp;
+
+    let startDate;
+    let endDate;
+    if(selectStamp&&selectStamp!=''){
+        let dateQuery=new Date(selectStamp*1000);
+        startDate=new Date(dateQuery.getFullYear(),dateQuery.getMonth(),dateQuery.getDate(),0,0,0);
+        endDate=new Date(dateQuery.getFullYear(),dateQuery.getMonth(),dateQuery.getDate(),23,59,59);
+    }
+    else{
+        let dateQuery=new Date();
+        startDate=new Date(dateQuery.getFullYear(),dateQuery.getMonth(),dateQuery.getDate(),0,0,0);
+        endDate=new Date(dateQuery.getFullYear(),dateQuery.getMonth(),dateQuery.getDate(),23,59,59);
+    }
+
+    let OperationModel=model.operations;
+    let ActionModel=model.actions;
+    let OrderModel=model.orders;
+    let CorporationModel=model.corporations;
+    let UserModel=model.user;
+
+    OperationModel.hasMany(ActionModel,{foreignKey:'operationId',as:'actions'});
+    OperationModel.belongsTo(OrderModel,{foreignKey:'orderId'});
+    OrderModel.belongsTo(CorporationModel,{foreignKey:'custom_corporation'});
+    ActionModel.belongsTo(UserModel,{foreignKey:'worker'})
+
+
+    let result=await OperationModel.findAll({
+        where:{
+            status:1,
+            $and:[
+                {create_time:{'$gte':startDate.getTime()}},
+                {create_time:{'$lte':endDate.getTime()}}
+            ]
+        },
+        include:[
+            {
+                model:ActionModel,
+                as:'actions',
+                where:{
+                    operationComplete:1,
+                    status:1
+                }
+            }
+        ]
+    })
+
+    console.log(result);
+    let otherArray=['1'];
+    for(let r of result){
+        console.log(r);
+        otherArray.push(r.id);
+    }
+
+    let operationCountDone=await OperationModel.count({
+        where:{
+            status:1,
+            id:{
+                $in:otherArray
+            },
+            $and:[
+                {create_time:{'$gte':startDate.getTime()}},
+                {create_time:{'$lte':endDate.getTime()}}
+            ]
+        },
+        include:[
+            {
+                model:ActionModel,
+                as:'actions',
+                where:{
+                    status:1
+                },
+                include:[
+                    {
+                        model:UserModel,
+                        where:{
+                            token:token
+                        }
+                    }
+                ]
+            }
+
+        ]
+    });
+
+    let operationCountWorking=await OperationModel.count({
+        where:{
+            status:1,
+            id:{
+                $notIn:otherArray
+            },
+            $and:[
+                {create_time:{'$gte':startDate.getTime()}},
+                {create_time:{'$lte':endDate.getTime()}}
+            ]
+        },
+        include:[
+            {
+                model:ActionModel,
+                as:'actions',
+                where:{
+                    status:1
+                },
+                include:[
+                    {
+                        model:UserModel,
+                        where:{
+                            token:token
+                        }
+                    }
+                ]
+            }
+
+        ]
+    });
+
+    ctx.body={
+        status:0,
+        data:{
+            working:operationCountWorking,
+            done:operationCountDone,
+            all:operationCountWorking+operationCountDone
+        }
+    }
+
+
 
 }
