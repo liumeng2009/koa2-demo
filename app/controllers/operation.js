@@ -1194,6 +1194,11 @@ exports.delete=async(ctx,next)=>{
 
 //select FROM_UNIXTIME(operations.create_time/1000,'%Y%m') days,corporations.name,COUNT(businesscontents.equipment),businesscontents.equipment from businesscontents INNER JOIN operations on businesscontents.id=operations.op inner join orders on operations.orderId=orders.id INNER JOIN corporations on orders.custom_corporation=corporations.id where operations.status=1 and corporations.name='建设公司' group by days,corporations.name,businesscontents.equipment order by days;
 
+//时间段内，某人工时数
+//select SUM(`end_time`-`start_time`)/3600000 AS `分钟` from actions INNER JOIN operations on actions.operationId=operations.id INNER JOIN users on actions.worker=users.id INNER JOIN orders on operations.orderId=orders.id INNER JOIN corporations on orders.custom_corporation=corporations.id where actions.`status`=1 and operations.status=1 and operations.create_time>='1514736000000' and operations.create_time<'1530374400000' and users.name='朱亚亮';
+//时间段内，某人工单数
+//select count(Operations.id) from Operations INNER JOIN Actions on actions.operationId=operations.id INNER JOIN users on actions.worker=users.id where operations.status=1 and operations.create_time>='1514736000000' and operations.create_time<'1530374400000' and users.name='朱亚亮';
+
 //带一个时间参数，查询当天的未完成工单，没有参数的话，就默认当天的
 exports.workingOperationList=async(ctx,next)=>{
     let token=ctx.query.token;
@@ -1215,13 +1220,17 @@ exports.workingOperationList=async(ctx,next)=>{
     let OperationModel=model.operations;
     let ActionModel=model.actions;
     let OrderModel=model.orders;
-    let CorporationModel=model.corporations;
     let UserModel=model.user;
+    let BusinessContent=model.businessContents;
+    let CorporationModel=model.corporations;
+    let EquipOpModel=model.equipOps;
 
     OperationModel.hasMany(ActionModel,{foreignKey:'operationId',as:'actions'});
     OperationModel.belongsTo(OrderModel,{foreignKey:'orderId'});
     OrderModel.belongsTo(CorporationModel,{foreignKey:'custom_corporation'});
-    ActionModel.belongsTo(UserModel,{foreignKey:'worker'})
+    ActionModel.belongsTo(UserModel,{foreignKey:'worker'});
+    OperationModel.belongsTo(BusinessContent,{foreignKey:'op'});
+    BusinessContent.belongsTo(EquipOpModel,{foreignKey:'operation',targetKey:'code'});
 
 
     let result=await OperationModel.findAll({
@@ -1250,7 +1259,6 @@ exports.workingOperationList=async(ctx,next)=>{
         console.log(r);
         otherArray.push(r.id);
     }
-    console.log(otherArray);
 
     let operationObj=await OperationModel.findAll({
         where:{
@@ -1264,6 +1272,22 @@ exports.workingOperationList=async(ctx,next)=>{
             ]
         },
         include:[
+            {
+                model:BusinessContent,
+                include:[
+                    {
+                        model:EquipOpModel
+                    }
+                ]
+            },
+            {
+                model:OrderModel,
+                include:[
+                    {
+                        model:CorporationModel
+                    }
+                ]
+            },
             {
                 model:ActionModel,
                 as:'actions',
@@ -1280,6 +1304,9 @@ exports.workingOperationList=async(ctx,next)=>{
                 ]
             }
 
+        ],
+        order:[
+            ['create_time','ASC']
         ]
     });
 
@@ -1313,11 +1340,15 @@ exports.doneOperationList=async(ctx,next)=>{
     let OrderModel=model.orders;
     let CorporationModel=model.corporations;
     let UserModel=model.user;
+    let BusinessContent=model.businessContents;
+    let EquipOpModel=model.equipOps;
 
     OperationModel.hasMany(ActionModel,{foreignKey:'operationId',as:'actions'});
     OperationModel.belongsTo(OrderModel,{foreignKey:'orderId'});
     OrderModel.belongsTo(CorporationModel,{foreignKey:'custom_corporation'});
     ActionModel.belongsTo(UserModel,{foreignKey:'worker'})
+    OperationModel.belongsTo(BusinessContent,{foreignKey:'op'});
+    BusinessContent.belongsTo(EquipOpModel,{foreignKey:'operation',targetKey:'code'});
 
 
     let result=await OperationModel.findAll({
@@ -1346,7 +1377,6 @@ exports.doneOperationList=async(ctx,next)=>{
         console.log(r);
         otherArray.push(r.id);
     }
-    console.log(otherArray);
 
     let operationObj=await OperationModel.findAll({
         where:{
@@ -1360,6 +1390,22 @@ exports.doneOperationList=async(ctx,next)=>{
             ]
         },
         include:[
+            {
+                model:OrderModel,
+                include:[
+                    {
+                        model:CorporationModel
+                    }
+                ]
+            },
+            {
+                model:BusinessContent,
+                include:[
+                    {
+                        model:EquipOpModel
+                    }
+                ]
+            },
             {
                 model:ActionModel,
                 as:'actions',
@@ -1376,6 +1422,9 @@ exports.doneOperationList=async(ctx,next)=>{
                 ]
             }
 
+        ],
+        order:[
+            ['create_time','ASC']
         ]
     });
 
@@ -1408,11 +1457,15 @@ exports.allOperationList=async(ctx,next)=>{
     let OrderModel=model.orders;
     let CorporationModel=model.corporations;
     let UserModel=model.user;
+    let BusinessContent=model.businessContents;
+    let EquipOpModel=model.equipOps;
 
     OperationModel.hasMany(ActionModel,{foreignKey:'operationId',as:'actions'});
     OperationModel.belongsTo(OrderModel,{foreignKey:'orderId'});
     OrderModel.belongsTo(CorporationModel,{foreignKey:'custom_corporation'});
-    ActionModel.belongsTo(UserModel,{foreignKey:'worker'})
+    ActionModel.belongsTo(UserModel,{foreignKey:'worker'});
+    OperationModel.belongsTo(BusinessContent,{foreignKey:'op'});
+    BusinessContent.belongsTo(EquipOpModel,{foreignKey:'operation',targetKey:'code'});
 
 
     let result=await OperationModel.findAll({
@@ -1424,6 +1477,9 @@ exports.allOperationList=async(ctx,next)=>{
             ]
         },
         include:[
+            {
+                model:BusinessContent
+            },
             {
                 model:ActionModel,
                 as:'actions',
@@ -1441,8 +1497,6 @@ exports.allOperationList=async(ctx,next)=>{
             }
         ]
     })
-
-    console.log(result);
     let otherArray=['1'];
     for(let r of result){
         console.log(r);
@@ -1463,6 +1517,22 @@ exports.allOperationList=async(ctx,next)=>{
         },
         include:[
             {
+                model:OrderModel,
+                include:[
+                    {
+                        model:CorporationModel
+                    }
+                ]
+            },
+            {
+                model:BusinessContent,
+                include:[
+                    {
+                        model:EquipOpModel
+                    }
+                ]
+            },
+            {
                 model:ActionModel,
                 as:'actions',
                 where:{
@@ -1478,6 +1548,9 @@ exports.allOperationList=async(ctx,next)=>{
                 ]
             }
 
+        ],
+        order:[
+            ['create_time','ASC']
         ]
     });
 
