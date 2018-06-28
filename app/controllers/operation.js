@@ -1035,11 +1035,10 @@ exports.add=async(ctx,next)=>{
 exports.edit=async(ctx,next)=>{
     await auth.checkAuth(ctx.query.token,'op','edit');
     let Operation=model.operations;
-    let ActionModel=model.actions;
     let operationId=ctx.request.body.id;
     let op=ctx.request.body.businessContent.id;
     let remark=ctx.request.body.remark;
-    let important=ctx.request.important;
+    let important=ctx.request.body.important;
 
     let operation=await Operation.findOne({
         where:{
@@ -1049,31 +1048,17 @@ exports.edit=async(ctx,next)=>{
     })
 
     if(operation){
-        let actionObj=await ActionModel.findOne({
-            where:{
-                status:1,
-                operationId:operationId
-            }
-        });
-        if(1==0){
-            throw new ApiError(ApiErrorNames.OPERATION_CAN_NOT_EDIT);
+        operation.op=op;
+        operation.remark=remark;
+        operation.important=important;
+
+        let saveResult=await operation.save();
+
+        ctx.body={
+            status:0,
+            data:saveResult,
+            message:response_config.updatedSuccess
         }
-        else{
-            //存在这个信息，并且没有工程师进行工作和指派，才可以进行编辑
-            operation.op=op;
-            operation.remark=remark;
-            operation.imporant=important;
-
-            let saveResult=await operation.save();
-
-            ctx.body={
-                status:0,
-                data:saveResult,
-                message:response_config.updatedSuccess
-            }
-
-        }
-
     }
     else{
         throw new ApiError(ApiErrorNames.OPERATION_NOT_EXIST);
@@ -1231,6 +1216,7 @@ exports.workingOperationList=async(ctx,next)=>{
     ActionModel.belongsTo(UserModel,{foreignKey:'worker'});
     OperationModel.belongsTo(BusinessContent,{foreignKey:'op'});
     BusinessContent.belongsTo(EquipOpModel,{foreignKey:'operation',targetKey:'code'});
+    OrderModel.hasMany(OperationModel,{foreignKey:'orderId',as:'operations'});
 
 
     let result=await OperationModel.findAll({
@@ -1260,60 +1246,64 @@ exports.workingOperationList=async(ctx,next)=>{
         otherArray.push(r.id);
     }
 
-    let operationObj=await OperationModel.findAll({
+
+    let orderObj=await OrderModel.findAll({
         where:{
-            status:1,
-            id:{
-                $notIn:otherArray
-            },
-            $and:[
-                {create_time:{'$gte':startDate.getTime()}},
-                {create_time:{'$lte':endDate.getTime()}}
-            ]
+            status:1
         },
         include:[
             {
-                model:BusinessContent,
-                include:[
-                    {
-                        model:EquipOpModel
-                    }
-                ]
-            },
-            {
-                model:OrderModel,
-                include:[
-                    {
-                        model:CorporationModel
-                    }
-                ]
-            },
-            {
-                model:ActionModel,
-                as:'actions',
+                model:OperationModel,
                 where:{
-                    status:1
+                    status:1,
+                    id:{
+                        $notIn:otherArray
+                    },
+                    $and:[
+                        {create_time:{'$gte':startDate.getTime()}},
+                        {create_time:{'$lte':endDate.getTime()}}
+                    ]
                 },
+                as:'operations',
                 include:[
                     {
-                        model:UserModel,
+                        model:BusinessContent,
+                        include:[
+                            {
+                                model:EquipOpModel
+                            }
+                        ]
+                    },
+                    {
+                        model:ActionModel,
+                        as:'actions',
                         where:{
-                            token:token
-                        }
+                            status:1
+                        },
+                        include:[
+                            {
+                                model:UserModel,
+                                where:{
+                                    token:token
+                                }
+                            }
+                        ]
                     }
                 ]
+            },
+            {
+                model:CorporationModel
             }
-
         ],
         order:[
-            ['create_time','ASC']
+            ['incoming_time','ASC']
         ]
-    });
+    })
 
     ctx.body={
         status:0,
-        data:operationObj,
-        total:operationObj.length
+        data:orderObj,
+        total:orderObj.length
     }
 
 }
@@ -1378,6 +1368,59 @@ exports.doneOperationList=async(ctx,next)=>{
         otherArray.push(r.id);
     }
 
+    let orderObj=await OrderModel.findAll({
+        where:{
+            status:1
+        },
+        include:[
+            {
+                model:OperationModel,
+                where:{
+                    status:1,
+                    id:{
+                        $in:otherArray
+                    },
+                    $and:[
+                        {create_time:{'$gte':startDate.getTime()}},
+                        {create_time:{'$lte':endDate.getTime()}}
+                    ]
+                },
+                as:'operations',
+                include:[
+                    {
+                        model:BusinessContent,
+                        include:[
+                            {
+                                model:EquipOpModel
+                            }
+                        ]
+                    },
+                    {
+                        model:ActionModel,
+                        as:'actions',
+                        where:{
+                            status:1
+                        },
+                        include:[
+                            {
+                                model:UserModel,
+                                where:{
+                                    token:token
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                model:CorporationModel
+            }
+        ],
+        order:[
+            ['incoming_time','ASC']
+        ]
+    })
+
     let operationObj=await OperationModel.findAll({
         where:{
             status:1,
@@ -1430,8 +1473,8 @@ exports.doneOperationList=async(ctx,next)=>{
 
     ctx.body={
         status:0,
-        data:operationObj,
-        total:operationObj.length
+        data:orderObj,
+        total:orderObj.length
     }
 }
 
