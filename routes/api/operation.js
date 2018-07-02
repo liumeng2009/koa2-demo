@@ -22,6 +22,7 @@ router.get('/operationCount',operation_controller.operationCount)
 router.get('/:id', operation_controller.getOperation);
 router.post('/save', operation_controller.add);
 router.post('/edit', operation_controller.edit);
+router.post('/editSimple', operation_controller.editSimple);
 
 
 

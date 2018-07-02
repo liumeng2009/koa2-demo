@@ -1065,6 +1065,98 @@ exports.edit=async(ctx,next)=>{
     }
 }
 
+//修改工单的某一个属性，为了APP设计
+exports.editSimple=async(ctx,next)=>{
+    let action=ctx.request.body.action;
+    switch (action){
+        case 'corporation':
+            let operationId=ctx.request.body.operationId;
+            let corporationId=ctx.request.body.corporationId;
+            let saveResult=await editOperationCorporation(operationId,corporationId);
+            ctx.body={
+                status:0,
+                data:saveResult,
+                message:response_config.updatedSuccess
+            }
+            break;
+        default:
+            throw new ApiError(ApiErrorNames.INPUT_FIELD_NULL,['编辑项']);
+            break;
+    }
+}
+
+var editOperationCorporation=async function(operationId,corporationId){
+    let OperationModel=model.operations;
+    let OrderModel=model.orders;
+    let CorporationModel=model.corporations;
+    let CorpBuildingModel=model.corpBuildings;
+    OperationModel.belongsTo(OrderModel,{foreignKey:'orderId'});
+    OrderModel.hasMany(OperationModel,{foreignKey:'orderId',as:'operations'});
+    CorporationModel.hasMany(CorpBuildingModel,{foreignKey:'corporationId',as:'buildings'});
+
+    let operationExist=await OperationModel.findOne({
+        where:{
+            status:1,
+            id:operationId
+        }
+    })
+    if(operationExist){
+
+    }
+    else{
+        throw new ApiError(ApiErrorNames.OPERATION_NOT_EXIST);
+    }
+
+    let corporationExist=await CorporationModel.findOne({
+        where:{
+            status:1,
+            id:corporationId
+        },
+        include:[
+            {
+                model:CorpBuildingModel,
+                as:'buildings'
+            }
+        ]
+    })
+    let buildingId;
+    if(corporationExist){
+        if(corporationExist.buildings&&corporationExist.buildings.length>0){
+            buildingId=corporationExist.buildings[0].id;
+            console.log(buildingId);
+        }
+    }
+    else{
+        throw new ApiError(ApiErrorNames.CORPORATION_NOT_EXIST);
+    }
+
+    let orderObj=await OrderModel.findOne({
+        where:{
+            status:1
+        },
+        include:[
+            {
+                model:OperationModel,
+                as:'operations',
+                where:{
+                    id:operationId,
+                    status:1
+                }
+            }
+        ]
+    })
+
+    console.log(corporationId+'   '+buildingId);
+
+    orderObj.custom_corporation=corporationId;
+    orderObj.custom_position=buildingId;
+
+    let saveObj=await orderObj.save();
+
+    return saveObj;
+
+}
+
 //废弃，没用
 exports.save=async(ctx,next)=>{
     let name=ctx.request.body.name;
