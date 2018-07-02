@@ -1068,14 +1068,32 @@ exports.edit=async(ctx,next)=>{
 //修改工单的某一个属性，为了APP设计
 exports.editSimple=async(ctx,next)=>{
     let action=ctx.request.body.action;
+    let operationId=ctx.request.body.operationId;
     switch (action){
         case 'corporation':
-            let operationId=ctx.request.body.operationId;
             let corporationId=ctx.request.body.corporationId;
-            let saveResult=await editOperationCorporation(operationId,corporationId);
+            let saveResult1=await editOperationCorporation(operationId,corporationId);
             ctx.body={
                 status:0,
-                data:saveResult,
+                data:saveResult1,
+                message:response_config.updatedSuccess
+            }
+            break;
+        case 'phone':
+            let phone=ctx.request.body.inputValue;
+            let saveResult2=await editOperationPhone(operationId,phone);
+            ctx.body={
+                status:0,
+                data:saveResult2,
+                message:response_config.updatedSuccess
+            }
+            break;
+        case 'customname':
+            let customname=ctx.request.body.inputValue;
+            let saveResult3=await editOperationUser(operationId,customname);
+            ctx.body={
+                status:0,
+                data:saveResult3,
                 message:response_config.updatedSuccess
             }
             break;
@@ -1150,6 +1168,97 @@ var editOperationCorporation=async function(operationId,corporationId){
 
     orderObj.custom_corporation=corporationId;
     orderObj.custom_position=buildingId;
+
+    let saveObj=await orderObj.save();
+
+    return saveObj;
+
+}
+
+var editOperationPhone=async function(operationId,phone){
+    let OperationModel=model.operations;
+    let OrderModel=model.orders;
+    OperationModel.belongsTo(OrderModel,{foreignKey:'orderId'});
+    OrderModel.hasMany(OperationModel,{foreignKey:'orderId',as:'operations'});
+
+
+    let operationExist=await OperationModel.findOne({
+        where:{
+            status:1,
+            id:operationId
+        }
+    })
+    if(operationExist){
+
+    }
+    else{
+        throw new ApiError(ApiErrorNames.OPERATION_NOT_EXIST);
+    }
+
+
+    let orderObj=await OrderModel.findOne({
+        where:{
+            status:1
+        },
+        include:[
+            {
+                model:OperationModel,
+                as:'operations',
+                where:{
+                    id:operationId,
+                    status:1
+                }
+            }
+        ]
+    })
+
+    orderObj.custom_phone=phone;
+
+    let saveObj=await orderObj.save();
+
+    return saveObj;
+
+}
+
+var editOperationUser=async function(operationId,customname){
+    let OperationModel=model.operations;
+    let OrderModel=model.orders;
+    OperationModel.belongsTo(OrderModel,{foreignKey:'orderId'});
+    OrderModel.hasMany(OperationModel,{foreignKey:'orderId',as:'operations'});
+
+
+    let operationExist=await OperationModel.findOne({
+        where:{
+            status:1,
+            id:operationId
+        }
+    })
+    if(operationExist){
+
+    }
+    else{
+        throw new ApiError(ApiErrorNames.OPERATION_NOT_EXIST);
+    }
+
+
+    let orderObj=await OrderModel.findOne({
+        where:{
+            status:1
+        },
+        include:[
+            {
+                model:OperationModel,
+                as:'operations',
+                where:{
+                    id:operationId,
+                    status:1
+                }
+            }
+        ]
+    })
+
+
+    orderObj.custom_name=customname;
 
     let saveObj=await orderObj.save();
 
