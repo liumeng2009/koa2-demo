@@ -1069,6 +1069,8 @@ exports.edit=async(ctx,next)=>{
 exports.editSimple=async(ctx,next)=>{
     let action=ctx.request.body.action;
     let operationId=ctx.request.body.operationId;
+    console.log(action);
+    console.log(operationId);
     switch (action){
         case 'corporation':
             let corporationId=ctx.request.body.corporationId;
@@ -1094,6 +1096,16 @@ exports.editSimple=async(ctx,next)=>{
             ctx.body={
                 status:0,
                 data:saveResult3,
+                message:response_config.updatedSuccess
+            }
+            break;
+        case 'op':
+            console.log(333333333+operationId);
+            let businessId=ctx.request.body.business;
+            let saveResult4=await editOperationOp(operationId,businessId);
+            ctx.body={
+                status:0,
+                data:saveResult4,
                 message:response_config.updatedSuccess
             }
             break;
@@ -1263,6 +1275,46 @@ var editOperationUser=async function(operationId,customname){
     let saveObj=await orderObj.save();
 
     return saveObj;
+
+}
+
+var editOperationOp=async function(operationId,opId){
+    console.log('222222'+operationId);
+    let OperationModel=model.operations;
+    let BusinessContentModel=model.businessContents;
+
+    let opExist=await BusinessContentModel.findOne({
+        where:{
+            status:1,
+            id:opId
+        }
+    })
+    if(opExist){
+
+    }
+    else{
+        throw new ApiError(ApiErrorNames.BUSINESS_NOT_EXIST);
+    }
+
+    let operationExist=await OperationModel.findOne({
+        where:{
+            status:1,
+            id:operationId
+        }
+    })
+    if(operationExist){
+        operationExist.op=opId;
+        let saveObj=await operationExist.save();
+        return saveObj;
+    }
+    else{
+        throw new ApiError(ApiErrorNames.OPERATION_NOT_EXIST);
+    }
+
+
+
+
+
 
 }
 
