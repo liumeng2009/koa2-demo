@@ -1439,7 +1439,7 @@ exports.delete=async(ctx,next)=>{
 
 //带一个时间参数，查询当天的未完成工单，没有参数的话，就默认当天的
 exports.workingOperationList=async(ctx,next)=>{
-    let token=ctx.query.token;
+    let userid=ctx.query.userid;
     let selectStamp=ctx.query.stamp;
 
     let startDate;
@@ -1537,7 +1537,7 @@ exports.workingOperationList=async(ctx,next)=>{
                             {
                                 model:UserModel,
                                 where:{
-                                    token:token
+                                    id:userid
                                 }
                             }
                         ]
@@ -1562,7 +1562,7 @@ exports.workingOperationList=async(ctx,next)=>{
 }
 
 exports.doneOperationList=async(ctx,next)=>{
-    let token=ctx.query.token;
+    let userid=ctx.query.userid;
     let selectStamp=ctx.query.stamp;
 
     let startDate;
@@ -1658,7 +1658,7 @@ exports.doneOperationList=async(ctx,next)=>{
                             {
                                 model:UserModel,
                                 where:{
-                                    token:token
+                                    id:userid
                                 }
                             }
                         ]
@@ -1674,56 +1674,6 @@ exports.doneOperationList=async(ctx,next)=>{
         ]
     })
 
-    let operationObj=await OperationModel.findAll({
-        where:{
-            status:1,
-            id:{
-                $in:otherArray
-            },
-            $and:[
-                {create_time:{'$gte':startDate.getTime()}},
-                {create_time:{'$lte':endDate.getTime()}}
-            ]
-        },
-        include:[
-            {
-                model:OrderModel,
-                include:[
-                    {
-                        model:CorporationModel
-                    }
-                ]
-            },
-            {
-                model:BusinessContent,
-                include:[
-                    {
-                        model:EquipOpModel
-                    }
-                ]
-            },
-            {
-                model:ActionModel,
-                as:'actions',
-                where:{
-                    status:1
-                },
-                include:[
-                    {
-                        model:UserModel,
-                        where:{
-                            token:token
-                        }
-                    }
-                ]
-            }
-
-        ],
-        order:[
-            ['create_time','ASC']
-        ]
-    });
-
     ctx.body={
         status:0,
         data:orderObj,
@@ -1731,134 +1681,9 @@ exports.doneOperationList=async(ctx,next)=>{
     }
 }
 
-exports.allOperationList=async(ctx,next)=>{
-    let token=ctx.query.token;
-    let selectStamp=ctx.query.stamp;
-
-    let startDate;
-    let endDate;
-    if(selectStamp&&selectStamp!=''){
-        let dateQuery=new Date(selectStamp*1000);
-        startDate=new Date(dateQuery.getFullYear(),dateQuery.getMonth(),dateQuery.getDate(),0,0,0);
-        endDate=new Date(dateQuery.getFullYear(),dateQuery.getMonth(),dateQuery.getDate(),23,59,59);
-    }
-    else{
-        let dateQuery=new Date();
-        startDate=new Date(dateQuery.getFullYear(),dateQuery.getMonth(),dateQuery.getDate(),0,0,0);
-        endDate=new Date(dateQuery.getFullYear(),dateQuery.getMonth(),dateQuery.getDate(),23,59,59);
-    }
-
-    let OperationModel=model.operations;
-    let ActionModel=model.actions;
-    let OrderModel=model.orders;
-    let CorporationModel=model.corporations;
-    let UserModel=model.user;
-    let BusinessContent=model.businessContents;
-    let EquipOpModel=model.equipOps;
-
-    OperationModel.hasMany(ActionModel,{foreignKey:'operationId',as:'actions'});
-    OperationModel.belongsTo(OrderModel,{foreignKey:'orderId'});
-    OrderModel.belongsTo(CorporationModel,{foreignKey:'custom_corporation'});
-    ActionModel.belongsTo(UserModel,{foreignKey:'worker'});
-    OperationModel.belongsTo(BusinessContent,{foreignKey:'op'});
-    BusinessContent.belongsTo(EquipOpModel,{foreignKey:'operation',targetKey:'code'});
-
-
-    let result=await OperationModel.findAll({
-        where:{
-            status:1,
-            $and:[
-                {create_time:{'$gte':startDate.getTime()}},
-                {create_time:{'$lte':endDate.getTime()}}
-            ]
-        },
-        include:[
-            {
-                model:BusinessContent
-            },
-            {
-                model:ActionModel,
-                as:'actions',
-                where:{
-                    status:1
-                },
-                include:[
-                    {
-                        model:UserModel,
-                        where:{
-                            token:token
-                        }
-                    }
-                ]
-            }
-        ]
-    })
-    let otherArray=['1'];
-    for(let r of result){
-        console.log(r);
-        otherArray.push(r.id);
-    }
-    console.log(otherArray);
-
-    let operationObj=await OperationModel.findAll({
-        where:{
-            status:1,
-            id:{
-                $in:otherArray
-            },
-            $and:[
-                {create_time:{'$gte':startDate.getTime()}},
-                {create_time:{'$lte':endDate.getTime()}}
-            ]
-        },
-        include:[
-            {
-                model:OrderModel,
-                include:[
-                    {
-                        model:CorporationModel
-                    }
-                ]
-            },
-            {
-                model:BusinessContent,
-                include:[
-                    {
-                        model:EquipOpModel
-                    }
-                ]
-            },
-            {
-                model:ActionModel,
-                as:'actions',
-                where:{
-                    status:1
-                },
-                include:[
-                    {
-                        model:UserModel,
-                        where:{
-                            token:token
-                        }
-                    }
-                ]
-            }
-
-        ],
-        order:[
-            ['create_time','ASC']
-        ]
-    });
-
-    ctx.body={
-        status:0,
-        data:operationObj,
-        total:operationObj.length
-    }
-}
 
 exports.operationCount=async(ctx,next)=>{
-    let token=ctx.query.token;
+    let userid=ctx.query.userid;
     let selectStamp=ctx.query.stamp;
 
     let startDate;
@@ -1935,7 +1760,7 @@ exports.operationCount=async(ctx,next)=>{
                     {
                         model:UserModel,
                         where:{
-                            token:token
+                            id:userid
                         }
                     }
                 ]
@@ -1966,7 +1791,7 @@ exports.operationCount=async(ctx,next)=>{
                     {
                         model:UserModel,
                         where:{
-                            token:token
+                            id:userid
                         }
                     }
                 ]
@@ -1983,7 +1808,4 @@ exports.operationCount=async(ctx,next)=>{
             all:operationCountWorking+operationCountDone
         }
     }
-
-
-
 }

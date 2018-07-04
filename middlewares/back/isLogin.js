@@ -11,17 +11,19 @@ const jwt=require('jsonwebtoken');
 const noAuthArray=require('../../config/noAuth_url')
 
 var isLogin=async(ctx,next)=>{
+    console.log(ctx.url);
     if(ctx.url.indexOf('api')>-1){
-        console.log(ctx.url);
         if(existInNoAuthArray(ctx.url)){
             await next()
         }
         else{
             //根据token参数，确定是否登录状态
-            var token=ctx.query.token;
+            var token=ctx.request.headers.authorization;
+            console.log(token);
             return new Promise((resolve, reject) => {
                 jwt.verify(token, sys_config.jwtSecret, function (error, decoded) {
                     if (error) {
+                        console.log(error);
                         reject(
                             new ApiError(ApiErrorNames.JWT_ERROR)
                         );

@@ -40,13 +40,11 @@ exports.login=async(ctx,next)=>{
             }
             let user={
                 id:userObj.id,
-                name:userObj.name,
-                gender:userObj.gender,
-                email:userObj.email
+                name:userObj.name
             }
             let token=jwt.sign({
                 data:user
-            },sys_config.jwtSecret,{expiresIn:'1 days'});
+            },sys_config.jwtSecret,{expiresIn:'7 days'});
             userObj.token=token;
             console.log('jwt:'+token+userObj);
             await userObj.save();
@@ -149,7 +147,8 @@ exports.registerUser=async(ctx,next)=>{
 }
 
 exports.getUserData=async(ctx,next)=>{
-    let token=ctx.query.token;
+    let token=ctx.request.headers.authorization;
+    console.log(token);
     let simple=ctx.query.simple;
 
     if(token==''||token=='undefined'){
