@@ -159,6 +159,7 @@ exports.list=async(ctx,next)=>{
                 ]
             }
             ],
+            limit: sys_config.pageSize,
             order:[
                 ['no','ASC']
             ]

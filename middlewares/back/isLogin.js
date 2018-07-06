@@ -11,12 +11,14 @@ const jwt=require('jsonwebtoken');
 const noAuthArray=require('../../config/noAuth_url')
 
 var isLogin=async(ctx,next)=>{
-    console.log(ctx.url);
+    console.log('要访问的url是:'+ctx.url);
     if(ctx.url.indexOf('api')>-1){
         if(existInNoAuthArray(ctx.url)){
+            console.log('在白名单');
             await next()
         }
         else{
+            console.log('不在白名单');
             //根据token参数，确定是否登录状态
             var token=ctx.request.headers.authorization;
             console.log(token);

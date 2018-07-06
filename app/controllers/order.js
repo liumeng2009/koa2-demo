@@ -92,6 +92,7 @@ exports.list=async(ctx,next)=>{
             });
         }
     }
+    //如果不带page参数，输出第一页
     else{
         orders=await Order.findAll({
             where:searchObj,
@@ -105,6 +106,7 @@ exports.list=async(ctx,next)=>{
                     }
                 ]
             }],
+            limit: sys_config.pageSize,
             order:[
                 ['no','ASC']
             ]
@@ -315,7 +317,7 @@ exports.save=async(ctx,next)=>{
 }
 
 exports.saveAndSaveOperation=async(ctx,next)=>{
-    await auth.checkAuth(ctx.query.token,'order','add');
+    await auth.checkAuth(ctx.request.headers.authorization,'order','add');
     let custom_name=ctx.request.body.custom_name;
     let custom_phone=ctx.request.body.custom_phone;
     let incoming_date_timestamp=ctx.request.body.incoming_time;

@@ -10,8 +10,10 @@ const Sequelize = require('sequelize');
 const auth=require('./authInRole');
 
 exports.list=async(ctx,next)=>{
+    console.log('有noauth吗');
     //await auth.checkAuth(ctx.query.token,'corporation','list');
 
+    console.log('怎么会有noauth呢');
     let Corporation = model.corporations;
     let Group=model.groups;
 
@@ -195,7 +197,7 @@ exports.delete=async(ctx,next)=>{
 }
 
 exports.getData=async(ctx,next)=>{
-    await auth.checkAuth(ctx.query.token,'corporation','list');
+    await auth.checkAuth(ctx.request.headers.authorization,'corporation','list');
     let Corporation = model.corporations;
     let Group=model.groups;
 

@@ -28,7 +28,7 @@ exports.list=async(ctx,next)=>{
 
 exports.add=async(ctx,next)=>{
 
-    await AuthInRoleClass.checkAuth(ctx.query.token,'role','edit')
+    await AuthInRoleClass.checkAuth(ctx.request.headers.authorization,'role','edit')
 
     let AuthInRole=model.authInRoles;
     let OpInFuncModel=model.opInFuncs;
@@ -125,7 +125,7 @@ exports.add=async(ctx,next)=>{
 }
 
 exports.delete=async(ctx,next)=>{
-    await AuthInRoleClass.checkAuth(ctx.query.token,'role','edit');
+    await AuthInRoleClass.checkAuth(ctx.request.headers.authorization,'role','edit');
     let AuthInRole=model.authInRoles;
     let roleId=ctx.request.body.roleId;
     let authId=ctx.request.body.authId;
@@ -220,7 +220,7 @@ exports.checkAuth=async(token,func,op)=>{
 }
 
 exports.checkAuthApi=async(ctx,next)=>{
-    let token=ctx.query.token;
+    let token=ctx.request.headers.authorization;
     let func=ctx.request.body.func;
     let op=ctx.request.body.op;
 
