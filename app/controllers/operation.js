@@ -958,7 +958,7 @@ exports.getOperation=async(ctx,next)=>{
 }
 
 exports.add=async(ctx,next)=>{
-    await auth.checkAuth(ctx.query.token,'op','add');
+    await auth.checkAuth(ctx.request.headers.authorization,'op','add');
     let Operation=model.operations;
     let Order=model.orders;
 
@@ -1034,7 +1034,7 @@ exports.add=async(ctx,next)=>{
 }
 
 exports.edit=async(ctx,next)=>{
-    await auth.checkAuth(ctx.query.token,'op','edit');
+    await auth.checkAuth(ctx.request.headers.authorization,'op','edit');
     let Operation=model.operations;
     let operationId=ctx.request.body.id;
     let op=ctx.request.body.businessContent.id;
@@ -1068,6 +1068,7 @@ exports.edit=async(ctx,next)=>{
 
 //修改工单的某一个属性，为了APP设计
 exports.editSimple=async(ctx,next)=>{
+    await auth.checkAuth(ctx.request.headers.authorization,'op','edit');
     let action=ctx.request.body.action;
     let operationId=ctx.request.body.operationId;
     console.log(action);
@@ -1107,6 +1108,26 @@ exports.editSimple=async(ctx,next)=>{
             ctx.body={
                 status:0,
                 data:saveResult4,
+                message:response_config.updatedSuccess
+            }
+            break;
+        case 'important':
+            console.log(333333333+operationId);
+            let important=ctx.request.body.inputValue;
+            console.log(important);
+            let saveResult5=await editOperationImportant(operationId,important);
+            ctx.body={
+                status:0,
+                data:saveResult5,
+                message:response_config.updatedSuccess
+            }
+            break;
+        case 'mark':
+            let remark=ctx.request.body.inputValue;
+            let saveResult6=await editOperationMark(operationId,remark);
+            ctx.body={
+                status:0,
+                data:saveResult6,
                 message:response_config.updatedSuccess
             }
             break;
@@ -1317,6 +1338,43 @@ var editOperationOp=async function(operationId,opId){
 
 
 
+}
+
+var editOperationImportant=async function(operationId,important){
+    let OperationModel=model.operations;
+    let operationExist=await OperationModel.findOne({
+        where:{
+            status:1,
+            id:operationId
+        }
+    })
+    if(operationExist){
+        operationExist.important=important;
+        let saveObj=await operationExist.save();
+        return saveObj;
+    }
+    else{
+        throw new ApiError(ApiErrorNames.OPERATION_NOT_EXIST);
+    }
+}
+
+var editOperationMark=async function(operationId,mark){
+    let OperationModel=model.operations;
+    let operationExist=await OperationModel.findOne({
+        where:{
+            status:1,
+            id:operationId
+        }
+    })
+    console.log(mark);
+    if(operationExist){
+        operationExist.remark=mark;
+        let saveObj=await operationExist.save();
+        return saveObj;
+    }
+    else{
+        throw new ApiError(ApiErrorNames.OPERATION_NOT_EXIST);
+    }
 }
 
 //废弃，没用

@@ -101,7 +101,7 @@ exports.list=async(ctx,next)=>{
 }
 
 exports.save=async(ctx,next)=>{
-    await auth.checkAuth(ctx.query.token,'business','add')
+    await auth.checkAuth(ctx.request.headers.authorization,'business','add')
     let BusinessContent=model.businessContents;
     let type=ctx.request.body.type;
     let equipment=ctx.request.body.equipment;
@@ -171,7 +171,7 @@ exports.save=async(ctx,next)=>{
 }
 
 exports.edit=async(ctx,next)=>{
-    await auth.checkAuth(ctx.query.token,'business','edit')
+    await auth.checkAuth(ctx.request.headers.authorization,'business','edit')
     let BusinessContent=model.businessContents;
     let OperationsDesk=ctx.request.body.operationsDesk;
     let OperationsSys=ctx.request.body.operationsSys;

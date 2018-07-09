@@ -83,7 +83,7 @@ exports.list=async(ctx,next)=>{
 }
 
 exports.save=async(ctx,next)=>{
-    await auth.checkAuth(ctx.query.token,'op','edit');
+    await auth.checkAuth(ctx.request.headers.authorization,'op','edit');
     let userid=ctx.request.body.userId;
     let operationId=ctx.request.body.id;
     let workerId=ctx.request.body.worker;
@@ -314,7 +314,7 @@ exports.save=async(ctx,next)=>{
 }
 
 exports.edit=async(ctx,next)=>{
-    await auth.checkAuth(ctx.query.token,'op','edit');
+    await auth.checkAuth(ctx.request.headers.authorization,'op','edit');
     let operationId=ctx.request.body.operationId;
     let actionId=ctx.request.body.id;
     let workerId=ctx.request.body.workerId;

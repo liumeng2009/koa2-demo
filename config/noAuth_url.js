@@ -50,7 +50,11 @@ var noAuthUrlArray=[
     '/api/operation/list_month',
     '/api/operation/list_month_worker',
     '/api/operation/list_month_worker_time',
-    '/api/operation/list_month_corporation_count'
+    '/api/operation/list_month_corporation_count',
+    '/api/operation/workingOperationList',
+    '/api/operation/doneOperationList',
+    '/api/operation/allOperationList',
+    '/api/operation/operationCount'
 ]
 
 module.exports = noAuthUrlArray;
