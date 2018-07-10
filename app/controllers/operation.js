@@ -957,6 +957,67 @@ exports.getOperation=async(ctx,next)=>{
 
 }
 
+exports.getOperationAction=async(ctx,next)=>{
+    let id=ctx.params.id;
+    let Operation=model.operations;
+    let Order=model.orders;
+    let Corporation=model.corporations;
+    let CorpBuilding=model.corpBuildings;
+    let Building=model.buildings;
+    let ActionModel=model.actions;
+    let User=model.user;
+    let BusinessContent=model.businessContents;
+    let EquipType=model.equipTypes;
+    let EquipOps=model.equipOps;
+
+    Operation.belongsTo(Order,{foreignKey:'orderId'});
+    Order.belongsTo(Corporation,{foreignKey:'custom_corporation'});
+    Order.belongsTo(CorpBuilding,{foreignKey:'custom_position'});
+    CorpBuilding.belongsTo(Building,{foreignKey:'buildingId'});
+    Operation.hasMany(ActionModel,{foreignKey:'operationId',as:'actions'});
+    Operation.belongsTo(BusinessContent,{foreignKey:'op'});
+    ActionModel.belongsTo(User,{foreignKey:'worker'});
+
+    BusinessContent.belongsTo(EquipType,{foreignKey:'type',targetKey:'code'});
+    BusinessContent.belongsTo(EquipOps,{foreignKey:'operation',targetKey:'code'});
+
+    let operation=await Operation.findOne({
+        where:{
+            id:id,
+            status:1
+        },
+        include:[
+            {
+                model:ActionModel,
+                as:'actions',
+                where:{
+                    status:1
+                },
+                required:false,
+                include:[
+                    {
+                        model:User
+                    }
+                ]
+            }
+        ],
+        order:[
+            [{model: ActionModel, as: 'actions'},'createdAt','ASC']
+        ]
+    })
+
+    if(operation){
+        ctx.body={
+            status:0,
+            data:operation
+        }
+    }
+    else{
+        throw new ApiError(ApiErrorNames.OPERATION_NOT_EXIST);
+    }
+
+}
+
 exports.add=async(ctx,next)=>{
     await auth.checkAuth(ctx.request.headers.authorization,'op','add');
     let Operation=model.operations;
@@ -1418,7 +1479,7 @@ exports.save=async(ctx,next)=>{
 }
 
 exports.delete=async(ctx,next)=>{
-    await auth.checkAuth(ctx.query.token,'op','delete');
+    await auth.checkAuth(ctx.request.headers.authorization,'op','delete');
     let id=ctx.params.id;
 
     let sequelize=db.sequelize;

@@ -25,6 +25,8 @@ var noAuthUrlArray=[
     '/api/corporations/list',
     '/api/corporations/',
 
+    '/api/buildings/list',
+
 
     '/api/equipType/list',
 
@@ -42,6 +44,7 @@ var noAuthUrlArray=[
 
     '/api/operation/list',
     '/api/operation/',
+    '/api/operation/getaction/',
 
     //数据查询部分
     '/api/workers/doinglist',
@@ -50,11 +53,7 @@ var noAuthUrlArray=[
     '/api/operation/list_month',
     '/api/operation/list_month_worker',
     '/api/operation/list_month_worker_time',
-    '/api/operation/list_month_corporation_count',
-    '/api/operation/workingOperationList',
-    '/api/operation/doneOperationList',
-    '/api/operation/allOperationList',
-    '/api/operation/operationCount'
+    '/api/operation/list_month_corporation_count'
 ]
 
 module.exports = noAuthUrlArray;
