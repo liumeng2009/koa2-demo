@@ -450,7 +450,7 @@ exports.saveAndSaveOperation=async(ctx,next)=>{
 
 exports.delete=async(ctx,next)=>{
 
-    await auth.checkAuth(ctx.query.token,'order','delete');
+    await auth.checkAuth(ctx.request.headers.authorization,'order','delete');
 
     let id=ctx.params.id;
 
