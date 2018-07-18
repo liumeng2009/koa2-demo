@@ -9,11 +9,12 @@ const sys_config=require('../../config/sys_config');
 const jwt=require('jsonwebtoken');
 
 const noAuthArray=require('../../config/noAuth_url')
+const needAuthArray=require('../../config/needAuth_url')
 
 var isLogin=async(ctx,next)=>{
-    console.log('要访问的url是:'+ctx.url);
+    console.log('要访问的url是:'+ctx.path);
     if(ctx.url.indexOf('api')>-1){
-        if(existInNoAuthArray(ctx.url)){
+        if(!existInNeedAuthArray(ctx.path)&&existInNoAuthArray(ctx.path)){
             console.log('在白名单');
             await next()
         }
@@ -45,6 +46,15 @@ var isLogin=async(ctx,next)=>{
 var existInNoAuthArray=function(url){
     for(let na of noAuthArray){
         if(na==url||url.indexOf(na)>=0){
+            return true;
+        }
+    }
+    return false;
+}
+
+var existInNeedAuthArray=function(url){
+    for(let na of needAuthArray){
+        if(na==url){
             return true;
         }
     }
