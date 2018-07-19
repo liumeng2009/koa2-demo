@@ -78,3 +78,27 @@ var saveOrderSign=async function(orderId,signString){
         throw new ApiError(ApiErrorNames.ORDER_NOT_EXIST)
     }
 }
+
+exports.getSign=async(ctx,next)=>{
+    let signType=ctx.params.signtype;
+    let id=ctx.params.id;
+    let SignModel=model.signs;
+
+    if(signType=='order'){
+        let signResult=await SignModel.findOne({
+            attr:['signString'],
+            where:{
+                signType:signType,
+                signId:id
+            },
+            order:[
+                ['createdAt','DESC']
+            ]
+        })
+        
+    }
+    else if(signType=='operation'){
+
+    }
+
+}

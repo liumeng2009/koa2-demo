@@ -19,6 +19,7 @@ var operate_router=require('./operate');
 var role_router=require('./role');
 var authInRole_router=require('./authInRole');
 var opInFunc_router=require('./opInFunc');
+var sign_router=require('./sign');
 
 router.use('/user', user_router.routes(), user_router.allowedMethods());
 router.use('/buildings', buildings_router.routes(), buildings_router.allowedMethods());
@@ -37,5 +38,6 @@ router.use('/operate', operate_router.routes(), operate_router.allowedMethods())
 router.use('/role', role_router.routes(), role_router.allowedMethods());
 router.use('/authinrole', authInRole_router.routes(), authInRole_router.allowedMethods());
 router.use('/opinfunc', opInFunc_router.routes(), opInFunc_router.allowedMethods());
+router.use('/sign', sign_router.routes(), sign_router.allowedMethods());
 
 module.exports = router;
