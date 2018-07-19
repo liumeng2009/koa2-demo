@@ -1612,10 +1612,8 @@ exports.workingOperationList=async(ctx,next)=>{
         ]
     })
 
-    console.log(result);
     let otherArray=['1'];
     for(let r of result){
-        console.log(r);
         otherArray.push(r.id);
     }
 
@@ -1734,10 +1732,8 @@ exports.doneOperationList=async(ctx,next)=>{
         ]
     })
 
-    console.log(result);
     let otherArray=['1'];
     for(let r of result){
-        console.log(r);
         otherArray.push(r.id);
     }
 
@@ -1800,7 +1796,6 @@ exports.doneOperationList=async(ctx,next)=>{
         total:orderObj.length
     }
 }
-
 
 exports.operationCount=async(ctx,next)=>{
     let userid=ctx.query.userid;
@@ -1929,3 +1924,4 @@ exports.operationCount=async(ctx,next)=>{
         }
     }
 }
+

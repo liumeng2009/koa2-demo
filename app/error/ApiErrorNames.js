@@ -15,6 +15,7 @@ ApiErrorNames.ADMIN_CAN_NOT_DELETE='adminCanNotDelete';
 ApiErrorNames.INPUT_ERROR_TYPE='inputErrorType';
 ApiErrorNames.INPUT_DATE_ERROR_TYPE='inputDateErrorType';
 ApiErrorNames.INPUT_FIELD_NULL="inputFieldNull";
+ApiErrorNames.INPUT_FIELD_ERROR="inputFieldError";
 
 ApiErrorNames.NEED_UNIQUE_BUILDING_NAME="needUniqueBuildingName";
 ApiErrorNames.MAX_AND_MIN="maxAndMin";
@@ -113,6 +114,7 @@ error_map.set(ApiErrorNames.USER_CAN_NOT_DELETE, { code: 10008, message: '该账
 error_map.set(ApiErrorNames.INPUT_ERROR_TYPE, { code: 20001, message: '输入数值格式错误！' });
 error_map.set(ApiErrorNames.INPUT_DATE_ERROR_TYPE, { code: 20002, message: '输入日期格式错误！' });
 error_map.set(ApiErrorNames.INPUT_FIELD_NULL, { code: 20003, message: '输入项{1}为空！' });
+error_map.set(ApiErrorNames.INPUT_FIELD_ERROR, { code: 20004, message: '输入项{1}错误！' });
 
 //building模块错误
 error_map.set(ApiErrorNames.NEED_UNIQUE_BUILDING_NAME, { code: 90001, message: '办公楼名称重复！' });
