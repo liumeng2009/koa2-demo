@@ -1,0 +1,38 @@
+[2018-07-20 15:13:00.024] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/authinrole/check
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 0
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-20 15:13:00.083] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/authinrole/check
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"func":"order","op":"list"}
+response time: 37
+response status: 200
+response body: 
+{"status":0}
+*************** response log end ***************
+
+[2018-07-20 15:13:00.388] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/order/list/page/1/time/1532016000000
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 34
+response status: 200
+response body: 
+{"status":0,"data":[{"no":"20180720000","custom_name":"控股","custom_phone":"02266624450","incoming_time":1532047656000,"custom_corporation":"fbbf7c59-f08c-445b-a4f0-e2fa977117e8","custom_position":"288395c8-da20-45b7-b88f-f6e748e6a1e6","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"e6890530-4629-406f-a3fb-d8e2a293320b\",\"name\":\"硬件\",\"code\":\"HARDWARE\"},\"equipment\":{\"name\":\"扫描仪\",\"value\":\"扫描仪\"},\"op\":{\"id\":\"eb0409d7-f770-4f4e-af79-8dc54909b13c\",\"name\":\"故障\",\"code\":\"FIX\"},\"no\":1}]","id":"1832cb74-acd1-430c-8bb1-71017038085d","createdAt":1532054072983,"updatedAt":1532054072983,"version":0,"corporation":{"name":"控股公司","description":"控股公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"fbbf7c59-f08c-445b-a4f0-e2fa977117e8","createdAt":1515633158111,"updatedAt":1515633158111,"version":0},"corpBuilding":{"corporationId":"fbbf7c59-f08c-445b-a4f0-e2fa977117e8","buildingId":"a6b51135-3ac0-4415-bc67-be231d04f3a3","floor":7,"position":"A","status":1,"id":"288395c8-da20-45b7-b88f-f6e748e6a1e6","createdAt":1515633160538,"updatedAt":1521681625624,"version":10,"building":{"name":"商务大厦南楼","address":"南","minfloor":1,"maxfloor":15,"status":1,"id":"a6b51135-3ac0-4415-bc67-be231d04f3a3","createdAt":1515633152748,"updatedAt":1515633152748,"version":0}}},{"no":"20180720001","custom_name":"海洋局摄像头","custom_phone":"15822927208","incoming_time":1532049094000,"custom_corporation":"53fa2bd9-bc42-4582-a5c3-38f8d8dad229","custom_position":"6640be72-8a23-402d-b8bd-032a9628e3f3","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"e6890530-4629-406f-a3fb-d8e2a293320b\",\"name\":\"硬件\",\"code\":\"HARDWARE\"},\"equipment\":{\"name\":\"摄像头\",\"value\":\"摄像头\"},\"op\":{\"id\":\"658fa8ae-8341-46b0-acbf-cd986c08e988\",\"name\":\"检查\",\"code\":\"CHECK\"},\"no\":1}]","id":"ab42b4d6-ae21-49a5-8180-f5953b67fc00","createdAt":1532054116735,"updatedAt":1532054116735,"version":0,"corporation":{"name":"建设公司","description":"建设公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"53fa2bd9-bc42-4582-a5c3-38f8d8dad229","createdAt":1515633158488,"updatedAt":1515633158488,"version":0},"corpBuilding":{"corporationId":"53fa2bd9-bc42-4582-a5c3-38f8d8dad229","buildingId":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","floor":9,"position":"A","status":1,"id":"6640be72-8a23-402d-b8bd-032a9628e3f3","createdAt":1515633161243,"updatedAt":1515633161243,"version":0,"building":{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","createdAt":1515633153519,"updatedAt":1515633153519,"version":0}}},{"no":"20180720002","custom_name":"高新","custom_phone":"15822927208","incoming_time":1532054472000,"custom_corporation":"89cce940-1268-4690-abe4-3b3b14fb0cde","custom_position":"6ed100a3-ea99-4c9a-b02b-51ef5f977092","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"e6890530-4629-406f-a3fb-d8e2a293320b\",\"name\":\"硬件\",\"code\":\"HARDWARE\"},\"equipment\":{\"name\":\"打印机\",\"value\":\"打印机\"},\"op\":{\"id\":\"118ca74b-2cb9-4af4-84b3-e5e295e09034\",\"name\":\"安装\",\"code\":\"SETUP\"},\"no\":1}]","id":"28f35038-ae8a-42cb-9edc-40c7eaad4c70","createdAt":1532055247836,"updatedAt":1532055247836,"version":0,"corporation":{"name":"高新公司","description":"高新","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"89cce940-1268-4690-abe4-3b3b14fb0cde","createdAt":1516607211910,"updatedAt":1516607211910,"version":0},"corpBuilding":{"corporationId":"89cce940-1268-4690-abe4-3b3b14fb0cde","buildingId":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","floor":4,"position":"E","status":1,"id":"6ed100a3-ea99-4c9a-b02b-51ef5f977092","createdAt":1516607229473,"updatedAt":1516607229473,"version":0,"building":{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","createdAt":1515633153519,"updatedAt":1515633153519,"version":0}}}],"total":3}
+*************** response log end ***************
+

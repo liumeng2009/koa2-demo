@@ -7,7 +7,7 @@ const Sequelize = require('sequelize');
 const auth=require('./authInRole')
 
 exports.authCreate=async(ctx,next)=>{
-    await auth.checkAuth(ctx.query.token,'function','add')
+    await auth.checkAuth(ctx.request.headers.authorization,'function','add')
     let functionId=ctx.request.body.funcId;
     let operateId=ctx.request.body.opId;
 
@@ -67,7 +67,7 @@ exports.authCreate=async(ctx,next)=>{
 }
 
 exports.authDelete=async(ctx,next)=>{
-    await auth.checkAuth(ctx.query.token,'function','delete')
+    await auth.checkAuth(ctx.request.headers.authorization,'function','delete')
     let functionId=ctx.request.body.funcId;
     let operateId=ctx.request.body.opId;
 
