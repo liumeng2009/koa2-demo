@@ -4,6 +4,7 @@ const model = require('../model');
 const sys_config=require('../../config/sys_config');
 const response_config=require('../../config/response_config');
 const auth=require('./authInRole');
+var QRCode = require('qrcode')
 
 exports.saveSign=async(ctx,next)=>{
     await auth.checkAuth(ctx.request.headers.authorization,'op','edit');
@@ -33,7 +34,8 @@ exports.saveSign=async(ctx,next)=>{
         let saveResult=await SignModel.bulkCreate(saveIdArray,{validate:true,returning:true,individualHooks:true});
         ctx.body={
             status:0,
-            message:response_config.createdSuccess
+            message:response_config.saveSuccess,
+            data:saveResult
         }
 
     }
@@ -59,6 +61,25 @@ exports.getSign=async(ctx,next)=>{
 
     ctx.body={
         status:0,
-        data:signResult
+        data:signResult.signString
+    }
+}
+
+exports.getQRCode=async(ctx,next)=>{
+    await auth.checkAuth(ctx.request.headers.authorization,'op','edit');
+    let ids=ctx.request.body.ids;
+
+    let result=await generateQR('123')
+    ctx.body={
+        status:0,
+        data:result
+    }
+}
+
+const generateQR = async text => {
+    try {
+        return await QRCode.toDataURL(text)
+    } catch (err) {
+        console.error(err)
     }
 }
