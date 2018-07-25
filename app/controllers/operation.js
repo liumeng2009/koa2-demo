@@ -9,6 +9,8 @@ const response_config=require('../../config/response_config');
 const orderController=require('./order');
 const db=require('../db');
 const auth=require('./authInRole');
+const Sequelize = require('sequelize');
+
 
 exports.list=async(ctx,next)=>{
     let Operation=model.operations;
@@ -169,6 +171,36 @@ exports.list=async(ctx,next)=>{
         status:0,
         data:operations,
         total:total
+    }
+}
+
+exports.no_list=async(ctx,next)=>{
+    let ids=ctx.request.body.ids;
+    console.log(ids);
+    if(ids instanceof Array){
+        let OperationModel=model.operations;
+
+        let orArray=[];
+        for(let id of ids){
+            let or={id:id}
+            orArray.push(or);
+        }
+
+        let result=await OperationModel.findAll({
+            attributes:['id','no'],
+            where: {
+                $or:orArray
+            }
+        });
+
+        ctx.body={
+            status:0,
+            data:result
+        }
+
+    }
+    else{
+        throw new ApiError(ApiErrorNames.INPUT_ERROR_TYPE,['工单ID列表'])
     }
 }
 

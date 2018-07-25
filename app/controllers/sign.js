@@ -68,8 +68,17 @@ exports.getSign=async(ctx,next)=>{
 exports.getQRCode=async(ctx,next)=>{
     await auth.checkAuth(ctx.request.headers.authorization,'op','edit');
     let ids=ctx.request.body.ids;
+    //url?ids=***,***,***
+    let url=sys_config.clientUrl+'#/sign/'
+    if(ids instanceof Array){
+        for(let id of ids){
+            url=url+id+','
+        }
+    }
 
-    let result=await generateQR('123')
+    console.log(url);
+
+    let result=await generateQR(url)
     ctx.body={
         status:0,
         data:result

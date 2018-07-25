@@ -1,0 +1,247 @@
+[2018-07-25 16:06:14.240] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/sign/qr
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 24
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-25 16:06:14.823] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/sign/qr
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"ids":["bfa79716-bd87-408d-ba9c-4806be355fa2","f7396e63-600e-4923-9b3e-0b8e8bd283db","bf88c65c-376c-42cd-aa00-7d83e8d37c03"]}
+response time: 532
+response status: 200
+response body: 
+{"status":0,"data":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAYAAACIV4iNAAAAAklEQVR4AewaftIAAAxeSURBVO3BQW4sy7LgQDKh/W+ZfYY+CiBRJd34r93M/mGtdYWHtdY1HtZa13hYa13jYa11jYe11jUe1lrXeFhrXeNhrXWNh7XWNR7WWtd4WGtd42GtdY2HtdY1HtZa13hYa13jhw+p/KWKE5Wp4g2VqWJSmSr+Syq/qWJSmSomlaniDZWp4kRlqphU/lLFJx7WWtd4WGtd42GtdY0fvqzim1R+k8qJyonKScWkMlVMKlPFScUnVE5UTlTeUJkqTlS+qeKbVL7pYa11jYe11jUe1lrX+OGXqbxR8YbKVDGpnFRMKicVk8onVKaKSWWqmFSmikllqpgqJpWp4g2VN1ROKiaVb1J5o+I3Pay1rvGw1rrGw1rrGj/8j6uYVCaVqeJEZaqYVCaVqeJE5URlqphUTlSmihOVqeITFZPKVPFGxf+Sh7XWNR7WWtd4WGtd44f/cSonFW9UTCpTxaQyqXyTyhsVk8pUcaIyVXyTylQxVfwve1hrXeNhrXWNh7XWNX74ZRU3UzmpOKk4qThRmSomlaniDZVJ5Q2VqWJSmSomlZOKSWVSmSq+qeImD2utazysta7xsNa6xg9fpnKzikllqphUpopJZaqYVKaKb1KZKk4qJpW/VDGpTBWTyonKVHGicrOHtdY1HtZa13hYa13jhw9V/F+icqIyVZxUvKFyovJGxRsqU8WkMlWcVNys4v+Sh7XWNR7WWtd4WGtdw/7hAypTxaTyTRWfUJkqJpWpYlJ5o+INlf9SxaRyUvGGyjdVnKh8U8VvelhrXeNhrXWNh7XWNewf/pDKScUbKt9U8QmV31TxhspJxaQyVUwqU8WkMlVMKlPFpDJVvKEyVXxC5Y2KTzysta7xsNa6xsNa6xo/fEhlqviEyicq3lCZVE4qJpWpYlKZKk5UpopJZao4qThRmSomlaliUnmj4hMqU8WJylQxqZxU/KWHtdY1HtZa13hYa13D/uEDKicVk8obFZPKVDGpTBUnKicVJyonFZPKScWk8kbFpDJVnKhMFZPKVDGpnFRMKn+p4kRlqjhRmSo+8bDWusbDWusaD2uta/zwZRWTyidUpopJZar4RMWk8gmVk4pJZao4UZlU3lCZKiaVqeKNikllqjhROamYVKaK31TxTQ9rrWs8rLWu8bDWusYPf6xiUjmpmFROVKaKk4qTikllqphUTiq+qeITFScVk8pUcaIyVUwqJxXfpDJVnKicVHzTw1rrGg9rrWs8rLWu8cOHKn6TyhsVn1CZKt6oOFGZKqaKE5WpYlKZKiaVk4pJZap4o+KkYlJ5Q2WqeEPlpGJSmVSmik88rLWu8bDWusbDWusa9g8fUDmpeENlqphUpopJ5aRiUpkqTlQ+UXGiMlWcqEwVk8pJxW9SmSomld9U8QmVqWJSmSo+8bDWusbDWusaD2uta9g//CKVqeINlaniDZWTihOVNyp+k8pU8YbKVHGi8omKE5Wp4kRlqphU3qiYVKaKv/Sw1rrGw1rrGg9rrWv88GUqU8UbKlPFGypTxScqTlQmlaliUpkqTlSmikllqphU3lCZKj6h8pcqJpUTlaniROWk4hMPa61rPKy1rvGw1rqG/cMvUvmmit+kclJxovKJihOVqWJSmSomlaniROWNipuoTBWTyknFX3pYa13jYa11jYe11jV++DKVqeJE5aTim1SmiqniROWk4g2VE5UTlanimyomlaniEypTxYnKGxWTyknFicpJxSce1lrXeFhrXeNhrXUN+4cvUjmpeEPlpOI3qbxRMalMFScqU8UbKlPFpHJSMalMFZPKVDGpfKLiN6lMFZPKScU3Pay1rvGw1rrGw1rrGj9cruJEZaqYVL6pYlKZVKaKSeWkYlJ5o+KNikllqjip+ETFicpUcaJyUjFVTConFZPKVPGJh7XWNR7WWtd4WGtdw/7hF6ncpOINlaniRGWqeEPlv1QxqUwVk8pJxRsqU8Wk8psq/ksPa61rPKy1rvGw1rqG/cMHVL6p4g2Vk4pvUjmpOFE5qZhUpoo3VE4qJpWpYlKZKk5UpopJZaqYVKaKSWWqeEPlpGJSOan4xMNa6xoPa61rPKy1rvHDhyo+oXKiMlWcVHxCZao4qThRmSq+SWWqOKl4Q2WqmFTeUJkqTio+oTJVfFPFNz2sta7xsNa6xsNa6xo/fJnKVPGJik+oTBWTyonKVDGpTBUnKlPFpPJGxRsqU8UnKiaVqeJEZaqYVD5R8UbFpHKiMlV84mGtdY2HtdY1HtZa17B/+A+p/KaKN1ROKiaVk4o3VP5LFZPKVDGpnFS8oTJVnKj8popJ5aTiEw9rrWs8rLWu8bDWusYPH1KZKk5UpopJZao4UZkqvqnipOINlZOKSWWqOFGZKt5QmSreqJhU3qiYVN6omFSmihOVNyq+6WGtdY2HtdY1HtZa17B/+EMqU8WJyhsVk8pUMal8omJSOak4UflExaQyVXxCZaqYVN6oeENlqnhDZaq4ycNa6xoPa61rPKy1rvHDh1Q+oTJVTBVvqHxTxaTyCZWTikllqphUJpUTlZOKSeUTFZPKGypvqJxUTCpvVPymh7XWNR7WWtd4WGtd44c/VnGi8ptUpopJ5TdVTCqTylQxqfyXKk4q3lCZKqaKNyomlZOKE5VJ5aTiEw9rrWs8rLWu8bDWusYPX1ZxojJVnFRMKicVb6i8UTGpTBUnKicVJxWTyknFpDJVTCpTxRsqn1D5RMWJyknFVHGi8k0Pa61rPKy1rvGw1rrGD79MZaqYVE5UTiomlU9UnKicqJxUvKEyVZxUTCpvVEwqU8VJxYnKVPFNKicVJypTxaTymx7WWtd4WGtd42GtdQ37hy9SeaPiJionFZPKN1W8oXJScaIyVUwqJxVvqJxUnKi8UTGpTBWfUJkqPvGw1rrGw1rrGg9rrWv88CGVqeKbVE4qPqEyVUwqk8pU8U0qJxVTxYnKN1VMKicVJxVvVEwqn1A5qZhUpopvelhrXeNhrXWNh7XWNewfPqDyRsUnVKaKSWWqmFSmiknlpOJE5aRiUpkqTlSmir+kMlV8QmWqOFGZKiaVqeJEZao4UTmp+MTDWusaD2utazysta7xw5dVnKicVEwqU8WkMlX8JpWp4hMVJypTxaQyVUwqJxWTylQxVZyoTBWTyonKVPGbKk5UTiq+6WGtdY2HtdY1HtZa1/jhy1SmiqliUjmpOKl4o+KbVD6hclIxqUwVk8pU8ZtU/lLFpDJVTCpvVJxUTCpTxSce1lrXeFhrXeNhrXUN+4cvUpkq3lD5poo3VKaKSWWqeENlqphUPlExqfyXKj6hMlW8oXJSMal8ouITD2utazysta7xsNa6xg+/TOWkYqr4JpWp4ptUpoo3VKaKE5Wp4qTiDZWpYlKZKk5U3qg4UZkqPqFyUjGpTBXf9LDWusbDWusaD2uta9g/fEDljYo3VKaKb1I5qZhU3qh4Q+VmFZPKScWkclJxovKXKv7Sw1rrGg9rrWs8rLWuYf/wf5jKVHGiMlX8JpVvqnhDZao4UXmjYlKZKt5QmSomlZOKN1TeqJhUpopPPKy1rvGw1rrGw1rrGj98SOUvVUwVJypTxYnKScWJylQxqUwVJyonKlPFico3qbyhMlVMFScVk8qJylRxUvFGxTc9rLWu8bDWusbDWusaP3xZxTepnKicVJyoTBWfqJhUTlQ+UfFGxYnKVHGicqIyVUwqv6nim1ROKj7xsNa6xsNa6xoPa61r/PDLVN6o+ETFpPIJlaniROWNihOVSeWbVKaKSWWqOKk4UZkq3lA5UfmEylRxUvFND2utazysta7xsNa6xg//n6k4UTlReaPiDZWpYlL5hMpUMalMFZPKVPFGxYnKScWJylRxojJVTCpTxaQyVXziYa11jYe11jUe1lrX+OF/jMqJyl9SOamYKiaVqeINlaliUjlReUNlqphUpoqTijcqJpWpYqo4qfhLD2utazysta7xsNa6xg+/rOI3VXxCZar4hMpU8YmKE5U3VKaKSWWqmFROKiaVqWJSmSomlaliUpkqpoo3VKaKv/Sw1rrGw1rrGg9rrWv88GUqf0nlN6lMFW+onFR8ouITKlPFpDJVnKicqJyonKi8oTJVfELlNz2sta7xsNa6xsNa6xr2D2utKzysta7xsNa6xsNa6xoPa61rPKy1rvGw1rrGw1rrGg9rrWs8rLWu8bDWusbDWusaD2utazysta7xsNa6xsNa6xr/DzBy4t4P3PiFAAAAAElFTkSuQmCC"}
+*************** response log end ***************
+
+[2018-07-25 16:07:09.433] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 9
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-25 16:07:09.620] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:127.0.0.1
+request body: 
+["/sign/bfa79716-bd87-408d-ba9c-4806be355fa2%2Cf7396e63-600e-4923-9b3e-0b8e8bd283db%2Cbf88c65c-376c-42cd-aa00-7d83e8d37c03%2C"]
+response time: 153
+response status: 200
+response body: 
+{"name":"inputErrorType","status":20001,"message":"输入数值格式错误！"}
+*************** response log end ***************
+
+[2018-07-25 16:07:22.826] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 21
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-25 16:07:22.838] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:127.0.0.1
+request body: 
+["/sign/bfa79716-bd87-408d-ba9c-4806be355fa2%2Cf7396e63-600e-4923-9b3e-0b8e8bd283db%2Cbf88c65c-376c-42cd-aa00-7d83e8d37c03%2C"]
+response time: 8
+response status: 200
+response body: 
+{"name":"inputErrorType","status":20001,"message":"输入数值格式错误！"}
+*************** response log end ***************
+
+[2018-07-25 16:09:18.470] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 9
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-25 16:09:18.503] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:127.0.0.1
+request body: 
+["/sign/bfa79716-bd87-408d-ba9c-4806be355fa2%2Cf7396e63-600e-4923-9b3e-0b8e8bd283db%2Cbf88c65c-376c-42cd-aa00-7d83e8d37c03%2C"]
+response time: 20
+response status: 200
+response body: 
+{"name":"inputErrorType","status":20001,"message":"输入数值格式错误！"}
+*************** response log end ***************
+
+[2018-07-25 16:10:07.737] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 54
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-25 16:10:07.745] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:127.0.0.1
+request body: 
+["bfa79716-bd87-408d-ba9c-4806be355fa2","f7396e63-600e-4923-9b3e-0b8e8bd283db","bf88c65c-376c-42cd-aa00-7d83e8d37c03",""]
+response time: 3
+response status: 200
+response body: 
+{"name":"inputErrorType","status":20001,"message":"输入数值格式错误！"}
+*************** response log end ***************
+
+[2018-07-25 16:10:27.250] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-25 16:10:27.267] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:127.0.0.1
+request body: 
+["bfa79716-bd87-408d-ba9c-4806be355fa2","f7396e63-600e-4923-9b3e-0b8e8bd283db","bf88c65c-376c-42cd-aa00-7d83e8d37c03",""]
+response time: 5
+response status: 200
+response body: 
+{"name":"inputErrorType","status":20001,"message":"输入数值格式错误！"}
+*************** response log end ***************
+
+[2018-07-25 16:11:26.270] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 22
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-25 16:11:26.378] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:127.0.0.1
+request body: 
+["bfa79716-bd87-408d-ba9c-4806be355fa2","f7396e63-600e-4923-9b3e-0b8e8bd283db","bf88c65c-376c-42cd-aa00-7d83e8d37c03",""]
+response time: 70
+response status: 200
+response body: 
+{"name":"inputErrorType","status":20001,"message":"输入数值格式错误！"}
+*************** response log end ***************
+
+[2018-07-25 16:12:36.376] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 11
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-25 16:12:36.391] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:127.0.0.1
+request body: 
+["bfa79716-bd87-408d-ba9c-4806be355fa2","f7396e63-600e-4923-9b3e-0b8e8bd283db","bf88c65c-376c-42cd-aa00-7d83e8d37c03",""]
+response time: 6
+response status: 200
+response body: 
+{"name":"inputErrorType","status":20001,"message":"输入数值格式错误！"}
+*************** response log end ***************
+
+[2018-07-25 16:12:40.119] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"ids":["bfa79716-bd87-408d-ba9c-4806be355fa2","f7396e63-600e-4923-9b3e-0b8e8bd283db","bf88c65c-376c-42cd-aa00-7d83e8d37c03",""]}
+response time: 9
+response status: 200
+response body: 
+{"status":500}
+*************** response log end ***************
+
+[2018-07-25 16:14:27.930] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 8
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-25 16:14:28.137] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"ids":["bfa79716-bd87-408d-ba9c-4806be355fa2","f7396e63-600e-4923-9b3e-0b8e8bd283db","bf88c65c-376c-42cd-aa00-7d83e8d37c03",""]}
+response time: 147
+response status: 200
+response body: 
+{"status":500}
+*************** response log end ***************
+

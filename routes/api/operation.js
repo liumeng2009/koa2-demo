@@ -18,6 +18,7 @@ router.get('/workingOperationList',operation_controller.workingOperationList)
 router.get('/doneOperationList',operation_controller.doneOperationList)
 router.get('/operationCount',operation_controller.operationCount)
 
+router.post('/no_list', operation_controller.no_list);
 router.get('/getaction/:id', operation_controller.getOperationAction);
 router.get('/:id', operation_controller.getOperation);
 router.post('/save', operation_controller.add);

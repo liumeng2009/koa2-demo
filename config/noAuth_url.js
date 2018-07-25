@@ -42,6 +42,7 @@ var noAuthUrlArray=[
     '/api/order/',
     '/api/order/getorderno/get/',
 
+    '/api/operation/no_list',
     '/api/operation/list',
     '/api/operation/',
     '/api/operation/getaction/',
