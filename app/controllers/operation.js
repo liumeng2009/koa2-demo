@@ -335,8 +335,10 @@ exports.list_week=async(ctx,next)=>{
 
 
 
-    let sql="select FROM_UNIXTIME(create_time/1000,'%Y%m%d') days,count(*) count from operations inner join actions on operations.id=actions.operationId where operations.status=1 and actions.operationComplete=1 and operations.create_time>="+weekStart+" and operations.create_time<"+weekEnd+" GROUP BY days;";
+    let sql="select FROM_UNIXTIME((create_time+8*60*60*1000)/1000,'%Y%m%d') days,count(*) count from operations inner join actions on operations.id=actions.operationId where operations.status=1 and actions.operationComplete=1 and operations.create_time>="+weekStart+" and operations.create_time<"+weekEnd+"  GROUP BY days;";
+    //
 
+    await sequelize.query("set sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'")
     let result=await sequelize.query(sql,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
 
     //将一周数据补充完整
@@ -353,6 +355,7 @@ exports.list_week=async(ctx,next)=>{
     }
     console.log(dayArray);
 
+    console.log(result);
     for(let da of dayArray){
         if(result.length==0){
             result.push({days:da,count:0});
@@ -375,6 +378,8 @@ exports.list_week=async(ctx,next)=>{
         }
 
     }
+
+    console.log(result);
 
     //最终将result进行排序
     for(let i=0;i<result.length;i++){
@@ -417,6 +422,7 @@ exports.list_week=async(ctx,next)=>{
 
     }
 
+    console.log(result);
     ctx.body={
         status:0,
         data:result
@@ -473,7 +479,7 @@ exports.list_month=async(ctx,next)=>{
 
 
 
-    let sql="select FROM_UNIXTIME(create_time/1000,'%Y%m%d') days,count(*) count from operations inner join actions on operations.id=actions.operationId where operations.status=1 and actions.operationComplete=1 and operations.create_time>="+monthStartStamp+" and operations.create_time<"+monthEndStamp+" GROUP BY days;";
+    let sql="select FROM_UNIXTIME((create_time+8*60*60*1000)/1000,'%Y%m%d') days,count(*) count from operations inner join actions on operations.id=actions.operationId where operations.status=1 and actions.operationComplete=1 and operations.create_time>="+monthStartStamp+" and operations.create_time<"+monthEndStamp+" GROUP BY days;";
 
     let result=await sequelize.query(sql,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
 
@@ -1572,11 +1578,11 @@ exports.delete=async(ctx,next)=>{
 }
 
 
-//一些sql语句
+//一些sql语句 from_unixtime函数注意时区问题，暂时的方法是手动+8小时
 //某时间段内，各公司的工单数
 //select COUNT(operations.id),FROM_UNIXTIME(operations.create_time/1000,'%Y%m') days,corporations.name from operations INNER JOIN orders on operations.orderId=orders.id INNER JOIN corporations on orders.custom_corporation=corporations.id where operations.status=1  and operations.create_time>='1496246400000' and operations.create_time<'1530374400000' GROUP BY days,corporations.name order by corporations.name;
 //某时间段内，各公司的工时数
-//SELECT `user`.`name` AS `user`,FROM_UNIXTIME(start_time/1000,'%Y%m') days, SUM(`end_time`-`start_time`)/60000 AS `分钟` FROM `actions` AS `actions` LEFT OUTER JOIN `users` AS `user` ON `actions`.`worker` = `user`.`id` WHERE `actions`.`status` = 1 AND (`actions`.`start_time` >= 1519833600000 AND `actions`.`end_time` <= 1521820800000) and `user`.name='朱亚亮' GROUP BY `user`.`name`,days;
+//SELECT `user`.`name` AS `user`,FROM_UNIXTIME((start_time+8*60*60*1000)/1000,'%Y%m') days, SUM(`end_time`-`start_time`)/60000 AS `分钟` FROM `actions` AS `actions` LEFT OUTER JOIN `users` AS `user` ON `actions`.`worker` = `user`.`id` WHERE `actions`.`status` = 1 AND (`actions`.`start_time` >= 1519833600000 AND `actions`.`end_time` <= 1521820800000) and `user`.name='朱亚亮' GROUP BY `user`.`name`,days;
 
 //select COUNT(operations.id),FROM_UNIXTIME(operations.create_time/1000,'%Y%m') days,corporations.name from operations INNER JOIN orders on operations.orderId=orders.id INNER JOIN corporations on orders.custom_corporation=corporations.id where operations.status=1  and operations.create_time>='1496246400000' and operations.create_time<'1530374400000' GROUP BY days,corporations.name order by days;
 
