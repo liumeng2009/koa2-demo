@@ -102,3 +102,1073 @@ response body:
 {"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
 *************** response log end ***************
 
+[2018-07-26 16:01:19.072] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:01:19.115] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f",""]}
+response time: 20
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:01:30.835] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:01:30.865] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f",""]}
+response time: 19
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:01:48.699] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{}
+response time: 0
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:01:48.729] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f",""]}
+response time: 21
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:01:53.325] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/085f48af-8a0f-4ea1-94bc-9cc49157661f
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:01:53.358] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/085f48af-8a0f-4ea1-94bc-9cc49157661f
+request client ip:  ::ffff:192.168.1.102
+request query:  {}
+response time: 20
+response status: 200
+response body: 
+{"status":0,"data":{"orderId":"39565107-1be9-46da-a2f8-553720805d34","important":false,"op":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","no":"20180726000","create_time":1532565219000,"remark":"","status":1,"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","createdAt":1532566800244,"updatedAt":1532566800244,"version":0,"order":{"no":"20180726000","custom_name":"融资租赁","custom_phone":"02265617812","incoming_time":1532565219000,"custom_corporation":"4f3b67d7-40f2-4377-86ba-e9775e728f64","custom_position":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"273f11bf-51a4-4331-9f71-f209625da820\",\"name\":\"软件\",\"code\":\"SOFTWARE\"},\"equipment\":{\"name\":\"操作系统\",\"value\":\"操作系统\"},\"op\":{\"id\":\"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9\",\"name\":\"安装\",\"code\":\"SETUP\"},\"no\":1}]","id":"39565107-1be9-46da-a2f8-553720805d34","createdAt":1532566799962,"updatedAt":1532566799962,"version":0,"corporation":{"name":"融资租赁公司","description":"融资租赁公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"4f3b67d7-40f2-4377-86ba-e9775e728f64","createdAt":1515633158201,"updatedAt":1520564750982,"version":1},"corpBuilding":{"corporationId":"4f3b67d7-40f2-4377-86ba-e9775e728f64","buildingId":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","floor":5,"position":"W","status":1,"id":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","createdAt":1515633160702,"updatedAt":1515633160702,"version":0,"building":{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","createdAt":1515633153519,"updatedAt":1515633153519,"version":0}}},"businessContent":{"type":"SOFTWARE","equipment":"操作系统","operation":"SETUP","isAdvanced":null,"weight":5,"remark":null,"status":1,"sequence":1,"id":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","createdAt":1516081250259,"updatedAt":1527814556211,"version":3,"equipType":{"name":"软件","code":"SOFTWARE","id":"273f11bf-51a4-4331-9f71-f209625da820","createdAt":1515633162815,"updatedAt":1515633162815,"version":0},"equipOp":{"name":"安装","code":"SETUP","id":"a1827017-987a-4fea-89c4-5742c40cbc3e","createdAt":1515633163145,"updatedAt":1515633163145,"version":0}},"actions":[{"operationId":"085f48af-8a0f-4ea1-94bc-9cc49157661f","call_time":1532565219000,"start_time":1532570559000,"end_time":1532572959000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"57fa259d-581a-4ba8-b849-513032d057fe","createdAt":1532566800350,"updatedAt":1532576680235,"version":1,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzI1NjY4OTYsImV4cCI6MTUzMzE3MTY5Nn0.kwB9r3qjWdMUQvndnf6aOpNCm-uLBcMDbaohhA3WGo8","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1532566896073,"version":84}}]}}
+*************** response log end ***************
+
+[2018-07-26 16:01:53.388] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/getaction/085f48af-8a0f-4ea1-94bc-9cc49157661f
+request client ip:  ::ffff:192.168.1.102
+request query:  {}
+response time: 13
+response status: 200
+response body: 
+{"status":0,"data":{"orderId":"39565107-1be9-46da-a2f8-553720805d34","important":false,"op":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","no":"20180726000","create_time":1532565219000,"remark":"","status":1,"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","createdAt":1532566800244,"updatedAt":1532566800244,"version":0,"actions":[{"operationId":"085f48af-8a0f-4ea1-94bc-9cc49157661f","call_time":1532565219000,"start_time":1532570559000,"end_time":1532572959000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"57fa259d-581a-4ba8-b849-513032d057fe","createdAt":1532566800350,"updatedAt":1532576680235,"version":1,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzI1NjY4OTYsImV4cCI6MTUzMzE3MTY5Nn0.kwB9r3qjWdMUQvndnf6aOpNCm-uLBcMDbaohhA3WGo8","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1532566896073,"version":84}}]}}
+*************** response log end ***************
+
+[2018-07-26 16:01:55.899] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/085f48af-8a0f-4ea1-94bc-9cc49157661f
+request client ip:  ::ffff:192.168.1.102
+request query:  {}
+response time: 17
+response status: 200
+response body: 
+{"status":0,"data":{"orderId":"39565107-1be9-46da-a2f8-553720805d34","important":false,"op":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","no":"20180726000","create_time":1532565219000,"remark":"","status":1,"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","createdAt":1532566800244,"updatedAt":1532566800244,"version":0,"order":{"no":"20180726000","custom_name":"融资租赁","custom_phone":"02265617812","incoming_time":1532565219000,"custom_corporation":"4f3b67d7-40f2-4377-86ba-e9775e728f64","custom_position":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"273f11bf-51a4-4331-9f71-f209625da820\",\"name\":\"软件\",\"code\":\"SOFTWARE\"},\"equipment\":{\"name\":\"操作系统\",\"value\":\"操作系统\"},\"op\":{\"id\":\"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9\",\"name\":\"安装\",\"code\":\"SETUP\"},\"no\":1}]","id":"39565107-1be9-46da-a2f8-553720805d34","createdAt":1532566799962,"updatedAt":1532566799962,"version":0,"corporation":{"name":"融资租赁公司","description":"融资租赁公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"4f3b67d7-40f2-4377-86ba-e9775e728f64","createdAt":1515633158201,"updatedAt":1520564750982,"version":1},"corpBuilding":{"corporationId":"4f3b67d7-40f2-4377-86ba-e9775e728f64","buildingId":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","floor":5,"position":"W","status":1,"id":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","createdAt":1515633160702,"updatedAt":1515633160702,"version":0,"building":{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","createdAt":1515633153519,"updatedAt":1515633153519,"version":0}}},"businessContent":{"type":"SOFTWARE","equipment":"操作系统","operation":"SETUP","isAdvanced":null,"weight":5,"remark":null,"status":1,"sequence":1,"id":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","createdAt":1516081250259,"updatedAt":1527814556211,"version":3,"equipType":{"name":"软件","code":"SOFTWARE","id":"273f11bf-51a4-4331-9f71-f209625da820","createdAt":1515633162815,"updatedAt":1515633162815,"version":0},"equipOp":{"name":"安装","code":"SETUP","id":"a1827017-987a-4fea-89c4-5742c40cbc3e","createdAt":1515633163145,"updatedAt":1515633163145,"version":0}},"actions":[{"operationId":"085f48af-8a0f-4ea1-94bc-9cc49157661f","call_time":1532565219000,"start_time":1532570559000,"end_time":1532572959000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"57fa259d-581a-4ba8-b849-513032d057fe","createdAt":1532566800350,"updatedAt":1532576680235,"version":1,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzI1NjY4OTYsImV4cCI6MTUzMzE3MTY5Nn0.kwB9r3qjWdMUQvndnf6aOpNCm-uLBcMDbaohhA3WGo8","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1532566896073,"version":84}}]}}
+*************** response log end ***************
+
+[2018-07-26 16:01:55.924] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/getaction/085f48af-8a0f-4ea1-94bc-9cc49157661f
+request client ip:  ::ffff:192.168.1.102
+request query:  {}
+response time: 12
+response status: 200
+response body: 
+{"status":0,"data":{"orderId":"39565107-1be9-46da-a2f8-553720805d34","important":false,"op":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","no":"20180726000","create_time":1532565219000,"remark":"","status":1,"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","createdAt":1532566800244,"updatedAt":1532566800244,"version":0,"actions":[{"operationId":"085f48af-8a0f-4ea1-94bc-9cc49157661f","call_time":1532565219000,"start_time":1532570559000,"end_time":1532572959000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"57fa259d-581a-4ba8-b849-513032d057fe","createdAt":1532566800350,"updatedAt":1532576680235,"version":1,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzI1NjY4OTYsImV4cCI6MTUzMzE3MTY5Nn0.kwB9r3qjWdMUQvndnf6aOpNCm-uLBcMDbaohhA3WGo8","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1532566896073,"version":84}}]}}
+*************** response log end ***************
+
+[2018-07-26 16:01:57.860] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/085f48af-8a0f-4ea1-94bc-9cc49157661f
+request client ip:  ::ffff:192.168.1.102
+request query:  {}
+response time: 18
+response status: 200
+response body: 
+{"status":0,"data":{"orderId":"39565107-1be9-46da-a2f8-553720805d34","important":false,"op":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","no":"20180726000","create_time":1532565219000,"remark":"","status":1,"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","createdAt":1532566800244,"updatedAt":1532566800244,"version":0,"order":{"no":"20180726000","custom_name":"融资租赁","custom_phone":"02265617812","incoming_time":1532565219000,"custom_corporation":"4f3b67d7-40f2-4377-86ba-e9775e728f64","custom_position":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"273f11bf-51a4-4331-9f71-f209625da820\",\"name\":\"软件\",\"code\":\"SOFTWARE\"},\"equipment\":{\"name\":\"操作系统\",\"value\":\"操作系统\"},\"op\":{\"id\":\"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9\",\"name\":\"安装\",\"code\":\"SETUP\"},\"no\":1}]","id":"39565107-1be9-46da-a2f8-553720805d34","createdAt":1532566799962,"updatedAt":1532566799962,"version":0,"corporation":{"name":"融资租赁公司","description":"融资租赁公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"4f3b67d7-40f2-4377-86ba-e9775e728f64","createdAt":1515633158201,"updatedAt":1520564750982,"version":1},"corpBuilding":{"corporationId":"4f3b67d7-40f2-4377-86ba-e9775e728f64","buildingId":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","floor":5,"position":"W","status":1,"id":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","createdAt":1515633160702,"updatedAt":1515633160702,"version":0,"building":{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","createdAt":1515633153519,"updatedAt":1515633153519,"version":0}}},"businessContent":{"type":"SOFTWARE","equipment":"操作系统","operation":"SETUP","isAdvanced":null,"weight":5,"remark":null,"status":1,"sequence":1,"id":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","createdAt":1516081250259,"updatedAt":1527814556211,"version":3,"equipType":{"name":"软件","code":"SOFTWARE","id":"273f11bf-51a4-4331-9f71-f209625da820","createdAt":1515633162815,"updatedAt":1515633162815,"version":0},"equipOp":{"name":"安装","code":"SETUP","id":"a1827017-987a-4fea-89c4-5742c40cbc3e","createdAt":1515633163145,"updatedAt":1515633163145,"version":0}},"actions":[{"operationId":"085f48af-8a0f-4ea1-94bc-9cc49157661f","call_time":1532565219000,"start_time":1532570559000,"end_time":1532572959000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"57fa259d-581a-4ba8-b849-513032d057fe","createdAt":1532566800350,"updatedAt":1532576680235,"version":1,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzI1NjY4OTYsImV4cCI6MTUzMzE3MTY5Nn0.kwB9r3qjWdMUQvndnf6aOpNCm-uLBcMDbaohhA3WGo8","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1532566896073,"version":84}}]}}
+*************** response log end ***************
+
+[2018-07-26 16:01:57.888] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/getaction/085f48af-8a0f-4ea1-94bc-9cc49157661f
+request client ip:  ::ffff:192.168.1.102
+request query:  {}
+response time: 13
+response status: 200
+response body: 
+{"status":0,"data":{"orderId":"39565107-1be9-46da-a2f8-553720805d34","important":false,"op":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","no":"20180726000","create_time":1532565219000,"remark":"","status":1,"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","createdAt":1532566800244,"updatedAt":1532566800244,"version":0,"actions":[{"operationId":"085f48af-8a0f-4ea1-94bc-9cc49157661f","call_time":1532565219000,"start_time":1532570559000,"end_time":1532572959000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"57fa259d-581a-4ba8-b849-513032d057fe","createdAt":1532566800350,"updatedAt":1532576680235,"version":1,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzI1NjY4OTYsImV4cCI6MTUzMzE3MTY5Nn0.kwB9r3qjWdMUQvndnf6aOpNCm-uLBcMDbaohhA3WGo8","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1532566896073,"version":84}}]}}
+*************** response log end ***************
+
+[2018-07-26 16:04:44.373] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 28
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:04:44.401] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f"]}
+response time: 18
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:07:28.222] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/085f48af-8a0f-4ea1-94bc-9cc49157661f
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:07:28.263] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/085f48af-8a0f-4ea1-94bc-9cc49157661f
+request client ip:  ::ffff:192.168.1.102
+request query:  {}
+response time: 30
+response status: 200
+response body: 
+{"status":0,"data":{"orderId":"39565107-1be9-46da-a2f8-553720805d34","important":false,"op":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","no":"20180726000","create_time":1532565219000,"remark":"","status":1,"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","createdAt":1532566800244,"updatedAt":1532566800244,"version":0,"order":{"no":"20180726000","custom_name":"融资租赁","custom_phone":"02265617812","incoming_time":1532565219000,"custom_corporation":"4f3b67d7-40f2-4377-86ba-e9775e728f64","custom_position":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"273f11bf-51a4-4331-9f71-f209625da820\",\"name\":\"软件\",\"code\":\"SOFTWARE\"},\"equipment\":{\"name\":\"操作系统\",\"value\":\"操作系统\"},\"op\":{\"id\":\"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9\",\"name\":\"安装\",\"code\":\"SETUP\"},\"no\":1}]","id":"39565107-1be9-46da-a2f8-553720805d34","createdAt":1532566799962,"updatedAt":1532566799962,"version":0,"corporation":{"name":"融资租赁公司","description":"融资租赁公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"4f3b67d7-40f2-4377-86ba-e9775e728f64","createdAt":1515633158201,"updatedAt":1520564750982,"version":1},"corpBuilding":{"corporationId":"4f3b67d7-40f2-4377-86ba-e9775e728f64","buildingId":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","floor":5,"position":"W","status":1,"id":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","createdAt":1515633160702,"updatedAt":1515633160702,"version":0,"building":{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","createdAt":1515633153519,"updatedAt":1515633153519,"version":0}}},"businessContent":{"type":"SOFTWARE","equipment":"操作系统","operation":"SETUP","isAdvanced":null,"weight":5,"remark":null,"status":1,"sequence":1,"id":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","createdAt":1516081250259,"updatedAt":1527814556211,"version":3,"equipType":{"name":"软件","code":"SOFTWARE","id":"273f11bf-51a4-4331-9f71-f209625da820","createdAt":1515633162815,"updatedAt":1515633162815,"version":0},"equipOp":{"name":"安装","code":"SETUP","id":"a1827017-987a-4fea-89c4-5742c40cbc3e","createdAt":1515633163145,"updatedAt":1515633163145,"version":0}},"actions":[{"operationId":"085f48af-8a0f-4ea1-94bc-9cc49157661f","call_time":1532565219000,"start_time":1532570559000,"end_time":1532572959000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"57fa259d-581a-4ba8-b849-513032d057fe","createdAt":1532566800350,"updatedAt":1532576680235,"version":1,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzI1NjY4OTYsImV4cCI6MTUzMzE3MTY5Nn0.kwB9r3qjWdMUQvndnf6aOpNCm-uLBcMDbaohhA3WGo8","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1532566896073,"version":84}}]}}
+*************** response log end ***************
+
+[2018-07-26 16:07:28.360] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/getaction/085f48af-8a0f-4ea1-94bc-9cc49157661f
+request client ip:  ::ffff:192.168.1.102
+request query:  {}
+response time: 61
+response status: 200
+response body: 
+{"status":0,"data":{"orderId":"39565107-1be9-46da-a2f8-553720805d34","important":false,"op":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","no":"20180726000","create_time":1532565219000,"remark":"","status":1,"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","createdAt":1532566800244,"updatedAt":1532566800244,"version":0,"actions":[{"operationId":"085f48af-8a0f-4ea1-94bc-9cc49157661f","call_time":1532565219000,"start_time":1532570559000,"end_time":1532572959000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"57fa259d-581a-4ba8-b849-513032d057fe","createdAt":1532566800350,"updatedAt":1532576680235,"version":1,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzI1NjY4OTYsImV4cCI6MTUzMzE3MTY5Nn0.kwB9r3qjWdMUQvndnf6aOpNCm-uLBcMDbaohhA3WGo8","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1532566896073,"version":84}}]}}
+*************** response log end ***************
+
+[2018-07-26 16:07:29.983] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/085f48af-8a0f-4ea1-94bc-9cc49157661f
+request client ip:  ::ffff:192.168.1.102
+request query:  {}
+response time: 18
+response status: 200
+response body: 
+{"status":0,"data":{"orderId":"39565107-1be9-46da-a2f8-553720805d34","important":false,"op":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","no":"20180726000","create_time":1532565219000,"remark":"","status":1,"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","createdAt":1532566800244,"updatedAt":1532566800244,"version":0,"order":{"no":"20180726000","custom_name":"融资租赁","custom_phone":"02265617812","incoming_time":1532565219000,"custom_corporation":"4f3b67d7-40f2-4377-86ba-e9775e728f64","custom_position":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"273f11bf-51a4-4331-9f71-f209625da820\",\"name\":\"软件\",\"code\":\"SOFTWARE\"},\"equipment\":{\"name\":\"操作系统\",\"value\":\"操作系统\"},\"op\":{\"id\":\"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9\",\"name\":\"安装\",\"code\":\"SETUP\"},\"no\":1}]","id":"39565107-1be9-46da-a2f8-553720805d34","createdAt":1532566799962,"updatedAt":1532566799962,"version":0,"corporation":{"name":"融资租赁公司","description":"融资租赁公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"4f3b67d7-40f2-4377-86ba-e9775e728f64","createdAt":1515633158201,"updatedAt":1520564750982,"version":1},"corpBuilding":{"corporationId":"4f3b67d7-40f2-4377-86ba-e9775e728f64","buildingId":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","floor":5,"position":"W","status":1,"id":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","createdAt":1515633160702,"updatedAt":1515633160702,"version":0,"building":{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","createdAt":1515633153519,"updatedAt":1515633153519,"version":0}}},"businessContent":{"type":"SOFTWARE","equipment":"操作系统","operation":"SETUP","isAdvanced":null,"weight":5,"remark":null,"status":1,"sequence":1,"id":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","createdAt":1516081250259,"updatedAt":1527814556211,"version":3,"equipType":{"name":"软件","code":"SOFTWARE","id":"273f11bf-51a4-4331-9f71-f209625da820","createdAt":1515633162815,"updatedAt":1515633162815,"version":0},"equipOp":{"name":"安装","code":"SETUP","id":"a1827017-987a-4fea-89c4-5742c40cbc3e","createdAt":1515633163145,"updatedAt":1515633163145,"version":0}},"actions":[{"operationId":"085f48af-8a0f-4ea1-94bc-9cc49157661f","call_time":1532565219000,"start_time":1532570559000,"end_time":1532572959000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"57fa259d-581a-4ba8-b849-513032d057fe","createdAt":1532566800350,"updatedAt":1532576680235,"version":1,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzI1NjY4OTYsImV4cCI6MTUzMzE3MTY5Nn0.kwB9r3qjWdMUQvndnf6aOpNCm-uLBcMDbaohhA3WGo8","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1532566896073,"version":84}}]}}
+*************** response log end ***************
+
+[2018-07-26 16:07:30.009] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/getaction/085f48af-8a0f-4ea1-94bc-9cc49157661f
+request client ip:  ::ffff:192.168.1.102
+request query:  {}
+response time: 11
+response status: 200
+response body: 
+{"status":0,"data":{"orderId":"39565107-1be9-46da-a2f8-553720805d34","important":false,"op":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","no":"20180726000","create_time":1532565219000,"remark":"","status":1,"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","createdAt":1532566800244,"updatedAt":1532566800244,"version":0,"actions":[{"operationId":"085f48af-8a0f-4ea1-94bc-9cc49157661f","call_time":1532565219000,"start_time":1532570559000,"end_time":1532572959000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"57fa259d-581a-4ba8-b849-513032d057fe","createdAt":1532566800350,"updatedAt":1532576680235,"version":1,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzI1NjY4OTYsImV4cCI6MTUzMzE3MTY5Nn0.kwB9r3qjWdMUQvndnf6aOpNCm-uLBcMDbaohhA3WGo8","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1532566896073,"version":84}}]}}
+*************** response log end ***************
+
+[2018-07-26 16:07:31.790] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/085f48af-8a0f-4ea1-94bc-9cc49157661f
+request client ip:  ::ffff:192.168.1.102
+request query:  {}
+response time: 17
+response status: 200
+response body: 
+{"status":0,"data":{"orderId":"39565107-1be9-46da-a2f8-553720805d34","important":false,"op":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","no":"20180726000","create_time":1532565219000,"remark":"","status":1,"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","createdAt":1532566800244,"updatedAt":1532566800244,"version":0,"order":{"no":"20180726000","custom_name":"融资租赁","custom_phone":"02265617812","incoming_time":1532565219000,"custom_corporation":"4f3b67d7-40f2-4377-86ba-e9775e728f64","custom_position":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"273f11bf-51a4-4331-9f71-f209625da820\",\"name\":\"软件\",\"code\":\"SOFTWARE\"},\"equipment\":{\"name\":\"操作系统\",\"value\":\"操作系统\"},\"op\":{\"id\":\"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9\",\"name\":\"安装\",\"code\":\"SETUP\"},\"no\":1}]","id":"39565107-1be9-46da-a2f8-553720805d34","createdAt":1532566799962,"updatedAt":1532566799962,"version":0,"corporation":{"name":"融资租赁公司","description":"融资租赁公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"4f3b67d7-40f2-4377-86ba-e9775e728f64","createdAt":1515633158201,"updatedAt":1520564750982,"version":1},"corpBuilding":{"corporationId":"4f3b67d7-40f2-4377-86ba-e9775e728f64","buildingId":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","floor":5,"position":"W","status":1,"id":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","createdAt":1515633160702,"updatedAt":1515633160702,"version":0,"building":{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","createdAt":1515633153519,"updatedAt":1515633153519,"version":0}}},"businessContent":{"type":"SOFTWARE","equipment":"操作系统","operation":"SETUP","isAdvanced":null,"weight":5,"remark":null,"status":1,"sequence":1,"id":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","createdAt":1516081250259,"updatedAt":1527814556211,"version":3,"equipType":{"name":"软件","code":"SOFTWARE","id":"273f11bf-51a4-4331-9f71-f209625da820","createdAt":1515633162815,"updatedAt":1515633162815,"version":0},"equipOp":{"name":"安装","code":"SETUP","id":"a1827017-987a-4fea-89c4-5742c40cbc3e","createdAt":1515633163145,"updatedAt":1515633163145,"version":0}},"actions":[{"operationId":"085f48af-8a0f-4ea1-94bc-9cc49157661f","call_time":1532565219000,"start_time":1532570559000,"end_time":1532572959000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"57fa259d-581a-4ba8-b849-513032d057fe","createdAt":1532566800350,"updatedAt":1532576680235,"version":1,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzI1NjY4OTYsImV4cCI6MTUzMzE3MTY5Nn0.kwB9r3qjWdMUQvndnf6aOpNCm-uLBcMDbaohhA3WGo8","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1532566896073,"version":84}}]}}
+*************** response log end ***************
+
+[2018-07-26 16:07:31.823] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/getaction/085f48af-8a0f-4ea1-94bc-9cc49157661f
+request client ip:  ::ffff:192.168.1.102
+request query:  {}
+response time: 13
+response status: 200
+response body: 
+{"status":0,"data":{"orderId":"39565107-1be9-46da-a2f8-553720805d34","important":false,"op":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","no":"20180726000","create_time":1532565219000,"remark":"","status":1,"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","createdAt":1532566800244,"updatedAt":1532566800244,"version":0,"actions":[{"operationId":"085f48af-8a0f-4ea1-94bc-9cc49157661f","call_time":1532565219000,"start_time":1532570559000,"end_time":1532572959000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"57fa259d-581a-4ba8-b849-513032d057fe","createdAt":1532566800350,"updatedAt":1532576680235,"version":1,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzI1NjY4OTYsImV4cCI6MTUzMzE3MTY5Nn0.kwB9r3qjWdMUQvndnf6aOpNCm-uLBcMDbaohhA3WGo8","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1532566896073,"version":84}}]}}
+*************** response log end ***************
+
+[2018-07-26 16:10:59.117] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:10:59.172] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f",""]}
+response time: 14
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:11:06.996] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 17
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:11:07.005] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f"]}
+response time: 4
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:12:09.731] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 0
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:12:09.755] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f"]}
+response time: 20
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:12:26.298] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 13
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:12:26.323] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f"]}
+response time: 18
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:12:52.770] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 24
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:12:52.803] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f"]}
+response time: 28
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:17:43.908] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 13
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:17:43.945] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f"]}
+response time: 25
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:18:38.435] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 17
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:18:38.473] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f"]}
+response time: 34
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:18:41.793] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/085f48af-8a0f-4ea1-94bc-9cc49157661f
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:18:41.826] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/085f48af-8a0f-4ea1-94bc-9cc49157661f
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 23
+response status: 200
+response body: 
+{"status":0,"data":{"orderId":"39565107-1be9-46da-a2f8-553720805d34","important":false,"op":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","no":"20180726000","create_time":1532565219000,"remark":"","status":1,"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","createdAt":1532566800244,"updatedAt":1532566800244,"version":0,"order":{"no":"20180726000","custom_name":"融资租赁","custom_phone":"02265617812","incoming_time":1532565219000,"custom_corporation":"4f3b67d7-40f2-4377-86ba-e9775e728f64","custom_position":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"273f11bf-51a4-4331-9f71-f209625da820\",\"name\":\"软件\",\"code\":\"SOFTWARE\"},\"equipment\":{\"name\":\"操作系统\",\"value\":\"操作系统\"},\"op\":{\"id\":\"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9\",\"name\":\"安装\",\"code\":\"SETUP\"},\"no\":1}]","id":"39565107-1be9-46da-a2f8-553720805d34","createdAt":1532566799962,"updatedAt":1532566799962,"version":0,"corporation":{"name":"融资租赁公司","description":"融资租赁公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"4f3b67d7-40f2-4377-86ba-e9775e728f64","createdAt":1515633158201,"updatedAt":1520564750982,"version":1},"corpBuilding":{"corporationId":"4f3b67d7-40f2-4377-86ba-e9775e728f64","buildingId":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","floor":5,"position":"W","status":1,"id":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","createdAt":1515633160702,"updatedAt":1515633160702,"version":0,"building":{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","createdAt":1515633153519,"updatedAt":1515633153519,"version":0}}},"businessContent":{"type":"SOFTWARE","equipment":"操作系统","operation":"SETUP","isAdvanced":null,"weight":5,"remark":null,"status":1,"sequence":1,"id":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","createdAt":1516081250259,"updatedAt":1527814556211,"version":3,"equipType":{"name":"软件","code":"SOFTWARE","id":"273f11bf-51a4-4331-9f71-f209625da820","createdAt":1515633162815,"updatedAt":1515633162815,"version":0},"equipOp":{"name":"安装","code":"SETUP","id":"a1827017-987a-4fea-89c4-5742c40cbc3e","createdAt":1515633163145,"updatedAt":1515633163145,"version":0}},"actions":[{"operationId":"085f48af-8a0f-4ea1-94bc-9cc49157661f","call_time":1532565219000,"start_time":1532570559000,"end_time":1532572959000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"57fa259d-581a-4ba8-b849-513032d057fe","createdAt":1532566800350,"updatedAt":1532576680235,"version":1,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzI1NjY4OTYsImV4cCI6MTUzMzE3MTY5Nn0.kwB9r3qjWdMUQvndnf6aOpNCm-uLBcMDbaohhA3WGo8","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1532566896073,"version":84}}]}}
+*************** response log end ***************
+
+[2018-07-26 16:18:41.869] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/getaction/085f48af-8a0f-4ea1-94bc-9cc49157661f
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 21
+response status: 200
+response body: 
+{"status":0,"data":{"orderId":"39565107-1be9-46da-a2f8-553720805d34","important":false,"op":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","no":"20180726000","create_time":1532565219000,"remark":"","status":1,"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","createdAt":1532566800244,"updatedAt":1532566800244,"version":0,"actions":[{"operationId":"085f48af-8a0f-4ea1-94bc-9cc49157661f","call_time":1532565219000,"start_time":1532570559000,"end_time":1532572959000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"57fa259d-581a-4ba8-b849-513032d057fe","createdAt":1532566800350,"updatedAt":1532576680235,"version":1,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzI1NjY4OTYsImV4cCI6MTUzMzE3MTY5Nn0.kwB9r3qjWdMUQvndnf6aOpNCm-uLBcMDbaohhA3WGo8","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1532566896073,"version":84}}]}}
+*************** response log end ***************
+
+[2018-07-26 16:18:45.039] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/085f48af-8a0f-4ea1-94bc-9cc49157661f
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 23
+response status: 200
+response body: 
+{"status":0,"data":{"orderId":"39565107-1be9-46da-a2f8-553720805d34","important":false,"op":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","no":"20180726000","create_time":1532565219000,"remark":"","status":1,"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","createdAt":1532566800244,"updatedAt":1532566800244,"version":0,"order":{"no":"20180726000","custom_name":"融资租赁","custom_phone":"02265617812","incoming_time":1532565219000,"custom_corporation":"4f3b67d7-40f2-4377-86ba-e9775e728f64","custom_position":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"273f11bf-51a4-4331-9f71-f209625da820\",\"name\":\"软件\",\"code\":\"SOFTWARE\"},\"equipment\":{\"name\":\"操作系统\",\"value\":\"操作系统\"},\"op\":{\"id\":\"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9\",\"name\":\"安装\",\"code\":\"SETUP\"},\"no\":1}]","id":"39565107-1be9-46da-a2f8-553720805d34","createdAt":1532566799962,"updatedAt":1532566799962,"version":0,"corporation":{"name":"融资租赁公司","description":"融资租赁公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"4f3b67d7-40f2-4377-86ba-e9775e728f64","createdAt":1515633158201,"updatedAt":1520564750982,"version":1},"corpBuilding":{"corporationId":"4f3b67d7-40f2-4377-86ba-e9775e728f64","buildingId":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","floor":5,"position":"W","status":1,"id":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","createdAt":1515633160702,"updatedAt":1515633160702,"version":0,"building":{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","createdAt":1515633153519,"updatedAt":1515633153519,"version":0}}},"businessContent":{"type":"SOFTWARE","equipment":"操作系统","operation":"SETUP","isAdvanced":null,"weight":5,"remark":null,"status":1,"sequence":1,"id":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","createdAt":1516081250259,"updatedAt":1527814556211,"version":3,"equipType":{"name":"软件","code":"SOFTWARE","id":"273f11bf-51a4-4331-9f71-f209625da820","createdAt":1515633162815,"updatedAt":1515633162815,"version":0},"equipOp":{"name":"安装","code":"SETUP","id":"a1827017-987a-4fea-89c4-5742c40cbc3e","createdAt":1515633163145,"updatedAt":1515633163145,"version":0}},"actions":[{"operationId":"085f48af-8a0f-4ea1-94bc-9cc49157661f","call_time":1532565219000,"start_time":1532570559000,"end_time":1532572959000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"57fa259d-581a-4ba8-b849-513032d057fe","createdAt":1532566800350,"updatedAt":1532576680235,"version":1,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzI1NjY4OTYsImV4cCI6MTUzMzE3MTY5Nn0.kwB9r3qjWdMUQvndnf6aOpNCm-uLBcMDbaohhA3WGo8","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1532566896073,"version":84}}]}}
+*************** response log end ***************
+
+[2018-07-26 16:18:45.068] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/getaction/085f48af-8a0f-4ea1-94bc-9cc49157661f
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 20
+response status: 200
+response body: 
+{"status":0,"data":{"orderId":"39565107-1be9-46da-a2f8-553720805d34","important":false,"op":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","no":"20180726000","create_time":1532565219000,"remark":"","status":1,"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","createdAt":1532566800244,"updatedAt":1532566800244,"version":0,"actions":[{"operationId":"085f48af-8a0f-4ea1-94bc-9cc49157661f","call_time":1532565219000,"start_time":1532570559000,"end_time":1532572959000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"57fa259d-581a-4ba8-b849-513032d057fe","createdAt":1532566800350,"updatedAt":1532576680235,"version":1,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzI1NjY4OTYsImV4cCI6MTUzMzE3MTY5Nn0.kwB9r3qjWdMUQvndnf6aOpNCm-uLBcMDbaohhA3WGo8","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1532566896073,"version":84}}]}}
+*************** response log end ***************
+
+[2018-07-26 16:18:57.276] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 3
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:18:57.299] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f"]}
+response time: 19
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:19:07.917] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 6
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:19:07.996] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f"]}
+response time: 26
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:19:31.371] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 10
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:19:31.398] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f"]}
+response time: 18
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:20:09.341] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 14
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:20:09.368] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f"]}
+response time: 23
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:20:18.884] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 13
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:20:18.893] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f"]}
+response time: 5
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:20:32.730] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 10
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:20:32.763] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f"]}
+response time: 19
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:20:35.532] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/085f48af-8a0f-4ea1-94bc-9cc49157661f
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:20:35.566] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/085f48af-8a0f-4ea1-94bc-9cc49157661f
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 22
+response status: 200
+response body: 
+{"status":0,"data":{"orderId":"39565107-1be9-46da-a2f8-553720805d34","important":false,"op":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","no":"20180726000","create_time":1532565219000,"remark":"","status":1,"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","createdAt":1532566800244,"updatedAt":1532566800244,"version":0,"order":{"no":"20180726000","custom_name":"融资租赁","custom_phone":"02265617812","incoming_time":1532565219000,"custom_corporation":"4f3b67d7-40f2-4377-86ba-e9775e728f64","custom_position":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"273f11bf-51a4-4331-9f71-f209625da820\",\"name\":\"软件\",\"code\":\"SOFTWARE\"},\"equipment\":{\"name\":\"操作系统\",\"value\":\"操作系统\"},\"op\":{\"id\":\"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9\",\"name\":\"安装\",\"code\":\"SETUP\"},\"no\":1}]","id":"39565107-1be9-46da-a2f8-553720805d34","createdAt":1532566799962,"updatedAt":1532566799962,"version":0,"corporation":{"name":"融资租赁公司","description":"融资租赁公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"4f3b67d7-40f2-4377-86ba-e9775e728f64","createdAt":1515633158201,"updatedAt":1520564750982,"version":1},"corpBuilding":{"corporationId":"4f3b67d7-40f2-4377-86ba-e9775e728f64","buildingId":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","floor":5,"position":"W","status":1,"id":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","createdAt":1515633160702,"updatedAt":1515633160702,"version":0,"building":{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","createdAt":1515633153519,"updatedAt":1515633153519,"version":0}}},"businessContent":{"type":"SOFTWARE","equipment":"操作系统","operation":"SETUP","isAdvanced":null,"weight":5,"remark":null,"status":1,"sequence":1,"id":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","createdAt":1516081250259,"updatedAt":1527814556211,"version":3,"equipType":{"name":"软件","code":"SOFTWARE","id":"273f11bf-51a4-4331-9f71-f209625da820","createdAt":1515633162815,"updatedAt":1515633162815,"version":0},"equipOp":{"name":"安装","code":"SETUP","id":"a1827017-987a-4fea-89c4-5742c40cbc3e","createdAt":1515633163145,"updatedAt":1515633163145,"version":0}},"actions":[{"operationId":"085f48af-8a0f-4ea1-94bc-9cc49157661f","call_time":1532565219000,"start_time":1532570559000,"end_time":1532572959000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"57fa259d-581a-4ba8-b849-513032d057fe","createdAt":1532566800350,"updatedAt":1532576680235,"version":1,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzI1NjY4OTYsImV4cCI6MTUzMzE3MTY5Nn0.kwB9r3qjWdMUQvndnf6aOpNCm-uLBcMDbaohhA3WGo8","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1532566896073,"version":84}}]}}
+*************** response log end ***************
+
+[2018-07-26 16:20:35.596] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/getaction/085f48af-8a0f-4ea1-94bc-9cc49157661f
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 23
+response status: 200
+response body: 
+{"status":0,"data":{"orderId":"39565107-1be9-46da-a2f8-553720805d34","important":false,"op":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","no":"20180726000","create_time":1532565219000,"remark":"","status":1,"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","createdAt":1532566800244,"updatedAt":1532566800244,"version":0,"actions":[{"operationId":"085f48af-8a0f-4ea1-94bc-9cc49157661f","call_time":1532565219000,"start_time":1532570559000,"end_time":1532572959000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"57fa259d-581a-4ba8-b849-513032d057fe","createdAt":1532566800350,"updatedAt":1532576680235,"version":1,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzI1NjY4OTYsImV4cCI6MTUzMzE3MTY5Nn0.kwB9r3qjWdMUQvndnf6aOpNCm-uLBcMDbaohhA3WGo8","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1532566896073,"version":84}}]}}
+*************** response log end ***************
+
+[2018-07-26 16:22:12.614] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:22:12.707] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f",""]}
+response time: 13
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:22:14.624] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f",""]}
+response time: 3
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:22:21.571] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/085f48af-8a0f-4ea1-94bc-9cc49157661f
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:22:21.599] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/085f48af-8a0f-4ea1-94bc-9cc49157661f
+request client ip:  ::ffff:192.168.1.102
+request query:  {}
+response time: 16
+response status: 200
+response body: 
+{"status":0,"data":{"orderId":"39565107-1be9-46da-a2f8-553720805d34","important":false,"op":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","no":"20180726000","create_time":1532565219000,"remark":"","status":1,"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","createdAt":1532566800244,"updatedAt":1532566800244,"version":0,"order":{"no":"20180726000","custom_name":"融资租赁","custom_phone":"02265617812","incoming_time":1532565219000,"custom_corporation":"4f3b67d7-40f2-4377-86ba-e9775e728f64","custom_position":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"273f11bf-51a4-4331-9f71-f209625da820\",\"name\":\"软件\",\"code\":\"SOFTWARE\"},\"equipment\":{\"name\":\"操作系统\",\"value\":\"操作系统\"},\"op\":{\"id\":\"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9\",\"name\":\"安装\",\"code\":\"SETUP\"},\"no\":1}]","id":"39565107-1be9-46da-a2f8-553720805d34","createdAt":1532566799962,"updatedAt":1532566799962,"version":0,"corporation":{"name":"融资租赁公司","description":"融资租赁公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"4f3b67d7-40f2-4377-86ba-e9775e728f64","createdAt":1515633158201,"updatedAt":1520564750982,"version":1},"corpBuilding":{"corporationId":"4f3b67d7-40f2-4377-86ba-e9775e728f64","buildingId":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","floor":5,"position":"W","status":1,"id":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","createdAt":1515633160702,"updatedAt":1515633160702,"version":0,"building":{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","createdAt":1515633153519,"updatedAt":1515633153519,"version":0}}},"businessContent":{"type":"SOFTWARE","equipment":"操作系统","operation":"SETUP","isAdvanced":null,"weight":5,"remark":null,"status":1,"sequence":1,"id":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","createdAt":1516081250259,"updatedAt":1527814556211,"version":3,"equipType":{"name":"软件","code":"SOFTWARE","id":"273f11bf-51a4-4331-9f71-f209625da820","createdAt":1515633162815,"updatedAt":1515633162815,"version":0},"equipOp":{"name":"安装","code":"SETUP","id":"a1827017-987a-4fea-89c4-5742c40cbc3e","createdAt":1515633163145,"updatedAt":1515633163145,"version":0}},"actions":[{"operationId":"085f48af-8a0f-4ea1-94bc-9cc49157661f","call_time":1532565219000,"start_time":1532570559000,"end_time":1532572959000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"57fa259d-581a-4ba8-b849-513032d057fe","createdAt":1532566800350,"updatedAt":1532576680235,"version":1,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzI1NjY4OTYsImV4cCI6MTUzMzE3MTY5Nn0.kwB9r3qjWdMUQvndnf6aOpNCm-uLBcMDbaohhA3WGo8","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1532566896073,"version":84}}]}}
+*************** response log end ***************
+
+[2018-07-26 16:22:21.632] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/getaction/085f48af-8a0f-4ea1-94bc-9cc49157661f
+request client ip:  ::ffff:192.168.1.102
+request query:  {}
+response time: 13
+response status: 200
+response body: 
+{"status":0,"data":{"orderId":"39565107-1be9-46da-a2f8-553720805d34","important":false,"op":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","no":"20180726000","create_time":1532565219000,"remark":"","status":1,"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","createdAt":1532566800244,"updatedAt":1532566800244,"version":0,"actions":[{"operationId":"085f48af-8a0f-4ea1-94bc-9cc49157661f","call_time":1532565219000,"start_time":1532570559000,"end_time":1532572959000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"57fa259d-581a-4ba8-b849-513032d057fe","createdAt":1532566800350,"updatedAt":1532576680235,"version":1,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzI1NjY4OTYsImV4cCI6MTUzMzE3MTY5Nn0.kwB9r3qjWdMUQvndnf6aOpNCm-uLBcMDbaohhA3WGo8","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1532566896073,"version":84}}]}}
+*************** response log end ***************
+
+[2018-07-26 16:22:23.584] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/085f48af-8a0f-4ea1-94bc-9cc49157661f
+request client ip:  ::ffff:192.168.1.102
+request query:  {}
+response time: 16
+response status: 200
+response body: 
+{"status":0,"data":{"orderId":"39565107-1be9-46da-a2f8-553720805d34","important":false,"op":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","no":"20180726000","create_time":1532565219000,"remark":"","status":1,"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","createdAt":1532566800244,"updatedAt":1532566800244,"version":0,"order":{"no":"20180726000","custom_name":"融资租赁","custom_phone":"02265617812","incoming_time":1532565219000,"custom_corporation":"4f3b67d7-40f2-4377-86ba-e9775e728f64","custom_position":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"273f11bf-51a4-4331-9f71-f209625da820\",\"name\":\"软件\",\"code\":\"SOFTWARE\"},\"equipment\":{\"name\":\"操作系统\",\"value\":\"操作系统\"},\"op\":{\"id\":\"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9\",\"name\":\"安装\",\"code\":\"SETUP\"},\"no\":1}]","id":"39565107-1be9-46da-a2f8-553720805d34","createdAt":1532566799962,"updatedAt":1532566799962,"version":0,"corporation":{"name":"融资租赁公司","description":"融资租赁公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"4f3b67d7-40f2-4377-86ba-e9775e728f64","createdAt":1515633158201,"updatedAt":1520564750982,"version":1},"corpBuilding":{"corporationId":"4f3b67d7-40f2-4377-86ba-e9775e728f64","buildingId":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","floor":5,"position":"W","status":1,"id":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","createdAt":1515633160702,"updatedAt":1515633160702,"version":0,"building":{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","createdAt":1515633153519,"updatedAt":1515633153519,"version":0}}},"businessContent":{"type":"SOFTWARE","equipment":"操作系统","operation":"SETUP","isAdvanced":null,"weight":5,"remark":null,"status":1,"sequence":1,"id":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","createdAt":1516081250259,"updatedAt":1527814556211,"version":3,"equipType":{"name":"软件","code":"SOFTWARE","id":"273f11bf-51a4-4331-9f71-f209625da820","createdAt":1515633162815,"updatedAt":1515633162815,"version":0},"equipOp":{"name":"安装","code":"SETUP","id":"a1827017-987a-4fea-89c4-5742c40cbc3e","createdAt":1515633163145,"updatedAt":1515633163145,"version":0}},"actions":[{"operationId":"085f48af-8a0f-4ea1-94bc-9cc49157661f","call_time":1532565219000,"start_time":1532570559000,"end_time":1532572959000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"57fa259d-581a-4ba8-b849-513032d057fe","createdAt":1532566800350,"updatedAt":1532576680235,"version":1,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzI1NjY4OTYsImV4cCI6MTUzMzE3MTY5Nn0.kwB9r3qjWdMUQvndnf6aOpNCm-uLBcMDbaohhA3WGo8","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1532566896073,"version":84}}]}}
+*************** response log end ***************
+
+[2018-07-26 16:22:23.608] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/getaction/085f48af-8a0f-4ea1-94bc-9cc49157661f
+request client ip:  ::ffff:192.168.1.102
+request query:  {}
+response time: 11
+response status: 200
+response body: 
+{"status":0,"data":{"orderId":"39565107-1be9-46da-a2f8-553720805d34","important":false,"op":"04037cc5-71fe-484a-ac05-d7bcc4d5e6b9","no":"20180726000","create_time":1532565219000,"remark":"","status":1,"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","createdAt":1532566800244,"updatedAt":1532566800244,"version":0,"actions":[{"operationId":"085f48af-8a0f-4ea1-94bc-9cc49157661f","call_time":1532565219000,"start_time":1532570559000,"end_time":1532572959000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"57fa259d-581a-4ba8-b849-513032d057fe","createdAt":1532566800350,"updatedAt":1532576680235,"version":1,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzI1NjY4OTYsImV4cCI6MTUzMzE3MTY5Nn0.kwB9r3qjWdMUQvndnf6aOpNCm-uLBcMDbaohhA3WGo8","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1532566896073,"version":84}}]}}
+*************** response log end ***************
+
+[2018-07-26 16:23:04.437] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:23:04.532] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f",""]}
+response time: 22
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:23:05.152] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 4
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:23:05.197] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f"]}
+response time: 19
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:23:45.434] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:23:45.502] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f",""]}
+response time: 17
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:24:02.982] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:24:03.019] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f",""]}
+response time: 13
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:24:40.288] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:24:40.336] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f",""]}
+response time: 17
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:24:51.229] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:24:51.295] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f",""]}
+response time: 18
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:25:40.179] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{}
+response time: 0
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:25:40.235] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f",""]}
+response time: 19
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:25:49.198] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:25:49.235] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f",""]}
+response time: 5
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:26:25.380] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:26:25.409] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.102
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f",""]}
+response time: 21
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
+[2018-07-26 16:32:22.264] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 27
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-26 16:32:22.316] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/operation/no_list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{"ids":["085f48af-8a0f-4ea1-94bc-9cc49157661f"]}
+response time: 24
+response status: 200
+response body: 
+{"status":0,"data":[{"id":"085f48af-8a0f-4ea1-94bc-9cc49157661f","no":"20180726000"}]}
+*************** response log end ***************
+
