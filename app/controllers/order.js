@@ -232,7 +232,8 @@ exports.getOrderSimple=async(ctx,next)=>{
 }
 
 exports.save=async(ctx,next)=>{
-    await auth.checkAuth(ctx.query.token,'order','add');
+    await auth.checkAuth(ctx.request.headers.authorization,'order','add');
+    //console.log('走这里');
     let custom_name=ctx.request.body.custom_name;
     let custom_phone=ctx.request.body.custom_phone;
     let incoming_date_timestamp=ctx.request.body.incoming_time;
@@ -268,7 +269,7 @@ exports.save=async(ctx,next)=>{
 
     //id存在，说明是编辑模式
     if(id){
-        await auth.checkAuth(ctx.query.token,'order','edit');
+        await auth.checkAuth(ctx.request.headers.authorization,'order','edit');
         let orderObj=await Order.findOne({
             where: {
                 id: id
@@ -295,7 +296,7 @@ exports.save=async(ctx,next)=>{
     }
     //id不存在，说明是新增模式
     else{
-        await auth.checkAuth(ctx.query.token,'order','add');
+        await auth.checkAuth(ctx.request.headers.authorization,'order','add');
         let createResult=await Order.create({
             custom_name:custom_name,
             custom_phone:custom_phone,

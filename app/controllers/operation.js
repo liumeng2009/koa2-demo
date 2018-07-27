@@ -1133,7 +1133,7 @@ exports.add=async(ctx,next)=>{
 }
 
 exports.edit=async(ctx,next)=>{
-    await auth.checkAuth(ctx.request.headers.authorization,'op','edit');
+    //await auth.checkAuth(ctx.request.headers.authorization,'op','edit');
     let Operation=model.operations;
     let operationId=ctx.request.body.id;
     let op=ctx.request.body.businessContent.id;
