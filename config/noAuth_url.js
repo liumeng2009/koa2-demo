@@ -47,6 +47,8 @@ var noAuthUrlArray=[
     '/api/operation/',
     '/api/operation/getaction/',
 
+    '/api/sign/client',
+
     //数据查询部分
     '/api/workers/doinglist',
     '/api/action/list',

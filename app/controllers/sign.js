@@ -4,7 +4,8 @@ const model = require('../model');
 const sys_config=require('../../config/sys_config');
 const response_config=require('../../config/response_config');
 const auth=require('./authInRole');
-var QRCode = require('qrcode')
+var QRCode = require('qrcode');
+const uuid = require('node-uuid');
 
 exports.saveSign=async(ctx,next)=>{
     await auth.checkAuth(ctx.request.headers.authorization,'op','edit');
@@ -68,8 +69,10 @@ exports.getSign=async(ctx,next)=>{
 exports.getQRCode=async(ctx,next)=>{
     await auth.checkAuth(ctx.request.headers.authorization,'op','edit');
     let ids=ctx.request.body.ids;
+    let signid=uuid.v4();
     //url?ids=***,***,***
     let url=sys_config.clientUrl+'#/sign/'
+    url=url+signid+'/';
     if(ids instanceof Array){
         for(let id of ids){
             url=url+id+','
@@ -91,4 +94,40 @@ const generateQR = async text => {
     } catch (err) {
         console.error(err)
     }
+}
+
+//客户端用自己的设备信息，操作系统信息换取userid
+exports.clientSign=async(ctx,next)=>{
+    let signId=ctx.request.body.signId;
+    let date=new Date();
+    let start=date.getTime();
+    let ClientSignModel=model.clientSigns;
+    let ip=ctx.request.ip;
+    let seconds=sys_config.clientSeconds
+
+    let createResult=await ClientSignModel.create({
+        signId:signId,
+        start:start,
+        status:1,
+        clientIp:ip,
+        clientSeconds:seconds
+    })
+
+    ctx.body={
+        status:0,
+        data:createResult
+    }
+
+}
+
+exports.getClientSign=async(ctx,next)=>{
+    let userid=ctx.query.userid;
+
+    let ClientSignModel=model.clientSigns;
+
+    let result=await ClientSignModel.findOne({
+        where:{
+            userId:userid
+        }
+    })
 }
