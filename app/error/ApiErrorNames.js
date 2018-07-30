@@ -93,6 +93,9 @@ ApiErrorNames.OP_IN_FUNC_NOT_EXIST="opInFuncNotExist";
 ApiErrorNames.OP_IN_FUNC_HAS_USED="opInFuncHasUsed";
 ApiErrorNames.NO_AUTH="noAuth";
 
+ApiErrorNames.SIGN_USED="signUsed";
+ApiErrorNames.SIGN_OUT_OF_TIME="signOutOfTime";
+
 ApiErrorNames.UPLOAD_ERROR="uploadError";
 ApiErrorNames.FILE_SYSTEM_ERROR="fileSystemError";
 
@@ -201,6 +204,9 @@ error_map.set(ApiErrorNames.OP_IN_FUNC_HAS_EXIST, { code: 40007, message: '功�
 error_map.set(ApiErrorNames.OP_IN_FUNC_NOT_EXIST, { code: 40008, message: '功能项不存在！'});
 error_map.set(ApiErrorNames.OP_IN_FUNC_HAS_USED, { code: 40009, message: '功能项已经被 {1} 使用，无法删除！'});
 error_map.set(ApiErrorNames.NO_AUTH, { code: 40010, message: '没有访问权限！'});
+
+error_map.set(ApiErrorNames.SIGN_USED, { code: 30001, message: '签名ID已经被使用，您可以再次扫码进行尝试！'});
+error_map.set(ApiErrorNames.SIGN_OUT_OF_TIME, { code: 30002, message: '签名ID已经超时，您可以再次扫码进行尝试！'});
 
 error_map.set(ApiErrorNames.UPLOAD_ERROR, { code: 10010, message: '文件上传出错！'});
 error_map.set(ApiErrorNames.FILE_SYSTEM_ERROR, { code: 10011, message: '文件系统操作出错！'});

@@ -7,14 +7,9 @@ const auth=require('./authInRole');
 var QRCode = require('qrcode');
 const uuid = require('node-uuid');
 
-exports.saveSign=async(ctx,next)=>{
-    await auth.checkAuth(ctx.request.headers.authorization,'op','edit');
-    let ids=ctx.request.body.ids;
-    let sign=ctx.request.body.sign;
-
-    let Operation=model.operations;
+var saveSigns=async function(ids,sign){
     let SignModel=model.signs;
-
+    let Operation=model.operations;
     let saveIdArray=[];
     if(ids instanceof Array&&ids.length>0){
         for(let id of ids){
@@ -45,6 +40,55 @@ exports.saveSign=async(ctx,next)=>{
     }
 }
 
+exports.saveSign=async(ctx,next)=>{
+    await auth.checkAuth(ctx.request.headers.authorization,'op','edit');
+    let ids=ctx.request.body.ids;
+    let sign=ctx.request.body.sign;
+    await saveSigns(ids,sign);
+}
+
+exports.clientSaveSign=async(ctx,next)=>{
+    let ids=ctx.request.body.ids;
+    let sign=ctx.request.body.sign;
+    let signid=ctx.request.body.signid;
+    let ClientSignModel=model.clientSigns;
+    let clientSignResult=await ClientSignModel.findOne({
+        where:{
+            signId:signid
+        }
+    })
+
+    if(clientSignResult){
+        if(clientSignResult.status==0){
+            throw new ApiError(ApiErrorNames.INPUT_FIELD_ERROR,['签名ID'])
+        }
+        //正常
+        else if(clientSignResult.status==1){
+            let date=new Date();
+            let stamp=date.getTime();
+            if(stamp>clientSignResult.start+clientSignResult.clientSeconds*1000){
+                throw new ApiError(ApiErrorNames.SIGN_OUT_OF_TIME);
+            }
+            else{
+                //正常，可以保存签名信息
+                await saveSigns(ids,sign)
+                //成功后
+                clientSignResult.status=2;
+                await clientSignResult.save();
+            }
+        }
+        else{
+            throw new ApiError(ApiErrorNames.INPUT_FIELD_ERROR,['签名ID'])
+        }
+
+    }
+    else{
+        throw new ApiError(ApiErrorNames.INPUT_FIELD_ERROR,['签名ID'])
+    }
+
+
+}
+
 
 exports.getSign=async(ctx,next)=>{
     let id=ctx.params.id;
@@ -70,21 +114,31 @@ exports.getQRCode=async(ctx,next)=>{
     await auth.checkAuth(ctx.request.headers.authorization,'op','edit');
     let ids=ctx.request.body.ids;
     let signid=uuid.v4();
-    //url?ids=***,***,***
-    let url=sys_config.clientUrl+'#/sign/'
-    url=url+signid+'/';
-    if(ids instanceof Array){
-        for(let id of ids){
-            url=url+id+','
-        }
-    }
-
-    console.log(url);
-
-    let result=await generateQR(url)
-    ctx.body={
+    //生成signId，将他存入表 signid有三个状态，没有被使用 被使用 结束使用
+    let ClientSignModel=model.clientSigns;
+    let result=await ClientSignModel.create({
+        signId:signid,
+        start:null,
         status:0,
-        data:result
+        clientSeconds:null
+    })
+
+    if(result){
+        let url=sys_config.clientUrl+'#/sign/'
+        url=url+signid+'/';
+        if(ids instanceof Array){
+            for(let id of ids){
+                url=url+id+','
+            }
+        }
+
+        console.log(url);
+
+        let result=await generateQR(url)
+        ctx.body={
+            status:0,
+            data:result
+        }
     }
 }
 
@@ -98,25 +152,43 @@ const generateQR = async text => {
 
 //客户端用自己的设备信息，操作系统信息换取userid
 exports.clientSign=async(ctx,next)=>{
-    let signId=ctx.request.body.signId;
-    let date=new Date();
-    let start=date.getTime();
+    let signId=ctx.request.body.signid;
     let ClientSignModel=model.clientSigns;
-    let ip=ctx.request.ip;
-    let seconds=sys_config.clientSeconds
 
-    let createResult=await ClientSignModel.create({
-        signId:signId,
-        start:start,
-        status:1,
-        clientIp:ip,
-        clientSeconds:seconds
+    let result=await ClientSignModel.findOne({
+        where:{
+            signId:signId
+        },
+        order:[
+            ['createdAt','desc']
+        ]
     })
 
-    ctx.body={
-        status:0,
-        data:createResult
+    if(result){
+        if(result.status==0){
+            //说明还没用，需要初始化
+            result.status=1;
+            let date=new Date();
+            let start=date.getTime();
+            result.start=start;
+            result.clientSeconds=sys_config.clientSeconds;
+            let updateResult=await result.save();
+            ctx.body={
+                status:0,
+                data:updateResult
+            }
+        }
+        else{
+            ctx.body={
+                status:0,
+                data:result
+            }
+        }
     }
+    else{
+        throw new ApiError(ApiErrorNames.INPUT_FIELD_ERROR,['签名ID'])
+    }
+
 
 }
 
