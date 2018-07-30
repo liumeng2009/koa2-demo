@@ -95,6 +95,7 @@ ApiErrorNames.NO_AUTH="noAuth";
 
 ApiErrorNames.SIGN_USED="signUsed";
 ApiErrorNames.SIGN_OUT_OF_TIME="signOutOfTime";
+ApiErrorNames.SIGN_COMPLETE="signComplete";
 
 ApiErrorNames.UPLOAD_ERROR="uploadError";
 ApiErrorNames.FILE_SYSTEM_ERROR="fileSystemError";
@@ -207,6 +208,7 @@ error_map.set(ApiErrorNames.NO_AUTH, { code: 40010, message: '没有访问权限
 
 error_map.set(ApiErrorNames.SIGN_USED, { code: 30001, message: '签名ID已经被使用，您可以再次扫码进行尝试！'});
 error_map.set(ApiErrorNames.SIGN_OUT_OF_TIME, { code: 30002, message: '签名ID已经超时，您可以再次扫码进行尝试！'});
+error_map.set(ApiErrorNames.SIGN_COMPLETE, { code: 30003, message: '签名已完成，如果需要修改签名，需要再次进行扫码操作！'});
 
 error_map.set(ApiErrorNames.UPLOAD_ERROR, { code: 10010, message: '文件上传出错！'});
 error_map.set(ApiErrorNames.FILE_SYSTEM_ERROR, { code: 10011, message: '文件系统操作出错！'});

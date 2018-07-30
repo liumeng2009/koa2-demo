@@ -7,6 +7,14 @@ module.exports = db.defineModel('clientSigns', {
         type:db.BIGINT,
         allowNull:true
     },
+    signString:{
+        type:db.TEXT,
+        allowNull:true
+    },
+    ops:{
+        type:db.TEXT,
+        allowNull:true
+    },
     //0 没使用 1 有用户使用了 2 用户签名完毕，此记录关闭
     status:{
         type:db.INTEGER

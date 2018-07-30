@@ -28,11 +28,8 @@ var saveSigns=async function(ids,sign){
 
         //存sign表
         let saveResult=await SignModel.bulkCreate(saveIdArray,{validate:true,returning:true,individualHooks:true});
-        ctx.body={
-            status:0,
-            message:response_config.saveSuccess,
-            data:saveResult
-        }
+        return saveResult;
+
 
     }
     else{
@@ -44,7 +41,12 @@ exports.saveSign=async(ctx,next)=>{
     await auth.checkAuth(ctx.request.headers.authorization,'op','edit');
     let ids=ctx.request.body.ids;
     let sign=ctx.request.body.sign;
-    await saveSigns(ids,sign);
+    let result=await saveSigns(ids,sign);
+    ctx.body={
+        status:0,
+        message:response_config.saveSuccess,
+        data:result
+    }
 }
 
 exports.clientSaveSign=async(ctx,next)=>{
@@ -71,14 +73,29 @@ exports.clientSaveSign=async(ctx,next)=>{
             }
             else{
                 //正常，可以保存签名信息
-                await saveSigns(ids,sign)
+                let result=await saveSigns(ids,sign)
                 //成功后
                 clientSignResult.status=2;
+                clientSignResult.signString=sign;
+                let ops='';
+                if(result instanceof Array){
+                    for(let op of result){
+                        ops=ops+op.operationId+','
+                    }
+                }
+                clientSignResult.ops=ops;
+
+
                 await clientSignResult.save();
+                ctx.body={
+                    status:0,
+                    message:response_config.saveSuccess,
+                    data:result
+                }
             }
         }
-        else{
-            throw new ApiError(ApiErrorNames.INPUT_FIELD_ERROR,['签名ID'])
+        else if(clientSignResult.status==2){
+            throw new ApiError(ApiErrorNames.SIGN_COMPLETE)
         }
 
     }
@@ -104,10 +121,20 @@ exports.getSign=async(ctx,next)=>{
         ]
     })
 
-    ctx.body={
-        status:0,
-        data:signResult.signString
+    if(signResult){
+        ctx.body={
+            status:0,
+            data:signResult.signString
+        }
     }
+    else{
+        ctx.body={
+            status:0,
+            data:''
+        }
+    }
+
+
 }
 
 exports.getQRCode=async(ctx,next)=>{
