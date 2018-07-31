@@ -6,8 +6,8 @@ var sys_config = {
     saltRounds: 10,
     jwtSecret:'liumeng',
     pageSize:15,
-    clientUrl:'http://192.168.50.183:8101/',
-    clientSeconds:3000
+    clientUrl:'http://192.168.1.106:8101/',
+    clientSeconds:300
 };
 
 module.exports = sys_config;

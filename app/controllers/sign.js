@@ -62,7 +62,7 @@ exports.clientSaveSign=async(ctx,next)=>{
 
     if(clientSignResult){
         if(clientSignResult.status==0){
-            throw new ApiError(ApiErrorNames.INPUT_FIELD_ERROR,['签名ID'])
+            throw new ApiError(ApiErrorNames.SIGN_ID_ERROR)
         }
         //正常
         else if(clientSignResult.status==1){
@@ -75,6 +75,14 @@ exports.clientSaveSign=async(ctx,next)=>{
                 //正常，可以保存签名信息
                 let result=await saveSigns(ids,sign)
                 //成功后
+                //socket告诉客户端保存成功了
+                console.log(wsServer);
+                wsServer.on('connection',websocket=>{
+                    console.log('发送'+signid);
+                    websocket.send(signid)
+                })
+
+                //修改clientSign表
                 clientSignResult.status=2;
                 clientSignResult.signString=sign;
                 let ops='';
@@ -100,7 +108,7 @@ exports.clientSaveSign=async(ctx,next)=>{
 
     }
     else{
-        throw new ApiError(ApiErrorNames.INPUT_FIELD_ERROR,['签名ID'])
+        throw new ApiError(ApiErrorNames.SIGN_ID_ERROR)
     }
 
 
@@ -213,20 +221,6 @@ exports.clientSign=async(ctx,next)=>{
         }
     }
     else{
-        throw new ApiError(ApiErrorNames.INPUT_FIELD_ERROR,['签名ID'])
+        throw new ApiError(ApiErrorNames.SIGN_ID_ERROR)
     }
-
-
-}
-
-exports.getClientSign=async(ctx,next)=>{
-    let userid=ctx.query.userid;
-
-    let ClientSignModel=model.clientSigns;
-
-    let result=await ClientSignModel.findOne({
-        where:{
-            userId:userid
-        }
-    })
 }

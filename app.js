@@ -15,6 +15,10 @@ const page = require('./routes/page');
 const users = require('./routes/users');
 const api=require('./routes/api/index');
 const admin=require('./routes/admin');
+const Server=require('ws')
+wsServer=new Server.Server({port:8102})
+
+
 
 // middlewares
 //app.use(convert(bodyparser));
@@ -102,5 +106,6 @@ app.on('error', function(err, ctx){
   log.error('server error', err, ctx);
 });
 
+//socket
 
 module.exports = app;
