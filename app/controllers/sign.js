@@ -77,8 +77,8 @@ exports.clientSaveSign=async(ctx,next)=>{
                 let result=await saveSigns(ids,sign)
                 //成功后
                 //socket告诉客户端保存成功了
-                console.log(WsUtil);
-                WsUtil.send(signid)
+                let json={signId:signid,action:'sign complete',ids:ids};
+                WsUtil.send(JSON.stringify(json))
 
                 //修改clientSign表
                 clientSignResult.status=2;
@@ -170,7 +170,7 @@ exports.getQRCode=async(ctx,next)=>{
         let result=await generateQR(url)
         ctx.body={
             status:0,
-            data:result
+            data:{signid:signid,qr:result}
         }
     }
 }
