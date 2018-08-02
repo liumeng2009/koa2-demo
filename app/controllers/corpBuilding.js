@@ -42,7 +42,7 @@ exports.list=async(ctx,next)=>{
 
 exports.save=async(ctx,next)=>{
 
-    await auth.checkAuth(ctx.query.token,'corporation','edit');
+    await auth.checkAuth(ctx.request.headers.authorization,'corporation','edit');
 
     let corporationId=ctx.request.body.corporationId;
     let buildingId=ctx.request.body.buildingId.id;
@@ -130,7 +130,7 @@ exports.save=async(ctx,next)=>{
 
 exports.delete=async(ctx,next)=>{
 
-    await auth.checkAuth(ctx.query.token,'corporation','delete');
+    await auth.checkAuth(ctx.request.headers.authorization,'corporation','delete');
 
     let id=ctx.params.id;
     let CorpBuilding=model.corpBuildings;

@@ -109,7 +109,7 @@ exports.save=async(ctx,next)=>{
 
     //id存在，说明是编辑模式
     if(id){
-        await auth.checkAuth(ctx.query.token,'corporation','edit');
+        await auth.checkAuth(ctx.request.headers.authorization,'corporation','edit');
         let corporations=await Corporation.findOne({
             where: {
                 id: id
@@ -132,7 +132,7 @@ exports.save=async(ctx,next)=>{
     }
     //id不存在，说明是新增模式
     else{
-        await auth.checkAuth(ctx.query.token,'corporation','add');
+        await auth.checkAuth(ctx.request.headers.authorization,'corporation','add');
         let corporationObj=await Corporation.findAll({
             where:{
                 name:name

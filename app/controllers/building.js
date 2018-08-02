@@ -96,7 +96,7 @@ exports.save=async(ctx,next)=>{
 
     //id存在，说明是编辑模式
     if(id){
-        await auth.checkAuth(ctx.query.token,'address','edit');
+        await auth.checkAuth(ctx.request.headers.authorization,'address','edit');
         let buildings=await Buildings.findAll({
             where: {
                 id: id
@@ -119,7 +119,7 @@ exports.save=async(ctx,next)=>{
     }
     //id不存在，说明是新增模式
     else{
-        await auth.checkAuth(ctx.query.token,'address','add');
+        await auth.checkAuth(ctx.request.headers.authorization,'address','add');
         let buildingObj=await Buildings.findAll({
             where:{
                 name:name

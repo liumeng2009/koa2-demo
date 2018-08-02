@@ -6,7 +6,7 @@ const response_config=require('../../config/response_config');
 const auth=require('./authInRole');
 var QRCode = require('qrcode');
 const uuid = require('node-uuid');
-const WsUtil=require('../../util/ws');
+const SocketIOUtil=require('../../util/socketio')
 
 var saveSigns=async function(ids,sign){
     let SignModel=model.signs;
@@ -78,7 +78,8 @@ exports.clientSaveSign=async(ctx,next)=>{
                 //成功后
                 //socket告诉客户端保存成功了
                 let json={signId:signid,action:'sign complete',ids:ids};
-                WsUtil.send(JSON.stringify(json))
+                //WsUtil.send(JSON.stringify(json))
+                SocketIOUtil.send('sign complete',JSON.stringify(json))
 
                 //修改clientSign表
                 clientSignResult.status=2;
