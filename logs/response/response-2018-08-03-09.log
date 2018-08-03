@@ -1,0 +1,174 @@
+[2018-08-03 09:00:00.776] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/corpBuildings/list/d016201e-2c29-4d9f-8caa-4da5a7b279e9
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-03 09:00:00.812] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/corpBuildings/list/d016201e-2c29-4d9f-8caa-4da5a7b279e9
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 25
+response status: 200
+response body: 
+{"status":0,"data":[{"corporationId":"d016201e-2c29-4d9f-8caa-4da5a7b279e9","buildingId":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","floor":6,"position":"W","status":1,"id":"3f26dfff-62fa-4df9-84aa-32becdffce35","createdAt":1515648998838,"updatedAt":1515648998838,"version":0,"building":{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","createdAt":1515633153519,"updatedAt":1515633153519,"version":0}}],"total":0}
+*************** response log end ***************
+
+[2018-08-03 09:00:02.563] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/equipType/list
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 6
+response status: 200
+response body: 
+{"status":0,"data":[{"name":"网络","code":"NETWORK","id":"edad6210-e642-4302-98c1-60251cb85972","createdAt":1515633162976,"updatedAt":1515633162976,"version":0},{"name":"软件","code":"SOFTWARE","id":"273f11bf-51a4-4331-9f71-f209625da820","createdAt":1515633162815,"updatedAt":1515633162815,"version":0},{"name":"硬件","code":"HARDWARE","id":"e6890530-4629-406f-a3fb-d8e2a293320b","createdAt":1515633162627,"updatedAt":1515633162627,"version":0}]}
+*************** response log end ***************
+
+[2018-08-03 09:00:02.621] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/business/getequip/get/NETWORK
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 12
+response status: 200
+response body: 
+{"status":0,"data":[{"equipment":"IP地址","name":"IP地址"},{"equipment":"VPN","name":"VPN"},{"equipment":"互联网","name":"互联网"},{"equipment":"内网","name":"内网"},{"equipment":"局域网","name":"局域网"},{"equipment":"有线网络","name":"有线网络"},{"equipment":"网络设备","name":"网络设备"},{"equipment":"视频会议设备","name":"视频会议设备"},{"equipment":"路由器","name":"路由器"}]}
+*************** response log end ***************
+
+[2018-08-03 09:00:02.666] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/business/list?param=none&type=NETWORK&equipment=IP%E5%9C%B0%E5%9D%80
+request client ip:  ::ffff:127.0.0.1
+request query:  {"param":"none","type":"NETWORK","equipment":"IP地址"}
+response time: 25
+response status: 200
+response body: 
+{"status":0,"data":[{"type":"NETWORK","equipment":"IP地址","operation":"CT","isAdvanced":null,"weight":5,"remark":null,"status":1,"sequence":0,"id":"136d7e3a-3196-417f-a583-8f1b229fa16d","createdAt":1515633164897,"updatedAt":1525740348099,"version":1,"equipType":{"name":"网络","code":"NETWORK","id":"edad6210-e642-4302-98c1-60251cb85972","createdAt":1515633162976,"updatedAt":1515633162976,"version":0},"equipOp":{"name":"冲突","code":"CT","id":"638b91b7-6496-44be-b482-30d2f77ddd88","createdAt":1515633163872,"updatedAt":1515633163872,"version":0}},{"type":"NETWORK","equipment":"IP地址","operation":"SET","isAdvanced":null,"weight":5,"remark":null,"status":1,"sequence":1,"id":"b21cfd95-a732-41d6-b70a-63e0dd931439","createdAt":1515633165117,"updatedAt":1525740348021,"version":1,"equipType":{"name":"网络","code":"NETWORK","id":"edad6210-e642-4302-98c1-60251cb85972","createdAt":1515633162976,"updatedAt":1515633162976,"version":0},"equipOp":{"name":"设置","code":"SET","id":"19c397a6-794f-4b2d-9f67-64f8da63c2ac","createdAt":1515633164022,"updatedAt":1515633164022,"version":0}}],"total":2}
+*************** response log end ***************
+
+[2018-08-03 09:00:17.548] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/business/list?param=none&type=NETWORK&equipment=%E4%BA%92%E8%81%94%E7%BD%91
+request client ip:  ::ffff:127.0.0.1
+request query:  {"param":"none","type":"NETWORK","equipment":"互联网"}
+response time: 29
+response status: 200
+response body: 
+{"status":0,"data":[{"type":"NETWORK","equipment":"互联网","operation":"FIX","isAdvanced":null,"weight":5,"remark":null,"status":1,"sequence":0,"id":"13a77b91-3513-47dd-8e65-23c35b4a4c68","createdAt":1516003009267,"updatedAt":1525739412308,"version":2,"equipType":{"name":"网络","code":"NETWORK","id":"edad6210-e642-4302-98c1-60251cb85972","createdAt":1515633162976,"updatedAt":1515633162976,"version":0},"equipOp":{"name":"故障","code":"FIX","id":"e15ed1f4-3cf7-4dcc-859b-70620a042bf3","createdAt":1515633163280,"updatedAt":1515633163280,"version":0}},{"type":"NETWORK","equipment":"互联网","operation":"CONNECT","isAdvanced":null,"weight":5,"remark":null,"status":1,"sequence":1,"id":"0238f1c8-41a3-46da-84ea-61e406b21d30","createdAt":1516003009266,"updatedAt":1525739412232,"version":9,"equipType":{"name":"网络","code":"NETWORK","id":"edad6210-e642-4302-98c1-60251cb85972","createdAt":1515633162976,"updatedAt":1515633162976,"version":0},"equipOp":{"name":"连接","code":"CONNECT","id":"c7c1a6a9-3b22-4868-87ef-848de64eb1c3","createdAt":1515648604654,"updatedAt":1515648604654,"version":0}},{"type":"NETWORK","equipment":"互联网","operation":"MOVE","isAdvanced":false,"weight":5,"remark":null,"status":1,"sequence":0,"id":"ed91bc66-7179-4059-a270-ee3c49bba21b","createdAt":1518491216522,"updatedAt":1525739412157,"version":1,"equipType":{"name":"网络","code":"NETWORK","id":"edad6210-e642-4302-98c1-60251cb85972","createdAt":1515633162976,"updatedAt":1515633162976,"version":0},"equipOp":{"name":"迁移","code":"MOVE","id":"980eed8d-d949-4ef2-abc4-0b810667abde","createdAt":1517551422542,"updatedAt":1517551422542,"version":0}}],"total":3}
+*************** response log end ***************
+
+[2018-08-03 09:00:34.170] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/order/saveOrder
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 4
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-03 09:00:34.471] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/order/saveOrder
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"id":null,"no":null,"custom_name":"园林","custom_phone":"15822927208","incoming_date":"Fri Aug 03 2018","incoming_time":1533257987000,"hour":null,"minute":null,"second":null,"custom_position":{"id":"3f26dfff-62fa-4df9-84aa-32becdffce35","corporationId":"d016201e-2c29-4d9f-8caa-4da5a7b279e9","building":{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","createdAt":1515633153519,"updatedAt":1515633153519,"version":0},"floor":6,"position":"西","status":1,"union":"商务大厦北楼6层西"},"business_description":null,"remark":null,"group":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","corporation":{"id":"d016201e-2c29-4d9f-8caa-4da5a7b279e9","name":"园林公司","description":"园林公司","group":{"name":"控股","description":"group2","status":1,"id":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","createdAt":1515633152227,"updatedAt":1515633152227,"version":0},"status":1},"needs":"[{\"type\":{\"id\":\"edad6210-e642-4302-98c1-60251cb85972\",\"name\":\"网络\",\"code\":\"NETWORK\"},\"equipment\":{\"name\":\"互联网\",\"value\":\"互联网\"},\"op\":{\"id\":\"0238f1c8-41a3-46da-84ea-61e406b21d30\",\"name\":\"连接\",\"code\":\"CONNECT\"},\"no\":1}]","workerOrders":[{"id":"","no":"","custom_name":"园林","custom_phone":"15822927208","incoming_date_timestamp":1533257987000,"incoming_date":"2018-08-03T01:41:47.000Z","incoming_date_time":{"hour":8,"minute":59,"second":47},"custom_position":{"id":"3f26dfff-62fa-4df9-84aa-32becdffce35","corporationId":"d016201e-2c29-4d9f-8caa-4da5a7b279e9","building":{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","createdAt":1515633153519,"updatedAt":1515633153519,"version":0},"floor":6,"position":"西","status":1,"union":"商务大厦北楼6层西"},"corporation":{"id":"d016201e-2c29-4d9f-8caa-4da5a7b279e9","name":"园林公司","description":"园林公司","group":{"name":"控股","description":"group2","status":1,"id":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","createdAt":1515633152227,"updatedAt":1515633152227,"version":0},"status":1},"important":false,"arrive_date_timestamp":1533257987000,"arrive_date":"2018-08-03T01:41:47.000Z","arrive_date_time":{"hour":8,"minute":59,"second":47},"finish_date_timestamp":1533260507000,"finish_date":"2018-08-03T01:41:47.000Z","finish_date_time":{"hour":9,"minute":41,"second":47},"worker":"e096a454-4426-400f-92ad-9726744236c0","type":{"id":"edad6210-e642-4302-98c1-60251cb85972","name":"网络","code":"NETWORK"},"equipment":{"name":"互联网","value":"互联网"},"op":{"id":"0238f1c8-41a3-46da-84ea-61e406b21d30","name":"连接","code":"CONNECT"},"checked":true,"showArriveDate":true,"showFinishDate":true,"showWorker":true,"remark":"","call_date_timestamp":1533257987000,"call_date":"2018-08-03T01:41:47.000Z","call_date_time":{"hour":8,"minute":59,"second":47},"order":null,"businessContent":null,"isCompleteOperation":true}]}
+response time: 278
+response status: 200
+response body: 
+{"status":0,"message":"新增成功！"}
+*************** response log end ***************
+
+[2018-08-03 09:00:34.503] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/authinrole/check
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 3
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-03 09:00:34.552] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/authinrole/check
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"func":"order","op":"list"}
+response time: 34
+response status: 200
+response body: 
+{"status":0}
+*************** response log end ***************
+
+[2018-08-03 09:00:34.629] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/order/list/page/1/time/1533225600000
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 39
+response status: 200
+response body: 
+{"status":0,"data":[{"no":"20180803000","custom_name":"园林","custom_phone":"15822927208","incoming_time":1533257987000,"custom_corporation":"d016201e-2c29-4d9f-8caa-4da5a7b279e9","custom_position":"3f26dfff-62fa-4df9-84aa-32becdffce35","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"edad6210-e642-4302-98c1-60251cb85972\",\"name\":\"网络\",\"code\":\"NETWORK\"},\"equipment\":{\"name\":\"互联网\",\"value\":\"互联网\"},\"op\":{\"id\":\"0238f1c8-41a3-46da-84ea-61e406b21d30\",\"name\":\"连接\",\"code\":\"CONNECT\"},\"no\":1}]","id":"74127606-ab87-4ee2-b3ab-7087d85ffcc8","createdAt":1533258034281,"updatedAt":1533258034281,"version":0,"corporation":{"name":"园林公司","description":"园林公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"d016201e-2c29-4d9f-8caa-4da5a7b279e9","createdAt":1515648909620,"updatedAt":1515648909620,"version":0},"corpBuilding":{"corporationId":"d016201e-2c29-4d9f-8caa-4da5a7b279e9","buildingId":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","floor":6,"position":"W","status":1,"id":"3f26dfff-62fa-4df9-84aa-32becdffce35","createdAt":1515648998838,"updatedAt":1515648998838,"version":0,"building":{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","createdAt":1515633153519,"updatedAt":1515633153519,"version":0}}}],"total":1}
+*************** response log end ***************
+
+[2018-08-03 09:00:35.656] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/authinrole/check
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"func":"order","op":"list"}
+response time: 25
+response status: 200
+response body: 
+{"status":0}
+*************** response log end ***************
+
+[2018-08-03 09:00:35.713] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/order/list/page/1/time/1533225600000
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 30
+response status: 200
+response body: 
+{"status":0,"data":[{"no":"20180803000","custom_name":"园林","custom_phone":"15822927208","incoming_time":1533257987000,"custom_corporation":"d016201e-2c29-4d9f-8caa-4da5a7b279e9","custom_position":"3f26dfff-62fa-4df9-84aa-32becdffce35","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"edad6210-e642-4302-98c1-60251cb85972\",\"name\":\"网络\",\"code\":\"NETWORK\"},\"equipment\":{\"name\":\"互联网\",\"value\":\"互联网\"},\"op\":{\"id\":\"0238f1c8-41a3-46da-84ea-61e406b21d30\",\"name\":\"连接\",\"code\":\"CONNECT\"},\"no\":1}]","id":"74127606-ab87-4ee2-b3ab-7087d85ffcc8","createdAt":1533258034281,"updatedAt":1533258034281,"version":0,"corporation":{"name":"园林公司","description":"园林公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"d016201e-2c29-4d9f-8caa-4da5a7b279e9","createdAt":1515648909620,"updatedAt":1515648909620,"version":0},"corpBuilding":{"corporationId":"d016201e-2c29-4d9f-8caa-4da5a7b279e9","buildingId":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","floor":6,"position":"W","status":1,"id":"3f26dfff-62fa-4df9-84aa-32becdffce35","createdAt":1515648998838,"updatedAt":1515648998838,"version":0,"building":{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","createdAt":1515633153519,"updatedAt":1515633153519,"version":0}}}],"total":1}
+*************** response log end ***************
+
+[2018-08-03 09:00:42.407] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/order/list/page/1/time/1533139200000
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 57
+response status: 200
+response body: 
+{"status":0,"data":[{"no":"20180802000","custom_name":"高新","custom_phone":"15822927208","incoming_time":1533169042000,"custom_corporation":"89cce940-1268-4690-abe4-3b3b14fb0cde","custom_position":"6ed100a3-ea99-4c9a-b02b-51ef5f977092","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"273f11bf-51a4-4331-9f71-f209625da820\",\"name\":\"软件\",\"code\":\"SOFTWARE\"},\"equipment\":{\"name\":\"办公软件\",\"value\":\"办公软件\"},\"op\":{\"id\":\"ecfa895f-c9fe-4ec2-9839-b4f3b85cdf9e\",\"name\":\"安装\",\"code\":\"SETUP\"},\"no\":1}]","id":"cfc2ec73-f065-4834-a990-521a76b47ee8","createdAt":1533172689305,"updatedAt":1533172689305,"version":0,"corporation":{"name":"高新公司","description":"高新","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"89cce940-1268-4690-abe4-3b3b14fb0cde","createdAt":1516607211910,"updatedAt":1516607211910,"version":0},"corpBuilding":{"corporationId":"89cce940-1268-4690-abe4-3b3b14fb0cde","buildingId":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","floor":4,"position":"E","status":1,"id":"6ed100a3-ea99-4c9a-b02b-51ef5f977092","createdAt":1516607229473,"updatedAt":1516607229473,"version":0,"building":{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","createdAt":1515633153519,"updatedAt":1515633153519,"version":0}}},{"no":"20180802001","custom_name":"控股财务","custom_phone":"02266624572","incoming_time":1533177797000,"custom_corporation":"fbbf7c59-f08c-445b-a4f0-e2fa977117e8","custom_position":"33e3b9f6-a9a0-4df8-9320-89c9cd4ac759","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"e6890530-4629-406f-a3fb-d8e2a293320b\",\"name\":\"硬件\",\"code\":\"HARDWARE\"},\"equipment\":{\"name\":\"打印机\",\"value\":\"打印机\"},\"op\":{\"id\":\"a3f97b89-ca2f-4be8-841f-8a9b95ca891e\",\"name\":\"连接\",\"code\":\"CONNECT\"},\"no\":1}]","id":"c13a641b-7125-496a-9dc7-6e0c3729b21c","createdAt":1533179463265,"updatedAt":1533179463265,"version":0,"corporation":{"name":"控股公司","description":"控股公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"fbbf7c59-f08c-445b-a4f0-e2fa977117e8","createdAt":1515633158111,"updatedAt":1515633158111,"version":0},"corpBuilding":{"corporationId":"fbbf7c59-f08c-445b-a4f0-e2fa977117e8","buildingId":"a6b51135-3ac0-4415-bc67-be231d04f3a3","floor":6,"position":"A","status":1,"id":"33e3b9f6-a9a0-4df8-9320-89c9cd4ac759","createdAt":1515633160375,"updatedAt":1515633160375,"version":0,"building":{"name":"商务大厦南楼","address":"南","minfloor":1,"maxfloor":15,"status":1,"id":"a6b51135-3ac0-4415-bc67-be231d04f3a3","createdAt":1515633152748,"updatedAt":1515633152748,"version":0}}},{"no":"20180802002","custom_name":"加油站","custom_phone":"18920270556","incoming_time":1533191530000,"custom_corporation":"dbaf7d65-bab7-426c-aebf-e374258cc4a4","custom_position":"58ea14df-f8e6-481d-bcee-feb24dbf9dbc","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"edad6210-e642-4302-98c1-60251cb85972\",\"name\":\"网络\",\"code\":\"NETWORK\"},\"equipment\":{\"name\":\"VPN\",\"value\":\"VPN\"},\"op\":{\"id\":\"396c159e-7dbc-4b9d-9db9-b8907a6367cd\",\"name\":\"故障(系统级)\",\"code\":\"FIX\"},\"no\":1}]","id":"4836da07-806c-4996-b02d-b42c99b3ece1","createdAt":1533191593046,"updatedAt":1533191593046,"version":0,"corporation":{"name":"加油站","description":"加油站","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"dbaf7d65-bab7-426c-aebf-e374258cc4a4","createdAt":1533191435938,"updatedAt":1533191513320,"version":1},"corpBuilding":{"corporationId":"dbaf7d65-bab7-426c-aebf-e374258cc4a4","buildingId":"4ecd4772-757b-4b96-aacf-5f5dc37a78ce","floor":1,"position":"A","status":1,"id":"58ea14df-f8e6-481d-bcee-feb24dbf9dbc","createdAt":1533191508404,"updatedAt":1533191508404,"version":0,"building":{"name":"加油站","address":"加油站","minfloor":1,"maxfloor":1,"status":1,"id":"4ecd4772-757b-4b96-aacf-5f5dc37a78ce","createdAt":1533191356494,"updatedAt":1533191356494,"version":0}}},{"no":"20180802003","custom_name":"公用","custom_phone":"02266622920","incoming_time":1533198051000,"custom_corporation":"4599eaf8-68f6-4fd5-bf10-1d152e2b28fe","custom_position":"0e3b4346-5794-42d5-b13d-195fec76b440","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"edad6210-e642-4302-98c1-60251cb85972\",\"name\":\"网络\",\"code\":\"NETWORK\"},\"equipment\":{\"name\":\"互联网\",\"value\":\"互联网\"},\"op\":{\"id\":\"0238f1c8-41a3-46da-84ea-61e406b21d30\",\"name\":\"连接\",\"code\":\"CONNECT\"},\"no\":1},{\"type\":{\"id\":\"e6890530-4629-406f-a3fb-d8e2a293320b\",\"name\":\"硬件\",\"code\":\"HARDWARE\"},\"equipment\":{\"name\":\"打印机\",\"value\":\"打印机\"},\"op\":{\"id\":\"a3f97b89-ca2f-4be8-841f-8a9b95ca891e\",\"name\":\"连接\",\"code\":\"CONNECT\"},\"no\":1}]","id":"87c4f785-96b2-4d02-95fd-f010b7fe72f1","createdAt":1533257982605,"updatedAt":1533257982605,"version":0,"corporation":{"name":"公用事业公司","description":"公用事业公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"4599eaf8-68f6-4fd5-bf10-1d152e2b28fe","createdAt":1515633158411,"updatedAt":1523927186242,"version":2},"corpBuilding":{"corporationId":"4599eaf8-68f6-4fd5-bf10-1d152e2b28fe","buildingId":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","floor":6,"position":"E","status":1,"id":"0e3b4346-5794-42d5-b13d-195fec76b440","createdAt":1515633160920,"updatedAt":1515633160920,"version":0,"building":{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","createdAt":1515633153519,"updatedAt":1515633153519,"version":0}}}],"total":4}
+*************** response log end ***************
+
