@@ -1,4 +1,9 @@
-var server=require('http').createServer();
+var fs=require('fs');
+var options = {
+    key: fs.readFileSync('bin/ssl/server.key'),  //ssl文件路径
+    cert: fs.readFileSync('bin/ssl/server.crt')  //ssl文件路径
+};
+var server=require('https').createServer(options);
 var io=require('socket.io')(server,{
     serverClient:false,
     wsEngine:'ws'
