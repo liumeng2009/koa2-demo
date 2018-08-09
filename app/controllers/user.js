@@ -81,7 +81,7 @@ exports.registerUser=async(ctx,next)=>{
     console.log('加密密码是：'+hash);
 
     if(userid){
-        await auth.checkAuth(ctx.query.token,'user','edit')
+        await auth.checkAuth(ctx.request.headers.authorization,'user','edit')
         let userObj=await User.findOne({
             where:{
                 id:userid
@@ -114,7 +114,7 @@ exports.registerUser=async(ctx,next)=>{
         }
     }
     else{
-        await auth.checkAuth(ctx.query.token,'user','add')
+        await auth.checkAuth(ctx.request.headers.authorization,'user','add')
         //新增
         let userObj=await User.findOne({
             where:{
@@ -333,7 +333,7 @@ exports.list=async(ctx,next)=>{
 }
 
 exports.delete=async(ctx,next)=>{
-    await auth.checkAuth(ctx.query.token,'user','delete');
+    await auth.checkAuth(ctx.request.headers.authrization,'user','delete');
     let id=ctx.params.id;
     let User=model.user;
     let userObj=await User.findOne({
@@ -433,7 +433,7 @@ exports.getUrlTree=async(ctx,next)=>{
 }
 
 exports.edit=async(ctx,next)=>{
-    let token=ctx.query.token;
+    let token=ctx.request.headers.authorization;
     let name=ctx.request.body.name;
     let phone=ctx.request.body.phone;
     let email=ctx.request.body.email;
@@ -521,7 +521,7 @@ exports.uploadAvatar=async(ctx,next)=>{
             console.log('end');
             //将图片路径数据写入数据库
             let UserModel=model.user;
-            let token=ctx.query.token;
+            let token=ctx.request.headers.authorization;
             let userObj=await UserModel.findOne({
                 where:{
                     status:1,
@@ -581,7 +581,7 @@ exports.getSysAvatars=async(ctx,next)=>{
 }
 
 exports.setSysAvatars=async(ctx,next)=>{
-    let token=ctx.query.token;
+    let token=ctx.request.headers.authorization;
     let img=ctx.request.body.img;
     let UserModel=model.user;
     let userObj=await UserModel.findOne({

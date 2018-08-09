@@ -1,0 +1,1507 @@
+[2018-08-09 15:05:38.311] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 42
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:05:39.307] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 887
+response status: 200
+response body: 
+{"status":0,"data":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92,"role":{"name":"运维工程师","remark":"工程师权限","status":1,"id":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","createdAt":1519805013032,"updatedAt":1519805013032,"version":0,"auths":[{"authId":"dc9a592e-9c34-4489-afb0-39cd85e20e99","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"4d486b15-c5b2-4746-a923-eaabf2fbdcc5","createdAt":1519805023370,"updatedAt":1519805023370,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"01004a4c-ff7f-40d4-a8d5-2465513b680f","id":"dc9a592e-9c34-4489-afb0-39cd85e20e99","createdAt":1519805023210,"updatedAt":1519805023210,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"查看","code":"list","status":1,"id":"01004a4c-ff7f-40d4-a8d5-2465513b680f","createdAt":1519805019892,"updatedAt":1519805019892,"version":0}}},{"authId":"e046316c-aee3-4b70-a10c-837d7f585ebb","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"46ef320a-b9f2-45a9-a8ea-0321630ee9b0","createdAt":1519805023957,"updatedAt":1519805023957,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"199f1992-3403-477b-9133-3a5e9d60a1ea","id":"e046316c-aee3-4b70-a10c-837d7f585ebb","createdAt":1519805023823,"updatedAt":1519805023823,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"删除","code":"delete","status":1,"id":"199f1992-3403-477b-9133-3a5e9d60a1ea","createdAt":1519805020201,"updatedAt":1519805020201,"version":0}}},{"authId":"5050a962-d253-435b-98cc-605ea2a8b53f","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"af2bb8ba-b0f3-48a1-8532-7f55935962af","createdAt":1520564947522,"updatedAt":1520564947522,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"40fbca21-c365-4c59-9429-b4be9deb49ac","id":"5050a962-d253-435b-98cc-605ea2a8b53f","createdAt":1519805023434,"updatedAt":1519805023434,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"新增","code":"add","status":1,"id":"40fbca21-c365-4c59-9429-b4be9deb49ac","createdAt":1519805019952,"updatedAt":1519805019952,"version":0}}},{"authId":"b681f20e-f565-4863-b150-99f9977a1ae9","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"fb9aa28a-a003-4b41-b90e-3268fcb5562a","createdAt":1519805023759,"updatedAt":1519805023759,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"502f9b24-e07b-4c24-bf44-922854bd28a3","id":"b681f20e-f565-4863-b150-99f9977a1ae9","createdAt":1519805023625,"updatedAt":1519805023625,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"编辑","code":"edit","status":1,"id":"502f9b24-e07b-4c24-bf44-922854bd28a3","createdAt":1519805020055,"updatedAt":1519805020055,"version":0}}},{"authId":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"8b18a2f4-3742-40dc-b89e-9361a21e6b85","createdAt":1519805023139,"updatedAt":1519805023139,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","createdAt":1519805023002,"updatedAt":1519805023002,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}},{"authId":"fb4e96bd-9818-4d8a-957c-accfd1270092","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"bbb7e2c8-f386-4454-a64d-9721a0d7fb8f","createdAt":1519805610757,"updatedAt":1519805610757,"version":0,"opInFunc":{"funcId":"982e14ea-8b1c-439e-b78d-204579d676a3","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"fb4e96bd-9818-4d8a-957c-accfd1270092","createdAt":1519805022865,"updatedAt":1519805022865,"version":0,"function":{"name":"工作管理","code":"operations","class":0,"belong":null,"status":1,"id":"982e14ea-8b1c-439e-b78d-204579d676a3","createdAt":1519805019261,"updatedAt":1519805019261,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}}]}}}
+*************** response log end ***************
+
+[2018-08-09 15:05:39.370] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 764
+response status: 200
+response body: 
+{"status":0,"data":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92,"role":{"name":"运维工程师","remark":"工程师权限","status":1,"id":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","createdAt":1519805013032,"updatedAt":1519805013032,"version":0,"auths":[{"authId":"dc9a592e-9c34-4489-afb0-39cd85e20e99","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"4d486b15-c5b2-4746-a923-eaabf2fbdcc5","createdAt":1519805023370,"updatedAt":1519805023370,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"01004a4c-ff7f-40d4-a8d5-2465513b680f","id":"dc9a592e-9c34-4489-afb0-39cd85e20e99","createdAt":1519805023210,"updatedAt":1519805023210,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"查看","code":"list","status":1,"id":"01004a4c-ff7f-40d4-a8d5-2465513b680f","createdAt":1519805019892,"updatedAt":1519805019892,"version":0}}},{"authId":"e046316c-aee3-4b70-a10c-837d7f585ebb","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"46ef320a-b9f2-45a9-a8ea-0321630ee9b0","createdAt":1519805023957,"updatedAt":1519805023957,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"199f1992-3403-477b-9133-3a5e9d60a1ea","id":"e046316c-aee3-4b70-a10c-837d7f585ebb","createdAt":1519805023823,"updatedAt":1519805023823,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"删除","code":"delete","status":1,"id":"199f1992-3403-477b-9133-3a5e9d60a1ea","createdAt":1519805020201,"updatedAt":1519805020201,"version":0}}},{"authId":"5050a962-d253-435b-98cc-605ea2a8b53f","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"af2bb8ba-b0f3-48a1-8532-7f55935962af","createdAt":1520564947522,"updatedAt":1520564947522,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"40fbca21-c365-4c59-9429-b4be9deb49ac","id":"5050a962-d253-435b-98cc-605ea2a8b53f","createdAt":1519805023434,"updatedAt":1519805023434,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"新增","code":"add","status":1,"id":"40fbca21-c365-4c59-9429-b4be9deb49ac","createdAt":1519805019952,"updatedAt":1519805019952,"version":0}}},{"authId":"b681f20e-f565-4863-b150-99f9977a1ae9","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"fb9aa28a-a003-4b41-b90e-3268fcb5562a","createdAt":1519805023759,"updatedAt":1519805023759,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"502f9b24-e07b-4c24-bf44-922854bd28a3","id":"b681f20e-f565-4863-b150-99f9977a1ae9","createdAt":1519805023625,"updatedAt":1519805023625,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"编辑","code":"edit","status":1,"id":"502f9b24-e07b-4c24-bf44-922854bd28a3","createdAt":1519805020055,"updatedAt":1519805020055,"version":0}}},{"authId":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"8b18a2f4-3742-40dc-b89e-9361a21e6b85","createdAt":1519805023139,"updatedAt":1519805023139,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","createdAt":1519805023002,"updatedAt":1519805023002,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}},{"authId":"fb4e96bd-9818-4d8a-957c-accfd1270092","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"bbb7e2c8-f386-4454-a64d-9721a0d7fb8f","createdAt":1519805610757,"updatedAt":1519805610757,"version":0,"opInFunc":{"funcId":"982e14ea-8b1c-439e-b78d-204579d676a3","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"fb4e96bd-9818-4d8a-957c-accfd1270092","createdAt":1519805022865,"updatedAt":1519805022865,"version":0,"function":{"name":"工作管理","code":"operations","class":0,"belong":null,"status":1,"id":"982e14ea-8b1c-439e-b78d-204579d676a3","createdAt":1519805019261,"updatedAt":1519805019261,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}}]}}}
+*************** response log end ***************
+
+[2018-08-09 15:05:39.447] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/operationCount?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 49
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:05:39.451] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/workingOperationList?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 2
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:05:40.036] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/workingOperationList?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request query:  {"stamp":"1533772800","userid":"e096a454-4426-400f-92ad-9726744236c0"}
+response time: 560
+response status: 200
+response body: 
+{"status":0,"data":[],"total":0}
+*************** response log end ***************
+
+[2018-08-09 15:05:40.042] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/operationCount?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request query:  {"stamp":"1533772800","userid":"e096a454-4426-400f-92ad-9726744236c0"}
+response time: 584
+response status: 200
+response body: 
+{"status":0,"data":{"working":0,"done":4,"all":4}}
+*************** response log end ***************
+
+[2018-08-09 15:16:31.750] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 33
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:16:32.207] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 114
+response status: 200
+response body: 
+{"status":0,"data":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92,"role":{"name":"运维工程师","remark":"工程师权限","status":1,"id":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","createdAt":1519805013032,"updatedAt":1519805013032,"version":0,"auths":[{"authId":"dc9a592e-9c34-4489-afb0-39cd85e20e99","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"4d486b15-c5b2-4746-a923-eaabf2fbdcc5","createdAt":1519805023370,"updatedAt":1519805023370,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"01004a4c-ff7f-40d4-a8d5-2465513b680f","id":"dc9a592e-9c34-4489-afb0-39cd85e20e99","createdAt":1519805023210,"updatedAt":1519805023210,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"查看","code":"list","status":1,"id":"01004a4c-ff7f-40d4-a8d5-2465513b680f","createdAt":1519805019892,"updatedAt":1519805019892,"version":0}}},{"authId":"e046316c-aee3-4b70-a10c-837d7f585ebb","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"46ef320a-b9f2-45a9-a8ea-0321630ee9b0","createdAt":1519805023957,"updatedAt":1519805023957,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"199f1992-3403-477b-9133-3a5e9d60a1ea","id":"e046316c-aee3-4b70-a10c-837d7f585ebb","createdAt":1519805023823,"updatedAt":1519805023823,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"删除","code":"delete","status":1,"id":"199f1992-3403-477b-9133-3a5e9d60a1ea","createdAt":1519805020201,"updatedAt":1519805020201,"version":0}}},{"authId":"5050a962-d253-435b-98cc-605ea2a8b53f","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"af2bb8ba-b0f3-48a1-8532-7f55935962af","createdAt":1520564947522,"updatedAt":1520564947522,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"40fbca21-c365-4c59-9429-b4be9deb49ac","id":"5050a962-d253-435b-98cc-605ea2a8b53f","createdAt":1519805023434,"updatedAt":1519805023434,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"新增","code":"add","status":1,"id":"40fbca21-c365-4c59-9429-b4be9deb49ac","createdAt":1519805019952,"updatedAt":1519805019952,"version":0}}},{"authId":"b681f20e-f565-4863-b150-99f9977a1ae9","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"fb9aa28a-a003-4b41-b90e-3268fcb5562a","createdAt":1519805023759,"updatedAt":1519805023759,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"502f9b24-e07b-4c24-bf44-922854bd28a3","id":"b681f20e-f565-4863-b150-99f9977a1ae9","createdAt":1519805023625,"updatedAt":1519805023625,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"编辑","code":"edit","status":1,"id":"502f9b24-e07b-4c24-bf44-922854bd28a3","createdAt":1519805020055,"updatedAt":1519805020055,"version":0}}},{"authId":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"8b18a2f4-3742-40dc-b89e-9361a21e6b85","createdAt":1519805023139,"updatedAt":1519805023139,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","createdAt":1519805023002,"updatedAt":1519805023002,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}},{"authId":"fb4e96bd-9818-4d8a-957c-accfd1270092","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"bbb7e2c8-f386-4454-a64d-9721a0d7fb8f","createdAt":1519805610757,"updatedAt":1519805610757,"version":0,"opInFunc":{"funcId":"982e14ea-8b1c-439e-b78d-204579d676a3","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"fb4e96bd-9818-4d8a-957c-accfd1270092","createdAt":1519805022865,"updatedAt":1519805022865,"version":0,"function":{"name":"工作管理","code":"operations","class":0,"belong":null,"status":1,"id":"982e14ea-8b1c-439e-b78d-204579d676a3","createdAt":1519805019261,"updatedAt":1519805019261,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}}]}}}
+*************** response log end ***************
+
+[2018-08-09 15:16:32.252] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 36
+response status: 200
+response body: 
+{"status":0,"data":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92,"role":{"name":"运维工程师","remark":"工程师权限","status":1,"id":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","createdAt":1519805013032,"updatedAt":1519805013032,"version":0,"auths":[{"authId":"dc9a592e-9c34-4489-afb0-39cd85e20e99","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"4d486b15-c5b2-4746-a923-eaabf2fbdcc5","createdAt":1519805023370,"updatedAt":1519805023370,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"01004a4c-ff7f-40d4-a8d5-2465513b680f","id":"dc9a592e-9c34-4489-afb0-39cd85e20e99","createdAt":1519805023210,"updatedAt":1519805023210,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"查看","code":"list","status":1,"id":"01004a4c-ff7f-40d4-a8d5-2465513b680f","createdAt":1519805019892,"updatedAt":1519805019892,"version":0}}},{"authId":"e046316c-aee3-4b70-a10c-837d7f585ebb","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"46ef320a-b9f2-45a9-a8ea-0321630ee9b0","createdAt":1519805023957,"updatedAt":1519805023957,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"199f1992-3403-477b-9133-3a5e9d60a1ea","id":"e046316c-aee3-4b70-a10c-837d7f585ebb","createdAt":1519805023823,"updatedAt":1519805023823,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"删除","code":"delete","status":1,"id":"199f1992-3403-477b-9133-3a5e9d60a1ea","createdAt":1519805020201,"updatedAt":1519805020201,"version":0}}},{"authId":"5050a962-d253-435b-98cc-605ea2a8b53f","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"af2bb8ba-b0f3-48a1-8532-7f55935962af","createdAt":1520564947522,"updatedAt":1520564947522,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"40fbca21-c365-4c59-9429-b4be9deb49ac","id":"5050a962-d253-435b-98cc-605ea2a8b53f","createdAt":1519805023434,"updatedAt":1519805023434,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"新增","code":"add","status":1,"id":"40fbca21-c365-4c59-9429-b4be9deb49ac","createdAt":1519805019952,"updatedAt":1519805019952,"version":0}}},{"authId":"b681f20e-f565-4863-b150-99f9977a1ae9","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"fb9aa28a-a003-4b41-b90e-3268fcb5562a","createdAt":1519805023759,"updatedAt":1519805023759,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"502f9b24-e07b-4c24-bf44-922854bd28a3","id":"b681f20e-f565-4863-b150-99f9977a1ae9","createdAt":1519805023625,"updatedAt":1519805023625,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"编辑","code":"edit","status":1,"id":"502f9b24-e07b-4c24-bf44-922854bd28a3","createdAt":1519805020055,"updatedAt":1519805020055,"version":0}}},{"authId":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"8b18a2f4-3742-40dc-b89e-9361a21e6b85","createdAt":1519805023139,"updatedAt":1519805023139,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","createdAt":1519805023002,"updatedAt":1519805023002,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}},{"authId":"fb4e96bd-9818-4d8a-957c-accfd1270092","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"bbb7e2c8-f386-4454-a64d-9721a0d7fb8f","createdAt":1519805610757,"updatedAt":1519805610757,"version":0,"opInFunc":{"funcId":"982e14ea-8b1c-439e-b78d-204579d676a3","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"fb4e96bd-9818-4d8a-957c-accfd1270092","createdAt":1519805022865,"updatedAt":1519805022865,"version":0,"function":{"name":"工作管理","code":"operations","class":0,"belong":null,"status":1,"id":"982e14ea-8b1c-439e-b78d-204579d676a3","createdAt":1519805019261,"updatedAt":1519805019261,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}}]}}}
+*************** response log end ***************
+
+[2018-08-09 15:16:32.368] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/operationCount?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 14
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:16:32.371] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/workingOperationList?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 0
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:16:32.595] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/operationCount?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request query:  {"stamp":"1533772800","userid":"e096a454-4426-400f-92ad-9726744236c0"}
+response time: 189
+response status: 200
+response body: 
+{"status":0,"data":{"working":0,"done":4,"all":4}}
+*************** response log end ***************
+
+[2018-08-09 15:16:32.643] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/workingOperationList?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request query:  {"stamp":"1533772800","userid":"e096a454-4426-400f-92ad-9726744236c0"}
+response time: 183
+response status: 200
+response body: 
+{"status":0,"data":[],"total":0}
+*************** response log end ***************
+
+[2018-08-09 15:20:06.260] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 163
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:20:06.536] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 0
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:20:06.795] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 115
+response status: 200
+response body: 
+{"status":0,"data":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92,"role":{"name":"运维工程师","remark":"工程师权限","status":1,"id":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","createdAt":1519805013032,"updatedAt":1519805013032,"version":0,"auths":[{"authId":"dc9a592e-9c34-4489-afb0-39cd85e20e99","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"4d486b15-c5b2-4746-a923-eaabf2fbdcc5","createdAt":1519805023370,"updatedAt":1519805023370,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"01004a4c-ff7f-40d4-a8d5-2465513b680f","id":"dc9a592e-9c34-4489-afb0-39cd85e20e99","createdAt":1519805023210,"updatedAt":1519805023210,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"查看","code":"list","status":1,"id":"01004a4c-ff7f-40d4-a8d5-2465513b680f","createdAt":1519805019892,"updatedAt":1519805019892,"version":0}}},{"authId":"e046316c-aee3-4b70-a10c-837d7f585ebb","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"46ef320a-b9f2-45a9-a8ea-0321630ee9b0","createdAt":1519805023957,"updatedAt":1519805023957,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"199f1992-3403-477b-9133-3a5e9d60a1ea","id":"e046316c-aee3-4b70-a10c-837d7f585ebb","createdAt":1519805023823,"updatedAt":1519805023823,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"删除","code":"delete","status":1,"id":"199f1992-3403-477b-9133-3a5e9d60a1ea","createdAt":1519805020201,"updatedAt":1519805020201,"version":0}}},{"authId":"5050a962-d253-435b-98cc-605ea2a8b53f","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"af2bb8ba-b0f3-48a1-8532-7f55935962af","createdAt":1520564947522,"updatedAt":1520564947522,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"40fbca21-c365-4c59-9429-b4be9deb49ac","id":"5050a962-d253-435b-98cc-605ea2a8b53f","createdAt":1519805023434,"updatedAt":1519805023434,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"新增","code":"add","status":1,"id":"40fbca21-c365-4c59-9429-b4be9deb49ac","createdAt":1519805019952,"updatedAt":1519805019952,"version":0}}},{"authId":"b681f20e-f565-4863-b150-99f9977a1ae9","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"fb9aa28a-a003-4b41-b90e-3268fcb5562a","createdAt":1519805023759,"updatedAt":1519805023759,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"502f9b24-e07b-4c24-bf44-922854bd28a3","id":"b681f20e-f565-4863-b150-99f9977a1ae9","createdAt":1519805023625,"updatedAt":1519805023625,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"编辑","code":"edit","status":1,"id":"502f9b24-e07b-4c24-bf44-922854bd28a3","createdAt":1519805020055,"updatedAt":1519805020055,"version":0}}},{"authId":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"8b18a2f4-3742-40dc-b89e-9361a21e6b85","createdAt":1519805023139,"updatedAt":1519805023139,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","createdAt":1519805023002,"updatedAt":1519805023002,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}},{"authId":"fb4e96bd-9818-4d8a-957c-accfd1270092","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"bbb7e2c8-f386-4454-a64d-9721a0d7fb8f","createdAt":1519805610757,"updatedAt":1519805610757,"version":0,"opInFunc":{"funcId":"982e14ea-8b1c-439e-b78d-204579d676a3","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"fb4e96bd-9818-4d8a-957c-accfd1270092","createdAt":1519805022865,"updatedAt":1519805022865,"version":0,"function":{"name":"工作管理","code":"operations","class":0,"belong":null,"status":1,"id":"982e14ea-8b1c-439e-b78d-204579d676a3","createdAt":1519805019261,"updatedAt":1519805019261,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}}]}}}
+*************** response log end ***************
+
+[2018-08-09 15:20:06.841] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 39
+response status: 200
+response body: 
+{"status":0,"data":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92,"role":{"name":"运维工程师","remark":"工程师权限","status":1,"id":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","createdAt":1519805013032,"updatedAt":1519805013032,"version":0,"auths":[{"authId":"dc9a592e-9c34-4489-afb0-39cd85e20e99","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"4d486b15-c5b2-4746-a923-eaabf2fbdcc5","createdAt":1519805023370,"updatedAt":1519805023370,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"01004a4c-ff7f-40d4-a8d5-2465513b680f","id":"dc9a592e-9c34-4489-afb0-39cd85e20e99","createdAt":1519805023210,"updatedAt":1519805023210,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"查看","code":"list","status":1,"id":"01004a4c-ff7f-40d4-a8d5-2465513b680f","createdAt":1519805019892,"updatedAt":1519805019892,"version":0}}},{"authId":"e046316c-aee3-4b70-a10c-837d7f585ebb","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"46ef320a-b9f2-45a9-a8ea-0321630ee9b0","createdAt":1519805023957,"updatedAt":1519805023957,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"199f1992-3403-477b-9133-3a5e9d60a1ea","id":"e046316c-aee3-4b70-a10c-837d7f585ebb","createdAt":1519805023823,"updatedAt":1519805023823,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"删除","code":"delete","status":1,"id":"199f1992-3403-477b-9133-3a5e9d60a1ea","createdAt":1519805020201,"updatedAt":1519805020201,"version":0}}},{"authId":"5050a962-d253-435b-98cc-605ea2a8b53f","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"af2bb8ba-b0f3-48a1-8532-7f55935962af","createdAt":1520564947522,"updatedAt":1520564947522,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"40fbca21-c365-4c59-9429-b4be9deb49ac","id":"5050a962-d253-435b-98cc-605ea2a8b53f","createdAt":1519805023434,"updatedAt":1519805023434,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"新增","code":"add","status":1,"id":"40fbca21-c365-4c59-9429-b4be9deb49ac","createdAt":1519805019952,"updatedAt":1519805019952,"version":0}}},{"authId":"b681f20e-f565-4863-b150-99f9977a1ae9","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"fb9aa28a-a003-4b41-b90e-3268fcb5562a","createdAt":1519805023759,"updatedAt":1519805023759,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"502f9b24-e07b-4c24-bf44-922854bd28a3","id":"b681f20e-f565-4863-b150-99f9977a1ae9","createdAt":1519805023625,"updatedAt":1519805023625,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"编辑","code":"edit","status":1,"id":"502f9b24-e07b-4c24-bf44-922854bd28a3","createdAt":1519805020055,"updatedAt":1519805020055,"version":0}}},{"authId":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"8b18a2f4-3742-40dc-b89e-9361a21e6b85","createdAt":1519805023139,"updatedAt":1519805023139,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","createdAt":1519805023002,"updatedAt":1519805023002,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}},{"authId":"fb4e96bd-9818-4d8a-957c-accfd1270092","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"bbb7e2c8-f386-4454-a64d-9721a0d7fb8f","createdAt":1519805610757,"updatedAt":1519805610757,"version":0,"opInFunc":{"funcId":"982e14ea-8b1c-439e-b78d-204579d676a3","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"fb4e96bd-9818-4d8a-957c-accfd1270092","createdAt":1519805022865,"updatedAt":1519805022865,"version":0,"function":{"name":"工作管理","code":"operations","class":0,"belong":null,"status":1,"id":"982e14ea-8b1c-439e-b78d-204579d676a3","createdAt":1519805019261,"updatedAt":1519805019261,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}}]}}}
+*************** response log end ***************
+
+[2018-08-09 15:20:06.874] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/operationCount?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 27
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:20:06.882] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/workingOperationList?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 2
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:20:07.010] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/operationCount?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request query:  {"stamp":"1533772800","userid":"e096a454-4426-400f-92ad-9726744236c0"}
+response time: 122
+response status: 200
+response body: 
+{"status":0,"data":{"working":0,"done":4,"all":4}}
+*************** response log end ***************
+
+[2018-08-09 15:20:07.015] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/workingOperationList?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request query:  {"stamp":"1533772800","userid":"e096a454-4426-400f-92ad-9726744236c0"}
+response time: 112
+response status: 200
+response body: 
+{"status":0,"data":[],"total":0}
+*************** response log end ***************
+
+[2018-08-09 15:20:11.797] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:20:12.078] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 50
+response status: 200
+response body: 
+{"status":0,"data":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92,"role":{"name":"运维工程师","remark":"工程师权限","status":1,"id":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","createdAt":1519805013032,"updatedAt":1519805013032,"version":0,"auths":[{"authId":"dc9a592e-9c34-4489-afb0-39cd85e20e99","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"4d486b15-c5b2-4746-a923-eaabf2fbdcc5","createdAt":1519805023370,"updatedAt":1519805023370,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"01004a4c-ff7f-40d4-a8d5-2465513b680f","id":"dc9a592e-9c34-4489-afb0-39cd85e20e99","createdAt":1519805023210,"updatedAt":1519805023210,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"查看","code":"list","status":1,"id":"01004a4c-ff7f-40d4-a8d5-2465513b680f","createdAt":1519805019892,"updatedAt":1519805019892,"version":0}}},{"authId":"e046316c-aee3-4b70-a10c-837d7f585ebb","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"46ef320a-b9f2-45a9-a8ea-0321630ee9b0","createdAt":1519805023957,"updatedAt":1519805023957,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"199f1992-3403-477b-9133-3a5e9d60a1ea","id":"e046316c-aee3-4b70-a10c-837d7f585ebb","createdAt":1519805023823,"updatedAt":1519805023823,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"删除","code":"delete","status":1,"id":"199f1992-3403-477b-9133-3a5e9d60a1ea","createdAt":1519805020201,"updatedAt":1519805020201,"version":0}}},{"authId":"5050a962-d253-435b-98cc-605ea2a8b53f","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"af2bb8ba-b0f3-48a1-8532-7f55935962af","createdAt":1520564947522,"updatedAt":1520564947522,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"40fbca21-c365-4c59-9429-b4be9deb49ac","id":"5050a962-d253-435b-98cc-605ea2a8b53f","createdAt":1519805023434,"updatedAt":1519805023434,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"新增","code":"add","status":1,"id":"40fbca21-c365-4c59-9429-b4be9deb49ac","createdAt":1519805019952,"updatedAt":1519805019952,"version":0}}},{"authId":"b681f20e-f565-4863-b150-99f9977a1ae9","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"fb9aa28a-a003-4b41-b90e-3268fcb5562a","createdAt":1519805023759,"updatedAt":1519805023759,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"502f9b24-e07b-4c24-bf44-922854bd28a3","id":"b681f20e-f565-4863-b150-99f9977a1ae9","createdAt":1519805023625,"updatedAt":1519805023625,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"编辑","code":"edit","status":1,"id":"502f9b24-e07b-4c24-bf44-922854bd28a3","createdAt":1519805020055,"updatedAt":1519805020055,"version":0}}},{"authId":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"8b18a2f4-3742-40dc-b89e-9361a21e6b85","createdAt":1519805023139,"updatedAt":1519805023139,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","createdAt":1519805023002,"updatedAt":1519805023002,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}},{"authId":"fb4e96bd-9818-4d8a-957c-accfd1270092","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"bbb7e2c8-f386-4454-a64d-9721a0d7fb8f","createdAt":1519805610757,"updatedAt":1519805610757,"version":0,"opInFunc":{"funcId":"982e14ea-8b1c-439e-b78d-204579d676a3","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"fb4e96bd-9818-4d8a-957c-accfd1270092","createdAt":1519805022865,"updatedAt":1519805022865,"version":0,"function":{"name":"工作管理","code":"operations","class":0,"belong":null,"status":1,"id":"982e14ea-8b1c-439e-b78d-204579d676a3","createdAt":1519805019261,"updatedAt":1519805019261,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}}]}}}
+*************** response log end ***************
+
+[2018-08-09 15:20:12.114] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 30
+response status: 200
+response body: 
+{"status":0,"data":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92,"role":{"name":"运维工程师","remark":"工程师权限","status":1,"id":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","createdAt":1519805013032,"updatedAt":1519805013032,"version":0,"auths":[{"authId":"dc9a592e-9c34-4489-afb0-39cd85e20e99","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"4d486b15-c5b2-4746-a923-eaabf2fbdcc5","createdAt":1519805023370,"updatedAt":1519805023370,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"01004a4c-ff7f-40d4-a8d5-2465513b680f","id":"dc9a592e-9c34-4489-afb0-39cd85e20e99","createdAt":1519805023210,"updatedAt":1519805023210,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"查看","code":"list","status":1,"id":"01004a4c-ff7f-40d4-a8d5-2465513b680f","createdAt":1519805019892,"updatedAt":1519805019892,"version":0}}},{"authId":"e046316c-aee3-4b70-a10c-837d7f585ebb","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"46ef320a-b9f2-45a9-a8ea-0321630ee9b0","createdAt":1519805023957,"updatedAt":1519805023957,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"199f1992-3403-477b-9133-3a5e9d60a1ea","id":"e046316c-aee3-4b70-a10c-837d7f585ebb","createdAt":1519805023823,"updatedAt":1519805023823,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"删除","code":"delete","status":1,"id":"199f1992-3403-477b-9133-3a5e9d60a1ea","createdAt":1519805020201,"updatedAt":1519805020201,"version":0}}},{"authId":"5050a962-d253-435b-98cc-605ea2a8b53f","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"af2bb8ba-b0f3-48a1-8532-7f55935962af","createdAt":1520564947522,"updatedAt":1520564947522,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"40fbca21-c365-4c59-9429-b4be9deb49ac","id":"5050a962-d253-435b-98cc-605ea2a8b53f","createdAt":1519805023434,"updatedAt":1519805023434,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"新增","code":"add","status":1,"id":"40fbca21-c365-4c59-9429-b4be9deb49ac","createdAt":1519805019952,"updatedAt":1519805019952,"version":0}}},{"authId":"b681f20e-f565-4863-b150-99f9977a1ae9","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"fb9aa28a-a003-4b41-b90e-3268fcb5562a","createdAt":1519805023759,"updatedAt":1519805023759,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"502f9b24-e07b-4c24-bf44-922854bd28a3","id":"b681f20e-f565-4863-b150-99f9977a1ae9","createdAt":1519805023625,"updatedAt":1519805023625,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"编辑","code":"edit","status":1,"id":"502f9b24-e07b-4c24-bf44-922854bd28a3","createdAt":1519805020055,"updatedAt":1519805020055,"version":0}}},{"authId":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"8b18a2f4-3742-40dc-b89e-9361a21e6b85","createdAt":1519805023139,"updatedAt":1519805023139,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","createdAt":1519805023002,"updatedAt":1519805023002,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}},{"authId":"fb4e96bd-9818-4d8a-957c-accfd1270092","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"bbb7e2c8-f386-4454-a64d-9721a0d7fb8f","createdAt":1519805610757,"updatedAt":1519805610757,"version":0,"opInFunc":{"funcId":"982e14ea-8b1c-439e-b78d-204579d676a3","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"fb4e96bd-9818-4d8a-957c-accfd1270092","createdAt":1519805022865,"updatedAt":1519805022865,"version":0,"function":{"name":"工作管理","code":"operations","class":0,"belong":null,"status":1,"id":"982e14ea-8b1c-439e-b78d-204579d676a3","createdAt":1519805019261,"updatedAt":1519805019261,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}}]}}}
+*************** response log end ***************
+
+[2018-08-09 15:20:12.206] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/operationCount?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:20:12.212] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/workingOperationList?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 0
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:20:12.462] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/workingOperationList?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request query:  {"stamp":"1533772800","userid":"e096a454-4426-400f-92ad-9726744236c0"}
+response time: 149
+response status: 200
+response body: 
+{"status":0,"data":[],"total":0}
+*************** response log end ***************
+
+[2018-08-09 15:20:12.468] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/operationCount?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request query:  {"stamp":"1533772800","userid":"e096a454-4426-400f-92ad-9726744236c0"}
+response time: 193
+response status: 200
+response body: 
+{"status":0,"data":{"working":0,"done":4,"all":4}}
+*************** response log end ***************
+
+[2018-08-09 15:20:24.928] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.104
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:20:25.047] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.104
+request query:  {}
+response time: 4
+response status: 200
+response body: 
+{"name":"jwtError","status":10003,"message":"身份验证错误！"}
+*************** response log end ***************
+
+[2018-08-09 15:20:30.003] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.104
+request query:  {}
+response time: 43
+response status: 200
+response body: 
+{"name":"jwtError","status":10003,"message":"身份验证错误！"}
+*************** response log end ***************
+
+[2018-08-09 15:20:33.628] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.104
+request body: 
+{}
+response time: 0
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:20:33.647] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.104
+request query:  {}
+response time: 2
+response status: 200
+response body: 
+{"name":"jwtError","status":10003,"message":"身份验证错误！"}
+*************** response log end ***************
+
+[2018-08-09 15:25:32.730] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:25:32.947] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 25
+response status: 200
+response body: 
+{"status":0,"data":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92,"role":{"name":"运维工程师","remark":"工程师权限","status":1,"id":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","createdAt":1519805013032,"updatedAt":1519805013032,"version":0,"auths":[{"authId":"dc9a592e-9c34-4489-afb0-39cd85e20e99","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"4d486b15-c5b2-4746-a923-eaabf2fbdcc5","createdAt":1519805023370,"updatedAt":1519805023370,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"01004a4c-ff7f-40d4-a8d5-2465513b680f","id":"dc9a592e-9c34-4489-afb0-39cd85e20e99","createdAt":1519805023210,"updatedAt":1519805023210,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"查看","code":"list","status":1,"id":"01004a4c-ff7f-40d4-a8d5-2465513b680f","createdAt":1519805019892,"updatedAt":1519805019892,"version":0}}},{"authId":"e046316c-aee3-4b70-a10c-837d7f585ebb","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"46ef320a-b9f2-45a9-a8ea-0321630ee9b0","createdAt":1519805023957,"updatedAt":1519805023957,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"199f1992-3403-477b-9133-3a5e9d60a1ea","id":"e046316c-aee3-4b70-a10c-837d7f585ebb","createdAt":1519805023823,"updatedAt":1519805023823,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"删除","code":"delete","status":1,"id":"199f1992-3403-477b-9133-3a5e9d60a1ea","createdAt":1519805020201,"updatedAt":1519805020201,"version":0}}},{"authId":"5050a962-d253-435b-98cc-605ea2a8b53f","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"af2bb8ba-b0f3-48a1-8532-7f55935962af","createdAt":1520564947522,"updatedAt":1520564947522,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"40fbca21-c365-4c59-9429-b4be9deb49ac","id":"5050a962-d253-435b-98cc-605ea2a8b53f","createdAt":1519805023434,"updatedAt":1519805023434,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"新增","code":"add","status":1,"id":"40fbca21-c365-4c59-9429-b4be9deb49ac","createdAt":1519805019952,"updatedAt":1519805019952,"version":0}}},{"authId":"b681f20e-f565-4863-b150-99f9977a1ae9","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"fb9aa28a-a003-4b41-b90e-3268fcb5562a","createdAt":1519805023759,"updatedAt":1519805023759,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"502f9b24-e07b-4c24-bf44-922854bd28a3","id":"b681f20e-f565-4863-b150-99f9977a1ae9","createdAt":1519805023625,"updatedAt":1519805023625,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"编辑","code":"edit","status":1,"id":"502f9b24-e07b-4c24-bf44-922854bd28a3","createdAt":1519805020055,"updatedAt":1519805020055,"version":0}}},{"authId":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"8b18a2f4-3742-40dc-b89e-9361a21e6b85","createdAt":1519805023139,"updatedAt":1519805023139,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","createdAt":1519805023002,"updatedAt":1519805023002,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}},{"authId":"fb4e96bd-9818-4d8a-957c-accfd1270092","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"bbb7e2c8-f386-4454-a64d-9721a0d7fb8f","createdAt":1519805610757,"updatedAt":1519805610757,"version":0,"opInFunc":{"funcId":"982e14ea-8b1c-439e-b78d-204579d676a3","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"fb4e96bd-9818-4d8a-957c-accfd1270092","createdAt":1519805022865,"updatedAt":1519805022865,"version":0,"function":{"name":"工作管理","code":"operations","class":0,"belong":null,"status":1,"id":"982e14ea-8b1c-439e-b78d-204579d676a3","createdAt":1519805019261,"updatedAt":1519805019261,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}}]}}}
+*************** response log end ***************
+
+[2018-08-09 15:25:32.981] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 24
+response status: 200
+response body: 
+{"status":0,"data":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92,"role":{"name":"运维工程师","remark":"工程师权限","status":1,"id":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","createdAt":1519805013032,"updatedAt":1519805013032,"version":0,"auths":[{"authId":"dc9a592e-9c34-4489-afb0-39cd85e20e99","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"4d486b15-c5b2-4746-a923-eaabf2fbdcc5","createdAt":1519805023370,"updatedAt":1519805023370,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"01004a4c-ff7f-40d4-a8d5-2465513b680f","id":"dc9a592e-9c34-4489-afb0-39cd85e20e99","createdAt":1519805023210,"updatedAt":1519805023210,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"查看","code":"list","status":1,"id":"01004a4c-ff7f-40d4-a8d5-2465513b680f","createdAt":1519805019892,"updatedAt":1519805019892,"version":0}}},{"authId":"e046316c-aee3-4b70-a10c-837d7f585ebb","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"46ef320a-b9f2-45a9-a8ea-0321630ee9b0","createdAt":1519805023957,"updatedAt":1519805023957,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"199f1992-3403-477b-9133-3a5e9d60a1ea","id":"e046316c-aee3-4b70-a10c-837d7f585ebb","createdAt":1519805023823,"updatedAt":1519805023823,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"删除","code":"delete","status":1,"id":"199f1992-3403-477b-9133-3a5e9d60a1ea","createdAt":1519805020201,"updatedAt":1519805020201,"version":0}}},{"authId":"5050a962-d253-435b-98cc-605ea2a8b53f","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"af2bb8ba-b0f3-48a1-8532-7f55935962af","createdAt":1520564947522,"updatedAt":1520564947522,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"40fbca21-c365-4c59-9429-b4be9deb49ac","id":"5050a962-d253-435b-98cc-605ea2a8b53f","createdAt":1519805023434,"updatedAt":1519805023434,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"新增","code":"add","status":1,"id":"40fbca21-c365-4c59-9429-b4be9deb49ac","createdAt":1519805019952,"updatedAt":1519805019952,"version":0}}},{"authId":"b681f20e-f565-4863-b150-99f9977a1ae9","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"fb9aa28a-a003-4b41-b90e-3268fcb5562a","createdAt":1519805023759,"updatedAt":1519805023759,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"502f9b24-e07b-4c24-bf44-922854bd28a3","id":"b681f20e-f565-4863-b150-99f9977a1ae9","createdAt":1519805023625,"updatedAt":1519805023625,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"编辑","code":"edit","status":1,"id":"502f9b24-e07b-4c24-bf44-922854bd28a3","createdAt":1519805020055,"updatedAt":1519805020055,"version":0}}},{"authId":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"8b18a2f4-3742-40dc-b89e-9361a21e6b85","createdAt":1519805023139,"updatedAt":1519805023139,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","createdAt":1519805023002,"updatedAt":1519805023002,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}},{"authId":"fb4e96bd-9818-4d8a-957c-accfd1270092","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"bbb7e2c8-f386-4454-a64d-9721a0d7fb8f","createdAt":1519805610757,"updatedAt":1519805610757,"version":0,"opInFunc":{"funcId":"982e14ea-8b1c-439e-b78d-204579d676a3","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"fb4e96bd-9818-4d8a-957c-accfd1270092","createdAt":1519805022865,"updatedAt":1519805022865,"version":0,"function":{"name":"工作管理","code":"operations","class":0,"belong":null,"status":1,"id":"982e14ea-8b1c-439e-b78d-204579d676a3","createdAt":1519805019261,"updatedAt":1519805019261,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}}]}}}
+*************** response log end ***************
+
+[2018-08-09 15:25:33.088] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/operationCount?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:25:33.091] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/workingOperationList?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 0
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:25:33.310] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/operationCount?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request query:  {"stamp":"1533772800","userid":"e096a454-4426-400f-92ad-9726744236c0"}
+response time: 97
+response status: 200
+response body: 
+{"status":0,"data":{"working":0,"done":4,"all":4}}
+*************** response log end ***************
+
+[2018-08-09 15:25:33.310] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/workingOperationList?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request query:  {"stamp":"1533772800","userid":"e096a454-4426-400f-92ad-9726744236c0"}
+response time: 82
+response status: 200
+response body: 
+{"status":0,"data":[],"total":0}
+*************** response log end ***************
+
+[2018-08-09 15:25:59.339] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 20
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:26:00.124] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 186
+response status: 200
+response body: 
+{"status":0,"data":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92,"role":{"name":"运维工程师","remark":"工程师权限","status":1,"id":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","createdAt":1519805013032,"updatedAt":1519805013032,"version":0,"auths":[{"authId":"dc9a592e-9c34-4489-afb0-39cd85e20e99","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"4d486b15-c5b2-4746-a923-eaabf2fbdcc5","createdAt":1519805023370,"updatedAt":1519805023370,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"01004a4c-ff7f-40d4-a8d5-2465513b680f","id":"dc9a592e-9c34-4489-afb0-39cd85e20e99","createdAt":1519805023210,"updatedAt":1519805023210,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"查看","code":"list","status":1,"id":"01004a4c-ff7f-40d4-a8d5-2465513b680f","createdAt":1519805019892,"updatedAt":1519805019892,"version":0}}},{"authId":"e046316c-aee3-4b70-a10c-837d7f585ebb","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"46ef320a-b9f2-45a9-a8ea-0321630ee9b0","createdAt":1519805023957,"updatedAt":1519805023957,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"199f1992-3403-477b-9133-3a5e9d60a1ea","id":"e046316c-aee3-4b70-a10c-837d7f585ebb","createdAt":1519805023823,"updatedAt":1519805023823,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"删除","code":"delete","status":1,"id":"199f1992-3403-477b-9133-3a5e9d60a1ea","createdAt":1519805020201,"updatedAt":1519805020201,"version":0}}},{"authId":"5050a962-d253-435b-98cc-605ea2a8b53f","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"af2bb8ba-b0f3-48a1-8532-7f55935962af","createdAt":1520564947522,"updatedAt":1520564947522,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"40fbca21-c365-4c59-9429-b4be9deb49ac","id":"5050a962-d253-435b-98cc-605ea2a8b53f","createdAt":1519805023434,"updatedAt":1519805023434,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"新增","code":"add","status":1,"id":"40fbca21-c365-4c59-9429-b4be9deb49ac","createdAt":1519805019952,"updatedAt":1519805019952,"version":0}}},{"authId":"b681f20e-f565-4863-b150-99f9977a1ae9","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"fb9aa28a-a003-4b41-b90e-3268fcb5562a","createdAt":1519805023759,"updatedAt":1519805023759,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"502f9b24-e07b-4c24-bf44-922854bd28a3","id":"b681f20e-f565-4863-b150-99f9977a1ae9","createdAt":1519805023625,"updatedAt":1519805023625,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"编辑","code":"edit","status":1,"id":"502f9b24-e07b-4c24-bf44-922854bd28a3","createdAt":1519805020055,"updatedAt":1519805020055,"version":0}}},{"authId":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"8b18a2f4-3742-40dc-b89e-9361a21e6b85","createdAt":1519805023139,"updatedAt":1519805023139,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","createdAt":1519805023002,"updatedAt":1519805023002,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}},{"authId":"fb4e96bd-9818-4d8a-957c-accfd1270092","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"bbb7e2c8-f386-4454-a64d-9721a0d7fb8f","createdAt":1519805610757,"updatedAt":1519805610757,"version":0,"opInFunc":{"funcId":"982e14ea-8b1c-439e-b78d-204579d676a3","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"fb4e96bd-9818-4d8a-957c-accfd1270092","createdAt":1519805022865,"updatedAt":1519805022865,"version":0,"function":{"name":"工作管理","code":"operations","class":0,"belong":null,"status":1,"id":"982e14ea-8b1c-439e-b78d-204579d676a3","createdAt":1519805019261,"updatedAt":1519805019261,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}}]}}}
+*************** response log end ***************
+
+[2018-08-09 15:26:00.234] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 104
+response status: 200
+response body: 
+{"status":0,"data":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92,"role":{"name":"运维工程师","remark":"工程师权限","status":1,"id":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","createdAt":1519805013032,"updatedAt":1519805013032,"version":0,"auths":[{"authId":"dc9a592e-9c34-4489-afb0-39cd85e20e99","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"4d486b15-c5b2-4746-a923-eaabf2fbdcc5","createdAt":1519805023370,"updatedAt":1519805023370,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"01004a4c-ff7f-40d4-a8d5-2465513b680f","id":"dc9a592e-9c34-4489-afb0-39cd85e20e99","createdAt":1519805023210,"updatedAt":1519805023210,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"查看","code":"list","status":1,"id":"01004a4c-ff7f-40d4-a8d5-2465513b680f","createdAt":1519805019892,"updatedAt":1519805019892,"version":0}}},{"authId":"e046316c-aee3-4b70-a10c-837d7f585ebb","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"46ef320a-b9f2-45a9-a8ea-0321630ee9b0","createdAt":1519805023957,"updatedAt":1519805023957,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"199f1992-3403-477b-9133-3a5e9d60a1ea","id":"e046316c-aee3-4b70-a10c-837d7f585ebb","createdAt":1519805023823,"updatedAt":1519805023823,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"删除","code":"delete","status":1,"id":"199f1992-3403-477b-9133-3a5e9d60a1ea","createdAt":1519805020201,"updatedAt":1519805020201,"version":0}}},{"authId":"5050a962-d253-435b-98cc-605ea2a8b53f","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"af2bb8ba-b0f3-48a1-8532-7f55935962af","createdAt":1520564947522,"updatedAt":1520564947522,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"40fbca21-c365-4c59-9429-b4be9deb49ac","id":"5050a962-d253-435b-98cc-605ea2a8b53f","createdAt":1519805023434,"updatedAt":1519805023434,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"新增","code":"add","status":1,"id":"40fbca21-c365-4c59-9429-b4be9deb49ac","createdAt":1519805019952,"updatedAt":1519805019952,"version":0}}},{"authId":"b681f20e-f565-4863-b150-99f9977a1ae9","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"fb9aa28a-a003-4b41-b90e-3268fcb5562a","createdAt":1519805023759,"updatedAt":1519805023759,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"502f9b24-e07b-4c24-bf44-922854bd28a3","id":"b681f20e-f565-4863-b150-99f9977a1ae9","createdAt":1519805023625,"updatedAt":1519805023625,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"编辑","code":"edit","status":1,"id":"502f9b24-e07b-4c24-bf44-922854bd28a3","createdAt":1519805020055,"updatedAt":1519805020055,"version":0}}},{"authId":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"8b18a2f4-3742-40dc-b89e-9361a21e6b85","createdAt":1519805023139,"updatedAt":1519805023139,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","createdAt":1519805023002,"updatedAt":1519805023002,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}},{"authId":"fb4e96bd-9818-4d8a-957c-accfd1270092","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"bbb7e2c8-f386-4454-a64d-9721a0d7fb8f","createdAt":1519805610757,"updatedAt":1519805610757,"version":0,"opInFunc":{"funcId":"982e14ea-8b1c-439e-b78d-204579d676a3","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"fb4e96bd-9818-4d8a-957c-accfd1270092","createdAt":1519805022865,"updatedAt":1519805022865,"version":0,"function":{"name":"工作管理","code":"operations","class":0,"belong":null,"status":1,"id":"982e14ea-8b1c-439e-b78d-204579d676a3","createdAt":1519805019261,"updatedAt":1519805019261,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}}]}}}
+*************** response log end ***************
+
+[2018-08-09 15:26:00.432] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/operationCount?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 52
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:26:00.471] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/workingOperationList?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 36
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:26:00.815] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/operationCount?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request query:  {"stamp":"1533772800","userid":"e096a454-4426-400f-92ad-9726744236c0"}
+response time: 337
+response status: 200
+response body: 
+{"status":0,"data":{"working":0,"done":4,"all":4}}
+*************** response log end ***************
+
+[2018-08-09 15:26:00.856] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/workingOperationList?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request query:  {"stamp":"1533772800","userid":"e096a454-4426-400f-92ad-9726744236c0"}
+response time: 224
+response status: 200
+response body: 
+{"status":0,"data":[],"total":0}
+*************** response log end ***************
+
+[2018-08-09 15:26:10.735] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 49
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:26:11.122] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 103
+response status: 200
+response body: 
+{"status":0,"data":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92,"role":{"name":"运维工程师","remark":"工程师权限","status":1,"id":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","createdAt":1519805013032,"updatedAt":1519805013032,"version":0,"auths":[{"authId":"dc9a592e-9c34-4489-afb0-39cd85e20e99","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"4d486b15-c5b2-4746-a923-eaabf2fbdcc5","createdAt":1519805023370,"updatedAt":1519805023370,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"01004a4c-ff7f-40d4-a8d5-2465513b680f","id":"dc9a592e-9c34-4489-afb0-39cd85e20e99","createdAt":1519805023210,"updatedAt":1519805023210,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"查看","code":"list","status":1,"id":"01004a4c-ff7f-40d4-a8d5-2465513b680f","createdAt":1519805019892,"updatedAt":1519805019892,"version":0}}},{"authId":"e046316c-aee3-4b70-a10c-837d7f585ebb","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"46ef320a-b9f2-45a9-a8ea-0321630ee9b0","createdAt":1519805023957,"updatedAt":1519805023957,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"199f1992-3403-477b-9133-3a5e9d60a1ea","id":"e046316c-aee3-4b70-a10c-837d7f585ebb","createdAt":1519805023823,"updatedAt":1519805023823,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"删除","code":"delete","status":1,"id":"199f1992-3403-477b-9133-3a5e9d60a1ea","createdAt":1519805020201,"updatedAt":1519805020201,"version":0}}},{"authId":"5050a962-d253-435b-98cc-605ea2a8b53f","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"af2bb8ba-b0f3-48a1-8532-7f55935962af","createdAt":1520564947522,"updatedAt":1520564947522,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"40fbca21-c365-4c59-9429-b4be9deb49ac","id":"5050a962-d253-435b-98cc-605ea2a8b53f","createdAt":1519805023434,"updatedAt":1519805023434,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"新增","code":"add","status":1,"id":"40fbca21-c365-4c59-9429-b4be9deb49ac","createdAt":1519805019952,"updatedAt":1519805019952,"version":0}}},{"authId":"b681f20e-f565-4863-b150-99f9977a1ae9","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"fb9aa28a-a003-4b41-b90e-3268fcb5562a","createdAt":1519805023759,"updatedAt":1519805023759,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"502f9b24-e07b-4c24-bf44-922854bd28a3","id":"b681f20e-f565-4863-b150-99f9977a1ae9","createdAt":1519805023625,"updatedAt":1519805023625,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"编辑","code":"edit","status":1,"id":"502f9b24-e07b-4c24-bf44-922854bd28a3","createdAt":1519805020055,"updatedAt":1519805020055,"version":0}}},{"authId":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"8b18a2f4-3742-40dc-b89e-9361a21e6b85","createdAt":1519805023139,"updatedAt":1519805023139,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","createdAt":1519805023002,"updatedAt":1519805023002,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}},{"authId":"fb4e96bd-9818-4d8a-957c-accfd1270092","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"bbb7e2c8-f386-4454-a64d-9721a0d7fb8f","createdAt":1519805610757,"updatedAt":1519805610757,"version":0,"opInFunc":{"funcId":"982e14ea-8b1c-439e-b78d-204579d676a3","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"fb4e96bd-9818-4d8a-957c-accfd1270092","createdAt":1519805022865,"updatedAt":1519805022865,"version":0,"function":{"name":"工作管理","code":"operations","class":0,"belong":null,"status":1,"id":"982e14ea-8b1c-439e-b78d-204579d676a3","createdAt":1519805019261,"updatedAt":1519805019261,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}}]}}}
+*************** response log end ***************
+
+[2018-08-09 15:26:11.152] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 23
+response status: 200
+response body: 
+{"status":0,"data":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92,"role":{"name":"运维工程师","remark":"工程师权限","status":1,"id":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","createdAt":1519805013032,"updatedAt":1519805013032,"version":0,"auths":[{"authId":"dc9a592e-9c34-4489-afb0-39cd85e20e99","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"4d486b15-c5b2-4746-a923-eaabf2fbdcc5","createdAt":1519805023370,"updatedAt":1519805023370,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"01004a4c-ff7f-40d4-a8d5-2465513b680f","id":"dc9a592e-9c34-4489-afb0-39cd85e20e99","createdAt":1519805023210,"updatedAt":1519805023210,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"查看","code":"list","status":1,"id":"01004a4c-ff7f-40d4-a8d5-2465513b680f","createdAt":1519805019892,"updatedAt":1519805019892,"version":0}}},{"authId":"e046316c-aee3-4b70-a10c-837d7f585ebb","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"46ef320a-b9f2-45a9-a8ea-0321630ee9b0","createdAt":1519805023957,"updatedAt":1519805023957,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"199f1992-3403-477b-9133-3a5e9d60a1ea","id":"e046316c-aee3-4b70-a10c-837d7f585ebb","createdAt":1519805023823,"updatedAt":1519805023823,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"删除","code":"delete","status":1,"id":"199f1992-3403-477b-9133-3a5e9d60a1ea","createdAt":1519805020201,"updatedAt":1519805020201,"version":0}}},{"authId":"5050a962-d253-435b-98cc-605ea2a8b53f","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"af2bb8ba-b0f3-48a1-8532-7f55935962af","createdAt":1520564947522,"updatedAt":1520564947522,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"40fbca21-c365-4c59-9429-b4be9deb49ac","id":"5050a962-d253-435b-98cc-605ea2a8b53f","createdAt":1519805023434,"updatedAt":1519805023434,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"新增","code":"add","status":1,"id":"40fbca21-c365-4c59-9429-b4be9deb49ac","createdAt":1519805019952,"updatedAt":1519805019952,"version":0}}},{"authId":"b681f20e-f565-4863-b150-99f9977a1ae9","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"fb9aa28a-a003-4b41-b90e-3268fcb5562a","createdAt":1519805023759,"updatedAt":1519805023759,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"502f9b24-e07b-4c24-bf44-922854bd28a3","id":"b681f20e-f565-4863-b150-99f9977a1ae9","createdAt":1519805023625,"updatedAt":1519805023625,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"编辑","code":"edit","status":1,"id":"502f9b24-e07b-4c24-bf44-922854bd28a3","createdAt":1519805020055,"updatedAt":1519805020055,"version":0}}},{"authId":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"8b18a2f4-3742-40dc-b89e-9361a21e6b85","createdAt":1519805023139,"updatedAt":1519805023139,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","createdAt":1519805023002,"updatedAt":1519805023002,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}},{"authId":"fb4e96bd-9818-4d8a-957c-accfd1270092","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"bbb7e2c8-f386-4454-a64d-9721a0d7fb8f","createdAt":1519805610757,"updatedAt":1519805610757,"version":0,"opInFunc":{"funcId":"982e14ea-8b1c-439e-b78d-204579d676a3","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"fb4e96bd-9818-4d8a-957c-accfd1270092","createdAt":1519805022865,"updatedAt":1519805022865,"version":0,"function":{"name":"工作管理","code":"operations","class":0,"belong":null,"status":1,"id":"982e14ea-8b1c-439e-b78d-204579d676a3","createdAt":1519805019261,"updatedAt":1519805019261,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}}]}}}
+*************** response log end ***************
+
+[2018-08-09 15:26:11.272] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/operationCount?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 49
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:26:11.312] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/workingOperationList?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 37
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:26:11.556] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/workingOperationList?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request query:  {"stamp":"1533772800","userid":"e096a454-4426-400f-92ad-9726744236c0"}
+response time: 219
+response status: 200
+response body: 
+{"status":0,"data":[],"total":0}
+*************** response log end ***************
+
+[2018-08-09 15:26:11.576] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/operationCount?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request query:  {"stamp":"1533772800","userid":"e096a454-4426-400f-92ad-9726744236c0"}
+response time: 255
+response status: 200
+response body: 
+{"status":0,"data":{"working":0,"done":4,"all":4}}
+*************** response log end ***************
+
+[2018-08-09 15:27:09.046] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 33
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:27:09.054] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:27:09.157] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 52
+response status: 200
+response body: 
+{"status":0,"data":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92,"role":{"name":"运维工程师","remark":"工程师权限","status":1,"id":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","createdAt":1519805013032,"updatedAt":1519805013032,"version":0,"auths":[{"authId":"dc9a592e-9c34-4489-afb0-39cd85e20e99","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"4d486b15-c5b2-4746-a923-eaabf2fbdcc5","createdAt":1519805023370,"updatedAt":1519805023370,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"01004a4c-ff7f-40d4-a8d5-2465513b680f","id":"dc9a592e-9c34-4489-afb0-39cd85e20e99","createdAt":1519805023210,"updatedAt":1519805023210,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"查看","code":"list","status":1,"id":"01004a4c-ff7f-40d4-a8d5-2465513b680f","createdAt":1519805019892,"updatedAt":1519805019892,"version":0}}},{"authId":"e046316c-aee3-4b70-a10c-837d7f585ebb","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"46ef320a-b9f2-45a9-a8ea-0321630ee9b0","createdAt":1519805023957,"updatedAt":1519805023957,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"199f1992-3403-477b-9133-3a5e9d60a1ea","id":"e046316c-aee3-4b70-a10c-837d7f585ebb","createdAt":1519805023823,"updatedAt":1519805023823,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"删除","code":"delete","status":1,"id":"199f1992-3403-477b-9133-3a5e9d60a1ea","createdAt":1519805020201,"updatedAt":1519805020201,"version":0}}},{"authId":"5050a962-d253-435b-98cc-605ea2a8b53f","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"af2bb8ba-b0f3-48a1-8532-7f55935962af","createdAt":1520564947522,"updatedAt":1520564947522,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"40fbca21-c365-4c59-9429-b4be9deb49ac","id":"5050a962-d253-435b-98cc-605ea2a8b53f","createdAt":1519805023434,"updatedAt":1519805023434,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"新增","code":"add","status":1,"id":"40fbca21-c365-4c59-9429-b4be9deb49ac","createdAt":1519805019952,"updatedAt":1519805019952,"version":0}}},{"authId":"b681f20e-f565-4863-b150-99f9977a1ae9","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"fb9aa28a-a003-4b41-b90e-3268fcb5562a","createdAt":1519805023759,"updatedAt":1519805023759,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"502f9b24-e07b-4c24-bf44-922854bd28a3","id":"b681f20e-f565-4863-b150-99f9977a1ae9","createdAt":1519805023625,"updatedAt":1519805023625,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"编辑","code":"edit","status":1,"id":"502f9b24-e07b-4c24-bf44-922854bd28a3","createdAt":1519805020055,"updatedAt":1519805020055,"version":0}}},{"authId":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"8b18a2f4-3742-40dc-b89e-9361a21e6b85","createdAt":1519805023139,"updatedAt":1519805023139,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","createdAt":1519805023002,"updatedAt":1519805023002,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}},{"authId":"fb4e96bd-9818-4d8a-957c-accfd1270092","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"bbb7e2c8-f386-4454-a64d-9721a0d7fb8f","createdAt":1519805610757,"updatedAt":1519805610757,"version":0,"opInFunc":{"funcId":"982e14ea-8b1c-439e-b78d-204579d676a3","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"fb4e96bd-9818-4d8a-957c-accfd1270092","createdAt":1519805022865,"updatedAt":1519805022865,"version":0,"function":{"name":"工作管理","code":"operations","class":0,"belong":null,"status":1,"id":"982e14ea-8b1c-439e-b78d-204579d676a3","createdAt":1519805019261,"updatedAt":1519805019261,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}}]}}}
+*************** response log end ***************
+
+[2018-08-09 15:27:09.199] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 22
+response status: 200
+response body: 
+{"status":0,"data":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92,"role":{"name":"运维工程师","remark":"工程师权限","status":1,"id":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","createdAt":1519805013032,"updatedAt":1519805013032,"version":0,"auths":[{"authId":"dc9a592e-9c34-4489-afb0-39cd85e20e99","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"4d486b15-c5b2-4746-a923-eaabf2fbdcc5","createdAt":1519805023370,"updatedAt":1519805023370,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"01004a4c-ff7f-40d4-a8d5-2465513b680f","id":"dc9a592e-9c34-4489-afb0-39cd85e20e99","createdAt":1519805023210,"updatedAt":1519805023210,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"查看","code":"list","status":1,"id":"01004a4c-ff7f-40d4-a8d5-2465513b680f","createdAt":1519805019892,"updatedAt":1519805019892,"version":0}}},{"authId":"e046316c-aee3-4b70-a10c-837d7f585ebb","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"46ef320a-b9f2-45a9-a8ea-0321630ee9b0","createdAt":1519805023957,"updatedAt":1519805023957,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"199f1992-3403-477b-9133-3a5e9d60a1ea","id":"e046316c-aee3-4b70-a10c-837d7f585ebb","createdAt":1519805023823,"updatedAt":1519805023823,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"删除","code":"delete","status":1,"id":"199f1992-3403-477b-9133-3a5e9d60a1ea","createdAt":1519805020201,"updatedAt":1519805020201,"version":0}}},{"authId":"5050a962-d253-435b-98cc-605ea2a8b53f","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"af2bb8ba-b0f3-48a1-8532-7f55935962af","createdAt":1520564947522,"updatedAt":1520564947522,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"40fbca21-c365-4c59-9429-b4be9deb49ac","id":"5050a962-d253-435b-98cc-605ea2a8b53f","createdAt":1519805023434,"updatedAt":1519805023434,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"新增","code":"add","status":1,"id":"40fbca21-c365-4c59-9429-b4be9deb49ac","createdAt":1519805019952,"updatedAt":1519805019952,"version":0}}},{"authId":"b681f20e-f565-4863-b150-99f9977a1ae9","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"fb9aa28a-a003-4b41-b90e-3268fcb5562a","createdAt":1519805023759,"updatedAt":1519805023759,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"502f9b24-e07b-4c24-bf44-922854bd28a3","id":"b681f20e-f565-4863-b150-99f9977a1ae9","createdAt":1519805023625,"updatedAt":1519805023625,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"编辑","code":"edit","status":1,"id":"502f9b24-e07b-4c24-bf44-922854bd28a3","createdAt":1519805020055,"updatedAt":1519805020055,"version":0}}},{"authId":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"8b18a2f4-3742-40dc-b89e-9361a21e6b85","createdAt":1519805023139,"updatedAt":1519805023139,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","createdAt":1519805023002,"updatedAt":1519805023002,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}},{"authId":"fb4e96bd-9818-4d8a-957c-accfd1270092","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"bbb7e2c8-f386-4454-a64d-9721a0d7fb8f","createdAt":1519805610757,"updatedAt":1519805610757,"version":0,"opInFunc":{"funcId":"982e14ea-8b1c-439e-b78d-204579d676a3","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"fb4e96bd-9818-4d8a-957c-accfd1270092","createdAt":1519805022865,"updatedAt":1519805022865,"version":0,"function":{"name":"工作管理","code":"operations","class":0,"belong":null,"status":1,"id":"982e14ea-8b1c-439e-b78d-204579d676a3","createdAt":1519805019261,"updatedAt":1519805019261,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}}]}}}
+*************** response log end ***************
+
+[2018-08-09 15:27:09.204] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/operationCount?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:27:09.207] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/workingOperationList?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 0
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:27:09.520] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/operationCount?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request query:  {"stamp":"1533772800","userid":"e096a454-4426-400f-92ad-9726744236c0"}
+response time: 238
+response status: 200
+response body: 
+{"status":0,"data":{"working":0,"done":4,"all":4}}
+*************** response log end ***************
+
+[2018-08-09 15:27:09.532] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/workingOperationList?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request query:  {"stamp":"1533772800","userid":"e096a454-4426-400f-92ad-9726744236c0"}
+response time: 224
+response status: 200
+response body: 
+{"status":0,"data":[],"total":0}
+*************** response log end ***************
+
+[2018-08-09 15:27:40.602] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.104
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:27:40.722] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.104
+request query:  {}
+response time: 4
+response status: 200
+response body: 
+{"name":"jwtError","status":10003,"message":"身份验证错误！"}
+*************** response log end ***************
+
+[2018-08-09 15:27:46.507] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:27:46.673] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:27:46.739] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 32
+response status: 200
+response body: 
+{"status":0,"data":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92,"role":{"name":"运维工程师","remark":"工程师权限","status":1,"id":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","createdAt":1519805013032,"updatedAt":1519805013032,"version":0,"auths":[{"authId":"dc9a592e-9c34-4489-afb0-39cd85e20e99","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"4d486b15-c5b2-4746-a923-eaabf2fbdcc5","createdAt":1519805023370,"updatedAt":1519805023370,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"01004a4c-ff7f-40d4-a8d5-2465513b680f","id":"dc9a592e-9c34-4489-afb0-39cd85e20e99","createdAt":1519805023210,"updatedAt":1519805023210,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"查看","code":"list","status":1,"id":"01004a4c-ff7f-40d4-a8d5-2465513b680f","createdAt":1519805019892,"updatedAt":1519805019892,"version":0}}},{"authId":"e046316c-aee3-4b70-a10c-837d7f585ebb","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"46ef320a-b9f2-45a9-a8ea-0321630ee9b0","createdAt":1519805023957,"updatedAt":1519805023957,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"199f1992-3403-477b-9133-3a5e9d60a1ea","id":"e046316c-aee3-4b70-a10c-837d7f585ebb","createdAt":1519805023823,"updatedAt":1519805023823,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"删除","code":"delete","status":1,"id":"199f1992-3403-477b-9133-3a5e9d60a1ea","createdAt":1519805020201,"updatedAt":1519805020201,"version":0}}},{"authId":"5050a962-d253-435b-98cc-605ea2a8b53f","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"af2bb8ba-b0f3-48a1-8532-7f55935962af","createdAt":1520564947522,"updatedAt":1520564947522,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"40fbca21-c365-4c59-9429-b4be9deb49ac","id":"5050a962-d253-435b-98cc-605ea2a8b53f","createdAt":1519805023434,"updatedAt":1519805023434,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"新增","code":"add","status":1,"id":"40fbca21-c365-4c59-9429-b4be9deb49ac","createdAt":1519805019952,"updatedAt":1519805019952,"version":0}}},{"authId":"b681f20e-f565-4863-b150-99f9977a1ae9","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"fb9aa28a-a003-4b41-b90e-3268fcb5562a","createdAt":1519805023759,"updatedAt":1519805023759,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"502f9b24-e07b-4c24-bf44-922854bd28a3","id":"b681f20e-f565-4863-b150-99f9977a1ae9","createdAt":1519805023625,"updatedAt":1519805023625,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"编辑","code":"edit","status":1,"id":"502f9b24-e07b-4c24-bf44-922854bd28a3","createdAt":1519805020055,"updatedAt":1519805020055,"version":0}}},{"authId":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"8b18a2f4-3742-40dc-b89e-9361a21e6b85","createdAt":1519805023139,"updatedAt":1519805023139,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","createdAt":1519805023002,"updatedAt":1519805023002,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}},{"authId":"fb4e96bd-9818-4d8a-957c-accfd1270092","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"bbb7e2c8-f386-4454-a64d-9721a0d7fb8f","createdAt":1519805610757,"updatedAt":1519805610757,"version":0,"opInFunc":{"funcId":"982e14ea-8b1c-439e-b78d-204579d676a3","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"fb4e96bd-9818-4d8a-957c-accfd1270092","createdAt":1519805022865,"updatedAt":1519805022865,"version":0,"function":{"name":"工作管理","code":"operations","class":0,"belong":null,"status":1,"id":"982e14ea-8b1c-439e-b78d-204579d676a3","createdAt":1519805019261,"updatedAt":1519805019261,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}}]}}}
+*************** response log end ***************
+
+[2018-08-09 15:27:46.786] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 21
+response status: 200
+response body: 
+{"status":0,"data":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92,"role":{"name":"运维工程师","remark":"工程师权限","status":1,"id":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","createdAt":1519805013032,"updatedAt":1519805013032,"version":0,"auths":[{"authId":"dc9a592e-9c34-4489-afb0-39cd85e20e99","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"4d486b15-c5b2-4746-a923-eaabf2fbdcc5","createdAt":1519805023370,"updatedAt":1519805023370,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"01004a4c-ff7f-40d4-a8d5-2465513b680f","id":"dc9a592e-9c34-4489-afb0-39cd85e20e99","createdAt":1519805023210,"updatedAt":1519805023210,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"查看","code":"list","status":1,"id":"01004a4c-ff7f-40d4-a8d5-2465513b680f","createdAt":1519805019892,"updatedAt":1519805019892,"version":0}}},{"authId":"e046316c-aee3-4b70-a10c-837d7f585ebb","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"46ef320a-b9f2-45a9-a8ea-0321630ee9b0","createdAt":1519805023957,"updatedAt":1519805023957,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"199f1992-3403-477b-9133-3a5e9d60a1ea","id":"e046316c-aee3-4b70-a10c-837d7f585ebb","createdAt":1519805023823,"updatedAt":1519805023823,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"删除","code":"delete","status":1,"id":"199f1992-3403-477b-9133-3a5e9d60a1ea","createdAt":1519805020201,"updatedAt":1519805020201,"version":0}}},{"authId":"5050a962-d253-435b-98cc-605ea2a8b53f","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"af2bb8ba-b0f3-48a1-8532-7f55935962af","createdAt":1520564947522,"updatedAt":1520564947522,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"40fbca21-c365-4c59-9429-b4be9deb49ac","id":"5050a962-d253-435b-98cc-605ea2a8b53f","createdAt":1519805023434,"updatedAt":1519805023434,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"新增","code":"add","status":1,"id":"40fbca21-c365-4c59-9429-b4be9deb49ac","createdAt":1519805019952,"updatedAt":1519805019952,"version":0}}},{"authId":"b681f20e-f565-4863-b150-99f9977a1ae9","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"fb9aa28a-a003-4b41-b90e-3268fcb5562a","createdAt":1519805023759,"updatedAt":1519805023759,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"502f9b24-e07b-4c24-bf44-922854bd28a3","id":"b681f20e-f565-4863-b150-99f9977a1ae9","createdAt":1519805023625,"updatedAt":1519805023625,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"编辑","code":"edit","status":1,"id":"502f9b24-e07b-4c24-bf44-922854bd28a3","createdAt":1519805020055,"updatedAt":1519805020055,"version":0}}},{"authId":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"8b18a2f4-3742-40dc-b89e-9361a21e6b85","createdAt":1519805023139,"updatedAt":1519805023139,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","createdAt":1519805023002,"updatedAt":1519805023002,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}},{"authId":"fb4e96bd-9818-4d8a-957c-accfd1270092","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"bbb7e2c8-f386-4454-a64d-9721a0d7fb8f","createdAt":1519805610757,"updatedAt":1519805610757,"version":0,"opInFunc":{"funcId":"982e14ea-8b1c-439e-b78d-204579d676a3","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"fb4e96bd-9818-4d8a-957c-accfd1270092","createdAt":1519805022865,"updatedAt":1519805022865,"version":0,"function":{"name":"工作管理","code":"operations","class":0,"belong":null,"status":1,"id":"982e14ea-8b1c-439e-b78d-204579d676a3","createdAt":1519805019261,"updatedAt":1519805019261,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}}]}}}
+*************** response log end ***************
+
+[2018-08-09 15:27:46.834] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/operationCount?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 5
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:27:46.856] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/workingOperationList?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 18
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:27:47.005] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/operationCount?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request query:  {"stamp":"1533772800","userid":"e096a454-4426-400f-92ad-9726744236c0"}
+response time: 99
+response status: 200
+response body: 
+{"status":0,"data":{"working":0,"done":4,"all":4}}
+*************** response log end ***************
+
+[2018-08-09 15:27:47.067] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/workingOperationList?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request query:  {"stamp":"1533772800","userid":"e096a454-4426-400f-92ad-9726744236c0"}
+response time: 141
+response status: 200
+response body: 
+{"status":0,"data":[],"total":0}
+*************** response log end ***************
+
+[2018-08-09 15:28:07.453] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/operationCount?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:28:07.458] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/doneOperationList?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 2
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:28:07.545] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/doneOperationList?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request query:  {"stamp":"1533772800","userid":"e096a454-4426-400f-92ad-9726744236c0"}
+response time: 69
+response status: 200
+response body: 
+{"status":0,"data":[{"no":"20180809000","custom_name":"物流商贸","custom_phone":"15822927208","incoming_time":1533774515000,"custom_corporation":"d988a340-24ec-4f49-ba6a-98514328a07a","custom_position":"754fb8b9-4bd9-4015-996d-d2cd84a9261d","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"e6890530-4629-406f-a3fb-d8e2a293320b\",\"name\":\"硬件\",\"code\":\"HARDWARE\"},\"equipment\":{\"name\":\"打印机\",\"value\":\"打印机\"},\"op\":{\"id\":\"a3f97b89-ca2f-4be8-841f-8a9b95ca891e\",\"name\":\"连接\",\"code\":\"CONNECT\"},\"no\":3},{\"type\":{\"id\":\"e6890530-4629-406f-a3fb-d8e2a293320b\",\"name\":\"硬件\",\"code\":\"HARDWARE\"},\"equipment\":{\"name\":\"扫描仪\",\"value\":\"扫描仪\"},\"op\":{\"id\":\"5d050cac-4f46-4726-b7cc-cb3f52f0d8c9\",\"name\":\"连接\",\"code\":\"CONNECT\"},\"no\":1}]","id":"be339881-d720-459c-860e-7a9b5fec035c","createdAt":1533779314170,"updatedAt":1533779314170,"version":0,"operations":[{"orderId":"be339881-d720-459c-860e-7a9b5fec035c","important":false,"op":"a3f97b89-ca2f-4be8-841f-8a9b95ca891e","no":"20180809001","create_time":1533774515000,"remark":"","status":1,"id":"679eeafe-f036-4053-8273-6a993a9e34ba","createdAt":1533779314268,"updatedAt":1533779314268,"version":0,"businessContent":{"type":"HARDWARE","equipment":"打印机","operation":"CONNECT","isAdvanced":null,"weight":5,"remark":null,"status":1,"sequence":1,"id":"a3f97b89-ca2f-4be8-841f-8a9b95ca891e","createdAt":1517189230921,"updatedAt":1525738301504,"version":2,"equipOp":{"name":"连接","code":"CONNECT","id":"c7c1a6a9-3b22-4868-87ef-848de64eb1c3","createdAt":1515648604654,"updatedAt":1515648604654,"version":0}},"actions":[{"operationId":"679eeafe-f036-4053-8273-6a993a9e34ba","call_time":1533774515000,"start_time":1533775712000,"end_time":1533776850000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"47262783-ed7d-479c-8740-88b261375816","createdAt":1533779314307,"updatedAt":1533779314307,"version":0,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92}}]},{"orderId":"be339881-d720-459c-860e-7a9b5fec035c","important":false,"op":"a3f97b89-ca2f-4be8-841f-8a9b95ca891e","no":"20180809000","create_time":1533774515000,"remark":"","status":1,"id":"a30d6904-7928-4c7b-a970-ff083221850a","createdAt":1533779314228,"updatedAt":1533779314228,"version":0,"businessContent":{"type":"HARDWARE","equipment":"打印机","operation":"CONNECT","isAdvanced":null,"weight":5,"remark":null,"status":1,"sequence":1,"id":"a3f97b89-ca2f-4be8-841f-8a9b95ca891e","createdAt":1517189230921,"updatedAt":1525738301504,"version":2,"equipOp":{"name":"连接","code":"CONNECT","id":"c7c1a6a9-3b22-4868-87ef-848de64eb1c3","createdAt":1515648604654,"updatedAt":1515648604654,"version":0}},"actions":[{"operationId":"a30d6904-7928-4c7b-a970-ff083221850a","call_time":1533774515000,"start_time":1533774515000,"end_time":1533775652000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"8f9db337-9fe1-44b4-a951-a96c7b15a333","createdAt":1533779314262,"updatedAt":1533779314262,"version":0,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92}}]},{"orderId":"be339881-d720-459c-860e-7a9b5fec035c","important":false,"op":"5d050cac-4f46-4726-b7cc-cb3f52f0d8c9","no":"20180809003","create_time":1533774515000,"remark":"","status":1,"id":"023fae1d-8deb-43a1-ad3f-d71ce04e9013","createdAt":1533779314343,"updatedAt":1533779314343,"version":0,"businessContent":{"type":"HARDWARE","equipment":"扫描仪","operation":"CONNECT","isAdvanced":null,"weight":5,"remark":null,"status":1,"sequence":1,"id":"5d050cac-4f46-4726-b7cc-cb3f52f0d8c9","createdAt":1517189251628,"updatedAt":1532672132251,"version":3,"equipOp":{"name":"连接","code":"CONNECT","id":"c7c1a6a9-3b22-4868-87ef-848de64eb1c3","createdAt":1515648604654,"updatedAt":1515648604654,"version":0}},"actions":[{"operationId":"023fae1d-8deb-43a1-ad3f-d71ce04e9013","call_time":1533774515000,"start_time":1533778107000,"end_time":1533779245000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"f11614ff-6bfa-423a-bb9f-d6d52162044f","createdAt":1533779314371,"updatedAt":1533779314371,"version":0,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92}}]}],"corporation":{"name":"物流商贸公司","description":"物流商贸","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"d988a340-24ec-4f49-ba6a-98514328a07a","createdAt":1517196815376,"updatedAt":1517196815376,"version":0}},{"no":"20180809001","custom_name":"融资租赁财务507","custom_phone":"02265617805","incoming_time":1533795308000,"custom_corporation":"4f3b67d7-40f2-4377-86ba-e9775e728f64","custom_position":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"e6890530-4629-406f-a3fb-d8e2a293320b\",\"name\":\"硬件\",\"code\":\"HARDWARE\"},\"equipment\":{\"name\":\"打印机\",\"value\":\"打印机\"},\"op\":{\"id\":\"4215574f-7fa4-447b-882b-528c4562e41f\",\"name\":\"故障\",\"code\":\"FIX\"},\"no\":1}]","id":"673a64e1-abf2-4666-8307-0004118104ed","createdAt":1533795727768,"updatedAt":1533795727768,"version":0,"operations":[{"orderId":"673a64e1-abf2-4666-8307-0004118104ed","important":false,"op":"4215574f-7fa4-447b-882b-528c4562e41f","no":"20180809004","create_time":1533795308000,"remark":"","status":1,"id":"23c1bbf6-2adc-4a96-820e-7e75d0efcb7f","createdAt":1533795727841,"updatedAt":1533795727841,"version":0,"businessContent":{"type":"HARDWARE","equipment":"打印机","operation":"FIX","isAdvanced":null,"weight":5,"remark":null,"status":1,"sequence":0,"id":"4215574f-7fa4-447b-882b-528c4562e41f","createdAt":1515636094577,"updatedAt":1525738301579,"version":2,"equipOp":{"name":"故障","code":"FIX","id":"e15ed1f4-3cf7-4dcc-859b-70620a042bf3","createdAt":1515633163280,"updatedAt":1515633163280,"version":0}},"actions":[{"operationId":"23c1bbf6-2adc-4a96-820e-7e75d0efcb7f","call_time":1533795308000,"start_time":1533795488000,"end_time":1533797061000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"dfca7472-4caa-4086-8303-361188762f7e","createdAt":1533795727875,"updatedAt":1533797062906,"version":1,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92}}]}],"corporation":{"name":"融资租赁公司","description":"融资租赁公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"4f3b67d7-40f2-4377-86ba-e9775e728f64","createdAt":1515633158201,"updatedAt":1520564750982,"version":1}}],"total":2}
+*************** response log end ***************
+
+[2018-08-09 15:28:07.555] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/sign/679eeafe-f036-4053-8273-6a993a9e34ba
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:28:07.558] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/sign/a30d6904-7928-4c7b-a970-ff083221850a
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:28:07.561] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/sign/023fae1d-8deb-43a1-ad3f-d71ce04e9013
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:28:07.563] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/operationCount?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request query:  {"stamp":"1533772800","userid":"e096a454-4426-400f-92ad-9726744236c0"}
+response time: 103
+response status: 200
+response body: 
+{"status":0,"data":{"working":0,"done":4,"all":4}}
+*************** response log end ***************
+
+[2018-08-09 15:28:07.564] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/sign/23c1bbf6-2adc-4a96-820e-7e75d0efcb7f
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 0
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:28:07.610] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/sign/679eeafe-f036-4053-8273-6a993a9e34ba
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 8
+response status: 200
+response body: 
+{"status":0,"data":""}
+*************** response log end ***************
+
+[2018-08-09 15:28:07.639] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/sign/a30d6904-7928-4c7b-a970-ff083221850a
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 15
+response status: 200
+response body: 
+{"status":0,"data":""}
+*************** response log end ***************
+
+[2018-08-09 15:28:07.642] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/sign/023fae1d-8deb-43a1-ad3f-d71ce04e9013
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 9
+response status: 200
+response body: 
+{"status":0,"data":""}
+*************** response log end ***************
+
+[2018-08-09 15:28:07.649] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/sign/23c1bbf6-2adc-4a96-820e-7e75d0efcb7f
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 4
+response status: 200
+response body: 
+{"status":0,"data":""}
+*************** response log end ***************
+
+[2018-08-09 15:28:08.273] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 3
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:28:08.354] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 25
+response status: 200
+response body: 
+{"status":0,"data":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92,"role":{"name":"运维工程师","remark":"工程师权限","status":1,"id":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","createdAt":1519805013032,"updatedAt":1519805013032,"version":0,"auths":[{"authId":"dc9a592e-9c34-4489-afb0-39cd85e20e99","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"4d486b15-c5b2-4746-a923-eaabf2fbdcc5","createdAt":1519805023370,"updatedAt":1519805023370,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"01004a4c-ff7f-40d4-a8d5-2465513b680f","id":"dc9a592e-9c34-4489-afb0-39cd85e20e99","createdAt":1519805023210,"updatedAt":1519805023210,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"查看","code":"list","status":1,"id":"01004a4c-ff7f-40d4-a8d5-2465513b680f","createdAt":1519805019892,"updatedAt":1519805019892,"version":0}}},{"authId":"e046316c-aee3-4b70-a10c-837d7f585ebb","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"46ef320a-b9f2-45a9-a8ea-0321630ee9b0","createdAt":1519805023957,"updatedAt":1519805023957,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"199f1992-3403-477b-9133-3a5e9d60a1ea","id":"e046316c-aee3-4b70-a10c-837d7f585ebb","createdAt":1519805023823,"updatedAt":1519805023823,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"删除","code":"delete","status":1,"id":"199f1992-3403-477b-9133-3a5e9d60a1ea","createdAt":1519805020201,"updatedAt":1519805020201,"version":0}}},{"authId":"5050a962-d253-435b-98cc-605ea2a8b53f","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"af2bb8ba-b0f3-48a1-8532-7f55935962af","createdAt":1520564947522,"updatedAt":1520564947522,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"40fbca21-c365-4c59-9429-b4be9deb49ac","id":"5050a962-d253-435b-98cc-605ea2a8b53f","createdAt":1519805023434,"updatedAt":1519805023434,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"新增","code":"add","status":1,"id":"40fbca21-c365-4c59-9429-b4be9deb49ac","createdAt":1519805019952,"updatedAt":1519805019952,"version":0}}},{"authId":"b681f20e-f565-4863-b150-99f9977a1ae9","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"fb9aa28a-a003-4b41-b90e-3268fcb5562a","createdAt":1519805023759,"updatedAt":1519805023759,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"502f9b24-e07b-4c24-bf44-922854bd28a3","id":"b681f20e-f565-4863-b150-99f9977a1ae9","createdAt":1519805023625,"updatedAt":1519805023625,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"编辑","code":"edit","status":1,"id":"502f9b24-e07b-4c24-bf44-922854bd28a3","createdAt":1519805020055,"updatedAt":1519805020055,"version":0}}},{"authId":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"8b18a2f4-3742-40dc-b89e-9361a21e6b85","createdAt":1519805023139,"updatedAt":1519805023139,"version":0,"opInFunc":{"funcId":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"67d58590-c1d2-4f27-800a-6bfe488ff9f4","createdAt":1519805023002,"updatedAt":1519805023002,"version":0,"function":{"name":"工单","code":"op","class":1,"belong":"982e14ea-8b1c-439e-b78d-204579d676a3","status":1,"id":"690c0f1e-2658-4aa9-ac18-8a02269c9a65","createdAt":1519805019330,"updatedAt":1519805019330,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}},{"authId":"fb4e96bd-9818-4d8a-957c-accfd1270092","roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","id":"bbb7e2c8-f386-4454-a64d-9721a0d7fb8f","createdAt":1519805610757,"updatedAt":1519805610757,"version":0,"opInFunc":{"funcId":"982e14ea-8b1c-439e-b78d-204579d676a3","opId":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","id":"fb4e96bd-9818-4d8a-957c-accfd1270092","createdAt":1519805022865,"updatedAt":1519805022865,"version":0,"function":{"name":"工作管理","code":"operations","class":0,"belong":null,"status":1,"id":"982e14ea-8b1c-439e-b78d-204579d676a3","createdAt":1519805019261,"updatedAt":1519805019261,"version":0},"operate":{"name":"菜单可见","code":"menu","status":1,"id":"83bbdb02-998b-47ba-83e3-281c3c6fb9a9","createdAt":1519805019821,"updatedAt":1519805019821,"version":0}}}]}}}
+*************** response log end ***************
+
+[2018-08-09 15:28:08.401] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/getaction/679eeafe-f036-4053-8273-6a993a9e34ba
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 27
+response status: 200
+response body: 
+{"status":0,"data":{"orderId":"be339881-d720-459c-860e-7a9b5fec035c","important":false,"op":"a3f97b89-ca2f-4be8-841f-8a9b95ca891e","no":"20180809001","create_time":1533774515000,"remark":"","status":1,"id":"679eeafe-f036-4053-8273-6a993a9e34ba","createdAt":1533779314268,"updatedAt":1533779314268,"version":0,"actions":[{"operationId":"679eeafe-f036-4053-8273-6a993a9e34ba","call_time":1533774515000,"start_time":1533775712000,"end_time":1533776850000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"47262783-ed7d-479c-8740-88b261375816","createdAt":1533779314307,"updatedAt":1533779314307,"version":0,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92}}]}}
+*************** response log end ***************
+
+[2018-08-09 15:28:21.179] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.104
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:28:21.271] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.104
+request query:  {}
+response time: 4
+response status: 200
+response body: 
+{"name":"jwtError","status":10003,"message":"身份验证错误！"}
+*************** response log end ***************
+
+[2018-08-09 15:30:17.556] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/operationCount?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:30:17.559] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/workingOperationList?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:30:17.665] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/operationCount?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request query:  {"stamp":"1533772800","userid":"e096a454-4426-400f-92ad-9726744236c0"}
+response time: 96
+response status: 200
+response body: 
+{"status":0,"data":{"working":0,"done":4,"all":4}}
+*************** response log end ***************
+
+[2018-08-09 15:30:17.669] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/workingOperationList?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request query:  {"stamp":"1533772800","userid":"e096a454-4426-400f-92ad-9726744236c0"}
+response time: 82
+response status: 200
+response body: 
+{"status":0,"data":[],"total":0}
+*************** response log end ***************
+
+[2018-08-09 15:30:18.246] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/operation/doneOperationList?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:30:18.300] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/operationCount?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request query:  {"stamp":"1533772800","userid":"e096a454-4426-400f-92ad-9726744236c0"}
+response time: 64
+response status: 200
+response body: 
+{"status":0,"data":{"working":0,"done":4,"all":4}}
+*************** response log end ***************
+
+[2018-08-09 15:30:18.310] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/operation/doneOperationList?stamp=1533772800&userid=e096a454-4426-400f-92ad-9726744236c0
+request client ip:  ::ffff:192.168.1.106
+request query:  {"stamp":"1533772800","userid":"e096a454-4426-400f-92ad-9726744236c0"}
+response time: 59
+response status: 200
+response body: 
+{"status":0,"data":[{"no":"20180809000","custom_name":"物流商贸","custom_phone":"15822927208","incoming_time":1533774515000,"custom_corporation":"d988a340-24ec-4f49-ba6a-98514328a07a","custom_position":"754fb8b9-4bd9-4015-996d-d2cd84a9261d","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"e6890530-4629-406f-a3fb-d8e2a293320b\",\"name\":\"硬件\",\"code\":\"HARDWARE\"},\"equipment\":{\"name\":\"打印机\",\"value\":\"打印机\"},\"op\":{\"id\":\"a3f97b89-ca2f-4be8-841f-8a9b95ca891e\",\"name\":\"连接\",\"code\":\"CONNECT\"},\"no\":3},{\"type\":{\"id\":\"e6890530-4629-406f-a3fb-d8e2a293320b\",\"name\":\"硬件\",\"code\":\"HARDWARE\"},\"equipment\":{\"name\":\"扫描仪\",\"value\":\"扫描仪\"},\"op\":{\"id\":\"5d050cac-4f46-4726-b7cc-cb3f52f0d8c9\",\"name\":\"连接\",\"code\":\"CONNECT\"},\"no\":1}]","id":"be339881-d720-459c-860e-7a9b5fec035c","createdAt":1533779314170,"updatedAt":1533779314170,"version":0,"operations":[{"orderId":"be339881-d720-459c-860e-7a9b5fec035c","important":false,"op":"a3f97b89-ca2f-4be8-841f-8a9b95ca891e","no":"20180809001","create_time":1533774515000,"remark":"","status":1,"id":"679eeafe-f036-4053-8273-6a993a9e34ba","createdAt":1533779314268,"updatedAt":1533779314268,"version":0,"businessContent":{"type":"HARDWARE","equipment":"打印机","operation":"CONNECT","isAdvanced":null,"weight":5,"remark":null,"status":1,"sequence":1,"id":"a3f97b89-ca2f-4be8-841f-8a9b95ca891e","createdAt":1517189230921,"updatedAt":1525738301504,"version":2,"equipOp":{"name":"连接","code":"CONNECT","id":"c7c1a6a9-3b22-4868-87ef-848de64eb1c3","createdAt":1515648604654,"updatedAt":1515648604654,"version":0}},"actions":[{"operationId":"679eeafe-f036-4053-8273-6a993a9e34ba","call_time":1533774515000,"start_time":1533775712000,"end_time":1533776850000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"47262783-ed7d-479c-8740-88b261375816","createdAt":1533779314307,"updatedAt":1533779314307,"version":0,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92}}]},{"orderId":"be339881-d720-459c-860e-7a9b5fec035c","important":false,"op":"a3f97b89-ca2f-4be8-841f-8a9b95ca891e","no":"20180809000","create_time":1533774515000,"remark":"","status":1,"id":"a30d6904-7928-4c7b-a970-ff083221850a","createdAt":1533779314228,"updatedAt":1533779314228,"version":0,"businessContent":{"type":"HARDWARE","equipment":"打印机","operation":"CONNECT","isAdvanced":null,"weight":5,"remark":null,"status":1,"sequence":1,"id":"a3f97b89-ca2f-4be8-841f-8a9b95ca891e","createdAt":1517189230921,"updatedAt":1525738301504,"version":2,"equipOp":{"name":"连接","code":"CONNECT","id":"c7c1a6a9-3b22-4868-87ef-848de64eb1c3","createdAt":1515648604654,"updatedAt":1515648604654,"version":0}},"actions":[{"operationId":"a30d6904-7928-4c7b-a970-ff083221850a","call_time":1533774515000,"start_time":1533774515000,"end_time":1533775652000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"8f9db337-9fe1-44b4-a951-a96c7b15a333","createdAt":1533779314262,"updatedAt":1533779314262,"version":0,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92}}]},{"orderId":"be339881-d720-459c-860e-7a9b5fec035c","important":false,"op":"5d050cac-4f46-4726-b7cc-cb3f52f0d8c9","no":"20180809003","create_time":1533774515000,"remark":"","status":1,"id":"023fae1d-8deb-43a1-ad3f-d71ce04e9013","createdAt":1533779314343,"updatedAt":1533779314343,"version":0,"businessContent":{"type":"HARDWARE","equipment":"扫描仪","operation":"CONNECT","isAdvanced":null,"weight":5,"remark":null,"status":1,"sequence":1,"id":"5d050cac-4f46-4726-b7cc-cb3f52f0d8c9","createdAt":1517189251628,"updatedAt":1532672132251,"version":3,"equipOp":{"name":"连接","code":"CONNECT","id":"c7c1a6a9-3b22-4868-87ef-848de64eb1c3","createdAt":1515648604654,"updatedAt":1515648604654,"version":0}},"actions":[{"operationId":"023fae1d-8deb-43a1-ad3f-d71ce04e9013","call_time":1533774515000,"start_time":1533778107000,"end_time":1533779245000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"f11614ff-6bfa-423a-bb9f-d6d52162044f","createdAt":1533779314371,"updatedAt":1533779314371,"version":0,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92}}]}],"corporation":{"name":"物流商贸公司","description":"物流商贸","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"d988a340-24ec-4f49-ba6a-98514328a07a","createdAt":1517196815376,"updatedAt":1517196815376,"version":0}},{"no":"20180809001","custom_name":"融资租赁财务507","custom_phone":"02265617805","incoming_time":1533795308000,"custom_corporation":"4f3b67d7-40f2-4377-86ba-e9775e728f64","custom_position":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"e6890530-4629-406f-a3fb-d8e2a293320b\",\"name\":\"硬件\",\"code\":\"HARDWARE\"},\"equipment\":{\"name\":\"打印机\",\"value\":\"打印机\"},\"op\":{\"id\":\"4215574f-7fa4-447b-882b-528c4562e41f\",\"name\":\"故障\",\"code\":\"FIX\"},\"no\":1}]","id":"673a64e1-abf2-4666-8307-0004118104ed","createdAt":1533795727768,"updatedAt":1533795727768,"version":0,"operations":[{"orderId":"673a64e1-abf2-4666-8307-0004118104ed","important":false,"op":"4215574f-7fa4-447b-882b-528c4562e41f","no":"20180809004","create_time":1533795308000,"remark":"","status":1,"id":"23c1bbf6-2adc-4a96-820e-7e75d0efcb7f","createdAt":1533795727841,"updatedAt":1533795727841,"version":0,"businessContent":{"type":"HARDWARE","equipment":"打印机","operation":"FIX","isAdvanced":null,"weight":5,"remark":null,"status":1,"sequence":0,"id":"4215574f-7fa4-447b-882b-528c4562e41f","createdAt":1515636094577,"updatedAt":1525738301579,"version":2,"equipOp":{"name":"故障","code":"FIX","id":"e15ed1f4-3cf7-4dcc-859b-70620a042bf3","createdAt":1515633163280,"updatedAt":1515633163280,"version":0}},"actions":[{"operationId":"23c1bbf6-2adc-4a96-820e-7e75d0efcb7f","call_time":1533795308000,"start_time":1533795488000,"end_time":1533797061000,"worker":"e096a454-4426-400f-92ad-9726744236c0","operationStart":null,"operationComplete":1,"status":1,"id":"dfca7472-4caa-4086-8303-361188762f7e","createdAt":1533795727875,"updatedAt":1533797062906,"version":1,"user":{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92}}]}],"corporation":{"name":"融资租赁公司","description":"融资租赁公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"4f3b67d7-40f2-4377-86ba-e9775e728f64","createdAt":1515633158201,"updatedAt":1520564750982,"version":1}}],"total":2}
+*************** response log end ***************
+
+[2018-08-09 15:30:18.315] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/sign/679eeafe-f036-4053-8273-6a993a9e34ba
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 0
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:30:18.318] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/sign/a30d6904-7928-4c7b-a970-ff083221850a
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:30:18.320] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/sign/023fae1d-8deb-43a1-ad3f-d71ce04e9013
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 0
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:30:18.325] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/sign/23c1bbf6-2adc-4a96-820e-7e75d0efcb7f
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:30:18.353] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/sign/679eeafe-f036-4053-8273-6a993a9e34ba
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 6
+response status: 200
+response body: 
+{"status":0,"data":""}
+*************** response log end ***************
+
+[2018-08-09 15:30:18.356] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/sign/a30d6904-7928-4c7b-a970-ff083221850a
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 6
+response status: 200
+response body: 
+{"status":0,"data":""}
+*************** response log end ***************
+
+[2018-08-09 15:30:18.377] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/sign/023fae1d-8deb-43a1-ad3f-d71ce04e9013
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 8
+response status: 200
+response body: 
+{"status":0,"data":""}
+*************** response log end ***************
+
+[2018-08-09 15:30:18.379] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/sign/23c1bbf6-2adc-4a96-820e-7e75d0efcb7f
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 7
+response status: 200
+response body: 
+{"status":0,"data":""}
+*************** response log end ***************
+
+[2018-08-09 15:31:51.893] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/authinrole/check
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 2
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:31:51.939] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/authinrole/check
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"func":"order","op":"menu"}
+response time: 28
+response status: 200
+response body: 
+{"status":0}
+*************** response log end ***************
+
+[2018-08-09 15:31:52.021] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/authinrole/check
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"func":"order","op":"list"}
+response time: 28
+response status: 200
+response body: 
+{"status":0}
+*************** response log end ***************
+
+[2018-08-09 15:31:52.078] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/order/list/page/1/time/1533744000000
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 28
+response status: 200
+response body: 
+{"status":0,"data":[{"no":"20180809000","custom_name":"物流商贸","custom_phone":"15822927208","incoming_time":1533774515000,"custom_corporation":"d988a340-24ec-4f49-ba6a-98514328a07a","custom_position":"754fb8b9-4bd9-4015-996d-d2cd84a9261d","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"e6890530-4629-406f-a3fb-d8e2a293320b\",\"name\":\"硬件\",\"code\":\"HARDWARE\"},\"equipment\":{\"name\":\"打印机\",\"value\":\"打印机\"},\"op\":{\"id\":\"a3f97b89-ca2f-4be8-841f-8a9b95ca891e\",\"name\":\"连接\",\"code\":\"CONNECT\"},\"no\":3},{\"type\":{\"id\":\"e6890530-4629-406f-a3fb-d8e2a293320b\",\"name\":\"硬件\",\"code\":\"HARDWARE\"},\"equipment\":{\"name\":\"扫描仪\",\"value\":\"扫描仪\"},\"op\":{\"id\":\"5d050cac-4f46-4726-b7cc-cb3f52f0d8c9\",\"name\":\"连接\",\"code\":\"CONNECT\"},\"no\":1}]","id":"be339881-d720-459c-860e-7a9b5fec035c","createdAt":1533779314170,"updatedAt":1533779314170,"version":0,"corporation":{"name":"物流商贸公司","description":"物流商贸","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"d988a340-24ec-4f49-ba6a-98514328a07a","createdAt":1517196815376,"updatedAt":1517196815376,"version":0},"corpBuilding":{"corporationId":"d988a340-24ec-4f49-ba6a-98514328a07a","buildingId":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","floor":4,"position":"W","status":1,"id":"754fb8b9-4bd9-4015-996d-d2cd84a9261d","createdAt":1517196830625,"updatedAt":1517196830625,"version":0,"building":{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","createdAt":1515633153519,"updatedAt":1515633153519,"version":0}}},{"no":"20180809001","custom_name":"融资租赁财务507","custom_phone":"02265617805","incoming_time":1533795308000,"custom_corporation":"4f3b67d7-40f2-4377-86ba-e9775e728f64","custom_position":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"e6890530-4629-406f-a3fb-d8e2a293320b\",\"name\":\"硬件\",\"code\":\"HARDWARE\"},\"equipment\":{\"name\":\"打印机\",\"value\":\"打印机\"},\"op\":{\"id\":\"4215574f-7fa4-447b-882b-528c4562e41f\",\"name\":\"故障\",\"code\":\"FIX\"},\"no\":1}]","id":"673a64e1-abf2-4666-8307-0004118104ed","createdAt":1533795727768,"updatedAt":1533795727768,"version":0,"corporation":{"name":"融资租赁公司","description":"融资租赁公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"4f3b67d7-40f2-4377-86ba-e9775e728f64","createdAt":1515633158201,"updatedAt":1520564750982,"version":1},"corpBuilding":{"corporationId":"4f3b67d7-40f2-4377-86ba-e9775e728f64","buildingId":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","floor":5,"position":"W","status":1,"id":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","createdAt":1515633160702,"updatedAt":1515633160702,"version":0,"building":{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","createdAt":1515633153519,"updatedAt":1515633153519,"version":0}}}],"total":2}
+*************** response log end ***************
+
+[2018-08-09 15:31:53.381] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/authinrole/check
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"func":"order","op":"add"}
+response time: 18
+response status: 200
+response body: 
+{"status":0}
+*************** response log end ***************
+
+[2018-08-09 15:31:53.433] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/groups/list
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 9
+response status: 200
+response body: 
+{"status":0,"data":[{"name":"管委会","description":"group1","status":1,"id":"52505514-1b27-449f-b575-55b32fd1280f","createdAt":1515633151465,"updatedAt":1515633151465,"version":0},{"name":"控股","description":"group2","status":1,"id":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","createdAt":1515633152227,"updatedAt":1515633152227,"version":0},{"name":"临港清华附属小学","description":"临港清华附属小学","status":1,"id":"76a550ce-0788-4e2f-b3b8-875f9a62692c","createdAt":1515737019104,"updatedAt":1515737019104,"version":0},{"name":"宜湾酒店","description":"宜湾酒店","status":1,"id":"384fb1a2-33c9-4577-96f8-02dd6030e93a","createdAt":1528250664116,"updatedAt":1528250664116,"version":0}],"total":4}
+*************** response log end ***************
+
+[2018-08-09 15:31:53.447] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/workers/list
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 10
+response status: 200
+response body: 
+{"status":0,"data":[{"name":"admin","email":"378338627@qq.com","phone":"158229272088","password":"$2a$10$ZCz8FbSB13tB2jbZIaI13.kaTOEp236iyvOOtqgZf.m.RSqqgjheq","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiMDU3MjBlNmUtZWJlMy00MDM2LWI1NzUtZmYxZmEwYzZjYjM4IiwibmFtZSI6ImFkbWluIn0sImlhdCI6MTUzMzc4NDI0NSwiZXhwIjoxNTM0Mzg5MDQ1fQ.yphhH2blkQ88I4P4gYNBbX7ZPaes9sssZvTEmAhXoeo","canLogin":true,"status":1,"roleId":"440fba89-762d-4584-8bdc-26e2e7b5e71e","avatar":"/uploads/avatar/动漫/17.jpg","avatarUseImg":0,"id":"05720e6e-ebe3-4036-b575-ff1fa0c6cb38","createdAt":1515633151463,"updatedAt":1533784252834,"version":197,"worker":{"userId":"05720e6e-ebe3-4036-b575-ff1fa0c6cb38","id":"cbfc2558-dbf1-4dbe-9715-f3c3d498771c","createdAt":1521773688107,"updatedAt":1521773688107,"version":0}},{"name":"张赫","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$JUhMlqmi1flOuZRNBWq8j.o1y9YUDnWElK8XNEMAgkk/WAw66oVUu","gender":true,"token":null,"canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"ddb9b8c8-e9ba-48ac-af2e-bce4d534e4fb","createdAt":1515633151464,"updatedAt":1515633151464,"version":0,"worker":{"userId":"ddb9b8c8-e9ba-48ac-af2e-bce4d534e4fb","id":"535b3f1a-80dc-482e-a72b-8f3be9964a72","createdAt":1515633503273,"updatedAt":1515633503273,"version":0}},{"name":"朱亚亮","email":"378338627@qq.com","phone":"15822927208","password":"$2a$10$tkDWWL9Mkz9AUFRa.zS/suzNbr.PYt8dYnZloNBj4mkVHyh/kIvM6","gender":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiZTA5NmE0NTQtNDQyNi00MDBmLTkyYWQtOTcyNjc0NDIzNmMwIiwibmFtZSI6IuacseS6muS6riJ9LCJpYXQiOjE1MzM2MjYyMzQsImV4cCI6MTUzNDIzMTAzNH0.146wPrOFitlksihL2YPiwe4TlqbOVC0sSwqRDRNE6Rs","canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"e096a454-4426-400f-92ad-9726744236c0","createdAt":1515633151464,"updatedAt":1533626234329,"version":92,"worker":{"userId":"e096a454-4426-400f-92ad-9726744236c0","id":"8a3b64a8-aa73-4bee-abcc-c6793b69ce36","createdAt":1520564971177,"updatedAt":1520564971177,"version":0}},{"name":"庞子博","email":null,"phone":null,"password":"$2a$10$tsM9DndCIJaRrRXs67NnpOzFGOBDanLbkAcx3bPomQDjWFolbBbyC","gender":true,"token":null,"canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"b4fe1ad8-3b6b-4987-81d0-61715078370d","createdAt":1521444713708,"updatedAt":1521444713708,"version":0,"worker":{"userId":"b4fe1ad8-3b6b-4987-81d0-61715078370d","id":"0c46ed02-ecfa-4a98-b55c-0f021e96a5ec","createdAt":1521444719128,"updatedAt":1521444719128,"version":0}},{"name":"柏乾丁","email":null,"phone":null,"password":"$2a$10$X0cBFZcta.17teTTqpILF.7uQFzZxZXj8HBgMlmhJ6c85d8mqGK7W","gender":true,"token":null,"canLogin":true,"status":1,"roleId":"aa7eeae7-8d60-40fb-95ad-e55495ffd845","avatar":null,"avatarUseImg":null,"id":"57006f2f-a8ca-4d39-8297-fdd8fc1695cf","createdAt":1521699299739,"updatedAt":1521699299739,"version":0,"worker":{"userId":"57006f2f-a8ca-4d39-8297-fdd8fc1695cf","id":"8b4a6248-5ced-4f78-86cd-fe70b642d575","createdAt":1521699323338,"updatedAt":1521699323338,"version":0}},{"name":"杨立岩","email":null,"phone":null,"password":"$2a$10$EjvM0RWmN/7pPhDicoRafuMvVsdPw/vYxq23S6Whh19SCa6EcfVNW","gender":true,"token":null,"canLogin":true,"status":1,"roleId":"440fba89-762d-4584-8bdc-26e2e7b5e71e","avatar":null,"avatarUseImg":null,"id":"ceeb029e-3a77-43a7-a408-3bf1be72bac3","createdAt":1522368996583,"updatedAt":1522368996583,"version":0,"worker":{"userId":"ceeb029e-3a77-43a7-a408-3bf1be72bac3","id":"5c0abe2e-095b-4cb9-b1b5-3735068cf372","createdAt":1522369003172,"updatedAt":1522369003172,"version":0}}]}
+*************** response log end ***************
+
+[2018-08-09 15:31:53.521] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/corporations/list?group=52505514-1b27-449f-b575-55b32fd1280f
+request client ip:  ::ffff:127.0.0.1
+request query:  {"group":"52505514-1b27-449f-b575-55b32fd1280f"}
+response time: 23
+response status: 200
+response body: 
+{"status":0,"data":[{"name":"审批服务大厅","description":"审批中心","status":1,"groupId":"52505514-1b27-449f-b575-55b32fd1280f","id":"1056620c-bbcb-49ed-bc65-e4602abec7b1","createdAt":1515633154455,"updatedAt":1515633154455,"version":0,"group":{"name":"管委会","description":"group1","status":1,"id":"52505514-1b27-449f-b575-55b32fd1280f","createdAt":1515633151465,"updatedAt":1515633151465,"version":0}},{"name":"投促局","description":"投促局","status":1,"groupId":"52505514-1b27-449f-b575-55b32fd1280f","id":"ad4b715b-623d-47ac-806a-f63704a137d2","createdAt":1515633154638,"updatedAt":1515633154638,"version":0,"group":{"name":"管委会","description":"group1","status":1,"id":"52505514-1b27-449f-b575-55b32fd1280f","createdAt":1515633151465,"updatedAt":1515633151465,"version":0}},{"name":"建规局","description":"建规局","status":1,"groupId":"52505514-1b27-449f-b575-55b32fd1280f","id":"2e677c67-c950-4a90-ac50-daaf8d2e6600","createdAt":1515633156390,"updatedAt":1515633156390,"version":0,"group":{"name":"管委会","description":"group1","status":1,"id":"52505514-1b27-449f-b575-55b32fd1280f","createdAt":1515633151465,"updatedAt":1515633151465,"version":0}},{"name":"安环局","description":"安环局","status":1,"groupId":"52505514-1b27-449f-b575-55b32fd1280f","id":"6e7566eb-3803-4316-9159-3e0ac2197b8f","createdAt":1515633156715,"updatedAt":1515633156715,"version":0,"group":{"name":"管委会","description":"group1","status":1,"id":"52505514-1b27-449f-b575-55b32fd1280f","createdAt":1515633151465,"updatedAt":1515633151465,"version":0}},{"name":"财政局","description":"财政局","status":1,"groupId":"52505514-1b27-449f-b575-55b32fd1280f","id":"1e42679d-d2ec-4ff7-af89-850ac8cce48b","createdAt":1515633161332,"updatedAt":1515633161332,"version":0,"group":{"name":"管委会","description":"group1","status":1,"id":"52505514-1b27-449f-b575-55b32fd1280f","createdAt":1515633151465,"updatedAt":1515633151465,"version":0}},{"name":"经发局","description":"经发局","status":1,"groupId":"52505514-1b27-449f-b575-55b32fd1280f","id":"856ca73f-b096-4ea4-95f5-19f4de4bf538","createdAt":1515633161787,"updatedAt":1515633161787,"version":0,"group":{"name":"管委会","description":"group1","status":1,"id":"52505514-1b27-449f-b575-55b32fd1280f","createdAt":1515633151465,"updatedAt":1515633151465,"version":0}},{"name":"人社局","description":"人社局","status":1,"groupId":"52505514-1b27-449f-b575-55b32fd1280f","id":"3edd5598-c59e-4de4-8e7c-880c1ff1d747","createdAt":1515633161957,"updatedAt":1515633161957,"version":0,"group":{"name":"管委会","description":"group1","status":1,"id":"52505514-1b27-449f-b575-55b32fd1280f","createdAt":1515633151465,"updatedAt":1515633151465,"version":0}},{"name":"社发局","description":"社发局","status":1,"groupId":"52505514-1b27-449f-b575-55b32fd1280f","id":"6c3b68d0-9fa0-429c-a841-f886d295a120","createdAt":1515633162174,"updatedAt":1515633162174,"version":0,"group":{"name":"管委会","description":"group1","status":1,"id":"52505514-1b27-449f-b575-55b32fd1280f","createdAt":1515633151465,"updatedAt":1515633151465,"version":0}},{"name":"管委会办公室","description":"管委会办公室","status":1,"groupId":"52505514-1b27-449f-b575-55b32fd1280f","id":"aeca46cc-207a-4228-9978-cc8c0900fd37","createdAt":1515633162317,"updatedAt":1515633162317,"version":0,"group":{"name":"管委会","description":"group1","status":1,"id":"52505514-1b27-449f-b575-55b32fd1280f","createdAt":1515633151465,"updatedAt":1515633151465,"version":0}}],"total":9}
+*************** response log end ***************
+
+[2018-08-09 15:31:53.535] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/corpBuildings/list/1056620c-bbcb-49ed-bc65-e4602abec7b1
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 1
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:31:53.576] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/corpBuildings/list/1056620c-bbcb-49ed-bc65-e4602abec7b1
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 9
+response status: 200
+response body: 
+{"status":0,"data":[{"corporationId":"1056620c-bbcb-49ed-bc65-e4602abec7b1","buildingId":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","floor":1,"position":"A","status":1,"id":"0758fdc3-8850-4ed3-88a9-bb61e7b19280","createdAt":1515633154539,"updatedAt":1515633154539,"version":0,"building":{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","createdAt":1515633153519,"updatedAt":1515633153519,"version":0}}],"total":0}
+*************** response log end ***************
+
+[2018-08-09 15:32:00.518] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/equipType/list
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 5
+response status: 200
+response body: 
+{"status":0,"data":[{"name":"网络","code":"NETWORK","id":"edad6210-e642-4302-98c1-60251cb85972","createdAt":1515633162976,"updatedAt":1515633162976,"version":0},{"name":"软件","code":"SOFTWARE","id":"273f11bf-51a4-4331-9f71-f209625da820","createdAt":1515633162815,"updatedAt":1515633162815,"version":0},{"name":"硬件","code":"HARDWARE","id":"e6890530-4629-406f-a3fb-d8e2a293320b","createdAt":1515633162627,"updatedAt":1515633162627,"version":0}]}
+*************** response log end ***************
+
+[2018-08-09 15:32:00.582] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/business/getequip/get/NETWORK
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 8
+response status: 200
+response body: 
+{"status":0,"data":[{"equipment":"IP地址","name":"IP地址"},{"equipment":"VPN","name":"VPN"},{"equipment":"互联网","name":"互联网"},{"equipment":"内网","name":"内网"},{"equipment":"局域网","name":"局域网"},{"equipment":"有线网络","name":"有线网络"},{"equipment":"网络设备","name":"网络设备"},{"equipment":"视频会议设备","name":"视频会议设备"},{"equipment":"路由器","name":"路由器"}]}
+*************** response log end ***************
+
+[2018-08-09 15:32:00.617] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/business/list?param=none&type=NETWORK&equipment=IP%E5%9C%B0%E5%9D%80
+request client ip:  ::ffff:127.0.0.1
+request query:  {"param":"none","type":"NETWORK","equipment":"IP地址"}
+response time: 16
+response status: 200
+response body: 
+{"status":0,"data":[{"type":"NETWORK","equipment":"IP地址","operation":"CT","isAdvanced":null,"weight":5,"remark":null,"status":1,"sequence":0,"id":"136d7e3a-3196-417f-a583-8f1b229fa16d","createdAt":1515633164897,"updatedAt":1525740348099,"version":1,"equipType":{"name":"网络","code":"NETWORK","id":"edad6210-e642-4302-98c1-60251cb85972","createdAt":1515633162976,"updatedAt":1515633162976,"version":0},"equipOp":{"name":"冲突","code":"CT","id":"638b91b7-6496-44be-b482-30d2f77ddd88","createdAt":1515633163872,"updatedAt":1515633163872,"version":0}},{"type":"NETWORK","equipment":"IP地址","operation":"SET","isAdvanced":null,"weight":5,"remark":null,"status":1,"sequence":1,"id":"b21cfd95-a732-41d6-b70a-63e0dd931439","createdAt":1515633165117,"updatedAt":1525740348021,"version":1,"equipType":{"name":"网络","code":"NETWORK","id":"edad6210-e642-4302-98c1-60251cb85972","createdAt":1515633162976,"updatedAt":1515633162976,"version":0},"equipOp":{"name":"设置","code":"SET","id":"19c397a6-794f-4b2d-9f67-64f8da63c2ac","createdAt":1515633164022,"updatedAt":1515633164022,"version":0}}],"total":2}
+*************** response log end ***************
+
+[2018-08-09 15:32:12.807] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/authinrole/check
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 20
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-09 15:32:12.846] [INFO] resLogger - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /api/authinrole/check
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"func":"order","op":"list"}
+response time: 29
+response status: 200
+response body: 
+{"status":0}
+*************** response log end ***************
+
+[2018-08-09 15:32:12.882] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/order/list/page/1/time/1533744000000
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 21
+response status: 200
+response body: 
+{"status":0,"data":[{"no":"20180809000","custom_name":"物流商贸","custom_phone":"15822927208","incoming_time":1533774515000,"custom_corporation":"d988a340-24ec-4f49-ba6a-98514328a07a","custom_position":"754fb8b9-4bd9-4015-996d-d2cd84a9261d","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"e6890530-4629-406f-a3fb-d8e2a293320b\",\"name\":\"硬件\",\"code\":\"HARDWARE\"},\"equipment\":{\"name\":\"打印机\",\"value\":\"打印机\"},\"op\":{\"id\":\"a3f97b89-ca2f-4be8-841f-8a9b95ca891e\",\"name\":\"连接\",\"code\":\"CONNECT\"},\"no\":3},{\"type\":{\"id\":\"e6890530-4629-406f-a3fb-d8e2a293320b\",\"name\":\"硬件\",\"code\":\"HARDWARE\"},\"equipment\":{\"name\":\"扫描仪\",\"value\":\"扫描仪\"},\"op\":{\"id\":\"5d050cac-4f46-4726-b7cc-cb3f52f0d8c9\",\"name\":\"连接\",\"code\":\"CONNECT\"},\"no\":1}]","id":"be339881-d720-459c-860e-7a9b5fec035c","createdAt":1533779314170,"updatedAt":1533779314170,"version":0,"corporation":{"name":"物流商贸公司","description":"物流商贸","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"d988a340-24ec-4f49-ba6a-98514328a07a","createdAt":1517196815376,"updatedAt":1517196815376,"version":0},"corpBuilding":{"corporationId":"d988a340-24ec-4f49-ba6a-98514328a07a","buildingId":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","floor":4,"position":"W","status":1,"id":"754fb8b9-4bd9-4015-996d-d2cd84a9261d","createdAt":1517196830625,"updatedAt":1517196830625,"version":0,"building":{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","createdAt":1515633153519,"updatedAt":1515633153519,"version":0}}},{"no":"20180809001","custom_name":"融资租赁财务507","custom_phone":"02265617805","incoming_time":1533795308000,"custom_corporation":"4f3b67d7-40f2-4377-86ba-e9775e728f64","custom_position":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","remark":null,"status":1,"needs":"[{\"type\":{\"id\":\"e6890530-4629-406f-a3fb-d8e2a293320b\",\"name\":\"硬件\",\"code\":\"HARDWARE\"},\"equipment\":{\"name\":\"打印机\",\"value\":\"打印机\"},\"op\":{\"id\":\"4215574f-7fa4-447b-882b-528c4562e41f\",\"name\":\"故障\",\"code\":\"FIX\"},\"no\":1}]","id":"673a64e1-abf2-4666-8307-0004118104ed","createdAt":1533795727768,"updatedAt":1533795727768,"version":0,"corporation":{"name":"融资租赁公司","description":"融资租赁公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"4f3b67d7-40f2-4377-86ba-e9775e728f64","createdAt":1515633158201,"updatedAt":1520564750982,"version":1},"corpBuilding":{"corporationId":"4f3b67d7-40f2-4377-86ba-e9775e728f64","buildingId":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","floor":5,"position":"W","status":1,"id":"7798402e-2d9d-4d31-a5dd-34ac599d5b7f","createdAt":1515633160702,"updatedAt":1515633160702,"version":0,"building":{"name":"商务大厦北楼","address":"北","minfloor":1,"maxfloor":15,"status":1,"id":"6a9bcf38-e15c-4669-8dbd-bd48bfad4623","createdAt":1515633153519,"updatedAt":1515633153519,"version":0}}}],"total":2}
+*************** response log end ***************
+

@@ -3,7 +3,7 @@
  */
 exports.index=async(ctx,next)=>{
     await ctx.render('index', {
-        title: 'koa2 title',
+        title: '运维工单数据管理',
         name:'liumeng'
     });
 }

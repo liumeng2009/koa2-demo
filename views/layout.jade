@@ -17,4 +17,14 @@ html.fullscreen-bg
     link(rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png")
 
   body
+    nav.navbar.navbar-inverse.navbar-fixed-top
+      .container-fluid
+        .navbar-header
+          a.navbar-brand(href="javascript:;")
+            | #{title}
     block content
+    nav.navbar.navbar-inverse.navbar-fixed-bottom
+      .container-fluid
+        .navbar-header
+          a.navbar-brand(href="javascript:;")
+            | powered by #{name}
