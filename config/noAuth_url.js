@@ -24,6 +24,7 @@ var noAuthUrlArray=[
 
     '/api/corporations/list',
     '/api/corporations/',
+    '/api/corpbuildings/list',
 
     '/api/buildings/list',
 
