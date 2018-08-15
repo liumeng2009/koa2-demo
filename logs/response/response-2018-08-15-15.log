@@ -1,0 +1,73 @@
+[2018-08-15 15:55:27.967] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/equipType/list
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 25
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-08-15 15:55:28.025] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/groups/list
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 43
+response status: 200
+response body: 
+{"status":0,"data":[{"name":"管委会","description":"group1","status":1,"id":"52505514-1b27-449f-b575-55b32fd1280f","createdAt":1515633151465,"updatedAt":1515633151465,"version":0},{"name":"控股","description":"group2","status":1,"id":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","createdAt":1515633152227,"updatedAt":1515633152227,"version":0},{"name":"临港清华附属小学","description":"临港清华附属小学","status":1,"id":"76a550ce-0788-4e2f-b3b8-875f9a62692c","createdAt":1515737019104,"updatedAt":1515737019104,"version":0},{"name":"宜湾酒店","description":"宜湾酒店","status":1,"id":"384fb1a2-33c9-4577-96f8-02dd6030e93a","createdAt":1528250664116,"updatedAt":1528250664116,"version":0}],"total":4}
+*************** response log end ***************
+
+[2018-08-15 15:55:28.043] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/equipType/list
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 13
+response status: 200
+response body: 
+{"status":0,"data":[{"name":"网络","code":"NETWORK","id":"edad6210-e642-4302-98c1-60251cb85972","createdAt":1515633162976,"updatedAt":1515633162976,"version":0},{"name":"软件","code":"SOFTWARE","id":"273f11bf-51a4-4331-9f71-f209625da820","createdAt":1515633162815,"updatedAt":1515633162815,"version":0},{"name":"硬件","code":"HARDWARE","id":"e6890530-4629-406f-a3fb-d8e2a293320b","createdAt":1515633162627,"updatedAt":1515633162627,"version":0}]}
+*************** response log end ***************
+
+[2018-08-15 15:55:28.084] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/corporations/list?group=f0c37d6d-c922-4617-befd-aa51ad85d7c5
+request client ip:  ::ffff:192.168.1.106
+request query:  {"group":"f0c37d6d-c922-4617-befd-aa51ad85d7c5"}
+response time: 40
+response status: 200
+response body: 
+{"status":0,"data":[{"name":"控股公司","description":"控股公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"fbbf7c59-f08c-445b-a4f0-e2fa977117e8","createdAt":1515633158111,"updatedAt":1515633158111,"version":0,"group":{"name":"控股","description":"group2","status":1,"id":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","createdAt":1515633152227,"updatedAt":1515633152227,"version":0}},{"name":"融资租赁公司","description":"融资租赁公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"4f3b67d7-40f2-4377-86ba-e9775e728f64","createdAt":1515633158201,"updatedAt":1520564750982,"version":1,"group":{"name":"控股","description":"group2","status":1,"id":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","createdAt":1515633152227,"updatedAt":1515633152227,"version":0}},{"name":"公用事业公司","description":"公用事业公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"4599eaf8-68f6-4fd5-bf10-1d152e2b28fe","createdAt":1515633158411,"updatedAt":1523927186242,"version":2,"group":{"name":"控股","description":"group2","status":1,"id":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","createdAt":1515633152227,"updatedAt":1515633152227,"version":0}},{"name":"建设公司","description":"建设公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"53fa2bd9-bc42-4582-a5c3-38f8d8dad229","createdAt":1515633158488,"updatedAt":1515633158488,"version":0,"group":{"name":"控股","description":"group2","status":1,"id":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","createdAt":1515633152227,"updatedAt":1515633152227,"version":0}},{"name":"投资公司","description":"投资公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"73a751ce-1f60-42ce-a5ee-501712eef1f4","createdAt":1515633160114,"updatedAt":1515633160114,"version":0,"group":{"name":"控股","description":"group2","status":1,"id":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","createdAt":1515633152227,"updatedAt":1515633152227,"version":0}},{"name":"园林公司","description":"园林公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"d016201e-2c29-4d9f-8caa-4da5a7b279e9","createdAt":1515648909620,"updatedAt":1515648909620,"version":0,"group":{"name":"控股","description":"group2","status":1,"id":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","createdAt":1515633152227,"updatedAt":1515633152227,"version":0}},{"name":"基金公司","description":"基金公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"f0fd30bb-479c-44db-8413-ab39b32da748","createdAt":1515650970327,"updatedAt":1515650970327,"version":0,"group":{"name":"控股","description":"group2","status":1,"id":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","createdAt":1515633152227,"updatedAt":1515633152227,"version":0}},{"name":"园区运营公司","description":"园区运营公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"1c52efa6-abbe-4114-95a6-c1125d762446","createdAt":1515981270653,"updatedAt":1515981270653,"version":0,"group":{"name":"控股","description":"group2","status":1,"id":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","createdAt":1515633152227,"updatedAt":1515633152227,"version":0}},{"name":"高新公司","description":"高新","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"89cce940-1268-4690-abe4-3b3b14fb0cde","createdAt":1516607211910,"updatedAt":1516607211910,"version":0,"group":{"name":"控股","description":"group2","status":1,"id":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","createdAt":1515633152227,"updatedAt":1515633152227,"version":0}},{"name":"置地公司","description":"置地公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"4b2362eb-a9fd-414c-8c31-ad335e81105b","createdAt":1516670902936,"updatedAt":1520565001347,"version":2,"group":{"name":"控股","description":"group2","status":1,"id":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","createdAt":1515633152227,"updatedAt":1515633152227,"version":0}},{"name":"铁路公司","description":"铁路公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"f15181ba-7881-4536-9902-f0588e0c1e17","createdAt":1516670976469,"updatedAt":1516670976469,"version":0,"group":{"name":"控股","description":"group2","status":1,"id":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","createdAt":1515633152227,"updatedAt":1515633152227,"version":0}},{"name":"港务公司","description":"港务公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"268041ad-f79c-4c6a-858d-091c3a77ac59","createdAt":1516670996611,"updatedAt":1516670996611,"version":0,"group":{"name":"控股","description":"group2","status":1,"id":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","createdAt":1515633152227,"updatedAt":1515633152227,"version":0}},{"name":"粮交所","description":"粮交所","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"76e565af-f8c3-4798-bee7-3342bd079231","createdAt":1516671019340,"updatedAt":1520564697710,"version":1,"group":{"name":"控股","description":"group2","status":1,"id":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","createdAt":1515633152227,"updatedAt":1515633152227,"version":0}},{"name":"信息公司","description":"信息公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"38c3e49a-0e5d-4390-9f14-e9cae95f365f","createdAt":1516671101244,"updatedAt":1520564729149,"version":1,"group":{"name":"控股","description":"group2","status":1,"id":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","createdAt":1515633152227,"updatedAt":1515633152227,"version":0}},{"name":"城市资源公司","description":"城市资源","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"9eaf4c3b-0a1d-488a-a575-cf7772c21135","createdAt":1516671126558,"updatedAt":1520564922535,"version":1,"group":{"name":"控股","description":"group2","status":1,"id":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","createdAt":1515633152227,"updatedAt":1515633152227,"version":0}},{"name":"物流商贸公司","description":"物流商贸","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"d988a340-24ec-4f49-ba6a-98514328a07a","createdAt":1517196815376,"updatedAt":1517196815376,"version":0,"group":{"name":"控股","description":"group2","status":1,"id":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","createdAt":1515633152227,"updatedAt":1515633152227,"version":0}},{"name":"信息管线公司","description":"信息管线公司","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"9d70667b-13e9-46c7-b552-86050bef037a","createdAt":1517793948897,"updatedAt":1517793948897,"version":0,"group":{"name":"控股","description":"group2","status":1,"id":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","createdAt":1515633152227,"updatedAt":1515633152227,"version":0}},{"name":"建设服务中心","description":"建设服务中心","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"97b9d1eb-f88d-4f2c-bfec-e6c7767b8631","createdAt":1519789470777,"updatedAt":1519789470777,"version":0,"group":{"name":"控股","description":"group2","status":1,"id":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","createdAt":1515633152227,"updatedAt":1515633152227,"version":0}},{"name":"招商公司","description":"八楼","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"d55858be-a683-497f-abff-6f60516418cd","createdAt":1521794537272,"updatedAt":1521794537272,"version":0,"group":{"name":"控股","description":"group2","status":1,"id":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","createdAt":1515633152227,"updatedAt":1515633152227,"version":0}},{"name":"加油站","description":"加油站","status":1,"groupId":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","id":"dbaf7d65-bab7-426c-aebf-e374258cc4a4","createdAt":1533191435938,"updatedAt":1533191513320,"version":1,"group":{"name":"控股","description":"group2","status":1,"id":"f0c37d6d-c922-4617-befd-aa51ad85d7c5","createdAt":1515633152227,"updatedAt":1515633152227,"version":0}}],"total":20}
+*************** response log end ***************
+
+[2018-08-15 15:55:28.137] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/business/getequip/get/NETWORK
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 46
+response status: 200
+response body: 
+{"status":0,"data":[{"equipment":"IP地址","name":"IP地址"},{"equipment":"VPN","name":"VPN"},{"equipment":"互联网","name":"互联网"},{"equipment":"内网","name":"内网"},{"equipment":"局域网","name":"局域网"},{"equipment":"有线网络","name":"有线网络"},{"equipment":"网络设备","name":"网络设备"},{"equipment":"视频会议设备","name":"视频会议设备"},{"equipment":"路由器","name":"路由器"}]}
+*************** response log end ***************
+
+[2018-08-15 15:55:28.171] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/business/list?param=none&type=NETWORK&equipment=IP%E5%9C%B0%E5%9D%80
+request client ip:  ::ffff:192.168.1.106
+request query:  {"param":"none","type":"NETWORK","equipment":"IP地址"}
+response time: 18
+response status: 200
+response body: 
+{"status":0,"data":[{"type":"NETWORK","equipment":"IP地址","operation":"CT","isAdvanced":null,"weight":5,"remark":null,"status":1,"sequence":0,"id":"136d7e3a-3196-417f-a583-8f1b229fa16d","createdAt":1515633164897,"updatedAt":1525740348099,"version":1,"equipType":{"name":"网络","code":"NETWORK","id":"edad6210-e642-4302-98c1-60251cb85972","createdAt":1515633162976,"updatedAt":1515633162976,"version":0},"equipOp":{"name":"冲突","code":"CT","id":"638b91b7-6496-44be-b482-30d2f77ddd88","createdAt":1515633163872,"updatedAt":1515633163872,"version":0}},{"type":"NETWORK","equipment":"IP地址","operation":"SET","isAdvanced":null,"weight":5,"remark":null,"status":1,"sequence":1,"id":"b21cfd95-a732-41d6-b70a-63e0dd931439","createdAt":1515633165117,"updatedAt":1525740348021,"version":1,"equipType":{"name":"网络","code":"NETWORK","id":"edad6210-e642-4302-98c1-60251cb85972","createdAt":1515633162976,"updatedAt":1515633162976,"version":0},"equipOp":{"name":"设置","code":"SET","id":"19c397a6-794f-4b2d-9f67-64f8da63c2ac","createdAt":1515633164022,"updatedAt":1515633164022,"version":0}}],"total":2}
+*************** response log end ***************
+
