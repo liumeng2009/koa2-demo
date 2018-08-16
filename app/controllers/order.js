@@ -328,6 +328,13 @@ exports.saveAndSaveOperation=async(ctx,next)=>{
     let needs=ctx.request.body.needs;
     let workerOrders=ctx.request.body.workerOrders;
 
+    if(custom_position==null){
+        custom_position='';
+    }
+    if(needs==null){
+        needs='';
+    }
+
     let incomingDate;
 
     try {
@@ -572,6 +579,8 @@ var checkActionTime=async(createStamp,act)=>{
 
     //各个时间点是否合理 建立<指派<工作开始<工作结束
     if(call_time<createStamp){
+        console.log(call_time)
+        console.log(createStamp)
         //指派小于工单建立 不合理
         throw new ApiError(ApiErrorNames.OPERATION_CALL_MORE_THAN_CREATE)
     }
