@@ -38,5 +38,9 @@ module.exports = db.defineModel('users', {
     },
     avatarUseImg:{
         type:db.INTEGER
+    },
+    webapptoken:{
+        type:db.TEXT,
+        allowNull:true
     }
 });

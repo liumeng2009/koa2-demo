@@ -17,6 +17,7 @@ exports.login=async(ctx,next)=>{
     let username=ctx.request.body.username;
     let password=ctx.request.body.password;
     let rememberme=ctx.request.body.rememberme;
+    let device=ctx.query.device;
 
     let User = model.user;
 
@@ -45,7 +46,13 @@ exports.login=async(ctx,next)=>{
             let token=jwt.sign({
                 data:user
             },sys_config.jwtSecret,{expiresIn:'7 days'});
-            userObj.token=token;
+
+            if(device&&device=='webapp'){
+                userObj.webapptoken=token;
+            }
+            else{
+                userObj.token=token;
+            }
             console.log('jwt:'+token+userObj);
             await userObj.save();
 
@@ -150,6 +157,7 @@ exports.getUserData=async(ctx,next)=>{
     let token=ctx.request.headers.authorization;
     console.log(token);
     let simple=ctx.query.simple;
+    let device=ctx.query.device;
 
     if(token==''||token=='undefined'){
         throw new ApiError(ApiErrorNames.JWT_ERROR);
@@ -168,20 +176,26 @@ exports.getUserData=async(ctx,next)=>{
 
     let userObj;
 
+    let whereObj={
+        status:1
+    }
+
+    if(device&&device=='webapp'){
+        whereObj.webapptoken=token
+    }
+    else{
+        whereObj.token=token
+    }
+
     if(simple&&simple=='true'){
         //简单返回数据即可
         userObj=await User.findOne({
-            where:{
-                status:1,
-                token:token
-            }
+            where:whereObj
         })
     }
     else{
         userObj=await User.findOne({
-            where:{
-                token:token
-            },
+            where:whereObj,
             include:[
                 {
                     model:RoleModel,

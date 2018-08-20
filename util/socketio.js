@@ -12,9 +12,11 @@ const port=8102
 server.listen(port,()=>{
     console.log('server listening on port '+port)
 });
-setInterval(()=>{
+/*setInterval(()=>{
     io.emit('你好啊')
-},2000)
+},2000)*/
+
+
 
 var SocketIOUtil={};
 
