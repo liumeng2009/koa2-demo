@@ -10,6 +10,7 @@ const orderController=require('./order');
 const db=require('../db');
 const auth=require('./authInRole');
 const Sequelize = require('sequelize');
+const moment=require('moment')
 
 
 exports.list=async(ctx,next)=>{
@@ -1960,6 +1961,103 @@ exports.operationCount=async(ctx,next)=>{
             done:operationCountDone,
             all:operationCountWorking+operationCountDone
         }
+    }
+}
+
+exports.workerOpCount=async(ctx,next)=>{
+    let userid=ctx.query.userid;
+    let startMonth=moment().startOf('month').valueOf();
+    let endMonth=moment().endOf('month').valueOf();
+
+    let OperationModel=model.operations;
+    let ActionModel=model.actions;
+    let OrderModel=model.orders;
+    let CorporationModel=model.corporations;
+    let UserModel=model.user;
+
+    OperationModel.hasMany(ActionModel,{foreignKey:'operationId',as:'actions'});
+    OperationModel.belongsTo(OrderModel,{foreignKey:'orderId'});
+    OrderModel.belongsTo(CorporationModel,{foreignKey:'custom_corporation'});
+    ActionModel.belongsTo(UserModel,{foreignKey:'worker'})
+
+
+
+    let result=await OperationModel.findAll({
+        where:{
+            status:1,
+            $and:[
+                {create_time:{'$gte':startMonth}},
+                {create_time:{'$lte':endMonth}}
+            ]
+        },
+        include:[
+            {
+                model:ActionModel,
+                as:'actions',
+                where:{
+                    operationComplete:1,
+                    status:1
+                }
+            }
+        ]
+    })
+
+    console.log(result);
+    let otherArray=['1'];
+    for(let r of result){
+        console.log(r);
+        otherArray.push(r.id);
+    }
+
+    let operationCountDone=await OperationModel.count({
+        where:{
+            status:1,
+            id:{
+                $in:otherArray
+            },
+            $and:[
+                {create_time:{'$gte':startMonth}},
+                {create_time:{'$lte':endMonth}}
+            ]
+        },
+        include:[
+            {
+                model:ActionModel,
+                as:'actions',
+                where:{
+                    status:1
+                },
+                include:[
+                    {
+                        model:UserModel,
+                        where:{
+                            id:userid
+                        }
+                    }
+                ]
+            }
+
+        ]
+    });
+
+    ctx.body={
+        status:0,
+        data:operationCountDone
+    }
+}
+
+exports.workerOpStamp=async(ctx,next)=>{
+
+    let userid=ctx.query.userid;
+    let startMonth=moment().startOf('month').valueOf();
+    let endMonth=moment().endOf('month').valueOf();
+    let sequelize=db.sequelize;
+    let sql="SELECT SUM(`end_time`-`start_time`)/60000 as `stamp` FROM `actions` AS `actions` LEFT OUTER JOIN `users` AS `user` ON `actions`.`worker` = `user`.`id` WHERE `actions`.`status` = 1 AND (`actions`.`start_time` >= "+startMonth+" AND `actions`.`end_time` <= "+endMonth+") and `user`.`id`='"+userid+"';";
+
+    let result=await sequelize.query(sql,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
+    ctx.body={
+        status:0,
+        data:result
     }
 }
 
