@@ -318,7 +318,8 @@ exports.save=async(ctx,next)=>{
 }
 
 exports.saveAndSaveOperation=async(ctx,next)=>{
-    await auth.checkAuth(ctx.request.headers.authorization,'order','add');
+    let device=ctx.query.device;
+    await auth.checkAuth(ctx.request.headers.authorization,'order','add',device);
     let custom_name=ctx.request.body.custom_name;
     let custom_phone=ctx.request.body.custom_phone;
     let incoming_date_timestamp=ctx.request.body.incoming_time;

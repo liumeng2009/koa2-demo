@@ -1168,7 +1168,7 @@ exports.edit=async(ctx,next)=>{
 
 //修改工单的某一个属性，为了APP设计
 exports.editSimple=async(ctx,next)=>{
-    await auth.checkAuth(ctx.request.headers.authorization,'op','edit');
+    await auth.checkAuth(ctx.request.headers.authorization,'op','edit','webapp');
     let action=ctx.request.body.action;
     let operationId=ctx.request.body.operationId;
     console.log(action);

@@ -161,7 +161,7 @@ exports.delete=async(ctx,next)=>{
     }
 }
 
-exports.checkAuth=async(token,func,op)=>{
+exports.checkAuth=async(token,func,op,device)=>{
 
     let AuthInRoleModel=model.authInRoles;
     let OpInFuncModel=model.opInFuncs;
@@ -175,7 +175,12 @@ exports.checkAuth=async(token,func,op)=>{
     let UserModel=model.user;
     RoleModel.hasMany(UserModel,{foreignKey:'roleId',as:'users'});
 
-
+    let userSelect;
+    if(device&&device=='webapp'){
+        userSelect={
+            webapptoken:token
+        }
+    }
 
     let result=await AuthInRoleModel.findAll({
         include:[
@@ -201,9 +206,7 @@ exports.checkAuth=async(token,func,op)=>{
                     {
                         model:UserModel,
                         as:'users',
-                        where:{
-                            token:token
-                        }
+                        where:userSelect
                     }
 
                 ]
