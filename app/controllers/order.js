@@ -457,6 +457,121 @@ exports.saveAndSaveOperation=async(ctx,next)=>{
     }
 }
 
+exports.saveOperation=async(ctx,next)=>{
+    let device=ctx.query.device;
+    await auth.checkAuth(ctx.request.headers.authorization,'order','add',device);
+
+    let showArriveDate=ctx.request.body.showArriveDate;
+    let worker=ctx.request.body.worker;
+    let incomingDate=ctx.request.body.incoming_date;
+    let orderid=ctx.reuqest.body.order;
+    let important=ctx.reuqest.body.important;
+    let remark=ctx.request.body.remark;
+    let business=ctx.request.body.businessContent;
+    let createtime=ctx.request.body.create_time;
+    let arrive_date_timestamp=ctx.request.body.arrive_date_timestamp;
+    let showWorker=ctx.request.body.showWorker;
+    let call_date_timestamp=ctx.request.body.call_date_timestamp;
+    let showFinishDate=ctx.request.body.showFinishDate;
+    let finish_date_timestamp=ctx.request.body.finish_date_timestamp;
+
+    //验证worker合法性
+
+    if(showArriveDate){
+        if(worker&&worker!=''){
+            let r=await workerController.get(worker);
+            if(r){
+                console.log('worker存在哦，可以继续');
+            }
+            else{
+                throw new ApiError(ApiErrorNames.WORKER_NOT_EXIST);
+            }
+        }
+        else{
+            throw new ApiError(ApiErrorNames.WORKER_NOT_EXIST);
+        }
+
+    }
+
+
+    let sequelize=db.sequelize;
+    let Order=model.orders;
+    let Operation=model.operations;
+    let Action=model.actions;
+
+    let operationNos=await t.getOperationNoSFun(incomingDate.getFullYear(),incomingDate.getMonth()+1,incomingDate.getDate(),1);
+
+
+    //检查时间点数据的合理性
+    let transaction;
+    try{
+        transaction=await sequelize.transaction();
+
+
+        let workOrderObj={
+            orderId:orderid,
+            important:important,
+            op:business.id,
+            remark:remark,
+            no:operationNos.length>0?operationNos[0]:'',
+            create_time:createtime,
+            status:1
+        }
+
+            //验证op存在性
+            let BusinessContent=model.businessContents;
+
+            let businessContentObj=await BusinessContent.findOne({
+                where:{
+                    status:1,
+                    id:business.id
+                }
+            });
+
+            if(businessContentObj){
+
+            }
+            else{
+                throw new ApiError(ApiErrorNames.BUSINESS_NOT_EXIST);
+            }
+
+
+            //workOrderArray.push(workOrderObj);
+            let operationResult=await Operation.create(workOrderObj,{transaction:transaction});
+
+
+
+            let actionObj={
+                operationId:operationResult.id,
+                start_time:(workerOrders[i].arrive_date_timestamp&&workerOrders[i].showArriveDate)?workerOrders[i].arrive_date_timestamp:null,
+                call_time:(workerOrders[i].call_date_timestamp&&workerOrders[i].showWorker)?workerOrders[i].call_date_timestamp:null,
+                end_time:(workerOrders[i].finish_date_timestamp&&workerOrders[i].showFinishDate)?workerOrders[i].finish_date_timestamp:null,
+                operationComplete:workerOrders[i].showFinishDate?1:0,
+                status:1,
+                worker:workerOrders[i].worker
+            }
+
+                await checkActionTime(incoming_date_timestamp,actionObj);
+
+                await Action.create(actionObj,{transaction:transaction});
+
+
+        }
+
+        await transaction.commit();
+
+        ctx.body={
+            status:0,
+            message:response_config.createdSuccess
+        }
+    }
+    catch(err){
+        await transaction.rollback();
+        throw new ApiError(ApiErrorNames.ORDER_SAVE_FAILED,[err.message]);
+    }
+
+}
+
 exports.delete=async(ctx,next)=>{
 
     await auth.checkAuth(ctx.request.headers.authorization,'order','delete');
