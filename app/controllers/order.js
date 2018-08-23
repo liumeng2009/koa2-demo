@@ -463,9 +463,9 @@ exports.saveOperation=async(ctx,next)=>{
 
     let showArriveDate=ctx.request.body.showArriveDate;
     let worker=ctx.request.body.worker;
-    let incoming_date_timestamp=ctx.request.body.incoming_date_timestamp;
-    let orderid=ctx.request.body.order;
-    let important=ctx.request.body.important;
+    let incomingDate=ctx.request.body.incoming_date;
+    let orderid=ctx.reuqest.body.order;
+    let important=ctx.reuqest.body.important;
     let remark=ctx.request.body.remark;
     let business=ctx.request.body.businessContent;
     let createtime=ctx.request.body.create_time;
@@ -475,7 +475,6 @@ exports.saveOperation=async(ctx,next)=>{
     let showFinishDate=ctx.request.body.showFinishDate;
     let finish_date_timestamp=ctx.request.body.finish_date_timestamp;
 
-    let incomingDate=new Date(incoming_date_timestamp);
     //验证worker合法性
 
     if(showArriveDate){
@@ -519,38 +518,45 @@ exports.saveOperation=async(ctx,next)=>{
             status:1
         }
 
-        //验证op存在性
-        let BusinessContent=model.businessContents;
+            //验证op存在性
+            let BusinessContent=model.businessContents;
 
-        let businessContentObj=await BusinessContent.findOne({
-            where:{
-                status:1,
-                id:business.id
+            let businessContentObj=await BusinessContent.findOne({
+                where:{
+                    status:1,
+                    id:business.id
+                }
+            });
+
+            if(businessContentObj){
+
             }
-        });
+            else{
+                throw new ApiError(ApiErrorNames.BUSINESS_NOT_EXIST);
+            }
 
-        if(businessContentObj){
+
+            //workOrderArray.push(workOrderObj);
+            let operationResult=await Operation.create(workOrderObj,{transaction:transaction});
+
+
+
+            let actionObj={
+                operationId:operationResult.id,
+                start_time:(workerOrders[i].arrive_date_timestamp&&workerOrders[i].showArriveDate)?workerOrders[i].arrive_date_timestamp:null,
+                call_time:(workerOrders[i].call_date_timestamp&&workerOrders[i].showWorker)?workerOrders[i].call_date_timestamp:null,
+                end_time:(workerOrders[i].finish_date_timestamp&&workerOrders[i].showFinishDate)?workerOrders[i].finish_date_timestamp:null,
+                operationComplete:workerOrders[i].showFinishDate?1:0,
+                status:1,
+                worker:workerOrders[i].worker
+            }
+
+                await checkActionTime(incoming_date_timestamp,actionObj);
+
+                await Action.create(actionObj,{transaction:transaction});
+
 
         }
-        else{
-            throw new ApiError(ApiErrorNames.BUSINESS_NOT_EXIST);
-        }
-
-        let operationResult=await Operation.create(workOrderObj,{transaction:transaction});
-
-        let actionObj={
-            operationId:operationResult.id,
-            start_time:(arrive_date_timestamp&&showArriveDate)?arrive_date_timestamp:null,
-            call_time:(call_date_timestamp&&showWorker)?call_date_timestamp:null,
-            end_time:(finish_date_timestamp&&showFinishDate)?finish_date_timestamp:null,
-            operationComplete:showFinishDate?1:0,
-            status:1,
-            worker:worker
-        }
-
-        await checkActionTime(incoming_date_timestamp,actionObj);
-
-        await Action.create(actionObj,{transaction:transaction});
 
         await transaction.commit();
 
