@@ -13,6 +13,7 @@ router.get('/simple/:id', order_controller.getOrderSimple);
 router.post('/save', order_controller.save);
 
 router.post('/saveOrder', order_controller.saveAndSaveOperation);
+router.post('/saveOperation', order_controller.saveOperation);
 
 router.get('/delete/:id',order_controller.delete);
 router.get('/getorderno/get/:year/:month/:day',order_controller.getOrderNo)
