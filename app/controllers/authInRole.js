@@ -181,6 +181,11 @@ exports.checkAuth=async(token,func,op,device)=>{
             webapptoken:token
         }
     }
+    else{
+        userSelect={
+            token:token
+        }
+    }
 
     let result=await AuthInRoleModel.findAll({
         include:[

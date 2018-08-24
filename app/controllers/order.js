@@ -467,7 +467,7 @@ exports.saveOperation=async(ctx,next)=>{
     let orderid=ctx.request.body.order;
     let important=ctx.request.body.important;
     let remark=ctx.request.body.remark;
-    let business=ctx.request.body.businessContent;
+    let business=ctx.request.body.op;
     let createtime=ctx.request.body.create_time;
     let arrive_date_timestamp=ctx.request.body.arrive_date_timestamp;
     let showWorker=ctx.request.body.showWorker;
@@ -611,6 +611,7 @@ var checkActionTime=async(createStamp,act)=>{
     console.log('进入检查方法');
 
     let Operation=model.operations;
+    let Order=model.orders;
     let ActionModel=model.actions;
     let Worker=model.workers;
     let User=model.user;
@@ -740,42 +741,29 @@ var checkActionTime=async(createStamp,act)=>{
         throw new ApiError(ApiErrorNames.WORKER_NOT_EXIST)
     }
 
-
-
-
-
-    //验证指派时间 指派时，这个工程师也不可以处于工作状态
-/*        let actionCheckZhipai=await ActionModel.findOne({
-        include:[
-            {
-                model:User
-            }
-        ],
-        where:{
-            status:1,
-            worker:workerId,
-            '$or':[
-                {
-                    call_time:{'$lte':call_time},
-                    end_time:null
-                },
-                {
-                    call_time:{'$lte':call_time},
-                    end_time:{'$gte':end_time}
-                }
-            ]
-        }
-    })
-    if(actionCheckZhipai){
-        throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionCheckZhipai.user.name])
-    }*/
-
+    ActionModel.belongsTo(Operation,{foreignKey:'operationId'});
+    Operation.belongsTo(Order,{foreignKey:'orderId'})
+    let Corporation=model.corporations;
+    Order.belongsTo(Corporation,{foreignKey:'custom_corporation'});
     //验证工程师现在的状态，如果工程师在工作中，就不能开始另一项工作了
     if(start_time){
         let actionObj=await ActionModel.findOne({
             include:[
                 {
                     model:User
+                },
+                {
+                    model:Operation,
+                    include:[
+                        {
+                            model:Order,
+                            include:[
+                                {
+                                    model:Corporation
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
             where:{
@@ -795,7 +783,7 @@ var checkActionTime=async(createStamp,act)=>{
         })
         if(actionObj){
             //说明这个worker在忙碌
-            throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionObj.user.name])
+            throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionObj.user.name+'这时在 '+actionObj.operation.order.corporation.name+' 处理'+actionObj.operation.no+'号工单'])
         }
     }
     //验证工程师现在的状态，如果工程师在工作中，就不能开始另一项工作了
@@ -804,6 +792,19 @@ var checkActionTime=async(createStamp,act)=>{
             include:[
                 {
                     model:User
+                },
+                {
+                    model:Operation,
+                    include:[
+                        {
+                            model:Order,
+                            include:[
+                                {
+                                    model:Corporation
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
             where:{
@@ -822,7 +823,7 @@ var checkActionTime=async(createStamp,act)=>{
             }
         })
         if(actionEndObj){
-            throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionEndObj.user.name])
+            throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionObj.user.name+'这时在 '+actionObj.operation.order.corporation.name+' 处理'+actionObj.operation.no+'号工单'])
         }
     }
 

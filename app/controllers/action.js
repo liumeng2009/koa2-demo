@@ -171,6 +171,11 @@ exports.save=async(ctx,next)=>{
         throw new ApiError(ApiErrorNames.WORKER_NOT_EXIST);
     }
 
+    let Order=model.orders;
+    let Corporation=model.corporations;
+    ActionModel.belongsTo(Operation,{foreignKey:'operationId'});
+    Operation.belongsTo(Order,{foreignKey:'orderId'});
+    Order.belongsTo(Corporation,{foreignKey:'custom_corporation'});
 
 
     //验证工程师现在的状态，如果工程师在工作中，就不能开始另一项工作了
@@ -179,6 +184,19 @@ exports.save=async(ctx,next)=>{
             include:[
                 {
                     model:User
+                },
+                {
+                    model:Operation,
+                    include:[
+                        {
+                            model:Order,
+                            include:[
+                                {
+                                    model:Corporation
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
             where:{
@@ -199,7 +217,7 @@ exports.save=async(ctx,next)=>{
 
         if(actionObj){
             //说明这个worker在忙碌
-            throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionObj.user.name]);
+            throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionObj.user.name+'这时在 '+actionObj.operation.order.corporation.name+' 处理'+actionObj.operation.no+'号工单']);
         }
     }
 
@@ -208,6 +226,19 @@ exports.save=async(ctx,next)=>{
             include:[
                 {
                     model:User
+                },
+                {
+                    model:Operation,
+                    include:[
+                        {
+                            model:Order,
+                            include:[
+                                {
+                                    model:Corporation
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
             where:{
@@ -228,7 +259,7 @@ exports.save=async(ctx,next)=>{
 
         if(actionEndObj){
             //说明这个worker在忙碌
-            throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionEndObj.user.name]);
+            throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionObj.user.name+'这时在 '+actionObj.operation.order.corporation.name+' 处理'+actionObj.operation.no+'号工单']);
         }
     }
 
@@ -314,7 +345,10 @@ exports.save=async(ctx,next)=>{
 }
 
 exports.edit=async(ctx,next)=>{
-    await auth.checkAuth(ctx.request.headers.authorization,'op','edit');
+
+    let device=ctx.query.device;
+
+    await auth.checkAuth(ctx.request.headers.authorization,'op','edit',device);
     let operationId=ctx.request.body.operationId;
     let actionId=ctx.request.body.id;
     let workerId=ctx.request.body.workerId;
@@ -330,6 +364,8 @@ exports.edit=async(ctx,next)=>{
     let Worker=model.workers;
     let ActionModel=model.actions;
     let User=model.user;
+    let Order=model.orders;
+
     ActionModel.belongsTo(User,{foreignKey:'worker'});
     Operation.hasMany(ActionModel,{foreignKey:'operationId',as:'actions'});
 
@@ -391,12 +427,17 @@ exports.edit=async(ctx,next)=>{
         })
 
         if(workerObj){
-            console.log(21);
+
         }
         else{
             throw new ApiError(ApiErrorNames.WORKER_NOT_EXIST);
         }
-        console.log(22);
+
+
+        let Corporation=model.corporations;
+        ActionModel.belongsTo(Operation,{foreignKey:'operationId'});
+        Operation.belongsTo(Order,{foreignKey:'orderId'});
+        Order.belongsTo(Corporation,{foreignKey:'custom_corporation'});
 
         //验证工程师现在的状态，如果工程师在工作中，就不能开始另一项工作了
         if(showArriveDate){
@@ -404,6 +445,19 @@ exports.edit=async(ctx,next)=>{
                 include:[
                     {
                         model:User
+                    },
+                    {
+                        model:Operation,
+                        include:[
+                            {
+                                model:Order,
+                                include:[
+                                    {
+                                        model:Corporation
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ],
                 where:{
@@ -427,7 +481,7 @@ exports.edit=async(ctx,next)=>{
 
             if(actionObj){
                 //说明这个worker在忙碌
-                throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionObj.user.name]);
+                throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionObj.user.name+'这时在 '+actionObj.operation.order.corporation.name+' 处理'+actionObj.operation.no+'号工单']);
             }
         }
 
@@ -436,6 +490,19 @@ exports.edit=async(ctx,next)=>{
                 include:[
                     {
                         model:User
+                    },
+                    {
+                        model:Operation,
+                        include:[
+                            {
+                                model:Order,
+                                include:[
+                                    {
+                                        model:Corporation
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ],
                 where:{
@@ -459,7 +526,7 @@ exports.edit=async(ctx,next)=>{
 
             if(actionEndObj){
                 //说明这个worker在忙碌
-                throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionEndObj.user.name]);
+                throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionObj.user.name+'这时在 '+actionObj.operation.order.corporation.name+' 处理'+actionObj.operation.no+'号工单']);
             }
         }
 
