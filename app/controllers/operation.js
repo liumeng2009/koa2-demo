@@ -1964,8 +1964,23 @@ exports.operationCount=async(ctx,next)=>{
 
 exports.workerOpCount=async(ctx,next)=>{
     let userid=ctx.query.userid;
-    let startMonth=moment().startOf('month').valueOf();
-    let endMonth=moment().endOf('month').valueOf();
+    let start=ctx.query.start;
+    let end=ctx.query.end;
+
+    if(start){
+
+    }
+    else{
+        start=moment().startOf('month').valueOf();
+    }
+
+    if(end){
+
+    }
+    else{
+        end=moment().endOf('month').valueOf();
+    }
+
 
     let OperationModel=model.operations;
     let ActionModel=model.actions;
@@ -1984,8 +1999,8 @@ exports.workerOpCount=async(ctx,next)=>{
         where:{
             status:1,
             $and:[
-                {create_time:{'$gte':startMonth}},
-                {create_time:{'$lte':endMonth}}
+                {create_time:{'$gte':start}},
+                {create_time:{'$lte':end}}
             ]
         },
         include:[
@@ -2014,8 +2029,8 @@ exports.workerOpCount=async(ctx,next)=>{
                 $in:otherArray
             },
             $and:[
-                {create_time:{'$gte':startMonth}},
-                {create_time:{'$lte':endMonth}}
+                {create_time:{'$gte':start}},
+                {create_time:{'$lte':end}}
             ]
         },
         include:[
@@ -2047,15 +2062,29 @@ exports.workerOpCount=async(ctx,next)=>{
 exports.workerOpStamp=async(ctx,next)=>{
 
     let userid=ctx.query.userid;
-    let startMonth=moment().startOf('month').valueOf();
-    let endMonth=moment().endOf('month').valueOf();
+    let start=ctx.query.start;
+    let end=ctx.query.end;
+
+    if(start){
+
+    }
+    else{
+        start=moment().startOf('month').valueOf();
+    }
+
+    if(end){
+
+    }
+    else{
+        end=moment().endOf('month').valueOf();
+    }
     let sequelize=db.sequelize;
-    let sql="SELECT SUM(`end_time`-`start_time`)/60000 as `stamp` FROM `actions` AS `actions` LEFT OUTER JOIN `users` AS `user` ON `actions`.`worker` = `user`.`id` WHERE `actions`.`status` = 1 AND (`actions`.`start_time` >= "+startMonth+" AND `actions`.`end_time` <= "+endMonth+") and `user`.`id`='"+userid+"';";
+    let sql="SELECT SUM(`end_time`-`start_time`)/60000 as `stamp` FROM `actions` AS `actions` LEFT OUTER JOIN `users` AS `user` ON `actions`.`worker` = `user`.`id` WHERE `actions`.`status` = 1 AND (`actions`.`start_time` >= "+start+" AND `actions`.`end_time` <= "+end+") and `user`.`id`='"+userid+"';";
 
     let result=await sequelize.query(sql,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
     ctx.body={
         status:0,
-        data:result
+        data:result[0].stamp
     }
 }
 
