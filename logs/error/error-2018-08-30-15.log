@@ -1,0 +1,20 @@
+[2018-08-30 15:16:23.023] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /page/order/e4136d18-e696-4811-a033-e43cf735ea1c
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 832
+err name: TypeError
+err message: Converting circular structure to JSON
+err stack: TypeError: Converting circular structure to JSON
+    at JSON.stringify (<anonymous>)
+    at formatRes (F:/koa2/koa2-demo-v1.1/koa2-demo/util/log_util.js:44:48)
+    at Object.logUtil.logResponse (F:/koa2/koa2-demo-v1.1/koa2-demo/util/log_util.js:26:24)
+    at F:/koa2/koa2-demo-v1.1/koa2-demo/app.js:51:13
+    at Generator.next (<anonymous>)
+    at step (F:\koa2\koa2-demo-v1.1\koa2-demo\app.js:3:191)
+    at F:\koa2\koa2-demo-v1.1\koa2-demo\app.js:3:361
+    at <anonymous>
+*************** error log end ***************
+

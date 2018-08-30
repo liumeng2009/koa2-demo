@@ -2015,10 +2015,8 @@ exports.workerOpCount=async(ctx,next)=>{
         ]
     })
 
-    console.log(result);
     let otherArray=['1'];
     for(let r of result){
-        console.log(r);
         otherArray.push(r.id);
     }
 
@@ -2033,6 +2031,7 @@ exports.workerOpCount=async(ctx,next)=>{
                 {create_time:{'$lte':end}}
             ]
         },
+        distinct:true,
         include:[
             {
                 model:ActionModel,
@@ -2086,5 +2085,128 @@ exports.workerOpStamp=async(ctx,next)=>{
         status:0,
         data:result[0].stamp
     }
+}
+
+exports.workerBusinessEquipment=async(ctx,next)=>{
+    let userid=ctx.query.userid;
+    let start=ctx.query.start;
+    let end=ctx.query.end;
+
+    if(start){
+
+    }
+    else{
+        start=moment().startOf('month').valueOf();
+    }
+
+    if(end){
+
+    }
+    else{
+        end=moment().endOf('month').valueOf();
+    }
+    let OperationModel=model.operations;
+    let ActionModel=model.actions;
+    let OrderModel=model.orders;
+    let CorporationModel=model.corporations;
+    let UserModel=model.user;
+
+    OperationModel.hasMany(ActionModel,{foreignKey:'operationId',as:'actions'});
+    OperationModel.belongsTo(OrderModel,{foreignKey:'orderId'});
+    OrderModel.belongsTo(CorporationModel,{foreignKey:'custom_corporation'});
+    ActionModel.belongsTo(UserModel,{foreignKey:'worker'})
+
+    let sql='SELECT `businessContent`.`equipment` as `name`, COUNT(DISTINCT(`operations`.`id`)) AS `value`'
+    +' FROM `operations` AS `operations`'
+    +' LEFT OUTER JOIN `businessContents` AS `businessContent` ON `operations`.`op` = `businessContent`.`id`'
+    +' INNER JOIN `actions` AS `actions` ON `operations`.`id` = `actions`.`operationId` AND `actions`.`status` = 1'
+    +' INNER JOIN `users` AS `actions.user` ON `actions`.`worker` = `actions.user`.`id`'
+    +" AND `actions.user`.`id` = '"+userid+"'"
+    +' WHERE `operations`.`status` = 1 AND `operations`.`id`'
+    +' IN (SELECT operations.id from operations INNER JOIN actions on operations.id=actions.operationId where operations.status=1 and actions.`status`=1 and actions.operationComplete=1'
+    +' AND `operations`.`create_time` >= '+start+' AND `operations`.`create_time` <= '+end+')'
+    +' GROUP BY `businessContent`.`equipment`;'
+
+/*    let result=await OperationModel.findAll({
+        where:{
+            status:1,
+            $and:[
+                {create_time:{'$gte':start}},
+                {create_time:{'$lte':end}}
+            ]
+        },
+        include:[
+            {
+                model:ActionModel,
+                as:'actions',
+                where:{
+                    operationComplete:1,
+                    status:1
+                }
+            }
+        ]
+    })
+
+    let otherArray=['1'];
+    for(let r of result){
+        otherArray.push(r.id);
+    }
+
+    let BusinessContentModel=model.businessContents;
+    OperationModel.belongsTo(BusinessContentModel,{foreignKey:'op'})
+    let sequelize=db.sequelize;
+
+
+
+    let opEquipment=await OperationModel.findAll({
+        attributes:[
+            [sequelize.col('businessContent.equipment'),'name'],
+            [sequelize.fn('COUNT', sequelize.col('operations.id')), 'count']
+        ],
+        where:{
+            status:1,
+            id:{
+                $in:otherArray
+            },
+            $and:[
+                {create_time:{'$gte':start}},
+                {create_time:{'$lte':end}}
+            ]
+        },
+        distinct:true,
+        include:[
+            {
+                model:BusinessContentModel,
+                attributes:[]
+            },
+            {
+                model:ActionModel,
+                attributes:[],
+                as:'actions',
+                where:{
+                    status:1
+                },
+                include:[
+                    {
+                        model:UserModel,
+                        attributes:[],
+                        where:{
+                            id:userid
+                        }
+                    }
+                ]
+            }
+
+        ],
+        group:['name','operations.id']
+    })*/
+    let sequelize=db.sequelize;
+    let opEquipment=await sequelize.query(sql,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
+
+    ctx.body={
+        status:0,
+        data:opEquipment
+    }
+
 }
 
