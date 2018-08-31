@@ -21,6 +21,9 @@ router.get('/operationCount',operation_controller.operationCount)
 router.get('/workerOpCount',operation_controller.workerOpCount)
 router.get('/workerOpStamp',operation_controller.workerOpStamp)
 router.get('/workerBusinessEquipment',operation_controller.workerBusinessEquipment)
+router.get('/workerBusinessAdvance',operation_controller.workerBusinessAdvance)
+
+router.get('/allOpCount',operation_controller.allOpCount)
 
 router.post('/no_list', operation_controller.no_list);
 router.get('/getaction/:id', operation_controller.getOperationAction);
