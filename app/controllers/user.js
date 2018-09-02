@@ -597,12 +597,26 @@ exports.getSysAvatars=async(ctx,next)=>{
 exports.setSysAvatars=async(ctx,next)=>{
     let token=ctx.request.headers.authorization;
     let img=ctx.request.body.img;
-    let UserModel=model.user;
-    let userObj=await UserModel.findOne({
-        where:{
+    let device=ctx.query.device;
+
+    let whereObj;
+    if(device=='webapp'){
+        whereObj={
+            status:1,
+            webapptoken:token
+        }
+    }
+    else{
+        whereObj={
             status:1,
             token:token
         }
+    }
+
+
+    let UserModel=model.user;
+    let userObj=await UserModel.findOne({
+        where:whereObj
     })
 
     if(userObj){
@@ -619,3 +633,71 @@ exports.setSysAvatars=async(ctx,next)=>{
         throw new ApiError(ApiErrorNames.USER_NOT_EXIST)
     }
 }
+
+exports.editSimple=async(ctx,next)=>{
+    await auth.checkAuth(ctx.request.headers.authorization,'user','edit','webapp');
+    let action=ctx.request.body.action;
+    switch(action){
+        case 'name':
+            let name=ctx.request.body.inputValue;
+            let saveResult=await editUserName(name,ctx.request.headers.authorization)
+            ctx.body={
+                status:0,
+                data:saveResult,
+                message:response_config.saveSuccess
+            }
+            break;
+        case 'phone':
+            let phone=ctx.request.body.inputValue;
+            let saveResult1=await editPhone(phone,ctx.request.headers.authorization)
+            ctx.body={
+                status:0,
+                data:saveResult1,
+                message:response_config.saveSuccess
+            }
+            break;
+        default:
+            throw new ApiError(ApiErrorNames.INPUT_FIELD_NULL,['编辑项']);
+            break;
+    }
+
+}
+
+var editUserName=async(name,userToken)=>{
+    let UserModel=model.user;
+
+    let userObj=await UserModel.findOne({
+        where:{
+            status:1,
+            webapptoken:userToken
+        }
+    })
+    if(userObj){
+        userObj.name=name;
+        let saveResult=await userObj.save();
+        return saveResult;
+    }
+    else{
+        throw new ApiError(ApiErrorNames.USER_NOT_EXIST)
+    }
+}
+
+var editPhone=async(phone,userToken)=>{
+    let UserModel=model.user;
+
+    let userObj=await UserModel.findOne({
+        where:{
+            status:1,
+            webapptoken:userToken
+        }
+    })
+    if(userObj){
+        userObj.phone=phone;
+        let saveResult=await userObj.save();
+        return saveResult;
+    }
+    else{
+        throw new ApiError(ApiErrorNames.USER_NOT_EXIST)
+    }
+}
+

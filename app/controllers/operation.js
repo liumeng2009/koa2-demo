@@ -2186,7 +2186,7 @@ exports.allOpCount=async(ctx,next)=>{
     }
 
 
-    let sql='SELECT `users`.`name` as `name`, COUNT(DISTINCT(`operations`.`id`)) AS `value`'
+    let sql='SELECT `actions.user`.`name` as `name`, COUNT(DISTINCT(`operations`.`id`)) AS `value`'
         +' FROM `operations` AS `operations`'
         +' LEFT OUTER JOIN `businessContents` AS `businessContent` ON `operations`.`op` = `businessContent`.`id`'
         +' INNER JOIN `actions` AS `actions` ON `operations`.`id` = `actions`.`operationId` AND `actions`.`status` = 1'
@@ -2204,6 +2204,121 @@ exports.allOpCount=async(ctx,next)=>{
         data:opEquipment
     }
 
+
+}
+
+exports.allOpStamp=async(ctx,next)=>{
+    let start=ctx.query.start;
+    let end=ctx.query.end;
+
+    if(start){
+
+    }
+    else{
+        start=moment().startOf('month').valueOf();
+    }
+
+    if(end){
+
+    }
+    else{
+        end=moment().endOf('month').valueOf();
+    }
+
+
+    let sql='SELECT `actions.user`.`name` as `name`, FORMAT(SUM(`actions`.`end_time`-`actions`.`start_time`)/3600000,1) as `value`'
+        +' FROM `operations` AS `operations`'
+        +' LEFT OUTER JOIN `businessContents` AS `businessContent` ON `operations`.`op` = `businessContent`.`id`'
+        +' INNER JOIN `actions` AS `actions` ON `operations`.`id` = `actions`.`operationId` AND `actions`.`status` = 1'
+        +' INNER JOIN `users` AS `actions.user` ON `actions`.`worker` = `actions.user`.`id`'
+        +' WHERE `operations`.`status` = 1 AND `operations`.`id`'
+        +' IN (SELECT operations.id from operations INNER JOIN actions on operations.id=actions.operationId where operations.status=1 and actions.`status`=1 and actions.operationComplete=1'
+        +' AND `operations`.`create_time` >= '+start+' AND `operations`.`create_time` <= '+end+')'
+        +' GROUP BY `name`;'
+
+    let sequelize=db.sequelize;
+    let opEquipment=await sequelize.query(sql,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
+
+    ctx.body={
+        status:0,
+        data:opEquipment
+    }
+
+
+}
+
+exports.allBusinessEquipment=async(ctx,next)=>{
+    let start=ctx.query.start;
+    let end=ctx.query.end;
+
+    if(start){
+
+    }
+    else{
+        start=moment().startOf('month').valueOf();
+    }
+
+    if(end){
+
+    }
+    else{
+        end=moment().endOf('month').valueOf();
+    }
+
+    let sql='SELECT `businessContent`.`equipment` as `name`, COUNT(DISTINCT(`operations`.`id`)) AS `value`'
+        +' FROM `operations` AS `operations`'
+        +' LEFT OUTER JOIN `businessContents` AS `businessContent` ON `operations`.`op` = `businessContent`.`id`'
+        +' INNER JOIN `actions` AS `actions` ON `operations`.`id` = `actions`.`operationId` AND `actions`.`status` = 1'
+        +' INNER JOIN `users` AS `actions.user` ON `actions`.`worker` = `actions.user`.`id`'
+        +' WHERE `operations`.`status` = 1 AND `operations`.`id`'
+        +' IN (SELECT operations.id from operations INNER JOIN actions on operations.id=actions.operationId where operations.status=1 and actions.`status`=1 and actions.operationComplete=1'
+        +' AND `operations`.`create_time` >= '+start+' AND `operations`.`create_time` <= '+end+')'
+        +' GROUP BY `businessContent`.`equipment`;'
+
+    let sequelize=db.sequelize;
+    let opEquipment=await sequelize.query(sql,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
+
+    ctx.body={
+        status:0,
+        data:opEquipment
+    }
+
+}
+
+exports.allOpCorporation=async(ctx,next)=>{
+    let start=ctx.query.start;
+    let end=ctx.query.end;
+
+    if(start){
+
+    }
+    else{
+        start=moment().startOf('month').valueOf();
+    }
+
+    if(end){
+
+    }
+    else{
+        end=moment().endOf('month').valueOf();
+    }
+
+    let sql='SELECT `corporation`.`name` as `name`, COUNT(DISTINCT(`operations`.`id`)) AS `value`'
+        +' FROM `operations` AS `operations`'
+        +' INNER JOIN `orders` AS `order` ON `operations`.`orderId` = `order`.`id`'
+        +' INNER JOIN `corporations` AS `corporation` ON `order`.`custom_corporation`=`corporation`.`id`'
+        +' WHERE `operations`.`status` = 1 AND `operations`.`id`'
+        +' IN (SELECT operations.id from operations INNER JOIN actions on operations.id=actions.operationId where operations.status=1 and actions.`status`=1 and actions.operationComplete=1'
+        +' AND `operations`.`create_time` >= '+start+' AND `operations`.`create_time` <= '+end+')'
+        +' GROUP BY `corporation`.`name`;'
+
+    let sequelize=db.sequelize;
+    let opEquipment=await sequelize.query(sql,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
+
+    ctx.body={
+        status:0,
+        data:opEquipment
+    }
 
 }
 

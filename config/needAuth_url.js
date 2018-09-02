@@ -7,6 +7,11 @@ var needAuthUrlArray=[
     '/api/operation/workerOpCount',
     '/api/operation/workerOpStamp',
     '/api/operation/allOpCount',
+    '/api/operation/allOpStamp',
+    '/api/operation/allBusinessEquipment',
+    '/api/operation/allOpCorporation',
+
+    '/api/user/editSimple',
 
 
 

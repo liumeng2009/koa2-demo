@@ -8,6 +8,9 @@ router.post('/login', user_controller.login);
 router.post('/reg', user_controller.registerUser);
 router.post('/edit', user_controller.edit);
 router.get('/checktoken',user_controller.checkToken)
+
+router.post('/editSimple',user_controller.editSimple)
+
 router.get('/',user_controller.getUserData);
 router.get('/:id',user_controller.getUser);
 router.get('/list',user_controller.list);
