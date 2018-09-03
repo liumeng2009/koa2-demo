@@ -10,6 +10,7 @@ router.post('/edit', user_controller.edit);
 router.get('/checktoken',user_controller.checkToken)
 
 router.post('/editSimple',user_controller.editSimple)
+router.post('/editPassword',user_controller.editPassword)
 
 router.get('/',user_controller.getUserData);
 router.get('/:id',user_controller.getUser);

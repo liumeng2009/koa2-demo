@@ -6,11 +6,14 @@ var ApiErrorNames = {};
 ApiErrorNames.UNKNOW_ERROR = "unknowError";
 ApiErrorNames.USER_NOT_EXIST = "userNotExist";
 ApiErrorNames.USER_PSW_ERROR = "userPswError";
+ApiErrorNames.OLD_PSW_ERROR = "oldPswError";
 ApiErrorNames.JWT_ERROR="jwtError";
 ApiErrorNames.NEED_LOGIN="needLogin";
 ApiErrorNames.USER_NAME_EXIST='userNameExist';
 ApiErrorNames.USER_NAME_NOT_EXIST='userNameNotExist';
 ApiErrorNames.ADMIN_CAN_NOT_DELETE='adminCanNotDelete';
+ApiErrorNames.NEW_PSW_COMP_ERROR='newPswCompError';
+ApiErrorNames.PSW_CANNOT_NULL='pswCanNotNull';
 
 ApiErrorNames.INPUT_ERROR_TYPE='inputErrorType';
 ApiErrorNames.INPUT_DATE_ERROR_TYPE='inputDateErrorType';
@@ -115,6 +118,11 @@ error_map.set(ApiErrorNames.USER_NAME_EXIST, { code: 10005, message: '用户名�
 error_map.set(ApiErrorNames.USER_NAME_NOT_EXIST, { code: 10006, message: '用户名不存在！' });
 error_map.set(ApiErrorNames.ADMIN_CAN_NOT_DELETE, { code: 10007, message: '最高管理员账户不能被删除！' });
 error_map.set(ApiErrorNames.USER_CAN_NOT_DELETE, { code: 10008, message: '该账户处理过工单，所以不能被删除！' });
+error_map.set(ApiErrorNames.OLD_PSW_ERROR, { code: 10009, message: '原密码错误！' });
+error_map.set(ApiErrorNames.NEW_PSW_COMP_ERROR, { code: 10010, message: '新密码不一致！' });
+error_map.set(ApiErrorNames.PSW_CANNOT_NULL, { code: 10011, message: '密码不能为空！' });
+
+
 
 error_map.set(ApiErrorNames.INPUT_ERROR_TYPE, { code: 20001, message: '输入数值格式错误！' });
 error_map.set(ApiErrorNames.INPUT_DATE_ERROR_TYPE, { code: 20002, message: '输入日期格式错误！' });

@@ -155,7 +155,6 @@ exports.registerUser=async(ctx,next)=>{
 
 exports.getUserData=async(ctx,next)=>{
     let token=ctx.request.headers.authorization;
-    console.log(token);
     let simple=ctx.query.simple;
     let device=ctx.query.device;
 
@@ -230,7 +229,7 @@ exports.getUserData=async(ctx,next)=>{
         }
     }
     else{
-        throw new ApiError(ApiErrorNames.USER_NOT_EXIST);
+        throw new ApiError(ApiErrorNames.JWT_ERROR);
     }
 }
 
@@ -699,5 +698,69 @@ var editPhone=async(phone,userToken)=>{
     else{
         throw new ApiError(ApiErrorNames.USER_NOT_EXIST)
     }
+}
+
+exports.editPassword=async(ctx,next)=>{
+    let device=ctx.query.device;
+    let token=ctx.request.headers.authorization;
+    let password_old=ctx.request.body.password_old;
+    let password=ctx.request.body.password;
+    let password_comp=ctx.request.body.password_comp;
+
+    if(password.replace(/\s+/g,'')==''){
+        throw new ApiError(ApiErrorNames.PSW_CANNOT_NULL);
+    }
+    if(password!=password_comp){
+        throw new ApiError(ApiErrorNames.NEW_PSW_COMP_ERROR);
+    }
+
+
+    let User = model.user;
+
+    let userWhereObj;
+    if(device=='webapp'){
+        userWhereObj={
+            status:1,
+            webapptoken:token
+        }
+    }
+    else{
+        userWhereObj={
+            status:1,
+            token:token
+        }
+    }
+
+    let userObj=await User.findOne({
+        where:userWhereObj
+    });
+
+    if(userObj&&userObj.password){
+        let isRealPassword=bcrypt.compareSync(password_old, userObj.password);
+        console.log('密码对比结果是：'+isRealPassword);
+        if(isRealPassword){
+            var salt = bcrypt.genSaltSync(sys_config.saltRounds);
+            var hash = bcrypt.hashSync(password, salt);
+            userObj.password=hash;
+            userObj.token='';
+            userObj.webapptoken='';
+
+            await userObj.save();
+
+            ctx.body={
+                status:0,
+                data:userObj,
+                message:response_config.updatedSuccess
+            }
+        }
+        else{
+            throw new ApiError(ApiErrorNames.OLD_PSW_ERROR);
+        }
+    }
+    else{
+        throw new ApiError(ApiErrorNames.USER_NOT_EXIST);
+    }
+
+
 }
 
