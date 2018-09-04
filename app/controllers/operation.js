@@ -339,7 +339,7 @@ exports.list_week=async(ctx,next)=>{
     let sql="select FROM_UNIXTIME((create_time+8*60*60*1000)/1000,'%Y%m%d') days,count(*) count from operations inner join actions on operations.id=actions.operationId where operations.status=1 and actions.operationComplete=1 and operations.create_time>="+weekStart+" and operations.create_time<"+weekEnd+"  GROUP BY days;";
     //
 
-    await sequelize.query("set sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'")
+    //await sequelize.query("set sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'")
     let result=await sequelize.query(sql,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
 
     //将一周数据补充完整
