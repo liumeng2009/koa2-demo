@@ -1516,7 +1516,8 @@ exports.save=async(ctx,next)=>{
 }
 
 exports.delete=async(ctx,next)=>{
-    await auth.checkAuth(ctx.request.headers.authorization,'op','delete');
+    let device=ctx.query.device;
+    await auth.checkAuth(ctx.request.headers.authorization,'op','delete',device);
     let id=ctx.params.id;
 
     let sequelize=db.sequelize;
