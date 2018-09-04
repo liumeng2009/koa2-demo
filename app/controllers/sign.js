@@ -145,7 +145,9 @@ exports.getSign=async(ctx,next)=>{
 }
 
 exports.getQRCode=async(ctx,next)=>{
-    await auth.checkAuth(ctx.request.headers.authorization,'op','edit');
+    let device=ctx.query.device;
+    console.log(device)
+    await auth.checkAuth(ctx.request.headers.authorization,'op','edit',device);
     let ids=ctx.request.body.ids;
     let signid=uuid.v4();
     //生成signId，将他存入表 signid有三个状态，没有被使用 被使用 结束使用
