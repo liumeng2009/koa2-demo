@@ -116,12 +116,16 @@ exports.doing_where=async(ctx,next)=>{
     let Operation=model.operations;
     let Order=model.orders;
     let Corporation=model.corporations;
+    let BusinessContent=model.businessContents;
+    let EquipOp=model.equipOps;
 
     User.hasMany(ActionModel,{foreignKey:'worker',as:'actions'});
     User.belongsTo(Worker,{foreignKey:'id',targetKey:'userId'});
     ActionModel.belongsTo(Operation,{foreignKey:'operationId'});
     Operation.belongsTo(Order,{foreignKey:'orderId'});
     Order.belongsTo(Corporation,{foreignKey:'custom_corporation'})
+    Operation.belongsTo(BusinessContent,{foreignKey:'op'});
+    BusinessContent.belongsTo(EquipOp,{foreignKey:'operation',targetKey:'code'});
 
     let result=await User.findAll({
         where:{
@@ -162,6 +166,14 @@ exports.doing_where=async(ctx,next)=>{
                                 include:[
                                     {
                                         model:Corporation
+                                    }
+                                ]
+                            },
+                            {
+                                model:BusinessContent,
+                                include:[
+                                    {
+                                        model:EquipOp
                                     }
                                 ]
                             }
