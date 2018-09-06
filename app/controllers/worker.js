@@ -5,6 +5,7 @@ const response_config=require('../../config/response_config');
 const config = require('../../config/mysql_config');
 const db=require('../db');
 const auth=require('./authInRole');
+const moment=require('moment')
 
 exports.list=async(ctx,next)=>{
 
@@ -83,6 +84,84 @@ exports.doing_list=async(ctx,next)=>{
                                 include:[
                                     {
                                         model:EquipOp
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                model:Worker,
+                required:true
+            }
+        ]
+    })
+
+    ctx.body={
+        status:0,
+        data:result
+    }
+
+}
+
+exports.doing_where=async(ctx,next)=>{
+    let time=ctx.params.time;
+    let todayStart=moment().startOf('day').valueOf();
+    console.log('toeday是'+todayStart);
+
+    let ActionModel=model.actions;
+    let User=model.user;
+    let Worker=model.workers;
+    let Operation=model.operations;
+    let Order=model.orders;
+    let Corporation=model.corporations;
+
+    User.hasMany(ActionModel,{foreignKey:'worker',as:'actions'});
+    User.belongsTo(Worker,{foreignKey:'id',targetKey:'userId'});
+    ActionModel.belongsTo(Operation,{foreignKey:'operationId'});
+    Operation.belongsTo(Order,{foreignKey:'orderId'});
+    Order.belongsTo(Corporation,{foreignKey:'custom_corporation'})
+
+    let result=await User.findAll({
+        where:{
+            status:1
+        },
+        include:[
+            {
+                model:ActionModel,
+                as:'actions',
+                required:true,
+                where:{
+                    status:1,
+                    '$or':[
+                        {
+                            start_time:{
+                                '$lte':time,
+                                '$gte':todayStart
+                            },
+                            end_time:null
+                        },
+                        {
+                            start_time:{
+                                '$lte':time,
+                                '$gte':todayStart
+                            },
+                            end_time:{
+                                '$gte':time
+                            }
+                        }
+                    ]
+                },
+                include:[
+                    {
+                        model:Operation,
+                        include:[
+                            {
+                                model:Order,
+                                include:[
+                                    {
+                                        model:Corporation
                                     }
                                 ]
                             }

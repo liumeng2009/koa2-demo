@@ -427,12 +427,13 @@ exports.saveAndSaveOperation=async(ctx,next)=>{
 
 
             if(workerOrders[i].showWorker){
+                console.log('检测结果：'+workerOrders[i].isCompleteOperation);
                 let actionObj={
                     operationId:operationResult.id,
                     start_time:(workerOrders[i].arrive_date_timestamp&&workerOrders[i].showArriveDate)?workerOrders[i].arrive_date_timestamp:null,
                     call_time:(workerOrders[i].call_date_timestamp&&workerOrders[i].showWorker)?workerOrders[i].call_date_timestamp:null,
                     end_time:(workerOrders[i].finish_date_timestamp&&workerOrders[i].showFinishDate)?workerOrders[i].finish_date_timestamp:null,
-                    operationComplete:workerOrders[i].showFinishDate?1:0,
+                    operationComplete:workerOrders[i].isCompleteOperation?1:0,
                     status:1,
                     worker:workerOrders[i].worker
                 }

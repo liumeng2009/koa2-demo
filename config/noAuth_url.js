@@ -16,6 +16,7 @@ var noAuthUrlArray=[
 
 
     '/api/workers/list',
+    '/api/workers/doingwhere',
 
 
     '/api/groups/list',
