@@ -1743,7 +1743,8 @@ exports.doneOperationList=async(ctx,next)=>{
     let EquipOpModel=model.equipOps;
 
     OperationModel.hasMany(ActionModel,{foreignKey:'operationId',as:'actions'});
-    OperationModel.belongsTo(OrderModel,{foreignKey:'orderId'});
+    //OperationModel.belongsTo(OrderModel,{foreignKey:'orderId'});
+    OrderModel.hasMany(OperationModel,{foreignKey:'orderId',as:'operations'})
     OrderModel.belongsTo(CorporationModel,{foreignKey:'custom_corporation'});
     ActionModel.belongsTo(UserModel,{foreignKey:'worker'})
     OperationModel.belongsTo(BusinessContent,{foreignKey:'op'});
