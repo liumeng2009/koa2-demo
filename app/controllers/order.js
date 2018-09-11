@@ -427,7 +427,7 @@ exports.saveAndSaveOperation=async(ctx,next)=>{
 
 
             if(workerOrders[i].showWorker){
-                console.log('检测结果：'+workerOrders[i].isCompleteOperation);
+                console.log('检测结果：'+JSON.stringify(workerOrders[i]) );
                 let actionObj={
                     operationId:operationResult.id,
                     start_time:(workerOrders[i].arrive_date_timestamp&&workerOrders[i].showArriveDate)?workerOrders[i].arrive_date_timestamp:null,
