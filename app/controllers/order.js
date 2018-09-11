@@ -438,6 +438,8 @@ exports.saveAndSaveOperation=async(ctx,next)=>{
                     worker:workerOrders[i].worker
                 }
 
+                console.log('异常错误'+actionObj);
+
                 await checkActionTime(incoming_date_timestamp,actionObj);
 
                 await Action.create(actionObj,{transaction:transaction});
