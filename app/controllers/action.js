@@ -526,7 +526,7 @@ exports.edit=async(ctx,next)=>{
 
             if(actionEndObj){
                 //说明这个worker在忙碌
-                throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionObj.user.name+'这时在 '+actionObj.operation.order.corporation.name+' 处理'+actionObj.operation.no+'号工单']);
+                throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionEndObj.user.name+'这时在 '+actionObj.operation.order.corporation.name+' 处理'+actionObj.operation.no+'号工单']);
             }
         }
 
