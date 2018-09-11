@@ -4,6 +4,7 @@ const model = require('../model');
 const sys_config=require('../../config/sys_config');
 const officegen=require('officegen');
 const PDFDocument=require('pdfkit');
+const db=require('../db')
 
 
 exports.operation=async(ctx,next)=>{
@@ -18,6 +19,7 @@ exports.operation=async(ctx,next)=>{
     let EquipType=model.equipTypes;
     let EquipOps=model.equipOps;
     let ActionModel=model.actions;
+    let SignModel=model.signs;
 
     OrderModel.belongsTo(CorpBuilding,{foreignKey:'custom_position'});
     CorpBuilding.belongsTo(Building,{foreignKey:'buildingId'});
@@ -27,6 +29,9 @@ exports.operation=async(ctx,next)=>{
     BusinessContent.belongsTo(EquipType,{foreignKey:'type',targetKey:'code'});
     BusinessContent.belongsTo(EquipOps,{foreignKey:'operation',targetKey:'code'});
     OperationModel.hasMany(ActionModel,{foreignKey:'operationId',as:'actions'});
+    OperationModel.hasMany(SignModel,{foreignKey:'operationId',as:'signs'});
+
+    let sequelize=db.sequelize;
 
     let operation=await OperationModel.findOne({
         where: {
@@ -64,10 +69,16 @@ exports.operation=async(ctx,next)=>{
                     status:1
                 },
                 required:false
+            },
+            {
+                model:SignModel,
+                as:'signs'
             }
 
 
-
+        ],
+        order:[
+            [sequelize.col('signs.createdAt'),'DESC']
         ]
     });
 
@@ -100,6 +111,8 @@ exports.order=async(ctx,next)=>{
 
     let ActionModel=model.actions;
 
+    let SignModel=model.signs;
+
     let User=model.user;
 
     ActionModel.belongsTo(User,{foreignKey:'worker'});
@@ -111,6 +124,11 @@ exports.order=async(ctx,next)=>{
     Operation.belongsTo(BusinessContent,{foreignKey:'op'});
     BusinessContent.belongsTo(EquipOp,{foreignKey:'operation',targetKey:'code'});
     Operation.hasMany(ActionModel,{foreignKey:'operationId',as:'actions'});
+    Operation.hasMany(SignModel,{foreignKey:'operationId',as:'signs'});
+
+    let sequelize=db.sequelize
+
+
     let order=await Order.findOne({
         where:{
             status:1,
@@ -152,11 +170,15 @@ exports.order=async(ctx,next)=>{
                             model:User
                         }
                     ]
+                },{
+                    model:SignModel,
+                    as:'signs'
                 }
             ]
         }],
         order:[
-            [{model: Operation, as: 'operations'},'no','ASC']
+            [{model: Operation, as: 'operations'},'no','ASC'],
+            [sequelize.col('operations.signs.createdAt'),'DESC']
         ]
     });
 
@@ -590,7 +612,7 @@ var createOperationPDF=function(obj){
 
     //用户意见
     doc.moveTo(50,650).lineTo(545,650)
-        .lineTo(545,710).lineTo(50,710)
+        .lineTo(545,800).lineTo(50,800)
         .lineTo(50,650).stroke();
 
     doc.font('SongCu').text('客户意见：',60,660,{
@@ -627,6 +649,11 @@ var createOperationPDF=function(obj){
         width:60,
         align:'left'
     })
+
+    if(obj.signs.length>0){
+        console.log(obj.signs[0].signString);
+        doc.image(obj.signs[0].signString,138,685,{width:80})
+    }
 
 
     doc.end();
@@ -1050,7 +1077,7 @@ var createOperationPDFS=function(obj){
 
         //用户意见
         doc.moveTo(50,650).lineTo(545,650)
-            .lineTo(545,710).lineTo(50,710)
+            .lineTo(545,800).lineTo(50,800)
             .lineTo(50,650).stroke();
 
         doc.font('SongCu').text('客户意见：',60,660,{
@@ -1087,6 +1114,12 @@ var createOperationPDFS=function(obj){
             width:60,
             align:'left'
         })
+
+        if(op.signs.length>0){
+            console.log(op.signs[0].signString);
+            doc.image(op.signs[0].signString,138,685,{width:80})
+        }
+
 
         if(i==(count-1)){
 
