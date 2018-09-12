@@ -157,7 +157,7 @@ error_map.set(ApiErrorNames.WORKER_EXIST, { code: 80002, message: '工程师信�
 error_map.set(ApiErrorNames.WORKER_NOT_EXIST, { code: 80001, message: '该条工程师信息不存在！'});
 error_map.set(ApiErrorNames.WORKER_BUSY, { code: 80003, message: '工程师忙碌中：{1} '});
 error_map.set(ApiErrorNames.WORKER_BUSY_1, { code: 80004, message: '该工程师很忙！'});
-error_map.set(ApiErrorNames.WORKER_BUSY_ARRAY, { code: 80005, message: '批量录入的工作时间信息有冲突！'});
+error_map.set(ApiErrorNames.WORKER_BUSY_ARRAY, { code: 80005, message: '批量录入的工作时间信息有冲突，请您仔细检查{1}的开始和结束时间！'});
 
 //业务内容模块错误
 error_map.set(ApiErrorNames.BUSINESS_OPERATION_NULL, { code: 70001, message: '操作项不能为空！'})

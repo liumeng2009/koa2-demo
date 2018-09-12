@@ -391,6 +391,45 @@ exports.saveAndSaveOperation=async(ctx,next)=>{
 
         console.log('trans start 1');
 
+        //验证workerOrder自身数据的合理性（工作时间不可以有交叉）
+        for(let i=0;i<workerOrders.length;i++){
+            for(let j=0;j<workerOrders.length;j++){
+                if(workerOrders[i]===workerOrders[j]){
+
+                }
+                else{
+                    //开始作比较
+                    if(workerOrders[i].worker==workerOrders[j].worker){
+                        //如果运维人员是一个人，就得检查时间分配的是否合理
+                        if(workerOrders[i].arrive_date_timestamp) {
+                            if (workerOrders[j].arrive_date_timestamp && workerOrders[j].finish_date_timestamp) {
+                                if (workerOrders[j].arrive_date_timestamp <= workerOrders[i].arrive_date_timestamp && workerOrders[i].arrive_date_timestamp <= workerOrders[j].finish_date_timestamp) {
+                                    //错误
+                                    console.log('错误1');
+                                    throw new ApiError(ApiErrorNames.WORKER_BUSY_ARRAY,['第'+(i+1)+'个工单和第'+(j+1)+'个工单'])
+                                }
+                            }
+                        }
+
+                        if(workerOrders[i].finish_date_timestamp) {
+                            if (workerOrders[j].arrive_date_timestamp && workerOrders[j].finish_date_timestamp) {
+                                if (workerOrders[j].finish_date_timestamp <= workerOrders[i].arrive_date_timestamp && workerOrders[i].finish_date_timestamp <= workerOrders[j].finish_date_timestamp) {
+                                    //错误
+                                    console.log('错误2');
+                                    throw new ApiError(ApiErrorNames.WORKER_BUSY_ARRAY,['第'+(i+1)+'个工单和第'+(j+1)+'个工单'])
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+
+
+
+
         let workOrderArray=[];
         for(let i=0;i<workerOrders.length;i++){
             console.log('循环生成的no：'+operationNos[i]);
