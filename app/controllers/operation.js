@@ -350,8 +350,8 @@ exports.list_week=async(ctx,next)=>{
         let thisDayStartDate=new Date();
         thisDayStartDate.setTime(thisDayStart);
         let days=thisDayStartDate.getFullYear()+
-            ((thisDayStartDate.getMonth()+1)<10?('0'+(thisDayStartDate.getMonth()+1)):(thisDayStartDate.getMonth()+1))+
-            ((thisDayStartDate.getDate())<10?('0'+(thisDayStartDate.getDate())):(thisDayStartDate.getDate()));
+            ((thisDayStartDate.getMonth()+1)<10?('0'+(thisDayStartDate.getMonth()+1)):(''+(thisDayStartDate.getMonth()+1)))+
+            ((thisDayStartDate.getDate())<10?('0'+(thisDayStartDate.getDate())):(''+thisDayStartDate.getDate()));
         dayArray.push(days)
     }
     console.log(dayArray);
@@ -497,9 +497,10 @@ exports.list_month=async(ctx,next)=>{
         let thisDayStartDate=new Date();
         thisDayStartDate.setTime(thisDayStart);
         let days=thisDayStartDate.getFullYear()+
-            ((thisDayStartDate.getMonth()+1)<10?('0'+(thisDayStartDate.getMonth()+1)):(thisDayStartDate.getMonth()+1))+
-            ((thisDayStartDate.getDate())<10?('0'+(thisDayStartDate.getDate())):(thisDayStartDate.getDate()));
+            ((thisDayStartDate.getMonth()+1)<10?('0'+(thisDayStartDate.getMonth()+1)):(''+(thisDayStartDate.getMonth()+1)))+
+            ((thisDayStartDate.getDate())<10?('0'+(thisDayStartDate.getDate())):(''+thisDayStartDate.getDate()));
         dayArray.push(days)
+        console.log(days);
     }
     console.log('ceshi'+dayArray);
 
