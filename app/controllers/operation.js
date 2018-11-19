@@ -579,7 +579,7 @@ exports.list_month_worker=async(ctx,next)=>{
     console.log(monthEnd.toDateString());
 
     let monthStartStamp=monthStart.getTime();
-    let monthEndStamp=time;
+    let monthEndStamp=monthEnd.getTime();
 
     let User=model.user;
     let ActionModel=model.actions;
@@ -747,7 +747,7 @@ exports.list_month_worker_time=async(ctx,next)=>{
     console.log(monthEnd.toDateString());
 
     let monthStartStamp=monthStart.getTime();
-    let monthEndStamp=time;
+    let monthEndStamp=monthEnd.getTime();
 
     let ActionModel=model.actions;
     let User=model.user;
@@ -776,7 +776,7 @@ exports.list_month_worker_time=async(ctx,next)=>{
         group:['`user`.`name`']
     });*/
     let sql='SELECT `user`.`name` AS `user`, SUM(`end_time`-`start_time`) AS `count` FROM `actions` AS `actions` LEFT OUTER JOIN `users` AS `user` ON `actions`.`worker` = `user`.`id` WHERE `actions`.`status` = 1 AND (`actions`.`start_time` >= '+monthStartStamp+' AND `actions`.`end_time` <= '+monthEndStamp+') GROUP BY `user`.`name`;';
-
+    console.log(sql);
     let result=await sequelize.query(sql,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
 
     ctx.body={
@@ -2173,7 +2173,6 @@ exports.workerBusinessAdvance=async(ctx,next)=>{
 exports.allOpCount=async(ctx,next)=>{
     let start=ctx.query.start;
     let end=ctx.query.end;
-
     if(start){
 
     }
@@ -2198,6 +2197,43 @@ exports.allOpCount=async(ctx,next)=>{
         +' IN (SELECT operations.id from operations INNER JOIN actions on operations.id=actions.operationId where operations.status=1 and actions.`status`=1 and actions.operationComplete=1'
         +' AND `operations`.`create_time` >= '+start+' AND `operations`.`create_time` <= '+end+')'
         +' GROUP BY `name`;'
+
+    let sequelize=db.sequelize;
+    let opEquipment=await sequelize.query(sql,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
+
+    ctx.body={
+        status:0,
+        data:opEquipment
+    }
+
+
+}
+exports.allOpCountSimple=async(ctx,next)=>{
+    let start=ctx.query.start;
+    let end=ctx.query.end;
+    if(start){
+
+    }
+    else{
+        start=moment().startOf('month').valueOf();
+    }
+
+    if(end){
+
+    }
+    else{
+        end=moment().endOf('month').valueOf();
+    }
+
+
+    let sql='SELECT COUNT(DISTINCT(`operations`.`id`)) AS `value`'
+        +' FROM `operations` AS `operations`'
+        +' LEFT OUTER JOIN `businessContents` AS `businessContent` ON `operations`.`op` = `businessContent`.`id`'
+        +' INNER JOIN `actions` AS `actions` ON `operations`.`id` = `actions`.`operationId` AND `actions`.`status` = 1'
+        +' INNER JOIN `users` AS `actions.user` ON `actions`.`worker` = `actions.user`.`id`'
+        +' WHERE `operations`.`status` = 1 AND `operations`.`id`'
+        +' IN (SELECT operations.id from operations INNER JOIN actions on operations.id=actions.operationId where operations.status=1 and actions.`status`=1 and actions.operationComplete=1'
+        +' AND `operations`.`create_time` >= '+start+' AND `operations`.`create_time` <= '+end+');'
 
     let sequelize=db.sequelize;
     let opEquipment=await sequelize.query(sql,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
@@ -2247,6 +2283,83 @@ exports.allOpStamp=async(ctx,next)=>{
         data:opEquipment
     }
 
+
+}
+exports.allOpStampSimple=async(ctx,next)=>{
+    let start=ctx.query.start;
+    let end=ctx.query.end;
+
+    if(start){
+
+    }
+    else{
+        start=moment().startOf('month').valueOf();
+    }
+
+    if(end){
+
+    }
+    else{
+        end=moment().endOf('month').valueOf();
+    }
+
+
+    let sql='SELECT FORMAT(SUM(`actions`.`end_time`-`actions`.`start_time`)/60000,1) as `value`'
+        +' FROM `operations` AS `operations`'
+        +' LEFT OUTER JOIN `businessContents` AS `businessContent` ON `operations`.`op` = `businessContent`.`id`'
+        +' INNER JOIN `actions` AS `actions` ON `operations`.`id` = `actions`.`operationId` AND `actions`.`status` = 1'
+        +' INNER JOIN `users` AS `actions.user` ON `actions`.`worker` = `actions.user`.`id`'
+        +' WHERE `operations`.`status` = 1 AND `operations`.`id`'
+        +' IN (SELECT operations.id from operations INNER JOIN actions on operations.id=actions.operationId where operations.status=1 and actions.`status`=1 and actions.operationComplete=1'
+        +' AND `operations`.`create_time` >= '+start+' AND `operations`.`create_time` <= '+end+');'
+
+    let sequelize=db.sequelize;
+    let opEquipment=await sequelize.query(sql,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
+
+    ctx.body={
+        status:0,
+        data:opEquipment
+    }
+
+
+}
+
+exports.allBusinessType=async(ctx,next)=>{
+    let start=ctx.query.start;
+    let end=ctx.query.end;
+
+    if(start){
+
+    }
+    else{
+        start=moment().startOf('month').valueOf();
+    }
+
+    if(end){
+
+    }
+    else{
+        end=moment().endOf('month').valueOf();
+    }
+
+    let sql='SELECT `equipType`.`name` as `name`, COUNT(DISTINCT(`operations`.`id`)) AS `value`'
+        +' FROM `operations` AS `operations`'
+        +' LEFT OUTER JOIN `businessContents` AS `businessContent` ON `operations`.`op` = `businessContent`.`id`'
+        +' INNER JOIN `equiptypes` AS `equipType` ON `equipType`.`code` = `businessContent`.`type`'
+        +' INNER JOIN `actions` AS `actions` ON `operations`.`id` = `actions`.`operationId` AND `actions`.`status` = 1'
+        +' INNER JOIN `users` AS `actions.user` ON `actions`.`worker` = `actions.user`.`id`'
+        +' WHERE `operations`.`status` = 1 AND `operations`.`id`'
+        +' IN (SELECT operations.id from operations INNER JOIN actions on operations.id=actions.operationId where operations.status=1 and actions.`status`=1 and actions.operationComplete=1'
+        +' AND `operations`.`create_time` >= '+start+' AND `operations`.`create_time` <= '+end+')'
+        +' GROUP BY `equipType`.`name`;'
+
+    let sequelize=db.sequelize;
+    let opEquipment=await sequelize.query(sql,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
+
+    ctx.body={
+        status:0,
+        data:opEquipment
+    }
 
 }
 
@@ -2324,4 +2437,5 @@ exports.allOpCorporation=async(ctx,next)=>{
     }
 
 }
+
 
