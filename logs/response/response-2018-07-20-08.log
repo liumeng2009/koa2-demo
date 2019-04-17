@@ -1,0 +1,37 @@
+[2018-07-20 08:59:27.245] [INFO] resLogger - 
+*************** response log start ***************
+request method: OPTIONS
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request body: 
+{}
+response time: 4
+response status: 204
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-07-20 08:59:33.933] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 4948
+response status: 200
+response body: 
+{"name":"SequelizeConnectionRefusedError","message":"connect ECONNREFUSED 127.0.0.1:3306","parent":{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":3306,"fatal":true},"original":{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":3306,"fatal":true},"status":500}
+*************** response log end ***************
+
+[2018-07-20 08:59:34.954] [INFO] resLogger - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/user/
+request client ip:  ::ffff:192.168.1.106
+request query:  {}
+response time: 1017
+response status: 200
+response body: 
+{"name":"SequelizeConnectionRefusedError","message":"connect ECONNREFUSED 127.0.0.1:3306","parent":{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":3306,"fatal":true},"original":{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":3306,"fatal":true},"status":500}
+*************** response log end ***************
+
