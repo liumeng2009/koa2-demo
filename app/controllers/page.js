@@ -2,8 +2,11 @@ const ApiError=require('../error/ApiError');
 const ApiErrorNames=require('../error/ApiErrorNames');
 const model = require('../model');
 const sys_config=require('../../config/sys_config');
-const officegen=require('officegen');
 const PDFDocument=require('pdfkit');
+const moment = require('moment');
+const db=require('../db');
+const Excel = require('exceljs');
+const XLSX = require('xlsx');
 
 
 exports.operation=async(ctx,next)=>{
@@ -176,6 +179,126 @@ exports.order=async(ctx,next)=>{
     }
 
 }
+
+// 做一个年度报表
+exports.yearSheet = async(ctx, next) => {
+    let start=ctx.query.start;
+    let end=ctx.query.end;
+    if (!moment.unix(start/1000).isValid() || !moment.unix(end/1000).isValid()) {
+        ctx.body='时间格式不正确，请检查';
+        return;
+    }
+
+    let startStr = moment.unix(start/1000).format('YYYYMMDD');
+    let endStr = moment.unix(end/1000).format('YYYYMMDD');
+
+    //完成工单中，每个员工的工单数
+    let sqlUserCount = 'select count(Operations.id) as count, users.`name` from Operations INNER JOIN Actions on actions.operationId=operations.id INNER JOIN users on actions.worker=users.id where operations.status=1 AND `operations`.`id`  IN (SELECT operations.id from operations INNER JOIN actions on operations.id=actions.operationId where operations.status=1 and actions.`status`=1 and actions.operationComplete=1 and operations.create_time>=' + start + ' and operations.create_time<' + end + ') GROUP BY users.name'
+    //完成工单中，每个员工的工时数
+    let sqlUserTime = 'select SUM(`end_time`-`start_time`)/60000 AS `minutes`,users.name from actions INNER JOIN operations on actions.operationId=operations.id INNER JOIN users on actions.worker=users.id INNER JOIN orders on operations.orderId=orders.id INNER JOIN corporations on orders.custom_corporation=corporations.id where actions.`status`=1 and operations.status=1 AND `operations`.`id`  IN (SELECT operations.id from operations INNER JOIN actions on operations.id=actions.operationId where operations.status=1 and actions.`status`=1 and actions.operationComplete=1 and operations.create_time>='+start+' and operations.create_time<'+end+') GROUP BY users.`name`;';
+    //完成工单中，所涉及的每个公司的工时数
+    let sqlCompanyCount = 'select COUNT(operations.id) as count,corporations.name from operations INNER JOIN orders on operations.orderId=orders.id INNER JOIN corporations on orders.custom_corporation=corporations.id where operations.status=1  AND `operations`.`id`  IN (SELECT operations.id from operations INNER JOIN actions on operations.id=actions.operationId where operations.status=1 and actions.`status`=1 and actions.operationComplete=1 and operations.create_time>='+start+' and operations.create_time<'+end+') GROUP BY corporations.name order by corporations.name;'
+    //完成工单中，各个业务类型的工单数
+    let sqlEquipmentCount = 'SELECT `businessContent`.`equipment` as `name`, `equiptypes`.`name` as `type`,COUNT(DISTINCT(`operations`.`id`)) AS `count` FROM `operations` AS `operations` LEFT OUTER JOIN `businessContents` AS `businessContent` ON `operations`.`op` = `businessContent`.`id` INNER JOIN `equiptypes` ON `equiptypes`.`code` = `businessContent`.`type` INNER JOIN `actions` AS `actions` ON `operations`.`id` = `actions`.`operationId` AND `actions`.`status` = 1 INNER JOIN `users` AS `actions.user` ON `actions`.`worker` = `actions.user`.`id` WHERE `operations`.`status` = 1 AND `operations`.`id` IN (SELECT operations.id from operations INNER JOIN actions on operations.id=actions.operationId where operations.status=1 and actions.`status`=1 and actions.operationComplete=1 AND `operations`.`create_time` >= '+start+' AND `operations`.`create_time` < '+end+') GROUP BY `equiptypes`.`name`,`businessContent`.`equipment`;'
+    
+    let sequelize=db.sequelize;
+    let UserOpNumResult=await sequelize.query(sqlUserCount,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
+    let UserOpTimeResult=await sequelize.query(sqlUserTime,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
+    let CompanyOpNumResult=await sequelize.query(sqlCompanyCount,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
+    let EquipmentOpNumResult=await sequelize.query(sqlEquipmentCount,{ plain : false,  raw : true,type:sequelize.QueryTypes.SELECT});
+
+
+
+    // 组装一个array，放员工工单数量
+    let arrayUser = [];
+    let sumUser = 0;
+    //标题行
+    let userTitle = ['用户名', '工单数'];
+    arrayUser.push(userTitle);
+    UserOpNumResult.forEach(result => {
+        let row = [result.name, result.count];
+        arrayUser.push(row);
+        if (typeof result.count === 'number') {
+            sumUser += result.count;
+        }
+    });
+    //合计行
+    let rowUserSum = ['合计', sumUser];
+    arrayUser.push(rowUserSum);
+
+
+    //组装一个array，放员工工时
+    let arrayUserTime = [];
+    let sumUserTime = 0;
+    let userTimeTitle = ['用户名', '工时（单位：分钟）'];
+    arrayUserTime.push(userTimeTitle);
+    UserOpTimeResult.forEach(result => {
+        let row = [result.name, result.minutes];
+        arrayUserTime.push(row);
+        if (typeof result.minutes === 'number') {
+            sumUserTime += result.minutes;
+        }
+    });
+    //合计行
+    let rowUserTimeSum = ['合计', sumUserTime];
+    arrayUserTime.push(rowUserTimeSum);
+
+
+    //组装一个array，放涉及公司的数据
+    let arrayCompany = [];
+    let sumCompany = 0;
+    let companyTitle = ['公司名', '工单数'];
+    arrayCompany.push(companyTitle);
+    CompanyOpNumResult.forEach(result => {
+        let row = [result.name, result.count];
+        arrayCompany.push(row);
+        if (typeof result.count === 'number') {
+            sumCompany += result.count;
+        }
+    });
+    //合计行
+    let rowCompanySum = ['合计', sumCompany];
+    arrayCompany.push(rowCompanySum);
+
+    //组装一个array，放事务类型的数据
+    let arrayBusiness = [];
+    let sumBusiness = 0;
+    let businessTitle = ['类型', '事务主体', '工单数'];
+    arrayBusiness.push(businessTitle);
+    EquipmentOpNumResult.forEach(result => {
+        let row = [result.type, result.name, result.count];
+        arrayBusiness.push(row);
+        if (typeof result.count === 'number') {
+            sumBusiness += result.count;
+        }
+    });
+    //合计行
+    let rowBusinessSum = ['合计', '', sumBusiness];
+    arrayBusiness.push(rowBusinessSum);
+
+
+	var wb = XLSX.utils.book_new();
+    var wsUser = XLSX.utils.aoa_to_sheet(arrayUser);
+    // json转sheet，为了组合数据，还是选择数组转sheet
+    //var ws = XLSX.utils.json_to_sheet(UserOpNumResult); 
+    XLSX.utils.book_append_sheet(wb, wsUser, "员工工单数");
+    var wsUserTime = XLSX.utils.aoa_to_sheet(arrayUserTime);
+    XLSX.utils.book_append_sheet(wb, wsUserTime, "员工工时数");
+    var wsCompany = XLSX.utils.aoa_to_sheet(arrayCompany);
+    XLSX.utils.book_append_sheet(wb, wsCompany, "各公司工单数");
+    var wsBusiness = XLSX.utils.aoa_to_sheet(arrayBusiness);
+    XLSX.utils.book_append_sheet(wb, wsBusiness, "各事务类型工单数");
+
+	/* generate buffer */
+	var buf = XLSX.write(wb, {type:'buffer', bookType:'xlsx'});
+
+    // 文件名不能有中文，否则报错
+    ctx.res.writeHead ( 200, {
+        "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        'Content-disposition': 'attachment; filename='+startStr+'-'+endStr+'_worksheet_'+moment().format('YYYYMMDDhhmmss')+'.xlsx'
+    });
+    ctx.body=buf;
+} 
 
 
 var createOperationPDF=function(obj){

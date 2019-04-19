@@ -53,7 +53,7 @@ exports.login=async(ctx,next)=>{
             else{
                 userObj.token=token;
             }
-            console.log('jwt:'+token+userObj);
+            //console.log('jwt:'+token+userObj);
             await userObj.save();
 
             ctx.body={
@@ -235,8 +235,14 @@ exports.getUserData=async(ctx,next)=>{
 
 exports.checkToken=async(token)=>{
 
-
-
+    jwt.verify(token, sys_config.jwtSecret, (err, decode) => {
+        console.log(err);
+        if(err) {
+            throw new ApiError(ApiErrorNames.JWT_ERROR);
+        }
+    });
+    console.log('jwt合法');
+/*
     let UserModel=model.user;
 
     let user=await UserModel.findOne({
@@ -253,7 +259,7 @@ exports.checkToken=async(token)=>{
         throw new ApiError(ApiErrorNames.JWT_ERROR);
     }
 
-
+*/
 }
 
 exports.getUser=async(ctx,next)=>{
