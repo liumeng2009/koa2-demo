@@ -8,7 +8,7 @@ var QRCode = require('qrcode');
 const uuid = require('node-uuid');
 const SocketIOUtil=require('../../util/socketio')
 
-var saveSigns=async function(ids,sign){
+var saveSigns=async function(ids,sign,clientinfo){
     let SignModel=model.signs;
     let Operation=model.operations;
     let saveIdArray=[];
@@ -23,7 +23,7 @@ var saveSigns=async function(ids,sign){
                 }
             })
             if(operationObj){
-                saveIdArray.push({signString:sign,operationId:operationObj.id});
+                saveIdArray.push({signString:sign,operationId:operationObj.id,clientInfo:clientinfo});
             }
         }
 
@@ -54,6 +54,7 @@ exports.clientSaveSign=async(ctx,next)=>{
     let ids=ctx.request.body.ids;
     let sign=ctx.request.body.sign;
     let signid=ctx.request.body.signid;
+    let clientInfo=ctx.request.body.clientinfo;
     let ClientSignModel=model.clientSigns;
     let clientSignResult=await ClientSignModel.findOne({
         where:{
@@ -74,7 +75,7 @@ exports.clientSaveSign=async(ctx,next)=>{
             }
             else{
                 //正常，可以保存签名信息
-                let result=await saveSigns(ids,sign)
+                let result=await saveSigns(ids,sign,clientInfo)
                 //成功后
                 //socket告诉客户端保存成功了
                 let json={signId:signid,action:'sign complete',ids:ids};

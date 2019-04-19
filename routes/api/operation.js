@@ -24,7 +24,10 @@ router.get('/workerBusinessEquipment',operation_controller.workerBusinessEquipme
 router.get('/workerBusinessAdvance',operation_controller.workerBusinessAdvance)
 
 router.get('/allOpCount',operation_controller.allOpCount)
+router.get('/allOpCountSimple',operation_controller.allOpCountSimple)
 router.get('/allOpStamp',operation_controller.allOpStamp)
+router.get('/allOpStampSimple',operation_controller.allOpStampSimple)
+router.get('/allBusinessType',operation_controller.allBusinessType)
 router.get('/allBusinessEquipment',operation_controller.allBusinessEquipment)
 router.get('/allOpCorporation',operation_controller.allOpCorporation)
 

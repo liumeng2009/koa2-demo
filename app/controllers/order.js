@@ -391,6 +391,45 @@ exports.saveAndSaveOperation=async(ctx,next)=>{
 
         console.log('trans start 1');
 
+        //验证workerOrder自身数据的合理性（工作时间不可以有交叉）
+        for(let i=0;i<workerOrders.length;i++){
+            for(let j=0;j<workerOrders.length;j++){
+                if(workerOrders[i]===workerOrders[j]){
+
+                }
+                else{
+                    //开始作比较
+                    if(workerOrders[i].worker==workerOrders[j].worker){
+                        //如果运维人员是一个人，就得检查时间分配的是否合理
+                        if(workerOrders[i].arrive_date_timestamp) {
+                            if (workerOrders[j].arrive_date_timestamp && workerOrders[j].finish_date_timestamp) {
+                                if (workerOrders[j].arrive_date_timestamp <= workerOrders[i].arrive_date_timestamp && workerOrders[i].arrive_date_timestamp <= workerOrders[j].finish_date_timestamp) {
+                                    //错误
+                                    console.log('错误1');
+                                    throw new ApiError(ApiErrorNames.WORKER_BUSY_ARRAY,['第'+(i+1)+'个工单和第'+(j+1)+'个工单'])
+                                }
+                            }
+                        }
+
+                        if(workerOrders[i].finish_date_timestamp) {
+                            if (workerOrders[j].arrive_date_timestamp && workerOrders[j].finish_date_timestamp) {
+                                if (workerOrders[j].finish_date_timestamp <= workerOrders[i].arrive_date_timestamp && workerOrders[i].finish_date_timestamp <= workerOrders[j].finish_date_timestamp) {
+                                    //错误
+                                    console.log('错误2');
+                                    throw new ApiError(ApiErrorNames.WORKER_BUSY_ARRAY,['第'+(i+1)+'个工单和第'+(j+1)+'个工单'])
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+
+
+
+
         let workOrderArray=[];
         for(let i=0;i<workerOrders.length;i++){
             console.log('循环生成的no：'+operationNos[i]);
@@ -427,15 +466,18 @@ exports.saveAndSaveOperation=async(ctx,next)=>{
 
 
             if(workerOrders[i].showWorker){
+                console.log('检测结果：'+JSON.stringify(workerOrders[i]) );
                 let actionObj={
                     operationId:operationResult.id,
                     start_time:(workerOrders[i].arrive_date_timestamp&&workerOrders[i].showArriveDate)?workerOrders[i].arrive_date_timestamp:null,
                     call_time:(workerOrders[i].call_date_timestamp&&workerOrders[i].showWorker)?workerOrders[i].call_date_timestamp:null,
                     end_time:(workerOrders[i].finish_date_timestamp&&workerOrders[i].showFinishDate)?workerOrders[i].finish_date_timestamp:null,
-                    operationComplete:workerOrders[i].showFinishDate?1:0,
+                    operationComplete:(device&&device=='webapp')?(workerOrders[i].isCompleteOperation?1:0):(workerOrders[i].showFinishDate?1:0),
                     status:1,
                     worker:workerOrders[i].worker
                 }
+
+                console.log('异常错误'+actionObj);
 
                 await checkActionTime(incoming_date_timestamp,actionObj);
 

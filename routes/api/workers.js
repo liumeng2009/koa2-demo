@@ -3,6 +3,7 @@ var worker_controller = require('../../app/controllers/worker');
 
 router.get('/list', worker_controller.list);
 router.get('/doinglist/time/:time', worker_controller.doing_list);
+router.get('/doingwhere/time/:time', worker_controller.doing_where);
 router.post('/add', worker_controller.save);
 router.get('/delete/:userid',worker_controller.delete);
 

@@ -18,6 +18,7 @@ var sequelize = new Sequelize(config.database, config.username, config.password,
         min: 0,
         idle: 10000
     },
+    logging:false,
     dialectOptions: {
         charset: "utf8mb4",
         collate: "utf8mb4_unicode_ci"

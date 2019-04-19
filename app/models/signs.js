@@ -5,5 +5,8 @@ module.exports = db.defineModel('signs', {
     },
     operationId:{
         type:db.STRING(200)
-    }
+    },
+    clientInfo:{
+        type:db.TEXT
+    },
 });
