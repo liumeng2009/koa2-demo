@@ -467,7 +467,8 @@ exports.saveAndSaveOperation=async(ctx,next)=>{
 
             if(workerOrders[i].showWorker){
                 console.log('检测结果：'+JSON.stringify(workerOrders[i]) );
-                let actionObj={
+                let actionObj;
+                actionObj={
                     operationId:operationResult.id,
                     start_time:(workerOrders[i].arrive_date_timestamp&&workerOrders[i].showArriveDate)?workerOrders[i].arrive_date_timestamp:null,
                     call_time:(workerOrders[i].call_date_timestamp&&workerOrders[i].showWorker)?workerOrders[i].call_date_timestamp:null,
@@ -477,7 +478,12 @@ exports.saveAndSaveOperation=async(ctx,next)=>{
                     worker:workerOrders[i].worker
                 }
 
-                console.log('异常错误'+actionObj);
+                if(actionObj){
+
+                } else {
+                    console.log('异常错误'+JSON.stringify(actionObj));
+                }
+
 
                 await checkActionTime(incoming_date_timestamp,actionObj);
 
@@ -495,6 +501,7 @@ exports.saveAndSaveOperation=async(ctx,next)=>{
     }
     catch(err){
         await transaction.rollback();
+        console.log(err);
         throw new ApiError(ApiErrorNames.ORDER_SAVE_FAILED,[err.message]);
     }
 }
@@ -865,7 +872,7 @@ var checkActionTime=async(createStamp,act)=>{
             }
         })
         if(actionEndObj){
-            throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionObj.user.name+'这时在 '+actionObj.operation.order.corporation.name+' 处理'+actionObj.operation.no+'号工单'])
+            throw new ApiError(ApiErrorNames.WORKER_BUSY,[actionEndObj.user.name+'这时在 '+actionEndObj.operation.order.corporation.name+' 处理'+actionEndObj.operation.no+'号工单'])
         }
     }
 
