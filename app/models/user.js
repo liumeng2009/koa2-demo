@@ -34,10 +34,12 @@ module.exports = db.defineModel('users', {
         type:db.STRING(50)
     },
     avatar:{
-        type:db.STRING(255)
+        type:db.STRING(255),
+        allowNull:true
     },
     avatarUseImg:{
-        type:db.INTEGER
+        type:db.INTEGER,
+        allowNull:true
     },
     webapptoken:{
         type:db.TEXT,

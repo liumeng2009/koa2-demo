@@ -72,7 +72,7 @@ exports.login=async(ctx,next)=>{
 }
 
 exports.registerUser=async(ctx,next)=>{
-    let username=ctx.request.body.username;
+    let username=ctx.request.body.name;
     let password=ctx.request.body.password;
     let phone=ctx.request.body.phone;
     let email=ctx.request.body.email;
